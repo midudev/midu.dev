@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Preconnect from './Head/Preconnect'
+import Favicons from './Head/Favicons'
 
 const GA_TRACKING_ID = 'UA-30525085-8'
 
@@ -35,23 +37,28 @@ const GoHomeIcon = () => (
   </React.Fragment>
 )
 
-export default ({children, title, description, image}) => (
+const DEFAULT_DESCRIPTION =
+  'Artículos sobre Frontend, Performance Web, Ingeniería del Software, Javascript, React y CSS por midudev'
+
+const DEFAULT_IMAGE = 'https://midudev.com/static/favicon/mstile-310x150.png'
+
+const DEFAULT_TITLE =
+  'Frontend, Web Performance, Architecture, Javascript, React y CSS'
+
+export default ({
+  children,
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+  image = DEFAULT_IMAGE
+}) => (
   <React.Fragment>
     <Head>
-      <title>
-        Frontend, Web Performance, Architecture, Javascript, React y CSS por
-        midudev
-      </title>
+      <title>{`${title} | midudev`}</title>
+
       {/* Preload here */}
-      {/* Preconnect here */}
-      <link
-        rel="preconnect  dns-prefetch"
-        href="https://www.googletagmanager.com"
-      />
-      <link
-        rel="preconnect  dns-prefetch"
-        href="https://www.google-analytics.com"
-      />
+
+      <Preconnect />
+      <Favicons />
 
       <script
         dangerouslySetInnerHTML={{
@@ -69,37 +76,15 @@ export default ({children, title, description, image}) => (
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
       />
 
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/static/favicon/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/static/favicon/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/static/favicon/favicon-16x16.png"
-      />
-
-      <meta name="apple-mobile-web-app-title" content="midudev.com" />
-      <meta name="application-name" content="midudev.com" />
-      <meta name="theme-color" content="#0099ff" />
+      <meta name="description" content={description} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@midudev" />
       <meta name="twitter:domain" content="midudev.com" />
       <meta name="twitter:creator" content="@midudev" />
-      <meta
-        name="twitter:title"
-        content="Frontend, Web Performance y más por @midudev"
-      />
-      <meta name="twitter:image" content="https://csswizardry.com/logo.png" />
+      <meta name="twitter:title" content={title} />
+      <meta name="og:image" content={image} />
+      <meta name="twitter:image" content={image} />
       <link rel="manifest" href="/static/manifest.json" />
     </Head>
     <main>
