@@ -26,7 +26,8 @@
     "nextein": "2.1.2",
     "react": "next",
     "react-dom": "next",
-    "read-time": "^1.0.0"
+    "read-time": "1.0.0",
+    "remark-external-links": "3.1.1"
   },
   "devDependencies": {
     "@s-ui/lint": "2.20.0"
