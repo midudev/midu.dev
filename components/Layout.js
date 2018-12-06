@@ -57,6 +57,7 @@ export default ({
   image = DEFAULT_IMAGE
 }) => (
   <React.Fragment>
+    <GlobalStyles />
     <Head>
       <title>{`${title} | midudev`}</title>
 
@@ -80,8 +81,6 @@ export default ({
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
       />
-
-      <GlobalStyles />
 
       <meta name="description" content={description} />
       <link rel="canonical" href={getCanonical({url})} />
