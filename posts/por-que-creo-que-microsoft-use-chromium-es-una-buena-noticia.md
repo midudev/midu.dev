@@ -8,11 +8,13 @@ language: 🇪🇸
 
 Ya hay confirmación oficial. **[Microsoft planea adoptar Chromium como motor para su navegador Microsoft Edge y abandonará su motor propietario.](https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/)** Un paso más para extender la contribución de Microsoft al OSS (open source software) y un volantazo muy importante sobre la política de Microsoft respecto a los navegadores web después de años y años de fracasos continuados.
 
+![5c09a0bc46a2b](/static/images/microsoft-edge-presentation.jpg)
+
 Sin embargo, esta noticia que llega tras días de rumores, **ha despertado los recelos de no pocas personas en la comunidad.** ¿La razón? Mucha gente opina que esto refuerza el papel dominador de Google en Internet pero... ¿es eso exactamente así? En mi opinión, aunque entiendo ese miedo, no lo creo.
 
 ## ¿Pero qué es Chromium?
 
-**Chromium es el navegador de código abierto del que Chrome obtiene su código fuente.** Sin embargo, hay que tener claro que aunque comparten la mayor parte del código hay algunas funcionalidades que sólo existen en Chrome como, por ejemplo, el lector de archivos PDF o el inicio de sesión en Google. Esto ha permitido que otros navegadores tomen como base Chromium. Dos grandes destacados son Opera y Brave. Y, pese a ello, ofrecen una experiencia de usuario sensiblemente diferente a Chrome.
+**Chromium es el navegador de código abierto del que Chrome obtiene su código fuente.** Sin embargo, hay que tener claro que aunque comparten la mayor parte del código hay algunas funcionalidades que sólo existen en Chrome como, por ejemplo, el lector de archivos PDF o el inicio de sesión en Google. Esto ha permitido que otros navegadores tomen como base Chromium. **Dos grandes destacados son Opera y Brave.** Y, pese a ello, ofrecen una experiencia de usuario sensiblemente diferente a Chrome.
 
 <div className='img img-left' alt='Opera Browser ofrece una experiencia de usuario bastante distinta a Chrome pese a compartir motor'>
 
@@ -67,6 +69,8 @@ También, al simplificar la vida de los desarrolladores web, deberían disfrutar
 He visto muchos usuarios en Twitter diciendo que este movimiento es una noticia triste, ya que la salud del ecosistema de los navegadores se verá afectada. Pero... **¿Era mejor que Edge usase su propio motor propietario que usar Chromium que es de código abierto?** No lo sé. Yo diría que no. Creo que todos vamos a coincidir que esta decisión le dará a Google una victoria moral importante pero... ¿de verdad preferíamos, tanto desarrolladores como usuarios, que Microsoft siga usando el motor de Edge que tantas penas nos ha traido?
 
 <blockquote class="twitter-tweet" data-cards="hidden" data-lang="es"><p lang="en" dir="ltr">Yet one less browser engine would be sad news for the Web :/ <a href="https://t.co/ZwZuGgcCIb">https://t.co/ZwZuGgcCIb</a></p>&mdash; Chris Dumez (@chris_dumez) <a href="https://twitter.com/chris_dumez/status/1069825747609575424?ref_src=twsrc%5Etfw">4 de diciembre de 2018</a></blockquote>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Pero, lo que es más importante, **¿esto significa que siempre deba ser así?** Quiero decir. ¿Por qué le damos tanta importancia a que Microsoft decida usar Chromium como el motor de su próximo navegador? En su día Chrome utilizó Webkit, que era de código abierto, y tras unos años lanzaron su propio fork, Blink. **¿Por qué no puede hacer Microsoft lo mismo? ¿Eso sería algo malo para el ecosistema? Creo que todo lo contrario.**
 
