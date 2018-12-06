@@ -37,6 +37,9 @@ const GoHomeIcon = () => (
   </React.Fragment>
 )
 
+const getCanonical = ({base = 'https://midudev.com', url}) =>
+  url ? `${base}/${url}/` : base
+
 const DEFAULT_DESCRIPTION =
   'Artículos sobre Frontend, Performance Web, Ingeniería del Software, Javascript, React y CSS por midudev'
 
@@ -49,6 +52,7 @@ export default ({
   children,
   title = DEFAULT_TITLE,
   description = DEFAULT_DESCRIPTION,
+  url = '',
   image = DEFAULT_IMAGE
 }) => (
   <React.Fragment>
@@ -77,14 +81,18 @@ export default ({
       />
 
       <meta name="description" content={description} />
+      <link rel="canonical" href={getCanonical({url})} />
 
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@midudev" />
-      <meta name="twitter:domain" content="midudev.com" />
-      <meta name="twitter:creator" content="@midudev" />
-      <meta name="twitter:title" content={title} />
+      <meta name="og:description" content={description} />
       <meta name="og:image" content={image} />
+      <meta name="og:title" content={title} />
+      <meta name="og:url" content={getCanonical({url})} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content="@midudev" />
+      <meta name="twitter:domain" content="midudev.com" />
       <meta name="twitter:image" content={image} />
+      <meta name="twitter:site" content="@midudev" />
+
       <link rel="manifest" href="/static/manifest.json" />
     </Head>
     <main>

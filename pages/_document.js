@@ -12,7 +12,7 @@ export default class extends Document {
 
   render() {
     return (
-      <html lang="es">
+      <html lang="es" prefix="og: http://ogp.me/ns#">
         <CustomHead>
           <meta charSet="utf-8" />
           <meta
