@@ -23,7 +23,7 @@ Sin embargo, esta noticia que llega tras días de rumores, **ha despertado los r
 
 </div>
 
-Es importante saber que Chromium comenzó en su día basándose en **[WebKit](https://webkit.org/), el motor para navegadores web de código abierto creado por Apple para Safari** pero, tras unos años, [Google hizo un fork del proyecto](https://blog.chromium.org/2013/04/blink-rendering-engine-for-chromium.html) para continuar por evolucionandólo por su parte sin la necesidad de depender de Apple.
+Es importante saber que Chromium comenzó en su día basándose en **[WebKit](https://webkit.org/), el motor para navegadores web de código abierto creado por Apple para Safari** pero, tras unos años, [Google hizo un fork del proyecto](https://blog.chromium.org/2013/04/blink-rendering-engine-for-chromium.html) para continuar evolucionandólo por su parte sin la necesidad de depender de Apple.
 
 Y ahora que sabes qué es Chromium deja que te cuente las **razones por las que creo que esto es una buena noticia no sólo para Microsoft**, si no para los desarrolladores e incluso los usuarios.
 
