@@ -24,7 +24,7 @@ const PageBreakIcon = () => (
 export default withPost(({post}) => {
   const {data, raw} = post
   return (
-    <Layout title={data.title} description={data.description} url={data.url}>
+    <Layout {...data}>
       <ScrollProgress />
       <article>
         <section>

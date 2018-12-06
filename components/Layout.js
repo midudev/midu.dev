@@ -38,8 +38,11 @@ const GoHomeIcon = () => (
   </React.Fragment>
 )
 
-const getCanonical = ({base = 'https://midudev.com', url}) =>
-  url ? `${base}/${url}/` : base
+const getCanonical = ({base = 'https://midudev.com', url = ''}) => {
+  const isFirstCharPath = url[0] === '/'
+  const normalizedUrl = isFirstCharPath ? url.substr(1) : url
+  return normalizedUrl !== '' ? `${base}/${normalizedUrl}/` : base
+}
 
 const DEFAULT_DESCRIPTION =
   'Artículos sobre Frontend, Performance Web, Ingeniería del Software, Javascript, React y CSS por midudev'
