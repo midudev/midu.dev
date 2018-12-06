@@ -68,8 +68,6 @@ He visto muchos usuarios en Twitter diciendo que este movimiento es una noticia 
 
 <blockquote class="twitter-tweet" data-cards="hidden" data-lang="es"><p lang="en" dir="ltr">Yet one less browser engine would be sad news for the Web :/ <a href="https://t.co/ZwZuGgcCIb">https://t.co/ZwZuGgcCIb</a></p>&mdash; Chris Dumez (@chris_dumez) <a href="https://twitter.com/chris_dumez/status/1069825747609575424?ref_src=twsrc%5Etfw">4 de diciembre de 2018</a></blockquote>
 
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 Pero, lo que es más importante, **¿esto significa que siempre deba ser así?** Quiero decir. ¿Por qué le damos tanta importancia a que Microsoft decida usar Chromium como el motor de su próximo navegador? En su día Chrome utilizó Webkit, que era de código abierto, y tras unos años lanzaron su propio fork, Blink. **¿Por qué no puede hacer Microsoft lo mismo? ¿Eso sería algo malo para el ecosistema? Creo que todo lo contrario.**
 
 > ¿Por qué no puede hacer Microsoft como Google y usar Chromium como punto de partida para su próximo nuevo motor para Edge?
