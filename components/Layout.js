@@ -83,10 +83,10 @@ export default ({
       <meta name="description" content={description} />
       <link rel="canonical" href={getCanonical({url})} />
 
-      <meta name="og:description" content={description} />
-      <meta name="og:image" content={image} />
-      <meta name="og:title" content={title} />
-      <meta name="og:url" content={getCanonical({url})} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:title" content={title} />
+      <meta property="og:url" content={getCanonical({url})} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content="@midudev" />
       <meta name="twitter:domain" content="midudev.com" />
