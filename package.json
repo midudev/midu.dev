@@ -1,0 +1,43 @@
+{
+  "name": "midudev.com",
+  "version": "1.0.0",
+  "description": "https://midudev.com website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nextein",
+    "export": "nextein build && nextein export",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midudev/midudev.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/midudev/midudev.com/issues"
+  },
+  "homepage": "https://github.com/midudev/midudev.com#readme",
+  "dependencies": {
+    "next": "7.0.2",
+    "nextein": "2.1.2",
+    "react": "next",
+    "react-dom": "next",
+    "read-time": "^1.0.0"
+  },
+  "devDependencies": {
+    "@s-ui/lint": "2.20.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@s-ui/lint/eslintrc.js"
+    ],
+    "rules": {
+      "react/jsx-no-undef": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off"
+    }
+  },
+  "sasslintConfig": "./node_modules/@s-ui/lint/sass-lint.yml"
+}
