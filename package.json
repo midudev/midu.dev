@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nextein",
-    "export": "nextein build && nextein export",
+    "build": "nextein build && nextein export",
+    "now-build": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
