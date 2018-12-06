@@ -1,0 +1,9 @@
+{
+  "name": "midudev.com",
+  "short_name": "midudev",
+  "theme_color": "#0099ff",
+  "background_color": "#ffffff",
+  "display": "minimal-ui",
+  "scope": "/",
+  "start_url": "./?utm_source=web_app_manifest"
+}
