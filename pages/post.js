@@ -36,7 +36,7 @@ export default withPost(({post}) => {
           <PageBreakIcon />
           <Content {...post} />
         </div>
-        <ShareArticle />
+        <ShareArticle title={data.title} />
       </article>
       <style jsx>{`
         h1 {

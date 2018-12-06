@@ -12,7 +12,7 @@ const ShareIcon = () => (
   </React.Fragment>
 )
 
-export default () => (
+export default ({title}) => (
   <React.Fragment>
     <div>
       <ShareIcon />
@@ -27,11 +27,12 @@ export default () => (
       <a
         href="https://twitter.com/share?ref_src=twsrc%5Etfw"
         className="twitter-share-button"
-        data-size="large"
-        data-via="midudev"
-        data-related="midudev"
         data-dnt="true"
+        data-related="midudev"
         data-show-count="false"
+        data-size="large"
+        data-text={`Me ha gustado el artículo "${title}"`}
+        data-via="midudev"
       >
         Tweet
       </a>
