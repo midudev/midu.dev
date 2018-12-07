@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nextein",
     "dev:static": "npm run build && serve out",
-    "build": "nextein build && nextein export",
+    "build": "nextein build && nextein export && cp ./out/static/sw.js ./out/sw.js",
     "now-build": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
