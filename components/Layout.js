@@ -73,20 +73,14 @@ export default ({
       <script
         dangerouslySetInnerHTML={{
           __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_TRACKING_ID}');
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', '${GA_TRACKING_ID}', 'auto');
+            ga('send', 'pageview');
         `
         }}
       />
-
       <RegisterServiceWorker />
-
-      <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
+      <script async src={`https://www.google-analytics.com/analytics.js`} />
 
       <meta name="description" content={description} />
       <link rel="canonical" href={getCanonical({url})} />
