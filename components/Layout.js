@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Preconnect from './Head/Preconnect'
 import Favicons from './Head/Favicons'
 import GlobalStyles from './GlobalStyles'
+import RegisterServiceWorker from './RegisterServiceWorker'
 
 const GA_TRACKING_ID = 'UA-30525085-8'
 
@@ -79,6 +80,8 @@ export default ({
         `
         }}
       />
+
+      <RegisterServiceWorker />
 
       <script
         async
