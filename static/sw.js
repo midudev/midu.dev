@@ -16,15 +16,15 @@ routing.registerRoute(
   strategies.staleWhileRevalidate()
 )
 
-// routing.registerRoute(
-//   ({url}) => url.pathname === '/',
-//   strategies.networkFirst({cacheName: 'home'})
-// )
+routing.registerRoute(
+  ({url}) => url.pathname === '/',
+  strategies.networkFirst({cacheName: 'home'})
+)
 
-// routing.registerRoute(
-//   new RegExp('(([a-z0-9]+-)+[a-z0-9]+)(/)?$'),
-//   strategies.networkFirst({cacheName: 'articles'})
-// )
+routing.registerRoute(
+  new RegExp('(([a-z0-9]+-)+[a-z0-9]+)(/)?$'),
+  strategies.networkFirst({cacheName: 'articles'})
+)
 
 // routing.registerRoute(
 //   new RegExp('/static/'),
