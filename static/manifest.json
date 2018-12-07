@@ -5,5 +5,5 @@
   "background_color": "#ffffff",
   "display": "minimal-ui",
   "scope": "/",
-  "start_url": "./?utm_source=web_app_manifest"
+  "start_url": "/?utm_source=web_app_manifest"
 }
