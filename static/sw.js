@@ -7,11 +7,6 @@ const {expiration, googleAnalytics, routing, strategies} = workbox
 googleAnalytics.initialize()
 
 routing.registerRoute(
-  'https://www.googletagmanager.com/gtag/js?id=UA-30525085-8',
-  strategies.staleWhileRevalidate()
-)
-
-routing.registerRoute(
   'https://www.google-analytics.com/analytics.js',
   strategies.staleWhileRevalidate()
 )
