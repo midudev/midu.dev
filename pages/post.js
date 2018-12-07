@@ -1,7 +1,6 @@
 import React from 'react'
 import withPost, {Content} from 'nextein/post'
 
-import ScrollProgress from '../components/ScrollProgress'
 import ArticleInfo from '../components/ArticleInfo'
 import Layout from '../components/Layout'
 import ShareArticle from '../components/ShareArticle'
@@ -25,7 +24,6 @@ export default withPost(({post}) => {
   const {data, raw} = post
   return (
     <Layout {...data}>
-      <ScrollProgress />
       <article>
         <section>
           <h1>{data.title}</h1>
