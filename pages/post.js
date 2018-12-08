@@ -22,12 +22,13 @@ const PageBreakIcon = () => (
 
 export default withPost(({post}) => {
   const {data, raw} = post
+
   return (
     <Layout {...data}>
       <article>
         <section>
           <h1>{data.title}</h1>
-          <ArticleInfo data={data} rawContent={raw} />
+          <ArticleInfo category={data.topic} rawContent={raw} />
           <strong>{data.description}</strong>
         </section>
         <div id="article">

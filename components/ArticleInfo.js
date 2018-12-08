@@ -9,12 +9,12 @@ function getReadTime({rawContent}) {
   return `${m}min.`
 }
 
-export default ({categories, rawContent = ''}) => (
+export default ({category, rawContent = ''}) => (
   <React.Fragment>
     <section>
-      {categories && (
+      {category && (
         <span>
-          <IconsCategories categoriesToShow={categories} />
+          <IconsCategories category={category} />
         </span>
       )}
       <span>
