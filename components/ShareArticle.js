@@ -17,14 +17,6 @@ export default ({title}) => (
     <div>
       <ShareIcon />
       <a
-        href="https://twitter.com/midudev"
-        className="twitter-follow-button"
-        data-show-count="false"
-        data-size="large"
-      >
-        Follow @midudev
-      </a>
-      <a
         href="https://twitter.com/share?ref_src=twsrc%5Etfw"
         className="twitter-share-button"
         data-dnt="true"
