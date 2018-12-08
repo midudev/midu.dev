@@ -6,7 +6,7 @@ import readTime from 'read-time'
 
 function getReadTime({rawContent}) {
   const {m} = readTime(rawContent)
-  return `~ ${m}min.`
+  return `${m}min.`
 }
 
 export default ({categories, rawContent = ''}) => (
@@ -33,6 +33,9 @@ export default ({categories, rawContent = ''}) => (
         align-items: center;
         display: flex;
         opacity: 0.75;
+      }
+      section span:last-child {
+        padding-right: 0;
       }
       em {
         margin-left: 4px;
