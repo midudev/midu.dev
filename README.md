@@ -3,7 +3,8 @@ https://midudev.com website
 
 TODO:
 
-[ ] Create or use plugin to download and optimize extenral images
+[ ] Lazy load and blur images using lazysizes
+[ ] Create or use plugin to download and optimize external images
 [ ] Create or use a plugin to convert code to prismjs
 [ ] Create plugin to put in the frontmatter the first image of the article
 [ ] Add a Newsletter
