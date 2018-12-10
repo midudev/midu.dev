@@ -32,7 +32,6 @@ export default withPost(({post}) => {
           <strong>{data.description}</strong>
         </section>
         <div id="article">
-          <PageBreakIcon />
           <Content {...post} />
         </div>
         <ShareArticle title={data.title} />
@@ -44,6 +43,11 @@ export default withPost(({post}) => {
           font-size: 40px;
           line-height: 100%;
           padding-bottom: 16px;
+        }
+        div {
+          margin-top: 16px;
+          padding-top: 16px;
+          border-top: 1px dashed #ddd;
         }
         strong {
           color: #555;
