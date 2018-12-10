@@ -141,7 +141,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox
 
 workbox.routing.registerRoute(
   'https://www.google-analytics.com/analytics.js',
-  strategies.staleWhileRevalidate()
+  workbox.strategies.staleWhileRevalidate()
 )
 
 workbox.googleAnalytics.initialize();
