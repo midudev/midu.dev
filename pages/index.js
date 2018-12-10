@@ -26,9 +26,8 @@ export default withPosts(({posts}) => {
           display: block;
           line-height: 1;
           margin-bottom: 16px;
-          padding: 8px 16px;
+          padding: 16px;
           position: relative;
-          text-decoration: none;
           transition: all 0.3s ease-in-out;
         }
 
@@ -38,7 +37,7 @@ export default withPosts(({posts}) => {
         }
 
         p {
-          color: rgba(0, 0, 0, 0.54) !important;
+          color: #777;
           font-size: 14px;
           line-height: 20px;
           padding: 16px 0 0;
