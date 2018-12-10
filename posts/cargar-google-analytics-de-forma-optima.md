@@ -1,6 +1,6 @@
 ---
 title: La mejor forma de cargar Google Analytics en tu web para performance
-date: '2018-12-05'
+date: '2018-12-10'
 image: 'https://www.rdstation.com/blog/wp-content/uploads/sites/2/2018/04/Analytics.png'
 description: 'Muchas veces vamos a querer cargar Google Analytics en nuestra página web pero nos gustaría evitar el coste en performance que tiene. Te voy a explicar la mejor estrategia para cargar esta librería afectando lo mínimo posible la performance.'
 topic: performance
