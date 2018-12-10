@@ -34,11 +34,6 @@ export default ({
     <Head>
       <title>{`${title} | midudev`}</title>
 
-      {/* Preload here */}
-
-      <Preconnect />
-      <Favicons />
-
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -48,8 +43,12 @@ export default ({
         `
         }}
       />
-      <RegisterServiceWorker />
       <script async src={`https://www.google-analytics.com/analytics.js`} />
+
+      <RegisterServiceWorker />
+
+      <Preconnect />
+      <Favicons />
 
       <meta name="description" content={description} />
       <link rel="canonical" href={getCanonical({url})} />
