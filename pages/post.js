@@ -5,21 +5,6 @@ import ArticleInfo from '../components/ArticleInfo'
 import Layout from '../components/Layout'
 import ShareArticle from '../components/ShareArticle'
 
-const PageBreakIcon = () => (
-  <React.Fragment>
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-      <path d="M17.5 9h-15C1.673 9 1 8.327 1 7.5v-6a.5.5 0 0 1 1 0v6a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 1 1 0v6c0 .827-.673 1.5-1.5 1.5zM1.5 11h-1a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zM4.5 11h-1a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zM7.5 11h-1a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zM10.5 11h-1a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zM13.5 11h-1a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zM16.5 11h-1a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zM19.5 11h-1a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1zM18.5 20a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 0-.5-.5h-15a.5.5 0 0 0-.5.5v6a.5.5 0 0 1-1 0v-6c0-.827.673-1.5 1.5-1.5h15c.827 0 1.5.673 1.5 1.5v6a.5.5 0 0 1-.5.5z" />
-    </svg>
-    <style jsx>{`
-      svg {
-        display: block;
-        fill: #aaa;
-        margin: 16px auto;
-      }
-    `}</style>
-  </React.Fragment>
-)
-
 export default withPost(({post}) => {
   const {data, raw} = post
 
@@ -28,7 +13,11 @@ export default withPost(({post}) => {
       <article>
         <section>
           <h1>{data.title}</h1>
-          <ArticleInfo category={data.topic} rawContent={raw} />
+          <ArticleInfo
+            category={data.topic}
+            date={data.date}
+            rawContent={raw}
+          />
           <strong>{data.description}</strong>
         </section>
         <div id="article">

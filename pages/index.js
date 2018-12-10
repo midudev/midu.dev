@@ -10,7 +10,11 @@ export default withPosts(({posts}) => {
       {posts.map(({data, raw}, index) => (
         <a href={`${data.url}/#article`} key={`post-${index}`}>
           <h2>{data.title}</h2>
-          <ArticleInfo category={data.topic} rawContent={raw} />
+          <ArticleInfo
+            date={data.date}
+            category={data.topic}
+            rawContent={raw}
+          />
           <p>{data.description}</p>
         </a>
       ))}
