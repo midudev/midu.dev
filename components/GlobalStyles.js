@@ -26,19 +26,19 @@ export default () => (
         margin: 0;
         padding: 0;
       }
-
+      a {
+        text-decoration: none;
+      }
       img {
         width: 100%;
         height: auto;
       }
-
       hr {
         background: #ccc;
         border: 0;
         height: 1px;
         margin-bottom: 16px;
       }
-
       code,
       pre {
         font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New,
@@ -53,97 +53,120 @@ export default () => (
         word-spacing: normal;
         word-wrap: normal;
       }
-
-      /* Code blocks */
       pre {
-        background: #011627;
-        border-radius: 10px;
+        background: #282c34;
+        color: #979db4;
         color: white;
         overflow: auto;
         padding: 16px;
       }
-
-      /* Text Selection colour */
+      code {
+        font-size: 14px;
+      }
       pre::selection,
-      pre ::selection,
-      code::selection,
-      code ::selection {
+      code::selection {
+        background: #09f;
         text-shadow: none;
-        background: hsla(0, 0%, 93%, 0.15);
+        opacity: 0.3;
       }
 
       p + pre {
         margin-top: -12px;
       }
 
+      p,
+      li {
+        color: #333;
+        font-size: 16px;
+        line-height: 150%;
+        padding-bottom: 24px;
+      }
+
+      li {
+        color: #555;
+      }
+
+      ul {
+        padding: 0 16px 0 32px;
+      }
+
       /* Inline code */
       :not(pre) > code {
-        background: rgba(0, 153, 255, 0.2);
+        background: #fff8c3;
         border-radius: 2px;
         color: #1a1a1a;
         padding: 2px 4px 1px;
         white-space: normal;
       }
 
-      .token.attr-name {
-        color: rgb(173, 219, 103);
-        font-style: italic;
-      }
-
-      .token.comment {
-        color: rgb(99, 119, 119);
-      }
-
-      .token.string,
-      .token.url {
-        color: rgb(173, 219, 103);
-      }
-
-      .token.variable {
-        color: rgb(214, 222, 235);
-      }
-
-      .token.number {
-        color: rgb(247, 140, 108);
-      }
-
-      .token.builtin,
-      .token.char,
-      .token.constant,
-      .token.function {
-        color: rgb(130, 170, 255);
+      .token.comment,
+      .token.prolog,
+      .token.doctype,
+      .token.cdata {
+        color: #5c6370;
       }
 
       .token.punctuation {
-        color: rgb(199, 146, 234);
+        color: #abb2bf;
       }
 
       .token.selector,
-      .token.doctype {
-        color: rgb(199, 146, 234);
-        font-style: 'italic';
+      .token.tag {
+        color: #e06c75;
       }
 
-      .token.class-name {
-        color: rgb(255, 203, 139);
+      .token.property,
+      .token.boolean,
+      .token.number,
+      .token.constant,
+      .token.symbol,
+      .token.attr-name,
+      .token.deleted {
+        color: #d19a66;
       }
 
-      .token.tag,
+      .token.string,
+      .token.char,
+      .token.attr-value,
+      .token.builtin,
+      .token.inserted {
+        color: #98c379;
+      }
+
       .token.operator,
+      .token.entity,
+      .token.url,
+      .language-css .token.string,
+      .style .token.string {
+        color: #56b6c2;
+      }
+
+      .token.atrule,
       .token.keyword {
-        color: #ffa7c4;
+        color: #c678dd;
       }
 
-      .token.boolean {
-        color: rgb(255, 88, 116);
+      .token.function {
+        color: #61afef;
       }
 
-      .token.property {
-        color: rgb(128, 203, 196);
+      .token.regex,
+      .token.important,
+      .token.variable {
+        color: #c678dd;
       }
 
-      .token.namespace {
-        color: rgb(178, 204, 214);
+      .token.important,
+      .token.bold {
+        font-weight: bold;
+      }
+
+      .token.italic {
+        font-style: italic;
+      }
+
+      .token.entity {
+        cursor: help;
       }
 
       pre[data-line] {
@@ -194,25 +217,8 @@ export default () => (
         text-transform: uppercase;
       }
 
-      p,
-      li {
-        color: #333;
-        font-size: 16px;
-        line-height: 150%;
-        padding-bottom: 24px;
-      }
-
-      li {
-        color: #555;
-      }
-
-      ul {
-        padding: 0 16px 0 32px;
-      }
-
       #article a {
         color: #09f;
-        text-decoration: none;
       }
 
       #article a:hover {
@@ -222,21 +228,26 @@ export default () => (
       twitter-widget {
         margin: 0 auto;
       }
+
       .img {
         padding-bottom: 16px;
       }
+
       .img-left {
         float: left;
         max-width: 50%;
         padding-right: 16px;
       }
+
       .img-left p {
         padding: 0;
       }
+
       .img-left img {
         height: auto;
         width: 100%;
       }
+
       .img::after {
         color: #666;
         content: attr(alt);
