@@ -31,7 +31,12 @@
     "remark-external-links": "3.1.1"
   },
   "devDependencies": {
-    "@s-ui/lint": "2.20.0"
+    "@s-ui/lint": "2.20.0",
+    "got": "9.3.2",
+    "remark": "10.0.1",
+    "sharp": "0.21.1",
+    "to-vfile": "5.0.2",
+    "vfile": "3.0.1"
   },
   "eslintConfig": {
     "extends": [
