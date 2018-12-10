@@ -1,6 +1,7 @@
 import Calendar from './Icons/Calendar'
 import IconsCategories from './Icons/Categories'
 import Timer from './Icons/Timer'
+import DateTime from './DateTime'
 
 import readTime from 'read-time'
 
@@ -9,7 +10,7 @@ function getReadTime({rawContent}) {
   return `${m}min.`
 }
 
-export default ({category, rawContent = ''}) => (
+export default ({category, date, rawContent = ''}) => (
   <React.Fragment>
     <section>
       {category && (
@@ -23,9 +24,7 @@ export default ({category, rawContent = ''}) => (
       </span>
       <span>
         <Calendar />
-        <time>
-          <em>Hoy</em>
-        </time>
+        <DateTime date={date} />
       </span>
     </section>
     <style jsx>{`
@@ -34,14 +33,11 @@ export default ({category, rawContent = ''}) => (
         display: flex;
         opacity: 0.75;
       }
-      section span:last-child {
-        padding-right: 0;
-      }
       em {
         margin-left: 4px;
       }
-      time {
-        padding-left: 4px;
+      section span:last-child {
+        padding-right: 0;
       }
       span {
         align-items: center;
