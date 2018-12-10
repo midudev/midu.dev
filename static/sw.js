@@ -2,23 +2,21 @@ importScripts(
   'https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js'
 )
 
-const {expiration, googleAnalytics, routing, strategies} = workbox
+workbox.googleAnalytics.initialize()
 
-googleAnalytics.initialize()
-
-routing.registerRoute(
+workbox.routing.registerRoute(
   'https://www.google-analytics.com/analytics.js',
-  strategies.staleWhileRevalidate()
+  workbox.strategies.staleWhileRevalidate()
 )
 
-routing.registerRoute(
+workbox.routing.registerRoute(
   ({url}) => url.pathname === '/',
-  strategies.networkFirst({cacheName: 'home'})
+  workbox.strategies.networkFirst({cacheName: 'home'})
 )
 
-routing.registerRoute(
+workbox.routing.registerRoute(
   new RegExp('(([a-z0-9]+-)+[a-z0-9]+)(/)?$'),
-  strategies.networkFirst({cacheName: 'articles'})
+  workbox.strategies.networkFirst({cacheName: 'articles'})
 )
 
 // routing.registerRoute(

@@ -129,3 +129,20 @@ Como podéis ver, **ahora solo tenemos que hacer preconnect y prefetch de un sol
 ✅ coloca en el `<head>` el snippet de código.<br />
 ✅ separa el snippet para colocar el código en línea antes de tus estilos y el otro después.<br />
 ✅ usa  preconnect y dns-prefetch para cargar cuanto antes la librería. 
+
+## Bonus points!
+
+Si todavía quieres ir más allá, **puedes usar Service Workers para conseguir dos cosas**: sincronizar el tracking cuando la conexión del usuario no es muy buena y para cachear la request a ga.js. Esto es especialmente interesante si estás creando una aplicación o web que debería funcionar en modo sin conexión.
+
+**Para activar Google Analytics de forma offline**, sólo tenéis que usar el siguiente código en vuestro Service Worker, gracias a workbox:
+
+```javascript
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js');
+
+workbox.routing.registerRoute(
+  'https://www.google-analytics.com/analytics.js',
+  strategies.staleWhileRevalidate()
+)
+
+workbox.googleAnalytics.initialize();
+```
