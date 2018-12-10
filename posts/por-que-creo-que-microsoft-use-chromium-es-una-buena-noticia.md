@@ -9,7 +9,7 @@ language: 🇪🇸
 
 Ya hay confirmación oficial. **[Microsoft planea adoptar Chromium como motor para su navegador Microsoft Edge y abandonará su motor propietario.](https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/)** Un paso más para extender la contribución de Microsoft al OSS (open source software) y un volantazo muy importante sobre la política de Microsoft respecto a los navegadores web después de años y años de fracasos continuados.
 
-![5c09a0bc46a2b](/static/images/microsoft-edge-presentation.jpg)
+![5c09a0bc46a2b](../static/images/microsoft-edge-presentation.jpg)
 
 Sin embargo, esta noticia que llega tras días de rumores, **ha despertado los recelos de no pocas personas en la comunidad.** ¿La razón? Mucha gente opina que esto refuerza el papel dominador de Google en Internet pero... ¿es eso exactamente así? En mi opinión, aunque entiendo ese miedo, no lo creo.
 
@@ -19,7 +19,7 @@ Sin embargo, esta noticia que llega tras días de rumores, **ha despertado los r
 
 <div className='img img-left' alt='Opera Browser ofrece una experiencia de usuario bastante distinta a Chrome pese a compartir motor'>
 
- ![Opera Browser](/static/images/opera.jpg)
+ ![Opera Browser](../static/images/opera.jpg)
 
 </div>
 
@@ -46,7 +46,7 @@ Más adelante hay una sección que habla de algunas opiniones contrarias a esta 
 * **Edge seguía siendo un dolor de cabeza a la hora de desarrollar webs.** Y no hablamos sólo de las muy mejorables herramientas de desarrollo que ofrecía. Tampoco el motor nunca ha sido capaz, pese a los múltiples esfuerzos, de estar a la altura de Firefox o Chrome. Su ritmo de versiones también ha estado siempre por detrás de la competencia y, aún hoy, no ha sido capaz de recuperar la cuota de mercado que mantiene Internet Explorer.
 
 <div class='img' alt='Edge todavía no soporta gran parte de la tecnología de los Web Components y necesita polyfills para hacerlos funcionar'>
-  <img src='/static/images/caniuseedge.png' alt='Can I Use Edge Web Components' />
+  <img src='../static/images/caniuseedge.png' alt='Can I Use Edge Web Components' />
 </div>
 
 * **Menos fragmentación.** Tener que preocuparse de un motor de navegador a la hora de trabajar va a ser un alivio para muchos desarrolladores, entre los que yo me incluyo. En la diversidad está el gusto pero tampoco ayudaba que existiesen tantos motores diferentes y, algunos como este, tan problemáticos.
