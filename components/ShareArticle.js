@@ -28,11 +28,7 @@ export default ({title}) => (
       >
         Tweet
       </a>
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charSet="utf-8"
-      />
+      <script async src="https://platform.twitter.com/widgets.js" />
     </div>
     <style jsx>{`
       div {
