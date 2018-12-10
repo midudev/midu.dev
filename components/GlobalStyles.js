@@ -57,6 +57,7 @@ export default () => (
         background: #282c34;
         color: #979db4;
         color: white;
+        margin: 0 0 16px 0;
         overflow: auto;
         padding: 16px;
       }
@@ -69,11 +70,6 @@ export default () => (
         text-shadow: none;
         opacity: 0.3;
       }
-
-      p + pre {
-        margin-top: -12px;
-      }
-
       p,
       li {
         color: #333;
@@ -81,15 +77,12 @@ export default () => (
         line-height: 150%;
         padding-bottom: 24px;
       }
-
       li {
         color: #555;
       }
-
       ul {
         padding: 0 16px 0 32px;
       }
-
       /* Inline code */
       :not(pre) > code {
         background: #fff8c3;
