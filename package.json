@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/midudev/midudev.com#readme",
   "dependencies": {
+    "@mapbox/rehype-prism": "0.3.0",
     "next": "7.0.2",
     "nextein": "2.1.2",
     "react": "next",
