@@ -3,6 +3,7 @@ https://midudev.com website
 
 TODO:
 
+[ ] Lazy load highlight CSS
 [ ] Lazy load and blur images using lazysizes
 [ ] Create or use plugin to download and optimize external images
 [ ] Create or use a plugin to convert code to prismjs
