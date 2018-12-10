@@ -9,15 +9,15 @@ workbox.routing.registerRoute(
   workbox.strategies.staleWhileRevalidate()
 )
 
-workbox.routing.registerRoute(
-  ({url}) => url.pathname === '/',
-  workbox.strategies.networkFirst({cacheName: 'home'})
-)
+// workbox.routing.registerRoute(
+//   ({url}) => url.pathname === '/',
+//   workbox.strategies.networkFirst({cacheName: 'home'})
+// )
 
-workbox.routing.registerRoute(
-  new RegExp('(([a-z0-9]+-)+[a-z0-9]+)(/)?$'),
-  workbox.strategies.networkFirst({cacheName: 'articles'})
-)
+// workbox.routing.registerRoute(
+//   new RegExp('(([a-z0-9]+-)+[a-z0-9]+)(/)?$'),
+//   workbox.strategies.networkFirst({cacheName: 'articles'})
+// )
 
 // routing.registerRoute(
 //   new RegExp('/static/'),
