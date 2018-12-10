@@ -57,7 +57,7 @@ export default ({
       <meta property="og:image" content={image} />
       <meta property="og:title" content={title} />
       <meta property="og:url" content={getCanonical({url})} />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@midudev" />
       <meta name="twitter:domain" content="midudev.com" />
       <meta name="twitter:image" content={image} />

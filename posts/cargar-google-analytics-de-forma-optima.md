@@ -9,7 +9,7 @@ language: 🇪🇸
 
 Cargar Google Analytics tiene, lo quieras o no, un impacto en la performance de tu página web. **No es la peor librería de terceros para añadir en tu web** (¡Hola Optimizely 🤪!) porque, en ese aspecto, Google tiene cierta sensibilidad en hacer que tu web cargue rápido pero... **eso no significa que siempre nos vaya a proporcionar la mejor opción**. Por defecto Google nos ofrece un código que puede ser interesante si estamos pensando en usar otros productos de la compañía pero podemos hacer algunas mejoras o... directamente usar otro.
 
-![Google Analytics Logo](https://www.rdstation.com/blog/wp-content/uploads/sites/2/2018/04/Analytics.png)
+![Google Analytics Logo](../static/images/analytics.png)
 
 Pero empecemos por el principio, si vamos a las `opciones de nuestra propiedad -> Información de Seguimiento -> Código de seguimiento`, allí nos recomendará el siguiente trozo de código para implementar en nuestra web para activar el seguimiento de Google Analytics:
 
@@ -107,8 +107,6 @@ Igual que en el anterior, también podemos hacer un preconnect y un dns-prefetch
 Como podéis ver, **ahora solo tenemos que hacer preconnect y prefetch de un solo recurso**. Y ahí ya tenemos una pista de la gran ventaja que tiene este método y es que, en el caso anterior debíamos hacer dos requests para poder empezar a usar Google Analytics mientras que en este método sólo tendremos que hacer una. ¿Y cómo quedaría esto? Una request menos, 31.5KB menos de descarga y casi 100ms más rápido empezar a hacer tracking. 
 
 ![5c0e47d8b3ae8](https://i.loli.net/2018/12/10/5c0e47d8b3ae8.png)
-
-
 
 ## Resumiendo El impacto en performance
 
