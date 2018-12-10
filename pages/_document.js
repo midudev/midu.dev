@@ -14,7 +14,6 @@ export default class extends Document {
     return (
       <html lang="es" prefix="og: http://ogp.me/ns#">
         <CustomHead>
-          <meta charSet="utf-8" />
           <meta
             name="viewport"
             content="width=device-width, minimum-scale=1.0"
