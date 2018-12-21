@@ -1,10 +1,11 @@
 import React from 'react'
-import withPosts from 'nextein/posts'
+import withPosts, {sortByDate} from 'nextein/posts'
 
 import ArticleInfo from '../components/ArticleInfo'
 import Layout from '../components/Layout'
 
 export default withPosts(({posts}) => {
+  posts.sort(sortByDate)
   return (
     <Layout>
       {posts.map(({data, raw}, index) => (
