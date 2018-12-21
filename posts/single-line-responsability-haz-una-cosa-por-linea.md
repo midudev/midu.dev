@@ -1,7 +1,7 @@
 ---
 title: Single Line Responsibility, one line does one thing
 date: '2018-12-18'
-image: 'https://midudev.com/static/images/slr_one_line_one_thing.png'
+image: 'https://midudev.com/static/images/slr_one_line_one_thing-5395037.png'
 description: "Experience and knowledge could help you writing readable, mantainable and clean code but, following the Single Line Responsibility principle will help you to be sure you're doing it."
 topic: bestpractices
 language: 🇬🇧
