@@ -203,7 +203,7 @@ render() {
   )
 }
 
-// ✅ separate
+// ✅ separate in methods and avoid doing too many things inside the component
 const CHECKBOX_ICONS = { // outside the render, they're not changing never
   checked: IconCheckboxChecked,
   unchecked: IconCheckboxUnchecked
@@ -237,6 +237,7 @@ renderCheckboxLabel () {
 
 render () {
   const {errorMessage} = this.props
+  // calculate if we have to show the card and don't do it in the render
   const showCardSubscription = this._hasFailed(errorMessage) && this._isRegistered()
 
   return (
