@@ -40,9 +40,6 @@ export default () => (
         height: 1px;
         margin-bottom: 16px;
       }
-      iframe {
-        margin-bottom: 16px;
-      }
       code,
       pre {
         font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New,
@@ -222,6 +219,10 @@ export default () => (
 
       #article a {
         color: #09f;
+      }
+
+      #article iframe {
+        margin-bottom: 16px;
       }
 
       #article a:hover {
