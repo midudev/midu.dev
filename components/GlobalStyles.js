@@ -20,6 +20,7 @@ export default () => (
       h1,
       h2,
       h3,
+      h4,
       p,
       ul,
       li {
@@ -37,6 +38,9 @@ export default () => (
         background: #ccc;
         border: 0;
         height: 1px;
+        margin-bottom: 16px;
+      }
+      iframe {
         margin-bottom: 16px;
       }
       code,
@@ -205,6 +209,12 @@ export default () => (
       }
 
       #article h3 {
+        color: #004572;
+        font-size: 18px;
+        padding: 16px;
+      }
+
+      #article h4 {
         color: #067df7;
         font-size: 16px;
         text-transform: uppercase;
