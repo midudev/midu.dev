@@ -177,9 +177,7 @@ Pero lo interesante, que me imagino que lo estáis esperando, es la imagen de ne
 ### Usa minimal Google Analytics snippet
 
 ✅ sólo quieres utilizar lo más básico de Google Analytics.<br />
-
 ✅sabes lo que estás haciendo al cargar este script en línea y aceptas no usar algo oficial de Google para trackear tu página. <br />
-
 ✅eres MUY exigente (como yo! 🙃) con la performance de tu página.
 
 ### Y uses el que uses...
@@ -188,7 +186,7 @@ Pero lo interesante, que me imagino que lo estáis esperando, es la imagen de ne
 ✅ separa el snippet para colocar el código en línea antes de tus estilos y el otro después (en el caso del minimal GA, siempre antes).<br />
 ✅ usa preconnect y dns-prefetch para cargar cuanto antes la librería o las conexiones necesarias.
 
-## Bonus points!
+## Bonus points 🌟!
 
 Si todavía quieres ir más allá, **puedes usar Service Workers para conseguir dos cosas**: sincronizar el tracking cuando la conexión del usuario no es muy buena y para cachear la request a ga.js. Esto es especialmente interesante si estás creando una aplicación o web que debería funcionar en modo sin conexión.
 
