@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+	<title>immutable, el nuevo tipo para declarar variables en Javascript</title>
+
+	<script>
+			(function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
+			h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
+			l=function(){return g.cid||(g.cid=k()),g.cid},m=function(r){var s=[];for(var t in r)
+			r.hasOwnProperty(t)&&void 0!==r[t]&&s.push(h(t)+"="+h(r[t]));return s.join("&")},
+			n=function(r,s,t,u,v,w,x){var z="https://www.google-analytics.com/collect",
+			A=m({v:"1",ds:"web",aip:c.anonymizeIp?1:void 0,tid:b,cid:l(),t:r||"pageview",
+			sd:c.colorDepth&&screen.colorDepth?screen.colorDepth+"-bits":void 0,dr:e.referrer||
+			void 0,dt:e.title,dl:e.location.origin+e.location.pathname+e.location.search,ul:c.language?
+			(f.language||"").toLowerCase():void 0,de:c.characterSet?e.characterSet:void 0,
+			sr:c.screenSize?(a.screen||{}).width+"x"+(a.screen||{}).height:void 0,vp:c.screenSize&&
+			a.visualViewport?(a.visualViewport||{}).width+"x"+(a.visualViewport||{}).height:void 0,
+			ec:s||void 0,ea:t||void 0,el:u||void 0,ev:v||void 0,exd:w||void 0,exf:"undefined"!=typeof x&&
+			!1==!!x?0:void 0});if(f.sendBeacon)f.sendBeacon(z,A);else{var y=new XMLHttpRequest;
+			y.open("POST",z,!0),y.send(A)}};d.pushState=function(r){return"function"==typeof d.onpushstate&&
+			d.onpushstate({state:r}),setTimeout(n,c.delay||10),i.apply(d,arguments)},n(),
+			a.ma={trackEvent:function o(r,s,t,u){return n("event",r,s,t,u)},
+			trackException:function q(r,s){return n("exception",null,null,null,null,r,s)}}})
+			(window,"UA-30525085-8",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true})
+		</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="icon" href="/static/favicon/favicon.ico" type="image/x-icon" />
+	<link
+		rel="apple-touch-icon"
+		sizes="180x180"
+		href="/static/favicon/apple-touch-icon.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="32x32"
+		href="/static/favicon/favicon-32x32.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="16x16"
+		href="/static/favicon/favicon-16x16.png"
+	/>
+
+	<meta name="apple-mobile-web-app-title" content="midudev.com" />
+	<meta name="application-name" content="midudev.com" />
+	<meta name="theme-color" content="#0099ff" />
+
+	<style></style>
+
+	<link
+	rel="preconnect dns-prefetch"
+	href="https://www.google-analytics.com"
+	/>
+	<link rel="preconnect dns-prefetch" href="https://platform.twitter.com" />
+
+	
+	
+	<link rel="stylesheet" href="https://midudev.com/css/style.css">
+	
+
+</head>
+<body>
+	<header id='header'>
+		<div>
+			<a href="/">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+					<path
+						d="M5 15a.502.502 0 0 1-.354-.146l-4-4a.5.5 0 0 1 0-.707l4-4a.5.5 0 0 1 .707.707L1.707 10.5l3.646 3.646a.5.5 0 0 1-.354.853zM15 15a.5.5 0 0 1-.354-.853l3.646-3.646-3.646-3.646a.5.5 0 0 1 .707-.707l4 4a.5.5 0 0 1 0 .707l-4 4a.498.498 0 0 1-.354.146zM7.5 15a.5.5 0 0 1-.424-.765l5-8a.5.5 0 0 1 .848.53l-5 8A.5.5 0 0 1 7.5 15z"
+					></path></svg>
+					<span>midudev</span></a
+			>
+		</div>
+		<div>
+			<a
+				href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Fmidudev.com&amp;ref_src=twsrc%5Etfw&amp;screen_name=midudev&amp;tw_p=followbutton"
+				target="_blank"
+				rel="noopener nofollow"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 612 612"
+					width="24"
+				>
+					<path
+						d="M612 116.258a250.714 250.714 0 0 1-72.088 19.772c25.929-15.527 45.777-40.155 55.184-69.411-24.322 14.379-51.169 24.82-79.775 30.48-22.907-24.437-55.49-39.658-91.63-39.658-69.334 0-125.551 56.217-125.551 125.513 0 9.828 1.109 19.427 3.251 28.606-104.326-5.24-196.835-55.223-258.75-131.174-10.823 18.51-16.98 40.078-16.98 63.101 0 43.559 22.181 81.993 55.835 104.479a125.556 125.556 0 0 1-56.867-15.756v1.568c0 60.806 43.291 111.554 100.693 123.104-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-.803-23.634-2.333 15.985 49.907 62.336 86.199 117.253 87.194-42.947 33.654-97.099 53.655-155.916 53.655-10.134 0-20.116-.612-29.944-1.721 55.567 35.681 121.536 56.485 192.438 56.485 230.948 0 357.188-191.291 357.188-357.188l-.421-16.253c24.666-17.593 46.005-39.697 62.794-64.861z"
+						fill="#1DA1F2"
+					></path></svg>
+				</a>
+				<a
+				href="https://www.youtube.com/channel/UC8LeXCWOalN8SxlrPcG-PaQ"
+				target="_blank"
+				rel="noopener nofollow"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						width="24"
+					>
+						<path
+							d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"
+							fill="#ff0000"></path>
+					</svg>
+				</a>
+		</div>
+	</header>
+	<main>
+		<article>
+			<h1>immutable, el nuevo tipo para declarar variables en Javascript</h1>
+			<time>28.12.2018 00:00</time>
+			<div>
+				
+
+<p>El <a href="https://github.com/tc39">comité Ecma TC39</a> ha anunciado la creación de un nuevo tipo de variables en Javascript. Se llama <code>immutable</code> y viene a satisfacer las necesidades de crear estructuras de datos inmutables en el lenguaje. De esta forma, librerías como <a href="https://facebook.github.io/immutable-js/">immutable.js</a> dejan de tener sentido y <strong>sólo falta que empecemos a ver los primeros navegadores dando soporte a esta nueva funcionalidad.</strong></p>
+
+<p><img src="../static/images/immutable-const-variable.png" alt="immutable es una nueva forma de declarar variables en Javascript" /></p>
+
+<p>Si quieres saber todos los detalles de esta nueva funcionalidad, <strong>¡sigue leyendo!</strong> 👇</p>
+
+<hr />
+
+<div className='img img-left' alt='Este es el muñequillo típico que te recuerda que has caído en una broma de los Santos Inocentes'>
+
+![Este es el muñequillo típico que te recuerda que has caído en una broma de los Santos Inocentes](../static/images/dia_de_los_santos_inocentes.jpg)
+
+</div>
+
+<h2 id="y-lo-mejor-es-que">Y lo mejor es que&hellip;</h2>
+
+<p><strong>Todo esto es una broma.</strong> 🤪 En España, y en parte de Sudamérica, hoy es el <a href="https://es.wikipedia.org/wiki/D%C3%ADa_de_los_Santos_Inocentes">Día de los Santos Inocentes</a>. <strong>Es una especie de April Fools&rsquo; Day donde se hacen bromas de todo tipo.</strong> Como dar noticias falsas, pegar un muñeco en la espalda de la gente o <a href="https://www.levante-emv.com/navidad/2018/12/28/dia-inocentes-2018-mejores-ideas/1814600.html">algunas ingeniosas formas de ganarte el odio de la gente.</a></p>
+
+<p>Sé que es bastante raro, ya que se supone que es el día donde se conmemora la matanza de los niños menores de dos años en Belén, para intentar asesinar a Jesús, pero en la edad media se juntó con los días de los locos (una especie de <a href="https://es.wikipedia.org/wiki/The_Purge">La Purga</a> de la época 😅).</p>
+
+<h2 id="immutable-demasiado-bonito-para-ser-verdad"><code>immutable</code>, demasiado bonito para ser verdad</h2>
+
+<p>La idea de tener un tipo de variable que se llame <code>immutable</code> en realidad viene de una presentación que hice sobre el Javascript del futuro. Allí explicaba los nuevas propuestas que había para el lenguaje y me tomé la licencia de añadir algunas proposiciones propias. Una era la <a href="https://the-next-javascript-presentation.now.sh/#29">simple arrow function</a> <code>-&gt;</code> (que no bindea this como sí hace la arrow function <code>=&gt;</code>) y <a href="https://the-next-javascript-presentation.now.sh/#31">otra, que además tuvo mucha aceptación, era la de <code>immutable</code></a>.</p>
+
+<p>Como me imagino que no quieres irte de aquí con las manos vacías, <strong>vamos a ver cómo podríamos conseguir sin librerías en Javascript crear objetos inmutables</strong>, de forma que no se puedan modificar sus propiedades (ni añadir, ni eliminar, ni cambiar de valor).</p>
+
+<h2 id="creando-objetos-immutables-con-object-freeze">Creando objetos immutables con Object.freeze</h2>
+
+<p>La mejor forma de crear un objeto que sea inmutable en Javascript es utilizando el método <code>Object.freeze</code> de la siguiente forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">freeze</span>({
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Miguel&#39;</span>,
+  <span style="color:#a6e22e">twitter</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;@midudev&#39;</span>
+})
+
+<span style="color:#75715e">// Modificar una propiedad, deja el objeto igual
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Pepito&#39;</span> <span style="color:#75715e">// { name: &#39;Miguel&#39;, twitter: &#39;@midudev&#39; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">name</span>) <span style="color:#75715e">// &#39;Miguel&#39;
+</span><span style="color:#75715e">// Al intentar borrar una propiedad, el objeto sigue igual
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">twitter</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">twitter</span>) <span style="color:#75715e">// &#39;@midudev&#39;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// Al intentar añadir una propiedad nueva, el objeto sigue igual
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">blog</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;midudev.com&#39;</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">blog</span>) <span style="color:#75715e">// undefined
+</span><span style="color:#75715e"></span></code></pre></div>
+<p>Para objetos simples, con un sólo nivel de anidación, <code>Object.freeze</code> puede ser suficiente. Sin embargo, el mayor problema que tiene es que no hace que los objetos que podamos tener en nuestro objeto también sean congelados a modificación. Se puede ver con un simple ejemplo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">freeze</span>({
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Miguel&#39;</span>,
+  <span style="color:#a6e22e">twitter</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;@midudev&#39;</span>,
+  <span style="color:#a6e22e">address</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">location</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;El Prat de Llobregat&#39;</span>
+  }
+})
+
+<span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">address</span>.<span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Barcelona&#39;</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">address</span>.<span style="color:#a6e22e">location</span>) <span style="color:#75715e">// Barcelona
+</span><span style="color:#75715e"></span></code></pre></div>
+<p>Por si os interesa, **podríamos crear una pequeña función que hiciese nuestros objetos inmutables de forma recursiva. **De esta forma, nos aseguramos que también las propiedades que sean objetos de nuestro objeto son inmutables. Eso sí, tened en cuenta que se ha demostrado que <code>Object.freeze</code> no es un método muy rápido y que, por lo tanto, para objetos muy complejos, crear estructuras inmutables puede ser costoso. Sólo tenedlo en cuenta.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">deepFreeze</span>(<span style="color:#a6e22e">object</span>) {
+  Object.<span style="color:#a6e22e">getOwnPropertyNames</span>(<span style="color:#a6e22e">object</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">name</span> =&gt; {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">property</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>[<span style="color:#a6e22e">name</span>]
+    <span style="color:#75715e">// if property is an object, freeze it recursively
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">property</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">property</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;object&#39;</span>)
+      <span style="color:#a6e22e">deepFreeze</span>(<span style="color:#a6e22e">property</span>)
+  })
+  <span style="color:#75715e">// at the end, just return the freezed object
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">object</span>)
+}
+
+<span style="color:#75715e">// Usamos nuestra nueva función deepFreeeze en un objeto
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">deepFreeze</span>({
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Miguel&#39;</span>,
+  <span style="color:#a6e22e">twitter</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;@midudev&#39;</span>,
+  <span style="color:#a6e22e">address</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">location</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;El Prat de Llobregat&#39;</span>
+  }
+})
+
+<span style="color:#75715e">// Intentamos sobreescribir el valor location del objeto address del objeto person
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">address</span>.<span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Barcelona&#39;</span>
+<span style="color:#75715e">// Esta vez, no ha cambiado el valor
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">address</span>.<span style="color:#a6e22e">location</span>) <span style="color:#75715e">// el Prat de Llobregat
+</span><span style="color:#75715e"></span></code></pre></div>
+<p>Y esto es todo, <strong>si te ha gustado la broma te invito a que la compartas entre tus amigos, compañeros de trabajo y colegas de profesión. ¡A ver si alguno más cae!</strong> 😁 Si no te ha gustado&hellip; ¡lo siento! Pero no he podido evitarlo. Espero que no me lo tengás muy en cuenta. 🤣</p>
+
+			</div>
+			<div>
+				<ul id="tags">
+					
+				</ul>
+			</div>
+			<div>
+				
+			</div>
+		</article>
+	</main>
+	<aside>
+		<div>
+			<div>
+				<h3>LATEST POSTS</h3>
+			</div>
+			<div>
+				<ul>
+					
+					<li><a href="https://midudev.com/immutable-nueva-forma-de-declarar-variables-en-javascript/">immutable, el nuevo tipo para declarar variables en Javascript</a></li>
+					
+					<li><a href="https://midudev.com/css-scroll-snap-la-solucion-definitiva-a-la-creacion-de-sliders-en-la-web/">CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte I</a></li>
+					
+					<li><a href="https://midudev.com/single-line-responsability-haz-una-cosa-por-linea/">Single Line Responsibility, one line does one thing</a></li>
+					
+					<li><a href="https://midudev.com/cargar-google-analytics-de-forma-optima/">La mejor forma de cargar Google Analytics en tu web para performance</a></li>
+					
+					<li><a href="https://midudev.com/por-que-creo-que-microsoft-use-chromium-es-una-buena-noticia/">Por qué creo que Microsoft use Chromium es una buena noticia... para todos</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</aside>
+
+	<footer>
+		
+	</footer>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+	<title>La mejor forma de cargar Google Analytics en tu web para performance</title>
+
+	<script>
+			(function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
+			h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
+			l=function(){return g.cid||(g.cid=k()),g.cid},m=function(r){var s=[];for(var t in r)
+			r.hasOwnProperty(t)&&void 0!==r[t]&&s.push(h(t)+"="+h(r[t]));return s.join("&")},
+			n=function(r,s,t,u,v,w,x){var z="https://www.google-analytics.com/collect",
+			A=m({v:"1",ds:"web",aip:c.anonymizeIp?1:void 0,tid:b,cid:l(),t:r||"pageview",
+			sd:c.colorDepth&&screen.colorDepth?screen.colorDepth+"-bits":void 0,dr:e.referrer||
+			void 0,dt:e.title,dl:e.location.origin+e.location.pathname+e.location.search,ul:c.language?
+			(f.language||"").toLowerCase():void 0,de:c.characterSet?e.characterSet:void 0,
+			sr:c.screenSize?(a.screen||{}).width+"x"+(a.screen||{}).height:void 0,vp:c.screenSize&&
+			a.visualViewport?(a.visualViewport||{}).width+"x"+(a.visualViewport||{}).height:void 0,
+			ec:s||void 0,ea:t||void 0,el:u||void 0,ev:v||void 0,exd:w||void 0,exf:"undefined"!=typeof x&&
+			!1==!!x?0:void 0});if(f.sendBeacon)f.sendBeacon(z,A);else{var y=new XMLHttpRequest;
+			y.open("POST",z,!0),y.send(A)}};d.pushState=function(r){return"function"==typeof d.onpushstate&&
+			d.onpushstate({state:r}),setTimeout(n,c.delay||10),i.apply(d,arguments)},n(),
+			a.ma={trackEvent:function o(r,s,t,u){return n("event",r,s,t,u)},
+			trackException:function q(r,s){return n("exception",null,null,null,null,r,s)}}})
+			(window,"UA-30525085-8",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true})
+		</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="icon" href="/static/favicon/favicon.ico" type="image/x-icon" />
+	<link
+		rel="apple-touch-icon"
+		sizes="180x180"
+		href="/static/favicon/apple-touch-icon.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="32x32"
+		href="/static/favicon/favicon-32x32.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="16x16"
+		href="/static/favicon/favicon-16x16.png"
+	/>
+
+	<meta name="apple-mobile-web-app-title" content="midudev.com" />
+	<meta name="application-name" content="midudev.com" />
+	<meta name="theme-color" content="#0099ff" />
+
+	<style></style>
+
+	<link
+	rel="preconnect dns-prefetch"
+	href="https://www.google-analytics.com"
+	/>
+	<link rel="preconnect dns-prefetch" href="https://platform.twitter.com" />
+
+	
+	
+	<link rel="stylesheet" href="https://midudev.com/css/style.css">
+	
+
+</head>
+<body>
+	<header id='header'>
+		<div>
+			<a href="/">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+					<path
+						d="M5 15a.502.502 0 0 1-.354-.146l-4-4a.5.5 0 0 1 0-.707l4-4a.5.5 0 0 1 .707.707L1.707 10.5l3.646 3.646a.5.5 0 0 1-.354.853zM15 15a.5.5 0 0 1-.354-.853l3.646-3.646-3.646-3.646a.5.5 0 0 1 .707-.707l4 4a.5.5 0 0 1 0 .707l-4 4a.498.498 0 0 1-.354.146zM7.5 15a.5.5 0 0 1-.424-.765l5-8a.5.5 0 0 1 .848.53l-5 8A.5.5 0 0 1 7.5 15z"
+					></path></svg>
+					<span>midudev</span></a
+			>
+		</div>
+		<div>
+			<a
+				href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Fmidudev.com&amp;ref_src=twsrc%5Etfw&amp;screen_name=midudev&amp;tw_p=followbutton"
+				target="_blank"
+				rel="noopener nofollow"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 612 612"
+					width="24"
+				>
+					<path
+						d="M612 116.258a250.714 250.714 0 0 1-72.088 19.772c25.929-15.527 45.777-40.155 55.184-69.411-24.322 14.379-51.169 24.82-79.775 30.48-22.907-24.437-55.49-39.658-91.63-39.658-69.334 0-125.551 56.217-125.551 125.513 0 9.828 1.109 19.427 3.251 28.606-104.326-5.24-196.835-55.223-258.75-131.174-10.823 18.51-16.98 40.078-16.98 63.101 0 43.559 22.181 81.993 55.835 104.479a125.556 125.556 0 0 1-56.867-15.756v1.568c0 60.806 43.291 111.554 100.693 123.104-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-.803-23.634-2.333 15.985 49.907 62.336 86.199 117.253 87.194-42.947 33.654-97.099 53.655-155.916 53.655-10.134 0-20.116-.612-29.944-1.721 55.567 35.681 121.536 56.485 192.438 56.485 230.948 0 357.188-191.291 357.188-357.188l-.421-16.253c24.666-17.593 46.005-39.697 62.794-64.861z"
+						fill="#1DA1F2"
+					></path></svg>
+				</a>
+				<a
+				href="https://www.youtube.com/channel/UC8LeXCWOalN8SxlrPcG-PaQ"
+				target="_blank"
+				rel="noopener nofollow"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						width="24"
+					>
+						<path
+							d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"
+							fill="#ff0000"></path>
+					</svg>
+				</a>
+		</div>
+	</header>
+	<main>
+		<article>
+			<h1>La mejor forma de cargar Google Analytics en tu web para performance</h1>
+			<time>10.12.2018 00:00</time>
+			<div>
+				
+
+<p>Cargar Google Analytics tiene, lo quieras o no, un impacto en la performance de tu página web. <strong>No es la peor librería de terceros para añadir en tu web</strong> (¡Hola Optimizely 🤪!) porque, en ese aspecto, Google tiene cierta sensibilidad en hacer que tu web cargue rápido pero&hellip; <strong>eso no significa que siempre nos vaya a proporcionar la mejor opción</strong>. Por defecto Google nos ofrece un código que puede ser interesante si estamos pensando en usar otros productos de la compañía pero podemos hacer algunas mejoras o&hellip; directamente usar otro.</p>
+
+<p><img src="../static/images/analytics.png" alt="Google Analytics Logo" /></p>
+
+<p>Pero empecemos por el principio, si vamos a las <code>opciones de nuestra propiedad -&gt; Información de Seguimiento -&gt; Código de seguimiento</code>, allí nos recomendará el siguiente trozo de código para implementar en nuestra web para activar el seguimiento de Google Analytics:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span>&gt;
+  window.<span style="color:#a6e22e">dataLayer</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">dataLayer</span> <span style="color:#f92672">||</span> [];
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">gtag</span>(){<span style="color:#a6e22e">dataLayer</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">arguments</span>);}
+  <span style="color:#a6e22e">gtag</span>(<span style="color:#e6db74">&#39;js&#39;</span>, <span style="color:#66d9ef">new</span> Date());
+
+  <span style="color:#a6e22e">gtag</span>(<span style="color:#e6db74">&#39;config&#39;</span>, <span style="color:#e6db74">&#39;UA-XXXXXXXX-X&#39;</span>);
+&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div>
+<p>Lo que normalmente hacemos con este trozo de código es copiarlo en algún lugar de nuestra página y hacerlo funcionar. Veamos algunas pequeñas mejoras que podemos hacer al respecto.</p>
+
+<h3 id="mejor-en-el-lt-head-y-en-el-orden-correcto">Mejor en el &lt;head&gt; y en el orden correcto</h3>
+
+<p>El mejor lugar donde cargar el snippet es en el <code>&lt;head&gt;</code>. Al ser un script asíncrono, esto hará que la carga del script no bloquee otros recursos, ni tampoco el parseo del HTML y que, sólo al descargarlo, pausará el parseo del HTML para ejecutarlo.</p>
+
+<p><strong>Por otra parte, podemos intentar mejorar sensiblemente el orden de carga.</strong> Para ello vamos a dividir el snippet en dos partes. La primera, el script en línea que inicializa el script y, por otra, la carga del script asíncrono. El primero lo colocaremos antes de nuestros estilos (tanto en línea como externos, si los tuvieramos) mientras que el segundo lo pondremos después.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+ window.<span style="color:#a6e22e">dataLayer</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">dataLayer</span> <span style="color:#f92672">||</span> [];
+ <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">gtag</span>(){<span style="color:#a6e22e">dataLayer</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">arguments</span>);}
+ <span style="color:#a6e22e">gtag</span>(<span style="color:#e6db74">&#39;js&#39;</span>, <span style="color:#66d9ef">new</span> Date());
+ <span style="color:#a6e22e">gtag</span>(<span style="color:#e6db74">&#39;config&#39;</span>, <span style="color:#e6db74">&#39;UA-XXXXXXXX-X&#39;</span>);
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#39; /&gt;
+</span><span style="color:#e6db74">&lt;style&gt;/* critical-css */&lt;/style&gt;
+</span><span style="color:#e6db74">&lt;script async src=&#34;</span><span style="color:#a6e22e">https:</span><span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">www</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">googletagmanager</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">com</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">gtag</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">?</span><span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">UA-XXXXXXXX-X&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div>
+<p><strong>El CSS es un recurso crítico y tiene la prioridad más alta de carga,</strong> ya que el navegador considera que es crucial para poder pintar la página y enseñársela al usuario. Parsear el script en línea tiene un coste minúsculo y de esta forma no bloquearemos nada. Más adelante haré un artículo explicando esto pero, por ahora, probad si esto os funciona. 😉</p>
+
+<p>Al final, el resultado sería este:</p>
+
+<p><img src="https://i.loli.net/2018/12/10/5c0e428ad3ee6.png" alt="5c0e428ad3ee6" /></p>
+
+<p>Como véis, para el primer recurso hay una barra lila enorme. Eso ha sido la negociación de los certificados SSL y ha evitado que pudieramos empezar a trackear con Google Analytics antes. ¿Podemos hacer algo para mejorarlo 🤔?</p>
+
+<h3 id="ayuda-al-navegador-a-cargar-más-rápido-los-recursos">Ayuda al navegador a cargar más rápido los recursos</h3>
+
+<p>Ya que sabemos que nuestro snippet va a cargar unos recursos en concreto, podemos ayudar a nuestro navegador a cargarlos cuanto antes. Para ello vamos a usar los Resource Hints (sugerencia de recursos):</p>
+
+<p><code>preconnect</code>: informa al usuario que vas a hacer una conexión con otro origen, de forma que te gustaría comenzarla lo antes posible. Esto hará que el navegador haga la conexión con el dominio antes, ahorrando más adelante la conexión DNS, redirecciones y la negociación de los recursos.</p>
+
+<p><code>dns-prefetch</code>: es una parte de lo que hace preconnect, la resolución del nombre del sistema de nombres de dominio. Por lo tanto es menos potente pero, sin embargo, tiene un soporte mayor, así que también lo usaremos y el navegador ya detectará cuál es más ventajosa.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;preconnect dns-prefetch&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.googletagmanager.com&#34;</span>&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;preconnect dns-prefetch&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google-analytics.com&#34;</span>&gt;</code></pre></div>
+<p>Estas líneas pueden ir sin ningún problema después de las líneas anteriores, ya que el navegador las detectará al descargar el archivo HTML y lo usará incluso antes de empezar a descargar los recursos.</p>
+
+<p>Por otra parte, <strong>existe una mala práctica en este caso que sería usar <code>preload</code> para indicarle al navegador que debe precargar los recursos de Analytics.</strong> Aunque es cierto que sí vamos a cargar sí o sí esos recursos, también es verdad que seguramente tengamos recursos mucho más importantes que las analíticas, que al fin y al cabo no le dan valor al usuario, que precargar. Así que piénsatelo antes de usarlo.</p>
+
+<p>En cualquier caso, tras usar el consejo de esta sección, la carga quedaría de la siguiente forma:</p>
+
+<p><img src="https://i.loli.net/2018/12/10/5c0e46e5a37c0.png" alt="5c0e46e5a37c0" /></p>
+
+<h3 id="cargar-google-analytics-directamente">Cargar Google Analytics directamente</h3>
+
+<p><strong>¿Es Google Analytics el único servicio de Google que estás usando en tu página?</strong> ¿Eres desarrollador o tienes acceso rápido y directo al equipo para añadir los eventos que necesitas? <strong>Entonces, seguramente, no necesitas utilizar el snippet que te ha proporcionado Google.</strong></p>
+
+<p>Como comentaba antes, el snippet que por defecto te da Google es sencillo y te permite copiar, pegar y empezar a funcionar. Sin embargo, todavía puedes utilizar directamente Google Analytics sin necesidad de cargar el archivo <code>gtag.js</code> y de esta forma conseguir una mejora importance a la hora de cargar la librería.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+  window.<span style="color:#a6e22e">ga</span><span style="color:#f92672">=</span>window.<span style="color:#a6e22e">ga</span><span style="color:#f92672">||</span><span style="color:#66d9ef">function</span>(){(<span style="color:#a6e22e">ga</span>.<span style="color:#a6e22e">q</span><span style="color:#f92672">=</span><span style="color:#a6e22e">ga</span>.<span style="color:#a6e22e">q</span><span style="color:#f92672">||</span>[]).<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">arguments</span>)};<span style="color:#a6e22e">ga</span>.<span style="color:#a6e22e">l</span><span style="color:#f92672">=+</span><span style="color:#66d9ef">new</span> Date;
+  <span style="color:#a6e22e">ga</span>(<span style="color:#e6db74">&#39;create&#39;</span>, <span style="color:#e6db74">&#39;UA-XXXXXXXX-X&#39;</span>, <span style="color:#e6db74">&#39;auto&#39;</span>);
+  <span style="color:#a6e22e">ga</span>(<span style="color:#e6db74">&#39;send&#39;</span>, <span style="color:#e6db74">&#39;pageview&#39;</span>);
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://www.google-analytics.com/analytics.js&#39;</span> /&gt;</code></pre></div>
+<p>Igual que en el anterior, también podemos hacer un preconnect y un dns-prefetch de los recursos, además de optimizar el orden de carga, de forma que nos quedaría algo así:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;preconnect dns-prefetch&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google-analytics.com&#34;</span>&gt;
+&lt;<span style="color:#f92672">script</span>&gt;
+ window.<span style="color:#a6e22e">ga</span><span style="color:#f92672">=</span>window.<span style="color:#a6e22e">ga</span><span style="color:#f92672">||</span><span style="color:#66d9ef">function</span>(){(<span style="color:#a6e22e">ga</span>.<span style="color:#a6e22e">q</span><span style="color:#f92672">=</span><span style="color:#a6e22e">ga</span>.<span style="color:#a6e22e">q</span><span style="color:#f92672">||</span>[]).<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">arguments</span>)};<span style="color:#a6e22e">ga</span>.<span style="color:#a6e22e">l</span><span style="color:#f92672">=+</span><span style="color:#66d9ef">new</span> Date;
+ <span style="color:#a6e22e">ga</span>(<span style="color:#e6db74">&#39;create&#39;</span>, <span style="color:#e6db74">&#39;UA-XXXXXXXX-X&#39;</span>, <span style="color:#e6db74">&#39;auto&#39;</span>);
+ <span style="color:#a6e22e">ga</span>(<span style="color:#e6db74">&#39;send&#39;</span>, <span style="color:#e6db74">&#39;pageview&#39;</span>);
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">style</span>&gt;
+  <span style="color:#75715e">/* critical-css */</span>
+&lt;/<span style="color:#f92672">style</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://www.google-analytics.com/analytics.js&#39;</span> /&gt;</code></pre></div>
+<p>Como podéis ver, <strong>ahora solo tenemos que hacer preconnect y prefetch de un solo recurso</strong>. Y ahí ya tenemos una pista de la gran ventaja que tiene este método y es que, en el caso anterior debíamos hacer dos requests para poder empezar a usar Google Analytics mientras que en este método sólo tendremos que hacer una. ¿Y cómo quedaría esto? Una request menos, 31.5KB menos de descarga y casi 100ms más rápido empezar a hacer tracking.</p>
+
+<p><img src="https://i.loli.net/2018/12/10/5c0e47d8b3ae8.png" alt="5c0e47d8b3ae8" /></p>
+
+<h3 id="usar-el-minimal-google-analytics">Usar el minimal Google Analytics</h3>
+
+<p>Existe todavía una opción todavía más hardcore para conseguir utilizar Google Analytics con un impacto mínimo en la performance de tu página. Se llama <a href="https://minimalanalytics.com/">Minimal Google Analytics</a> y es un pequeño snippet de código que te hace que no tengas que cargar <strong>ninguna librería externa para utilizar Google Analytics</strong>. Sí, has leído bien, puedes utilizar un pequeño script en línea para poder utilizar algunas funcionalidades de Google Analytics.</p>
+
+<p>El snippet, que <strong>son sin gzipear 1.5KB</strong>, es este:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+  (<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>,<span style="color:#a6e22e">c</span>){<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">history</span>,<span style="color:#a6e22e">e</span><span style="color:#f92672">=</span>document,<span style="color:#a6e22e">f</span><span style="color:#f92672">=</span><span style="color:#a6e22e">navigator</span><span style="color:#f92672">||</span>{},<span style="color:#a6e22e">g</span><span style="color:#f92672">=</span><span style="color:#a6e22e">localStorage</span>,
+  <span style="color:#a6e22e">h</span><span style="color:#f92672">=</span>encodeURIComponent,<span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">pushState</span>,<span style="color:#a6e22e">k</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(){<span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">random</span>().<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">36</span>)},
+  <span style="color:#a6e22e">l</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(){<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">cid</span><span style="color:#f92672">||</span>(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">cid</span><span style="color:#f92672">=</span><span style="color:#a6e22e">k</span>()),<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">cid</span>},<span style="color:#a6e22e">m</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">r</span>){<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span><span style="color:#f92672">=</span>[];<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">t</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">r</span>)
+  <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#a6e22e">t</span>)<span style="color:#f92672">&amp;&amp;</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">!==</span><span style="color:#a6e22e">r</span>[<span style="color:#a6e22e">t</span>]<span style="color:#f92672">&amp;&amp;</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">t</span>)<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;=&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">r</span>[<span style="color:#a6e22e">t</span>]));<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&amp;&#34;</span>)},
+  <span style="color:#a6e22e">n</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">r</span>,<span style="color:#a6e22e">s</span>,<span style="color:#a6e22e">t</span>,<span style="color:#a6e22e">u</span>,<span style="color:#a6e22e">v</span>,<span style="color:#a6e22e">w</span>,<span style="color:#a6e22e">x</span>){<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">z</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google-analytics.com/collect&#34;</span>,
+  <span style="color:#a6e22e">A</span><span style="color:#f92672">=</span><span style="color:#a6e22e">m</span>({<span style="color:#a6e22e">v</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#a6e22e">ds</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;web&#34;</span>,<span style="color:#a6e22e">aip</span><span style="color:#f92672">:</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">anonymizeIp</span><span style="color:#f92672">?</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">tid</span><span style="color:#f92672">:</span><span style="color:#a6e22e">b</span>,<span style="color:#a6e22e">cid</span><span style="color:#f92672">:</span><span style="color:#a6e22e">l</span>(),<span style="color:#a6e22e">t</span><span style="color:#f92672">:</span><span style="color:#a6e22e">r</span><span style="color:#f92672">||</span><span style="color:#e6db74">&#34;pageview&#34;</span>,
+  <span style="color:#a6e22e">sd</span><span style="color:#f92672">:</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">colorDepth</span><span style="color:#f92672">&amp;&amp;</span><span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">colorDepth</span><span style="color:#f92672">?</span><span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">colorDepth</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-bits&#34;</span><span style="color:#f92672">:</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">dr</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">referrer</span><span style="color:#f92672">||</span>
+  <span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">dt</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">title</span>,<span style="color:#a6e22e">dl</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">origin</span><span style="color:#f92672">+</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">pathname</span><span style="color:#f92672">+</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">search</span>,<span style="color:#a6e22e">ul</span><span style="color:#f92672">:</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">language</span><span style="color:#f92672">?</span>
+  (<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">language</span><span style="color:#f92672">||</span><span style="color:#e6db74">&#34;&#34;</span>).<span style="color:#a6e22e">toLowerCase</span>()<span style="color:#f92672">:</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">de</span><span style="color:#f92672">:</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">characterSet</span><span style="color:#f92672">?</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">characterSet</span><span style="color:#f92672">:</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,
+  <span style="color:#a6e22e">sr</span><span style="color:#f92672">:</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">screenSize</span><span style="color:#f92672">?</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">screen</span><span style="color:#f92672">||</span>{}).<span style="color:#a6e22e">width</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;x&#34;</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">screen</span><span style="color:#f92672">||</span>{}).<span style="color:#a6e22e">height</span><span style="color:#f92672">:</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">vp</span><span style="color:#f92672">:</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">screenSize</span><span style="color:#f92672">&amp;&amp;</span>
+  <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">visualViewport</span><span style="color:#f92672">?</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">visualViewport</span><span style="color:#f92672">||</span>{}).<span style="color:#a6e22e">width</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;x&#34;</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">visualViewport</span><span style="color:#f92672">||</span>{}).<span style="color:#a6e22e">height</span><span style="color:#f92672">:</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,
+  <span style="color:#a6e22e">ec</span><span style="color:#f92672">:</span><span style="color:#a6e22e">s</span><span style="color:#f92672">||</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">ea</span><span style="color:#f92672">:</span><span style="color:#a6e22e">t</span><span style="color:#f92672">||</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">el</span><span style="color:#f92672">:</span><span style="color:#a6e22e">u</span><span style="color:#f92672">||</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">ev</span><span style="color:#f92672">:</span><span style="color:#a6e22e">v</span><span style="color:#f92672">||</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">exd</span><span style="color:#f92672">:</span><span style="color:#a6e22e">w</span><span style="color:#f92672">||</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">exf</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;undefined&#34;</span><span style="color:#f92672">!=</span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">&amp;&amp;</span>
+  <span style="color:#f92672">!</span><span style="color:#ae81ff">1</span><span style="color:#f92672">==!!</span><span style="color:#a6e22e">x</span><span style="color:#f92672">?</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#66d9ef">void</span> <span style="color:#ae81ff">0</span>});<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">sendBeacon</span>)<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">sendBeacon</span>(<span style="color:#a6e22e">z</span>,<span style="color:#a6e22e">A</span>);<span style="color:#66d9ef">else</span>{<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>;
+  <span style="color:#a6e22e">y</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;POST&#34;</span>,<span style="color:#a6e22e">z</span>,<span style="color:#f92672">!</span><span style="color:#ae81ff">0</span>),<span style="color:#a6e22e">y</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">A</span>)}};<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">pushState</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">r</span>){<span style="color:#66d9ef">return</span><span style="color:#e6db74">&#34;function&#34;</span><span style="color:#f92672">==</span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">onpushstate</span><span style="color:#f92672">&amp;&amp;</span>
+  <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">onpushstate</span>({<span style="color:#a6e22e">state</span><span style="color:#f92672">:</span><span style="color:#a6e22e">r</span>}),<span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">n</span>,<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">delay</span><span style="color:#f92672">||</span><span style="color:#ae81ff">10</span>),<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">d</span>,<span style="color:#a6e22e">arguments</span>)},<span style="color:#a6e22e">n</span>(),
+  <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">ma</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">trackEvent</span><span style="color:#f92672">:</span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">o</span>(<span style="color:#a6e22e">r</span>,<span style="color:#a6e22e">s</span>,<span style="color:#a6e22e">t</span>,<span style="color:#a6e22e">u</span>){<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span>(<span style="color:#e6db74">&#34;event&#34;</span>,<span style="color:#a6e22e">r</span>,<span style="color:#a6e22e">s</span>,<span style="color:#a6e22e">t</span>,<span style="color:#a6e22e">u</span>)},
+  <span style="color:#a6e22e">trackException</span><span style="color:#f92672">:</span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">q</span>(<span style="color:#a6e22e">r</span>,<span style="color:#a6e22e">s</span>){<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span>(<span style="color:#e6db74">&#34;exception&#34;</span>,<span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">null</span>,<span style="color:#a6e22e">r</span>,<span style="color:#a6e22e">s</span>)}}})
+  (window,<span style="color:#e6db74">&#34;UA-XXXXXXXXX-X&#34;</span>,{<span style="color:#a6e22e">anonymizeIp</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>,<span style="color:#a6e22e">colorDepth</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>,<span style="color:#a6e22e">characterSet</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>,<span style="color:#a6e22e">screenSize</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>,<span style="color:#a6e22e">language</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>});
+&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div>
+<p>Como véis, tenéis que cambiar el <code>UA-XXXXXXXXX-X</code> por vuestro tracking id.</p>
+
+<p>Las ventajas, como os podéis imaginar, es que con esto tendremos una request menos y no descargaremos los ~17KB de la librería de Google Analytics. Pero tiene tres desventajas:</p>
+
+<ul>
+<li><strong>Este snippet no está soportado oficialmente por Google.</strong> Esto significa que, eventualmente, es posible que las opciones de Google Analytics o la API de <code>collect</code> pueda cambiar y esto deje de funcionar correctamente. Cargar la librería nos asegura que usaremos siempre la última versión y Google se encargará por nosotros de mantener la compatibilidad.</li>
+<li>No nos permite utilizar algunas funcionalidades avanzadas como, por ejemplo, trackear Adwords aunque sí podemos enviar eventos y excepciones con el siguiente código.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ma</span>.<span style="color:#a6e22e">trackEvent</span>(<span style="color:#e6db74">&#39;Category&#39;</span>, <span style="color:#e6db74">&#39;Action&#39;</span>, <span style="color:#e6db74">&#39;Label&#39;</span>, <span style="color:#e6db74">&#39;Value&#39;</span>) <span style="color:#75715e">// event
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ma</span>.<span style="color:#a6e22e">trackException</span>(<span style="color:#e6db74">&#39;Description&#39;</span>, <span style="color:#e6db74">&#39;Fatal&#39;</span>) <span style="color:#75715e">// exception
+</span><span style="color:#75715e"></span></code></pre></div>
+<p>Además, tened en cuenta que, por buenas razones, utiliza el flag <code>anonymizeIp</code> por defecto. De forma que todas las IPs de tus usuarios permanecen anónimas dentro de tu web.</p>
+
+<p>En este caso, todavía, recomiendo dejar <code>preconnect</code> y <code>dns-prefetch</code> para el dominio de <code>https://www.google-analytics.com</code></p>
+
+<p>Pero lo interesante, que me imagino que lo estáis esperando, es la imagen de network que nos queda. <strong>0 requests de librerías externas, 17KB menos a descargar y unos cuantos ms menos hasta el pageview.</strong></p>
+
+<p><img src="https://i.loli.net/2018/12/17/5c168d8406716.png" alt="5c168d8406716" /></p>
+
+<h2 id="resumiendo-las-opciones">Resumiendo las opciones</h2>
+
+<h3 id="usa-analytics-js-si">Usa analytics.js si&hellip;</h3>
+
+<p>✅ sólo te interesa cargar Google Analytics.<br />
+✅ puedes añadir eventos o funnels en Analytics directamente en el código.<br />
+✅ eres exigente con la performance de tu web y quieres cargar lo normal.<br />
+✅ todavía te interesa utilizar algunas funcionalidades especiales de Analytics como tracking con Adwords.</p>
+
+<h3 id="usa-gtag-js-si">Usa gtag.js si&hellip;</h3>
+
+<p>✅ vas a usar otros productos de Google como Optimize o Adwords.<br />
+✅ quieres usar otras funcionalidades de Google Tag Manager.<br />
+✅ necesitas publicar muchos cambios de eventos de Google Analytics sin necesidad de desarrolladores.<br /></p>
+
+<p>✅ la performance no te quita el sueño (por más que debería! 🤪)</p>
+
+<h3 id="usa-minimal-google-analytics-snippet">Usa minimal Google Analytics snippet</h3>
+
+<p>✅ sólo quieres utilizar lo más básico de Google Analytics.<br />
+✅sabes lo que estás haciendo al cargar este script en línea y aceptas no usar algo oficial de Google para trackear tu página. <br />
+✅eres MUY exigente (como yo! 🙃) con la performance de tu página.</p>
+
+<h3 id="y-uses-el-que-uses">Y uses el que uses&hellip;</h3>
+
+<p>✅ coloca en el <code>&lt;head&gt;</code> el snippet de código.<br />
+✅ separa el snippet para colocar el código en línea antes de tus estilos y el otro después (en el caso del minimal GA, siempre antes).<br />
+✅ usa preconnect y dns-prefetch para cargar cuanto antes la librería o las conexiones necesarias.</p>
+
+<h2 id="bonus-points">Bonus points 🌟!</h2>
+
+<p>Si todavía quieres ir más allá, <strong>puedes usar Service Workers para conseguir dos cosas</strong>: sincronizar el tracking cuando la conexión del usuario no es muy buena y para cachear la request a ga.js. Esto es especialmente interesante si estás creando una aplicación o web que debería funcionar en modo sin conexión.</p>
+
+<p><strong>Para activar Google Analytics de forma offline</strong>, sólo tenéis que usar el siguiente código en vuestro Service Worker, gracias a workbox:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">importScripts</span>(<span style="color:#e6db74">&#39;https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js&#39;</span>);
+
+<span style="color:#75715e">// este register route sólo en el caso de querer usar analytics.js o gtag.js
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">workbox</span>.<span style="color:#a6e22e">routing</span>.<span style="color:#a6e22e">registerRoute</span>(
+  <span style="color:#e6db74">&#39;https://www.google-analytics.com/analytics.js&#39;</span>,
+  <span style="color:#a6e22e">workbox</span>.<span style="color:#a6e22e">strategies</span>.<span style="color:#a6e22e">staleWhileRevalidate</span>()
+)
+
+<span style="color:#a6e22e">workbox</span>.<span style="color:#a6e22e">googleAnalytics</span>.<span style="color:#a6e22e">initialize</span>();
+</code></pre></div>
+			</div>
+			<div>
+				<ul id="tags">
+					
+				</ul>
+			</div>
+			<div>
+				
+			</div>
+		</article>
+	</main>
+	<aside>
+		<div>
+			<div>
+				<h3>LATEST POSTS</h3>
+			</div>
+			<div>
+				<ul>
+					
+					<li><a href="https://midudev.com/immutable-nueva-forma-de-declarar-variables-en-javascript/">immutable, el nuevo tipo para declarar variables en Javascript</a></li>
+					
+					<li><a href="https://midudev.com/css-scroll-snap-la-solucion-definitiva-a-la-creacion-de-sliders-en-la-web/">CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte I</a></li>
+					
+					<li><a href="https://midudev.com/single-line-responsability-haz-una-cosa-por-linea/">Single Line Responsibility, one line does one thing</a></li>
+					
+					<li><a href="https://midudev.com/cargar-google-analytics-de-forma-optima/">La mejor forma de cargar Google Analytics en tu web para performance</a></li>
+					
+					<li><a href="https://midudev.com/por-que-creo-que-microsoft-use-chromium-es-una-buena-noticia/">Por qué creo que Microsoft use Chromium es una buena noticia... para todos</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</aside>
+
+	<footer>
+		
+	</footer>
+</body>
+</html>

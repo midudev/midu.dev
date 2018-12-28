@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+	<title>CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte I</title>
+
+	<script>
+			(function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
+			h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
+			l=function(){return g.cid||(g.cid=k()),g.cid},m=function(r){var s=[];for(var t in r)
+			r.hasOwnProperty(t)&&void 0!==r[t]&&s.push(h(t)+"="+h(r[t]));return s.join("&")},
+			n=function(r,s,t,u,v,w,x){var z="https://www.google-analytics.com/collect",
+			A=m({v:"1",ds:"web",aip:c.anonymizeIp?1:void 0,tid:b,cid:l(),t:r||"pageview",
+			sd:c.colorDepth&&screen.colorDepth?screen.colorDepth+"-bits":void 0,dr:e.referrer||
+			void 0,dt:e.title,dl:e.location.origin+e.location.pathname+e.location.search,ul:c.language?
+			(f.language||"").toLowerCase():void 0,de:c.characterSet?e.characterSet:void 0,
+			sr:c.screenSize?(a.screen||{}).width+"x"+(a.screen||{}).height:void 0,vp:c.screenSize&&
+			a.visualViewport?(a.visualViewport||{}).width+"x"+(a.visualViewport||{}).height:void 0,
+			ec:s||void 0,ea:t||void 0,el:u||void 0,ev:v||void 0,exd:w||void 0,exf:"undefined"!=typeof x&&
+			!1==!!x?0:void 0});if(f.sendBeacon)f.sendBeacon(z,A);else{var y=new XMLHttpRequest;
+			y.open("POST",z,!0),y.send(A)}};d.pushState=function(r){return"function"==typeof d.onpushstate&&
+			d.onpushstate({state:r}),setTimeout(n,c.delay||10),i.apply(d,arguments)},n(),
+			a.ma={trackEvent:function o(r,s,t,u){return n("event",r,s,t,u)},
+			trackException:function q(r,s){return n("exception",null,null,null,null,r,s)}}})
+			(window,"UA-30525085-8",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true})
+		</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="icon" href="/static/favicon/favicon.ico" type="image/x-icon" />
+	<link
+		rel="apple-touch-icon"
+		sizes="180x180"
+		href="/static/favicon/apple-touch-icon.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="32x32"
+		href="/static/favicon/favicon-32x32.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="16x16"
+		href="/static/favicon/favicon-16x16.png"
+	/>
+
+	<meta name="apple-mobile-web-app-title" content="midudev.com" />
+	<meta name="application-name" content="midudev.com" />
+	<meta name="theme-color" content="#0099ff" />
+
+	<style></style>
+
+	<link
+	rel="preconnect dns-prefetch"
+	href="https://www.google-analytics.com"
+	/>
+	<link rel="preconnect dns-prefetch" href="https://platform.twitter.com" />
+
+	
+	
+	<link rel="stylesheet" href="https://midudev.com/css/style.css">
+	
+
+</head>
+<body>
+	<header id='header'>
+		<div>
+			<a href="/">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+					<path
+						d="M5 15a.502.502 0 0 1-.354-.146l-4-4a.5.5 0 0 1 0-.707l4-4a.5.5 0 0 1 .707.707L1.707 10.5l3.646 3.646a.5.5 0 0 1-.354.853zM15 15a.5.5 0 0 1-.354-.853l3.646-3.646-3.646-3.646a.5.5 0 0 1 .707-.707l4 4a.5.5 0 0 1 0 .707l-4 4a.498.498 0 0 1-.354.146zM7.5 15a.5.5 0 0 1-.424-.765l5-8a.5.5 0 0 1 .848.53l-5 8A.5.5 0 0 1 7.5 15z"
+					></path></svg>
+					<span>midudev</span></a
+			>
+		</div>
+		<div>
+			<a
+				href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Fmidudev.com&amp;ref_src=twsrc%5Etfw&amp;screen_name=midudev&amp;tw_p=followbutton"
+				target="_blank"
+				rel="noopener nofollow"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 612 612"
+					width="24"
+				>
+					<path
+						d="M612 116.258a250.714 250.714 0 0 1-72.088 19.772c25.929-15.527 45.777-40.155 55.184-69.411-24.322 14.379-51.169 24.82-79.775 30.48-22.907-24.437-55.49-39.658-91.63-39.658-69.334 0-125.551 56.217-125.551 125.513 0 9.828 1.109 19.427 3.251 28.606-104.326-5.24-196.835-55.223-258.75-131.174-10.823 18.51-16.98 40.078-16.98 63.101 0 43.559 22.181 81.993 55.835 104.479a125.556 125.556 0 0 1-56.867-15.756v1.568c0 60.806 43.291 111.554 100.693 123.104-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-.803-23.634-2.333 15.985 49.907 62.336 86.199 117.253 87.194-42.947 33.654-97.099 53.655-155.916 53.655-10.134 0-20.116-.612-29.944-1.721 55.567 35.681 121.536 56.485 192.438 56.485 230.948 0 357.188-191.291 357.188-357.188l-.421-16.253c24.666-17.593 46.005-39.697 62.794-64.861z"
+						fill="#1DA1F2"
+					></path></svg>
+				</a>
+				<a
+				href="https://www.youtube.com/channel/UC8LeXCWOalN8SxlrPcG-PaQ"
+				target="_blank"
+				rel="noopener nofollow"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						width="24"
+					>
+						<path
+							d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"
+							fill="#ff0000"></path>
+					</svg>
+				</a>
+		</div>
+	</header>
+	<main>
+		<article>
+			<h1>CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte I</h1>
+			<time>27.12.2018 00:00</time>
+			<div>
+				
+
+<div className='img img-left' alt='Una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados'>
+
+![Una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados](../static/images/searching-slider-results.png)
+
+</div>
+
+<p>Si llevas unos años en la programación web estoy bastante seguro que te has enfrentado a uno de los problemas más recurrentes del mundillo. <strong>Hablo de los sliders.</strong> A falta de una implementación nativa, cientos de soluciones en Javascript han convivido a lo largo de los años. Algunos vanilla, otros basados en alguna librería como jQuery o React, pero todos basándose de alguna forma en cálculos sobre el DOM. Algunos nombres serían: <em>slick, slippery, momentum-slider, simple-slider</em>&hellip; y es que, <strong>una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados.</strong> 🤯</p>
+
+<p>Pues sabes qué, <strong>que eso se ha acabado</strong>. Porque, por fin, <strong>ahora en CSS podrás crear tus propios sliders sin necesidad de utilizar, en la gran mayoría de los casos, una librería.</strong> Se llama Scroll Snap, tiene un soporte bastante respetable y va a cambiar mucho el cómo creamos sliders en web:</p>
+
+<div className='img' alt='La API de scroll snap nos permite en pocas líneas de código crear un slider con una experiencia inmejorable'>
+<img src='../static/images/scroll-snap.png' alt='La API de scroll snap nos permite en pocas líneas de código crear un slider con una experiencia inmejorable'>
+</div>
+
+<p><strong>CSS Scroll Snap</strong> nos permite declarar posiciones en nuestro scroll, de forma que podemos controlarlo mejor, especialmente al utilizar nuestros dedos para desplazarnos.</p>
+
+<p>Esto, antes, lo conseguíamos utilizando Javascript y haciendo algunos cálculos (normalmente costosos) sobre los elementos del DOM. Como la web ha ido evolucionando para adaptarse a los móviles, y la experiencia a la hora de hacer scroll se ha convertido en vital por la falta de espacio, hace tiempo que se puso el foco en mejor la experiencia a la hora de dirigir el scroll.</p>
+
+<p>La historia de <em>Scroll Snap</em> viene de muy atrás. De hecho, <a href="https://gist.github.com/majido/9900261e1b7e2b1eb180b01c03656b42">los primeros drafts son de&hellip; ¡2013!</a>. Esto ha hecho que algunos navegadores actualmente tengan la especificación antigua (conocida como css-snappoints) y otros, como Chrome y Safari, tengan la nueva (conocida como css-scrollsnap).</p>
+
+<div className='img' alt='Cambios en la especificación de las propiedades scroll-snap desde 2013 al día de hoy. Fuente: https://developers.google.com/web/updates/2018/07/css-scroll-snap'>
+
+![Evolución de la especificación de Scroll Snap](../static/images/specification-history.png)
+
+</div>
+
+<p>Por si os lo estáis preguntando. <strong>Sí, la especificación anterior era un rollo.</strong> Es verdad que era muy potente ya que podías manualmente identificar los puntos de ajuste usando píxeles o espacios relativos. Eso hacía que fuese muy difícil poder trabajar con él al tener elementos dentro del contenedor con diferentes tamaños. El nuevo elimina ese problema y te permite crear puntos de ajuste para el inicio, final y centro de cada elemento. Pero antes de seguir por ahí, <strong>vamos a ver las propiedades para crear nuestro slider.</strong></p>
+
+<h2 id="scroll-snap-type">scroll-snap-type</h2>
+
+<p>En este artículo vamos a basarnos en la especificación nueva. Para ello vamos a ver en detalle la primera propiedad <code>scroll-snap-type</code>. Esta propiedad CSS se tiene que usar en el contenedor de nuestro contenido donde queremos controlar el scroll y nos permite identificar el tipo de los puntos de ajuste de nuestro contenido. Dicho de otra forma, le diremos si queremos controlar el scroll en una dirección, otra, ninguna o ambas.</p>
+
+<p><code>none</code>: Cuando se hace scroll en el contenedor, se ignoran los puntos de ajuste.</p>
+
+<p><code>x</code>: Los puntos de ajuste son horizontales.</p>
+
+<p><code>y</code>: Los puntos de ajuste son verticales.</p>
+
+<p><code>both</code>: Los puntos de ajuste son tanto horizontales como verticales (locurón).</p>
+
+<p><strong><code>scroll-snap-type</code> acepta un segundo parámetro</strong> que determina si el viewport de nuestro contenido se debe ajustar a los elementos de forma obligatoria o sólo si está muy próximo de sus bordes.</p>
+
+<p><code>mandatory</code>: Al terminar de hacer scroll, <strong>el scroll se mueve automáticamente SIEMPRE al punto de ajuste que se haya determinado.</strong> Cuando se cambia el tamaño de la ventana, se cambia de orientación o se modifica el tamaño, SIEMPRE se moverá para satisfacer esto.</p>
+
+<p><code>proximity</code>: Al terminar de hacer scroll, <strong>el scroll se mueve automáticamente SÓLO cuando el scroll esté muy próximo al punto de ajuste que se haya determinado.</strong> Cuando se cambia el tamaño de la ventana, se cambia de orientación o se modifica el tamaño, SÓLO se moverá si se encuentra muy cerca de satisfacer la premisa anterior.</p>
+
+<p>En el siguiente ejemplo podéis ver cómo cambia el comportamiento dependiendo de si usamos <code>mandatory</code> o <code>proximity</code>. El de la izquierda, no importa cuanto hagáis scroll, que siempre terminará con un recuadro en el contenedor y nunca veréis dos a la vez, mientras que el otro a veces puede quedar a medias de dos elementos.</p>
+
+<iframe height='265' scrolling='no' title='Scroll-snap-type "Mandatory" vs "Proximity"' src='//codepen.io/maxakohler/embed/ZjrOpx/?height=265&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+
+<p>Ya os podéis imaginar que, para crear un slider, normalmente nos interesará utilizar la propiedad <code>mandatory</code> de forma que al hacer scroll, sea como sea, simpere acaba en el viewport de nuestro contenedor el slide completo y no se quede a medias. <strong>Esto hará que se sienta como un slider nativo.</strong> Además, la dirección será, en la gran mayoría de los casos, horizontal. Por lo que tendremos algo así:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">slider-container</span> {
+  <span style="color:#66d9ef">scroll-snap-type</span>: x <span style="color:#66d9ef">mandatory</span>;
+}</code></pre></div>
+<h2 id="scroll-snap-align">scroll-snap-align</h2>
+
+<p>La otra propiedad es <code>scroll-snap-align</code>. Esta propiedad se usa a nivel de cada elemento que tengamos en nuestro contenedor y nos indica cómo se tendrá que alinear el elemento en el viewport. También acepta dos valores. El primero se refiere a <code>x</code>y <code>y</code>. Si sólo usas uno, ese valor se usará para ambas direcciones (de la misma forma que pasa con otras propiedades como <code>margin</code> o <code>padding</code>). Los valores que pueden tomar son:</p>
+
+<p><code>none</code>: La caja no tiene ningún punto de ajuste en su eje.</p>
+
+<p><code>start</code>: La caja tiene como punto de ajuste su inicio.</p>
+
+<p><code>end</code>: La caja tiene como punto de ajuste su final.</p>
+
+<p><code>center</code>: La caja tiene como punto de ajuste su centro.</p>
+
+<p>En el siguiente ejemplo podéis ver cómo funcionaría el uso de Scroll Snap donde sus elementos tienen un <code>scroll-snap-align</code> con el valor <code>start</code>, de forma que le indicamos que el scroll debe ajustarse al inicio de cada elemento. Probad, con un navegador compatible, a hacer scroll para que ver que siempre termina el scroll al inicio de un elemento.</p>
+
+<iframe height='265' scrolling='no' title='Vertical List' src='//codepen.io/maxakohler/embed/JBjROd/?height=265&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+
+<p>En este caso ya vemos que, normalmente, el que nos interesaría para crear un slider sería usar el <code>center</code> de forma que el elemento acabe justamente en el centro una vez que hayamos hecho scroll en el contenedor.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">slider-container</span> <span style="color:#f92672">img</span> {
+  scroll-snap-align: <span style="color:#66d9ef">center</span>;
+}</code></pre></div>
+<p>Ahora que ya conocemos las dos propiedades básicas de CSS Scroll Snap, ya casi tenemos preparado el terreno para poder crear nuestro slider con sólo puro CSS. <strong>¡Lo veremos en la segunda parte! ¡No te lo pierdas! ☝️</strong></p>
+
+<h2 id="recursos">Recursos</h2>
+
+<p><em>Draft de la especificación: <a href="https://drafts.csswg.org/css-scroll-snap/">https://drafts.csswg.org/css-scroll-snap/</a></em></p>
+
+<p><em>Artículo muy completo en Alligator: <a href="https://alligator.io/css/scroll-snapping/">https://alligator.io/css/scroll-snapping/</a></em></p>
+
+<p><em>Documentación en Mozilla: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type">https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type</a></em></p>
+
+<p><em>Artículo comparando la versión anterior y la actual de Scroll Snap: <a href="https://css-tricks.com/practical-css-scroll-snapping/">https://css-tricks.com/practical-css-scroll-snapping/</a></em></p>
+
+<p><em>Artículo en Developers Google: <a href="https://developers.google.com/web/updates/2018/07/css-scroll-snap">https://developers.google.com/web/updates/2018/07/css-scroll-snap</a></em></p>
+
+			</div>
+			<div>
+				<ul id="tags">
+					
+				</ul>
+			</div>
+			<div>
+				
+			</div>
+		</article>
+	</main>
+	<aside>
+		<div>
+			<div>
+				<h3>LATEST POSTS</h3>
+			</div>
+			<div>
+				<ul>
+					
+					<li><a href="https://midudev.com/immutable-nueva-forma-de-declarar-variables-en-javascript/">immutable, el nuevo tipo para declarar variables en Javascript</a></li>
+					
+					<li><a href="https://midudev.com/css-scroll-snap-la-solucion-definitiva-a-la-creacion-de-sliders-en-la-web/">CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte I</a></li>
+					
+					<li><a href="https://midudev.com/single-line-responsability-haz-una-cosa-por-linea/">Single Line Responsibility, one line does one thing</a></li>
+					
+					<li><a href="https://midudev.com/cargar-google-analytics-de-forma-optima/">La mejor forma de cargar Google Analytics en tu web para performance</a></li>
+					
+					<li><a href="https://midudev.com/por-que-creo-que-microsoft-use-chromium-es-una-buena-noticia/">Por qué creo que Microsoft use Chromium es una buena noticia... para todos</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</aside>
+
+	<footer>
+		
+	</footer>
+</body>
+</html>

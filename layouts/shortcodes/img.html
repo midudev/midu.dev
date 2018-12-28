@@ -1,0 +1,10 @@
+{{ $original := .Page.Resources.GetMatch "images/immutable-const-variable*" }}
+
+{{ printf "%#v" $original }}
+
+
+<img
+  class="lazyload"
+  data-src='{{ .Get "src" }}'
+  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+/>

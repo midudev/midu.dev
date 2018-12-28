@@ -9,7 +9,7 @@ language: 🇪🇸
 
 El [comité Ecma TC39](https://github.com/tc39) ha anunciado la creación de un nuevo tipo de variables en Javascript. Se llama `immutable` y viene a satisfacer las necesidades de crear estructuras de datos inmutables en el lenguaje. De esta forma, librerías como [immutable.js](https://facebook.github.io/immutable-js/) dejan de tener sentido y **sólo falta que empecemos a ver los primeros navegadores dando soporte a esta nueva funcionalidad.**
 
-![immutable es una nueva forma de declarar variables en Javascript](../static/images/immutable-const-variable.png)
+{{< img src="/images/immutable-const-variable.png" >}}
 
 Si quieres saber todos los detalles de esta nueva funcionalidad, **¡sigue leyendo!** 👇
 
@@ -17,7 +17,7 @@ Si quieres saber todos los detalles de esta nueva funcionalidad, **¡sigue leyen
 
 <div className='img img-left' alt='Este es el muñequillo típico que te recuerda que has caído en una broma de los Santos Inocentes'>
 
-![Este es el muñequillo típico que te recuerda que has caído en una broma de los Santos Inocentes](../static/images/dia_de_los_santos_inocentes.jpg)
+![Este es el muñequillo típico que te recuerda que has caído en una broma de los Santos Inocentes](/images/dia_de_los_santos_inocentes.jpg)
 
 </div>
 

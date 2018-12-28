@@ -1,0 +1,8 @@
+baseURL = "https://midudev.com/"
+languageCode = "es-ES"
+title = "Frontend, Performance, Architecture, Javascript, React, CSS | midudev.com 👨‍💻"
+disableHugoGeneratorInject = true
+defaultContentLanguage = "es"
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+pygmentsUseClasses = true

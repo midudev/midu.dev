@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+	<title>Single Line Responsibility, one line does one thing</title>
+
+	<script>
+			(function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
+			h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
+			l=function(){return g.cid||(g.cid=k()),g.cid},m=function(r){var s=[];for(var t in r)
+			r.hasOwnProperty(t)&&void 0!==r[t]&&s.push(h(t)+"="+h(r[t]));return s.join("&")},
+			n=function(r,s,t,u,v,w,x){var z="https://www.google-analytics.com/collect",
+			A=m({v:"1",ds:"web",aip:c.anonymizeIp?1:void 0,tid:b,cid:l(),t:r||"pageview",
+			sd:c.colorDepth&&screen.colorDepth?screen.colorDepth+"-bits":void 0,dr:e.referrer||
+			void 0,dt:e.title,dl:e.location.origin+e.location.pathname+e.location.search,ul:c.language?
+			(f.language||"").toLowerCase():void 0,de:c.characterSet?e.characterSet:void 0,
+			sr:c.screenSize?(a.screen||{}).width+"x"+(a.screen||{}).height:void 0,vp:c.screenSize&&
+			a.visualViewport?(a.visualViewport||{}).width+"x"+(a.visualViewport||{}).height:void 0,
+			ec:s||void 0,ea:t||void 0,el:u||void 0,ev:v||void 0,exd:w||void 0,exf:"undefined"!=typeof x&&
+			!1==!!x?0:void 0});if(f.sendBeacon)f.sendBeacon(z,A);else{var y=new XMLHttpRequest;
+			y.open("POST",z,!0),y.send(A)}};d.pushState=function(r){return"function"==typeof d.onpushstate&&
+			d.onpushstate({state:r}),setTimeout(n,c.delay||10),i.apply(d,arguments)},n(),
+			a.ma={trackEvent:function o(r,s,t,u){return n("event",r,s,t,u)},
+			trackException:function q(r,s){return n("exception",null,null,null,null,r,s)}}})
+			(window,"UA-30525085-8",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true})
+		</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="icon" href="/static/favicon/favicon.ico" type="image/x-icon" />
+	<link
+		rel="apple-touch-icon"
+		sizes="180x180"
+		href="/static/favicon/apple-touch-icon.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="32x32"
+		href="/static/favicon/favicon-32x32.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="16x16"
+		href="/static/favicon/favicon-16x16.png"
+	/>
+
+	<meta name="apple-mobile-web-app-title" content="midudev.com" />
+	<meta name="application-name" content="midudev.com" />
+	<meta name="theme-color" content="#0099ff" />
+
+	<style></style>
+
+	<link
+	rel="preconnect dns-prefetch"
+	href="https://www.google-analytics.com"
+	/>
+	<link rel="preconnect dns-prefetch" href="https://platform.twitter.com" />
+
+	
+	
+	<link rel="stylesheet" href="https://midudev.com/css/style.css">
+	
+
+</head>
+<body>
+	<header id='header'>
+		<div>
+			<a href="/">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+					<path
+						d="M5 15a.502.502 0 0 1-.354-.146l-4-4a.5.5 0 0 1 0-.707l4-4a.5.5 0 0 1 .707.707L1.707 10.5l3.646 3.646a.5.5 0 0 1-.354.853zM15 15a.5.5 0 0 1-.354-.853l3.646-3.646-3.646-3.646a.5.5 0 0 1 .707-.707l4 4a.5.5 0 0 1 0 .707l-4 4a.498.498 0 0 1-.354.146zM7.5 15a.5.5 0 0 1-.424-.765l5-8a.5.5 0 0 1 .848.53l-5 8A.5.5 0 0 1 7.5 15z"
+					></path></svg>
+					<span>midudev</span></a
+			>
+		</div>
+		<div>
+			<a
+				href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Fmidudev.com&amp;ref_src=twsrc%5Etfw&amp;screen_name=midudev&amp;tw_p=followbutton"
+				target="_blank"
+				rel="noopener nofollow"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 612 612"
+					width="24"
+				>
+					<path
+						d="M612 116.258a250.714 250.714 0 0 1-72.088 19.772c25.929-15.527 45.777-40.155 55.184-69.411-24.322 14.379-51.169 24.82-79.775 30.48-22.907-24.437-55.49-39.658-91.63-39.658-69.334 0-125.551 56.217-125.551 125.513 0 9.828 1.109 19.427 3.251 28.606-104.326-5.24-196.835-55.223-258.75-131.174-10.823 18.51-16.98 40.078-16.98 63.101 0 43.559 22.181 81.993 55.835 104.479a125.556 125.556 0 0 1-56.867-15.756v1.568c0 60.806 43.291 111.554 100.693 123.104-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-.803-23.634-2.333 15.985 49.907 62.336 86.199 117.253 87.194-42.947 33.654-97.099 53.655-155.916 53.655-10.134 0-20.116-.612-29.944-1.721 55.567 35.681 121.536 56.485 192.438 56.485 230.948 0 357.188-191.291 357.188-357.188l-.421-16.253c24.666-17.593 46.005-39.697 62.794-64.861z"
+						fill="#1DA1F2"
+					></path></svg>
+				</a>
+				<a
+				href="https://www.youtube.com/channel/UC8LeXCWOalN8SxlrPcG-PaQ"
+				target="_blank"
+				rel="noopener nofollow"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						width="24"
+					>
+						<path
+							d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"
+							fill="#ff0000"></path>
+					</svg>
+				</a>
+		</div>
+	</header>
+	<main>
+		<article>
+			<h1>Single Line Responsibility, one line does one thing</h1>
+			<time>18.12.2018 00:00</time>
+			<div>
+				
+
+<p>It is said that <strong>is easier writing understandable code for computers than for humans. And who doesn&rsquo;t believe that?</strong> No matter the name of your variables, code styling, or weird decisions that you could make that, if it compiles, the computer is going to do what it has to do. And that&rsquo;s cool as we are free to throw a bunch of spaghetti to our beloved machines and get the work done.</p>
+
+<p><img src="../static/images/slr_one_line_one_thing-5395037.png" alt="slr_one_line_one_thing" /></p>
+
+<p>That said, the main problem is, generally speaking, our code should be read as well by humans. Colleagues, teammates, managers, clients&hellip; truth is <strong>our code should be understandable by machines but readable by humans.</strong></p>
+
+<blockquote>
+<p>Some years ago, I asked a teammate why he used single letters as names for variables. He said: &ldquo;So I will be needed for understanding this code&rdquo;.</p>
+</blockquote>
+
+<p>There&rsquo;re a lot of patterns and architectures, depending on the programming language, that could help you to write better code. Still, there&rsquo;s a simple yet powerful principle that could help you a lot to achieve this. I call it: <strong>Single Line Responsibility™.</strong> And it has a pretty simple rule: <strong>use each line to do a single thing.</strong></p>
+
+<p>Let&rsquo;s see some <strong>real production code where the Single Line Responsibility is NOT being used</strong>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/* examples of doing MORE than one thing in one line */</span>
+<span style="color:#75715e">/* (spoiler: you&#39;re gonna need horizontal scroll) */</span>
+
+<span style="color:#75715e">// get an element, add an event and pass the callback with some calculated params
+</span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.js-push-button&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () { <span style="color:#a6e22e">pushEnabled</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">pushMessage</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">messages</span>))})
+
+<span style="color:#75715e">// check condition, concatenate two dots with a substring and assign to a variable
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">13</span>) <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">12</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;..&#39;</span>;
+
+<span style="color:#75715e">// let&#39;s push to grid a created path with a bunch of params no body understand!
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">grid</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">paper</span>.<span style="color:#a6e22e">path</span>(<span style="color:#e6db74">&#34;M0 &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; L&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">getPaperWidth</span>(<span style="color:#a6e22e">i</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span>, <span style="color:#66d9ef">false</span>))
+
+<span style="color:#75715e">// feel like there you are a god  
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">_getDateTime</span>(<span style="color:#66d9ef">new</span> Date(), <span style="color:#a6e22e">ed</span>.<span style="color:#a6e22e">getParam</span>(<span style="color:#e6db74">&#34;template_mdate_format&#34;</span>, <span style="color:#a6e22e">ed</span>.<span style="color:#a6e22e">getLang</span>(<span style="color:#e6db74">&#34;template.mdate_format&#34;</span>)))
+</code></pre></div>
+<p>Does it feel nasty? Oh my, it should feel nasty and that&rsquo;s good. That means that you&rsquo;re willing to know more about the <strong>Single Line Responsibility</strong> advice.</p>
+
+<blockquote>
+<p>Single Line Responsibility is a rule that enforces you to try to do only one thing in each line.</p>
+</blockquote>
+
+<h2 id="using-single-line-responsibility-for-good">Using Single Line Responsibility, for good</h2>
+
+<p>While the rule is pretty simple, how to achieve it could be highly subjective. There&rsquo;s plenty of ways to achieve the desired effect. A wrong way to do that could lead to a worse readable code so be careful and try with different things to approach the problem.</p>
+
+<p>In order to help you understand the principle, let&rsquo;s check some examples:</p>
+
+<h3 id="avoid-creating-objects-and-or-params-by-calling-methods-and-using-conditionals">Avoid creating objects and/or params by calling methods and using conditionals:</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ❌ we&#39;re creating a searchUrlValueObject but for each key we
+</span><span style="color:#75715e">// have some special logic to create its values
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span> <span style="color:#a6e22e">SearchFactory</span>.<span style="color:#a6e22e">searchUrlValueObject</span>({
+  <span style="color:#a6e22e">featureLiteral</span><span style="color:#f92672">:</span>
+    <span style="color:#a6e22e">featureIds</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">featureIds</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>
+      <span style="color:#f92672">?</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_findFeatureByValue</span>(<span style="color:#a6e22e">featureIds</span>[<span style="color:#ae81ff">0</span>])
+      <span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>,
+  <span style="color:#75715e">// is the template string really necessary? hard to know!
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">urlPattern</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_config</span>(<span style="color:#e6db74">&#39;routing&#39;</span>)[<span style="color:#a6e22e">isMap</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;map&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;search&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+})
+
+<span style="color:#75715e">// ✅ refactored following the Single Line Responsibility™
+</span><span style="color:#75715e">// create a const for the featureLiteral
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">featureLiteral</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">featureIds</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">featureIds</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>
+  <span style="color:#f92672">?</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_findFeatureByValue</span>(<span style="color:#a6e22e">featureIds</span>[<span style="color:#ae81ff">0</span>])
+  <span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>
+<span style="color:#75715e">// extract the ternary in a const to use later
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">routingType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">isMap</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;map&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;search&#39;</span>
+<span style="color:#75715e">// remove the unnecesary template string and use the routingType
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">urlPattern</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_config</span>(<span style="color:#e6db74">&#39;routing&#39;</span>)[<span style="color:#a6e22e">routingType</span>]
+<span style="color:#75715e">// use short-hand for key-value object and return the searchUrlValueObject
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">return</span> <span style="color:#a6e22e">SearchFactory</span>.<span style="color:#a6e22e">searchUrlValueObject</span>({<span style="color:#a6e22e">featureLiteral</span>, <span style="color:#a6e22e">urlPattern</span>})
+</code></pre></div>
+<p><br /></p>
+
+<h3 id="template-strings-are-powerful-just-don-t-bloat-them-with-logic">Template strings are powerful just don&rsquo;t bloat them with logic.</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ❌ logic in the template string and using it as a parameter  
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">writeFile</span>(
+    <span style="color:#a6e22e">COMPONENT_PACKAGE_JSON_FILE</span>,
+    <span style="color:#e6db74">`{
+</span><span style="color:#e6db74">  &#34;name&#34;: &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">packageName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,
+</span><span style="color:#e6db74">  &#34;version&#34;: &#34;1.0.0&#34;,
+</span><span style="color:#e6db74">  &#34;description&#34;: &#34;&#34;,
+</span><span style="color:#e6db74">  &#34;main&#34;: &#34;lib/index.js&#34;,
+</span><span style="color:#e6db74">  </span><span style="color:#e6db74">${</span>
+    <span style="color:#a6e22e">repository</span>.<span style="color:#a6e22e">url</span>
+      <span style="color:#f92672">?</span> <span style="color:#e6db74">`
+</span><span style="color:#e6db74">  &#34;repository&#34;: {
+</span><span style="color:#e6db74">    &#34;type&#34;: &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">repository</span>.<span style="color:#a6e22e">type</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,
+</span><span style="color:#e6db74">    &#34;url&#34;: &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">repository</span>.<span style="color:#a6e22e">url</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">  },`</span>
+      <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>
+  <span style="color:#e6db74">}${</span>
+      <span style="color:#a6e22e">homepage</span>
+        <span style="color:#f92672">?</span> <span style="color:#e6db74">`
+</span><span style="color:#e6db74">    &#34;homepage&#34;: &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">homepage</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#39;/master&#39;</span>, <span style="color:#e6db74">`/master</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">COMPONENT_DIR</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,`</span>
+        <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>
+    <span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &#34;keywords&#34;: [],
+</span><span style="color:#e6db74">  &#34;author&#34;: &#34;&#34;,
+</span><span style="color:#e6db74">  &#34;license&#34;: &#34;MIT&#34;
+</span><span style="color:#e6db74">}`</span>
+    
+<span style="color:#75715e">// ✅ refactored following the Single Line Responsibility™
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">createHomePageSection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">homepage</span> =&gt; {
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">homepage</span>) <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">homepageValue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">homepage</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#39;/master&#39;</span>, <span style="color:#e6db74">`/master</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">COMPONENT_DIR</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`&#34;homepage&#34;: &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">homepageValue</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,`</span>
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">createRepositorySection</span> <span style="color:#f92672">=</span> ({<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">type</span>}) =&gt; {
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">url</span>) <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`&#34;repository&#34;: {
+</span><span style="color:#e6db74">    &#34;type&#34;: &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">type</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,
+</span><span style="color:#e6db74">    &#34;url&#34;: &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">url</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">  },`</span>
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fileContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`{
+</span><span style="color:#e6db74">  &#34;name&#34;: &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">packageName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,
+</span><span style="color:#e6db74">  &#34;version&#34;: &#34;1.0.0&#34;,
+</span><span style="color:#e6db74">  &#34;description&#34;: &#34;&#34;,
+</span><span style="color:#e6db74">  &#34;main&#34;: &#34;lib/index.js&#34;,
+</span><span style="color:#e6db74">  </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">createRepositorySection</span>(<span style="color:#a6e22e">repository</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">createHomePageSection</span>(<span style="color:#a6e22e">homepage</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  &#34;keywords&#34;: [],
+</span><span style="color:#e6db74">  &#34;author&#34;: &#34;&#34;,
+</span><span style="color:#e6db74">  &#34;license&#34;: &#34;MIT&#34;
+</span><span style="color:#e6db74">}`</span>
+
+<span style="color:#a6e22e">writeFile</span>(<span style="color:#a6e22e">COMPONENT_PACKAGE_JSON_FILE</span>, <span style="color:#a6e22e">fileContent</span>)
+</code></pre></div>
+<p><br /></p>
+
+<h3 id="chaining-could-be-good-just-use-it-separating-per-line">Chaining could be good, just use it separating per line:</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// ❌ reading could be a bit difficult
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">listOfNumbers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">n</span>).<span style="color:#a6e22e">some</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">30</span>)
+
+<span style="color:#75715e">// ✅ separate each line, linter could help you with this!
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">listOfNumbers</span>
+  .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>)
+  .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">n</span>)
+  .<span style="color:#a6e22e">some</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">30</span>)
+</code></pre></div>
+<p><br /></p>
+
+<h3 id="destructuring-is-nice-just-don-t-make-it-ugly">Destructuring is nice. Just, don&rsquo;t make it ugly:</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// ❌ I&#39;m scared
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">result</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">realEstates</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> } <span style="color:#f92672">=</span> {} } <span style="color:#f92672">=</span> { <span style="color:#a6e22e">realEstates</span><span style="color:#f92672">:</span> {} } } <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>
+
+<span style="color:#75715e">// ✅ not the best but I&#39;ll sleep at night
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">results</span> <span style="color:#f92672">=</span> {} } <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span>
+<span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">realEstates</span> <span style="color:#f92672">=</span> {} } <span style="color:#f92672">=</span> <span style="color:#a6e22e">results</span>
+<span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">realEstates</span>
+</code></pre></div>
+<p><br /></p>
+
+<h3 id="it-works-for-react-components-as-well">It works for React components as well!</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// ❌ it&#39;s like the callback hell! 🔥
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">showCardSubscription</span>} <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>
+  <span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">appName</span>, <span style="color:#a6e22e">i18n</span>} <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>
+
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">div</span>&gt;
+      {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_hasFailed</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">errorMessage</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_isRegistered</span>() <span style="color:#f92672">&amp;&amp;</span> (
+        &lt;<span style="color:#f92672">SuiCardSubscription</span>
+          <span style="color:#a6e22e">checkboxLabel</span><span style="color:#f92672">=</span><span style="color:#e6db74">{</span>
+            <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">span</span>
+              <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mt-CardSubscription-checkboxLabel&#34;</span>
+              <span style="color:#a6e22e">dangerouslySetInnerHTML</span><span style="color:#f92672">=</span><span style="color:#e6db74">{{</span>
+                <span style="color:#a6e22e">__html</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">i18n.t</span><span style="color:#960050;background-color:#1e0010">(</span>
+                  <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#a6e22e">CARD_SUBSCRIPTION_</span><span style="color:#960050;background-color:#1e0010">$</span>{<span style="color:#a6e22e">appName</span>}<span style="color:#a6e22e">_CHECKBOX_LABEL</span><span style="color:#960050;background-color:#1e0010">`</span>
+                <span style="color:#960050;background-color:#1e0010">)</span>
+              }}
+            /&gt;
+          }
+          <span style="color:#a6e22e">checkboxErrorMessage</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">i18n</span>.<span style="color:#a6e22e">t</span>(
+            <span style="color:#e6db74">&#39;CARD_SUBSCRIPTION_CHECKBOX_ERROR_MESSAGE&#39;</span>
+          )}
+          <span style="color:#a6e22e">checkboxIcons</span><span style="color:#f92672">=</span>{{
+            <span style="color:#a6e22e">checked</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">IconCheckboxChecked</span>,
+            <span style="color:#a6e22e">unchecked</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">IconCheckboxUnchecked</span>
+          }}
+        <span style="color:#960050;background-color:#1e0010">/&gt;</span>
+      )}
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  )
+}
+
+<span style="color:#75715e">// ✅ separate in methods and avoid doing too many things inside the component
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CHECKBOX_ICONS</span> <span style="color:#f92672">=</span> { <span style="color:#75715e">// outside the render, they&#39;re not changing never
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">checked</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">IconCheckboxChecked</span>,
+  <span style="color:#a6e22e">unchecked</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">IconCheckboxUnchecked</span>
+}
+
+<span style="color:#75715e">// render methods could be even separate and reusable React components
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">renderCardSubscription</span> () {
+  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">i18n</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">checkboxErrorMessage</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i18n</span>.<span style="color:#a6e22e">t</span>(<span style="color:#e6db74">&#39;CARD_SUBSCRIPTION_CHECKBOX_ERROR_MESSAGE&#39;</span>)
+
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">SuiCardSubscription</span>
+      <span style="color:#a6e22e">checkboxErrorMessage</span><span style="color:#f92672">=</span><span style="color:#e6db74">{checkboxErrorMessage}</span>
+      <span style="color:#a6e22e">checkboxIcons</span><span style="color:#f92672">=</span><span style="color:#e6db74">{CHECKBOX_ICONS}</span>
+      <span style="color:#a6e22e">checkboxLabel</span><span style="color:#f92672">=</span><span style="color:#e6db74">{this.renderCheckboxLabel()}</span>
+    /&gt;
+  )
+}
+
+<span style="color:#a6e22e">renderCheckboxLabel</span> () {
+  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">appName</span>, <span style="color:#a6e22e">i18n</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i18n</span>.<span style="color:#a6e22e">t</span>(<span style="color:#e6db74">`CARD_SUBSCRIPTION_</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">appName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">_CHECKBOX_LABEL`</span>)
+
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">span</span>
+      <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mt-CardSubscription-checkboxLabel&#34;</span>
+      <span style="color:#a6e22e">dangerouslySetInnerHTML</span><span style="color:#f92672">=</span><span style="color:#e6db74">{{</span> <span style="color:#a6e22e">__html</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">innerHTML</span> }}
+    /&gt;
+  )
+}
+
+<span style="color:#a6e22e">render</span> () {
+  <span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">errorMessage</span>} <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>
+  <span style="color:#75715e">// calculate if we have to show the card and don&#39;t do it in the render
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">showCardSubscription</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_hasFailed</span>(<span style="color:#a6e22e">errorMessage</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_isRegistered</span>()
+
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">div</span>&gt;
+      {<span style="color:#a6e22e">showCardSubscription</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_renderCardSubscription</span>()}
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  )
+}</code></pre></div>
+<p><br /><br /></p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions 🤔</h2>
+
+<h3 id="should-i-use-it-always">Should I use it ALWAYS?</h3>
+
+<p><strong>Nope.</strong> The rule is not meant to be strict but a guide to try to follow as much of possible. Sometimes could be possible that one line is more appropriate for doing more things but still <strong>following SLR could surface the possibility of extracting a useful function.</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// a typical simple example of doing two things in the same line that could make sense
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+
+<span style="color:#75715e">// using SLR™
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">multiplyBy2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">n</span> =&gt; <span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e">// extract the function, could be used again
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">multiplyBy2</span>)
+</code></pre></div>
+<p>Anyway, the idea behind the Single Line Responsibility is to do your best effort to not creating code hard to read by concatenating stuff in a single line. It could make sense in a specific context, just keep it in mind.</p>
+
+<p><br /></p>
+
+<h3 id="but-i-ve-seen-you-are-doing-more-than-one-thing-per-line-liar">But I&rsquo;ve seen you are doing more than one thing per line! Liar!</h3>
+
+<p>As I said, <strong>let&rsquo;s not being pedantic about SLR.</strong> The idea behind SLR is trying as much of possible of doing one thing per line but, sometimes, could be good enough to try to limit the things to do in one line. In the next case I&rsquo;m accessing a position of the array featureIds and using it as a param:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_findFeatureByValue</span>(<span style="color:#a6e22e">featureIds</span>[<span style="color:#ae81ff">0</span>])
+</code></pre></div>
+<p>Surely, we could do the next thing:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">featureValue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">featureIds</span>[<span style="color:#ae81ff">0</span>]
+<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_findFeatureByValue</span>(<span style="color:#a6e22e">featureValue</span>)
+</code></pre></div>
+<p>But, what happens when we want to do that inside a conditional in order to check if featureIds have at least one position in order to know if we should extract it? Well, there&rsquo;re plenty of solutions (extracting to a method, control <code>undefined</code> values&hellip;). The idea is not trying to achieve everything in one line but sometimes is just fine having an exception.</p>
+
+<p><br /></p>
+
+<h3 id="but-i-m-sure-there-s-some-kind-of-performance-penalty">But I&rsquo;m sure there&rsquo;s some kind of performance penalty!</h3>
+
+<p><strong>Make it work. Make it right. Make it fast.</strong> But not THAT fast. If your code is not understandable and maintainable, nobody cares if is a little bit faster. Even though <strong>performing a lot of actions in a single line surely could be more performant but on a micro scale.</strong> Don&rsquo;t sacrifice readability for micro-optimizations. Instead, focus on real performance boost with better algorithms and implementations. If your code should be micro-optimized (for size, for memory, for whatever) then, feel free to put aside this rule.</p>
+
+<blockquote>
+<p>Sometimes when I ask somebody about why they&rsquo;re using a single line for doing a bunch of actions they generally answer me: it&rsquo;s faster. But, is it? Is the user going to perceive it? Worth it?</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="my-code-is-going-to-be-too-verbose">My code is going to be too verbose!</h3>
+
+<p>Is it? To be honest, I&rsquo;ve never have had problems with my code being too verbose but I&rsquo;ve found problems with the opposite. Obviously, is still your responsibility to make sense of following this rule. Again, this is a rule and, as all the rules, they&rsquo;re exceptions. <strong>Be clever and responsible.</strong> ☝️</p>
+
+<p><br /></p>
+
+<h3 id="dude-this-is-not-new-i-do-it-all-the-time">Dude, this is NOT new. I do it all the time!</h3>
+
+<p>I know. Tons of programmers are good boys and try to do their best to make their code readable, maintainable and clean. But I liked the idea of giving a name for it. If you want your coworkers to improve their codes, please, feel free to share this article within your company or your social networks. <strong>Let&rsquo;s do lines of code great again!</strong></p>
+
+			</div>
+			<div>
+				<ul id="tags">
+					
+				</ul>
+			</div>
+			<div>
+				
+			</div>
+		</article>
+	</main>
+	<aside>
+		<div>
+			<div>
+				<h3>LATEST POSTS</h3>
+			</div>
+			<div>
+				<ul>
+					
+					<li><a href="https://midudev.com/immutable-nueva-forma-de-declarar-variables-en-javascript/">immutable, el nuevo tipo para declarar variables en Javascript</a></li>
+					
+					<li><a href="https://midudev.com/css-scroll-snap-la-solucion-definitiva-a-la-creacion-de-sliders-en-la-web/">CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte I</a></li>
+					
+					<li><a href="https://midudev.com/single-line-responsability-haz-una-cosa-por-linea/">Single Line Responsibility, one line does one thing</a></li>
+					
+					<li><a href="https://midudev.com/cargar-google-analytics-de-forma-optima/">La mejor forma de cargar Google Analytics en tu web para performance</a></li>
+					
+					<li><a href="https://midudev.com/por-que-creo-que-microsoft-use-chromium-es-una-buena-noticia/">Por qué creo que Microsoft use Chromium es una buena noticia... para todos</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</aside>
+
+	<footer>
+		
+	</footer>
+</body>
+</html>

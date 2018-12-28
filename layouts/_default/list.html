@@ -1,0 +1,5 @@
+{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+{{ range $paginator.Pages }}
+	{{ partial "summary.html" . }}
+{{ end }}
+{{ partial "pagination.html" . }}
