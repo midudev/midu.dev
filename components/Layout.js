@@ -15,12 +15,12 @@ const getCanonical = ({base = 'https://midudev.com', url = ''}) => {
 }
 
 const DEFAULT_DESCRIPTION =
-  'Artículos sobre Frontend, Performance Web, Ingeniería del Software, Javascript, React y CSS por midudev'
+  'Artículos sobre Frontend, Performance Web, Javascript, React y CSS por midudev'
 
 const DEFAULT_IMAGE = 'https://midudev.com/static/favicon/mstile-310x150.png'
 
 const DEFAULT_TITLE =
-  'Frontend, Web Performance, Architecture, Javascript, React y CSS'
+  'Frontend, Performance, Architecture, Javascript, React, CSS'
 
 export default ({
   children,
@@ -32,7 +32,7 @@ export default ({
   <React.Fragment>
     <GlobalStyles />
     <Head>
-      <title>{`${title} | midudev`}</title>
+      <title>{`${title} | midudev 👨‍💻`}</title>
 
       <script
         dangerouslySetInnerHTML={{
