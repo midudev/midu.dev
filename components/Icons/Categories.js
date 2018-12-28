@@ -24,6 +24,28 @@ const BestPracticesIcon = () => (
   </React.Fragment>
 )
 
+const Js = () => (
+  <React.Fragment>
+    <div>
+      <strong>JS</strong>
+    </div>
+    <style jsx>{`
+      div {
+        background: #f7df1e;
+        height: 20px;
+        position: relative;
+        width: 20px;
+      }
+      strong {
+        font-size: 8px;
+        position: absolute;
+        right: 1px;
+        bottom: 1px;
+      }
+    `}</style>
+  </React.Fragment>
+)
+
 const Css = () => (
   <React.Fragment>
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
@@ -68,6 +90,7 @@ const PerformanceIcon = () => (
 const categories = {
   announcement: {Icon: AnnouncementIcon, title: 'anuncio'},
   css: {Icon: Css, title: 'css'},
+  javascript: {Icon: Js, title: 'javascript'},
   bestpractices: {Icon: BestPracticesIcon, title: 'best pratices'},
   opinion: {Icon: OpinionIcon, title: 'opinión'},
   performance: {Icon: PerformanceIcon, title: 'performance'}
