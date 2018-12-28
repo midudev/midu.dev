@@ -26,7 +26,13 @@ Si quieres saber todos los detalles de esta nueva funcionalidad, **¡sigue leyen
 
 Sé que es bastante raro, ya que se supone que es el día donde se conmemora la matanza de los niños menores de dos años en Belén, para intentar asesinar a Jesús, pero en la edad media se juntó con los días de los locos (una especie de [La Purga](https://es.wikipedia.org/wiki/The_Purge) de la época 😅).
 
+## `immutable`, demasiado bonito para ser verdad
+
+La idea de tener un tipo de variable que se llame `immutable` en realidad viene de una presentación que hice sobre el Javascript del futuro. Allí explicaba los nuevas propuestas que había para el lenguaje y me tomé la licencia de añadir algunas proposiciones propias. Una era la [simple arrow function](https://the-next-javascript-presentation.now.sh/#29) `->` (que no bindea this como sí hace la arrow function `=>`) y [otra, que además tuvo mucha aceptación, era la de `immutable`](https://the-next-javascript-presentation.now.sh/#31).
+
 Como me imagino que no quieres irte de aquí con las manos vacías, **vamos a ver cómo podríamos conseguir sin librerías en Javascript crear objetos inmutables**, de forma que no se puedan modificar sus propiedades (ni añadir, ni eliminar, ni cambiar de valor).
+
+## Creando objetos immutables con Object.freeze
 
 La mejor forma de crear un objeto que sea inmutable en Javascript es utilizando el método `Object.freeze` de la siguiente forma:
 
