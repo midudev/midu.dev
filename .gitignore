@@ -1,5 +1,7 @@
 node_modules
 out
+public
+resources
 .next
 .DS_Store
 package-lock.json
