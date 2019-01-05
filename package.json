@@ -4,49 +4,18 @@
   "description": "https://midudev.com website",
   "main": "index.js",
   "scripts": {
-    "dev": "nextein",
-    "dev:static": "npm run build && serve out",
-    "build": "nextein build && nextein export && cp ./out/static/sw.js ./out/sw.js",
-    "now-build": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx hugo-cli",
+    "now-build": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/midudev/midudev.com.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Miguel Ángel Durán García",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/midudev/midudev.com/issues"
   },
-  "homepage": "https://github.com/midudev/midudev.com#readme",
-  "dependencies": {
-    "@mapbox/rehype-prism": "0.3.0",
-    "next": "7.0.2",
-    "nextein": "2.1.2",
-    "react": "next",
-    "react-dom": "next",
-    "read-time": "1.0.0",
-    "remark-external-links": "3.1.1"
-  },
-  "devDependencies": {
-    "@s-ui/lint": "2.20.0",
-    "got": "9.3.2",
-    "remark": "10.0.1",
-    "sharp": "0.21.1",
-    "to-vfile": "5.0.2",
-    "vfile": "3.0.1"
-  },
-  "eslintConfig": {
-    "extends": [
-      "./node_modules/@s-ui/lint/eslintrc.js"
-    ],
-    "rules": {
-      "react/jsx-no-undef": "off",
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off"
-    }
-  },
-  "sasslintConfig": "./node_modules/@s-ui/lint/sass-lint.yml"
+  "homepage": "https://github.com/midudev/midudev.com#readme"
 }
