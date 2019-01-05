@@ -1,7 +1,7 @@
 ---
 title: La mejor forma de cargar Google Analytics en tu web para performance
 date: '2018-12-10'
-image: 'https://midudev.com/static/images/analytics.png'
+image: 'https://midudev.com/images/analytics.png'
 description: 'Muchas veces vamos a querer cargar Google Analytics en nuestra página web pero nos gustaría evitar el coste en performance que tiene. Te voy a explicar la mejor estrategia para cargar esta librería afectando lo mínimo posible la performance.'
 topic: performance
 language: 🇪🇸
@@ -9,7 +9,7 @@ language: 🇪🇸
 
 Cargar Google Analytics tiene, lo quieras o no, un impacto en la performance de tu página web. **No es la peor librería de terceros para añadir en tu web** (¡Hola Optimizely 🤪!) porque, en ese aspecto, Google tiene cierta sensibilidad en hacer que tu web cargue rápido pero... **eso no significa que siempre nos vaya a proporcionar la mejor opción**. Por defecto Google nos ofrece un código que puede ser interesante si estamos pensando en usar otros productos de la compañía pero podemos hacer algunas mejoras o... directamente usar otro.
 
-![Google Analytics Logo](../static/images/analytics.png)
+{{% img src="/images/analytics.png" alt="Google Analytics es uno de las soluciones de tracking más usadas" %}}
 
 Pero empecemos por el principio, si vamos a las `opciones de nuestra propiedad -> Información de Seguimiento -> Código de seguimiento`, allí nos recomendará el siguiente trozo de código para implementar en nuestra web para activar el seguimiento de Google Analytics:
 
@@ -35,12 +35,12 @@ El mejor lugar donde cargar el snippet es en el `<head>`. Al ser un script así
 
 ```html
 <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'UA-XXXXXXXX-X');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-XXXXXXXX-X');
 </script>
-<link rel="stylesheet' />
+<link rel="stylesheet" href="style.css" />
 <style>/* critical-css */</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"></script>
 ```
@@ -48,8 +48,7 @@ El mejor lugar donde cargar el snippet es en el `<head>`. Al ser un script así
 **El CSS es un recurso crítico y tiene la prioridad más alta de carga,** ya que el navegador considera que es crucial para poder pintar la página y enseñársela al usuario. Parsear el script en línea tiene un coste minúsculo y de esta forma no bloquearemos nada. Más adelante haré un artículo explicando esto pero, por ahora, probad si esto os funciona. 😉
 
 Al final, el resultado sería este:
-
-![5c0e428ad3ee6](https://i.loli.net/2018/12/10/5c0e428ad3ee6.png)
+{{% img src="https://i.loli.net/2018/12/10/5c0e428ad3ee6.png" alt="Resultado tras aplicar Google Tag Manager para cargar Google Analytics" align="" %}}
 
 Como véis, para el primer recurso hay una barra lila enorme. Eso ha sido la negociación de los certificados SSL y ha evitado que pudieramos empezar a trackear con Google Analytics antes. ¿Podemos hacer algo para mejorarlo 🤔?
 
@@ -72,7 +71,7 @@ Por otra parte, **existe una mala práctica en este caso que sería usar `preloa
 
 En cualquier caso, tras usar el consejo de esta sección, la carga quedaría de la siguiente forma:
 
-![5c0e46e5a37c0](https://i.loli.net/2018/12/10/5c0e46e5a37c0.png)
+{{% img src="https://i.loli.net/2018/12/10/5c0e46e5a37c0.png" alt="Con preconnect y prefetch, hemos mejorado algo la carga de los recursos" align="" %}}
 
 ### Cargar Google Analytics directamente
 
@@ -94,19 +93,17 @@ Igual que en el anterior, también podemos hacer un preconnect y un dns-prefetch
 ```html
 <link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
 <script>
- window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
- ga('create', 'UA-XXXXXXXX-X', 'auto');
- ga('send', 'pageview');
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-XXXXXXXX-X', 'auto');
+  ga('send', 'pageview');
 </script>
-<style>
-  /* critical-css */
-</style>
+<style> /* critical-css */ </style>
 <script async src='https://www.google-analytics.com/analytics.js' />
 ```
 
-Como podéis ver, **ahora solo tenemos que hacer preconnect y prefetch de un solo recurso**. Y ahí ya tenemos una pista de la gran ventaja que tiene este método y es que, en el caso anterior debíamos hacer dos requests para poder empezar a usar Google Analytics mientras que en este método sólo tendremos que hacer una. ¿Y cómo quedaría esto? Una request menos, 31.5KB menos de descarga y casi 100ms más rápido empezar a hacer tracking. 
+Como podéis ver, **ahora solo tenemos que hacer preconnect y prefetch de un solo recurso**. Y ahí ya tenemos una pista de la gran ventaja que tiene este método y es que, en el caso anterior debíamos hacer dos requests para poder empezar a usar Google Analytics mientras que en este método sólo tendremos que hacer una. ¿Y cómo quedaría esto? Una request menos, 31.5KB menos de descarga y casi 100ms más rápido empezar a hacer tracking en desktop.
 
-![5c0e47d8b3ae8](https://i.loli.net/2018/12/10/5c0e47d8b3ae8.png)
+{{% img src="https://i.loli.net/2018/12/10/5c0e47d8b3ae8.png" alt="Cargando sólo Google Analytcs, mejoramos en 100ms la carga en desktop" align="" %}}
 
 ### Usar el minimal Google Analytics
 
@@ -155,7 +152,7 @@ En este caso, todavía, recomiendo dejar `preconnect ` y `dns-prefetch` para el 
 
 Pero lo interesante, que me imagino que lo estáis esperando, es la imagen de network que nos queda. **0 requests de librerías externas, 17KB menos a descargar y unos cuantos ms menos hasta el pageview.**
 
-![5c168d8406716](https://i.loli.net/2018/12/17/5c168d8406716.png)
+{{% img src="https://i.loli.net/2018/12/17/5c168d8406716.png" alt="Usar Google Minimal Analytcs nos permite no hacer requests de librerías para empezar a usar el tracking" align="" %}}
 
 ## Resumiendo las opciones
 

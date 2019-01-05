@@ -1,7 +1,7 @@
 ---
 title: immutable, el nuevo tipo para declarar variables en Javascript
 date: '2018-12-28'
-image: 'https://midudev.com/static/images/immutable-const-variable.png'
+image: 'https://midudev.com/images/immutable-const-variable.png'
 description: 'Usando immutable podremos crear estructuras de datos en Javascript que no son reasignables y tampoco modificables.'
 topic: javascript
 language: 🇪🇸
@@ -15,11 +15,7 @@ Si quieres saber todos los detalles de esta nueva funcionalidad, **¡sigue leyen
 
 ***
 
-<div className='img img-left' alt='Este es el muñequillo típico que te recuerda que has caído en una broma de los Santos Inocentes'>
-
-![Este es el muñequillo típico que te recuerda que has caído en una broma de los Santos Inocentes](/images/dia_de_los_santos_inocentes.jpg)
-
-</div>
+{{% img align="left" alt="Este es el muñequillo típico que te recuerda que has caído en una broma de los Santos Inocentes" src="/images/dia_de_los_santos_inocentes.jpg" %}}
 
 ## Y lo mejor es que...
 **Todo esto es una broma.** 🤪 En España, y en parte de Sudamérica, hoy es el [Día de los Santos Inocentes](https://es.wikipedia.org/wiki/D%C3%ADa_de_los_Santos_Inocentes). **Es una especie de April Fools' Day donde se hacen bromas de todo tipo.** Como dar noticias falsas, pegar un muñeco en la espalda de la gente o [algunas ingeniosas formas de ganarte el odio de la gente.](https://www.levante-emv.com/navidad/2018/12/28/dia-inocentes-2018-mejores-ideas/1814600.html)
@@ -69,7 +65,7 @@ person.address.location = 'Barcelona'
 console.log(person.address.location) // Barcelona
 ```
 
-Por si os interesa, **podríamos crear una pequeña función que hiciese nuestros objetos inmutables de forma recursiva. **De esta forma, nos aseguramos que también las propiedades que sean objetos de nuestro objeto son inmutables. Eso sí, tened en cuenta que se ha demostrado que `Object.freeze` no es un método muy rápido y que, por lo tanto, para objetos muy complejos, crear estructuras inmutables puede ser costoso. Sólo tenedlo en cuenta.
+Por si os interesa, **podríamos crear una pequeña función que hiciese nuestros objetos inmutables de forma recursiva.** De esta forma, nos aseguramos que también las propiedades que sean objetos de nuestro objeto son inmutables. Eso sí, tened en cuenta que se ha demostrado que `Object.freeze` no es un método muy rápido y que, por lo tanto, para objetos muy complejos, crear estructuras inmutables puede ser costoso. Sólo tenedlo en cuenta.
 
 ```javascript
 function deepFreeze(object) {

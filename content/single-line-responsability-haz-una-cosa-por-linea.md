@@ -1,7 +1,7 @@
 ---
 title: Single Line Responsibility, one line does one thing
 date: '2018-12-18'
-image: 'https://midudev.com/static/images/slr_one_line_one_thing-5395037.png'
+image: 'https://midudev.com/images/slr_one_line_one_thing-5395037.png'
 description: "Experience and knowledge could help you writing readable, mantainable and clean code but, following the Single Line Responsibility principle will help you to be sure you're doing it."
 topic: bestpractices
 language: 🇬🇧
@@ -9,7 +9,7 @@ language: 🇬🇧
 
 It is said that **is easier writing understandable code for computers than for humans. And who doesn't believe that?** No matter the name of your variables, code styling, or weird decisions that you could make that, if it compiles, the computer is going to do what it has to do. And that's cool as we are free to throw a bunch of spaghetti to our beloved machines and get the work done.
 
-![slr_one_line_one_thing](../static/images/slr_one_line_one_thing-5395037.png)
+{{% img src="/images/slr_one_line_one_thing-5395037.png" align="" alt="Single Line Responsibility, one line, one thing" %}}
 
 That said, the main problem is, generally speaking, our code should be read as well by humans. Colleagues, teammates, managers, clients... truth is **our code should be understandable by machines but readable by humans.**
 

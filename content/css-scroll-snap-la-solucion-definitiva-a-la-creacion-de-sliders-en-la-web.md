@@ -1,25 +1,19 @@
 ---
 title: CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte I
 date: '2018-12-27'
-image: 'https://midudev.com/static/images/scroll-snap.png'
+image: 'https://midudev.com/images/scroll-snap.png'
 description: 'Introducción a CSS Scroll Snap. La solución definitiva a la batalla infinita entre los desarrolladores web y la creación de sliders. Por fin.'
 topic: css
 language: 🇪🇸
 ---
 
-<div className='img img-left' alt='Una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados'>
-
-![Una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados](../static/images/searching-slider-results.png)
-
-</div>
+{{% img align="left" alt="Una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados" src="/images/searching-slider-results.png" %}}
 
 Si llevas unos años en la programación web estoy bastante seguro que te has enfrentado a uno de los problemas más recurrentes del mundillo. **Hablo de los sliders.** A falta de una implementación nativa, cientos de soluciones en Javascript han convivido a lo largo de los años. Algunos vanilla, otros basados en alguna librería como jQuery o React, pero todos basándose de alguna forma en cálculos sobre el DOM. Algunos nombres serían: *slick, slippery, momentum-slider, simple-slider*... y es que, **una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados.** 🤯
 
 Pues sabes qué, **que eso se ha acabado**. Porque, por fin, **ahora en CSS podrás crear tus propios sliders sin necesidad de utilizar, en la gran mayoría de los casos, una librería.** Se llama Scroll Snap, tiene un soporte bastante respetable y va a cambiar mucho el cómo creamos sliders en web:
 
-<div className='img' alt='La API de scroll snap nos permite en pocas líneas de código crear un slider con una experiencia inmejorable'>
-<img src='../static/images/scroll-snap.png' alt='La API de scroll snap nos permite en pocas líneas de código crear un slider con una experiencia inmejorable'>
-</div>
+{{% img alt="La API de scroll snap nos permite en pocas líneas de código crear un slider con una experiencia inmejorable" src="/images/scroll-snap.png" %}}
 
 **CSS Scroll Snap** nos permite declarar posiciones en nuestro scroll, de forma que podemos controlarlo mejor, especialmente al utilizar nuestros dedos para desplazarnos.
 
@@ -27,11 +21,7 @@ Esto, antes, lo conseguíamos utilizando Javascript y haciendo algunos cálculos
 
 La historia de *Scroll Snap* viene de muy atrás. De hecho, [los primeros drafts son de... ¡2013!](https://gist.github.com/majido/9900261e1b7e2b1eb180b01c03656b42). Esto ha hecho que algunos navegadores actualmente tengan la especificación antigua (conocida como css-snappoints) y otros, como Chrome y Safari, tengan la nueva (conocida como css-scrollsnap).
 
-<div className='img' alt='Cambios en la especificación de las propiedades scroll-snap desde 2013 al día de hoy. Fuente: https://developers.google.com/web/updates/2018/07/css-scroll-snap'>
-
-![Evolución de la especificación de Scroll Snap](../static/images/specification-history.png)
-
-</div>
+{{% img align="" alt="Evolución de la especificación de Scroll Snap" src="/images/specification-history.png" %}}
 
 Por si os lo estáis preguntando. **Sí, la especificación anterior era un rollo.** Es verdad que era muy potente ya que podías manualmente identificar los puntos de ajuste usando píxeles o espacios relativos. Eso hacía que fuese muy difícil poder trabajar con él al tener elementos dentro del contenedor con diferentes tamaños. El nuevo elimina ese problema y te permite crear puntos de ajuste para el inicio, final y centro de cada elemento. Pero antes de seguir por ahí, **vamos a ver las propiedades para crear nuestro slider.**
 

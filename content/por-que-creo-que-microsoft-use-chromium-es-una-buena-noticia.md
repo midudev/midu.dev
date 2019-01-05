@@ -1,7 +1,7 @@
 ---
 title: Por qué creo que Microsoft use Chromium es una buena noticia... para todos
 date: '2018-12-05'
-image: 'https://midudev.com/static/images/microsoft-edge-presentation.jpg'
+image: 'https://midudev.com/images/microsoft-edge-presentation.jpg'
 description: 'Al parecer, Microsoft va a dejar de mantener el motor actual de Edge para empezar a utilizar Chromium, el motor de código abierto de Chrome. Todo el mundo está dando su opinión y, oye, yo no iba a ser menos. Eso sí, yo creo que igual es una buena noticia para todos. También para ti.'
 topic: opinion
 language: 🇪🇸
@@ -9,7 +9,7 @@ language: 🇪🇸
 
 Ya hay confirmación oficial. **[Microsoft planea adoptar Chromium como motor para su navegador Microsoft Edge y abandonará su motor propietario.](https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/)** Un paso más para extender la contribución de Microsoft al OSS (open source software) y un volantazo muy importante sobre la política de Microsoft respecto a los navegadores web después de años y años de fracasos continuados.
 
-![5c09a0bc46a2b](../static/images/microsoft-edge-presentation.jpg)
+{{% img src="/images/microsoft-edge-presentation.jpg" alt="Presentación de Microsoft Edge" align="" %}}
 
 Sin embargo, esta noticia que llega tras días de rumores, **ha despertado los recelos de no pocas personas en la comunidad.** ¿La razón? Mucha gente opina que esto refuerza el papel dominador de Google en Internet pero... ¿es eso exactamente así? En mi opinión, aunque entiendo ese miedo, no lo creo.
 
@@ -17,11 +17,7 @@ Sin embargo, esta noticia que llega tras días de rumores, **ha despertado los r
 
 **Chromium es el navegador de código abierto del que Chrome obtiene su código fuente.** Sin embargo, hay que tener claro que aunque comparten la mayor parte del código hay algunas funcionalidades que sólo existen en Chrome como, por ejemplo, el lector de archivos PDF o el inicio de sesión en Google. Esto ha permitido que otros navegadores tomen como base Chromium. **Dos grandes destacados son Opera y Brave.** Y, pese a ello, ofrecen una experiencia de usuario sensiblemente diferente a Chrome.
 
-<div className='img img-left' alt='Opera Browser ofrece una experiencia de usuario bastante distinta a Chrome pese a compartir motor'>
-
- ![Opera Browser](../static/images/opera.jpg)
-
-</div>
+{{% img src="/images/opera.jpg" alt="Opera Browser ofrece una experiencia de usuario bastante distinta a Chrome pese a compartir motor" align="left" %}}
 
 Es importante saber que Chromium comenzó en su día basándose en **[WebKit](https://webkit.org/), el motor para navegadores web de código abierto creado por Apple para Safari** pero, tras unos años, [Google hizo un fork del proyecto](https://blog.chromium.org/2013/04/blink-rendering-engine-for-chromium.html) para continuar evolucionandólo por su parte sin la necesidad de depender de Apple.
 
@@ -33,7 +29,7 @@ Microsoft ha sufrido una transmutación enorme en cuanto a su política y su per
 
 * ***Ahorrar esfuerzos que no están siendo productivos para la marca y el producto.*** ¿Quién no está cansado de que Internet Explorer, antes, y Edge, ahora, sean los típicos navegadores problemáticos en cuanto a adopción de nuevas características web? Yo lo estoy. **Y creo honestamente que Microsoft también.** Usar Chromium les va a permitir dejar de estar en la cola a la hora de adoptar las nuevas tecnologías web, seguramente con menos esfuerzo y poder centrarse en lo que realmente puede marcar la diferencia: la experiencia usando el navegador.
 
-* ***Aprovechar para contribuir más activamente a uno de los proyectos open source estrell*a.** Chromium no es sólo el motor de Chrome. También es el motor de Electron. ¿Y sabéis qué aplicación MUY importante de Microsoft utiliza Electron? Visual Studio Code. Con esto en mente, ¿no tiene todo el sentido del mundo ahorrar esfuerzos en el motor de Edge y trabajar en Chromium para beneficiarse indirectamente de ello? Es más, ¿no va a influir positivamente de alguna forma a la percepción de Microsoft como marca? Yo creo que sí a ambas.
+* ***Aprovechar para contribuir más activamente a uno de los proyectos open source estrella.*** Chromium no es sólo el motor de Chrome. También es el motor de Electron. ¿Y sabéis qué aplicación MUY importante de Microsoft utiliza Electron? Visual Studio Code. Con esto en mente, ¿no tiene todo el sentido del mundo ahorrar esfuerzos en el motor de Edge y trabajar en Chromium para beneficiarse indirectamente de ello? Es más, ¿no va a influir positivamente de alguna forma a la percepción de Microsoft como marca? Yo creo que sí a ambas.
 
 * ***Microsoft no gana dinero por hacer motores de navegadores.*** Y menos cuando cuando la porción de su pastel es tan pequeña. Por lo tanto, parece que Microsoft tiene mucho que ganar y poco que perder. **Porque, siendo honestos, ¿sabéis para qué usa la mayoría de la gente Edge? Para instalar Chrome o Firefox.** Así que, desde la perspectiva de Microsoft... si no puedes con el enemigo, mejor únete a él.
 
@@ -45,9 +41,7 @@ Más adelante hay una sección que habla de algunas opiniones contrarias a esta 
 
 * **Edge seguía siendo un dolor de cabeza a la hora de desarrollar webs.** Y no hablamos sólo de las muy mejorables herramientas de desarrollo que ofrecía. Tampoco el motor nunca ha sido capaz, pese a los múltiples esfuerzos, de estar a la altura de Firefox o Chrome. Su ritmo de versiones también ha estado siempre por detrás de la competencia y, aún hoy, no ha sido capaz de recuperar la cuota de mercado que mantiene Internet Explorer.
 
-<div class='img' alt='Edge todavía no soporta gran parte de la tecnología de los Web Components y necesita polyfills para hacerlos funcionar'>
-  <img src='../static/images/caniuseedge.png' alt='Can I Use Edge Web Components' />
-</div>
+{{% img alt="Edge todavía no soporta gran parte de la tecnología de los Web Components y necesita polyfills para hacerlos funcionar" src="/images/caniuseedge.png" %}}
 
 * **Menos fragmentación.** Tener que preocuparse de un motor de navegador a la hora de trabajar va a ser un alivio para muchos desarrolladores, entre los que yo me incluyo. En la diversidad está el gusto pero tampoco ayudaba que existiesen tantos motores diferentes y, algunos como este, tan problemáticos.
 
