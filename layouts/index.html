@@ -1,9 +1,13 @@
 {{ define "main" }}
-  <ul>
+  <ul class='articles-list'>
     {{ range .Pages }}
       <li>
-          <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+        <a href="{{.Permalink}}">
+          <h1>{{ .Title }}</h1>
+          {{ partial "article-meta.html" . }}
+          <p>{{ .Params.description }}</p>
+        </a>
       </li>
     {{ end }}
-      </ul>
+  </ul>
 {{ end }}
