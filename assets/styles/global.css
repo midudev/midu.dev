@@ -302,14 +302,13 @@ twitter-widget {
   color: #555;
   display: block;
   font-size: 16px;
-  margin-top: 16px;
   font-weight: 500;
   line-height: 150%;
+  margin-top: 16px;
 }
 
 /** ARTICLE-CONTENT **/
 #article-content {
-  margin-top: 16px;
   padding-top: 16px;
   border-top: 1px dashed #ddd;
 }
