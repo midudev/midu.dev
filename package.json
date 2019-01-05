@@ -4,7 +4,7 @@
   "description": "https://midudev.com website",
   "main": "index.js",
   "scripts": {
-    "build": "npx hugo-cli",
+    "build": "npx hugo-cli --minify",
     "now-build": "npm run build"
   },
   "repository": {
