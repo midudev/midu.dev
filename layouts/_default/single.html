@@ -2,12 +2,13 @@
 {{ define "main" }}
 	<article id='article'>
 		<header class='article-header'>
+			<div class='article-header-bkg' style='background-image: url("{{ .Params.image }}")'></div>
 			<h1>{{ .Title }}</h1>
 			{{ partial "article-meta.html" . }}
-			<section class='article-description'>
-				{{ .Params.description }}
-			</section>
 		</header>
+		<section class='article-description'>
+			{{ .Params.description }}
+		</section>
 		<div id='article-content'>
 			{{ .Content }}
 		</div>
@@ -36,5 +37,12 @@
 				<a class='next' href="{{.Permalink}}"><svg width="20" height="20"><path d="M19.354 10.146l-6-6a.5.5 0 0 0-.707.707l5.146 5.146H1.5a.5.5 0 0 0 0 1h16.293l-5.146 5.146a.5.5 0 0 0 .708.707l6-6a.5.5 0 0 0 0-.707z"/></svg> {{.Title}} </a>
 			{{ end }}
 		</div>
+		<script src="https://utteranc.es/client.js"
+			repo="midudev/midudev.com"
+			issue-term="pathname"
+			theme="github-light"
+			crossorigin="anonymous"
+			async>
+		</script>
 	</article>
 {{ end }}

@@ -118,7 +118,7 @@ blockquote p:before {
 }
 
 article p {
-  padding: 0 16px 16px;
+  padding-bottom: 16px;
   word-break: break-word;
 }
 
@@ -135,7 +135,7 @@ twitter-widget {
 }
 
 #article h1 {
-  color: #000;
+  color: #fff;
   font-weight: 400;
   font-size: 40px;
   line-height: 100%;
@@ -148,17 +148,16 @@ twitter-widget {
 #article h5 {
   color: #333;
   font-weight: 500;
-  padding: 16px 16px 8px;
+  padding-bottom: 8px;
 }
 
 #article ul {
-  padding: 0 16px 0 32px;
+  padding-left: 32px;
 }
 
 #article li {
   color: #555;
 }
-
 
 #article h3 {
   color: #004572;
@@ -187,7 +186,7 @@ twitter-widget {
 /** HEADER **/
 #header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 #header div {
@@ -200,26 +199,19 @@ twitter-widget {
 }
 
 #logo {
-  align-items: center;
   color: #000;
   display: flex;
   font-size: 24px;
   font-weight: 300;
-  line-height: 28px;
-  overflow: hidden;
-  padding: 16px;
-  transition: opacity 0.3s ease;
 }
 
 #logo svg {
   background: #0099ff;
   border-radius: 16px;
   box-sizing: content-box;
-  display: inline-block;
   fill: #fff;
   margin-right: 8px;
   padding: 4px;
-  transform: scale(1.1);
 }
 
 .category-js {
@@ -279,6 +271,30 @@ twitter-widget {
 /** ARTICLE **/
 .article-header {
   padding: 16px;
+  position: relative;
+}
+
+.article-header-bkg {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.article-header-bkg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: block;
+  bottom: 0;
+  background: rgba(0,0,0,.18);  
 }
 
 .article-meta {
@@ -310,7 +326,6 @@ twitter-widget {
 /** ARTICLE-CONTENT **/
 #article-content {
   padding-top: 16px;
-  border-top: 1px dashed #ddd;
 }
 
 #article-pagination {
@@ -378,4 +393,21 @@ figure.left p {
 figure.left img {
   height: auto;
   width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: #333 }
+  #logo,
+  p,
+  #article li,
+  #article h1,
+  .articles-list h1,
+  .article-meta { color: white; }
+  .article-meta svg { fill: white; }
+  .article-description { color: #eee; }
+  :not(pre)>code {
+    background: #005c9a;
+    color: #eee;
+  }
+  #article a { color: #24a8ff }
 }
