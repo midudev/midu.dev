@@ -45,7 +45,7 @@ En este artículo vamos a basarnos en la especificación nueva. Para ello vamos 
 
 En el siguiente ejemplo podéis ver cómo cambia el comportamiento dependiendo de si usamos `mandatory` o `proximity`. El de la izquierda, no importa cuanto hagáis scroll, que siempre terminará con un recuadro en el contenedor y nunca veréis dos a la vez, mientras que el otro a veces puede quedar a medias de dos elementos.
 
-<iframe height='265' scrolling='no' title='Scroll-snap-type "Mandatory" vs "Proximity"' src='//codepen.io/maxakohler/embed/ZjrOpx/?height=265&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+{{% pen id="ZjrOpx" height="300" tab="result" %}}
 
 Ya os podéis imaginar que, para crear un slider, normalmente nos interesará utilizar la propiedad `mandatory` de forma que al hacer scroll, sea como sea, simpere acaba en el viewport de nuestro contenedor el slide completo y no se quede a medias. **Esto hará que se sienta como un slider nativo.** Además, la dirección será, en la gran mayoría de los casos, horizontal. Por lo que tendremos algo así:
 
@@ -69,7 +69,7 @@ La otra propiedad es `scroll-snap-align`. Esta propiedad se usa a nivel de cada 
 
 En el siguiente ejemplo podéis ver cómo funcionaría el uso de Scroll Snap donde sus elementos tienen un `scroll-snap-align` con el valor `start`, de forma que le indicamos que el scroll debe ajustarse al inicio de cada elemento. Probad, con un navegador compatible, a hacer scroll para que ver que siempre termina el scroll al inicio de un elemento.
 
-<iframe height='265' scrolling='no' title='Vertical List' src='//codepen.io/maxakohler/embed/JBjROd/?height=265&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+{{% pen id="JBjROd" height="300" tab="result" %}}
 
 En este caso ya vemos que, normalmente, el que nos interesaría para crear un slider sería usar el `center` de forma que el elemento acabe justamente en el centro una vez que hayamos hecho scroll en el contenedor.
 
