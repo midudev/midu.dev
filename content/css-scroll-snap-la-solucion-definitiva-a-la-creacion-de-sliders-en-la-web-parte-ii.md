@@ -1,5 +1,5 @@
 ---
-date: '2019-01-05'
+date: '2019-01-12'
 description: 'Crea tu propio slider paso a paso, sencillo pero totalmente funcional, utilizando CSS gracias a la propiedad Scroll Snap.'
 image: 'https://midudev.com/images/scroll-snap-articulo-cabecera.jpg'
 language: 🇪🇸
