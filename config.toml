@@ -1,6 +1,6 @@
 baseURL = "https://midudev.com/"
 languageCode = "es-ES"
-title = "Frontend, Performance, Architecture, Javascript, React, CSS | midudev.com 👨‍💻"
+title = "Frontend, Performance, Architecture, Javascript, React, CSS"
 
 disableHugoGeneratorInject = true
 defaultContentLanguage = "es"
