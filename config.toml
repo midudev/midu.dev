@@ -1,6 +1,6 @@
 baseURL = "https://midudev.com/"
 languageCode = "es-ES"
-title = "Frontend, Performance, Architecture, Javascript, React, CSS"
+title = "midudev 👨‍💻 | Frontend, Performance, Javascript, React, CSS"
 
 disableHugoGeneratorInject = true
 defaultContentLanguage = "es"
@@ -9,5 +9,5 @@ pygmentsCodeFencesGuessSyntax = true
 pygmentsUseClasses = true
 
 [params]
-  description = "Artículos sobre Frontend, Performance Web, Javascript, React y CSS por midudev"
+  description = "Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, Performance Web ⚡️, Javascript ☕️, React ⚛️ y CSS 🎨"
   defaultImage = "/favicon/apple-touch-icon.png"
