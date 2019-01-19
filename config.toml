@@ -10,4 +10,4 @@ pygmentsUseClasses = true
 
 [params]
   description = "Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, Performance Web ⚡️, Javascript ☕️, React ⚛️ y CSS 🎨"
-  defaultImage = "/favicon/apple-touch-icon.png"
+  image = "/favicon/apple-touch-icon.png"
