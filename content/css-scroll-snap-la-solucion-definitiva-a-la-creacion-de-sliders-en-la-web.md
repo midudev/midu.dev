@@ -1,7 +1,7 @@
 ---
 title: CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte I
 date: '2018-12-27'
-image: 'https://midudev.com/images/scroll-snap.png'
+image: '/images/scroll-snap.png'
 description: 'Introducción a CSS Scroll Snap. La solución definitiva a la batalla infinita entre los desarrolladores web y la creación de sliders. Por fin.'
 topic: css
 language: 🇪🇸

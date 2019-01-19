@@ -1,7 +1,7 @@
 ---
 title: La mejor forma de cargar Google Analytics en tu web para performance
 date: '2018-12-10'
-image: 'https://midudev.com/images/analytics.png'
+image: '/images/analytics.png'
 description: 'Muchas veces vamos a querer cargar Google Analytics en nuestra página web pero nos gustaría evitar el coste en performance que tiene. Te voy a explicar la mejor estrategia para cargar esta librería afectando lo mínimo posible la performance.'
 topic: performance
 language: 🇪🇸
