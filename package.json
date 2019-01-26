@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx hugo-cli --minify",
+    "dev": "npx hugo-cli server",
     "now-build": "npm run build"
   },
   "repository": {
