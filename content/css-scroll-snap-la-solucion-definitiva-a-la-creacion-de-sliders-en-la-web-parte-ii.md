@@ -1,15 +1,15 @@
 ---
 date: '2019-01-12'
 description: 'Crea tu propio slider paso a paso, sencillo pero totalmente funcional, utilizando CSS gracias a la propiedad Scroll Snap.'
-image: '/images/scroll-snap-articulo-cabecera.jpg'
+image: '/images/snap.jpg'
 language: 🇪🇸
 title: 'CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte II'
 topic: css
 ---
 
-{{% youtube id="uhP6OL0bwpY" %}}
-
 [En la anterior entrega de esta serie de artículos hemos conocido las propiedades CSS Scroll Snap](https://midudev.com/css-scroll-snap-la-solucion-definitiva-a-la-creacion-de-sliders-en-la-web/), una forma de declarar posiciones en nuestro scroll, de forma que podemos controlar cómo se debe comportar el deslizamiento del mismo en los diferentes elementos que navegamos.
+
+{{% youtube id="uhP6OL0bwpY" %}}
 
 Para controlarlo, y para hacer repaso, lo haremos utilizando básicamente dos propiedades CSS:
 
@@ -36,7 +36,7 @@ Con el repaso que hemos hecho de las propiedades `scroll-snap-type` y `scroll-sn
 
 Esto, nos crea una la estructura HTML básica que vamos a necesitar para nuestro slider. En este ejemplo, y por simplicidad, vamos a hacerlo directamente con imágenes, pero **ten en cuenta que el slider podría funcionar también con elementos más complejos**. En cualquier caso, a continuación os dejo cómo queda este HTML usando unas imágenes de ejemplo de Unsplash:
 
-{{% pen id="REyKao" height="300" tab="result" %}}
+{{% pen id="REyKao" height="500" tab="result" %}}
 
 ### Estilando los elementos para que parezca un slider
 
@@ -51,7 +51,7 @@ Vale. Estamos muy lejos de un slider, pero no os vayáis todavía. En primer lug
 }
 ```
 
-{{% pen id="MZGJyz" height="265" tab="result" %}}
+{{% pen id="MZGJyz" height="500" tab="result" %}}
 
 Como podéis comprobar, **los osos pandas se ven horribles con esa relación de aspecto** 🐼🙀. Vamos a arreglarlo con más #CSS. Para ello, lo primero que vamos a hacer es obligar que la caja ocupe siempre el 100%. Esto es vital, ya que queremos que en nuestro slider sólo se vea un slide y que este ocupe exactamente el mismo espacio que el slider. Lo conseguiremos con `flex: 0 0 100%`.
 
@@ -66,7 +66,7 @@ Esto mejora bastante las cosas pero **todavía podemos hacer que las imágenes q
 }
 ```
 
-{{% pen id="wRjgJy" height="265" tab="result" %}}
+{{% pen id="wRjgJy" height="500" tab="result" %}}
 
 ### Añadiendo la funcionalidad CSS Scroll Snap a nuestro slider
 
