@@ -7,9 +7,10 @@ title: "prefers-color-scheme: La nueva media feature de CSS para detectar el tem
 topic: css
 ---
 
-{{% img src="/images/DwbAZwlWkAAnZQx.jpg" alt="Podremos usar CSS directamente para estilar nuestra web dependiendo del tema de color que haya elegido el usuario en su sistema operativo" align="" %}}
 
 Adaptar el tema de nuestras aplicaciones web según la configuración del usuario en su sistema operativo siempre ha sido un tema pendiente. Ahí queda el intento de Microsoft con la media feature [-ms-high-contrast](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-ms-high-contrast) que nos permitía adaptar nuestro CSS dependiendo del contraste que tenía configurado nuestro sistema operativo.
+
+{{% img align="center" src="/images/DwbAZwlWkAAnZQx.jpg" alt="Podremos usar CSS directamente para estilar nuestra web dependiendo del tema de color que haya elegido el usuario en su sistema operativo" %}}
 
 Recientemente, con el [nuevo modo oscuro de macOS Mojave](https://www.theverge.com/2018/9/24/17896252/mac-os-mojave-review-updates-dark-mode-new-features), la tendencia ha vuelto a la mesa. Mientras que [Apple ofreció una API para adaptar las aplicaciones del sistema operativo](https://developer.apple.com/documentation/appkit/supporting_dark_mode_in_your_interface) a este nuevo aspecto, la web no podía competir con ese nivel de personalización. Lo comentaba en Twitter *Sindre Sorhus*, creador de la librería de testing [AVA.js](https://github.com/avajs), en junio de 2018 con el siguiente tweet:
 
