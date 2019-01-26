@@ -7,7 +7,11 @@ defaultContentLanguage = "es"
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsUseClasses = true
+preserveTaxonomyNames = true
 
 [params]
   description = "Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, Performance Web ⚡️, Javascript ☕️, React ⚛️ y CSS 🎨"
   image = "/favicon/apple-touch-icon.png"
+
+[taxonomies]
+  tag = "tags"
