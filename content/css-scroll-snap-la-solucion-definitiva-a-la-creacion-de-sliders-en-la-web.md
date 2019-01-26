@@ -13,7 +13,7 @@ Si llevas unos años en la programación web estoy bastante seguro que te has en
 
 Pues sabes qué, **que eso se ha acabado**. Porque, por fin, **ahora en CSS podrás crear tus propios sliders sin necesidad de utilizar, en la gran mayoría de los casos, una librería.** Se llama Scroll Snap, tiene un soporte bastante respetable y va a cambiar mucho el cómo creamos sliders en web:
 
-{{% img alt="La API de scroll snap nos permite en pocas líneas de código crear un slider con una experiencia inmejorable" src="/images/scroll-snap.png" %}}
+{{% img align="center" alt="La API de scroll snap nos permite en pocas líneas de código crear un slider con una experiencia inmejorable" src="/images/scroll-snap.png" %}}
 
 **CSS Scroll Snap** nos permite declarar posiciones en nuestro scroll, de forma que podemos controlarlo mejor, especialmente al utilizar nuestros dedos para desplazarnos.
 
