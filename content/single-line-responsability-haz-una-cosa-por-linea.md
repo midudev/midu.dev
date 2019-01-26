@@ -3,8 +3,8 @@ title: Single Line Responsibility, one line does one thing
 date: '2018-12-18'
 image: '/images/slr_one_line_one_thing-5395037.png'
 description: "Experience and knowledge could help you writing readable, mantainable and clean code but, following the Single Line Responsibility principle will help you to be sure you're doing it."
-topic: bestpractices
 language: 🇬🇧
+tags: ["buenas prácticas"]
 ---
 
 It is said that **is easier writing understandable code for computers than for humans. And who doesn't believe that?** No matter the name of your variables, code styling, or weird decisions that you could make that, if it compiles, the computer is going to do what it has to do. And that's cool as we are free to throw a bunch of spaghetti to our beloved machines and get the work done.
@@ -141,7 +141,7 @@ writeFile(COMPONENT_PACKAGE_JSON_FILE, fileContent)
 
 ### Chaining could be good, just use it separating per line:
 
-```js
+```javascript
 // ❌ reading could be a bit difficult
 listOfNumbers.filter(n => n % 2 === 0).map(n => n * n).some(n => n > 30)
 
@@ -156,7 +156,7 @@ listOfNumbers
 
 ### Destructuring is nice. Just, don't make it ugly:
 
-```js
+```javascript
 // ❌ I'm scared
 const { result: { realEstates: { count = 0 } = {} } = { realEstates: {} } } = props
 
@@ -254,7 +254,7 @@ render () {
 ### Should I use it ALWAYS?
 **Nope.** The rule is not meant to be strict but a guide to try to follow as much of possible. Sometimes could be possible that one line is more appropriate for doing more things but still **following SLR could surface the possibility of extracting a useful function.**
 
-```js
+```javascript
 // a typical simple example of doing two things in the same line that could make sense
 const result = numbers.map(n => n * 2)
 
@@ -271,13 +271,13 @@ Anyway, the idea behind the Single Line Responsibility is to do your best effort
 
 As I said, **let's not being pedantic about SLR.** The idea behind SLR is trying as much of possible of doing one thing per line but, sometimes, could be good enough to try to limit the things to do in one line. In the next case I'm accessing a position of the array featureIds and using it as a param:
 
-```js
+```javascript
 this._findFeatureByValue(featureIds[0])
 ```
 
 Surely, we could do the next thing:
 
-```js
+```javascript
 const featureValue = featureIds[0]
 this._findFeatureByValue(featureValue)
 ```
