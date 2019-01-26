@@ -81,6 +81,8 @@ Y este es el resultado final:
 
 Obviamente, tenéis la posibilidad de instalar uno de los muchos prompts que existen ahí fuera (como [Sexy Bash Prompt](https://github.com/twolfson/sexy-bash-prompt)), que ya vienen preparados para ser usados y ofrecen un look'n'feel bastante atractivo. Eso, o **directamente cambiar el shell que usa (que por defecto es bash) y pasarse a alguno más moderno como [zsh](https://ohmyz.sh/) o [fish](https://fishshell.com/).**
 
+También os recomiendo que dejéis la aplicación de la terminal que viene por defecto y optéis por otras soluciones como [iTerm2](https://www.iterm2.com/) o [Hyper](https://hyper.is/). **Ambas son totalmente gratuitas**, tienes un montón de opciones de personalización y ofrecen una mejor experiencia de uso.
+
 Pero si por ahora queréis empezar con lo más sencillo, y con este artículo os he animado a probar, en el siguiente vídeo podéis ver cómo hago todo el proceso en **macOS** paso a paso, de forma que si tenéis ese sistema operativo sólo tenéis que seguir las indicaciones:
 
 {{% youtube id="CN6nOeOTeJg" %}}
