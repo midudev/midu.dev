@@ -34,8 +34,35 @@ body {
   width: 100%;
 }
 
+/* RESET */
+
 blockquote {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+figure,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+iframe {
+  border: 0;
 }
 
 /** UTILS */
@@ -69,38 +96,13 @@ main {
   justify-content: space-between;
 }
 
-iframe {
-  border: 0;
-}
-
 footer {
   color: #000;
   font-size: 12px;
-  margin: 150px auto 32px;
+  margin: 64px auto 32px;
   max-width: 100%;
   width: 320px;
   text-align: center;
-}
-
-h1,
-h2,
-h3,
-h4,
-figure,
-p,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-a, a:hover {
-  text-decoration: none;
-}
-
-img {
-  width: 100%;
-  height: auto;
 }
 
 hr {
