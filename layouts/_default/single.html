@@ -1,6 +1,10 @@
 {{ define "title" }}{{ .Title }} | midudev 👨‍💻{{ end }}
 
 {{ define "main" }}
+	{{ $css := resources.Get "styles/highlight.css" }}
+	{{ $style := $css | resources.Minify }}
+	<style>{{$style.Content | safeCSS}}</style>
+
 	<article id='article'>
 		<header class='article-header'>
 			<div class='article-header-meta'>

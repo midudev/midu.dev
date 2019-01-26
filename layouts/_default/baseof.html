@@ -17,10 +17,6 @@
 	{{ $css := resources.Get "styles/global.css" }}
 	{{ $style := $css | resources.Minify }}
 	<style>{{$style.Content | safeCSS}}</style>
-  
-  {{ $css := resources.Get "styles/highlight.css" }}
-	{{ $style := $css | resources.Minify }}
-	<style>{{$style.Content | safeCSS}}</style>
 
 	{{ partial "head/favicons.html" . }}
 	
