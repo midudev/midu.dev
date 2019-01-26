@@ -1,13 +1,34 @@
 {{ define "main" }}
-  <ul class='articles-list'>
-    {{ range .Pages }}
-      <li>
-        <a href="{{.Permalink}}">
-          <h1>{{ .Title }}</h1>
-          {{ partial "article-meta.html" . }}
-          <p>{{ .Params.description }}</p>
-        </a>
-      </li>
+  <section class='feed'>
+    {{ range first 1 (where .Pages ".Params.category" "!=" "podcast")  }}
+      <a class='card card--featured' href="{{.Permalink}}#article-content">
+        <img class='u-absolute' src='{{ .Params.image }}'/>
+        <div class='card-info u-absolute'>
+          <h1 class='article-title article-title--medium'>
+            <span class='article-title-content'>{{ .Title }}</span>
+          </h1>
+        </div>
+      </a>
     {{ end }}
-  </ul>
+    {{/* range first 1 (where .Pages ".Params.category" "podcast") */}}
+    {{ range first 1 (after 1 (where .Pages ".Params.category" "!=" "podcast"))}}
+    <a class='card card--aside' href='{{.Permalink}}#article-content'>
+      <img class='u-absolute' src='{{ .Params.image }}'/>
+      <div class='card-info u-absolute'>
+        {{/* partial "card/mic-overlay.html" */}}
+        <h1 class='article-title article-title--small'><span class='article-title-content'>{{ .Title }}</span></h1>
+      </div>
+    </a>
+  {{ end }}
+  {{ range first 12 (after 2 (where .Pages ".Params.category" "!=" "podcast")) }}
+      <a class='card' href="{{.Permalink}}#article-content">
+        <img class='u-absolute' src='{{ .Params.image }}'/>
+        <div class='card-info u-absolute'>
+          <h1 class='article-title'><span class='article-title-content'>{{ .Title }}</span></h1>
+        </div>
+      </a>
+    {{ end }}
+  </section>
+</div>
+
 {{ end }}

@@ -1,0 +1,12 @@
+{{ $taxonomy := "tags" }}
+{{ with .Param $taxonomy }}
+  {{ range $index, $tag := . }}
+    <div class='tags'>
+    {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+      <span class='tag'>
+        {{ $tag }}
+      </span>
+    {{- end -}}
+    </div>
+  {{- end -}}
+{{ end }}

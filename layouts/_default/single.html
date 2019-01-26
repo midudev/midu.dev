@@ -1,13 +1,35 @@
 {{ define "title" }}{{ .Title }} | midudev 👨‍💻{{ end }}
+
 {{ define "main" }}
 	<article id='article'>
 		<header class='article-header'>
-			<h1>{{ .Title }}</h1>
-			{{ partial "article-meta.html" . }}
-			<section class='article-description'>
-				{{ .Params.description }}
-			</section>
+			<div class='article-header-meta'>
+				{{ partial "article-meta.html" . }}
+			</div>
+			<h1 class='article-title article-title--big'><span class='article-title-content'>{{ .Title }}</span></h1>
+			{{ $taxonomy := "tags" }}
+			{{ with .Param $taxonomy }}
+				{{ range $index, $tag := . }}
+					<div class='tags'>
+					{{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+						<span class='tag'>
+							{{ $tag }}
+						</span>
+					{{- end -}}
+					</div>
+				{{- end -}}
+			{{ end }}
+			
+			<div class='article-header-img'>
+				<img src='{{ .Params.image }}'/>
+			</div>
+			<p class='article-description'>
+				<span class='article-title-content'>{{ .Params.description }}</span>
+			</p>
 		</header>
+		{{ if isset .Params "audio" }}
+			{{ partial "audio-player.html" . }}
+		{{ end }}
 		<div id='article-content'>
 			{{ .Content }}
 		</div>
