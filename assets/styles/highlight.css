@@ -170,19 +170,19 @@ pre.highlight {
   position: relative;
 }
 
-.language-css::before {
+.highlight .language-css::before {
   background: #2caddd;
 }
 
-.language-html::before {
+.highlight .language-html::before {
   background: #ff4800; 
 }
 
-.language-javascript::before {
+.highlight .language-javascript::before {
   background: #f7df1e;
 }
 
-.language-jsx::before {
+.highlight .language-jsx::before {
   background: #61dbfb;
 }
 
