@@ -16,7 +16,7 @@
 	
 	{{ $css := resources.Get "styles/global.css" }}
 	{{ $style := $css | resources.Minify }}
-	<link rel='stylesheet' href={{ $style.RelPermalink }} />
+	<style>{{$style.Content | safeCSS}}</style>
   
   {{ $css := resources.Get "styles/highlight.css" }}
 	{{ $style := $css | resources.Minify }}
