@@ -79,7 +79,7 @@ iframe {
 .u-lazyload {
   filter: blur(5px);
   opacity: 0;
-  transition: filter 750ms, opacity 250ms;
+  transition: filter 1000ms ease-in-out, opacity 500ms ease-in-out;
 }
 
 .lazyloaded {
@@ -114,6 +114,10 @@ footer {
   max-width: 100%;
   width: 320px;
   text-align: center;
+}
+
+footer iframe {
+  overflow: hidden;
 }
 
 hr {
