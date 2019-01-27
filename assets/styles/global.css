@@ -116,10 +116,6 @@ footer {
   text-align: center;
 }
 
-footer iframe {
-  overflow: hidden;
-}
-
 hr {
   background: #ccc;
   border: 0;
