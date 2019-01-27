@@ -76,6 +76,17 @@ iframe {
   width: 100%;
 }
 
+.u-lazyload {
+  filter: blur(5px);
+  opacity: 0;
+  transition: filter 750ms, opacity 250ms;
+}
+
+.lazyloaded {
+  filter: blur(0);
+  opacity: 1;
+}
+
 .header {
   padding: 16px 0
 }
