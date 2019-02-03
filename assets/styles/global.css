@@ -130,6 +130,7 @@ svg {
 
 twitter-widget {
   margin: 0 auto;
+  padding-bottom: 16px;
 }
 
 #article-content blockquote {
@@ -197,13 +198,15 @@ twitter-widget {
 
 #article h3 {
   color: #004572;
-  font-size: 18px;
+  font-size: 24px;
+  padding-top: 16px;
 }
 
 #article h4 {
   color: #067df7;
-  font-size: 16px;
+  font-size: 20px;
   text-transform: uppercase;
+  padding-top: 16px;
 }
 
 #article-content a {

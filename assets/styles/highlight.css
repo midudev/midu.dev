@@ -121,10 +121,6 @@ pre.highlight {
 .highlight .vg {
   color: #e5c07b;
 }
-.highlight .err {
-  color: #fff;
-  background-color: #e05252;
-}
 .highlight .gd {
   color: #e05252;
 }
@@ -151,14 +147,12 @@ pre.highlight {
 .highlight .ln:after {
   content: " ";
 }
-.highlight .hll {
+.highlight .hll, .highlight .hl {
   color: #abb2bf;
   background-color: #3a3f4b;
+  display: block;
 }
-.highlight .hl {
-  color: #abb2bf;
-  background-color: #3a3f4b;
-}
+
 .highlight .language-json .w + .s2 {
   color: #e06c75;
 }
