@@ -451,6 +451,7 @@ figure.left img {
   }
   #article h1 { max-width: 100%; font-size: 28px; line-height: 41px; }
   .article-description { font-size: 18px; line-height: 29px; }
+  #article-content p, #article-content li { font-size: 18px; }
   .article-header {
     padding: 16px 16px 32px;
     max-width: 100%;
