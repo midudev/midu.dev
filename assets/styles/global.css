@@ -1,7 +1,3 @@
-:root {
-  --maw: 1000px;
-}
-
 html {
   box-sizing: border-box;
 }
@@ -30,7 +26,7 @@ body {
     'Segoe UI Symbol';
   display: block;
   margin: 0 auto;
-  max-width: var(--maw);
+  max-width: 1000px;
   width: 100%;
 }
 
@@ -434,21 +430,15 @@ figure.left img {
 }
 
 @media (max-width: 1250px) {
-  :root {
-    --maw: 800px;
-  }
+  body { max-width: 800px; }
 }
 
 @media (max-width: 1000px) {
-  :root {
-    --maw: 700px;
-  }
+  body { max-width: 700px }
 }
 
 @media (max-width: 800px) {
-  :root {
-    --maw: 90%;
-  }
+  body { max-width: 90% }
   #article h1 { max-width: 100%; font-size: 28px; line-height: 41px; }
   .article-description { font-size: 18px; line-height: 29px; }
   #article-content p, #article-content li { font-size: 18px; }
