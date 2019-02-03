@@ -7,7 +7,7 @@ topic: javascript
 language: 🇪🇸
 ---
 
-No es casualidad que una de mis sagas favoritas sea [Back to the Future](https://es.wikipedia.org/wiki/Back_to_the_Future). Contiene dos elementos que, desde muy pequeño, siempre me han emocionado. La primera, **los viajes en el tiempo**. La segunda, **la ciencia ficción cómo medio para imaginar el futuro y dar pinceladas de lo que nos espera.**
+No es casualidad que una de mis sagas favoritas sea [Back to the Future](https://es.wikipedia.org/wiki/Back_to_the_Future). Contiene dos elementos que, desde muy pequeño, siempre me han emocionado. La primera, **los viajes en el tiempo**. La segunda, **la ciencia ficción como medio para imaginar el futuro y dar pinceladas de lo que nos espera.**
 
 En el mundo de Javascript hemos tenido nuestro propio [DeLorean DMC-12](https://es.wikipedia.org/wiki/DeLorean_DMC-12): **Babel**. Y es que, con Babel, hemos podido saborear el futuro del lenguaje manteniendo compatibilidad con los navegadores actuales. Seguramente, el tener la posibilidad de adoptar tan rápido las nuevas características de Javascript, hace que queramos todavía **más y mayores evoluciones del lenguaje**.
 
