@@ -26,7 +26,7 @@ body {
     'Segoe UI Symbol';
   display: block;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
 }
 
@@ -427,6 +427,10 @@ figure.left p {
 figure.left img {
   height: auto;
   width: 100%;
+}
+
+@media (max-width: 1250px) {
+  body { max-width: 800px; }
 }
 
 @media (max-width: 1000px) {
