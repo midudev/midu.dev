@@ -164,7 +164,7 @@ Por si os interesa, **[ya existe una proposición que, aunque está en la fase 0
 
 **Estos son sólo algunos de los ejemplos que me gustaría ver próximamente en el lenguaje.** Seguramente, dentro de un año, habrá que revisar las que he comentado, quitar algunas que ya dejarán de tener sentido y añadir otras que probablemente me parezcan más importantes en mi día a día. Ahora mismo, hay una mezcla de ensoñación con algo de realidad (y con proposals que ya están avanzando en el lenguaje). Si te gustaría comentar también lo que esperas en el lenguaje, las cosas que echas en falta y esperas que lleguen pronto, [coméntalo en Twitter, enviando una respuesta a mi cuenta de @midudev.](https://twitter.com/midudev) **¡Gracias por leerme!**
 
-{{ tweet 1092084605858009088 }}
+{{% tweet 1092084605858009088 %}}
 
 ## Referencias
 
