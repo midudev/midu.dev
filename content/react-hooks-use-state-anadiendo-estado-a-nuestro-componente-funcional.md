@@ -8,7 +8,7 @@ language: 🇪🇸
 
 Como ya hemos visto en [la entrada anterior](http://midudev/react-hooks-introduccion-saca-todo-el-potencial-sin-class/), los hooks son funciones especiales que nos permiten acceder a las funcionalidades de React. En este artículo vamos a ver uno de los hooks más importantes `useState`, con el que **podremos añadir un estado interno a nuestros componentes para hacerlos dinámicos e interactivos.**
 
-## useState: añadiendo estado a nuestro componente funcional
+## useState: añadiendo estado 🔁 a nuestro componente funcional
 
 Para usar este hook, primero debemos importarlo desde la librería de React.
 
@@ -47,7 +47,7 @@ function Contador() {
 
 Esto significa que, aunque es recomendable usar nombres semánticos que tengan sentido con lo que estamos haciendo, **eres totalmente libre de poner el nombre que más te interese a la hora de extraer estos dos métodos del array.**
 
-## Cómo leer el estado de nuestro componente
+## Cómo leer el estado de nuestro componente 👀
 
 **Leer el valor del estado es muy sencillo ya que es, simplemente, utilizar una variable.** Es la que hemos guardado en `count`. Una vez lo tenemos, ya podremos usarlo donde lo necesitemos. Por ejemplo, podríamos mostrar el valor actual del estado si en el renderizado evaluamos su valor envolviéndolo con `{}` de la siguiente forma.
 
@@ -76,7 +76,7 @@ class Contador extends Component {
 }
 ```
 
-## Cómo actualizar el estado de nuestro componente
+## Cómo actualizar el estado de nuestro componente 🖍
 
 De la misma forma que antes utilizábamos el método `this.setState` para actualizar el estado, ahora tendremos que utilizar el método `setCount` que hemos recuperado al usar `useState` para pasar como parámetro el nuevo valor que tenga el state. 
 
@@ -102,7 +102,7 @@ Y aquí tenéis el código funcionando para que trasteéis con él.
 
 {{% code id="rlkrzn43j4" height="300" tab="both" %}}
 
-## useState vs setState: cambiando la mentalidad
+## useState vs setState: cambiando la mentalidad 🧠
 
 En los ejemplos anteriores hemos visto el caso de un `state` sencillo, que es sólo un número pero... **¿qué pasa con estados más complejos?** Hasta ahora, el `state` de nuestros componentes de clases era siempre un objeto. Es posible que estéis tentados a seguir con la misma mentalidad que hasta ahora pero os podéis encontrar con problemas al respecto. Y es que **el método `this.setState` recibía un objeto con las nuevas propiedades del state y fusionaba el nuevo state que se le pasaba con el state que ya tenía.** Por ejemplo:
 
