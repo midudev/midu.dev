@@ -143,7 +143,7 @@ Así que en realidad los Hooks aplican la filosofía de React sobre el flujo de 
 
 ## ¿Y ahora qué? ¿Dejo de usar clases?
 
-Antes de terminar el artículo me gustaría dejar clara una cosa. **React ha sido, y seguirá siendo en los próximos años, famoso por una API estable.** Esto signifnica que **las clases no van a desaparecer en el corto ni medio ni, seguramente, largo plazo.** Lo que va a ocurrir es que los componentes funcionales, junto con los hooks, van a ser la forma "oficial" de crear componentes, pero se va a seguir manteniendo compatibilidad con las clases por un largo tiempo.
+Antes de terminar el artículo me gustaría dejar clara una cosa. **React ha sido, y seguirá siendo en los próximos años, famoso por una API estable.** Esto significa que **las clases no van a desaparecer en el corto ni medio ni, seguramente, largo plazo.** Lo que va a ocurrir es que los componentes funcionales, junto con los hooks, van a ser la forma "oficial" de crear componentes, pero se va a seguir manteniendo compatibilidad con las clases por un largo tiempo.
 
 Dicho esto, mi recomendación es que, **si vas a crear un componente nuevo y tienes la última versión de React, entonces utilices funciones y Hooks**. Y eso si ya tienes claro cómo funcionan y entiendes lo que estás haciendo.
 
