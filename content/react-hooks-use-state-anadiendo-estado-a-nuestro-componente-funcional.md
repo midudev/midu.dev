@@ -6,7 +6,7 @@ description: Los componentes en React pueden tener un estado interno que determi
 language: 🇪🇸
 ---
 
-Como ya hemos visto en [la entrada anterior](http://midudev/react-hooks-introduccion-saca-todo-el-potencial-sin-class/), los hooks son funciones especiales que nos permiten acceder a las funcionalidades de React. En este artículo vamos a ver uno de los hooks más importantes `useState`, con el que **podremos añadir un estado interno a nuestros componentes para hacerlos dinámicos e interactivos.**
+Como ya hemos visto en [la entrada anterior](http://midudev.com/react-hooks-introduccion-saca-todo-el-potencial-sin-class/), los hooks son funciones especiales que nos permiten acceder a las funcionalidades de React. En este artículo vamos a ver uno de los hooks más importantes `useState`, con el que **podremos añadir un estado interno a nuestros componentes para hacerlos dinámicos e interactivos.**
 
 ## useState: añadiendo estado 🔁 a nuestro componente funcional
 
