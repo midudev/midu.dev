@@ -11,6 +11,12 @@
 				{{ partial "article-meta.html" . }}
 			</div>
 			<h1 class='article-title article-title--big'><span class='article-title-content'>{{ .Title }}</span></h1>
+
+			{{ if isset .Params "tableOfContents" }}
+				asdsadasd
+				{{ .TableOfContents }}
+			{{ end }}
+
 			{{ $taxonomy := "tags" }}
 			{{ with .Param $taxonomy }}
 				{{ range $index, $tag := . }}
@@ -31,6 +37,11 @@
 				<span class='article-title-content'>{{ .Params.description }}</span>
 			</p>
 		</header>
+		<div class='article-editar'>
+			<a href='https://github.com/midudev/midudev.com/edit/master/content/{{.File.LogicalName}}'>
+				¿Una errata? Edita el artículo en GitHub {{ partial "icons/github.html" . }}
+			</a>
+		</div>
 		{{ if isset .Params "audio" }}
 			{{ partial "audio-player.html" . }}
 		{{ end }}

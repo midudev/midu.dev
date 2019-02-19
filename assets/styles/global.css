@@ -158,6 +158,27 @@ twitter-widget {
   padding-bottom: 0;
 }
 
+.article-editar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 0;
+}
+
+.article-editar a {
+  align-items: center;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.article-editar a:hover {
+  opacity: .75;
+}
+
+.article-editar svg {
+  width: 18px;
+}
+
 .article-title {
   font-size: 18px;
   line-height: 29px;
@@ -317,7 +338,7 @@ twitter-widget {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 0 auto 32px;
+  margin: 0 auto;
   padding-bottom: 32px;
 }
 
@@ -360,6 +381,7 @@ twitter-widget {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 32px;
   text-align: center;
 }
 
@@ -453,6 +475,6 @@ figure.left img {
 }
 
 @media (max-width: 400px) {
-  .article-header { margin-bottom: 16px; }
-  .article-description { display: none; }
+  #article-content { margin-top: 16px; }
+  .article-description, .article-editar { display: none; }
 }
