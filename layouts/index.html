@@ -1,7 +1,7 @@
 {{ define "main" }}
   <section class='feed'>
     {{ range first 1 (where .Pages ".Params.category" "!=" "podcast")  }}
-      <a class='card card--featured' href="{{.Permalink}}#article-content">
+      <a class='card card--featured' href="{{.Permalink}}">
         <img class='u-absolute u-lazyload lazyload' data-src='{{ .Params.image }}'/>
         <div class='card-info u-absolute'>
           <h1 class='article-title article-title--medium'>
@@ -12,7 +12,7 @@
     {{ end }}
     {{/* range first 1 (where .Pages ".Params.category" "podcast") */}}
     {{ range first 1 (after 1 (where .Pages ".Params.category" "!=" "podcast"))}}
-    <a class='card card--aside' href='{{.Permalink}}#article-content'>
+    <a class='card card--aside' href='{{.Permalink}}'>
       <img class='u-absolute u-lazyload lazyload' data-src='{{ .Params.image }}'/>
       <div class='card-info u-absolute'>
         {{/* partial "card/mic-overlay.html" */}}
@@ -21,7 +21,7 @@
     </a>
   {{ end }}
   {{ range first 12 (after 2 (where .Pages ".Params.category" "!=" "podcast")) }}
-      <a class='card' href="{{.Permalink}}#article-content">
+      <a class='card' href="{{.Permalink}}">
         <img class='u-absolute u-lazyload lazyload' data-src='{{ .Params.image }}'/>
         <div class='card-info u-absolute'>
           <h1 class='article-title'><span class='article-title-content'>{{ .Title }}</span></h1>
