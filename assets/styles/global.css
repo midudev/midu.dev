@@ -167,6 +167,7 @@ twitter-widget {
 .article-editar a {
   align-items: center;
   color: #333;
+  display: flex;
   font-size: 14px;
   font-weight: 500;
 }
@@ -176,6 +177,7 @@ twitter-widget {
 }
 
 .article-editar svg {
+  margin-left: 4px;
   width: 18px;
 }
 
