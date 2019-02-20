@@ -28,6 +28,7 @@ body {
   margin: 0 auto;
   max-width: 1000px;
   width: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* RESET */
@@ -168,7 +169,7 @@ twitter-widget {
   align-items: center;
   color: #333;
   display: flex;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
 }
 
