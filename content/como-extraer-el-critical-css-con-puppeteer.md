@@ -9,6 +9,8 @@ language: 🇪🇸
 
 El Critical Path de una web, o en castellano, **la ruta crítica es la secuencia mínima que una página tiene que seguir para poder hacer su primer pintado.** ¿Y por qué es importante? Porque según la longitud de ese camino crítico, el usuario verá más tarde la página web.
 
+{{% youtube id="GIYp3qG1520" %}}
+
 Por eso, a la hora de hacer optimizaciones a la performance de nuestro site, uno de los objetivos principales será **minimizar al máximo el número de recursos** o solicitudes que tenemos que hacer **para poder realizar el primer renderizado de nuestra página.**
 
 No en vano [Lighthouse](https://developers.google.com/web/tools/lighthouse/?hl=es), la referencia de Google para tomar métricas de performance sobre la experiencia del usuario, tiene muy presente esto y una de sus comprobaciones es, precisamente, averiguar los pasos necesarios para renderizar la página del usuario. En el informe genera un diagrama como este:
