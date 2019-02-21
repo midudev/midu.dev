@@ -156,7 +156,7 @@ URL=http://fotocasa.es/es/alquiler/viviendas/barcelona-capital/eixample/l node i
 
 ## Referencias
 
-[Puppeteer - Headless Chrome Node API ](https://github.com/GoogleChrome/puppeteer)
-[Google Chrome Labs Examples](https://github.com/GoogleChromeLabs/puppeteer-examples)
+[Puppeteer - Headless Chrome Node API ](https://github.com/GoogleChrome/puppeteer)<br />
+[Google Chrome Labs Examples](https://github.com/GoogleChromeLabs/puppeteer-examples)<br />
 [Minimal CSS Service](https://github.com/SUI-Components/minimal-css-service)
 
