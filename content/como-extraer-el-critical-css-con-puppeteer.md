@@ -106,10 +106,13 @@ De esta forma **Code Coverage nos indica qué trozos de nuestro código usamos. 
   }
 ```
 
-Una vez terminamos el bucle, sólo tenemos mostrar por consola:
+Una vez terminamos el bucle, sólo tenemos mostrar por consola y cerrar las conexiones de la página y el navegador.
 
 ```javascript
   console.log(criticalCSS)
+
+  await page.close()
+  await browser.close()
 ```
 
 Y aquí tenéis el snippet de código completo, de una pieza, para que lo podáis copiar y pegar. ⤵️
@@ -135,6 +138,9 @@ const URL = process.env.URL || 'https://www.fotocasa.es'
   }
   
   console.log(criticalCSS)
+
+  await page.close()
+  await browser.close()
 })()
 ```
 
