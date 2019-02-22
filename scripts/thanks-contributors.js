@@ -10,17 +10,22 @@ const options = {
 const COLUMNS = 7
 
 async function writeREADMEfile (contributorsMarkdown) {
+  console.log('')
+  console.log('🗂  Opening README file...')
   const readmeContent = await fs.readFile('README.md', 'utf8')
   const newReadmeContent = readmeContent.replace(
     /\[\/\/\]: contributors(?:(?:\n.*)+\[\/\/\]: contributors)?/,
     `[//]: contributors\n\n${contributorsMarkdown}\n[//]: contributors`
   )
+  console.log('✍️  Writing new README file')
   await fs.writeFile('README.md', newReadmeContent)
+  console.log('🆗 Done!')
 }
 
 function createContributorsMarkdown(contributors) {
   let markdown = ''
 
+  console.log('🏋️‍  Checking contributors... \n')
   contributors.forEach((contributor, index) => {
     const {
       avatar_url: avatarUrl,
@@ -28,6 +33,8 @@ function createContributorsMarkdown(contributors) {
       login: name,
       contributions
     } = contributor
+
+    console.log(`${name} has made ${contributions} contributions.`)
 
     markdown += `| [<img src="${avatarUrl}" width="100px;"/><br /><sub><b>${name}</b></sub>](${profileUrl})<br />`
 
