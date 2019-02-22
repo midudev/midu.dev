@@ -10,6 +10,8 @@ https://midudev.com website
 
 # Contributors ✨
 
+If you find errors on the articles or you want to improve the website, you definitely are welcome to create a Pull Request to make the blog better. 👍 Some already did it! Thanks 🙇‍!!!
+
 [//]: contributors
 
 | [<img src="https://avatars0.githubusercontent.com/u/7225802?v=4" width="100px;"/><br /><sub><b>aarongarciah</b></sub>](https://github.com/aarongarciah)<br />| [<img src="https://avatars1.githubusercontent.com/u/4168389?v=4" width="100px;"/><br /><sub><b>desko27</b></sub>](https://github.com/desko27)<br /> |
