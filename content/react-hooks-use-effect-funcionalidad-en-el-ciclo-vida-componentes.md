@@ -30,22 +30,22 @@ function Example() {
     console.log('render!')
   })
   
-  return <span>This is an useEffect example</span>
+  return <span>This is a useEffect example</span>
 }
 {{< / highlight >}}
 
 Esto hará que se muestre en consola el mensaje `render!` después que el componente se renderice por primera vez. Por si te lo estás preguntando, en este ejemplo, el método `useEffect` ha funcionado de forma similar a como lo hubiera hecho el ciclo de vida `componentDidMount`:
 
 ```jsx
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 class Example extends Component {
   componentDidMount () {
-    console.log('render!)
+    console.log('render!')
   }
 
   render () {
-    return (<span>This is an useEffect example</span>)
+    return (<span>This is a componentDidMount example</span>)
   }
 }
 ```
@@ -62,7 +62,7 @@ function Contador() {
 
   useEffect(() => {
     // Actualiza el title de la página en cada click!
-    document.title = `Has clickado ${count} veces`
+    document.title = `Has hecho clic ${count} veces`
   })
 
   return (
@@ -93,15 +93,15 @@ function ShowWindowWidth() {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    // creamos una función para actualizar el estado con el clientWidth
+    // Creamos una función para actualizar el estado con el clientWidth
     const updateWidth = () => {
       const width = document.body.clientWidth
       console.log(`updateWidth con ${width}`)
       setWidth(width)
     }
-    // actualizaremos el width al montar el componente
+    // Actualizaremos el width al montar el componente
     updateWidth()
-    // nos suscribimos al evento resize de window
+    // Nos suscribimos al evento resize() de window
     window.addEventListener("resize", updateWidth)
   })
 
@@ -117,7 +117,7 @@ Como véis, hemos usado el `useEffect` para suscribirnos a un evento del DOM, en
 
 {{% code id="21v2xyr90y" height="300" tab="both" %}}
 
-⚠️ Esto, funcionar, funciona. **Pero hay un problema bastante gordo y muy importante que entiendas ya que podemos provocar *memory leaks* en nuestras aplicaciones si no lo tienes en cuenta.**
+⚠️ Esto, funcionar, funciona. **Pero hay un problema bastante gordo y es muy importante que lo entiendas: podríamos provocar *memory leaks* en nuestras aplicaciones si no lo tienes en cuenta.**
 
 Como hemos dicho anteriormente, `useEffect` se va a ejecutar cada vez que se renderiza nuestro componente. Por lo tanto, está bien que nos queramos suscribir al evento del `window` en el hook `useEffect` pero, si se vuelve a ejecutar la función en cada renderizado... **¡volveremos a suscribirnos de nuevo al evento `resize` cada vez que actualicemos el estado y hagamos que se renderice nuestro componente!**
 
@@ -130,18 +130,18 @@ function ShowWindowWidth() {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    // creamos una función para actualizar el estado con el clientWidth
+    // Creamos una función para actualizar el estado con el clientWidth
     const updateWidth = () => {
       const width = document.body.clientWidth
       console.log(`updateWidth con ${width}`)
       setWidth(width)
     }
-    // actualizaremos el width al montar el componente
+    // Actualizaremos el width al montar el componente
     updateWidth()
-    // nos suscribimos al evento resize de window
+    // Nos suscribimos al evento resize de window
     window.addEventListener("resize", updateWidth)
 
-    // devolvemos una función para anular la suscripción al evento
+    // Devolvemos una función para anular la suscripción al evento
     return () => {
       window.removeEventListener("resize", updateWidth)
     }
