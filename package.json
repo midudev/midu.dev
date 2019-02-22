@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npx hugo-cli --minify",
     "dev": "npx hugo-cli server",
-    "now-build": "npm run build"
+    "now-build": "npm run build",
+    "do:thanks": "node scripts/thanks-contributors.js"
   },
   "repository": {
     "type": "git",
