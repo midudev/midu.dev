@@ -1,11 +1,11 @@
 # midudev.com
 https://midudev.com website
 
-**Follow me! 👇**
+**You could follow me at... 👇**
 
-Twitter: https://twitter.com/midudev
-
-YouTube: https://www.youtube.com/c/midudev?sub_confirmation=1
+* Twitter: https://twitter.com/midudev
+* YouTube: https://www.youtube.com/c/midudev?sub_confirmation=1
+* Instagram: https://www.instagram.com/midudev_/
 
 
 # Contributors ✨
