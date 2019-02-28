@@ -1,7 +1,7 @@
 {
-  "name": "midudev.com",
+  "name": "midu.dev",
   "version": "1.0.0",
-  "description": "https://midudev.com website",
+  "description": "https://midu.dev website",
   "main": "index.js",
   "scripts": {
     "build": "npx hugo-cli --minify",
@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/midudev/midudev.com.git"
+    "url": "git+https://github.com/midudev/midu.dev.git"
   },
   "keywords": [],
   "author": "Miguel Ángel Durán García",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/midudev/midudev.com/issues"
+    "url": "https://github.com/midudev/midu.dev/issues"
   },
-  "homepage": "https://github.com/midudev/midudev.com#readme"
+  "homepage": "https://github.com/midudev/midu.dev#readme"
 }
