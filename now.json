@@ -1,6 +1,6 @@
 {
-  "alias": ["midudev.com", "www.midudev.com"],
-  "name": "midudev.com",
+  "alias": ["midu.dev", "midudev.com", "www.midudev.com"],
+  "name": "midu.dev",
   "version": 2,
   "builds": [
     {
