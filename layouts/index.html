@@ -20,7 +20,7 @@
       </div>
     </a>
   {{ end }}
-  {{ range first 12 (after 2 (where .Pages ".Params.category" "!=" "podcast")) }}
+  {{ range first 20 (after 2 (where .Pages ".Params.category" "!=" "podcast")) }}
       <a class='card' href="{{.Permalink}}">
         <img class='u-absolute u-lazyload lazyload' data-src='{{ .Params.image }}'/>
         <div class='card-info u-absolute'>

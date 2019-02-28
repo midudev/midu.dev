@@ -20,8 +20,8 @@
 
 	{{ partial "head/favicons.html" . }}
 	
-	<meta name="apple-mobile-web-app-title" content="midudev.com" />
-	<meta name="application-name" content="midudev.com" />
+	<meta name="apple-mobile-web-app-title" content="midu.dev" />
+	<meta name="application-name" content="midu.dev" />
 	<meta name="theme-color" content="#0099ff" />
 	
 	{{ range .AlternativeOutputFormats -}}
@@ -33,17 +33,17 @@
 	
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:creator" content="@midudev" />
-	<meta name="twitter:domain" content="midudev.com" />
-	<meta name="twitter:image" content="https://midudev.com{{ .Params.image | default .Site.Params.Image }}" />
+	<meta name="twitter:domain" content="midu.dev" />
+	<meta name="twitter:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
 	<meta name="twitter:site" content="@midudev" />
 	
 	<link rel="manifest" href="/static/manifest.json" />
 	
 	<meta property="og:locale" content="es_ES" />
 	<meta property="og:title" content="{{ .Title | default .Site.Title }}" />
-	<meta property="og:image" content="https://midudev.com{{ .Params.image | default .Site.Params.Image }}" />
+	<meta property="og:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
 	<meta property="og:description" content="{{- .Description | default .Site.Params.Description -}}" />
-	<meta property="og:site_name" content="midudev.com" />
+	<meta property="og:site_name" content="midu.dev" />
 
 </head>
 <body>
