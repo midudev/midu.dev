@@ -7,7 +7,7 @@ title: 'CSS Scroll Snap, la solución definitiva a la creación de sliders en la
 topic: css
 ---
 
-[En la anterior entrega de esta serie de artículos hemos conocido las propiedades CSS Scroll Snap](https://midudev.com/css-scroll-snap-la-solucion-definitiva-a-la-creacion-de-sliders-en-la-web/), una forma de declarar posiciones en nuestro scroll, de forma que podemos controlar cómo se debe comportar el deslizamiento del mismo en los diferentes elementos que navegamos.
+[En la anterior entrega de esta serie de artículos hemos conocido las propiedades CSS Scroll Snap](https://midu.dev/css-scroll-snap-la-solucion-definitiva-a-la-creacion-de-sliders-en-la-web/), una forma de declarar posiciones en nuestro scroll, de forma que podemos controlar cómo se debe comportar el deslizamiento del mismo en los diferentes elementos que navegamos.
 
 {{% youtube id="uhP6OL0bwpY" %}}
 

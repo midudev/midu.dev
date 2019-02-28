@@ -46,7 +46,7 @@ delete person.twitter
 console.log(person.twitter) // '@midudev'
 
 // Al intentar añadir una propiedad nueva, el objeto sigue igual
-person.blog = 'midudev.com'
+person.blog = 'midu.dev'
 console.log(person.blog) // undefined
 ```
 

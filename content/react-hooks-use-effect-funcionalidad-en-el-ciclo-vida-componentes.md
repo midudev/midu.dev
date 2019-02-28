@@ -52,7 +52,7 @@ class Example extends Component {
 
 ## useEffect: usando el state de nuestro componente y creando un efecto 💫
 
-Ahora que ya hemos usado `useEffect` vamos a utilizarlo junto con [el hook `useState` que ya conocemos.](https://midudev.com/react-hooks-use-state-anadiendo-estado-a-nuestro-componente-funcional/#article-content). Para ello, vamos a recuperar el ejemplo del Contador pero vamos a hacer que, cada vez que se vaya a renderizar de nuevo el componente, actualice el título de la página con un mensaje indicando el número de veces que hemos hecho click en el botón. **Para ello tendremos que leer el valor actual del estado interno de nuestro componente de la siguiente forma**:
+Ahora que ya hemos usado `useEffect` vamos a utilizarlo junto con [el hook `useState` que ya conocemos.](https://midu.dev/react-hooks-use-state-anadiendo-estado-a-nuestro-componente-funcional/#article-content). Para ello, vamos a recuperar el ejemplo del Contador pero vamos a hacer que, cada vez que se vaya a renderizar de nuevo el componente, actualice el título de la página con un mensaje indicando el número de veces que hemos hecho click en el botón. **Para ello tendremos que leer el valor actual del estado interno de nuestro componente de la siguiente forma**:
 
 ```jsx
 import React, { useEffect, useState } from 'react'
@@ -254,4 +254,4 @@ Con **el hook `useEffect` podremos ejecutar código cada vez que nuestro compone
 
 También hemos podido entender que `useEffect` viene a sustituir en gran parte los ciclos de vida de los componentes que vimos en los componentes que extendían de la clase `Component`. De hecho, viene a sustituir los ciclos `componentWillMount`, `componentDidMount`, `componentWillUpdate`, `componentDidUpdate` y `componentWillUnmount`. **Esto nos debería ayudar a generar menos código y hacer nuestros componentes más sencillos.**
 
-Ahora que sabemos [qué son los hooks de React](https://midudev.com/react-hooks-introduccion-saca-todo-el-potencial-sin-class), [el hook `useState` para añadir un estado interno a nuestro componente](https://midudev.com/react-hooks-use-state-anadiendo-estado-a-nuestro-componente-funcional/) y este `useEffect` ya conocemos lo que es, seguramente, el 80% del grueso del día a día de los hooks. Pero **todavía quedan cosas, tan interesantes, como crear nuestros propios hooks. Lo veremos en el siguiente artículo, ¡no te lo pierdas!**
+Ahora que sabemos [qué son los hooks de React](https://midu.dev/react-hooks-introduccion-saca-todo-el-potencial-sin-class), [el hook `useState` para añadir un estado interno a nuestro componente](https://midu.dev/react-hooks-use-state-anadiendo-estado-a-nuestro-componente-funcional/) y este `useEffect` ya conocemos lo que es, seguramente, el 80% del grueso del día a día de los hooks. Pero **todavía quedan cosas, tan interesantes, como crear nuestros propios hooks. Lo veremos en el siguiente artículo, ¡no te lo pierdas!**
