@@ -3,7 +3,7 @@ const fs = require('fs').promises
 
 const options = {
   hostname: 'api.github.com',
-  path: '/repos/midudev/midudev.com/contributors',
+  path: '/repos/midudev/midu.dev/contributors',
   headers: { 'User-Agent': 'Thanks GitHub Contributors App' }
 }
 
