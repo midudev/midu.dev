@@ -1,5 +1,5 @@
-# midudev.com
-https://midudev.com website
+# midu.dev
+https://midu.dev website
 
 **You could follow me at... 👇**
 
