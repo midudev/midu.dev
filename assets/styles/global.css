@@ -454,6 +454,61 @@ figure.left img {
   width: 100%;
 }
 
+#TableOfContentsTitle {
+  background: #fff;
+  color: #555;
+  font-variant: small-caps;
+  font-weight: normal;
+  font-size: 18px;
+  margin: 0;
+  padding: 0px 4px;
+  position: absolute;
+  left: 12px;
+}
+
+#TableOfContents {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 26px 16px 8px;
+  margin-top: 10px;
+  margin-bottom: 32px;
+}
+
+#TableOfContents ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#TableOfContents a {
+  color: #09f;
+  font-size: 18px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+#TableOfContents a:hover {
+  text-decoration: underline;
+}
+
+#TableOfContents li a:before {
+  border-radius: 5px;
+  color: #09f;
+  content: "# ";
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  left: 0;
+  margin-right: 5px;
+  opacity: .7;
+  text-align: right;
+}
+
+#TableOfContents > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 @media (max-width: 1250px) {
   body { max-width: 800px; }
 }
