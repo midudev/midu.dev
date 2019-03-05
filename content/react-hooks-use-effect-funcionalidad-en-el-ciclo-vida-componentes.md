@@ -12,7 +12,7 @@ Ya sabemos qué son los hooks y cómo usar el hook `useState` para añadir un es
 
 El ciclo de vida de los componentes en React permitía en nuestros componentes con `class` poder ejecutar código en diferentes **fases de montaje, actualización y desmontaje.** De esta forma, podíamos añadir cierta funcionalidad en las distintas etapas de nuestro componente.
 
-Con los hooks también podremos acceder a esa ciclo de vida en nuestros componentes funcionales aunque de una forma más clara y sencilla. Para ello usaremos **`useEffect`, un hook que recibe como parámetro una función que ese ejecutará cada vez que nuestro componente se renderice, ya sea por un cambio de estado, por recibir props nuevas o, y esto es importante, porque es la primera vez que se monta.**
+Con los hooks también podremos acceder a esa ciclo de vida en nuestros componentes funcionales aunque de una forma más clara y sencilla. Para ello usaremos **`useEffect`, un hook que recibe como parámetro una función que se ejecutará cada vez que nuestro componente se renderice, ya sea por un cambio de estado, por recibir props nuevas o, y esto es importante, porque es la primera vez que se monta.**
 
 Para usar este hook, primero debemos importarlo desde la librería de React.
 
@@ -155,7 +155,7 @@ function ShowWindowWidth() {
 }
 {{< / highlight >}}
 
-La función que devolvemos se podría entender como el ciclo de vida `componentWillUnmount` de los componentes con clases. Con una diferencia. **Mientras que el ciclo de vida `componentWillUnmount` se ejecutaba cuando el componente se desmontaba, en este caso... se ejecuta cada vez que el componente se vuelve a renderizar.** Esto ese que la suscripción y desuscripción ocurre cada vez que el efecto se ejecuta. Aunque no tiene porque ser un problema de performance, tenlo en cuenta.
+La función que devolvemos se podría entender como el ciclo de vida `componentWillUnmount` de los componentes con clases. Con una diferencia. **Mientras que el ciclo de vida `componentWillUnmount` se ejecutaba cuando el componente se desmontaba, en este caso... se ejecuta cada vez que el componente se vuelve a renderizar.** Así que la suscripción y desuscripción ocurre cada vez que el efecto se ejecuta. Aunque no tiene porque ser un problema de performance, tenlo en cuenta.
 
 ## useEffect: Cómo evitar que se vuelva a ejecutar 🔃
 
