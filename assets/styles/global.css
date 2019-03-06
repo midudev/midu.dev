@@ -71,6 +71,13 @@ iframe {
   bottom: 0;
   height: 100%;
   width: 100%;
+
+  bottom: var(--u-absolute-bottom, 0);
+  left: var(--u-absolute-left, 0);
+  top: var(--u-absolute-top, 0);
+  right: var(--u-absolute-right, 0);
+  height: var(--u-absolute-height, 100%);
+  width: var(--u-absolute-width, 100%);
 }
 
 .u-lazyload {
