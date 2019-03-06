@@ -8,9 +8,14 @@
 	<article id='article'>
 		<header class='article-header'>
 			<div class='article-header-meta'>
+				{{ if isset .Params "audio" }}
+					{{ partial "card/mic-overlay.html" }}
+				{{ end}}
 				{{ partial "article-meta.html" . }}
 			</div>
-			<h1 class='article-title article-title--big'><span class='article-title-content'>{{ .Title }}</span></h1>
+			<h1 class='article-title article-title--big'>
+				<span class='article-title-content'>{{ .Title }}</span>
+			</h1>
 
 			{{ $taxonomy := "tags" }}
 			{{ with .Param $taxonomy }}
@@ -32,11 +37,15 @@
 				<span class='article-title-content'>{{ .Params.description }}</span>
 			</p>
 		</header>
+
+		{{ if isset .Params "audio" }}
+		{{ else }}
 		<div class='article-editar'>
 			<a href='https://github.com/midudev/midu.dev/edit/master/content/{{.File.LogicalName}}'>
 				¿Una errata? Edita el artículo en GitHub {{ partial "icons/github.html" . }}
 			</a>
 		</div>
+		{{ end }}
 		
 		{{ if (.Params.toc) }}
 			<h6 id="TableOfContentsTitle">Tabla de contenidos</h5>
@@ -45,7 +54,9 @@
 
 		{{ if isset .Params "audio" }}
 			{{ partial "audio-player.html" . }}
+			{{ partial "podcast-subscribe.html" }}
 		{{ end }}
+
 		<div id='article-content'>
 			{{ .Content }}
 		</div>
