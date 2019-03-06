@@ -10,17 +10,16 @@
         </div>
       </a>
     {{ end }}
-    {{/* range first 1 (where .Pages ".Params.category" "podcast") */}}
-    {{ range first 1 (after 1 (where .Pages ".Params.category" "!=" "podcast"))}}
+    {{ range first 1 (where .Pages ".Params.category" "podcast") }}
     <a class='card card--aside' href='{{.Permalink}}'>
       <img class='u-absolute u-lazyload lazyload' data-src='{{ .Params.image }}'/>
       <div class='card-info u-absolute'>
-        {{/* partial "card/mic-overlay.html" */}}
+        {{ partial "card/mic-overlay.html" }}
         <h1 class='article-title article-title--small'><span class='article-title-content'>{{ .Title }}</span></h1>
       </div>
     </a>
   {{ end }}
-  {{ range first 20 (after 2 (where .Pages ".Params.category" "!=" "podcast")) }}
+  {{ range first 20 (after 1 (where .Pages ".Params.category" "!=" "podcast")) }}
       <a class='card' href="{{.Permalink}}">
         <img class='u-absolute u-lazyload lazyload' data-src='{{ .Params.image }}'/>
         <div class='card-info u-absolute'>
