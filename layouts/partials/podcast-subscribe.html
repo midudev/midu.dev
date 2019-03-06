@@ -1,0 +1,96 @@
+<style>
+  .podcast-subscribe {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .podcast-subscribe-title {
+    text-align: center;
+  }
+
+  .podcast-subscribe a {
+    border-radius: 20px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .3);
+    color: #fff;
+    display: flex;
+    margin: 0px 4px 16px;
+    padding: 4px 16px 4px 32px;
+    position: relative;
+    transition: all .3s ease;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, .5);
+  }
+
+  .podcast-subscribe a::before {
+    content: '';
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 20px;
+    width: 20px;
+    background-size: cover;
+    position: absolute;
+  }
+
+  .podcast-subscribe a:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+    opacity: .75;
+  }
+
+  .podcast-subscribe .subscribe-google {
+    background-color: #fff;
+    color: #333;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, .3);
+  }
+
+  .podcast-subscribe .subscribe-google:before {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAATlBMVEUAAADMqlUkden5uQb8uQcjdObpQTIxplPpQTQldOf5uAgAZthBhPQxqFLpQjX7uQhChfX6uQcAZtpBhfT7uQcAZtk0qFNChfTqQzX6uQjt5MRvAAAAFXRSTlMADyMsTVFSU1N1hZ6epaWq3Nzq9PRNvZcoAAABJElEQVR42u2XyQ6DMAxEG7awp6wh//+jDbRokEBYMQcilbkh5IcVj2Pz8l0iisSV+Kg3po/48aGNt4SQDcjNopwNUF+AegBG3VcF0czxjbjgZNX3yjU+rev0+I2sKknH15NVffSmGq0q8vvTooMc5LhI0gmsKaCdkQBSoAFoZy4A7cwEwEhMAKzsBQBlZAJgJA6AtHJQFJmgAVuJrCyD9SEerNrABRC8tdZd/IO1w6zCBVDqWZ1AAjYFlzPo9KIYACuXKmhnAHxAAJIvIDlx4hkANxID0G7vRAqAQ9yWESIAKOPeSDRgZyRY2QEAK+9EnwEhsgoOc8GjK+2uax2D5YbRxh6uaGfueOcvGFBCrTj8JYu/5j3r/j+v+2jnm3480c6e6wMR01DLer+80QAAAABJRU5ErkJggg==);
+  }
+
+  .podcast-subscribe .subscribe-itunes {
+    background-color: #7f4e93;
+  }
+
+  .podcast-subscribe .subscribe-itunes::before {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAM1BMVEUAAACATaZ6Sp99TKN9TaF9TaR+TaN+TKN+TqOSarGri8O9pdDQv93e0efs5PH38/n///+zy1vFAAAACHRSTlMAFDBki7DT8KQQl7YAAAJDSURBVHjapVdbYsMgDCuBBjCv3v+0S21KF0RoN/SRbNkkJPO+XUFpc9+tdc7a/W60uv0Jm9ldh91s37KVrmzQ+MqHMtZdwpqPErqjg4SeZ0fzGGT73Px/TRj3JcyYf3df477CF4UFPihA/n/VQbsBPIV4INBQQZ/63zoApUdDGmjY3+NhR3p5nFBQYp8E8Nx6juQPUMzswl+GULbnZ7bdxcm9glUXPeALW4ZIpVcwFwbyq7WQnrQUXq4yWBhWINa2QmkVDNVXxCpgF/iD8eQnpubMMqn9ATtiO31iYqz86FkxVoXIrxM2LKGXAEHq+K5geIYAC6ZPwMwodolHMz0pJO7joQMZFCYglkmiJpzEL8IMCvogc1u5yjCEmtlX7vsBRtGRsz0z85l0lKQ+zzCwkByE95Nx/gALy37lwP924MFBq6Id1kBKScyvP6VhDSwIRCmf/Cvl400iK6WMINB94LYkg8whmVXsXXx1AIE63KhN/zoVSUaX69FHaCM+8AhMpSQekaHNEqgBWhCjzGCkFq54EIBulMAkXiqi8LksHXYYSNJw4cgNXmZkGu1Qxg0VAjsRyG/MB5jhnuTTSCCN9yflRgg8bBqIv4ygcFdqoFMNxtin+/JbYLpHb+4KudJP6WFRnWQIrYazBG1jQfiPJdC4tWEGWANwdzUfMoRZCecWCm9vUwPzKoSpAT064uDiECddAIcsBNFlgA2OeX+DXj1orh51lw/b68f99QvH+pVn/dK1fu1bv3iuX33XL9/L1/8fN6dzVElXBxcAAAAASUVORK5CYII=);
+  }
+
+  .podcast-subscribe .subscribe-ivoox {
+    background-color: rgb(255, 115, 0);
+  }
+
+  .podcast-subscribe .subscribe-spotify {
+    background: #1DB954;
+    color: #fff;
+  }
+
+  .podcast-subscribe .subscribe-ivoox::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAAHlBMVEX/AAD7cRf7cBH/6tr8cBP7cBP+4c37cxj9u4///v6NO5U4AAAAB3RSTlMBRHanq9T1PFopTAAAAXNJREFUSMe1lktOwzAQhgMqYmvxULdBQuoBcoGAImXbrsINyrKJkk5OwOMCpb4tdRMS/zNjIyHx7yp/nZc9M0kSXzePRfH8kIR0V9FZ3ZN6fFHSpNYo5xV56kzs/6qNFTE1eH5PQhtwQIpMzAFzckmqUmng0x41E1MEe2vtVoliORuwYKIegamG1smv53C+oBBAOXqQQI0ezsCBuA+vijzIIY+r+adL8x2ANYRA9GZfsZguiJIiak8ARRW8qPnChjJ9jBJAnlzPJRJJnrQbk/gB7BfxNFYIWPGsOLDlQMmAIy9ExYADAp0A7B+BQf3/AGUcaKEtFaD5HVjGgXq87iCw8/pKBXJ4cgqQwqNVAHz2EmixcSRQY+tJYI0TTAIptr8AOjZAen2ALMJAzoZYrw+x2QcHaj6JOWD4KGZAI4Y5A1KxDhBo5EJBwMiVBMAGl1bJgVZbmx6gLM7KBzqjruYJ0FazW+4vAxBY7k63WZYV+HnwDYRm/4hIrMpWAAAAAElFTkSuQmCC');
+  }
+
+  .podcast-subscribe .subscribe-spotify::before {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNzUiIGhlaWdodD0iMTc1IiBmaWxsPSIjZmZmIj48cGF0aCBkPSJNODcuOTk2IDEuMjc3Yy00Ni4yNDkgMC04My43NDMgMzcuNDkzLTgzLjc0MyA4My43NDIgMCA0Ni4yNTQgMzcuNDk0IDgzLjc0NSA4My43NDMgODMuNzQ1IDQ2LjI1MSAwIDgzLjc0My0zNy40OTEgODMuNzQzLTgzLjc0NSAwLTQ2LjI0Ni0zNy40OS04My43MzgtODMuNzQ0LTgzLjczOHptMzguNDA0IDEyMC43OGMtMS41MDQgMi40NjctNC43MTggMy4yNC03LjE3NyAxLjczNy0xOS42NjUtMTIuMDE5LTQ0LjQxNy0xNC43MzQtNzMuNTY3LTguMDc1LTIuODA5LjY0NC01LjYwOS0xLjExNy02LjI0OS0zLjkyNS0uNjQzLTIuODA5IDEuMTEtNS42MDkgMy45MjYtNi4yNDkgMzEuOS03LjI5MyA1OS4yNjMtNC4xNTQgODEuMzM2IDkuMzM0IDIuNDYgMS41MSAzLjI0IDQuNzIgMS43MyA3LjE4em0xMC4yNS0yMi43OTljLTEuODk0IDMuMDczLTUuOTEyIDQuMDM3LTguOTgxIDIuMTUtMjIuNTA1LTEzLjgzNC01Ni44MjItMTcuODQxLTgzLjQ0Ny05Ljc1OS0zLjQ1MyAxLjA0My03LjEtLjkwMy04LjE0OC00LjM1LTEuMDQtMy40NTMuOTA3LTcuMDkzIDQuMzU0LTguMTQzIDMwLjQxMy05LjIyOCA2OC4yMjEtNC43NTggOTQuMDcxIDExLjEyNyAzLjA3IDEuODkgNC4wNCA1LjkxIDIuMTUgOC45NzZ6bS44OC0yMy43NDRjLTI2Ljk5NC0xNi4wMzEtNzEuNTItMTcuNTA1LTk3LjI4OS05LjY4NC00LjEzOCAxLjI1NS04LjUxNC0xLjA4MS05Ljc2OC01LjIxOS0xLjI1NC00LjE0IDEuMDgtOC41MTMgNS4yMjEtOS43NzEgMjkuNTgxLTguOTggNzguNzU2LTcuMjQ1IDEwOS44MyAxMS4yMDIgMy43MjIgMi4yMDkgNC45NDMgNy4wMTYgMi43MzcgMTAuNzMzLTIuMiAzLjcyMi03LjAyIDQuOTQ5LTEwLjczIDIuNzM5eiIvPjwvc3ZnPg==);
+  }
+
+  .podcast-subscribe .subscribe-rss {
+    background: orange;
+  }
+
+  .podcast-subscribe .subscribe-rss::before {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICAgIGlkPSJSU1NpY29uIiAgICAgdmlld0JveD0iMCAwIDggOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiPiAgPHRpdGxlPlJTUyBmZWVkIGljb248L3RpdGxlPiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4gICAgLmJ1dHRvbiB7c3Ryb2tlOiBub25lOyBmaWxsOiBvcmFuZ2U7fSAgICAuc3ltYm9sIHtzdHJva2U6IG5vbmU7IGZpbGw6IHdoaXRlO30gIDwvc3R5bGU+ICA8cmVjdCAgIGNsYXNzPSJidXR0b24iIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHJ4PSIxLjUiIC8+ICA8Y2lyY2xlIGNsYXNzPSJzeW1ib2wiIGN4PSIyIiBjeT0iNiIgcj0iMSIgLz4gIDxwYXRoICAgY2xhc3M9InN5bWJvbCIgZD0ibSAxLDQgYSAzLDMgMCAwIDEgMywzIGggMSBhIDQsNCAwIDAgMCAtNCwtNCB6IiAvPiAgPHBhdGggICBjbGFzcz0ic3ltYm9sIiBkPSJtIDEsMiBhIDUsNSAwIDAgMSA1LDUgaCAxIGEgNiw2IDAgMCAwIC02LC02IHoiIC8+PC9zdmc+);
+
+  }
+</style>
+
+<h3 class='podcast-subscribe-title'>Suscríbete al podcast</h3>
+<div class='podcast-subscribe'>
+  <a class='subscribe-google' target="_blank" href="https://www.google.com/podcasts?feed=aHR0cHM6Ly93d3cuaXZvb3guY29tL3BvZGNhc3Qtd3Rmcm9udF9mZ19mMTY0NzM1Nl9maWx0cm9fMS54bWw=" rel="noopener noreferrer">Google Podcast</a>
+  <a class='subscribe-itunes' target="_blank" href="https://itunes.apple.com/us/podcast/wtfront/id1448113230?mt=2" rel="noopener noreferrer">iTunes</a>
+  <a class='subscribe-ivoox' target="_blank" href="https://www.ivoox.com/podcast-wtfront-what-the-frontend_sq_f1647356_1.html" rel="noopener noreferrer">iVoox</a>
+  <a class='subscribe-spotify' target="_blank" href="https://open.spotify.com/show/1Et8hZk1DwKw6PtBFGpwSD" rel="noopener noreferrer">Spotify</a>
+  <a class='subscribe-rss' target="_blank" href="https://www.ivoox.com/podcast-wtfront_fg_f1647356.xml" rel="noopener noreferrer">RSS</a>
+</div>
+
