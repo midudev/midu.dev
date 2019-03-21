@@ -1,12 +1,11 @@
-importScripts(
-  'https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js'
-)
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.1.1/workbox-sw.js')
+
 
 workbox.googleAnalytics.initialize()
 
 workbox.routing.registerRoute(
-  'https://www.google-analytics.com/analytics.js',
-  workbox.strategies.staleWhileRevalidate()
+  /\.(?:png|jpg|jpeg|svg|gif|js|css|html)$/,
+  new workbox.strategies.NetworkFirst()
 )
 
 // workbox.routing.registerRoute(
