@@ -1,5 +1,101 @@
+let videoAdded = false
+
+function getLatestYoutubeVideo () {
+  if (videoAdded === true) return
+  
+  fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UC8LeXCWOalN8SxlrPcG-PaQ')
+    .then(res => res.json())
+    .then(response => {
+      const lastVideo = response.items[0]
+      const id = lastVideo.guid.split("yt:video:")[1]
+      const html = `<div style='background: #ffffffee; box-shadow: 0px 0px 10px #33333333; border-radius: 5px; padding: 16px; position: fixed; bottom: 16px; right: 16px;'><p>¡Último vídeo en mi canal! 👇</p><iframe width="320" height="180" src="https://www.youtube.com/embed/${id}" frameborder="0" allowfullscreen></iframe></div>`
+      document.body.insertAdjacentHTML('beforeend', html)
+      videoAdded = true
+    })
+}
+
+const mql = window.matchMedia("(min-width: 701px)")
+
+
+console.log(mql)
+if (mql.matches) {
+  getLatestYoutubeVideo()
+}
+
+mql.addListener(function cb(event) {
+  console.log(event.matches)
+  if (event.matches) {
+    getLatestYoutubeVideo()
+    mql.removeListener(cb)
+  }
+})
+
+// if (window.innerWidth > 700) {
+//   getLatestYoutubeVideo()
+// }
+
+// window.addEventListener('resize', function () {
+//   console.log('resize!')
+//   if (window.innerWidth > 700) {
+//     getLatestYoutubeVideo()
+//   }
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Minimal Analytics
-(function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
+;(function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
 h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
 l=function(){return g.cid||(g.cid=k()),g.cid},m=function(r){var s=[];for(var t in r)
 r.hasOwnProperty(t)&&void 0!==r[t]&&s.push(h(t)+"="+h(r[t]));return s.join("&")},

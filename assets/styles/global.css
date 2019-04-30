@@ -424,6 +424,16 @@ twitter-widget {
   padding: 32px 16px;
 }
 
+/** NEWSLETTER **/
+#subscribe-form {
+  border: 3px solid #ccc;
+  padding: 20px;
+}
+#subscribe-form h3 {
+  background-image: url('https://app.tinyletter.com/img/tinyletter-icon.svg') no-repeat;
+  padding: 0 0 5px 0;
+}
+
 /** ARTICLE-IMAGES **/
 figure {
   margin: auto;
