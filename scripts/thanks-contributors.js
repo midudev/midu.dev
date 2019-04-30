@@ -1,6 +1,8 @@
 const https = require("https")
 const fs = require('fs').promises
 
+const NO_CONTRIBUTORS = ['imgbot[bot]', 'midudev']
+
 const options = {
   hostname: 'api.github.com',
   path: '/repos/midudev/midu.dev/contributors',
@@ -60,8 +62,8 @@ function createSeparations (n) {
 
 async function handleEnd (body) {
   const contributors = JSON.parse(body)
-  // hey! I'm not a contributor! I don't deserve this!
-  const contributorsWithoutMe = contributors.filter(({login}) => login !== 'midudev')
+  // Hey! They're not contributors! They don't deserve this!
+  const contributorsWithoutMe = contributors.filter(({login}) => !NO_CONTRIBUTORS.includes(login) )
   const markdown = createContributorsMarkdown(contributorsWithoutMe)
   await writeREADMEfile(markdown)
 }
