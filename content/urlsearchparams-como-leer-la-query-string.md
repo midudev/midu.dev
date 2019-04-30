@@ -41,7 +41,7 @@ params.get('precio') // null
 Además, **el objeto que nos devuelve es iterable**, por lo que podremos utilizar los diferentes métodos iterativos para poder acceder a todos los parámetros que tenemos en nuestra query.
 
 ```js
-for (let p of searchParams) {
+for (let p of params) {
   console.log(p);
 }
 
