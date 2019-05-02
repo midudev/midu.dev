@@ -3,9 +3,10 @@ https://midu.dev website
 
 **You could follow me at... 👇**
 
-* Twitter 💬 : https://twitter.com/midudev
+* Twitter 🐦 : https://twitter.com/midudev
 * YouTube 📹 : https://www.youtube.com/c/midudev?sub_confirmation=1
 * Instagram 📸 : https://www.instagram.com/midu.dev/
+* Facebook 💬 : https://www.facebook.com/midudev.frontend
 
 
 # Contributors ✨
