@@ -10,7 +10,7 @@ https://midu.dev website
 
 # Contributors ✨
 
-If you find errors on the articles or you want to improve the website, you definitely are welcome to create a Pull Request to make the blog better. 👍 Some already did it! Thanks 🙇‍!!!
+**If you find errors on the articles, you want to improve the website or even you would like to post an article,** you definitely are welcome to create a Pull Request to make the blog better. 👍 Some already did it! Thanks 🙇‍!!!
 
 [//]: contributors
 
