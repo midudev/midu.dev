@@ -11,9 +11,9 @@ episode: 10
 
 Todos hemos pasado por el proceso de las **entrevista laborales**. Tanto si eres junior, y estás buscando tu primera experiencia laboral, como si ya llevas años en el sector y quieres cambiar de trabajo, en este podcast de **<WhatTheFront />** te damos consejos y compartimos experiencias para conseguir el trabajo que quieres.
 
-Contamos con Ana Gamito y Bézael Pérez, desarrolladores de Axa Go, que nos van a ayudar para mejorar nuestras posibilidades en los procesos de selección.
+Contamos con **Ana Gamito** y **Bézael Pérez**, desarrolladores de Axa Go, que nos van a ayudar para mejorar nuestras posibilidades en los procesos de selección.
 
-¡Síguenos en YouTube! https://www.youtube.com/c/midudev?sub_confirmation=
+[¡Síguenos en YouTube!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 
 Si quieres, puedes ver la retransmisión que hicimos en directo, lo puedes hacer en el siguiente vídeo:
 {{% youtube id="iceqEn5oarw" %}}
