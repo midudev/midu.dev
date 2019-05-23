@@ -2,7 +2,7 @@
 title: 01x10 - Entrevistas de trabajo. Consejos y experiencias en el mundo laboral de la programación.
 date: '2019-05-21'
 image: '/images/01_10_entrevistas_trabajo.jpg'
-description: En este nuevo programa hablamos sobre los microfrontends, una nueva arquitectura diseñada para llevar el potencial de los microservicios al cliente. ¿Cómo? Pues permitiendo que cada equipo tenga la libertad de deployar el trozo de frontend en el que está trabajando.
+description: Las entrevistas de trabajo sobre programación pueden ser desafiantes y nos pueden causar estrés. En este podcast compartimos experiencias y consejos para pasarlas con éxito.
 category: 'podcast'
 audio: https://www.ivoox.com/consejos-experiencias-sobre-entrevistas-trabajo-en_mf_36054265_feed_1.mp3
 season: 01
