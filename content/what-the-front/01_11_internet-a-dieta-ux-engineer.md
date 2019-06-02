@@ -1,6 +1,6 @@
 ---
 title: 01x11 - ¡Hay que poner Internet a dieta! ¿Qué son los UX Engineer?
-date: '2019-05-21'
+date: '2019-06-02'
 image: '/images/photo-1531928351158-2f736078e0a1.jpeg'
 description: Hablamos sobre poner Internet a dieta y la figura de los UX Engineer con Adria Fontcuberta y Marina Aisa, que hicieron charlas al respecto en la T3chfest 2019.
 category: 'podcast'
