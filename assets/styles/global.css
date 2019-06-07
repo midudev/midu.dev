@@ -92,11 +92,18 @@ iframe {
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 16px 0
 }
 
-.header.header--absolute {
-  position: absolute;
+.header a {
+  transition: all .3s ease;
+}
+
+.header a:hover {
+  opacity: .5;
 }
 
 main {
@@ -109,15 +116,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-footer {
-  color: #000;
-  font-size: 12px;
-  margin: 64px auto 32px;
-  max-width: 100%;
-  width: 320px;
-  text-align: center;
 }
 
 hr {
@@ -158,8 +156,13 @@ twitter-widget {
   word-break: break-word;
 }
 
+#article-content p + ul {
+  margin-top: -16px;
+}
+
 #article-content ul {
   padding-left: 16px;
+  padding-bottom: 16px;
 }
 
 #article-content li {
