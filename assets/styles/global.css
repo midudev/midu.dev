@@ -99,6 +99,7 @@ iframe {
 }
 
 .header a {
+  margin-left: 4px;
   transition: all .3s ease;
 }
 
