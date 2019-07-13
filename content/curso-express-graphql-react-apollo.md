@@ -2,7 +2,7 @@
 title: CURSO EXPRESS gratis de GraphQL, React Apollo y Apollo Server
 date: "2019-07-13"
 image: "/images/curso-express-graphql.png"
-description: "Muchas veces vamos a querer cargar Google Analytics en nuestra página web pero nos gustaría evitar el coste en performance que tiene. Te voy a explicar la mejor estrategia para cargar esta librería afectando lo mínimo posible la performance."
+description: "Aprender gratis sobre GraphQL. Una introducción en español sobre como conectarlo con React usando Apollo Client y crear tu propio servidor con Apollo Server."
 topic: graphql, react, reactjs, react apollo, apollo client
 language: 🇪🇸
 toc: true
