@@ -3,13 +3,12 @@ title: Por qué creo que Microsoft use Chromium es una buena noticia... para tod
 date: '2018-12-05'
 image: '/images/microsoft-edge-presentation.jpg'
 description: 'Al parecer, Microsoft va a dejar de mantener el motor actual de Edge para empezar a utilizar Chromium, el motor de código abierto de Chrome. Todo el mundo está dando su opinión y, oye, yo no iba a ser menos. Eso sí, yo creo que igual es una buena noticia para todos. También para ti.'
-topic: opinion
+tags:
+    - opinion
 language: 🇪🇸
 ---
 
 Ya hay confirmación oficial. **[Microsoft planea adoptar Chromium como motor para su navegador Microsoft Edge y abandonará su motor propietario.](https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/)** Un paso más para extender la contribución de Microsoft al OSS (open source software) y un volantazo muy importante sobre la política de Microsoft respecto a los navegadores web después de años y años de fracasos continuados.
-
-{{% img src="/images/microsoft-edge-presentation.jpg" alt="Presentación de Microsoft Edge" align="" %}}
 
 Sin embargo, esta noticia que llega tras días de rumores, **ha despertado los recelos de no pocas personas en la comunidad.** ¿La razón? Mucha gente opina que esto refuerza el papel dominador de Google en Internet pero... ¿es eso exactamente así? En mi opinión, aunque entiendo ese miedo, no lo creo.
 
