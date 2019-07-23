@@ -65,8 +65,8 @@
 
 </head>
 <body>
+	<header class='header'>{{ partial "logo.html" }}</header>
 	<main>
-		<header class='header'>{{ partial "logo.html" }}</header>
 		{{ block "main" . }}
 		{{ end }}
 	</main>
