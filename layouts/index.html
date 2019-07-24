@@ -62,6 +62,7 @@
       width: 500px;
     }
 
+    #home-aside a,
     #home-aside button {
       align-items: center;
       background: transparent;
@@ -76,15 +77,18 @@
       text-align: left;
     }
 
+    #home-aside a:hover, 
     #home-aside button:hover {
       background: #eee;
       color: #111;
     }
 
     #home-aside img {
+      border-radius: 4px;
       object-fit: cover;
+      flex: 0 0 128px;
+      height: 72px;
       width: 128px;
-      height: 100%;
     }
 
     #home-aside h4 {
@@ -105,10 +109,11 @@
       align-items: center;
       display: flex;
       justify-content: space-between;
+      padding-bottom: 8px;
     }
   </style>
   <section id='home-feed'>
-    <h3 class='feed-title'>Últimos artículos</h3>
+    <h3 class='feed-title'>Últimos artículos 📝</h3>
     <div>
       {{ range first 20 (where .Pages ".Params.category" "!=" "podcast")  }}
       <a href="{{.Permalink}}">
@@ -121,22 +126,22 @@
   </section>
   <aside id='home-aside'>
     <h3 class='feed-title youtube-title'>
-      Últimos vídeos
+      Últimos vídeos 📹
       {{ partial "buttons/youtube-subscribe-button.html"  }}
     </h3>
     {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=3&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
     {{ range first 3 $videos.items }}
       <button>
-        <img src='http://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/maxresdefault.jpg' />
+        <img class='u-lazyload lazyload' data-src='http://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/maxresdefault.jpg' />
         <h4>{{ .snippet.title }}</h4>
       </button>
     {{ end }}
     <br /><br />
-    <h3 class='feed-title'>Últimos podcast</h3>
+    <h3 class='feed-title'>Últimos podcast 🎙️</h3>
     {{ range first 10 (where .Pages ".Params.category" "podcast") }}
       <a href='{{.Permalink}}'>
-        <img class=' u-lazyload lazyload' data-src='{{ .Params.image }}'/>
-        <h1>{{ .Title }}</h1>
+        <img class='u-lazyload lazyload' data-src='{{ .Params.image }}'/>
+        <h4>{{ .Title }}</h4>
       </a>
     {{ end }}
   </aside>
