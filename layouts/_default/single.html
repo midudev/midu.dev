@@ -6,45 +6,45 @@
 	<style>{{$style.Content | safeCSS}}</style>
 
 	<article id='article'>
-    <header id='article-header'>
-      <picture>
-        <img class='lazyload u-lazyload' src='{{ .Params.image }}'/>
-      </picture>
-      <div class='article-header-meta'>
-        <h1>
-          {{ .Title }}
-        </h1>
-        <div id='article-meta'>
-          {{ partial "article-meta.html" . }}
-        </div>
-        <p class='article-description'>
-          <span class='article-title-content'>{{ .Params.description }}</span>
-        </p>
-        {{ $taxonomy := "tags" }}
-        {{ with .Param $taxonomy }}
-          <div class='tags'>
-          {{ range $index, $tag := . }}
-            {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
-              <span class='tag'>{{ $tag }}</span>
-            {{- end -}}
-          {{- end -}}
-        </div>
-        {{ end }}
-      </div>
-      
-    </header>
-    
-    <div id='toc'>
-      {{ if (.Params.toc) }}
-        <h6 id='TableOfContentsTitle'>Tabla de contenidos</h6>
-        {{.TableOfContents}}
-      {{ end }}
-    </div>
-
 		{{ if isset .Params "audio" }}
 			{{ partial "audio-player.html" . }}
 			{{ partial "podcast-subscribe.html" }}
+		{{ else }}
+		<header id='article-header'>
+			<picture>
+				<img class='lazyload u-lazyload' src='{{ .Params.image }}'/>
+			</picture>
+			<div class='article-header-meta'>
+				<h1>
+				{{ .Title }}
+				</h1>
+				<div id='article-meta'>
+				{{ partial "article-meta.html" . }}
+				</div>
+				<p>
+				{{ .Params.description }}
+				</p>
+				{{ $taxonomy := "tags" }}
+				{{ with .Param $taxonomy }}
+				<div class='tags'>
+				{{ range $index, $tag := . }}
+					{{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+					<span class='tag'>{{ $tag }}</span>
+					{{- end -}}
+				{{- end -}}
+				</div>
+				{{ end }}
+			</div>
+			
+		</header>
+			
+		<div id='toc'>
+		{{ if (.Params.toc) }}
+			<h6 id='TableOfContentsTitle'>Tabla de contenidos</h6>
+			{{.TableOfContents}}
 		{{ end }}
+		</div>
+	{{ end }}
 
 		<div id='article-content'>
 			{{ .Content }}
