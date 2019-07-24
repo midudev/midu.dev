@@ -1,35 +1,143 @@
 {{ define "main" }}
+  <style>
+    #home-feed {
+      flex: 1 1;
+    }
+
+    #home-feed div {
+      display: grid;
+      align-items: start;
+      justify-items: center;
+      grid-gap: 2rem;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      padding-right: 32px;
+    }
+
+    #home-feed h2 {
+      color: rgba(0,0,0,.8);
+      padding: 8px 16px 16px;
+      font-weight: 600;
+    }
+
+    #home-feed a {
+      border-radius: 5px;
+      font-size: 12px;
+      overflow: hidden;
+      grid-column: span 1;
+      box-shadow: 0 3px 12px 3px rgba(45, 75, 224, 0.1);
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
+
+    #home-feed a:hover {
+      background: #eee;
+      box-shadow: 0 3px 12px 3px rgba(45, 75, 224, 0.2);
+      transform: scale(1.02);
+    }
+
+    #home-feed a::after {
+      background-image: linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,.5) 52%,rgba(255,255,255,1) 85%);
+      bottom: 0;
+      content: '';
+      height: 45px;
+      width: 100%;
+      position: absolute;
+    }
+
+    #home-feed img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    #home-feed p {
+      padding: 0 16px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    #home-aside {
+      width: 500px;
+    }
+
+    #home-aside button {
+      align-items: center;
+      background: transparent;
+      border: 0;
+      border-radius: 4px;
+      color: #444;
+      cursor: pointer;
+      display: flex;
+      outline: 0;
+      margin-left: -8px;
+      padding: 8px;
+      text-align: left;
+    }
+
+    #home-aside button:hover {
+      background: #eee;
+      color: #111;
+    }
+
+    #home-aside img {
+      object-fit: cover;
+      width: 128px;
+      height: 100%;
+    }
+
+    #home-aside h4 {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 500;
+      padding-left: 16px;
+    }
+
+    .feed-title {
+      color: #111;
+      font-weight: 700;
+      font-size: 24px;
+      padding-bottom: 16px;
+    }
+
+    .youtube-title {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
   <section id='home-feed'>
-    {{ range first 1 (where .Pages ".Params.category" "!=" "podcast")  }}
+    <h3 class='feed-title'>Últimos artículos</h3>
+    <div>
+      {{ range first 20 (where .Pages ".Params.category" "!=" "podcast")  }}
       <a href="{{.Permalink}}">
         <img class='u-lazyload lazyload' data-src='{{ .Params.image }}'/>
-        <div class='card-info '>
-          <h1 class='article-title article-title--medium'>
-            {{ .Title }}
-          </h1>
-        </div>
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Params.description }}</p>
       </a>
-    {{ end }}
-  {{ range first 20 (after 1 (where .Pages ".Params.category" "!=" "podcast")) }}
-      <a href="{{.Permalink}}">
-        <img class=' u-lazyload lazyload' data-src='{{ .Params.image }}'/>
-        <div class='card-info '>
-          <h1 class='article-title'>{{ .Title }}</h1>
-        </div>
-      </a>
-    {{ end }}
+      {{ end }}
+    </div>
   </section>
   <aside id='home-aside'>
+    <h3 class='feed-title youtube-title'>
+      Últimos vídeos
+      {{ partial "buttons/youtube-subscribe-button.html"  }}
+    </h3>
+    {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=3&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
+    {{ range first 3 $videos.items }}
+      <button>
+        <img src='http://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/maxresdefault.jpg' />
+        <h4>{{ .snippet.title }}</h4>
+      </button>
+    {{ end }}
+    <br /><br />
+    <h3 class='feed-title'>Últimos podcast</h3>
     {{ range first 10 (where .Pages ".Params.category" "podcast") }}
       <a href='{{.Permalink}}'>
         <img class=' u-lazyload lazyload' data-src='{{ .Params.image }}'/>
-        <div class='card-info '>
-          {{ partial "card/mic-overlay.html" }}
-          <h1>{{ .Title }}</h1>
-        </div>
+        <h1>{{ .Title }}</h1>
       </a>
     {{ end }}
   </aside>
-</div>
-
 {{ end }}
