@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-es">
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>{{- .Title | default .Site.Title -}}</title>
@@ -65,8 +65,8 @@
 
 </head>
 <body>
-	<header class='header'>{{ partial "logo.html" }}</header>
-	<main>
+	<header class='header u-center'>{{ partial "logo.html" }}</header>
+	<main class='u-center'>
 		{{ block "main" . }}
 		{{ end }}
 	</main>
@@ -80,5 +80,6 @@
 				navigator.serviceWorker.register('/sw.js');
 			});
 		}
-		</script>
+	</script>
 </body>
+</html>
