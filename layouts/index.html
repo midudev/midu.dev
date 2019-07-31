@@ -21,7 +21,7 @@
     }
 
     #home-feed a {
-      border-radius: 5px;
+      border-radius: 4px;
       font-size: 12px;
       overflow: hidden;
       grid-column: span 1;
@@ -115,7 +115,7 @@
   <section id='home-feed'>
     <h3 class='feed-title'>Últimos artículos 📝</h3>
     <div>
-      {{ range first 20 (where .Pages ".Params.category" "!=" "podcast")  }}
+      {{ range first 8 (where .Pages ".Params.category" "!=" "podcast")  }}
       <a href="{{.Permalink}}">
         <img class='u-lazyload lazyload' data-src='{{ .Params.image }}'/>
         <h2>{{ .Title }}</h2>
@@ -144,5 +144,17 @@
         <h4>{{ .Title }}</h4>
       </a>
     {{ end }}
+    <br /><br />
+    <div id="newsletter-form">
+      <h3>¡Suscríbete a la lista de correo 📫!</h3>
+      <small>Recibirás artículos de calidad sobre frontend y todas las novedades en las que vaya trabajando. <strong>¡Nada de spam 🙅‍♂️!</strong></small>
+      <form action="https://www.getrevue.co/profile/midudev/add_subscriber" method="post" name="revue-form" target="_blank">
+        <div>
+          <input required class="input" placeholder="Tu correo electrónico *" type="email" name="member[email]">
+          <input class="input" placeholder="Tu nombre (Opcional)" type="text" name="member[first_name]">
+        </div>
+          <input class='button' type="submit" value="✍️ Suscribirse" name="member[subscribe]" id="member_submit">
+      </form>
+    </div>
   </aside>
 {{ end }}
