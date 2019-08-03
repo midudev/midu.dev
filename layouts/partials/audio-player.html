@@ -41,8 +41,8 @@
     text-align: center;
     font-size: 32px;
     padding: 16px;
-    color: #eee;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75), 1px 1px 25px rgba(0, 0, 0, 0.50);
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35), 1px 1px 10px rgba(68, 68, 68, 0.1);
   }
 
   .audio-player section div {
@@ -135,6 +135,20 @@
 
   .show {
     opacity: 1 !important;
+  }
+
+  @media screen and (max-width: 700px) {
+    .audio-player img {
+      display: none;
+    }
+
+    .audio-player section {
+      height: 140px;
+    }
+
+    .audio-player h1 {
+      font-size: 24px;
+    }
   }
   
 </style>
