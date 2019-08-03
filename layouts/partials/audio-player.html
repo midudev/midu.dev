@@ -2,7 +2,7 @@
   .audio-player {
     border-radius: 6px;
     background-color: white;
-    max-width: 800px;
+    max-width: 750px;
     width: 100%;
     min-height: 200px;
     box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.2);
@@ -45,15 +45,13 @@
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75), 1px 1px 25px rgba(0, 0, 0, 0.50);
   }
 
-  @media (min-width: 800px) {
-    .audio-player section div {
-      background-position: center;
-      background-size: cover;
-      display: block;
-      filter: blur(50px);
-      height: 100%;
-      width: 100%;
-    }
+  .audio-player section div {
+    background-position: center;
+    background-size: cover;
+    display: block;
+    filter: blur(50px);
+    height: 100%;
+    width: 100%;
   }
 
   #progress-container {
@@ -61,7 +59,7 @@
     padding: 0 32px 16px 125px;
   }
 
-  #progress {
+  #progress-bar {
     cursor: pointer;
     display: block;
     border-radius: 100px;
@@ -69,6 +67,25 @@
     margin-bottom: 8px;
     background-color: #eee;
     height: 10px;
+    position: relative;
+  }
+
+  #progress-point {
+    background: #09f;
+    border-radius: 14px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.32);
+    width: 14px;
+    height: 14px;
+    top: -2px;
+    right: -7px;
+    position: absolute;
+  }
+
+  #progress-complete {
+    background: #09f;
+    border-radius: inherit;
+    height: 100%;
+    position: absolute;
   }
 
   .audio-player .player-controls p {
@@ -140,12 +157,16 @@
     </svg>
   </button>
   <div class="audio-wrapper" id="player-container">
-    <audio id="player" ontimeupdate="initProgressBar()">
+    <audio preload id="player" ontimeupdate="initProgressBar()">
       <source src="{{ .Params.audio }}" type="audio/mp3" />
     </audio>
   </div>
   <div id="progress-container">
-    <span id="progress"></span>
+    <div id="progress-bar">
+      <div id="progress-complete">
+        <span id="progress-point"></span>
+      </div>
+    </div>
     <div id="audio-timers">
       <small id="start-time">00:00</small>
       <small id="end-time">00:00</small>
@@ -158,8 +179,11 @@
   var playerContainer = document.getElementById("player-container")
   var isPlaying = false
   var playBtn = document.getElementById("play-btn")
-  var progressbar = document.getElementById("progress")
+  var progressBar = document.getElementById('progress-bar')
+  var progressComplete = document.getElementById("progress-complete")
   var timers = document.getElementById('audio-timers')
+  var point = document.getElementById('progress-point')
+  var position = 0
 
   togglePlay(true)
 
@@ -168,18 +192,18 @@
     var current_time = player.currentTime;
 
     // calculate total length of value
-    var totalLength = calculateTotalValue(length);
+    var totalLength = calculateCurrentValue(length);
     document.getElementById("end-time").innerHTML = totalLength;
 
     // calculate current value time
     var currentTime = calculateCurrentValue(current_time);
     document.getElementById("start-time").innerHTML = currentTime;
 
-    progressbar.value = player.currentTime / player.duration;
-    progressbar.addEventListener("click", seek);
+    progressComplete.style.width = player.currentTime / player.duration * 100 + '%';
+    progressBar.addEventListener("click", seek);
 
     if (player.currentTime == player.duration) {
-      document.getElementById("play-btn").className = "";
+      playBtn.className = "";
     }
   }
 
@@ -187,17 +211,6 @@
     togglePlay(true)
     var percent = e.offsetX / this.offsetWidth;
     player.currentTime = percent * player.duration;
-    progressbar.value = percent / 100;
-  }
-
-  function calculateTotalValue(length) {
-    var minutes = Math.floor(length / 60),
-      seconds_int = length - minutes * 60,
-      seconds_str = seconds_int.toString(),
-      seconds = seconds_str.substr(0, 2),
-      time = minutes + ":" + seconds;
-
-    return time;
   }
 
   function calculateCurrentValue(currentTime) {
@@ -210,7 +223,10 @@
         ":" +
         (current_seconds < 10 ? "0" + current_seconds : current_seconds);
 
-    return current_time;
+        
+    return current_hour
+      ? current_hour + ":" + current_time
+      : current_time
   }
 
   // Controls Listeners
@@ -223,17 +239,18 @@
   // ----------------------------------------------------------
   function togglePlay(force) {
     if (player.paused === false && !force) {
-      player.pause();
+      player.pause()
       isPlaying = false;
       playBtn.className = "";
-      progressbar.classList.remove('show')
+      progressBar.classList.remove('show')
       timers.classList.remove('show')
     } else {
-      player.play();
-      playBtn.className = "is-playing";
-      isPlaying = true;
-      progressbar.classList.add('show')
-      timers.classList.add('show')
+      player.play().then(function () {
+        playBtn.className = "is-playing";
+        isPlaying = true;
+        progressBar.classList.add('show')
+        timers.classList.add('show')
+      })
     }
   }
 </script>
