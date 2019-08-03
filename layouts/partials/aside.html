@@ -1,0 +1,58 @@
+<aside id='aside'>
+  {{ if (.Params.description) }}
+  <div id='share'>
+    <h3 class='section-title'>Comparte el artículo 📡</h3>
+    <div>
+      <a target='_blank' rel='nofollow noopener' style='--bgc-link: rgb(37, 168, 224)' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>
+        {{ partial "icons/twitter.html" "white" }}
+      </a>
+      <a target='_blank' rel='nofollow noopener' style='--bgc-link: rgb(59, 90, 153)' href='https://facebook.com/sharer/sharer.php?u={{.Permalink}}'>
+        {{ partial "icons/facebook.html" "white" }}
+      </a>
+      <a target='_blank' rel='nofollow noopener' style='--bgc-link: rgb(13, 123, 183)' href='https://www.linkedin.com/shareArticle?mini=true&url={{.Permalink}}&title="{{ .Title }}" por @midudev'>
+        {{ partial "icons/linkedin.html" "white" }}
+      </a>
+    </div>
+  </div>
+  {{ end }}
+
+  {{ if (.Params.toc) }}
+    <h3 class='section-title'>Contenido del artículo 🗒️</h3>
+    {{.TableOfContents}}
+  {{ end }}
+
+  <h3 class='section-title youtube-title'>
+    Últimos vídeos 📹
+    {{ partial "buttons/youtube-subscribe-button.html"  }}
+  </h3>
+  {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=3&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
+  {{ range first 3 $videos.items }}
+  <a href='#lightbox' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}'>
+    <img class='u-lazyload lazyload'
+      data-src='http://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/maxresdefault.jpg' />
+    <h4>{{ .snippet.title }}</h4>
+  </a>
+  {{ end }}
+  <br /><br />
+  <h3 class='section-title'>Últimos podcast 🎙</h3>
+  {{ range first 10 (where .Site.Pages ".Params.category" "podcast") }}
+  <a href='{{.Permalink}}'>
+    <img class='u-lazyload lazyload' data-src='{{ .Params.image }}' />
+    <h4>{{ .Title }}</h4>
+  </a>
+  {{ end }}
+  <br /><br />
+  <div id="newsletter-form">
+    <h3>¡Suscríbete a la newsletter! 📫</h3>
+    <small>Recibirás artículos de calidad sobre frontend y todas las novedades en las que vaya trabajando. <strong>¡Nada
+        de spam 🙅‍♂️!</strong></small>
+    <form action="https://www.getrevue.co/profile/midudev/add_subscriber" method="post" name="revue-form"
+      target="_blank">
+      <div>
+        <input required class="input" placeholder="Tu correo electrónico *" type="email" name="member[email]">
+        <input class="input" placeholder="Tu nombre (Opcional)" type="text" name="member[first_name]">
+      </div>
+      <input class='button' type="submit" value="✍️ ¡Me suscribo!" name="member[subscribe]" id="member_submit">
+    </form>
+  </div>
+</aside>
