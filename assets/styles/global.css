@@ -143,21 +143,28 @@ hr {
 /** FOOTER **/
 footer {
   min-height: 250px;
-  margin-top: 72px;
   padding: 64px 0;
+}
+
+footer section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div {
+  padding-left: 32px;
+  text-align: center;
+  line-height: 150%;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  max-width: 500px;
 }
 
 footer img {
   height: auto;
   width: 100px;
-}
-
-footer section div:first-child {
-  width: 66.6667%;
-}
-
-footer section div:last-child {
-  width: 33%;
 }
 
 /** MAIN **/
@@ -439,10 +446,10 @@ twitter-widget {
   justify-content: center;
   margin-top: 32px;
   text-align: center;
+  border-top: 3px solid #eee;
 }
 
 #article-pagination a {
-  border-radius: 4px;
   color: #09f;
   display: flex;
   flex-direction: column;
@@ -456,6 +463,14 @@ twitter-widget {
 #article-pagination a:hover, #article-pagination a:focus {
   background: #e8f6ff;
   text-decoration: none;
+}
+
+#article-pagination img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 16px;
 }
 
 #article-pagination svg {
@@ -650,6 +665,32 @@ figure.left img {
 }
 /** END ASIDE **/
 
+#share {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+#share > div {
+  display: flex;
+  padding-bottom: 32px;
+}
+
+#share a {
+  background: var(--bgc-link);
+  border-radius: 0;
+  text-align: center;
+  width: 33.333%;
+  display: inline-block;
+  margin: 0;
+}
+
+#share a:hover {
+  background: var(--bgc-link);
+  opacity: .8;
+}
+
 @media screen and (max-width: 1300px) {
   :root {
     --mw-document: 100%;
@@ -666,6 +707,31 @@ figure.left img {
   main, #article-content-wrapper {
     flex-direction: column;
   }
+
+  #share {
+    background: #fff;
+    top: unset;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    padding: var(--p-u-center);
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0,0,0, .1);
+  }
+
+  #share .section-title {
+    padding: 0;
+  }
+
+  #share > div {
+    flex: 1;
+    padding: 0;
+    padding-left: 36px;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -676,5 +742,9 @@ figure.left img {
 
   #article-header {
     display: block !important;
+  }
+
+  #share .section-title {
+    font-size: 12px;
   }
 }
