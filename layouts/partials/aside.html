@@ -29,7 +29,7 @@
   {{ range first 3 $videos.items }}
   <a href='#lightbox' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}'>
     <img class='u-lazyload lazyload'
-      data-src='http://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/maxresdefault.jpg' />
+      data-src='https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/maxresdefault.jpg' />
     <h4>{{ .snippet.title }}</h4>
   </a>
   {{ end }}
