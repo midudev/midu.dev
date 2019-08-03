@@ -1,78 +1,69 @@
 {{ define "title" }}{{ .Title }} | midudev 👨‍💻{{ end }}
 
 {{ define "main" }}
-	{{ $css := resources.Get "styles/highlight.css" }}
-	{{ $style := $css | resources.Minify }}
-	<style>{{$style.Content | safeCSS}}</style>
+{{ $css := resources.Get "styles/highlight.css" }}
+{{ $style := $css | resources.Minify }}
+<style>{{ $style.Content | safeCSS }}</style>
 
-	<article id='article'>
-		{{ if isset .Params "audio" }}
-			{{ partial "audio-player.html" . }}
-			{{ partial "podcast-subscribe.html" }}
-		{{ else }}
-		<header id='article-header'>
-			<picture>
-				<img class='lazyload u-lazyload' src='{{ .Params.image }}'/>
-			</picture>
-			<div class='article-header-meta'>
-				<h1>
-				{{ .Title }}
-				</h1>
-				<div id='article-meta'>
-				{{ partial "article-meta.html" . }}
-				</div>
-				<p>
-				{{ .Params.description }}
-				</p>
-				{{ $taxonomy := "tags" }}
-				{{ with .Param $taxonomy }}
-				<div class='tags'>
-				{{ range $index, $tag := . }}
-					{{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
-					<span class='tag'>{{ $tag }}</span>
-					{{- end -}}
-				{{- end -}}
-				</div>
-				{{ end }}
-			</div>
-			
-		</header>
-			
-		<div id='toc'>
-		{{ if (.Params.toc) }}
-			<h6 id='TableOfContentsTitle'>Tabla de contenidos</h6>
-			{{.TableOfContents}}
-		{{ end }}
-		</div>
-	{{ end }}
+<article id='article'>
+  {{ if isset .Params "audio" }}
+  {{ partial "audio-player.html" . }}
+  {{ partial "podcast-subscribe.html" }}
+  {{ else }}
+  <header id='article-header'>
+    <picture>
+      <img class='lazyload u-lazyload' src='{{ .Params.image }}' />
+    </picture>
+    <div class='article-header-meta'>
+      <h1>
+        {{ .Title }}
+      </h1>
+      <div id='article-meta'>
+        {{ partial "article-meta.html" . }}
+      </div>
+      <p>
+        {{ .Params.description }}
+      </p>
+      {{ $taxonomy := "tags" }}
+      {{ with .Param $taxonomy }}
+      <div class='tags'>
+        {{ range $index, $tag := . }}
+        {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+        <span class='tag'>{{ $tag }}</span>
+        {{- end -}}
+        {{- end -}}
+      </div>
+      {{ end }}
+    </div>
+  </header>
 
-		<div id='article-content'>
-			{{ .Content }}
-		</div>
-		<div id='article-share'>
-			<a
-				href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-				class="twitter-share-button"
-				data-dnt="true"
-				data-related="midudev"
-				data-show-count="false"
-				data-size="large"
-				data-text="Me ha gustado el artículo: '{{ .Title }}'"
-				data-via="midudev"
-				>
-					Compartir
-			</a>
-			<script async src="https://platform.twitter.com/widgets.js"></script>
-		</div>
-		<div id='article-pagination'>
-			{{ with .PrevPage }}
-				<a class='prev' href="{{.Permalink}}">
-					<svg width="20" height="20"><path d="M.646 10.146l6-6a.5.5 0 0 1 .707.707L2.207 9.999H18.5a.5.5 0 0 1 0 1H2.207l5.146 5.146a.5.5 0 0 1-.708.707l-6-6a.5.5 0 0 1 0-.707z"/></svg> {{.Title}}
-				</a>
-			{{ end }}
-			{{ with .NextPage }}
-				<a class='next' href="{{.Permalink}}"><svg width="20" height="20"><path d="M19.354 10.146l-6-6a.5.5 0 0 0-.707.707l5.146 5.146H1.5a.5.5 0 0 0 0 1h16.293l-5.146 5.146a.5.5 0 0 0 .708.707l6-6a.5.5 0 0 0 0-.707z"/></svg> {{.Title}} </a>
-			{{ end }}
-		</div>
-	</article>
+  {{ end }}
+
+  <div id='article-content-wrapper'>
+    <div id='article-content'>
+      {{ .Content }}
+
+        <div id='article-pagination'>
+          {{ with .PrevPage }}
+          <a class='prev' href="{{.Permalink}}">
+            <img src='{{ .Params.image }}' />
+            <svg width="20" height="20">
+              <path
+                d="M.646 10.146l6-6a.5.5 0 0 1 .707.707L2.207 9.999H18.5a.5.5 0 0 1 0 1H2.207l5.146 5.146a.5.5 0 0 1-.708.707l-6-6a.5.5 0 0 1 0-.707z" />
+              </svg> {{.Title}}
+          </a>
+          {{ end }}
+          {{ with .NextPage }}
+          <a class='next' href="{{.Permalink}}">
+            <img src='{{ .Params.image }}' />
+            <svg width="20" height="20">
+              <path
+                d="M19.354 10.146l-6-6a.5.5 0 0 0-.707.707l5.146 5.146H1.5a.5.5 0 0 0 0 1h16.293l-5.146 5.146a.5.5 0 0 0 .708.707l6-6a.5.5 0 0 0 0-.707z" />
+              </svg> {{.Title}} </a>
+          {{ end }}
+        </div>
+    </div>
+    {{ partial "aside.html" . }}
+  </div>
+</article>
 {{ end }}
