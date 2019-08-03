@@ -1,5 +1,14 @@
 :root {
-  --max-width: 1250px;
+  --mw-document: 1300px;
+  --w-aside: 320px;
+  --fz-aside: 14px;
+  --fz-section-title: 18px;
+  --h-card-image: 200px;
+  --p-header-bottom: 48px;
+  --p-separation: 48px;
+
+  --p-u-center: 0 32px;
+  --gtc-home-feed: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 html {
@@ -77,8 +86,9 @@ iframe {
 }
 
 .u-center {
-  max-width: var(--max-width);
+  max-width: var(--mw-document);
   margin: 0 auto;
+  padding: var(--p-u-center);
 }
 
 .lazyloaded {
@@ -86,12 +96,20 @@ iframe {
   opacity: 1;
 }
 
+.section-title {
+  color: #111;
+  font-weight: 700;
+  font-size: var(--fz-section-title);
+  padding-bottom: 8px;
+}
+
 /** .header **/
 .header {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 16px 0 48px;
+  padding-bottom: var(--p-header-bottom);
+  padding-top: 16px;
 }
 
 .header a {
@@ -152,6 +170,16 @@ twitter-widget {
   padding-bottom: 16px;
 }
 
+#article-content-wrapper {
+  display: flex;
+}
+
+#article-content {
+  flex: 1 1;
+  padding-right: var(--p-separation);
+  padding-bottom: 32px;
+}
+
 #article-content blockquote {
   border-left: 5px solid #dfe2e5;
   padding: 0 16px;
@@ -186,23 +214,23 @@ twitter-widget {
   padding-bottom: 0;
 }
 
-#article h2,
-#article h3,
-#article h4,
-#article h5 {
+#article-content h2,
+#article-content h3,
+#article-content h4,
+#article-content h5 {
   color: #333;
   font-size: 24px;
   font-weight: 600;
   margin: 48px 0 24px;
 }
 
-#article h3 {
+#article-content h3 {
   color: #004572;
   font-size: 24px;
   margin-top: 16px;
 }
 
-#article h4 {
+#article-content h4 {
   color: #067df7;
   font-size: 20px;
   text-transform: uppercase;
@@ -250,19 +278,25 @@ twitter-widget {
 
 /** BUTTON **/
 .button {
-  -webkit-appearance: button;
   background: #09f;
-  outline: 0;
-  color: #fff;
+  border-radius: 100px;
+  border: 1px solid #09f;
   box-shadow: 0 2px 0 #0000000b;
-  height: 40px;
-  padding: 0 24px;
+  color: #fff;
+  cursor: pointer;
   font-size: 16px;
+  height: 40px;
   line-height: 38px;
+  outline: 0;
+  padding: 0 24px;
   text-align: center;
   text-decoration: none;
-  border: 1px solid #09f;
-  border-radius: 100px;
+  width: 100%;
+}
+
+.button:hover {
+  background: rgb(0, 111, 186);
+  border-color: rgb(0, 111, 186);
 }
 
 .input {
@@ -287,9 +321,10 @@ twitter-widget {
   width: 100%;
 }
 
+.button:focus,
 .input:focus {
   border-color: #40a9ff;
-  box-shadow: 0 0 0 2px rgba(24,144,255,0.2);
+  box-shadow: 0 0 0 4px rgba(24,144,255,0.2);
 }
 
 /** NEWSLETTER-FORM **/
@@ -299,13 +334,9 @@ twitter-widget {
   border-radius: 4px;
 }
 
-#newsletter-form div {
-  display: flex;
-}
-
 #newsletter-form small {
   display: block;
-  padding-bottom: 16px;
+  padding: 16px 0;
 }
 
 #newsletter-form input {
@@ -336,7 +367,6 @@ twitter-widget {
   column-gap: 32px;
   display: grid;
   grid-template-columns: 40% 1fr;
-  margin-top: 32px;
   margin-bottom: 32px;
 }
 
@@ -480,54 +510,31 @@ figure.left img {
 /** END ARTICLE-IMAGES **/
 
 /** #TableOfContents **/
-#toc {
-  float: left;
-  width: 40%;
-  margin-right: 32px;
-  position: relative;
-}
-
-#TableOfContentsTitle { /** title **/
-  background: #fff;
-  color: #555;
-  font-variant: small-caps;
-  font-weight: normal;
-  font-size: 18px;
-  margin: 0;
-  margin-top: -8px;
-  padding: 0px 4px;
-  position: absolute;
-  left: 12px;
-}
-
 #TableOfContents {
-  border-radius: 3px;
-  border: 1px solid #ddd;
-  margin-bottom: 8px;
-  padding: 16px 16px 8px;
+  background: rgb(246, 251, 255);
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 32px;
 }
 
 #TableOfContents ul {
   list-style: none;
   padding-left: 0;
+  padding-bottom: 0;
 }
 
-#TableOfContents a {
-  color: #09f;
-  font-size: 12px;
-  line-height: 150%;
-  padding-bottom: 4px;
-  display: inline-block;
+#TableOfContents ul li {
+  margin-bottom: 0;
 }
 
-#TableOfContents a:hover {
-  text-decoration: underline;
+#TableOfContents ul a:hover {
+  background-color: rgb(208, 237, 255);
 }
 
 #TableOfContents li a:before {
   border-radius: 5px;
   color: #09f;
-  content: "# ";
+  content: "→ ";
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
@@ -543,3 +550,131 @@ figure.left img {
   padding: 0;
 }
 /** END #TableOfContents **/
+
+/** #Lightbox **/
+#lightbox {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+#lightbox section {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#lightbox div {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  width: 100%;
+}
+
+#lightbox a {
+  cursor: alias;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#lightbox svg {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+#lightbox iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/** END Lightbox **/
+
+/** ASIDE **/
+#aside {
+  width: var(--w-aside);
+}
+
+#aside a,
+#aside button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: #444;
+  cursor: pointer;
+  display: flex;
+  outline: 0;
+  margin-left: -8px;
+  padding: 8px;
+  text-align: left;
+}
+
+#aside a:hover, 
+#aside button:hover {
+  background: #eee;
+  color: #111;
+}
+
+#aside img {
+  border-radius: 4px;
+  object-fit: cover;
+  flex: 0 0 128px;
+  height: 72px;
+  width: 128px;
+}
+
+#aside h4 {
+  font-size: var(--fz-aside);
+  line-height: 140%;
+  font-weight: 500;
+  padding-left: 16px;
+}
+
+.youtube-title {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+/** END ASIDE **/
+
+@media screen and (max-width: 1300px) {
+  :root {
+    --mw-document: 100%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  :root {
+    --p-separation: 0;
+    --w-aside: 100%;
+    --gtc-home-feed: repeat(auto-fill, minmax(310px, 1fr));
+  }
+
+  main, #article-content-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    --p-u-center: 0 16px;
+    --p-header-bottom: 16px;
+  }
+
+  #article-header {
+    display: block !important;
+  }
+}
