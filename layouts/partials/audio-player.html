@@ -1,128 +1,191 @@
 <style>
   .audio-player {
-    align-items: center;
-    background: #fafafa;
-    border: 1px solid #dfdfdf;
-    border-radius: 100px;
-    text-align: center;
-    display: flex;
-    flex-flow: row;
+    border-radius: 6px;
+    background-color: white;
+    max-width: 750px;
+    width: 100%;
+    min-height: 200px;
+    box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    margin: 32px 0;
-    min-height: 100px;
-    width: 100%;
+    position: relative;
+    margin: 0 auto;
   }
-  .audio-player .album-image {
-    display:none;
-  }
-  @media (min-width: 800px) {
-    .audio-player .album-image {
-      display: block;
-      min-height: 100px;
-      width: 150px;
-      background-size: cover;
-    }
-  }
-  .audio-player .player-controls {
-    align-items: center;
+
+  .audio-player section {
+    height: 180px;
+    display: flex;
     justify-content: center;
-    flex: 3;
-    padding: 16px 32px;
+    align-items: center;
+    overflow: hidden;
   }
-  .audio-player .player-controls progress {
-    cursor: pointer;
+
+  .audio-player header {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  .audio-player img {
+    width: 180px;
+    border-radius: 6px;
+    margin: 16px 0 16px 16px;
+    max-height: 120px;
+    object-fit: cover;
+  }
+
+  .audio-player h1 {
+    text-align: center;
+    font-size: 32px;
+    padding: 16px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35), 1px 1px 10px rgba(68, 68, 68, 0.1);
+  }
+
+  .audio-player section div {
+    background-position: center;
+    background-size: cover;
+    display: block;
+    filter: blur(50px);
+    height: 100%;
     width: 100%;
   }
-  .audio-player .player-controls progress[value] {
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: white;
-    color: #09f;
-    height: 15px;
-    margin-top: 8px;
-    opacity: .5;
-    transition: opacity .3s ease;
+
+  #progress-container {
+    margin-top: 10px;
+    padding: 0 32px 16px 125px;
   }
-  .audio-player .player-controls progress[value]::-webkit-progress-bar {
-    background-color: white;
-    border-radius: 2px;
-    border: 1px solid #dfdfdf;
-    color: #09f;
+
+  #progress-bar {
+    cursor: pointer;
+    display: block;
+    border-radius: 100px;
+    width: 100%;
+    margin-bottom: 8px;
+    background-color: #eee;
+    height: 10px;
+    position: relative;
   }
-  .audio-player .player-controls progress::-webkit-progress-value {
-    background-color: #09f;
+
+  #progress-point {
+    background: #09f;
+    border-radius: 14px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.32);
+    width: 14px;
+    height: 14px;
+    top: -2px;
+    right: -7px;
+    position: absolute;
   }
+
+  #progress-complete {
+    background: #09f;
+    border-radius: inherit;
+    height: 100%;
+    position: absolute;
+  }
+
   .audio-player .player-controls p {
     color: #777;
     font-size: 12px;
     font-weight: bold;
   }
+
   #play-btn {
-    cursor: pointer;
+    background: #09f;
+    border-radius: 50px;
     border: 0;
-    background: transparent;
-    width: 0;
-    height: 50px;
-
-    border-color: transparent transparent transparent #333;
-    transition: 100ms all ease;
     cursor: pointer;
-
-    border-style: solid;
-    border-width: 30px 0 30px 45px;
-
+    left: 32px;
+    margin-top: -28px;
     outline: 0;
-
-    margin-left: 36px;
     padding: 0;
+    position: absolute;
+    width: 72px;
+  }
+
+  .play-btn-pause {
+    opacity: 0;
+  }
+
+  #play-btn.is-playing .play-btn-pause {
+    opacity: 1;
+  }
+
+  #play-btn.is-playing .play-btn-play {
+    opacity: 0;
   }
 
   #play-btn:hover {
-    opacity: .5;
+    background: rgb(0, 105, 175);
   }
 
-  #play-btn.pause {
-    border-style: double;
-    border-width: 0px 0 0px 45px;
-  }
-  
   #audio-timers {
     color: #666;
     display: flex;
     justify-content: space-between;
     font-size: 11px;
     font-weight: bold;
-    opacity: .5;
+    opacity: .2;
     transition: opacity .3s ease;
   }
 
   .show {
     opacity: 1 !important;
   }
+
+  @media screen and (max-width: 700px) {
+    .audio-player img {
+      display: none;
+    }
+
+    .audio-player section {
+      height: 140px;
+    }
+
+    .audio-player h1 {
+      font-size: 24px;
+    }
+  }
   
 </style>
 
 <div class="audio-player">
-  <button id="play-btn"></button>
+  <section>
+    <div style="background-image: url({{ .Params.image }})"></div>
+    <header>
+      <img alt='{{ .Params.title }}' src='{{ .Params.image }}' />
+      <h1>{{ .Params.title }}</h1>
+    </header>
+  </section>
+  <button id="play-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
+      <path class="play-btn-play" fill="#fff" d="M31,21.5L17,33l2.5-11.5L17,10L31,21.5z"></path>
+      <g fill="#fff" class="play-btn-pause">
+        <rect x="15" y="12" width="5" height="19"></rect>
+        <rect x="23" y="12" width="5" height="19"></rect>
+      </g>
+    </svg>
+  </button>
   <div class="audio-wrapper" id="player-container">
-    <audio id="player" ontimeupdate="initProgressBar()">
+    <audio preload id="player" ontimeupdate="initProgressBar()">
       <source src="{{ .Params.audio }}" type="audio/mp3" />
     </audio>
   </div>
-  <div class="player-controls scrubber">
-    <p>{{ .Params.title }}</p>
-    <span id="seek-obj-container">
-      <progress id="seek-obj" value="0" max="1"></progress>
-    </span>
+  <div id="progress-container">
+    <div id="progress-bar">
+      <div id="progress-complete">
+        <span id="progress-point"></span>
+      </div>
+    </div>
     <div id="audio-timers">
       <small id="start-time">00:00</small>
       <small id="end-time">00:00</small>
     </div>
   </div>
-  <div
-    class="album-image"
-    style="background-image: url({{ .Params.image }})"
-  ></div>
 </div>
 
 <script>
@@ -130,26 +193,31 @@
   var playerContainer = document.getElementById("player-container")
   var isPlaying = false
   var playBtn = document.getElementById("play-btn")
-  var progressbar = document.getElementById("seek-obj")
+  var progressBar = document.getElementById('progress-bar')
+  var progressComplete = document.getElementById("progress-complete")
   var timers = document.getElementById('audio-timers')
+  var point = document.getElementById('progress-point')
+  var position = 0
+
+  togglePlay(true)
 
   function initProgressBar() {
     var length = player.duration;
     var current_time = player.currentTime;
 
     // calculate total length of value
-    var totalLength = calculateTotalValue(length);
+    var totalLength = calculateCurrentValue(length);
     document.getElementById("end-time").innerHTML = totalLength;
 
     // calculate current value time
     var currentTime = calculateCurrentValue(current_time);
     document.getElementById("start-time").innerHTML = currentTime;
 
-    progressbar.value = player.currentTime / player.duration;
-    progressbar.addEventListener("click", seek);
+    progressComplete.style.width = player.currentTime / player.duration * 100 + '%';
+    progressBar.addEventListener("click", seek);
 
     if (player.currentTime == player.duration) {
-      document.getElementById("play-btn").className = "";
+      playBtn.className = "";
     }
   }
 
@@ -157,17 +225,6 @@
     togglePlay(true)
     var percent = e.offsetX / this.offsetWidth;
     player.currentTime = percent * player.duration;
-    progressbar.value = percent / 100;
-  }
-
-  function calculateTotalValue(length) {
-    var minutes = Math.floor(length / 60),
-      seconds_int = length - minutes * 60,
-      seconds_str = seconds_int.toString(),
-      seconds = seconds_str.substr(0, 2),
-      time = minutes + ":" + seconds;
-
-    return time;
   }
 
   function calculateCurrentValue(currentTime) {
@@ -180,7 +237,10 @@
         ":" +
         (current_seconds < 10 ? "0" + current_seconds : current_seconds);
 
-    return current_time;
+        
+    return current_hour
+      ? current_hour + ":" + current_time
+      : current_time
   }
 
   // Controls Listeners
@@ -193,17 +253,18 @@
   // ----------------------------------------------------------
   function togglePlay(force) {
     if (player.paused === false && !force) {
-      player.pause();
+      player.pause()
       isPlaying = false;
       playBtn.className = "";
-      progressbar.classList.remove('show')
+      progressBar.classList.remove('show')
       timers.classList.remove('show')
     } else {
-      player.play();
-      playBtn.className = "pause";
-      isPlaying = true;
-      progressbar.classList.add('show')
-      timers.classList.add('show')
+      player.play().then(function () {
+        playBtn.className = "is-playing";
+        isPlaying = true;
+        progressBar.classList.add('show')
+        timers.classList.add('show')
+      })
     }
   }
 </script>

@@ -6,11 +6,12 @@ description: 'Muchas veces vamos a querer cargar Google Analytics en nuestra pá
 topic: performance
 language: 🇪🇸
 toc: true
+tags:
+- analytics
+- performance
 ---
 
 Cargar Google Analytics tiene, lo quieras o no, un impacto en la performance de tu página web. **No es la peor librería de terceros para añadir en tu web** (¡Hola Optimizely 🤪!) porque, en ese aspecto, Google tiene cierta sensibilidad en hacer que tu web cargue rápido pero... **eso no significa que siempre nos vaya a proporcionar la mejor opción**. Por defecto Google nos ofrece un código que puede ser interesante si estamos pensando en usar otros productos de la compañía pero podemos hacer algunas mejoras o... directamente usar otro.
-
-{{% img src="/images/analytics.png" alt="Google Analytics es uno de las soluciones de tracking más usadas" %}}
 
 Pero empecemos por el principio, si vamos a las `opciones de nuestra propiedad -> Información de Seguimiento -> Código de seguimiento`, allí nos recomendará el siguiente trozo de código para implementar en nuestra web para activar el seguimiento de Google Analytics:
 

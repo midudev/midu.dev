@@ -1,5 +1,5 @@
 ---
-title: Consejos, ideas y prácticas para mejorar como desarrolladores web
+title: 01x07 - Consejos, ideas y prácticas para mejorar como desarrolladores web
 date: '2019-03-06'
 image: '/images/01_07_consejos-ideas-practicas-para-mejorar-como-desarrollador.jpg'
 description: '¿Qué podemos hacer para mejorar como desarrolladores web? ¿Qué son los hard skills y los soft skills? ¿Qué puedo esperar de la empresa para evolucionar como programador? Ideas, consejos y buenas prácticas para seguir mejorando.'

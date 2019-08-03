@@ -5,6 +5,9 @@ image: '/images/customiza-prompt-terminal.png'
 description: 'Por defecto, la terminal de sistemas como UNIX y macOS traen bash pero su aspecto no es el más bonito. Y las apariencias importan. ¡Vamos a arreglarlo!'
 topic: terminal
 language: 🇪🇸
+tags:
+- terminal
+- productividad
 ---
 
 Si eres un usuario regular de la Terminal, como lo soy yo en macOS, y todavía no te ha dado por personalizarla, puedes empezar por la parte más sencilla para dejarlo un poco más a tu gusto: **cambiar el prompt.**

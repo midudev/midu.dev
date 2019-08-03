@@ -4,6 +4,9 @@ date: '2019-02-19'
 image: '/images/react-hooks-use-effect.jpg'
 description: Usando useEffect podremos añadir funcionalidad a nuestro componente cuando se renderiza por primera vez, se actualiza cuando nueva información llega y cuando se desmonta del árbol de elementos
 language: 🇪🇸
+tags:
+- react
+- react hooks
 ---
 
 Ya sabemos qué son los hooks y cómo usar el hook `useState` para añadir un estado a nuestro componente, para que puedan tener comportamiento y sean dinámicos. En este artículo, vamos a conocer el hook `useEffect` que, sin duda, será otro de los hooks más utilizados. ¿Su función? **Ejecutar código cada vez que nuestro componente se renderiza.**
@@ -20,7 +23,7 @@ Para usar este hook, primero debemos importarlo desde la librería de React.
 import React, { useEffect } from 'react'
 ```
 
-Ahora, en nuestro componente funcional, **vamos a añadir un efecto que se ejecutará cada vez que nuestro componente se renderice** Para eso, ejecutaremos el método `useEffect` dentro del cuerpo de nuestra función y le pasaremos como parámetro la función que queremos que ejecute al renderizar el componente.
+Ahora, en nuestro componente funcional, **vamos a añadir un efecto que se ejecutará cada vez que nuestro componente se renderice.** Para eso, ejecutaremos el método `useEffect` dentro del cuerpo de nuestra función y le pasaremos como parámetro la función que queremos que ejecute al renderizar el componente.
 
 {{< highlight jsx "hl_lines=4" >}}
 import React, { useEffect } from 'react'

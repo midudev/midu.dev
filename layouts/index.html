@@ -1,33 +1,91 @@
 {{ define "main" }}
-  <section class='feed'>
-    {{ range first 1 (where .Pages ".Params.category" "!=" "podcast")  }}
-      <a class='card card--featured' href="{{.Permalink}}">
-        <img class='u-absolute u-lazyload lazyload' data-src='{{ .Params.image }}'/>
-        <div class='card-info u-absolute'>
-          <h1 class='article-title article-title--medium'>
-            <span class='article-title-content'>{{ .Title }}</span>
-          </h1>
-        </div>
-      </a>
-    {{ end }}
-    {{ range first 1 (where .Pages ".Params.category" "podcast") }}
-    <a class='card card--aside' href='{{.Permalink}}'>
-      <img class='u-absolute u-lazyload lazyload' data-src='{{ .Params.image }}'/>
-      <div class='card-info u-absolute'>
-        {{ partial "card/mic-overlay.html" }}
-        <h1 class='article-title article-title--small'><span class='article-title-content'>{{ .Title }}</span></h1>
-      </div>
-    </a>
-  {{ end }}
-  {{ range first 20 (after 1 (where .Pages ".Params.category" "!=" "podcast")) }}
-      <a class='card' href="{{.Permalink}}">
-        <img class='u-absolute u-lazyload lazyload' data-src='{{ .Params.image }}'/>
-        <div class='card-info u-absolute'>
-          <h1 class='article-title'><span class='article-title-content'>{{ .Title }}</span></h1>
-        </div>
-      </a>
-    {{ end }}
-  </section>
-</div>
+  <style>
+    #home-feed {
+      flex: 1 1;
+      padding-bottom: 32px;
+    }
 
+    #home-feed > div {
+      align-items: start;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: var(--gtc-home-feed);
+      justify-items: center;
+      padding-right: var(--p-separation);
+      width: 100%;
+    }
+
+    #home-feed h2 {
+      color: rgba(0,0,0,.9);
+      font-size: 24px;
+      padding: 8px 0 4px;
+      font-weight: 600;
+    }
+
+    #home-feed a {
+      border-radius: 4px;
+      font-size: 12px;
+      grid-column: span 1;
+      overflow: hidden;
+      padding: 8px 8px 16px;
+      position: relative;
+      transition: transform .3s ease;
+      width: 100%;
+    }
+
+    #home-feed a:hover {
+      background: #eee;
+      transform: scale(1.03);
+    }
+
+    #home-feed a:hover h2 {
+      color: #0000EE;
+    }
+
+    #home-feed a:hover p {
+      opacity: 1;
+    }
+
+    #home-feed img {
+      backdrop-filter: none;
+      backface-visibility: hidden;
+      border-radius: 4px;
+      height: var(--h-card-image);
+      object-fit: cover;
+      width: 100%;
+    }
+
+    #home-feed p {
+      color: #555;
+      font-size: 14px;
+      opacity: 0;
+      line-height: 1.5;
+      font-weight: 500;
+      transition: opacity .3s ease;
+    }
+
+    #home-feed .meta {
+      color: #333;
+      padding-top: 4px;
+    }
+
+  </style>
+  <section id='home-feed'>
+    <div>
+      {{ range first 8 (where .Pages ".Params.category" "!=" "podcast")  }}
+      <a href="{{.Permalink}}">
+        <img class='u-lazyload lazyload' data-src='{{ .Params.image }}'/>
+        <h2>{{ .Title }}</h2>
+        <div class='meta'>
+          <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
+            {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
+          </time>
+          / 
+          <span>{{.ReadingTime}} minutos de lectura</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ partial "aside.html" . }}
 {{ end }}

@@ -9,8 +9,6 @@ tags: ["buenas prácticas"]
 
 It is said that **is easier writing understandable code for computers than for humans. And who doesn't believe that?** No matter the name of your variables, code styling, or weird decisions that you could make that, if it compiles, the computer is going to do what it has to do. And that's cool as we are free to throw a bunch of spaghetti to our beloved machines and get the work done.
 
-{{% img src="/images/slr_one_line_one_thing-5395037.png" align="" alt="Single Line Responsibility, one line, one thing" %}}
-
 That said, the main problem is, generally speaking, our code should be read as well by humans. Colleagues, teammates, managers, clients... truth is **our code should be understandable by machines but readable by humans.**
 
 > Some years ago, I asked a teammate why he used single letters as names for variables. He said: "So I will be needed for understanding this code".
