@@ -2,159 +2,90 @@
   <style>
     #home-feed {
       flex: 1 1;
+      padding-bottom: 32px;
     }
 
-    #home-feed div {
-      display: grid;
+    #home-feed > div {
       align-items: start;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: var(--gtc-home-feed);
       justify-items: center;
-      grid-gap: 2rem;
+      padding-right: var(--p-separation);
       width: 100%;
-      grid-template-columns: 1fr 1fr;
-      padding-right: 32px;
     }
 
     #home-feed h2 {
-      color: rgba(0,0,0,.8);
-      padding: 8px 16px 16px;
+      color: rgba(0,0,0,.9);
+      font-size: 24px;
+      padding: 8px 0 4px;
       font-weight: 600;
     }
 
     #home-feed a {
       border-radius: 4px;
       font-size: 12px;
-      overflow: hidden;
       grid-column: span 1;
-      box-shadow: 0 3px 12px 3px rgba(45, 75, 224, 0.1);
-      width: 100%;
-      height: 300px;
+      overflow: hidden;
+      padding: 8px 8px 16px;
       position: relative;
+      transition: transform .3s ease;
+      width: 100%;
     }
 
     #home-feed a:hover {
       background: #eee;
-      box-shadow: 0 3px 12px 3px rgba(45, 75, 224, 0.2);
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
-    #home-feed a::after {
-      background-image: linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,.5) 52%,rgba(255,255,255,1) 85%);
-      bottom: 0;
-      content: '';
-      height: 45px;
-      width: 100%;
-      position: absolute;
+    #home-feed a:hover h2 {
+      color: #0000EE;
+    }
+
+    #home-feed a:hover p {
+      opacity: 1;
     }
 
     #home-feed img {
-      width: 100%;
-      height: 150px;
+      backdrop-filter: none;
+      backface-visibility: hidden;
+      border-radius: 4px;
+      height: var(--h-card-image);
       object-fit: cover;
+      width: 100%;
     }
 
     #home-feed p {
-      padding: 0 16px;
+      color: #555;
+      font-size: 14px;
+      opacity: 0;
+      line-height: 1.5;
+      font-weight: 500;
+      transition: opacity .3s ease;
+    }
+
+    #home-feed .meta {
       color: #333;
-      font-weight: 500;
+      padding-top: 4px;
     }
 
-    #home-aside {
-      width: 500px;
-    }
-
-    #home-aside a,
-    #home-aside button {
-      align-items: center;
-      background: transparent;
-      border: 0;
-      border-radius: 4px;
-      color: #444;
-      cursor: pointer;
-      display: flex;
-      outline: 0;
-      margin-left: -8px;
-      padding: 8px;
-      text-align: left;
-    }
-
-    #home-aside a:hover, 
-    #home-aside button:hover {
-      background: #eee;
-      color: #111;
-    }
-
-    #home-aside img {
-      border-radius: 4px;
-      object-fit: cover;
-      flex: 0 0 128px;
-      height: 72px;
-      width: 128px;
-    }
-
-    #home-aside h4 {
-      font-size: 18px;
-      line-height: 22px;
-      font-weight: 500;
-      padding-left: 16px;
-    }
-
-    .feed-title {
-      color: #111;
-      font-weight: 700;
-      font-size: 24px;
-      padding-bottom: 16px;
-    }
-
-    .youtube-title {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 8px;
-    }
   </style>
   <section id='home-feed'>
-    <h3 class='feed-title'>Últimos artículos 📝</h3>
     <div>
       {{ range first 8 (where .Pages ".Params.category" "!=" "podcast")  }}
       <a href="{{.Permalink}}">
         <img class='u-lazyload lazyload' data-src='{{ .Params.image }}'/>
         <h2>{{ .Title }}</h2>
-        <p>{{ .Params.description }}</p>
+        <div class='meta'>
+          <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
+            {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
+          </time>
+          / 
+          <span>{{.ReadingTime}} minutos de lectura</span>
+        </div>
       </a>
       {{ end }}
     </div>
   </section>
-  <aside id='home-aside'>
-    <h3 class='feed-title youtube-title'>
-      Últimos vídeos 📹
-      {{ partial "buttons/youtube-subscribe-button.html"  }}
-    </h3>
-    {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=3&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
-    {{ range first 3 $videos.items }}
-      <button>
-        <img class='u-lazyload lazyload' data-src='http://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/maxresdefault.jpg' />
-        <h4>{{ .snippet.title }}</h4>
-      </button>
-    {{ end }}
-    <br /><br />
-    <h3 class='feed-title'>Últimos podcast 🎙️</h3>
-    {{ range first 10 (where .Pages ".Params.category" "podcast") }}
-      <a href='{{.Permalink}}'>
-        <img class='u-lazyload lazyload' data-src='{{ .Params.image }}'/>
-        <h4>{{ .Title }}</h4>
-      </a>
-    {{ end }}
-    <br /><br />
-    <div id="newsletter-form">
-      <h3>¡Suscríbete a la lista de correo 📫!</h3>
-      <small>Recibirás artículos de calidad sobre frontend y todas las novedades en las que vaya trabajando. <strong>¡Nada de spam 🙅‍♂️!</strong></small>
-      <form action="https://www.getrevue.co/profile/midudev/add_subscriber" method="post" name="revue-form" target="_blank">
-        <div>
-          <input required class="input" placeholder="Tu correo electrónico *" type="email" name="member[email]">
-          <input class="input" placeholder="Tu nombre (Opcional)" type="text" name="member[first_name]">
-        </div>
-          <input class='button' type="submit" value="✍️ Suscribirse" name="member[subscribe]" id="member_submit">
-      </form>
-    </div>
-  </aside>
+  {{ partial "aside.html" . }}
 {{ end }}
