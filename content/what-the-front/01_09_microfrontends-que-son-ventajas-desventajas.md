@@ -4,7 +4,7 @@ date: '2019-05-01'
 image: '/images/01_09_microfrontends.jpg'
 description: En este nuevo programa hablamos sobre los microfrontends, una nueva arquitectura diseñada para llevar el potencial de los microservicios al cliente. ¿Cómo? Pues permitiendo que cada equipo tenga la libertad de deployar el trozo de frontend en el que está trabajando.
 category: 'podcast'
-audio: http://www.ivoox.com/microfrontends-que-son-que-ventajas-desventajas-tienen_mf_35271421_feed_1.mp3
+audio: https://www.ivoox.com/microfrontends-que-son-que-ventajas-desventajas-tienen_mf_35271421_feed_1.mp3
 season: 01
 episode: 09
 ---

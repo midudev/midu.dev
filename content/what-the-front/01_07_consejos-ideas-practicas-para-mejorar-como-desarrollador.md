@@ -4,7 +4,7 @@ date: '2019-03-06'
 image: '/images/01_07_consejos-ideas-practicas-para-mejorar-como-desarrollador.jpg'
 description: '¿Qué podemos hacer para mejorar como desarrolladores web? ¿Qué son los hard skills y los soft skills? ¿Qué puedo esperar de la empresa para evolucionar como programador? Ideas, consejos y buenas prácticas para seguir mejorando.'
 category: 'podcast'
-audio: "http://www.ivoox.com/consejos-ideas-practicas-para-ser-mejor-desarrollador_mf_33022555_feed_1.mp3"
+audio: "https://www.ivoox.com/consejos-ideas-practicas-para-ser-mejor-desarrollador_mf_33022555_feed_1.mp3"
 season: 01
 episode: 07
 ---

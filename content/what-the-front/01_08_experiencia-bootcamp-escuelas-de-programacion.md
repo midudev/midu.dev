@@ -4,7 +4,7 @@ date: '2019-03-31'
 image: '/images/01_08_experiencia-bootcamp-escuelas-de-programacion.jpg'
 description: '¿Estarías dispuesto a pagar 5000 euros, dejar tu trabajo actual y encerrarte 12 semanas para aprender programación y cambiar tu vida? Eso proponen los bootcamps, hablamos con un grupo de alumnos que lo han hecho.'
 category: 'podcast'
-audio: "http://www.ivoox.com/experiencia-bootcamp-que-se-siente-al-cambiar-tu_mf_33878884_feed_1.mp3"
+audio: "https://www.ivoox.com/experiencia-bootcamp-que-se-siente-al-cambiar-tu_mf_33878884_feed_1.mp3"
 season: 01
 episode: 08
 ---

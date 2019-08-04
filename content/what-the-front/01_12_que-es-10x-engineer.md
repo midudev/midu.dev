@@ -4,7 +4,7 @@ date: '2019-07-22'
 image: '/images/01_012_10x_engineer_jscamp_csscamp.jpg'
 description: Hablamos sobre poner Internet a dieta y la figura de los UX Engineer con Adria Fontcuberta y Marina Aisa, que hicieron charlas al respecto en la T3chfest 2019.
 category: 'podcast'
-audio: http://www.ivoox.com/hay-poner-internet-a-dieta-que-es_mf_36586428_feed_1.mp3
+audio: https://www.ivoox.com/hay-poner-internet-a-dieta-que-es_mf_36586428_feed_1.mp3
 season: 01
 episode: 11
 ---
