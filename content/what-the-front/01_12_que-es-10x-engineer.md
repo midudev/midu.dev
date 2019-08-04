@@ -6,7 +6,7 @@ description: Hablamos sobre poner Internet a dieta y la figura de los UX Enginee
 category: 'podcast'
 audio: https://www.ivoox.com/hay-poner-internet-a-dieta-que-es_mf_36586428_feed_1.mp3
 season: 01
-episode: 11
+episode: 12
 ---
 
 Hablamos sobre uno de los grandes temas que han azotado esta semana Twitter. **Los ingenieros 10x**. ¿De qué trata? ¿Qué son? ¿Por qué tanto revuelo? ¿Existen...? ¿Tienen sentido? Pues esto y mucho más, te lo contamos. Este es el tweet que comentamos en el programa:
