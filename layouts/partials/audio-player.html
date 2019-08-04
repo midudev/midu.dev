@@ -4,7 +4,6 @@
     background-color: white;
     max-width: 750px;
     width: 100%;
-    min-height: 200px;
     box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: relative;
@@ -17,6 +16,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
   }
 
   .audio-player header {
@@ -27,6 +27,7 @@
     left: 0;
     width: 100%;
     align-items: center;
+    z-index: 2;
   }
 
   .audio-player img {
@@ -55,8 +56,9 @@
   }
 
   #progress-container {
-    margin-top: 10px;
-    padding: 0 32px 16px 125px;
+    margin-top: 8px;
+    padding: 0 32px 8px 125px;
+    z-index: 2;
   }
 
   #progress-bar {
@@ -100,7 +102,7 @@
     border: 0;
     cursor: pointer;
     left: 32px;
-    margin-top: -28px;
+    margin-top: -42px;
     outline: 0;
     padding: 0;
     position: absolute;
@@ -151,6 +153,12 @@
     }
   }
 
+  @media screen and (max-width: 400px) {
+    .audio-player h1 {
+      font-size: 16px;
+    }
+  }
+
   @media screen and (max-height: 350px) {
     .body-player .header, .body-player footer, .body-player .section-title, .body-player .podcast-subscribe, .body-player #article-content-wrapper {
       display: none;
@@ -161,7 +169,13 @@
     }
 
     .body-player .audio-player {
+      min-height: auto;
       max-width: 100%;
+      height: 100vh;
+      justify-content: center;
+      align-content: center;
+      display: flex;
+      flex-direction: column;
     }
 
     .body-player #article {
@@ -170,6 +184,10 @@
       height: 100vh;
       align-items: center;
       width: 100%;
+    }
+
+    .body-player .audio-player section {
+      height: auto;
     }
   }
   
@@ -183,21 +201,23 @@
       <h1>{{ .Params.title }}</h1>
     </header>
   </section>
-  <button id="play-btn">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
-      <path class="play-btn-play" fill="#fff" d="M31,21.5L17,33l2.5-11.5L17,10L31,21.5z"></path>
-      <g fill="#fff" class="play-btn-pause">
-        <rect x="15" y="12" width="5" height="19"></rect>
-        <rect x="23" y="12" width="5" height="19"></rect>
-      </g>
-    </svg>
-  </button>
+
   <div class="audio-wrapper" id="player-container">
     <audio preload id="player" ontimeupdate="initProgressBar()">
       <source src="{{ .Params.audio }}" type="audio/mp3" />
     </audio>
   </div>
   <div id="progress-container">
+    <button id="play-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
+          <path class="play-btn-play" fill="#fff" d="M31,21.5L17,33l2.5-11.5L17,10L31,21.5z"></path>
+          <g fill="#fff" class="play-btn-pause">
+            <rect x="15" y="12" width="5" height="19"></rect>
+            <rect x="23" y="12" width="5" height="19"></rect>
+          </g>
+        </svg>
+      </button>
+
     <div id="progress-bar">
       <div id="progress-complete">
         <span id="progress-point"></span>
