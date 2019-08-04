@@ -150,6 +150,28 @@
       font-size: 24px;
     }
   }
+
+  @media screen and (max-height: 350px) {
+    .body-player .header, .body-player footer, .body-player .section-title, .body-player .podcast-subscribe, .body-player #article-content-wrapper {
+      display: none;
+    }
+
+    .body-player .u-center {
+      padding: 0;
+    }
+
+    .body-player .audio-player {
+      max-width: 100%;
+    }
+
+    .body-player #article {
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      align-items: center;
+      width: 100%;
+    }
+  }
   
 </style>
 

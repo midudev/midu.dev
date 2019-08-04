@@ -1,68 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-	<meta charset="utf-8">
-	<title>{{- .Title | default .Site.Title -}}</title>
-	
-	{{ partial "head/preconnects.html" . }}
-	
-	<link rel="canonical" href="{{ .Permalink }}">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
-	{{ $js := resources.Get "js/scripts.js" }}
-	{{ $script := $js | resources.Minify }}
-	<script defer src='{{ $script.RelPermalink }}'></script>
-	
-	{{ $css := resources.Get "styles/global.css" }}
-	{{ $style := $css | resources.Minify }}
-	<style>{{$style.Content | safeCSS}}</style>
+  <meta charset="utf-8">
+  <title>{{- .Title | default .Site.Title -}}</title>
 
-	{{ partial "head/favicons.html" . }}
-	
-	<meta name="apple-mobile-web-app-title" content="midu.dev" />
-	<meta name="application-name" content="midu.dev" />
-	<meta name="theme-color" content="#0099ff" />
-	
-	{{ range .AlternativeOutputFormats -}}
-	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-	{{ end -}}
-	
-	<meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
-	<meta property="og:url" content="{{.Permalink}}" />
-	
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:creator" content="@midudev" />
-	<meta name="twitter:domain" content="midu.dev" />
-	<meta name="twitter:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
-	<meta name="twitter:site" content="@midudev" />
-	
-	<link rel="manifest" href="/manifest.json" />
-	
-	<meta property="og:locale" content="es_ES" />
-	<meta property="og:title" content="{{ .Title | default .Site.Title }}" />
-	<meta property="og:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
-	<meta property="og:description" content="{{- .Description | default .Site.Params.Description -}}" />
-	<meta property="og:site_name" content="midu.dev" />
+  {{ partial "head/preconnects.html" . }}
 
-	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=497919487416461&ev=PageView&noscript=1" />
+  <link rel="canonical" href="{{ .Permalink }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  {{ $js := resources.Get "js/scripts.js" }}
+  {{ $script := $js | resources.Minify }}
+  <script defer src='{{ $script.RelPermalink }}'></script>
+
+  {{ $css := resources.Get "styles/global.css" }}
+  {{ $style := $css | resources.Minify }}
+  <style>{{$style.Content | safeCSS}}</style>
+
+  {{ partial "head/favicons.html" . }}
+
+  <meta name="apple-mobile-web-app-title" content="midu.dev" />
+  <meta name="application-name" content="midu.dev" />
+  <meta name="theme-color" content="#0099ff" />
+
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+
+  <meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
+  <meta property="og:url" content="{{.Permalink}}" />
+
+  {{ if isset .Params "audio" }}
+  <meta name="twitter:card" content="player" />
+  <meta name="twitter:player:stream" content="{{ .Params.audio }}" />
+  <meta name="twitter:player:stream:content_type" content="audio/mp4" />
+  <meta name="twitter:player" content='{{ .Permalink }}' />
+  <meta name="twitter:player:width" content="702" />
+  <meta name="twitter:player:height" content="223" />
+  {{ else }}
+  <meta name="twitter:card" content="summary_large_image" />
+  {{ end }}
+
+  <meta name="twitter:creator" content="@midudev" />
+  <meta name="twitter:domain" content="midu.dev" />
+  <meta name="twitter:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
+  <meta name="twitter:site" content="@midudev" />
+
+  <link rel="manifest" href="/manifest.json" />
+
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:title" content="{{ .Title | default .Site.Title }}" />
+  <meta property="og:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
+  <meta property="og:description" content="{{- .Description | default .Site.Params.Description -}}" />
+  <meta property="og:site_name" content="midu.dev" />
+
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=497919487416461&ev=PageView&noscript=1" />
 </head>
-<body>
-	<header class='header u-center'>{{ partial "logo.html" }}</header>
-	<main class='u-center'>
-		{{ block "main" . }}
-		{{ end }}
-	</main>
-	{{ partial "footer.html" . }}
 
-	<script>
-		// Check that service workers are registered
-		if ('serviceWorker' in navigator) {
-			// Use the window load event to keep the page load performant
-			window.addEventListener('load', () => {
-				navigator.serviceWorker.register('/sw.js');
-			});
-		}
-	</script>
+<body class='{{ cond (isset .Params "audio") "body-player" ""}}'>
+  <header class='header u-center'>{{ partial "logo.html" }}</header>
+  <main class='u-center'>
+    {{ block "main" . }}
+    {{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+
+  <script>
+    // Check that service workers are registered
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
 </body>
+
 </html>
