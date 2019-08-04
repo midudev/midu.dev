@@ -157,11 +157,29 @@
     .audio-player h1 {
       font-size: 16px;
     }
+
+    #progress-container {
+      padding: 0 32px 8px 80px;
+    }
+
+    #play-btn {
+      margin-top: -16px;
+      left: 18px;
+      width: 42px;
+    }
   }
 
   @media screen and (max-height: 350px) {
     .body-player .header, .body-player footer, .body-player .section-title, .body-player .podcast-subscribe, .body-player #article-content-wrapper {
       display: none;
+    }
+
+    .audio-player section div {
+      position: absolute;
+    }
+
+    .audio-player header {
+      position: relative;
     }
 
     .body-player .u-center {
