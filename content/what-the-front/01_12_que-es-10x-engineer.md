@@ -2,7 +2,7 @@
 title: 01x12 - ¿Qué son los ingenieros 10x? CSSCamp y JSCamp 2019.
 date: '2019-07-22'
 image: '/images/01_012_10x_engineer_jscamp_csscamp.jpg'
-description: Hablamos sobre poner Internet a dieta y la figura de los UX Engineer con Adria Fontcuberta y Marina Aisa, que hicieron charlas al respecto en la T3chfest 2019.
+description: ¿Qué son los ingenierxs 10x? ¿Existen? ¿Son unicornios? Además, también comentamos la JSCamp y la CSSCamp, y damos nuestras impresiones de esta conferencia de Barcelona.
 category: 'podcast'
 audio: https://www.ivoox.com/hay-poner-internet-a-dieta-que-es_mf_36586428_feed_1.mp3
 season: 01
