@@ -21,6 +21,12 @@ html {
   box-sizing: inherit;
 }
 
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 /* SELECTION */
 *::selection {
   background: rgba(6, 125, 247, 0.15);
@@ -83,6 +89,10 @@ iframe {
 
 .u-circle {
   border-radius: 200px;
+}
+
+.u-none {
+  display: none;
 }
 
 .u-center {
