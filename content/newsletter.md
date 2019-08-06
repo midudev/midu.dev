@@ -1,5 +1,5 @@
 ---
-title: Lista de correo de midudev 👨‍💻
+title: Lista de correo de @midudev 👨‍💻
 type: page
 image: '/images/newsletter-image.jpg'
 layout: newsletter
