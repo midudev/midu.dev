@@ -1,5 +1,3 @@
-{{ define "title" }}{{ .Title }} | midudev 👨‍💻{{ end }}
-
 {{ define "main" }}
 {{ $css := resources.Get "styles/highlight.css" }}
 {{ $style := $css | resources.Minify }}
