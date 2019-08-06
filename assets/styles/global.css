@@ -266,7 +266,7 @@ twitter-widget {
 /** HEADER **/
 #logo {
   color: #000;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 300;
   margin: 0;
   transition: opacity .3s ease;
@@ -280,7 +280,7 @@ twitter-widget {
   fill: #fff;
   margin-right: 8px;
   padding: 4px;
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 
 /** BUTTON **/
@@ -339,6 +339,8 @@ twitter-widget {
   padding: 16px;
   background: #ffffc4;
   border-radius: 4px;
+  position: sticky;
+  top: 100px;
 }
 
 #newsletter-form small {
