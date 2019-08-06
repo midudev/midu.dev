@@ -15,6 +15,7 @@ pre {
 
 pre {
   background: #282c34;
+  border-radius: 4px;
   color: white;
   margin: 0;
   overflow: auto;
@@ -35,12 +36,11 @@ code {
 
 .highlight,
 pre.highlight {
-  background: #282c34;
-  border-radius: 3px;
-  color: #abb2bf;
-  margin-bottom: 16px;
-  overflow: hidden;
+  border-radius: 4px;
+  max-width: 600px;
+  margin: 48px auto;
 }
+
 .highlight .ge {
   font-style: italic;
 }
@@ -181,14 +181,14 @@ pre.highlight {
 
 .highlight code::before {
   background: #fff;
-  border-radius: 5px;
+  border-radius: 4px;
   color: rgba(0, 0, 0, .7);
   content: attr(data-lang);
-  font-family: Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;
+  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
   font-size: 12px;
   padding: 2px 8px;
   position: absolute;
   right: 8px;
   text-transform: lowercase;
-  top: 8px;
+  top: -8px;
 }
