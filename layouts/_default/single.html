@@ -10,7 +10,7 @@
   {{ else }}
   <header id='article-header'>
     <picture>
-      <img class='lazyload u-lazyload' src='{{ .Params.image }}' />
+      <img alt='Imagen del artículo: {{ .Title }}' class='lazyload u-lazyload' src='{{ .Params.image }}' />
     </picture>
     <div class='article-header-meta'>
       <h1>
