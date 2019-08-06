@@ -1,0 +1,187 @@
+{{ define "main" }}
+{{ $css := resources.Get "styles/highlight.css" }}
+{{ $style := $css | resources.Minify }}
+<style>{{ $style.Content | safeCSS }}</style>
+<style>
+#newsletter-page {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+#newsletter-page p {
+    color: #444;
+    line-height: 1.75;
+    padding-bottom: 32px;
+}
+
+#newsletter-page > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 24px;
+    min-height: 150px;
+}
+
+#newsletter-page img {
+    max-width: 150px;
+    height: auto;
+}
+
+#newsletter-page h3 {
+    background: url('/images/newsletter-icon.png') no-repeat center right;
+    background-size: 150px;
+    display: flex;
+    align-items: center;
+    font-size: 48px;
+    line-height: 1;
+    color: #111;
+    min-height: 150px;
+    max-width: 100%;
+    padding-right: 100px;
+}
+
+#newsletter-page-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input.is-big {
+    height: 40px;
+    padding: 6px 11px 6px 36px;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.input.is-small {
+    height: 24px;
+    padding: 1px 7px;
+    line-height: 24px;
+}
+
+.input ~ label {
+    position: absolute;
+    left: 32px;
+    width: 100%;
+    top: 11px;
+    color: #aaa;
+    transition: 0.3s;
+    z-index: -1;
+}
+
+.input:focus ~ svg {
+    fill: #333;
+}
+
+.input {
+    background-color: transparent;
+}
+
+.input:focus {
+    color: #333;
+}
+label.is-ready {
+    top: -22px;
+    font-size: 12px;
+    color: #3399FF;
+    transition: 0.3s;
+    left: 0;
+    z-index: 0;
+}
+
+fieldset {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+fieldset svg {
+    fill: #999;
+    left: 8px;
+    top: 13px;
+    position: absolute;
+}
+
+small {
+    font-weight: 500;
+    color: #555;
+    padding-bottom: 8px;
+    display: block;
+}
+
+section {
+    text-align: center;
+}
+
+.button {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 21px;
+}
+
+.button svg {
+    margin-right: 8px;
+}
+
+#newsletter-page-name {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 2s ease;
+    padding-bottom: 4px;
+}
+
+#newsletter-page-name.is-ready {
+    max-height: 500px;
+    opacity: 1;
+}
+</style>
+
+<div id='newsletter-page'>
+    <div>
+        <h3 id="newsletter-page-title">
+            ¡Apúntate a la newsletter!
+        </h3>
+    </div>
+    <section>
+        <p>Te enviaré <strong>contenido exclusivo</strong> para ti, </strong>artículos de frontend <strong>de calidad 👌</strong>, avisos de <strong>sorteos</strong>, <strong>descuentos</strong> en mis cursos 👨‍🏫 y nuevos vídeos en mi canal.<br />Ah, y <strong>NADA DE SPAM 🙅‍♂️.</strong>
+        </p>
+    </section>
+    <form action="https://www.getrevue.co/profile/midudev/add_subscriber" method="post" name="revue-form" target="_blank">
+        <div>
+            <fieldset>
+                <input autofocus required="" id='member[email]' class="input is-big" type="email" name="member[email]">
+                <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="mail" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z"></path></svg>
+                <label for='member[email]'>Tu correo electrónico</label>
+            </fieldset>
+            <fieldset id='newsletter-page-name'>
+                <small>Si quieres, puedes dejar tu nombre. <strong>No es obligatorio</strong> pero el correo será más personal:</small>
+                <input class="input" type="text" name="member[first_name]" placeholder="Tu nombre">
+            </fieldset>
+        </div>
+        <button class="button" type="submit" name="member[subscribe]" id="member_submit">
+            <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="form" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 512h-56c-4.4 0-8 3.6-8 8v320H184V184h320c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V520c0-4.4-3.6-8-8-8z"></path><path d="M355.9 534.9L354 653.8c-.1 8.9 7.1 16.2 16 16.2h.4l118-2.9c2-.1 4-.9 5.4-2.3l415.9-415c3.1-3.1 3.1-8.2 0-11.3L785.4 114.3c-1.6-1.6-3.6-2.3-5.7-2.3s-4.1.8-5.7 2.3l-415.8 415a8.3 8.3 0 0 0-2.3 5.6zm63.5 23.6L779.7 199l45.2 45.1-360.5 359.7-45.7 1.1.7-46.4z"></path></svg>
+            <span>¡Me suscribo!</span>
+        </button>
+    </form>
+
+</div>
+
+<script>
+    var page = document.getElementById('newsletter-page')
+    var input = page.querySelector('.input.is-big')
+
+    input.addEventListener('focus', function callback (e) {
+        page.querySelector('label').classList.add('is-ready')
+        input.removeEventListener('focus', callback)
+    })
+    input.addEventListener('input', function callback (e) {
+        var isValid = this.checkValidity()
+        if (isValid) {
+            page.querySelector('.button').classList.add('is-ready')
+            page.querySelector('#newsletter-page-name').classList.add('is-ready')
+            input.removeEventListener('input', callback)
+        }
+    })
+</script>
+{{ end }}

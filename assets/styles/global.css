@@ -21,6 +21,12 @@ html {
   box-sizing: inherit;
 }
 
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 /* SELECTION */
 *::selection {
   background: rgba(6, 125, 247, 0.15);
@@ -83,6 +89,10 @@ iframe {
 
 .u-circle {
   border-radius: 200px;
+}
+
+.u-none {
+  display: none;
 }
 
 .u-center {
@@ -285,8 +295,9 @@ twitter-widget {
 
 /** BUTTON **/
 .button {
-  background: #09f;
-  border-radius: 100px;
+  background-color: #1890ff;
+  border-color: #1890ff;
+  border-radius: 4px;
   border: 0;
   box-shadow: 0 2px 0 #0000000b;
   color: #fff;
@@ -295,9 +306,10 @@ twitter-widget {
   height: 40px;
   line-height: 38px;
   outline: 0;
-  padding: 0 24px;
+  padding: 0 15px;
   text-align: center;
   text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
   width: 100%;
 }
 
@@ -313,7 +325,6 @@ twitter-widget {
   border: 1px solid #d9d9d9;
   box-sizing: border-box;
   color: rgba(0,0,0,0.65);
-  cursor: pointer;
   display: inline-block;
   font-feature-settings: 'tnum';
   font-size: 14px;
