@@ -55,9 +55,6 @@
   <meta property="og:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
   <meta property="og:description" content="{{- .Description | default .Site.Params.Description -}}" />
   <meta property="og:site_name" content="midu.dev" />
-
-  <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=497919487416461&ev=PageView&noscript=1" />
 </head>
 
 <body class='{{ cond (isset .Params "audio") "body-player" ""}}'>
@@ -77,6 +74,8 @@
       });
     }
   </script>
+
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=497919487416461&ev=PageView&noscript=1" />
 </body>
 
 </html>
