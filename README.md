@@ -23,8 +23,8 @@ https://midu.dev website
 # TODO ✍️
 - [x] Lazy load and blur images using lazysizes
 - [x] Create or use a plugin to convert code to prismjs
-- [ ] Remove Twitter buttons and use my own
+- [x] Remove Twitter buttons and use my own
 - [ ] Add dark mode
-- [ ] Add a Newsletter
+- [x] Add a Newsletter
 - [ ] Lazy load highlight CSS (check if it's worth it)
 - [ ] Translations to other languages? 🇬🇧
