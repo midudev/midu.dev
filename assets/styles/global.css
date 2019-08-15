@@ -131,6 +131,25 @@ iframe {
   opacity: .5;
 }
 
+#nav {
+  align-items: center;
+  display: flex;
+}
+
+#nav a {
+  color: #222;
+  font-weight: 500;
+}
+
+#nav a.is-separated {
+  margin: 0 16px;
+  padding: 0px 4px;
+}
+
+#nav a:hover {
+  color: #444;
+}
+
 /** END .header **/
 
 main {
