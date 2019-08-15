@@ -75,7 +75,7 @@
   #progress-point {
     background: #09f;
     border-radius: 14px;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.32);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .32);
     width: 14px;
     height: 14px;
     top: -2px;
@@ -170,7 +170,12 @@
   }
 
   @media screen and (max-height: 350px) {
-    .body-player .header, .body-player footer, .body-player .section-title, .body-player .podcast-subscribe, .body-player #article-content-wrapper {
+
+    .body-player .header,
+    .body-player footer,
+    .body-player .section-title,
+    .body-player .podcast-subscribe,
+    .body-player #article-content-wrapper {
       display: none;
     }
 
@@ -208,7 +213,6 @@
       height: 100%;
     }
   }
-  
 </style>
 
 <div class="audio-player">
@@ -227,14 +231,14 @@
   </div>
   <div id="progress-container">
     <button id="play-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
-          <path class="play-btn-play" fill="#fff" d="M31,21.5L17,33l2.5-11.5L17,10L31,21.5z"></path>
-          <g fill="#fff" class="play-btn-pause">
-            <rect x="15" y="12" width="5" height="19"></rect>
-            <rect x="23" y="12" width="5" height="19"></rect>
-          </g>
-        </svg>
-      </button>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
+        <path class="play-btn-play" fill="#fff" d="M31,21.5L17,33l2.5-11.5L17,10L31,21.5z"></path>
+        <g fill="#fff" class="play-btn-pause">
+          <rect x="15" y="12" width="5" height="19"></rect>
+          <rect x="23" y="12" width="5" height="19"></rect>
+        </g>
+      </svg>
+    </button>
 
     <div id="progress-bar">
       <div id="progress-complete">
@@ -297,7 +301,7 @@
         ":" +
         (current_seconds < 10 ? "0" + current_seconds : current_seconds);
 
-        
+
     return current_hour
       ? current_hour + ":" + current_time
       : current_time
@@ -305,7 +309,7 @@
 
   // Controls Listeners
   // ----------------------------------------------------------
-  playBtn.addEventListener("click", function() {
+  playBtn.addEventListener("click", function () {
     togglePlay();
   });
 
