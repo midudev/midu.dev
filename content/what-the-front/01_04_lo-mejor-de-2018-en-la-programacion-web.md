@@ -4,7 +4,7 @@ date: '2019-02-03'
 image: '/images/01_04_lo-mejor-de-2018.jpg'
 description: En esta entrega del podcast WhatTheFront hacemos un poco de retrospectiva sobre lo que nos ha deparado el año 2018 y hablamos de lo que vendrá en 2019.
 category: 'podcast'
-audio: https://www.ivoox.com/lo-mejor-2018-frontend-y-audios-mp3_rf_32196466_1.html
+audio: http://www.ivoox.com/lo-mejor-2018-frontend-y_mf_32196466_feed_1.mp3
 season: 01
 episode: 04
 ---
