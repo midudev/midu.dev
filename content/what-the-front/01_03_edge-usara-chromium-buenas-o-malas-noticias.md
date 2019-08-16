@@ -4,7 +4,7 @@ date: '2019-01-19'
 image: '/images/microsoft-edge-presentation.jpg'
 description: Podcast de What The Front donde hablamos de Microsoft decidiendo utilizar Chromium como motor para su navegador Edge. ¿Tú qué opinas?
 category: 'podcast'
-audio: http://www.ivoox.com/edge-usara-chromium-como-motor-su-navegador_mf_31609125_feed_1.mp3
+audio: https://www.ivoox.com/edge-usara-chromium-como-motor-su-navegador_mf_31609125_feed_1.mp3
 season: 01
 episode: 03
 ---
