@@ -1,6 +1,6 @@
 ---
 title: 01x06 - La gran brecha en el mundo del frontend
-date: '2019-17-02'
+date: '2019-02-17'
 image: '/images/01_06_the-great-divide.jpg'
 description: En esta entrega del podcast WhatTheFront hablamos sobre "la gran brecha" en el mundo del desarollo web. ¿Nos estamos especializando demasiado? ¿Son los lados irreconciliables? Maquetadores, expertos en Javascript...
 category: 'podcast'
