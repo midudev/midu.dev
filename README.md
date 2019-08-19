@@ -15,8 +15,8 @@ https://midu.dev website
 
 [//]: contributors
 
-| [<img src="https://avatars0.githubusercontent.com/u/7225802?v=4" width="100px;"/><br /><sub><b>aarongarciah</b></sub>](https://github.com/aarongarciah)<br />| [<img src="https://avatars1.githubusercontent.com/u/28918805?v=4" width="100px;"/><br /><sub><b>alebarbaja</b></sub>](https://github.com/alebarbaja)<br />| [<img src="https://avatars2.githubusercontent.com/u/5173869?v=4" width="100px;"/><br /><sub><b>d4nidev</b></sub>](https://github.com/d4nidev)<br />| [<img src="https://avatars1.githubusercontent.com/u/31427850?v=4" width="100px;"/><br /><sub><b>ImgBotApp</b></sub>](https://github.com/ImgBotApp)<br />| [<img src="https://avatars1.githubusercontent.com/u/4168389?v=4" width="100px;"/><br /><sub><b>desko27</b></sub>](https://github.com/desko27)<br />| [<img src="https://avatars3.githubusercontent.com/u/39853718?v=4" width="100px;"/><br /><sub><b>glebapps</b></sub>](https://github.com/glebapps)<br />| [<img src="https://avatars3.githubusercontent.com/u/10976645?v=4" width="100px;"/><br /><sub><b>arturovm2</b></sub>](https://github.com/arturovm2)<br /> |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| [<img src="https://avatars0.githubusercontent.com/u/7225802?v=4" width="100px;"/><br /><sub><b>aarongarciah</b></sub>](https://github.com/aarongarciah)<br />| [<img src="https://avatars1.githubusercontent.com/u/28918805?v=4" width="100px;"/><br /><sub><b>alebarbaja</b></sub>](https://github.com/alebarbaja)<br />| [<img src="https://avatars2.githubusercontent.com/u/5173869?v=4" width="100px;"/><br /><sub><b>d4nidev</b></sub>](https://github.com/d4nidev)<br />| [<img src="https://avatars1.githubusercontent.com/u/4168389?v=4" width="100px;"/><br /><sub><b>desko27</b></sub>](https://github.com/desko27)<br />| [<img src="https://avatars3.githubusercontent.com/u/39853718?v=4" width="100px;"/><br /><sub><b>glebapps</b></sub>](https://github.com/glebapps)<br />| [<img src="https://avatars3.githubusercontent.com/u/10976645?v=4" width="100px;"/><br /><sub><b>arturovm2</b></sub>](https://github.com/arturovm2)<br /> |
+| :-: | :-: | :-: | :-: | :-: | :-: |
 
 [//]: contributors
 
