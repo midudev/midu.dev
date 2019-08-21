@@ -1,7 +1,7 @@
 const https = require("https")
 const fs = require('fs').promises
 
-const NO_CONTRIBUTORS = ['imgbot[bot]', 'midudev']
+const NO_CONTRIBUTORS = ['imgbot[bot]', 'ImgBotApp', 'midudev']
 
 const options = {
   hostname: 'api.github.com',

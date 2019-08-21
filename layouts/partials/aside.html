@@ -35,7 +35,7 @@
   {{ end }}
   <br /><br />
   <h3 class='section-title'>Últimos podcast 🎙</h3>
-  {{ range first 10 (where .Site.Pages ".Params.category" "podcast") }}
+  {{ range first 5 (where .Site.Pages ".Params.category" "podcast") }}
   <a href='{{.Permalink}}'>
     <img class='u-lazyload lazyload' data-src='{{ .Params.image }}' />
     <h4>{{ .Title }}</h4>

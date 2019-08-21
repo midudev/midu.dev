@@ -1,5 +1,6 @@
 :root {
   --mw-document: 1300px;
+  --m-page-links: 0 16px;
   --w-aside: 320px;
   --fz-aside: 14px;
   --fz-section-title: 18px;
@@ -129,6 +130,30 @@ iframe {
 
 .header a:hover {
   opacity: .5;
+}
+
+#nav {
+  align-items: center;
+  display: flex;
+}
+
+#nav a {
+  color: #222;
+  font-weight: 500;
+}
+
+#nav .page-links {
+  font-size: 21px;
+  margin: var(--m-page-links);
+  padding: 0px 4px;
+}
+
+#nav .page-links span {
+  font-size: var(--fz-page-links);
+}
+
+#nav a:hover {
+  color: #444;
 }
 
 /** END .header **/
@@ -751,6 +776,8 @@ figure.left img {
   :root {
     --p-u-center: 0 16px;
     --p-header-bottom: 16px;
+    --m-page-links: 0;
+    --fz-page-links: 0;
   }
 
   #article-header {

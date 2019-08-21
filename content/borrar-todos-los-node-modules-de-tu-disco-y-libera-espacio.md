@@ -12,7 +12,7 @@ tags:
 
 Aunque no te des cuenta, **las dependencias de tus proyectos ocupan una barbaridad**. De hecho, no es raro que cada carpeta `node_modules` ocupe, **100MB o más**... Y digo "o más" porque yo **he detectado algún proyecto que la carpeta ocupa la friolera de 1GB.**
 
-Entonces, ¿te pasa como a mi que tienes decenas de proyectos? Pues libera espacio en tu disco duro borrando todos los directorios `node_modules` que tienes en tu sistema. ¡Sobretodo si no lo estás usando!
+Entonces, ¿te pasa como a mi que tienes decenas de proyectos? Pues libera espacio en tu disco duro borrando todos los directorios `node_modules` que tienes en tu sistema. ¡Sobre todo si no lo estás usando!
 
 ## Revisar cuánto ocupan los directorios /node_modules
 

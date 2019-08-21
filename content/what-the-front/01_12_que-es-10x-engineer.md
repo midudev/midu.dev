@@ -4,7 +4,7 @@ date: '2019-07-22'
 image: '/images/01_012_10x_engineer_jscamp_csscamp.jpg'
 description: ¿Qué son los ingenierxs 10x? ¿Existen? ¿Son unicornios? Además, también comentamos la JSCamp y la CSSCamp, y damos nuestras impresiones de esta conferencia de Barcelona.
 category: 'podcast'
-audio: https://www.ivoox.com/hay-poner-internet-a-dieta-que-es_mf_36586428_feed_1.mp3
+audio: https://www.ivoox.com/que-son-ingenieros-10x-csscamp-jscamp_mf_38763548_feed_1.mp3
 season: 01
 episode: 12
 ---
