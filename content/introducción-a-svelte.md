@@ -9,6 +9,8 @@ tags:
 - svelte
 ---
 
+{{% youtube id="Xsxm8_BI63s" %}}
+
 En la pasada **JsCamp 2019** tuve la ocasión de ver la charla de Rich Harris titulada ["The Return of 'Write Less, Do More'"](https://svelte.dev/blog/write-less-code). En ella, hablaba de cómo nos preocupamos de muchas métricas, como el tamaño de nuestro bundle, pero no **le prestamos atención al número de líneas de código que escribimos porque a mayor número de líneas más potenciales bugs tendremos**. ¿Y cómo lo solucionamos? Pues Rich Harris viene con una solución en forma de framework: **Svelte.**
 
 **Hace unos meses se lanzó Svelte 3.** Si os soy sincero, **ni sabía que existía una versión 2.** Ni 1. Ni nada. Pero esta tercera versión acaparó bastante atención gracias a las mejoras a la hora de ofrecer un estado reactivo de forma completamente al usuario. Así que tras la charla decidí empaparme un poco para entender en qué es diferente y si vale la pena aprenderlo.
@@ -105,4 +107,4 @@ Aquí puedes ver el código funcionando:
 Lo que estamos haciendo es que, a los dos segundos, queremos cambiar el valor de `name` de forma que pase de `world` a `frontender`. **¿Lo hará? Pues lo cierto es que sí.** ¿Pero cómo? Pues Svelte, al hacer la compilación, determinará que `name` es un estado y que, al reasignarle un valor, debe hacer un re-renderizado de nuestro componente. 
 
 ## Conclusiones
-Esto sólo es una pequeña pincelada sobre lo que nos ofrece Svelte.
+Esto sólo es una pequeña pincelada sobre lo que nos ofrece Svelte. Desde luego, tiene un enfoque radicalmente distinto a lo que podemos estar acostumbrados con soluciones como React. Es cierto que no tiene la tracción que otras soluciones pero, desde luego, quién sabe si esto es un camino que en el futuro usen más y más bibliotecas. Por ahora, yo me he quedado con ganas de explorar más posibilidades de este framework así que, estáte atento, porque **seguro que sigo haciendo contenido sobre ello. :)**
