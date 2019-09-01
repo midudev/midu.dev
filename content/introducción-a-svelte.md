@@ -13,7 +13,7 @@ tags:
 
 En la pasada **JsCamp 2019** tuve la ocasión de ver la charla de Rich Harris titulada ["The Return of 'Write Less, Do More'"](https://svelte.dev/blog/write-less-code). En ella, hablaba de cómo nos preocupamos de muchas métricas, como el tamaño de nuestro bundle, pero no **le prestamos atención al número de líneas de código que escribimos porque a mayor número de líneas más potenciales bugs tendremos**. ¿Y cómo lo solucionamos? Pues Rich Harris viene con una solución en forma de framework: **Svelte.**
 
-**Hace unos meses se lanzó Svelte 3.** Si os soy sincero, **ni sabía que existía una versión 2.** Ni 1. Ni nada. Pero esta tercera versión acaparó bastante atención gracias a las mejoras a la hora de ofrecer un estado reactivo de forma completamente al usuario. Así que tras la charla decidí empaparme un poco para entender en qué es diferente y si vale la pena aprenderlo.
+**Hace unos meses se lanzó Svelte 3.** Si os soy sincero, **ni sabía que existía una versión 2.** Ni 1. Ni nada. Pero esta tercera versión acaparó bastante atención gracias a las mejoras a la hora de ofrecer un estado reactivo de forma completamente transparente al usuario. Así que tras la charla decidí empaparme un poco para entender en qué es diferente y si vale la pena aprenderlo.
 
 ## ¿Qué es Svelte?
 
