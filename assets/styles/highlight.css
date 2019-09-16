@@ -175,6 +175,11 @@ pre.highlight {
   background: #f7df1e;
 }
 
+.highlight .language-svelte::before {
+  background: #ff3e00;
+  color: #fff;
+}
+
 .highlight .language-jsx::before {
   background: #61dbfb;
 }
