@@ -82,10 +82,21 @@ iframe {
 }
 
 /** UTILS */
+@keyframes lazyload {
+  from {
+    filter: blur(5px);
+    opacity: 0;
+  }
+
+  to {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
 .u-lazyload {
-  filter: blur(5px);
-  opacity: 0;
-  transition: filter 1000ms ease-in-out, opacity 500ms ease-in-out;
+  animation-duration: 1s;
+  animation-name: lazyload;
 }
 
 .u-circle {
