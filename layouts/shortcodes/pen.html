@@ -1,8 +1,9 @@
 <iframe
-  class="lazyload"
+  class="u-lazyload"
   height='{{ .Get "height" }}'
   scrolling='no'
-  data-src='//codepen.io/miduga/embed/{{ .Get "id" }}/?height={{ .Get "height" }}&default-tab={{ .Get "tab" }}'
+  loading='lazy'
+  src='//codepen.io/miduga/embed/{{ .Get "id" }}/?height={{ .Get "height" }}&default-tab={{ .Get "tab" }}'
   frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
   <a href='https://codepen.io/miduga/pen/{{ .Get "id" }}/'>
     See the Pen by @midudev
