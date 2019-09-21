@@ -14,7 +14,7 @@
 
   {{ $js := resources.Get "js/scripts.js" }}
   {{ $script := $js | resources.Minify }}
-  <link rel="preload" src='{{ $script.RelPermalink }}'>
+  <link rel="preload" as="script" href='{{ $script.RelPermalink }}'>
   <script defer src='{{ $script.RelPermalink }}'></script>
 
   {{ $css := resources.Get "styles/global.css" }}
