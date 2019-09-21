@@ -28,8 +28,7 @@
   {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=3&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
   {{ range first 3 $videos.items }}
   <a href='#lightbox' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}'>
-    <img class='u-lazyload lazyload'
-      data-src='https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/maxresdefault.jpg' />
+    <img class='u-lazyload' loading='lazy' src='https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg' />
     <h4>{{ .snippet.title }}</h4>
   </a>
   {{ end }}
@@ -37,7 +36,7 @@
   <h3 class='section-title'>Últimos podcast 🎙</h3>
   {{ range first 5 (where .Site.Pages ".Params.category" "podcast") }}
   <a href='{{.Permalink}}'>
-    <img class='u-lazyload lazyload' data-src='{{ .Params.image }}' />
+    <img class='u-lazyload lazyload' loading='lazy' src='{{ .Params.image }}' />
     <h4>{{ .Title }}</h4>
   </a>
   {{ end }}
