@@ -1,8 +1,9 @@
 <iframe
-  class="lazyload"
+  class="u-lazyload"
   height='{{ .Get "height" }}'
   scrolling='no'
-  data-src='https://codesandbox.io/embed/{{ .Get "id" }}?view={{ .Get "view" }}'
+  loading='lazy'
+  src='https://codesandbox.io/embed/{{ .Get "id" }}?view={{ .Get "view" }}'
   sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
   frameborder='no' allowtransparency='true' allowfullscreen='true'
   style='width:100%; height:{{ .Get "height" }}; border:0; border-radius: 4px; overflow:hidden;'>
