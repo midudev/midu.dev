@@ -8,11 +8,13 @@
   {{ partial "head/preconnects.html" . }}
 
   <link rel="canonical" href="{{ .Permalink }}">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   {{ $js := resources.Get "js/scripts.js" }}
   {{ $script := $js | resources.Minify }}
+  <link rel="preload" src='{{ $script.RelPermalink }}'>
   <script defer src='{{ $script.RelPermalink }}'></script>
 
   {{ $css := resources.Get "styles/global.css" }}
