@@ -73,7 +73,7 @@
   </script>
   {{ $js := resources.Get "js/scripts.js" }}
   {{ $script := $js | resources.Minify }}
-  <script>{{$script.Content}}</script>
+  <script>{{$script.Content | safeJS}}</script>
 </body>
 
 </html>
