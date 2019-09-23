@@ -5,8 +5,8 @@ const CRITICAL = [
 const IMAGES_EXTENSIONS = ['png', 'jpg', 'jpeg', 'svg', 'gif']
 
 const checkUrlIsImage = ({url}) => IMAGES_EXTENSIONS.some(ext => url.endsWith(`.${ext}`))
-const addToCache = (request, response) => {
-  caches.open(CACHE_NAME).then(cache => cache.put(request, response))
+const addToCache = (cacheName, request, response) => {
+  caches.open(cacheName).then(cache => cache.put(request, response))
 }
 
 self.onfetch = function(event) {
@@ -25,7 +25,7 @@ function respondfromCache (request) {
     if (response) return response
 
     return fetch(request.clone()).then(function(response) {
-      addToCache(request, response).then(function() {
+      addToCache(IMAGES_CACHE, request, response).then(function() {
           console.log('yey img cache');
         }, function() {
           console.log('nay img cache');
