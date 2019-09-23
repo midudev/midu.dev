@@ -6,14 +6,6 @@ const isImage = ({url}) => IMAGES_EXTENSIONS.some(ext => url.endsWith(`.${ext}`)
 workbox.googleAnalytics.initialize()
 
 workbox.routing.registerRoute(
-  ({url}) => {
-    console.log({url}, url.pathname)
-    url.pathname === '/' || url.pathname === ''
-  },
-  workbox.strategies.networkFirst({cacheName: 'home'})
-)
-
-workbox.routing.registerRoute(
   /\.(?:png|jpg|jpeg|svg|gif)$/,
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: 'images-cache'
