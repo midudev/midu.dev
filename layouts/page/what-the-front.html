@@ -101,7 +101,7 @@
       <h3 class='section-title'>Escucha todos los programas 🎧👇</h3>
       {{ range first 1 (where .Site.Pages ".Params.category" "podcast")}}
       <a class='wtf-page-link is-active' href='{{.Permalink}}'>
-        <img class='u-lazyload' loading='lazy' src='{{ .Params.image }}' />
+        <img alt="{{ .Title }}" class='u-lazyload' loading='lazy' src='{{ .Params.image }}' />
         <div>
           <h4>{{ .Title }}</h4>
           <h5>{{ .Description }}</h5>
@@ -111,7 +111,7 @@
 
       {{ range first 100 (after 1 (where .Site.Pages ".Params.category" "podcast"))}}
       <a class='wtf-page-link' href='{{.Permalink}}'>
-        <img class='u-lazyload' loading='lazy' src='{{ .Params.image }}' />
+        <img alt="{{ .Title }}" class='u-lazyload' loading='lazy' src='{{ .Params.image }}' />
         <div>
           <h4>{{ .Title }}</h4>
           <h5>{{ .Description }}</h5>

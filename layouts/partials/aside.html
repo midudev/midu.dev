@@ -28,7 +28,7 @@
   {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=3&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
   {{ range first 3 $videos.items }}
   <a href='#lightbox' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}'>
-    <img class='u-lazyload' loading='lazy' src='https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg' />
+    <img alt="{{.snippet.title}}" class='u-lazyload' loading='lazy' src='https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg' />
     <h4>{{ .snippet.title }}</h4>
   </a>
   {{ end }}
@@ -36,7 +36,7 @@
   <h3 class='section-title'>Últimos podcast 🎙</h3>
   {{ range first 5 (where .Site.Pages ".Params.category" "podcast") }}
   <a href='{{.Permalink}}'>
-    <img class='u-lazyload lazyload' loading='lazy' src='{{ .Params.image }}' />
+    <img alt="{{ .Title }}" class='u-lazyload lazyload' loading='lazy' src='{{ .Params.image }}' />
     <h4>{{ .Title }}</h4>
   </a>
   {{ end }}
@@ -48,8 +48,10 @@
     <form action="https://www.getrevue.co/profile/midudev/add_subscriber" method="post" name="revue-form"
       target="_blank">
       <div>
-        <input required class="input" placeholder="Tu correo electrónico *" type="email" name="member[email]">
-        <input class="input" placeholder="Tu nombre (Opcional)" type="text" name="member[first_name]">
+        <label for='aside-newsletter-email' class='u-none'>Correo electrónico</label>
+        <input id='aside-newsletter-email' required class="input" placeholder="Tu correo electrónico *" type="email" name="member[email]">
+        <label for='aside-newsletter-name' class='u-none'>Nombre</label>
+        <input id='aside-newsletter-name' class="input" placeholder="Tu nombre (Opcional)" type="text" name="member[first_name]">
       </div>
       <input class='button' type="submit" value="✍️ ¡Me suscribo!" name="member[subscribe]" id="member_submit">
     </form>
