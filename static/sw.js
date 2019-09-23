@@ -1,31 +1,38 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js')
-
+const IMAGES_CACHE = '{{images_cache}}'
+const CRITICAL = [
+  '/'
+]
 const IMAGES_EXTENSIONS = ['png', 'jpg', 'jpeg', 'svg', 'gif']
-const isImage = ({url}) => IMAGES_EXTENSIONS.some(ext => url.endsWith(`.${ext}`))
 
-workbox.googleAnalytics.initialize()
+const checkUrlIsImage = ({url}) => IMAGES_EXTENSIONS.some(ext => url.endsWith(`.${ext}`))
+const addToCache = (request, response) => {
+  caches.open(CACHE_NAME).then(cache => cache.put(request, response))
+}
 
-workbox.routing.registerRoute(
-  /\.(?:png|jpg|jpeg|svg|gif)$/,
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'images-cache'
-  })
-)
+self.onfetch = function(event) {
+  const requestURL = new URL(event.request.url)
+  const isImage = checkUrlIsImage({url: requestURL.pathname})
 
-// workbox.routing.registerRoute(
-//   new RegExp('(([a-z0-9]+-)+[a-z0-9]+)(/)?$'),
-//   workbox.strategies.networkFirst({cacheName: 'articles'})
-// )
+  if (isImage) {
+    event.respondWith(respondfromCache(event.request));
+  } else {
+    event.respondWith(fetch(event.request));
+  }
+}
 
-// routing.registerRoute(
-//   new RegExp('/static/'),
-//   strategies.cacheFirst({
-//     cacheName: 'static-cache',
-//     plugins: [
-//       new expiration.Plugin({
-//         maxEntries: 60,
-//         maxAgeSeconds: 24 * 60 * 60 // 1 Day
-//       })
-//     ]
-//   })
-// )
+function respondfromCache (request) {
+  return caches.match(request).then(function(response) {
+    if (response) return response
+
+    return fetch(request.clone()).then(function(response) {
+      addToCache(request, response).then(function() {
+          console.log('yey img cache');
+        }, function() {
+          console.log('nay img cache');
+        }
+      )
+
+      return response.clone();
+    });
+  });
+}
