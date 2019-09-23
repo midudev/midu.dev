@@ -1,10 +1,16 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js')
 
+const IMAGES_EXTENSIONS = ['png', 'jpg', 'jpeg', 'svg', 'gif']
+const isImage = ({url}) => IMAGES_EXTENSIONS.some(ext => url.endsWith(`.${ext}`))
+
 workbox.googleAnalytics.initialize()
 
 workbox.routing.registerRoute(
-  new RegExp('(([a-z0-9]+-)+[a-z0-9]+)(/)?$'),
-  workbox.strategies.networkFirst({cacheName: 'articles'})
+  ({url}) => {
+    console.log({url}, url.pathname)
+    url.pathname === '/' || url.pathname === ''
+  },
+  workbox.strategies.networkFirst({cacheName: 'home'})
 )
 
 workbox.routing.registerRoute(
@@ -13,11 +19,6 @@ workbox.routing.registerRoute(
     cacheName: 'images-cache'
   })
 )
-
-// workbox.routing.registerRoute(
-//   ({url}) => url.pathname === '/',
-//   workbox.strategies.networkFirst({cacheName: 'home'})
-// )
 
 // workbox.routing.registerRoute(
 //   new RegExp('(([a-z0-9]+-)+[a-z0-9]+)(/)?$'),
