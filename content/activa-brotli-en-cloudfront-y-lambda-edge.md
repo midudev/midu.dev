@@ -1,23 +1,29 @@
 ---
 title: Activa Brotli en Express y en Cloudfront usando una Lambda@Edge
-date: '2019-05-20'
+date: '2019-09-16'
 image: '/images/brotli-express-cloudfront-lambda.png'
-description: 'Aprende a usar Brotli con Cloudfront y Amazon S3 para mejorar la performance de tu sitio web'
+description: '¿Quieres mejorar fácilmente el Time to First Byte de tu sitio? Brotli te permite mejorar el rendimiento de tu web sin hacer cambios en tu código. Aprende a usarlo en servidores Express o en Cloudfront con Amazon S3 y gana un tiempo precioso para tu usuario.'
 topic: performance
 language: 🇪🇸
 toc: true
+tags:
+- performance ⚡
+- rendimiento web
+- brotli
+- aws
+- cloudfront
 ---
 
 ## ¿Qué es Brotli?
 **Brotli es una alternativa moderna a Gzip**, una técnica de compresión de datos que **ofrece hasta una reducción del 30%** en la transferencia de los archivos estáticos comparado con otras soluciones.
 
-Su historia no deja de ser curiosa, ya que **al principio Brotli estaba pensada más bien para tipografía web** pero, tras ir evolucionando, se enfocó en otro tipo de archivos como imágenes SVG, documentos HTML, scripts y archivos css.
+Su historia no deja de ser curiosa, ya que **al principio Brotli estaba pensado más bien para tipografía web** pero, tras ir evolucionando, se enfocó en otro tipo de archivos como imágenes SVG, documentos HTML, scripts y archivos css.
 
 Pero, ¿cuál es el truco para que brotli sea mejor que gzip? **Pues en un diccionario predefinido de más de 13 mil palabras.** Estas palabras han sido cuidadosamente seleccionadas ya que son los símbolos más usados entre los tipos de archivo que se quiere comprimir y contiene, entre las típicas palabras clave, además, palabras comunes de diferentes idiomas.
 
 Este diccionario 📖 es el que le permite conseguir mejores compresiones en el mismo, o mejor, tiempo posible.
 
-## Cómo activar Brotli en Express
+## Cómo activar Brotli en Express 🚝
 
 Activar Brotli en [Express](https://expressjs.com/es/) es muy sencillo gracias a `shrink-ray-current`, un fork del archifamoso middleware `compression`. ¿La diferencia? El soporte de nuevos tipos de compresión como zopfli y, el que nos importa, **brotli**.
 
@@ -45,22 +51,25 @@ Con esto, **no sólo los archivos estáticos que sirvamos, si no las respuestas 
 
 El problema de esto es que la compresión se realiza al vuelo y esto puede tener una sobrecarga en nuestro servidor. **Normalmente el coste compensa la mejora en la transferencia de datos, pero es algo a tener en cuenta.**
 
-## Cómo activar Brotli en Cloudfront
+## Cómo activar Brotli en Cloudfront paso a paso 👇
 
-Si estás usando un CDN como Cloudfare o Akamai tenéis la posibilidad de activar el uso de brotli de forma muy sencilla sin embargo Amazon todavía no ofrece esta posibilidad para Cloudfront, a diferencia de gzip que simplemente hay que marcar un checkbox para utilizarlo.
+Si estás usando un CDN como *Cloudfare* o *Akamai* tenéis la posibilidad de activar el uso de brotli de forma muy sencilla desde su panel de administración. O **si deployas en Now o Firebase, también lo tienes solucionado.** Puedes dejar de leer el artículo, tomarte un café y disfrutar de tu vida.
+
+Sin embargo para los usuarios de AWS... **Amazon todavía no ofrece esta posibilidad para Cloudfront**, a diferencia de *gzip* que simplemente hay que marcar un checkbox para utilizarlo.
 
 > En pocas palabras. Cloudfront es el CDN de Amazon. S3 es un servicio de almacenamiento en la nube y Lambda es un servicio de procesamiento sin servidor, para poder ejecutar funciones tras determinados eventos.
 
 Entonces, **¿cómo podemos conseguir servir nuestros estáticos con compresión con Brotli en Cloudfront?** Pues te digo como lo hemos conseguido nosotros en Fotocasa.
 
-### Lambda@Edge al rescate
+### Lambda@Edge al rescate 🦸‍♀
 
-**Lambda@Edge es un servicio que te permite ejecutar funciones Lambda para modificar el comportamiento de Cloudfront**. Simplemente, estas funciones se ejecutan durante el ciclo de una petición al servicio y podemos hacer cambios en lo que entrega revisando las cabecera, la petición y todo tipo de lógica.
+**Lambda@Edge es un servicio que te permite ejecutar funciones Lambda para modificar el comportamiento de Cloudfront**. Simplemente, estas funciones se ejecutan durante el ciclo de una petición al servicio y podemos hacer cambios en lo que entrega revisando las cabecera, la petición y todo tipo de lógica. Podrías hacer cosas interesantes como A/B testing o crear una simple redirección... pero hay un mundo de posibilidades como verás más adelante.
 
+{{% img src="/images/1_ZitRPstFKx3016JsykcjXA.png" alt="Puedes ejecutar una Lambda en los diferentes puntos del ciclo de una request a Cloudfront" align="center" %}}
 
-#### 1. Comprime tus estáticos
+#### 1. Comprime tus estáticos 🗜️
 
-Antes de nada, lo primero que vas a necesitar, es **tienes que comprimir tus estáticos en las codificaciones que quieras servir.** Si estás usando Webpack, puedes recurrir a usar un plugin como [compresesion-webpack-plugin](https://github.com/webpack-contrib/compression-webpack-plugin). Las versiones de Node a partir de `10.16.0` y `11.7.0` ya tienen soporte nativo para este algoritmo de compresión.
+Antes de nada, lo primero que vas a necesitar, es **tienes que comprimir tus estáticos en las codificaciones que quieras servir.** Si estás usando Webpack, puedes recurrir a usar un plugin como [compression-webpack-plugin](https://github.com/webpack-contrib/compression-webpack-plugin). Las versiones de Node a partir de `10.16.0` y `11.7.0` ya tienen soporte nativo para este algoritmo de compresión.
 
 ```js
 // en tu webpack.config.js
@@ -86,32 +95,102 @@ module.exports = {
 
 Le pasamos como `threshold` el valor `0` y como `minRatio` el valor `2` **para asegurarnos que TODOS los archivos son comprimidos con los algoritmos que le indicamos.** ¿Por qué? Porque como veremos más adelante, la Lambda@Edge que vamos a programar no va a poder ver si el archivo que va a pedir está disponible en otro tipo de compresión por lo que debemos hacer que todos los que servimos ya estén disponibles en todos los tipos de compresión que soportamos.
 
-#### 2. Sube los estáticos a tu S3
+#### 2. Sube los estáticos a tu S3 🆙
 
 Obviamente, **los estáticos que has comprimido deben llegar a tu bucket de S3 donde activarás Cloudfront.** Para hacerlo, tienes diferentes estrategias para conseguir esto, como usar el CLI de S3, aunque si no tienes nada montado ahora mismo y tienes dificultades sobre cómo hacerlo, puedes echarle un vistazo a mi utilidad de [S3 Folder Upload](https://github.com/midudev/s3-folder-upload).
 
 **S3 Folder Upload puede funcionar prácticamente sin configuración.** Sólo tienes que pasarle los credenciales para poder acceder a tu bucket (aunque si ya estás en una máquina de AWS, ni siquiera necesitarás eso) e indicarle qué carpeta quieres subir.
 
-Admite cierta configuración, como por ejemplo que te separe por carpetas los tipos de contenido (js, css, img...), que te mantenga las subcarpetas... Pero la forma más sencillo de usarlo sería así.
+Admite cierta configuración, como por ejemplo que te separe por carpetas los tipos de contenido (js, css, img...) o que te mantenga las subcarpetas. Pero la forma más sencilla de usarlo sería así dentro de la carpeta donde tienes el directorio a subir:
 
 ```bash
-npx s3-folder-upload tu-carpeta-de-estaticos
+cd web-project
+npx s3-folder-upload statics
+
+# `statics` es la carpeta con todos tus estáticos
 ```
 
-#### 3. Sube tu Lambda@Edge Function
+#### 3. Sube tu Lambda@Edge Function 🔀
 
-En realidad, esta Lambda@Edge nos va a servir en forma de proxy. Dependiendo de la request
+En realidad, esta *Lambda@Edge* nos va a servir de proxy. Dependiendo del navegador del usuario y el recurso que estamos pidiendo, vamos a devolverle la versión comprimida con *Brotli*, con *Gzip* o sin comprimir.
 
-#### 4. Usa la function en CloudFront para discriminar
+> Las Lambda@Edge son funciones lambda que se ejecutan en el extremo, cerca de los usuarios. Nos permite revisar la request y, a partir de eso, modificar la request para ofrecer la mejor experiencia al usuario. Por ejemplo, podríamos usarlo para discriminar cuando un usuario puede usar el formato `webp` o `jpg`.
+> ⚠️ Ten en cuenta que las invocaciones y uso de las Lambda@Edge puede tener un coste asociado.
 
-## Resultados de activar Brotli en Fotocasa
+Para ello, vamos a tener que crear primero la implementación de esta **Lambda@Edge**. Voy a intentar comentar línea por línea comentando lo que hace, para que no te pierdas:
 
-{{% img src="/images/brotli-express-cloudfront-lambda.png" align="left" alt="Tras activar Brotli en Fotocasa hemos visto diferentes mejoras en nuestras métricas" %}}
+```javascript
+// tenemos que exportar una propiedad handler para la Lambda@Edge
+// la función recibirá el Evento de la request, el contexto y el callback, que
+// se debe ejecutar para seguir con el proceso de la request
+exports.handler = (event, context, callback) => {
+  // recupera lel objeto request del evento de Cloud Front
+  const {request} = event.Records[0].cf
+  // extrae las cabeceras y la uri de la request
+  const {headers = {}, uri} = request
+  // vemos si el recurso que pedimos termina por css y js
+  // que son los que soportamos con brotli
+  const isSupportedFile = uri.endsWith('.css') || uri.endsWith('.js')
+  if (headers && isSupportedFile) {
+    let gz = false
+    let br = false
+    // recuperamos la cabecera accept-encoding
+    const ae = headers['accept-encoding']
+    // si tenemos esa cabecera, vamos a comprobar
+    if (ae) {
+      // como el accept-encoding puede ser un array, lo recorremos
+      for (let i = 0; i < ae.length; i++) {
+        // tomamos el valor del primero
+        const {value} = ae[i]
+        // como pueden venir diferentes algoritmos, los separamos
+        const bits = value.split(/\s*,\s*/)
+        // si alguno incluye brotli o gzip
+        // vamos a romper la ejecución del loop
+        // y guardar en un flag que si soporta brotli
+        if (bits.includes('br')) {
+          br = true
+          break
+        } else if (bits.includes('gzip')) { // o gzip...
+          gz = true
+          break
+        }
+      }
+    }
+    // Si soporta brotli, añadimos el sufijo br a la request
+    if (br) request.uri += '.br'
+    // si es gzip, añadimos el sufijo gzip
+    else if (gz) request.uri += '.gz'
+    // si no, lo dejamos como ya estaba
+  }
+  // devolvemos la request con el cambio de uri, si procedía
+  callback(null, request)
+}
+```
+
+**Seguramente se pueda simplificar el código** y mejorar algunas cosas pero... como ya funcionaba, he decidido no tocarlo y evitar problemas. 😅 Tengo un repositorio donde estoy manteniendo este pequeño *proxy* así que, si encuentras problemas o se te ocurre como mejorarlo, te animo a que enviés tus issues y pull requests: https://github.com/SUI-Components/lambda-edge-serve-compressed-file
+
+Una vez tienes lo tienes claro, tienes que subir la *Lambda@Edge*. Tienes un montón de opciones, algunas más automatizadas, pero si quieres ir a lo manual, en AWS tienes una [guía que paso a paso te indica cómo puedes crearla](https://docs.aws.amazon.com/es_es/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-create-in-lambda-console.html).
+
+#### 4. Usa la Lambda@Edge en CloudFront para derivar las requests 🛒
+
+> Si tienes un devops en tu equipo. Es el momento de tirar de él y pedirle hacer un pair programming para evitar montar un circo. 🤡
+
+**Aquí viene lo delicado.** Lo primero, es que deberíamos crear un nuevo `Behavior`:
+
+{{% img src="/images/cloudfront-distributions-behavior.png" alt="Creamos un comportamiento para nuestra distribución de Cloudfront" align="" %}}
+
+Una vez dentro, 
+
+## Resultados de activar Brotli en Fotocasa 📉
+
+Una vez esté activado, toca disfrutar de los resultos. Lo hemos activado en [Fotocasa](https://www.fotocasa.es/es/) y estos son los resultados:
+
+{{% img src="/images/brotli-express-cloudfront-lambda.png" alt="Tras activar Brotli en Fotocasa hemos visto diferentes mejoras en nuestras métricas" %}}
 
 Al activar Brotli en [Fotocasa](https://fotocasa.es/es/) hemos conseguido los siguientes resultados:
 
 - 🗜 Entre -18% y -25% al enviar archivos .js y .css
-- ⚡️ Mejoramos 1s el Time-To-Interactive, un -5%.
+- ⚡️ Mejoramos 1s el Time-To-Interactive, eso es un -5%.
 - 📡 Transferimos 40KB menos en datos.
 
 Además ofrecemos al usuario que...
@@ -121,7 +200,7 @@ Además ofrecemos al usuario que...
 
 Y esto, **de forma completamente transparente al desarrollador y a nuestros usuarios.**
 
-## Cómo usar Brotli y soporte en navegadores
+## Cómo usar Brotli y soporte en navegadores 📴
 
 **Para consumir recursos comprimidos con Brotli no tienes que hacer nada, el navegador se ocupa de todo de forma totalmente automática.** Actualmente, todos los navegadores modernos tienen soporte para este tipo de compresión:
 
@@ -132,4 +211,12 @@ Y esto, **de forma completamente transparente al desarrollador y a nuestros usua
 
 Si todavía tienes dudas, para saber si tu navegador es uno de ellos, puedes revisar en las herramientas de desarrollo si, al pedir un archivo .html, .js, .css o .svg, envía la cabecera `Accept-Encoding: gzip, deflate, br`.
 
-De esta forma, si el servidor soporta este tipo de codificación, te enviará brotli para que puedas disfrutar de mejores tiempos de transferencia.
+{{% img src="/images/accept-encoding-br.png" alt="La cabecera de la request, accept-encoding, con las codificaciones que soporta el navegador" align="" %}}
+
+De esta forma, si el servidor soporta este tipo de codificación, te enviará brotli para que puedas disfrutar de mejores tiempos de transferencia. Si no, **siempre nos quedará el mítico gzip.**
+
+## Conclusiones
+
+Igual has llegado hasta aquí y estás pensando 🤔 *"¡Menudo tocho para poder activar la cosa esta!"*. Sí, lo cierto es que no es precisamente sencillo conseguirlo y, por eso mismo, he querido compartir contigo **la aventura que tuvimos que seguir para conseguirlo en Cloudfront**. Si simplemente tienes un servidor Express, o similares, los pasos suelen ser más sencillos. Si ya tienes servicios de CDN que ya soportan Brotli, genial.
+
+Por desgracia **Cloudfront, que es uno de los CDN más usados, no tiene este soporte nativo** y hay que "ayudarle" a trabjar con Brotli. Teniendo en cuenta que es algo que se hace una vez y que las mejoras a partir de entonces son transparentes, puede valer mucho la pena añadirlas. A nosotros nos ha compensadoo y espero que a ti te haya gustado el artículo. **¡Gracias por leerme!**
