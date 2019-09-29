@@ -74,7 +74,7 @@
     <div>
       {{ range first 8 (where .Pages ".Params.category" "!=" "podcast")  }}
       <a href="{{.Permalink}}">
-        <img class='u-lazyload lazyload' data-src='{{ .Params.image }}'/>
+        <img alt="" class='u-lazyload' src='{{ .Params.image }}' loading='lazy' />
         <h2>{{ .Title }}</h2>
         <div class='meta'>
           <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>

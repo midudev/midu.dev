@@ -8,12 +8,9 @@
   {{ partial "head/preconnects.html" . }}
 
   <link rel="canonical" href="{{ .Permalink }}">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  {{ $js := resources.Get "js/scripts.js" }}
-  {{ $script := $js | resources.Minify }}
-  <script defer src='{{ $script.RelPermalink }}'></script>
 
   {{ $css := resources.Get "styles/global.css" }}
   {{ $style := $css | resources.Minify }}
@@ -65,17 +62,10 @@
   </main>
   {{ partial "footer.html" . }}
 
-  <script>
-    // Check that service workers are registered
-    if ('serviceWorker' in navigator) {
-      // Use the window load event to keep the page load performant
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js');
-      });
-    }
-  </script>
 
-  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=497919487416461&ev=PageView&noscript=1" />
+  {{ $js := resources.Get "js/scripts.js" }}
+  {{ $script := $js | resources.Minify }}
+  <script>{{$script.Content | safeJS}}</script>
 </body>
 
 </html>
