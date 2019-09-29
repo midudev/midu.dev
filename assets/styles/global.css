@@ -253,6 +253,8 @@ twitter-widget {
 }
 
 #article-content li {
+  color: #555;
+  margin-bottom: 4px;
   padding-bottom: 0;
 }
 
