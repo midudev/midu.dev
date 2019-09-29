@@ -4,7 +4,7 @@ date: '2019-09-28'
 image: '/images/01_013_wtf.jpg'
 description: Podcast para hablar sobre código abierto. ¿Qué hacemos con el open source? ¿Cómo conseguimos que sea sostenible y que los creadores tengan motivos suficientes para seguir manteniéndolo?
 category: 'podcast'
-audio: https://www.ivoox.com/que-son-ingenieros-10x-csscamp-jscamp_mf_38763548_feed_1.mp3
+audio: https://www.ivoox.com/como-hacemos-sostenible-codigo-abierto-tendriamos-que_mf_42262915_feed_1.mp3
 season: 01
 episode: 13
 ---
