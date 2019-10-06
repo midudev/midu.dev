@@ -8,6 +8,7 @@ pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsUseClasses = true
 preserveTaxonomyNames = true
+paginate = 8
 
 [params]
   description = "Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, Performance Web ⚡️, Javascript ☕️, React ⚛️ y CSS 🎨"
