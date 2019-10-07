@@ -3,7 +3,7 @@
 {{ $style := $css | resources.Minify }}
 <style>{{ $style.Content | safeCSS }}</style>
 
-<article id='article'>
+<article id='article' itemscope itemtype="http://schema.org/Article">
   {{ if isset .Params "audio" }}
   {{ partial "audio-player.html" . }}
   {{ partial "podcast-subscribe.html" }}
@@ -13,22 +13,22 @@
       <img alt='Imagen del artículo: {{ .Title }}' class='lazyload u-lazyload' src='{{ .Params.image }}' />
     </picture>
     <div class='article-header-meta'>
-      <h1>
+      <h1 itemprop="name">
         {{ .Title }}
       </h1>
       <div id='article-meta'>
         {{ partial "article-meta.html" . }}
       </div>
-      <p>
+      <p itemprop="description">
         {{ .Params.description }}
       </p>
       {{ $taxonomy := "tags" }}
       {{ with .Param $taxonomy }}
       <div class='tags'>
         {{ range $index, $tag := . }}
-        {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
-        <span class='tag'>{{ $tag }}</span>
-        {{- end -}}
+          {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+          <span class='tag' itemprop="about">{{ $tag }}</span>
+          {{- end -}}
         {{- end -}}
       </div>
       {{ end }}
