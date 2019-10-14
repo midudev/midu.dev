@@ -1,3 +1,51 @@
 {{ define "main" }}
-    WIP
+    <section id='holyjs-poll'>
+        <h1>What frontend library do you use?</h1>
+        <h2>Choose your library:</h2>
+        <div>
+            <button value='react'>React</button>
+            <button value='angular'>Angular</button>
+            <button value='vue'>Vue</button>
+            <button value='other'>Other</button>
+        </div>
+    </section>
+    <script>
+        const section = document.querySelector('#holyjs-poll')
+        const buttons = section.querySelectorAll('button')
+        buttons.forEach(button => {
+            button.onclick = function (e) {
+                const answer = button.getAttribute('value')
+                fetch('https://realtime-polls.midudev.now.sh/api/poll', {
+                    method: 'POST',
+                    body: JSON.stringify({ poll: "holyjs", answer }),
+                    headers:{
+                        'Content-Type': 'application/json'
+                    }
+                })
+            }
+        })
+    </script>
+    <style>
+        #holyjs-poll {
+            margin: 0 auto 500px;
+            text-align: center;
+        }
+        #holyjs-poll button {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 24px;
+            padding: 2px 32px;
+        }
+        #holyjs-poll h1, #holyjs-poll h2 {
+            display: block;
+        }
+        #holyjs-poll h1 {
+            font-size: 36px;
+        }
+        #holyjs-poll h2 {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+    </style>
 {{ end }}
