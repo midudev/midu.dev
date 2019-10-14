@@ -79,7 +79,7 @@ En cualquier caso, tras usar el consejo de esta sección, la carga quedaría de 
 
 **¿Es Google Analytics el único servicio de Google que estás usando en tu página?** ¿Eres desarrollador o tienes acceso rápido y directo al equipo para añadir los eventos que necesitas? **Entonces, seguramente, no necesitas utilizar el snippet que te ha proporcionado Google.**
 
-Como comentaba antes, el snippet que por defecto te da Google es sencillo y te permite copiar, pegar y empezar a funcionar. Sin embargo, todavía puedes utilizar directamente Google Analytics sin necesidad de cargar el archivo `gtag.js` y de esta forma conseguir una mejora importance a la hora de cargar la librería.
+Como comentaba antes, el snippet que por defecto te da Google es sencillo y te permite copiar, pegar y empezar a funcionar. Sin embargo, todavía puedes utilizar directamente Google Analytics sin necesidad de cargar el archivo `gtag.js` y de esta forma conseguir una mejora importante a la hora de cargar la librería.
 
 ```html
 <script>
