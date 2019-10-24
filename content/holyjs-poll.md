@@ -1,7 +1,6 @@
 ---
-title: Lista de correo de midudev 👨‍💻
+title: HolyJS Poll‍
 type: page
-image: '/images/newsletter-image.png'
 layout: holyjs-poll
 description: HolyJS realtime poll
 ---
