@@ -14,6 +14,10 @@ type: page
 
 [HolyJS Slides](https://slides.com/miguelangeldurangarcia/holy-js-react-rendering-strategies-getting-the-most-out-of-performance-while-keeping-bots-happy/)<br />HolyJS edition slides for React Rendering Strategies talk.
 
+## Show me the code!
+
+[React Rendering Strategies Repository](https://github.com/midudev/react-rendering-strategies)<br />All examples, all strategies packages, in a single place.
+
 ## Interesting links from introduction
 
 [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started)<br />Used in order to retrieve the Lighthouse metrics every 5 minutes and send them over a Datadog.
