@@ -1,7 +1,7 @@
 ---
 title: Frontend del Futuro - JSDay Canarias 2019
 date: "2019-11-08"
-image: "/images/react-rendering-strategies-cover.png"
+image: "/images/el-frontend-del-futuro.jpg"
 description: "Todos los enlaces y recursos de la charla el Frontend del futuro de Miguel Ángel Durán en la JSDay Canarias 2019"
 tags:
   - charla
