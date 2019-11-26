@@ -1,6 +1,6 @@
 ---
 title: React Rendering Strategies resources
-date: "2019-11-05"
+date: "2019-11-25"
 image: "/images/react-rendering-strategies-cover.png"
 description: "Find all the links and resources from the React Rendering strategies talk by Miguel Ángel Durán on Frontend Con 2019 Warsaw"
 tags:
