@@ -66,6 +66,18 @@
   {{ $js := resources.Get "js/scripts.js" }}
   {{ $script := $js | resources.Minify }}
   <script>{{$script.Content | safeJS}}</script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        for (const registration of registrations) {
+          // unregister service worker
+          console.log('serviceWorker unregistered');
+          registration.unregister();
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<title>{{- .Title | default .Site.Title -}}</title>
+
+{{ $css := resources.Get "styles/global.css" }}
+  {{ $style := $css | resources.Minify }}
+  <style>{{$style.Content | safeCSS}}</style>
+
+  {{ partial "head/favicons.html" . }}
+
+  <meta name="apple-mobile-web-app-title" content="midu.dev" />
+  <meta name="application-name" content="midu.dev" />
+  <meta name="theme-color" content="#0099ff" />
+
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+
+  <meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
+  <meta property="og:url" content="{{.Permalink}}" />
+
+  {{ if isset .Params "audio" }}
+  <meta name="twitter:card" content="player" />
+  <meta name="twitter:player:stream" content="{{ .Params.audio }}" />
+  <meta name="twitter:player:stream:content_type" content="audio/mp4" />
+  <meta name="twitter:player" content='{{ .Permalink }}' />
+  <meta name="twitter:player:width" content="702" />
+  <meta name="twitter:player:height" content="223" />
+  {{ else }}
+  <meta name="twitter:card" content="summary_large_image" />
+  {{ end }}
+
+  <meta name="twitter:creator" content="@midudev" />
+  <meta name="twitter:domain" content="midu.dev" />
+  <meta name="twitter:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
+  <meta name="twitter:site" content="@midudev" />
+
+  <link rel="manifest" href="/manifest.json" />
+
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:title" content="{{ .Title | default .Site.Title }}" />
+  <meta property="og:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
+  <meta property="og:description" content="{{- .Description | default .Site.Params.Description -}}" />
+  <meta property="og:site_name" content="midu.dev" />
+</head>
+
+{{ partial "head/preconnects.html" . }}
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<section id='holyjs-poll'>
+    <h1>What frontend library do you use?</h1>
+    <h2>Choose your library:</h2>
+    <div>
+        <button value='react'>
+            <img src='/images/logos/react-logo.png' />
+            <span>React</span>
+        </button>
+        <button value='angular'>
+            <img src='/images/logos/angular-logo.png' />
+            <span>Angular</span>
+        </button>
+        <button value='vue'>
+            <img src='/images/logos/vue-logo.png' />
+            <span>Vue</span>
+        </button>
+        <button value='other'>
+            <img src='/images/logos/other-logo.png' />
+            <span>Other</span>
+        </button>
+    </div>
+    <p>Thanks for voting!</p>
+</section>
+<script>
+    const section = document.querySelector('#holyjs-poll')
+    const buttons = section.querySelectorAll('button')
+    const div = document.querySelector('div')
+    const message = document.querySelector('p')
+
+    buttons.forEach(button => {
+        button.onclick = function (e) {
+            const answer = button.getAttribute('value')
+            div.setAttribute('style', 'display:none')
+            message.setAttribute('style', 'display: block')
+            
+            fetch('https://realtime-polls.midudev.now.sh/api/poll', {
+                method: 'POST',
+                body: JSON.stringify({ poll: "holyjs", answer }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+        }
+    })
+</script>
+<style>
+    #holyjs-poll {
+        max-width: 500px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 4%;
+    }
+
+    #holyjs-poll div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #holyjs-poll button {
+        background: transparent;
+        border-radius: 6px;
+        border: 1px solid #eaeaea;
+        color: #666;
+        cursor: pointer;
+        font-size: 24px;
+        min-height: 100px;
+        margin: 2%;
+        padding: 2px 32px;
+        width: 46%;
+    }
+
+    #holyjs-poll button:focus {
+        opacity: .5;
+    }
+
+    #holyjs-poll button img {
+        height: auto;
+        width: 100%;
+    }
+
+    #holyjs-poll h1,
+    #holyjs-poll h2 {
+        display: block;
+    }
+
+    #holyjs-poll h1 {
+        font-size: 36px;
+        line-height: 1;
+        text-align: left;
+    }
+
+    #holyjs-poll h2 {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 32px;
+        text-align: left;
+        padding-top: 8px;
+        font-weight: 500;
+    }
+
+    #holyjs-poll p {
+        display: none;
+        font-size: 48px;
+    }
+</style>
+
+{{ $js := resources.Get "js/scripts.js" }}
+{{ $script := $js | resources.Minify }}
+<script>{{$script.Content | safeJS}}</script>

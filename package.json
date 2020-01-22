@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "https://midu.dev website",
   "main": "index.js",
+  "engines": { "node": "12.x" },
   "scripts": {
     "build": "npx hugo-cli --minify",
     "dev": "npx hugo-cli server",
