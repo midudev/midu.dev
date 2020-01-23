@@ -198,7 +198,7 @@ Para terminar, tenemos que usar la Lambda@Edge para interceptar la request de Cl
 
 ## Resultados de activar Brotli en Fotocasa 📉
 
-Una vez esté activado, toca disfrutar de los resultos. Lo hemos activado en [Fotocasa](https://www.fotocasa.es/es/) y estos son los resultados:
+Una vez esté activado, toca disfrutar de los resultados. Lo hemos activado en [Fotocasa](https://www.fotocasa.es/es/) y estos son los resultados:
 
 {{% img src="/images/brotli-express-cloudfront-lambda.png" alt="Tras activar Brotli en Fotocasa hemos visto diferentes mejoras en nuestras métricas" %}}
 
