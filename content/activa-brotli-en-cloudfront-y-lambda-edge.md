@@ -1,6 +1,6 @@
 ---
 title: Activa Brotli en Express y en Cloudfront usando una Lambda@Edge
-date: '2019-09-16'
+date: '2020-01-23'
 image: '/images/brotli-express-cloudfront-lambda.png'
 description: '¿Quieres mejorar fácilmente el Time to First Byte de tu sitio? Brotli te permite mejorar el rendimiento de tu web sin hacer cambios en tu código. Aprende a usarlo en servidores Express o en Cloudfront con Amazon S3 y gana un tiempo precioso para tu usuario.'
 topic: performance
@@ -115,7 +115,10 @@ npx s3-folder-upload statics
 En realidad, esta *Lambda@Edge* nos va a servir de proxy. Dependiendo del navegador del usuario y el recurso que estamos pidiendo, vamos a devolverle la versión comprimida con *Brotli*, con *Gzip* o sin comprimir.
 
 > Las Lambda@Edge son funciones lambda que se ejecutan en el extremo, cerca de los usuarios. Nos permite revisar la request y, a partir de eso, modificar la request para ofrecer la mejor experiencia al usuario. Por ejemplo, podríamos usarlo para discriminar cuando un usuario puede usar el formato `webp` o `jpg`.
+ 
 > ⚠️ Ten en cuenta que las invocaciones y uso de las Lambda@Edge puede tener un coste asociado.
+
+> ⚠️ Ten en cuenta que la siguiente implementación hará que **todas las peticiones pasen por esta Lambda@Edge**, así que todos los estáticos .js y .css deberán tener sus versiones comprimidas en este Cloudfront. Por lo tanto: **no pruebes esto directamente en producción.**
 
 Para ello, vamos a tener que crear primero la implementación de esta **Lambda@Edge**. Voy a intentar comentar línea por línea comentando lo que hace, para que no te pierdas:
 
@@ -171,15 +174,27 @@ exports.handler = (event, context, callback) => {
 
 Una vez tienes lo tienes claro, tienes que subir la *Lambda@Edge*. Tienes un montón de opciones, algunas más automatizadas, pero si quieres ir a lo manual, en AWS tienes una [guía que paso a paso te indica cómo puedes crearla](https://docs.aws.amazon.com/es_es/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-create-in-lambda-console.html).
 
+> Las Lambda@Edge sólo están disponiblese en EE.UU. Este (Norte de Virginia)us-east-1.
+
 #### 4. Usa la Lambda@Edge en CloudFront para derivar las requests 🛒
 
 > Si tienes un devops en tu equipo. Es el momento de tirar de él y pedirle hacer un pair programming para evitar montar un circo. 🤡
 
-**Aquí viene lo delicado.** Lo primero, es que deberíamos crear un nuevo `Behavior`:
+**Aquí viene lo delicado.** Primero deberíamos crear un nuevo `Behavior` (en el caso que no lo tengamos ya):
 
 {{% img src="/images/cloudfront-distributions-behavior.png" alt="Creamos un comportamiento para nuestra distribución de Cloudfront" align="" %}}
 
-Una vez dentro, 
+Una vez dentro, en Whitelist Headers, tenemos que añadir `Accept-Encoding` y `Origin`:
+
+{{% img src="/images/cloudfront-brotli-whitelist.png" alt="Creamos un comportamiento para nuestra distribución de Cloudfront" align="" %}}
+
+También es importante desactivar la opción de `Compress Objects Automatically`. Por defecto debería estar en `ON` y esto lo que hace es comprimir los recursos en Gzip pero, por ahora, no lo hace en Brotli.
+
+Para terminar, tenemos que usar la Lambda@Edge para interceptar la request de CloudFront. Para ello, en la última sección del `Edit Behavior` tenemos que interceptar el `CloudFront Event` llamado `Origin Request` e indicar la lambda que vamos a usar. En este caso tenemos que indicar el nombre ARN de la Lambda Function.
+
+{{% img src="/images/cloudfront-brotli-event-origin-request.png" alt="Creamos un comportamiento para nuestra distribución de Cloudfront" align="" %}}
+
+> El nombre ARN de la Lambda Function lo puedes encontrar en la propia página donde has creado o editado la Lambda Function. Está en la parte superior derecha y tiene un icono para copiar fácilmente el nombre.
 
 ## Resultados de activar Brotli en Fotocasa 📉
 
