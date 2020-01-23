@@ -16,7 +16,7 @@ Para poder utilizar esta API, debéis crear un nuevo objeto de `URLSearchParams`
 
 Imaginad que estamos en la página: `https://www.fotocasa.es/es/?q=pisos+en+barcelona&ciudad=Barcelona`, veamos cómo podríamos trabajar con `URLSearchParams` para recuperar los parámetros de búsqueda de la URL.
 
-```js
+```javascript
 // recuperamos el querystring
 const querystring = window.location.search
 console.log(querystring) // '?q=pisos+en+barcelona&ciudad=Barcelona'
@@ -27,7 +27,7 @@ const params = new URLSearchParams(querystring)
 
 Una vez tenemos un objeto `params` del tipo `URLSearchParams` ya podremos utilizar los diferentes métodos que nos proporciona para poder recuperar la información que nos interesa.
 
-```js
+```javascript
 // recuperamos el valor del parámetro "q"
 params.get('q') // "pisos en Barcelona"
 
@@ -40,7 +40,7 @@ params.get('precio') // null
 
 Además, **el objeto que nos devuelve es iterable**, por lo que podremos utilizar los diferentes métodos iterativos para poder acceder a todos los parámetros que tenemos en nuestra query.
 
-```js
+```javascript
 for (let p of params) {
   console.log(p);
 }
@@ -54,7 +54,7 @@ Array.from(params).length === 2
 
 La API de `URLSearchParams` también **nos proporciona unos muy útiles métodos para poder saber si un parámetro está en la URL.** De esta forma, podremos mantener nuestro código muy limpio cuando tengamos que hacer ciertas comprobaciones.
 
-```js
+```javascript
 // .has(key) nos dice si la key se encuentra en la querystring
 params.has("ciudad") // true
 params.has("provincia") // false
@@ -65,7 +65,7 @@ params.getAll("ciudad") // ["barcelona"]
 
 Además de recuperar los parámetros de búsqueda, **muchas veces vamos a querer manipular la querystring de forma que podamos añadir o eliminar parámetros en la URL.** Esto también es posible gracias a los métodos `append`, `set` y `delete`. Además, una vez hayamos hecho esas manipulaciones, podremos usar el método `toString` para ver cómo quedaría la querystring tras los cambios.
 
-```js
+```javascript
 // .append(key, value) permite añadir un nuevo parámetro, no sustituye al anterior
 params.append("from", "midudev")
 
@@ -85,7 +85,7 @@ params.toString() // "q=URLUtils.searchParams"
 Ten en cuenta que cuando haces un `append`, `set` o `delete` los cambios NO se reflejan en la URL. Lo único que estás haciendo es manipular el objeto de `URLSearchParams` que tienes en la variable. Para que esos cambios tengan efecto, tendrías que cambiar tú manualmente la dirección usando el valor que proporciona el método `toString`.
 
 Para hacer los cambios en la URL, podríais hacer algo así:
-```js
+```javascript
 // creamos el objeto URLSearchParams
 const params = new URLSearchParams('?q=articulos+de+frontend');
 // añadimos el parámetro de búsqueda `from` con valor `midudev`
@@ -99,7 +99,7 @@ window.history.replaceState({}, '', `${window.location.pathname}?${params}`)
 **La compatibilidad es muy buena** excepto, cómo no, **porque Internet Explorer 11 no lo soporta.** Si ese es el caso, te recomiendo que [añadas un polyfill que te proporcione esa funcionalidad](https://www.npmjs.com/package/url-search-params-polyfill). De esta forma, puedes ir utilizando esta API, que es nativa del navegador, y cuando dejes de soportar ~~al maldito~~ IE11, pues sólo tendrás que eliminar el polyfill y todo tu código seguirá funcionando.
 
 Si necesitas detectar si tu navegador lo soporta, puedes usar el siguiente código:
-```js
+```javascript
 if ('URLSearchParams' in window) {
   // el navegador lo soporta
 }

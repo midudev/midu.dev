@@ -71,7 +71,7 @@ Entonces, **¿cómo podemos conseguir servir nuestros estáticos con compresión
 
 Antes de nada, lo primero que vas a necesitar, es **tienes que comprimir tus estáticos en las codificaciones que quieras servir.** Si estás usando Webpack, puedes recurrir a usar un plugin como [compression-webpack-plugin](https://github.com/webpack-contrib/compression-webpack-plugin). Las versiones de Node a partir de `10.16.0` y `11.7.0` ya tienen soporte nativo para este algoritmo de compresión.
 
-```js
+```javascript
 // en tu webpack.config.js
 module.exports = {
   plugins: [

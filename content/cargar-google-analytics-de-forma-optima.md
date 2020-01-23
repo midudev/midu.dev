@@ -143,7 +143,7 @@ Las ventajas, como os podéis imaginar, es que con esto tendremos una request me
 - **Este snippet no está soportado oficialmente por Google.** Esto significa que, eventualmente, es posible que las opciones de Google Analytics o la API de `collect` pueda cambiar y esto deje de funcionar correctamente. Cargar la librería nos asegura que usaremos siempre la última versión y Google se encargará por nosotros de mantener la compatibilidad.
 - No nos permite utilizar algunas funcionalidades avanzadas como, por ejemplo, trackear Adwords aunque sí podemos enviar eventos y excepciones con el siguiente código.
 
-```js
+```javascript
 ma.trackEvent('Category', 'Action', 'Label', 'Value') // event
 ma.trackException('Description', 'Fatal') // exception
 ```
