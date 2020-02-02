@@ -19,7 +19,7 @@ Una de las funcionalidades más interesantes de Svelte es que, según palabras d
 
 Pongamos este ejemplo, donde tenemos una prop llamada `name`, unos estilos para la etiqueta h1 y, finalmente, renderizamos un `<h1>` con un mensaje y la prop.
 
-```svelte
+```html
 <script>
 	export let name;
 </script>
@@ -35,7 +35,7 @@ Esto siempre mostrará el `name` que le pasemos como prop. Ahora nos gustaría q
 
 Así que vamos a añadir un `<button>` y vamos a añadir la función que llamaremos cada vez que se haga clic en ese elemento, para cambiar el nombre:
 
-```svelte {hl_lines=["3-5",12]}
+```html {hl_lines=["3-5",12]}
 <script>
 	export let name;
   function handleClick () {
@@ -55,7 +55,7 @@ Hemos añadido la función y el botón pero, al hacer clic no ocurriría nada. E
 
 En este caso, para escuchar el evento clic del botón y hacer que se ejecute cada vez que ocurra la función que queremos, tenemos que añadir la directiva `on:click`, muy parecido a como se tiene que hacer en React y Vue.
 
-```svelte
+```html
 <button on:click={handleClick}>
 ```
 
@@ -81,7 +81,7 @@ function handleClick() {
 
 Ahora que sabemos todo esto, **podríamos crear el típico ejemplo del contador** de forma muy sencilla siguiendo los pasos que hemos hecho anteriormente.
 
-```svelte
+```html
 <script>
 let contador = 0 // inicializamos una variable con el contador a 0
 
@@ -103,7 +103,7 @@ Imaginemos que queremos ahora reutilizar el componente Contador, ya que nos gust
 
 Ahora, desde otro componente (vamos a poner que sea el componente `App.svelte` que es el que estamos renderizando en el punto de entrada de nuestra aplicación), lo único que tenemos que hacer es importarlo.
 
-```svelte 
+```html 
 // App.svelte
 <script>
   import Counter from './Counter.svelte'
@@ -118,7 +118,7 @@ Lo más interesante de este ejemplo es que **en el componente `Counter.svelte` n
 
 Hasta aquí tenemos tres contadores en pantalla, para hacer que esto sea más interesante, vamos a hacer que, desde props, **le podamos pasar el valor inicial del contador** (que ahora siempre empieza en 0). Para ello, vamos a usar la prop `initialCounter`:
 
-```svelte {hl_lines=["6-8"]}
+```html {hl_lines=["6-8"]}
 // App.svelte
 <script>
   import Counter from './Counter.svelte'
@@ -143,7 +143,7 @@ let contador = initialValue
 
 Y el código final, quedaría así:
 
-```svelte
+```html
 <script>
 // exportamos la prop e iniciamos a 0 como valor por defecto
 export let initialValue = 0

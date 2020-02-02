@@ -120,7 +120,7 @@ export default app;
 ```
 
 Ahora, veamos el archivo `App.svelte`: 
-```svelte
+```html
 <script>
     // al hacer un export de una variable,
     // indicamos que esto es un parámetro del componente
