@@ -7,8 +7,8 @@
     "node": "12.x"
   },
   "scripts": {
-    "build": "npx hugo-bin --minify",
-    "dev": "npx hugo-bin server",
+    "build": "hugo-bin --minify",
+    "dev": "hugo-bin server",
     "now-build": "npm run build",
     "do:thanks": "node scripts/thanks-contributors.js"
   },
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/midudev/midu.dev#readme",
   "devDependencies": {
+    "hugo-bin": "0.51.2",
     "rimraf": "3.0.1"
   }
 }
