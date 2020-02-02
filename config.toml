@@ -4,9 +4,12 @@ title = "midudev 👨‍💻 | Frontend, Performance, Javascript, React, CSS"
 
 disableHugoGeneratorInject = true
 defaultContentLanguage = "es"
-
+enableGitInfo = true
 preserveTaxonomyNames = true
 paginate = 8
+
+[permalinks]
+  posts = "/:filename/"
 
 [params]
   description = "Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, Performance Web ⚡️, Javascript ☕️, React ⚛️ y CSS 🎨"
