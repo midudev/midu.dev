@@ -184,6 +184,10 @@ pre.highlight {
   background: #61dbfb;
 }
 
+.highlight .language-fallback::before {
+  display: none;
+}
+
 .highlight code::before {
   background: #fff;
   border-radius: 4px;
@@ -196,4 +200,9 @@ pre.highlight {
   right: 8px;
   text-transform: lowercase;
   top: -8px;
+}
+
+.highlight .lntable {
+  border-spacing: 0px;
+  width: 100%;
 }
