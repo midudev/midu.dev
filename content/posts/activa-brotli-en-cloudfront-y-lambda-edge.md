@@ -65,7 +65,7 @@ Entonces, **¿cómo podemos conseguir servir nuestros estáticos con compresión
 
 **Lambda@Edge es un servicio que te permite ejecutar funciones Lambda para modificar el comportamiento de Cloudfront**. Simplemente, estas funciones se ejecutan durante el ciclo de una petición al servicio y podemos hacer cambios en lo que entrega revisando las cabecera, la petición y todo tipo de lógica. Podrías hacer cosas interesantes como A/B testing o crear una simple redirección... pero hay un mundo de posibilidades como verás más adelante.
 
-{{% img src="/images/1_ZitRPstFKx3016JsykcjXA.png" alt="Puedes ejecutar una Lambda en los diferentes puntos del ciclo de una request a Cloudfront" align="center" %}}
+{{< img src="/images/1_ZitRPstFKx3016JsykcjXA.png" alt="Puedes ejecutar una Lambda en los diferentes puntos del ciclo de una request a Cloudfront" align="center">}}
 
 #### 1. Comprime tus estáticos 🗜️
 
@@ -182,17 +182,17 @@ Una vez tienes lo tienes claro, tienes que subir la *Lambda@Edge*. Tienes un mon
 
 **Aquí viene lo delicado.** Primero deberíamos crear un nuevo `Behavior` (en el caso que no lo tengamos ya):
 
-{{% img src="/images/cloudfront-distributions-behavior.png" alt="Creamos un comportamiento para nuestra distribución de Cloudfront" align="" %}}
+{{< img src="/images/cloudfront-distributions-behavior.png" alt="Creamos un comportamiento para nuestra distribución de Cloudfront" align="">}}
 
 Una vez dentro, en Whitelist Headers, tenemos que añadir `Accept-Encoding` y `Origin`:
 
-{{% img src="/images/cloudfront-brotli-whitelist.png" alt="Creamos un comportamiento para nuestra distribución de Cloudfront" align="" %}}
+{{< img src="/images/cloudfront-brotli-whitelist.png" alt="Creamos un comportamiento para nuestra distribución de Cloudfront" align="">}}
 
 También es importante desactivar la opción de `Compress Objects Automatically`. Por defecto debería estar en `ON` y esto lo que hace es comprimir los recursos en Gzip pero, por ahora, no lo hace en Brotli.
 
 Para terminar, tenemos que usar la Lambda@Edge para interceptar la request de CloudFront. Para ello, en la última sección del `Edit Behavior` tenemos que interceptar el `CloudFront Event` llamado `Origin Request` e indicar la lambda que vamos a usar. En este caso tenemos que indicar el nombre ARN de la Lambda Function.
 
-{{% img src="/images/cloudfront-brotli-event-origin-request.png" alt="Creamos un comportamiento para nuestra distribución de Cloudfront" align="" %}}
+{{< img src="/images/cloudfront-brotli-event-origin-request.png" alt="Creamos un comportamiento para nuestra distribución de Cloudfront" align="">}}
 
 > El nombre ARN de la Lambda Function lo puedes encontrar en la propia página donde has creado o editado la Lambda Function. Está en la parte superior derecha y tiene un icono para copiar fácilmente el nombre.
 
@@ -200,7 +200,7 @@ Para terminar, tenemos que usar la Lambda@Edge para interceptar la request de Cl
 
 Una vez esté activado, toca disfrutar de los resultados. Lo hemos activado en [Fotocasa](https://www.fotocasa.es/es/) y estos son los resultados:
 
-{{% img src="/images/brotli-express-cloudfront-lambda.png" alt="Tras activar Brotli en Fotocasa hemos visto diferentes mejoras en nuestras métricas" %}}
+{{< img src="/images/brotli-express-cloudfront-lambda.png" alt="Tras activar Brotli en Fotocasa hemos visto diferentes mejoras en nuestras métricas">}}
 
 Al activar Brotli en [Fotocasa](https://fotocasa.es/es/) hemos conseguido los siguientes resultados:
 
@@ -226,7 +226,7 @@ Y esto, **de forma completamente transparente al desarrollador y a nuestros usua
 
 Si todavía tienes dudas, para saber si tu navegador es uno de ellos, puedes revisar en las herramientas de desarrollo si, al pedir un archivo .html, .js, .css o .svg, envía la cabecera `Accept-Encoding: gzip, deflate, br`.
 
-{{% img src="/images/accept-encoding-br.png" alt="La cabecera de la request, accept-encoding, con las codificaciones que soporta el navegador" align="" %}}
+{{< img src="/images/accept-encoding-br.png" alt="La cabecera de la request, accept-encoding, con las codificaciones que soporta el navegador" align="">}}
 
 De esta forma, si el servidor soporta este tipo de codificación, te enviará brotli para que puedas disfrutar de mejores tiempos de transferencia. Si no, **siempre nos quedará el mítico gzip.**
 

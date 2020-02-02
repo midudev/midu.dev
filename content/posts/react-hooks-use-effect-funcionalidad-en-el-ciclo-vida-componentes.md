@@ -118,7 +118,7 @@ function ShowWindowWidth() {
 
 Como véis, hemos usado el `useEffect` para suscribirnos a un evento del DOM, en este caso del evento `resize` del window. Cada vez que recibimos el evento ejecutamos el método `updateWidth` que leera la propiedad `clientWidth` y lo pondrá en el estado de nuestro componente de forma que, así, podamos ver en pantalla cuál es el ancho de la ventana. Aquí tenéis la demo en Code Sandbox para que trasteéis con él:
 
-{{% code id="21v2xyr90y" height="300" tab="both" %}}
+{{< code id="21v2xyr90y" height="300" tab="both">}}
 
 ⚠️ Esto, funcionar, funciona. **Pero hay un problema bastante gordo y es muy importante que lo entiendas: podríamos provocar *memory leaks* en nuestras aplicaciones si no lo tienes en cuenta.**
 
@@ -208,7 +208,7 @@ Para solucionar esto vamos a usar el segundo parámetro del hook `useEffect` que
 {{</ highlight >}}
 
 Podemos ver esto funcionando correctamente en la siguiente demostración:
-{{% code id="k2pp9zpl45" height="300" tab="both" %}}
+{{< code id="k2pp9zpl45" height="300" tab="both">}}
 
 ### ¿Qué pasa si le pasamos un array vacío?
 

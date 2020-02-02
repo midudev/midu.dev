@@ -16,4 +16,4 @@ Contamos con **Ana Gamito** y **Bézael Pérez**, desarrolladores de Axa Go, que
 [¡Síguenos en YouTube!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 
 Si quieres, puedes ver la retransmisión que hicimos en directo, lo puedes hacer en el siguiente vídeo:
-{{% youtube id="iceqEn5oarw" %}}
+{{< youtube id="iceqEn5oarw" >}}

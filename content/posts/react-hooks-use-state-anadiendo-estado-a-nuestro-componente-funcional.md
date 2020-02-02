@@ -100,7 +100,7 @@ function Contador() {
 
 Y aquí tenéis el código funcionando para que trasteéis con él.
 
-{{% code id="rlkrzn43j4" height="300" tab="both" %}}
+{{< code id="rlkrzn43j4" height="300" tab="both">}}
 
 ## useState vs setState: cambiando la mentalidad 🧠
 

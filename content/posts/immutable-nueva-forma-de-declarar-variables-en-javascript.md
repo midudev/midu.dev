@@ -15,7 +15,7 @@ Si quieres saber todos los detalles de esta nueva funcionalidad, **¡sigue leyen
 
 ***
 
-{{% img align="left" alt="Este es el muñequillo típico que te recuerda que has caído en una broma de los Santos Inocentes" src="/images/dia_de_los_santos_inocentes.jpg" %}}
+{{< img align="left" alt="Este es el muñequillo típico que te recuerda que has caído en una broma de los Santos Inocentes" src="/images/dia_de_los_santos_inocentes.jpg">}}
 
 ## Y lo mejor es que...
 **Todo esto es una broma.** 🤪 En España, y en parte de Sudamérica, hoy es el [Día de los Santos Inocentes](https://es.wikipedia.org/wiki/D%C3%ADa_de_los_Santos_Inocentes). **Es una especie de April Fools' Day donde se hacen bromas de todo tipo.** Como dar noticias falsas, pegar un muñeco en la espalda de la gente o [algunas ingeniosas formas de ganarte el odio de la gente.](https://www.levante-emv.com/navidad/2018/12/28/dia-inocentes-2018-mejores-ideas/1814600.html)

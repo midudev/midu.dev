@@ -18,7 +18,7 @@ Si queremos mostrar un mensaje en la consola, normalmente usamos simplemente `co
 * `console.error(msg)`: Enviamos **errores** a la consola. Se muestra en rojo y adjunta un icono indicando que es un error. 🛑
 
 Aquí puedes ver un ejemplo en las herramientas de desarrollo de *Google Chrome*:
-{{% img src="/images/console-info-warn-error.png" alt="Los métodos info, warn y error nos permiten dotar de mayor contexto el mensaje que queremos mostrar" align="center" %}}
+{{< img src="/images/console-info-warn-error.png" alt="Los métodos info, warn y error nos permiten dotar de mayor contexto el mensaje que queremos mostrar" align="center">}}
 
 Lo más interesante de todo esto, es que normalmente **los navegadores te permiten filtrar en consola el tipo de mensaje que quieres ver**. De forma que podrías filtrar para ver sólo las advertencias. Esto te puede ayudar a buscar entre la maraña de mensajes en la consola todas las advertencias que tengas.
 
@@ -40,7 +40,7 @@ console.table(person)
 
 En la consola de nuestro navegador, nos mostraría la información de la siguiente manera:
 
-{{% img src="/images/console-table-example.png" alt="Con table, la información se entiende mucho mejor sin necesidad de tener que expandir nada" align="center" %}}
+{{< img src="/images/console-table-example.png" alt="Con table, la información se entiende mucho mejor sin necesidad de tener que expandir nada" align="center">}}
 
 Por ejemplo, puedes sacarle partido a este método para conocer todas las posibilidades de `console` para ello prueba a ejecutar el siguiente código en tu consola: 
 
@@ -69,7 +69,7 @@ fetch(apiURL)
 
 Lo puedes probar tu mismo en la consola de tu navegador para que veas como funciona:
 
-{{% img src="/images/console-time-end-animation.gif" alt="time y timeEnd calcula el tiempo transcurrido, en ms, entre la llamada del primer y segundo método" align="center" %}}
+{{< img src="/images/console-time-end-animation.gif" alt="time y timeEnd calcula el tiempo transcurrido, en ms, entre la llamada del primer y segundo método" align="center">}}
 
 Una cosa importante a tener en cuenta es que **estos métodos no son, ni de lejos, perfectos a la hora de hacer un benchmarking real** de ciertas operaciones pero, sin embargo, pueden ser muy interesantes para detectar cuellos de botella en nuestro código.
 
@@ -79,13 +79,13 @@ Estoy seguro que también alguna vez has querido averiguar **cuántas veces se e
 
 Simplemente usa este método y pásale una etiqueta para contar cuantas veces se ha ejecutado. **Puedes pasar diferentes etiquetas** para contar diferentes ejecuciones o no pasar ninguna y que use `default`.
 
-{{% img src="/images/console-count-usage.png" alt="time y timeEnd calcula el tiempo transcurrido, en ms, entre la llamada del primer y segundo método" align="center" %}}
+{{< img src="/images/console-count-usage.png" alt="time y timeEnd calcula el tiempo transcurrido, en ms, entre la llamada del primer y segundo método" align="center">}}
 
 ## assert, la mini librería de testing en console
 
 El último método que quiero compartir contigo es bastante peculiar. ¿Te imaginas poder comprobar si algo es cierto? Como si estuvieras utilizando un framework de testing unitario pero... ¡con console! Pues existe y se llama `console.assert`, lo puedes usar de la siguiente manera.
 
-{{% img src="/images/console-assert-example.png" alt="time y timeEnd calcula el tiempo transcurrido, en ms, entre la llamada del primer y segundo método" align="center" %}}
+{{< img src="/images/console-assert-example.png" alt="time y timeEnd calcula el tiempo transcurrido, en ms, entre la llamada del primer y segundo método" align="center">}}
 
 Como ves, como **primer parámetro recibe la aserción** que quieres comprobar y como **segundo parámetro puedes pasar toda la información que quieres mostrar si no se cumple** la condición. **¡Ten en cuenta que si la condición se cumple no aparecerá nada en la consola!**
 
@@ -95,4 +95,4 @@ Como ves, como **primer parámetro recibe la aserción** que quieres comprobar y
 
 Y con esto ya conoces algunos métodos muy interesantes para dejar de lado `console.log` que te pueden ayudar a mejorar las trazas que vas dejando en consola. Y, aunque siempre es mejor dominar a la perfección el `debugger` al menos con esto espero que evites dejar mensajes en tu código como este:
 
-{{% img src="/images/console-no-lo-hagas-nunca.png" alt="time y timeEnd calcula el tiempo transcurrido, en ms, entre la llamada del primer y segundo método" align="center" %}}
+{{< img src="/images/console-no-lo-hagas-nunca.png" alt="time y timeEnd calcula el tiempo transcurrido, en ms, entre la llamada del primer y segundo método" align="center">}}

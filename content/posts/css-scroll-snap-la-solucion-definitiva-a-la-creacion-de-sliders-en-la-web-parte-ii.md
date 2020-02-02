@@ -9,7 +9,7 @@ topic: css
 
 [En la anterior entrega de esta serie de artículos hemos conocido las propiedades CSS Scroll Snap](https://midu.dev/css-scroll-snap-la-solucion-definitiva-a-la-creacion-de-sliders-en-la-web/), una forma de declarar posiciones en nuestro scroll, de forma que podemos controlar cómo se debe comportar el deslizamiento del mismo en los diferentes elementos que navegamos.
 
-{{% youtube id="uhP6OL0bwpY" %}}
+{{< youtube id="uhP6OL0bwpY" >}}
 
 Para controlarlo, y para hacer repaso, lo haremos utilizando básicamente dos propiedades CSS:
 
@@ -19,7 +19,7 @@ Para controlarlo, y para hacer repaso, lo haremos utilizando básicamente dos pr
 
 ## Creando nuestro slider con sólo CSS, paso a paso
 
-{{% img src="/images/scroll-snap-articulo-cabecera.jpg" alt="Vamos a ver como crear un slider sencillo gracias al uso de los CSS Snap Points" align="" %}}
+{{< img src="/images/scroll-snap-articulo-cabecera.jpg" alt="Vamos a ver como crear un slider sencillo gracias al uso de los CSS Snap Points" align="">}}
 
 Con el repaso que hemos hecho de las propiedades `scroll-snap-type` y `scroll-snap-align` ya tenemos suficiente para crear un slider sencillo pero funcional. Vamos a crearlo paso a paso, desde el principio, para entender cómo está funcionando.
 
@@ -36,7 +36,7 @@ Con el repaso que hemos hecho de las propiedades `scroll-snap-type` y `scroll-sn
 
 Esto, nos crea una la estructura HTML básica que vamos a necesitar para nuestro slider. En este ejemplo, y por simplicidad, vamos a hacerlo directamente con imágenes, pero **ten en cuenta que el slider podría funcionar también con elementos más complejos**. En cualquier caso, a continuación os dejo cómo queda este HTML usando unas imágenes de ejemplo de Unsplash:
 
-{{% pen id="REyKao" height="500" tab="result" %}}
+{{< pen id="REyKao" height="500" tab="result">}}
 
 ### Estilando los elementos para que parezca un slider
 
@@ -51,7 +51,7 @@ Vale. Estamos muy lejos de un slider, pero no os vayáis todavía. En primer lug
 }
 ```
 
-{{% pen id="MZGJyz" height="500" tab="result" %}}
+{{< pen id="MZGJyz" height="500" tab="result">}}
 
 Como podéis comprobar, **los osos pandas se ven horribles con esa relación de aspecto** 🐼🙀. Vamos a arreglarlo con más #CSS. Para ello, lo primero que vamos a hacer es obligar que la caja ocupe siempre el 100%. Esto es vital, ya que queremos que en nuestro slider sólo se vea un slide y que este ocupe exactamente el mismo espacio que el slider. Lo conseguiremos con `flex: 0 0 100%`.
 
@@ -66,7 +66,7 @@ Esto mejora bastante las cosas pero **todavía podemos hacer que las imágenes q
 }
 ```
 
-{{% pen id="wRjgJy" height="500" tab="result" %}}
+{{< pen id="wRjgJy" height="500" tab="result">}}
 
 ### Añadiendo la funcionalidad CSS Scroll Snap a nuestro slider
 
@@ -92,13 +92,13 @@ Ahora bien, si lo probáis... **¡veréis que no funciona 😱!** No es que os h
 
 Y con esto... **¡ya tenemos un slider sencillo pero funcional tanto en desktop con trackpad y en mobile!** Para probarlo, haced scroll con el trackpad o haced swipe en vuestro dispositivo móvil. Si estáis en un navegador compatible, veréis que al terminar el movimiento, se queda en la siguiente imagen.
 
-{{% pen id="jXxyLe" height="378" tab="result" %}}
+{{< pen id="jXxyLe" height="378" tab="result">}}
 
 ## ¿Y esto lo puedo usar ya?
 
 Seguramente, después de este artículo, te estés preguntando si esta tecnología ya está lista para ser usada. Pues bien, **tiene una nada despreciable cifra de más de un 80% de soporte, usando prefijos, en los navegadores.**
 
-{{% img src="/images/can-i-use-scroll-snap.png" alt="La tabla de compatibilidad de Scroll Snap es mucho mejor de lo que piensas y de lo que parece" align="" %}}
+{{< img src="/images/can-i-use-scroll-snap.png" alt="La tabla de compatibilidad de Scroll Snap es mucho mejor de lo que piensas y de lo que parece" align="">}}
 
 Hay que tener en cuenta, sin embargo, que **este porcentaje tiene un poco de trampa y es que le suma un 10% de navegadores que tienen un soporte limitado o que soportan la versión anterior**. Sin embargo, no es muy difícil solventar esto y dar un soporte gradual a los navegadores de forma que, los que no sean compatibles, nuestro slider pueda seguir funcionando aunque con unas funcionalidades más limitadas.
 

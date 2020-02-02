@@ -117,7 +117,7 @@
 
   </style>
   <section id='home-feed'>
-    {{ $paginator := .Paginate (where (where .Pages ".Params.category" "!=" "podcast") ".Params.type" "!=" "page") }}
+    {{ $paginator := .Paginate (where site.RegularPages "Type" "==" "posts") }}
     <div>
       {{ range $paginator.Pages }}
       <a href="{{.Permalink}}">

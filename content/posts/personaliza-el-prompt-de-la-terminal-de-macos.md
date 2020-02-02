@@ -14,7 +14,7 @@ Si eres un usuario regular de la Terminal, como lo soy yo en macOS, y todavía n
 
 El prompt, básicamente, es un conjunto de carácteres que aparecen en la terminal para indicarte que está a la espera de comandos por tu parte. Por defecto, normalmente, **en su aspecto se recoge el usuario actual, el directorio en el que te encuentras y el hostname.**
 
-{{% img src="/images/custom_prompt_default.png" alt="El aspecto por defecto del Prompt en macOS es funcional pero no muy agradable a la vista" align="center" %}}
+{{< img src="/images/custom_prompt_default.png" alt="El aspecto por defecto del Prompt en macOS es funcional pero no muy agradable a la vista" align="center">}}
 
 Pero no os preocupéis porque se puede cambiar y de una forma muy sencilla. Solo tendremos que crear, o modificar, un archivo de perfil para [Bash](https://es.wikipedia.org/wiki/Bash), que es el intérprete que viene instalado por defecto tanto en sistemas Unix como macOS de Apple.
 
@@ -78,7 +78,7 @@ source ~/.bash_profile
 ```
 
 Y este es el resultado final:
-{{% img src="/images/cambiando_el_prompt.png" alt="El nuevo prompt queda bastante más personalizado y hasta podemos usar emojis" align="center" %}}
+{{< img src="/images/cambiando_el_prompt.png" alt="El nuevo prompt queda bastante más personalizado y hasta podemos usar emojis" align="center">}}
 
 ## Más allá de personalizar el prompt
 
@@ -88,6 +88,6 @@ También os recomiendo que dejéis la aplicación de la terminal que viene por d
 
 Pero si por ahora queréis empezar con lo más sencillo, y con este artículo os he animado a probar, en el siguiente vídeo podéis ver cómo hago todo el proceso en **macOS** paso a paso, de forma que si tenéis ese sistema operativo sólo tenéis que seguir las indicaciones:
 
-{{% youtube id="CN6nOeOTeJg" %}}
+{{< youtube id="CN6nOeOTeJg" >}}
 
 Por cierto, **si estáis animados a customizarlo,** os recomiendo una aplicación web llamada [Ezprompt](http://ezprompt.net/) que te permite crear tu propio prompt arrastrando cajas y seleccionando los colores deseados, además de ofrecerte una previsualización de cómo quedaría y ofreciéndote el código a pegar bastante mascadito.

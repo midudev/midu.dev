@@ -16,7 +16,7 @@ Sin embargo, esta noticia que llega tras días de rumores, **ha despertado los r
 
 **Chromium es el navegador de código abierto del que Chrome obtiene su código fuente.** Sin embargo, hay que tener claro que aunque comparten la mayor parte del código hay algunas funcionalidades que sólo existen en Chrome como, por ejemplo, el lector de archivos PDF o el inicio de sesión en Google. Esto ha permitido que otros navegadores tomen como base Chromium. **Dos grandes destacados son Opera y Brave.** Y, pese a ello, ofrecen una experiencia de usuario sensiblemente diferente a Chrome.
 
-{{% img src="/images/opera.jpg" alt="Opera Browser ofrece una experiencia de usuario bastante distinta a Chrome pese a compartir motor" align="left" %}}
+{{< img src="/images/opera.jpg" alt="Opera Browser ofrece una experiencia de usuario bastante distinta a Chrome pese a compartir motor" align="left">}}
 
 Es importante saber que Chromium comenzó en su día basándose en **[WebKit](https://webkit.org/), el motor para navegadores web de código abierto creado por Apple para Safari** pero, tras unos años, [Google hizo un fork del proyecto](https://blog.chromium.org/2013/04/blink-rendering-engine-for-chromium.html) para continuar evolucionandólo por su parte sin la necesidad de depender de Apple.
 
@@ -40,7 +40,7 @@ Más adelante hay una sección que habla de algunas opiniones contrarias a esta 
 
 * **Edge seguía siendo un dolor de cabeza a la hora de desarrollar webs.** Y no hablamos sólo de las muy mejorables herramientas de desarrollo que ofrecía. Tampoco el motor nunca ha sido capaz, pese a los múltiples esfuerzos, de estar a la altura de Firefox o Chrome. Su ritmo de versiones también ha estado siempre por detrás de la competencia y, aún hoy, no ha sido capaz de recuperar la cuota de mercado que mantiene Internet Explorer.
 
-{{% img alt="Edge todavía no soporta gran parte de la tecnología de los Web Components y necesita polyfills para hacerlos funcionar" src="/images/caniuseedge.png" %}}
+{{< img alt="Edge todavía no soporta gran parte de la tecnología de los Web Components y necesita polyfills para hacerlos funcionar" src="/images/caniuseedge.png">}}
 
 * **Menos fragmentación.** Tener que preocuparse de un motor de navegador a la hora de trabajar va a ser un alivio para muchos desarrolladores, entre los que yo me incluyo. En la diversidad está el gusto pero tampoco ayudaba que existiesen tantos motores diferentes y, algunos como este, tan problemáticos.
 
