@@ -20,4 +20,4 @@ También repasamos el estado actual de VueJS y ambos nos darán buenos consejos 
 [¡Síguenos en YouTube!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 
 Si quieres, puedes ver la retransmisión que hicimos en directo, lo puedes hacer en el siguiente vídeo:
-{{% youtube id="2uArk583HV4" %}}
+{{< youtube id="2uArk583HV4">}}

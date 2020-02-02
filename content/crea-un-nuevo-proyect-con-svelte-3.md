@@ -13,7 +13,7 @@ Pues viendo el éxito que tuvo el [artículo sobre la introducción a Svelte.js]
 
 En este artículo vamos a explicar como, paso a paso, puedes conseguir crear un nuevo proyecto con Svelte y tener listo tu entorno de desarrollo para poder desarrollar tu aplicación. Si prefieres verlo en vídeo, te dejo aquí el que he hecho para [mi canal de YouTube](https://www.youtube.com/c/midudev?sub_confirmation=1):
 
-{{% youtube id="VTkDuQ9RLVU" %}}
+{{< youtube id="VTkDuQ9RLVU" >}}
 
 > ⚠️ Los **REQUISITOS** para poder seguir este tutorial es tener instalado, al menos, **Node.js 8** y **npm 5.2.**
 
@@ -100,7 +100,7 @@ Si abrimos la carpeta con nuestro editor de código, podremos ver la estructura 
 `public`: La carpeta donde están los estáticos de nuestra aplicación. La que subiremos a Internet a la hora de hacer el deploy.
 `src`: Dentro se encuentra el código fuente de nuestra aplicación y contiene dos archivos. `main.js`, que es el punto de entrada de nuestra aplicación y `App.svelte` que es el componente que queremos renderizar.
 
-## Revisando el código fuente
+## Revisando el código fuente
 
 Vamos a revisar línea por línea para ver para qué sirven los dos ficheros que tenemos en la carpeta `src`. Empezamos con el archivo `main.js`, el punto de entrada de la app:
 

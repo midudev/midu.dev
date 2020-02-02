@@ -12,7 +12,7 @@ language: 🇪🇸
 
 **Los Hooks son una nueva API de la librería de React que nos permite tener estado, y otras características de React, en los componentes creados con una `function`.** Esto, antes, no era posible y nos obligaba a crear un componente con `class` para poder acceder a todas las posibilidades de la librería. Y de ahí viene el nombre. _Hooks_ es gancho y, precisamente, lo que hacen, es que te permiten _enganchar_ tus componentes funcionales a todas las características que ofrece React.
 
-{{% youtube id="Ww_eT4H_k2c" %}}
+{{< youtube id="Ww_eT4H_k2c" >}}
 
 Para que veamos en qué consisten vamos a ver cómo, hasta ahora, podíamos crear un componente Contador que tenía un estado interno que, al hacer click en un botón, se actualizaba y mostraba el número de veces que habíamos pulsado el botón. Todo esto creando un componente con `class`.
 
@@ -83,7 +83,7 @@ De hecho, cuando he enseñado React a compañeros y colegas, siempre he empezado
 
 **De igual forma, tampoco a las máquina les gustan las clases.** Y lo digo por diferentes motivos. Uno de los más importantes es que **las clases no minifican tan bien como las funciones, esto significa que nuestro código ocupará más.** La diferencia con un solo componente puede no ser relevante, pero si pasamos toda nuestra aplicación a funciones, puede marcar la diferencia.
 
-{{% tweet 1065516163856310272 %}}
+{{< tweet 1065516163856310272>}}
 
 Pero el equipo de React va más al largo plazo y **también se refieren a las posibilidades de sacarle el mayor partido a [Prepack](https://prepack.io/).** Con clases las ventajas que se pueden extraer al ejecutar el código en tiempo de compilación son mucho menores que las que se pueden conseguir con las funciones.
 
@@ -139,7 +139,7 @@ El ciclo de vida de los componentes en React, que podíamos usar en los componen
 
 Lo podemos ver mejor en el siguiente tweet, donde **se ve la diferencia de lo que era con clases (donde se mezclaba lógica con diferentes objetivos) y cómo quedaría utilizando Hooks para agrupar mejor ese código.**
 
-{{% tweet 1056960391543062528 %}}
+{{< tweet 1056960391543062528>}}
 
 Así que en realidad los Hooks aplican la filosofía de React sobre el flujo de datos y composición pero ya no sólo incluso _entre_ componentes si no _dentro_ del mismo componente.
 

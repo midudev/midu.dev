@@ -9,7 +9,7 @@ tags:
 - svelte
 ---
 
-{{% youtube id="Xsxm8_BI63s" %}}
+{{< youtube id="Xsxm8_BI63s" >}}
 
 En la pasada **JsCamp 2019** tuve la ocasión de ver la charla de Rich Harris titulada ["The Return of 'Write Less, Do More'"](https://svelte.dev/blog/write-less-code). En ella, hablaba de cómo nos preocupamos de muchas métricas, como el tamaño de nuestro bundle, pero no **le prestamos atención al número de líneas de código que escribimos porque a mayor número de líneas más potenciales bugs tendremos**. ¿Y cómo lo solucionamos? Pues Rich Harris viene con una solución en forma de framework: **Svelte.**
 

@@ -7,13 +7,13 @@ topic: css
 language: 🇪🇸
 ---
 
-{{% img align="left" alt="Una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados" src="/images/searching-slider-results.png" %}}
+{{< img align="left" alt="Una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados" src="/images/searching-slider-results.png">}}
 
 Si llevas unos años en la programación web estoy bastante seguro que te has enfrentado a uno de los problemas más recurrentes del mundillo. **Hablo de los sliders.** A falta de una implementación nativa, cientos de soluciones en Javascript han convivido a lo largo de los años. Algunos vanilla, otros basados en alguna librería como jQuery o React, pero todos basándose de alguna forma en cálculos sobre el DOM. Algunos nombres serían: *slick, slippery, momentum-slider, simple-slider*... y es que, **una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados.** 🤯
 
 Pues sabes qué, **que eso se ha acabado**. Porque, por fin, **ahora en CSS podrás crear tus propios sliders sin necesidad de utilizar, en la gran mayoría de los casos, una librería.** Se llama Scroll Snap, tiene un soporte bastante respetable y va a cambiar mucho el cómo creamos sliders en web:
 
-{{% img align="center" alt="La API de scroll snap nos permite en pocas líneas de código crear un slider con una experiencia inmejorable" src="/images/scroll-snap.png" %}}
+{{< img align="center" alt="La API de scroll snap nos permite en pocas líneas de código crear un slider con una experiencia inmejorable" src="/images/scroll-snap.png">}}
 
 **CSS Scroll Snap** nos permite declarar posiciones en nuestro scroll, de forma que podemos controlarlo mejor, especialmente al utilizar nuestros dedos para desplazarnos.
 
@@ -21,7 +21,7 @@ Esto, antes, lo conseguíamos utilizando Javascript y haciendo algunos cálculos
 
 La historia de *Scroll Snap* viene de muy atrás. De hecho, [los primeros drafts son de... ¡2013!](https://gist.github.com/majido/9900261e1b7e2b1eb180b01c03656b42). Esto ha hecho que algunos navegadores actualmente tengan la especificación antigua (conocida como css-snappoints) y otros, como Chrome y Safari, tengan la nueva (conocida como css-scrollsnap).
 
-{{% img align="" alt="Evolución de la especificación de Scroll Snap" src="/images/specification-history.png" %}}
+{{< img align="" alt="Evolución de la especificación de Scroll Snap" src="/images/specification-history.png">}}
 
 Por si os lo estáis preguntando. **Sí, la especificación anterior era un rollo.** Es verdad que era muy potente ya que podías manualmente identificar los puntos de ajuste usando píxeles o espacios relativos. Eso hacía que fuese muy difícil poder trabajar con él al tener elementos dentro del contenedor con diferentes tamaños. El nuevo elimina ese problema y te permite crear puntos de ajuste para el inicio, final y centro de cada elemento. Pero antes de seguir por ahí, **vamos a ver las propiedades para crear nuestro slider.**
 
@@ -45,7 +45,7 @@ En este artículo vamos a basarnos en la especificación nueva. Para ello vamos 
 
 En el siguiente ejemplo podéis ver cómo cambia el comportamiento dependiendo de si usamos `mandatory` o `proximity`. El de la izquierda, no importa cuanto hagáis scroll, que siempre terminará con un recuadro en el contenedor y nunca veréis dos a la vez, mientras que el otro a veces puede quedar a medias de dos elementos.
 
-{{% pen id="ZjrOpx" height="300" tab="result" %}}
+{{< pen id="ZjrOpx" height="300" tab="result">}}
 
 Ya os podéis imaginar que, para crear un slider, normalmente nos interesará utilizar la propiedad `mandatory` de forma que al hacer scroll, sea como sea, simpere acaba en el viewport de nuestro contenedor el slide completo y no se quede a medias. **Esto hará que se sienta como un slider nativo.** Además, la dirección será, en la gran mayoría de los casos, horizontal. Por lo que tendremos algo así:
 
@@ -69,7 +69,7 @@ La otra propiedad es `scroll-snap-align`. Esta propiedad se usa a nivel de cada 
 
 En el siguiente ejemplo podéis ver cómo funcionaría el uso de Scroll Snap donde sus elementos tienen un `scroll-snap-align` con el valor `start`, de forma que le indicamos que el scroll debe ajustarse al inicio de cada elemento. Probad, con un navegador compatible, a hacer scroll para que ver que siempre termina el scroll al inicio de un elemento.
 
-{{% pen id="JBjROd" height="300" tab="result" %}}
+{{< pen id="JBjROd" height="300" tab="result">}}
 
 En este caso ya vemos que, normalmente, el que nos interesaría para crear un slider sería usar el `center` de forma que el elemento acabe justamente en el centro una vez que hayamos hecho scroll en el contenedor.
 

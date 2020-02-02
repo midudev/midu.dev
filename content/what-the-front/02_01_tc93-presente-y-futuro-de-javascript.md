@@ -14,7 +14,7 @@ episode: 01
 Repasamos cómo funciona el comité TC39, cómo son las sesiones, [las propuestas más interesantes](https://github.com/tc39/proposals) y muchas curiosidades más que no te puedes perder.
 
 Puedes seguir la retransmisión que hicimos en vivo de la grabación aquí:
-{{% youtube id="pqUpX1jxiNQ" %}}
+{{< youtube id="pqUpX1jxiNQ" >}}
 
 [¡Síguenos en YouTube!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 [Sigue escuchando el resto de episodios de What The Front.](https://midu.dev/what-the-front-podcast)

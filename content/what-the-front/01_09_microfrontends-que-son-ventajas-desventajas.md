@@ -12,4 +12,4 @@ episode: 09
 ¡Hola a todos y a todas a un nuevo episodio de <WhatTheFront! />, tu podcast de frontend en castellano. Y de frontend va la cosa. Pero de frontends pequeñitos. Más que pequeñitos, microfrontends. **¿Qué son los Microfrontends?** ¿Es la arquitectura frontend del futuro? ¿Qué ofrece? Cuáles son las ventajas y desventajas de esta solución. Y para ello contamos con **Jorge del Casar**, desarrollador de Citibox, para que nos explique su experiencia siguiendo esta tendencia.
 
 Si quieres, puedes ver la retransmisión que hicimos en directo, lo puedes hacer en el siguiente vídeo:
-{{% youtube id="qtOP7hv_H5Q" %}}
+{{< youtube id="qtOP7hv_H5Q" >}}

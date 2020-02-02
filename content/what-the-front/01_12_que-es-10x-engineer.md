@@ -17,6 +17,6 @@ También hablamos y hacemos algunas valoraciones sobre las conferencias CSSCamp 
 
 Puedes seguir la retransmisión que hicimos en vivo de la grabación aquí:
 
-{{% youtube id="L6pbE2M36us" %}}
+{{< youtube id="L6pbE2M36us" >}}
 
 [¡Síguenos en YouTube!](https://www.youtube.com/c/midudev?sub_confirmation=1)

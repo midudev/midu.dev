@@ -19,7 +19,7 @@ En la primera clase hacemos una introducción sobre GraphQL. **GraphQL es un len
 
 Facebook, como sabéis, es una red social. Los grupos sociales son un grafo, no estamos todos conectados de forma jerárquica como un árbol. Esto hace que recuperar la información necesaria para mostrarla en la UI con los métodos convencionales (REST API, por ejemplo) no fuese lo ideal y tuvieramos que hacer complejas llamadas anidadas para recuperar los datos que necesitamos.
 
-{{% youtube id="KRV46iZ844s" %}}
+{{< youtube id="KRV46iZ844s" >}}
 
 ## Haciendo queries y GraphiQL con la API de Rick & Morty
 
@@ -42,7 +42,7 @@ query {
 
 Lo mejor que puedes hacer es ir directamente [al playground de Rick & Morty API donde os dejo un par de pestañas con las queries.](https://graphqlbin.com/v2/x2kpuJ)
 
-{{% youtube id="5BwmvekYCpY" %}}
+{{< youtube id="5BwmvekYCpY">}}
 
 ## GraphQL en React con Apollo Client
 
@@ -111,7 +111,7 @@ Con esto, hemos creado un componente `CharactersQuery` que, al usarlo, renderiza
 
 Puedes ver el Code Sandbox con todo el código necesario, pero **te recomiendo que veas el vídeo para seguir paso a paso, y con todo lujo de detalles, cómo puedes conseguirlo:**
 
-{{% youtube id="4ULxq_Bp0RY" %}}
+{{< youtube id="4ULxq_Bp0RY">}}
 
 ## Crea tu servidor de GraphQL con Apollo Server
 
@@ -179,7 +179,7 @@ server.listen().then(({ url }) => {
 
 Estos son los pasos, pero **si quieres conocer al detalle todo el proceso y recibir algunos consejos interesantes de parte de Horacio, no te lo pierdas en vídeo**:
 
-{{% youtube id="zDrKmi9ph2Q" %}}
+{{< youtube id="zDrKmi9ph2Q" >}}
 
 ## Conectando nuestro servidor de Apollo con una REST API
 
@@ -226,7 +226,7 @@ function fetchCharacters() {
 
 ¿Quieres descubrir más formas de hacerlo? ¿Qué tal si además pudieramos hacer una query para un personaje en concreto? Pues muchos más comentarios, detalles y ejercicios en el vídeo disponible con la última clase del curso express gratuito de GraphQL con React y Apollo:
 
-{{% youtube id="iR6FV9N3UqQ" %}}
+{{< youtube id="iR6FV9N3UqQ" >}}
 
 ## ¡Suscríbete y no te pierdas el siguiente!
 

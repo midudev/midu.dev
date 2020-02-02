@@ -9,7 +9,7 @@ language: 🇪🇸
 
 El Critical Path de una web, o en castellano, **la ruta crítica es la secuencia mínima que una página tiene que seguir para poder hacer su primer pintado.** ¿Y por qué es importante? Porque según la longitud de ese camino crítico, el usuario verá más tarde la página web.
 
-{{% youtube id="GIYp3qG1520" %}}
+{{< youtube id="GIYp3qG1520" >}}
 
 Por eso, a la hora de hacer optimizaciones a la performance de nuestro site, uno de los objetivos principales será **minimizar al máximo el número de recursos** o solicitudes que tenemos que hacer **para poder realizar el primer renderizado de nuestra página.**
 
@@ -32,11 +32,11 @@ Como véis, **el CSS es un recurso que bloquea el renderizado de nuestra página
 
 Por ello, el navegador por defecto descarga los recursos CSS de forma síncrona y bloqueando el renderizado de nuestras páginas pero, nosotros, podríamos forzar a que se cargase de forma asíncrona. Al hacerlo, **incurriríamos en el problema de mostrar nuestra página sin estilar y, de repente, mostrarla con los estilos y os puedo asegurar que el efecto es bastante incómodo para el usuario.**
 
-{{% img src="/images/css-sin-estilos-con-estilos.jpg" alt="A la izquierda, Fotocasa sin estilos. A la derecha, con los estilos cargados" align="center" %}}
+{{< img src="/images/css-sin-estilos-con-estilos.jpg" alt="A la izquierda, Fotocasa sin estilos. A la derecha, con los estilos cargados" align="center">}}
 
 Una de las formas de solucionar esto meter los estílos críticos de tu página en línea, dentro de unas etiquetas `<style>`. Los estilos críticos serían los que el usuario ve nada más entrar en tu sitio y deberían ser mucho menos que los que realmente estás cargando para poder mostrarle la página al usuario. Chrome tiene una herramienta llamada Code Coverage que puede ayudarte a visualizar cuanto CSS estás cargando respecto al que realmente necesita el usuario para renderizar la parte crítica.
 
-{{% img src="/images/critical-path-css-20-lines-of-code.jpg" alt="Con Code Coverage podemos ver en las dos primeras líneas que apenas usamos el 30% de cada fichero CSS. La parte en verde sería nuestro CSS crítico" %}}
+{{< img src="/images/critical-path-css-20-lines-of-code.jpg" alt="Con Code Coverage podemos ver en las dos primeras líneas que apenas usamos el 30% de cada fichero CSS. La parte en verde sería nuestro CSS crítico">}}
 
 El problema de extraer el CSS crítico de nuestra página son varios:
 1. Es complicado hacer esto manualmente...

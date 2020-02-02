@@ -19,6 +19,6 @@ Y encontrar el resto de programas aquí:
 https://midu.dev/what-the-front-podcast
 
 Puedes seguir la retransmisión que hicimos en vivo de la grabación aquí:
-{{% youtube id="Cy9yHw7fTiA" %}}
+{{< youtube id="Cy9yHw7fTiA" >}}
 
 [¡Síguenos en YouTube!](https://www.youtube.com/c/midudev?sub_confirmation=1)
