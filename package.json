@@ -7,8 +7,8 @@
     "node": "12.x"
   },
   "scripts": {
-    "build": "hugo-bin --minify",
-    "dev": "hugo-bin server",
+    "build": "hugo --minify",
+    "dev": "hugo server",
     "now-build": "npm run build",
     "do:thanks": "node scripts/thanks-contributors.js"
   },
