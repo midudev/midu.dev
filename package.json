@@ -5,8 +5,8 @@
   "main": "index.js",
   "engines": { "node": "12.x" },
   "scripts": {
-    "build": "npx hugo-cli --minify",
-    "dev": "npx hugo-cli server",
+    "build": "npx hugo-bin --minify",
+    "dev": "npx hugo-bin server",
     "now-build": "npm run build",
     "do:thanks": "node scripts/thanks-contributors.js"
   },
