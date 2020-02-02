@@ -4,7 +4,6 @@ title = "midudev 👨‍💻 | Frontend, Performance, Javascript, React, CSS"
 
 disableHugoGeneratorInject = true
 defaultContentLanguage = "es"
-enableGitInfo = true
 preserveTaxonomyNames = true
 paginate = 8
 
