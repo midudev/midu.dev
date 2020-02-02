@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "https://midu.dev website",
   "main": "index.js",
-  "engines": { "node": "12.x" },
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "build": "npx hugo-bin --minify",
     "dev": "npx hugo-bin server",
@@ -20,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/midudev/midu.dev/issues"
   },
-  "homepage": "https://github.com/midudev/midu.dev#readme"
+  "homepage": "https://github.com/midudev/midu.dev#readme",
+  "devDependencies": {
+    "rimraf": "3.0.1"
+  }
 }
