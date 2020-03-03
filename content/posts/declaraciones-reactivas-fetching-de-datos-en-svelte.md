@@ -15,9 +15,9 @@ tags:
 
 ## Reactividad en Svelte: los límites de inferir
 
-Cuando hablamos de inferir, hablamos de cómo Svelte, a partir del código, es capaz de detectar si una variable es un estado del componente, tal y como habíamos visto en el [artículo anterior](https://midu.dev/componentes-y-estado-en-svelte/).
+Cuando hablamos de inferir, hablamos de cómo *Svelte*, a partir del código, **es capaz de detectar si una variable es un estado del componente**, tal y como habíamos visto en el [artículo anterior](https://midu.dev/componentes-y-estado-en-svelte/).
 
-Ahora, ¿qué pasa si queremos utilizar ese estado para calcular una variable? Por ejemplo, imaginemos que queremos utilizar un estado inferido de `counter` para crear una variable que nos muestre si el número es par o impar.
+Ahora, **¿qué pasa si queremos utilizar ese estado para calcular una variable?** Por ejemplo, imaginemos que queremos utilizar un estado inferido de `counter` para crear una variable que nos muestre si el número es par o impar.
 
 ```html
 <script>
@@ -34,9 +34,9 @@ Ahora, ¿qué pasa si queremos utilizar ese estado para calcular una variable? P
 
 Como `counter` se inicia a `2`, al principio el mensaje es `Is Odd` pero... si hacemos click en el botón, el `counter` se incrementa en `3` pero, sin embargo, el mensaje que vemos todavía es `Is Even`, lo que significa que no está mostrando el mensaje correcto. **¿Por qué?**
 
-Lo que está ocurriendo es que la variable `isEvenMessage` sólo se está evaluando una vez. A diferencia de la variable `counter` que *Svelte* sí está infiriendo que es un estado. Esto es un error muy común a la hora de trabajar con Svelte, ya que uno podría esperar que la variable `isEvenMessage` fuese a re-asignarse de forma automática cuando no es así.
+**Lo que está ocurriendo es que la variable `isEvenMessage` sólo se está evaluando una vez.** A diferencia de la variable `counter` que *Svelte* sí está infiriendo que es un estado. Esto es un error muy común a la hora de trabajar con Svelte, ya que uno podría esperar que la variable `isEvenMessage` fuese a re-asignarse de forma automática cuando no es así.
 
-Ahora que ya lo sabemos. ¿Cómo podemos arreglarlo? Tenemos dos formas. La primera, mover la evaluación al render, en lugar de hacerlo dentro de las etiquetas `<script>`. Así, esto siempre se evaluará en cada renderizado y mostrará la información correcta.
+Ahora que ya lo sabemos. **¿Cómo podemos arreglarlo?** Tenemos dos formas. La primera, **mover la evaluación al render**, en lugar de hacerlo dentro de las etiquetas `<script>`. Así, esto siempre se evaluará en cada renderizado y mostrará la información correcta.
 
 ```html
 <script>
@@ -50,7 +50,7 @@ Ahora que ya lo sabemos. ¿Cómo podemos arreglarlo? Tenemos dos formas. La prim
 <span>{counter % 2 === 0 ? 'Is Even' : 'Is Odd'}</span>
 ```
 
-Esta opción es bastante sencilla, pero Svelte ofrece otra forma que nos desbloqueará un montón de posibilidades y es utilizar el símbolo especial `$` para indicar que la declaración es reactiva:
+Esta opción es bastante sencilla, pero ***Svelte* ofrece otra forma que nos desbloqueará un montón de posibilidades y es utilizar el símbolo especial `$`** para indicar que la declaración es reactiva:
 
 ```html
 <script>
@@ -151,7 +151,7 @@ Así que vamos a añadir la declaración reactiva que se ejecutará cada vez que
 <input value={value} on:input={handleInput}>
 ```
 
-Ahora... esto no sólo se ejecuta cada vez que cambiamos el texto en la caja... Como habíamos visto anteriromente, también se ejecuta la primera vez que se monta el componente. Para solucionar esto deberíamos ponerle alguna cláusula de entrada a la declaración reactiva. La primera que se nos ocurre es la de evitar que haga una llamada a la API con un string vacio.
+Ahora... esto no sólo se ejecuta cada vez que cambiamos el texto en la caja... Como habíamos visto anteriromente, también se ejecuta la primera vez que se monta el componente. **Para solucionar esto deberíamos ponerle alguna cláusula de entrada a la declaración reactiva.** La primera que se nos ocurre es la de **evitar que haga una llamada a la API con un string vacío.**
 
 ```js
 $: if (value !== '') {
@@ -163,7 +163,7 @@ $: if (value !== '') {
 }
 ```
 
-Pero esto también da problemas con las primeras letras, ya que hay demasiados resultados cuando intentas buscar una sola letra. Así que vamos a hacer que sólo empiece a buscar a partir de tres carácteres quedando todo nuestro código del componente así:
+Pero esto también da problemas con las primeras letras, ya que hay demasiados resultados cuando intentas buscar una sola letra. Así que **vamos a hacer que sólo empiece a buscar a partir de tres carácteres** quedando todo nuestro código del componente así:
 
 ```html {hl_lines=["6"]}
 <script>
@@ -189,8 +189,8 @@ Pero esto también da problemas con las primeras letras, ya que hay demasiados r
 
 ## Conclusiones
 
-Con este artículo ya hemos visto **cómo podemos controlar del todo la reactividad en Svelte.** Aunque las declaraciones reactivas no son tan mágicas como el state, ya que hay que añadir un símbolo `$`, Svelte sí que nos ayuda a detectar cuando estas declaraciones se tienen que ejecutar ya que detecta qué dependencias se están usando dentro.
+Con este artículo ya hemos visto **cómo podemos controlar del todo la reactividad en Svelte.** Aunque las declaraciones reactivas no son tan mágicas como el state, ya que hay que añadir un símbolo `$`, **Svelte sí que nos ayuda a detectar cuando estas declaraciones se tienen que ejecutar** ya que detecta qué dependencias se están usando dentro.
 
-Además, hemos visto que nos permite poder añadir condiciones de forma que sólo se ejecuten cuando sea necesario. A mi personalmente me gusta mucho que la condición de entrada esté arriba del todo, lo que lo hace muy legible y entendible. Ya sabes que me encanta React pero en este caso el `useEffect` es más difícil de leer ya que las condiciones pueden ir en cualquier sitio y, además, las dependencias van en la última línea.
+Además, hemos visto que **nos permite poder añadir condiciones de forma que sólo se ejecuten cuando sea necesario.** A mi personalmente me gusta mucho que la condición de entrada esté arriba del todo, lo que lo hace muy legible y entendible. Ya sabes que me encanta React pero en este caso el `useEffect` es más difícil de leer ya que las condiciones pueden ir en cualquier sitio y, además, las dependencias van en la última línea.
 
-Con todo, al final, hemos hecho nuestra primera llamada fetch. En la próxima clase vamos a ver cómo podemos listar los resultados, indicar si está cargando y muchas cosas más. [¡Sigue la conversación en Twitter!](https://twitter.com/intent/tweet?text=%22C%C3%B3mo%20crear%20componentes%20y%20gestionar%20el%20estado%20en%20Svelte%22%20por%20@midudev&url=https://midu.dev/componentes-y-estado-en-svelte/)
+Con todo, al final, hemos hecho nuestra primera llamada fetch. **En la próxima clase vamos a ver cómo podemos listar los resultados, indicar si está cargando y muchas cosas más.** [¡Sigue la conversación en Twitter!](https://twitter.com/intent/tweet?text=%22Declaraciones%20reactivas%20y%20fetching%20de%20datos%20con%20Svelte%20por%20@midudev&url=https://midu.dev/componentes-y-estado-en-svelte/)
