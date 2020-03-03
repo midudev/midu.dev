@@ -76,7 +76,7 @@ pre.highlight {
 .highlight .kp,
 .highlight .kr,
 .highlight .kt {
-  color: #c678dd;
+  color: #dc64ff;
 }
 .highlight .l,
 .highlight .ld,
@@ -90,12 +90,12 @@ pre.highlight {
 .highlight .sh,
 .highlight .si,
 .highlight .sx {
-  color: #98c379;
+  color: #8bdb51;
 }
 .highlight .nt,
 .highlight .nx,
 .highlight .vi {
-  color: #e06c75;
+  color: #fb6666;
 }
 .highlight .il,
 .highlight .m,
@@ -104,7 +104,7 @@ pre.highlight {
 .highlight .mi,
 .highlight .mo,
 .highlight .na {
-  color: #d19a66;
+  color: #e8e465;
 }
 .highlight .bp,
 .highlight .nb,
