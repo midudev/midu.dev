@@ -4,13 +4,12 @@
 <head>
   <meta charset="utf-8">
   <title>{{- .Title | default .Site.Title -}}</title>
+  <meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
+  <link rel="canonical" href="{{ .Permalink }}">
 
   {{ partial "head/preconnects.html" . }}
-
-  <link rel="canonical" href="{{ .Permalink }}">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   {{ $css := resources.Get "styles/global.css" }}
   {{ $style := $css | resources.Minify }}
@@ -26,7 +25,6 @@
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
 
-  <meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
   <meta property="og:url" content="{{.Permalink}}" />
 
   {{ if isset .Params "audio" }}
