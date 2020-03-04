@@ -385,8 +385,8 @@ twitter-widget {
 
 /** NEWSLETTER-FORM **/
 #newsletter-form {
+  border: 1px solid #09f;
   padding: 16px;
-  background: #ffffc4;
   border-radius: 4px;
   position: sticky;
   top: 100px;
