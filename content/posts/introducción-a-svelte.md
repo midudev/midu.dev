@@ -79,7 +79,7 @@ Ahora, si vieramos este Hola Mundo, veríamos que nos queda un poco soso en cuan
 ```
 
 Aquí puedes ver el código funcionando:
-<iframe src="https://codesandbox.io/embed/trusting-germain-2to2d?fontsize=14&module=%2FApp.svelte" title="trusting-germain-2to2d" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<iframe loading="lazy" src="https://codesandbox.io/embed/trusting-germain-2to2d?fontsize=14&module=%2FApp.svelte" title="trusting-germain-2to2d" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 ## ¿Y qué pasa con el estado?
 
