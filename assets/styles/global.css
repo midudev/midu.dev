@@ -5,7 +5,7 @@
   --fz-aside: 14px;
   --fz-section-title: 18px;
   --h-card-image: 200px;
-  --p-header-bottom: 48px;
+  --p-header-bottom: 16px;
   --p-separation: 48px;
 
   --p-u-center: 0 32px;
@@ -128,10 +128,12 @@ iframe {
 /** .header **/
 .header {
   align-items: center;
+  border-bottom: 1px solid #eee;
   display: flex;
   justify-content: space-between;
-  padding-bottom: var(--p-header-bottom);
+  margin-bottom: 32px;
   padding-top: 16px;
+  padding-bottom: var(--p-header-bottom);
 }
 
 .header a {
