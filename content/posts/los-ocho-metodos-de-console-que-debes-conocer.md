@@ -5,6 +5,8 @@ image: '/images/console-info-warn-error.png'
 description: La consola nos ofrece muchos métodos más además de console.log. Conoce los que quedan, que te ayudarán a mostrar mejores mensajes en la consola. warn, error, info, table, time, timeEnd, count y assert.
 topic: javascript
 language: 🇪🇸
+tags:
+- javascript
 ---
 
 Estamos muy habituados a usar `console.log` para depurar nuestro código pero... ¿sabías que `console` tiene más métodos para ayudarnos a mostrar información útil en consola?
