@@ -5,40 +5,36 @@
 
 <article id='article' itemscope itemtype="http://schema.org/Article">
   {{ if isset .Params "audio" }}
-  {{ partial "audio-player.html" . }}
-  {{ partial "podcast-subscribe.html" }}
+    {{ partial "audio-player.html" . }}
+    {{ partial "podcast-subscribe.html" }}
   {{ else }}
-  <header id='article-header'>
-    <picture>
-      <img alt='Imagen del artículo: {{ .Title }}' class='lazyload u-lazyload' src='{{ .Params.image }}' />
-    </picture>
-    <div class='article-header-meta'>
-      <h1 itemprop="name">
-        {{ .Title }}
-      </h1>
-      <div id='article-meta'>
-        {{ partial "article-meta.html" . }}
-      </div>
-      <p itemprop="description">
-        {{ .Params.description }}
-      </p>
-      {{ $taxonomy := "tags" }}
-      {{ with .Param $taxonomy }}
-      <div class='tags'>
-        {{ range $index, $tag := . }}
-          {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
-          <span class='tag' itemprop="about">{{ $tag }}</span>
-          {{- end -}}
-        {{- end -}}
-      </div>
-      {{ end }}
-    </div>
-  </header>
-
   {{ end }}
 
   <div id='article-content-wrapper'>
     <div id='article-content'>
+      {{ if isset .Params "audio" }}
+      {{ else }}
+        <header id='article-header'>
+          <picture>
+            {{ with .Param "tags" }}
+              {{ range first 1 . }}
+              <img alt='Imagen del artículo: {{ . }}' class='lazyload u-lazyload' src='/images/tags/{{.}}.png' />
+              {{ end }}
+            {{ end }}
+          </picture>
+          
+          <div class='article-header-meta'>
+            <h1 itemprop="name">
+              {{ .Title }}
+            </h1>
+            <div id='article-meta'>
+              {{ partial "article-meta.html" . }}
+            </div>
+          </div>
+
+        </header>
+      {{ end }}
+
       {{ .Content }}
 
         <div id='article-pagination'>

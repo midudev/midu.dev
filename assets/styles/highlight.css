@@ -27,7 +27,7 @@ code {
 }
 
 :not(pre) > code {
-  background: #fff8c3;
+  background: rgba(0,0,0,.06);
   border-radius: 2px;
   color: #1a1a1a;
   padding: 2px 4px 1px;
