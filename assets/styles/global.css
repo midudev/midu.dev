@@ -196,29 +196,16 @@ hr.section-separation {
 
 /** FOOTER **/
 footer {
-  min-height: 250px;
-  padding: 64px 0;
+  padding: 64px 0 16px;
 }
 
-footer section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+footer a {
+  color: #777;
+  margin-right: 16px;
 }
 
-footer div {
-  padding-left: 32px;
-  text-align: center;
-  line-height: 150%;
-  font-size: 14px;
-  font-weight: 500;
-  color: #444;
-  max-width: 500px;
-}
-
-footer img {
-  height: auto;
-  width: 100px;
+footer a:hover {
+  text-decoration: underline;
 }
 
 /** MAIN **/
@@ -435,7 +422,7 @@ twitter-widget {
 #article-header h1 {
   color: #111;
   font-size: 32px;
-  line-height: 40px;
+  line-height: 1;
   font-weight: 600;
 }
 
@@ -596,6 +583,7 @@ figure.left img {
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
+  line-height: 1.3;
   left: 0;
   margin-right: 5px;
   opacity: .7;
@@ -674,7 +662,6 @@ figure.left img {
   color: #444;
   cursor: pointer;
   display: flex;
-  line-height: 1.3;
   outline: 0;
   margin-left: -8px;
   padding: 8px;
@@ -764,6 +751,11 @@ figure.left img {
 
   #article-header {
     display: block !important;
+  }
+
+  #article-header picture, #article-header img {
+    height: 48px;
+    width: 48px;
   }
 }
 
