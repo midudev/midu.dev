@@ -2,40 +2,34 @@
   <style>
     #home-feed {
       flex: 1 1;
-      padding-bottom: 32px;
-    }
-
-    #home-feed > div {
-      align-items: start;
-      display: grid;
-      grid-gap: 1rem;
-      grid-template-columns: var(--gtc-home-feed);
-      justify-items: center;
       padding-right: var(--p-separation);
-      width: 100%;
     }
 
     #home-feed h2 {
-      color: rgba(0,0,0,.9);
-      font-size: 24px;
-      padding: 8px 0 4px;
+      color: #444;
+      font-size: 18px;
       font-weight: 600;
     }
 
+    #home-feed picture, #home-feed img {
+      width: 48px;
+      height: 48px;
+      margin-right: 16px;
+      object-fit: contain;
+    }
+
     #home-feed a {
+      align-content: center;
       border-radius: 4px;
-      font-size: 12px;
-      grid-column: span 1;
-      overflow: hidden;
-      padding: 8px 8px 16px;
-      position: relative;
-      transition: transform .3s ease;
+      display: flex;
+      margin-left: -8px;
+      margin-bottom: 8px;
+      padding: 8px;
       width: 100%;
     }
 
     #home-feed a:hover {
       background: #eee;
-      transform: scale(1.03);
     }
 
     #home-feed a:hover h2 {
@@ -46,38 +40,23 @@
       opacity: 1;
     }
 
-    #home-feed img {
-      backdrop-filter: none;
-      backface-visibility: hidden;
-      border-radius: 4px;
-      height: var(--h-card-image);
-      object-fit: cover;
-      width: 100%;
-    }
-
-    #home-feed p {
-      color: #555;
-      font-size: 14px;
-      opacity: 0;
-      line-height: 1.5;
-      font-weight: 500;
-      transition: opacity .3s ease;
-    }
-
     #home-feed .meta {
-      color: #333;
+      color: #777;
+      font-size: 12px;
       padding-top: 4px;
     }
 
     #pagination {
       display: flex;
       list-style: none;
-      justify-content: space-between;
+      justify-content: center;
       padding-top: 16px;
       padding-right: var(--p-separation);
+      padding-bottom: 48px;
     }
 
     #pagination a {
+      align-items: center;
       margin: 0;
       padding: 8px;
       color: #09f;
@@ -107,7 +86,8 @@
       border: solid currentColor;
       border-width: 0 2px 2px 0;
       display: inline-block;
-      padding: 3px;
+      margin: 0 4px;
+      padding: 4px;
       transform: rotate(135deg);
     }
 
@@ -117,22 +97,29 @@
 
   </style>
   <section id='home-feed'>
+    <h3 class='section-title'>Últimos artículos 📝</h3>
     {{ $paginator := .Paginate (where site.RegularPages "Type" "==" "posts") }}
-    <div>
       {{ range $paginator.Pages }}
       <a href="{{.Permalink}}">
-        <img alt="" class='u-lazyload' src='{{ .Params.image }}' loading='lazy' />
+        {{ with .Param "tags" }}
+          {{ range first 1 . }}
+            <picture>
+              <img alt='Imagen del artículo: {{ . }}' class='lazyload u-lazyload' src='/images/tags/{{.}}.png' />
+            </picture>
+          {{ end }}
+        {{ end }}
+        <div>
         <h2>{{ .Title }}</h2>
         <div class='meta'>
           <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
             {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
           </time>
-          / 
+          · 
           <span>{{.ReadingTime}} minutos de lectura</span>
+        </div>
         </div>
       </a>
       {{ end }}
-    </div>
 <!--
 //
 //  PAGE NUMBERS
@@ -156,33 +143,23 @@
 {{ if gt $paginator.TotalPages 1 }}
 
   <ul id="pagination">
-    <!-- First page.
-    {{ if ne $paginator.PageNumber 1 }}
-    <li>
-      <a href="{{ $paginator.First.URL }}">
-        <i></i><i></i>
-      </a>
-    </li>
-    {{ end }} -->
 
     <!-- Previous page. -->
+    {{ if $paginator.HasPrev }}
     <li>
-      {{ if $paginator.HasPrev }}
       <a href="{{ $paginator.Prev.URL }}">
         <i></i> artículos más recientes
       </a>
-      {{ end }}
     </li>
-  
+    {{ end }}
+
     <!-- Page numbers. -->
     {{ range $paginator.Pagers }}
     
       {{ $.Scratch.Set "page_number_flag" false }}
 
-      
       <!-- Advanced page numbers. -->
       {{ if gt $paginator.TotalPages $max_links }}
-
 
         <!-- Lower limit pages. -->
         <!-- If the user is on a page which is in the lower limit.  -->
@@ -193,7 +170,6 @@
             {{ $.Scratch.Set "page_number_flag" true }}
           {{ end }}
 
-
         <!-- Upper limit pages. -->
         <!-- If the user is on a page which is in the upper limit. -->
         {{ else if ge $paginator.PageNumber $upper_limit }}
@@ -202,7 +178,6 @@
           {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
             {{ $.Scratch.Set "page_number_flag" true }}
           {{ end }}
-
 
         <!-- Middle pages. -->
         {{ else }}
@@ -213,22 +188,12 @@
 
         {{ end }}
 
-      
       <!-- Simple page numbers. -->
       {{ else }}
 
         {{ $.Scratch.Set "page_number_flag" true }}
 
       {{ end }}
-
-      <!-- Output page numbers. -->
-      <!-- {{ if eq ($.Scratch.Get "page_number_flag") true }}
-        <li class="{{ if eq . $paginator }}is-current{{ end }}">
-          <a href="{{ .URL }}">
-            <span></span>
-          </a>
-        </li>
-      {{ end }} -->
 
     {{ end }}
 
@@ -240,15 +205,6 @@
       </a>
     </li>
     {{ end }}
-
-    <!-- Last page. -->
-    <!-- {{ if ne $paginator.PageNumber $paginator.TotalPages }}
-    <li>
-      <a href="{{ $paginator.Last.URL }}">
-        <i class='is-right'></i><i class='is-right'></i>
-      </a>
-    </li>
-    {{ end }} -->
 
   </ul><!-- .pagination -->
 {{ end }}

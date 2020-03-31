@@ -1,9 +1,11 @@
 ---
-title: React Hooks, useState. Añadiendo estado a nuestro componente funcional - II
+title: React hooks, cómo utilizar el hook useState
 date: '2019-02-07'
 image: '/images/react-hooks-use-state.png'
 description: Los componentes en React pueden tener un estado interno que determina cómo se debe renderizar. Con los hooks podremos crear componentes dinámicos e interactivos muy fácilmente.
 language: 🇪🇸
+tags:
+- react
 ---
 
 Como ya hemos visto en [la entrada anterior](http://midu.dev/react-hooks-introduccion-saca-todo-el-potencial-sin-class/), los hooks son funciones especiales que nos permiten acceder a las funcionalidades de React. En este artículo vamos a ver uno de los hooks más importantes `useState`, con el que **podremos añadir un estado interno a nuestros componentes para hacerlos dinámicos e interactivos.**
@@ -12,7 +14,7 @@ Como ya hemos visto en [la entrada anterior](http://midu.dev/react-hooks-introdu
 
 Para usar este hook, primero debemos importarlo desde la librería de React.
 
-```jsx
+```javascriptx
 import React, { useState } from 'react'
 ```
 
@@ -64,7 +66,7 @@ function Contador() {
 
 Como véis, hasta este punto, **ya se ve la ventaja y la claridad respecto a usar clases para tener un state en nuestro componente.** No necesitamos referirnos al contexto `this` para acceder al state, ni tenemos que inicializarlo como propiedad de nuestra clase porque, oh, tampoco necesitamos ninguna clase. **Aquí os lo dejo para que veáis vosotros mismo la diferencia.**
 
-```jsx
+```javascriptx
 import React, { Component } from 'react'
 
 class Contador extends Component {

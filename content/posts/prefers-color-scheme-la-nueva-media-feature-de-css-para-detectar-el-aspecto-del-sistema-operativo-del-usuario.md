@@ -4,7 +4,8 @@ description: 'Muy pronto vamos a poder usar una nueva media query llamada prefer
 image: '/images/DwbAZwlWkAAnZQx.jpg'
 language: 🇪🇸
 title: "prefers-color-scheme: La nueva media feature de CSS para detectar el tema del usuario"
-topic: css
+tags:
+- css
 ---
 
 

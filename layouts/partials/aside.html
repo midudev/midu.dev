@@ -1,28 +1,12 @@
 <aside id='aside'>
-  {{ if (.Params.description) }}
-  <div id='share'>
-    <h3 class='section-title'>Comparte el artículo 📡</h3>
-    <div>
-      <a target='_blank' rel='nofollow noopener' style='--bgc-link: rgb(37, 168, 224)' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>
-        {{ partial "icons/twitter.html" "white" }}
-      </a>
-      <a target='_blank' rel='nofollow noopener' style='--bgc-link: rgb(59, 90, 153)' href='https://facebook.com/sharer/sharer.php?u={{.Permalink}}'>
-        {{ partial "icons/facebook.html" "white" }}
-      </a>
-      <a target='_blank' rel='nofollow noopener' style='--bgc-link: rgb(13, 123, 183)' href='https://www.linkedin.com/shareArticle?mini=true&url={{.Permalink}}&title="{{ .Title }}" por @midudev'>
-        {{ partial "icons/linkedin.html" "white" }}
-      </a>
-    </div>
-  </div>
-  {{ end }}
-
   {{ if (.Params.toc) }}
-    <h3 class='section-title'>Contenido del artículo 🗒️</h3>
+    <h3 class='section-title'>Contenido del artículo</h3>
     {{.TableOfContents}}
+    <hr class='section-separation' />
   {{ end }}
 
   <h3 class='section-title youtube-title'>
-    Últimos vídeos 📹
+    Vídeos 📹
     {{ partial "buttons/youtube-subscribe-button.html"  }}
   </h3>
   {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=3&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
@@ -32,17 +16,18 @@
     <h4>{{ .snippet.title }}</h4>
   </a>
   {{ end }}
-  <br /><br />
-  <h3 class='section-title'>Últimos podcast 🎙</h3>
+  <hr class='section-separation' />
+  <h3 class='section-title'>Podcast 🎙</h3>
   {{ range first 5 (where .Site.Pages ".Params.category" "podcast") }}
   <a href='{{.Permalink}}'>
     <img alt="{{ .Title }}" class='u-lazyload lazyload' loading='lazy' src='{{ .Params.image }}' />
     <h4>{{ .Title }}</h4>
   </a>
   {{ end }}
-  <br /><br />
+  <hr class='section-separation' />
   <div id="newsletter-form">
-    <h3>¡Suscríbete a la newsletter! 📫</h3>
+    <svg viewBox="0 0 166.781 166.781"><path d="M163.451 70.046l-32.35-20.847c-.253-.161-.532-.222-.804-.312v-7.19c0-1.92-1.554-3.475-3.475-3.475H113.92L86.97 21.378c-1.126-.706-2.558-.706-3.685 0l-26.95 16.844H39.958c-1.92 0-3.475 1.554-3.475 3.475v7.188c-.272.09-.552.152-.804.314L3.329 70.046c-.991.641-1.592 1.741-1.592 2.921v90.339c0 1.92 1.554 3.475 3.475 3.475h156.356c1.92 0 3.475-1.554 3.475-3.475V72.968c0-1.181-.601-2.28-1.592-2.922zM85.128 28.423l15.681 9.799H69.447l15.681-9.799zM43.433 45.171h79.915v78.178c0 .01.006.018.006.029l-11.754 7.137-28.284-15.427c-1.055-.57-2.338-.567-3.386.034l-25.81 14.749-10.692-6.492c0-.01.006-.018.006-.028l-.001-78.18zM8.687 74.861l27.796-17.91v62.212L8.687 102.285V74.861zm0 35.551l38.537 23.397-38.537 22.022v-45.419zm7.002 49.421l66.005-37.715 69.145 37.715H15.689zm142.405-3.959L118.65 134.36l39.444-23.949v45.463zm0-53.589l-27.797 16.877V56.951l27.797 17.911v27.423z"/><path d="M57.331 79.917h41.695c1.92 0 3.475-1.554 3.475-3.475V55.595c0-1.92-1.554-3.475-3.475-3.475H57.331c-1.92 0-3.475 1.554-3.475 3.475v20.847c0 1.921 1.555 3.475 3.475 3.475zm3.474-20.848h34.746v13.898H60.805V59.069zM53.856 86.866h55.593v6.949H53.856zM53.856 100.765h55.593v6.949H53.856zM147.67 41.697c.889 0 1.778-.339 2.457-1.018l12.283-12.283c1.357-1.357 1.357-3.556 0-4.913-1.357-1.358-3.556-1.357-4.913 0l-12.283 12.283c-1.357 1.357-1.357 3.556 0 4.913.678.679 1.567 1.018 2.456 1.018zM16.654 40.679c.679.679 1.568 1.018 2.457 1.018.889 0 1.778-.339 2.457-1.018 1.357-1.357 1.357-3.556 0-4.913L9.284 23.483c-1.357-1.357-3.556-1.357-4.913 0-1.357 1.357-1.357 3.556 0 4.913l12.283 12.283zM118.584 24.076c.421.17.859.247 1.289.247 1.378 0 2.684-.825 3.227-2.185l6.949-17.373c.713-1.781-.156-3.804-1.937-4.516-1.764-.709-3.804.149-4.516 1.937l-6.949 17.373c-.713 1.782.155 3.805 1.937 4.517zM47.155 22.139c.543 1.361 1.849 2.185 3.227 2.185.431 0 .869-.078 1.289-.248 1.781-.713 2.65-2.735 1.937-4.516L46.659 2.187C45.946.399 43.911-.46 42.143.25c-1.781.713-2.65 2.735-1.937 4.516l6.949 17.373z"/></svg>
+    <h3>¡Suscríbete a la newsletter!</h3>
     <small>Recibirás artículos de calidad sobre frontend y todas las novedades en las que vaya trabajando. <strong>¡Nada
         de spam 🙅‍♂️!</strong></small>
     <form action="https://www.getrevue.co/profile/midudev/add_subscriber" method="post" name="revue-form"
@@ -50,8 +35,6 @@
       <div>
         <label for='aside-newsletter-email' class='u-none'>Correo electrónico</label>
         <input id='aside-newsletter-email' required class="input" placeholder="Tu correo electrónico *" type="email" name="member[email]">
-        <label for='aside-newsletter-name' class='u-none'>Nombre</label>
-        <input id='aside-newsletter-name' class="input" placeholder="Tu nombre (Opcional)" type="text" name="member[first_name]">
       </div>
       <input class='button' type="submit" value="✍️ ¡Me suscribo!" name="member[subscribe]" id="member_submit">
     </form>

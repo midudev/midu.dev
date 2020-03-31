@@ -5,6 +5,7 @@ image: '/images/uses.jpg'
 description: Comparto contigo el editor que uso para programar, mi tema, mi fuente favorita, la terminal que me sirve además de todas las apps de mi sistema operativo y todos los cachivaches que me ayudan en mi día a día.
 language: 🇪🇸
 tags:
+- me
 - mi setup
 ---
 

@@ -4,7 +4,7 @@ date: '2018-12-18'
 image: '/images/slr_one_line_one_thing-5395037.png'
 description: "Experience and knowledge could help you writing readable, mantainable and clean code but, following the Single Line Responsibility principle will help you to be sure you're doing it."
 language: 🇬🇧
-tags: ["buenas prácticas"]
+tags: ["best-practice", "buenas prácticas"]
 ---
 
 It is said that **is easier writing understandable code for computers than for humans. And who doesn't believe that?** No matter the name of your variables, code styling, or weird decisions that you could make that, if it compiles, the computer is going to do what it has to do. And that's cool as we are free to throw a bunch of spaghetti to our beloved machines and get the work done.
@@ -168,7 +168,7 @@ const { count = 0 } = realEstates
 
 ### It works for React components as well!
 
-```jsx
+```javascriptx
 // ❌ it's like the callback hell! 🔥
 render() {
   const {showCardSubscription} = this.state

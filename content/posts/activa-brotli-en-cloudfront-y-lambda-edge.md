@@ -1,5 +1,5 @@
 ---
-title: Activa Brotli en Express y en Cloudfront usando una Lambda@Edge
+title: Qué es Brotli y cómo activarlo en Express y Cloudfront usando Lambda@Edge
 date: '2020-01-23'
 image: '/images/brotli-express-cloudfront-lambda.png'
 description: '¿Quieres mejorar fácilmente el Time to First Byte de tu sitio? Brotli te permite mejorar el rendimiento de tu web sin hacer cambios en tu código. Aprende a usarlo en servidores Express o en Cloudfront con Amazon S3 y gana un tiempo precioso para tu usuario.'
@@ -7,7 +7,7 @@ topic: performance
 language: 🇪🇸
 toc: true
 tags:
-- performance ⚡
+- performance
 - rendimiento web
 - brotli
 - aws
