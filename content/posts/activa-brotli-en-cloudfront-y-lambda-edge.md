@@ -7,7 +7,7 @@ topic: performance
 language: 🇪🇸
 toc: true
 tags:
-- performance ⚡
+- performance
 - rendimiento web
 - brotli
 - aws

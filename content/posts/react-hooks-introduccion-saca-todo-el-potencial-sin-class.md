@@ -4,6 +4,8 @@ date: '2019-02-06'
 image: '/images/react-hooks.jpeg'
 description: Con la nueva característica de React, llamada Hooks, podremos utilizar los componentes funcionales para sacar todo el potencial a la librería. Algo que, hasta hace poco, sólo era posible con las clases.
 language: 🇪🇸
+tags:
+- react
 ---
 
 [¡Ya está disponible React 16.8.0, la versión que trae los Hooks!](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html). Y, para celebrarlo, voy a iniciar una serie de artículos y [vídeos que iré publicando en mi canal de YouTube](https://www.youtube.com/c/midudev?sub_confirmation=1) con los que espero **cubrir todo sobre esta nueva API de React que promete permitirnos olvidarnos de usar clases para crear componentes en React.** En esta primera entrega vamos a ver un primer ejemplo, muy sencillo, para dotar de estado a un componente funcional (creado con una `function`) usando el hook `useState`. Pero antes...
@@ -16,7 +18,7 @@ language: 🇪🇸
 
 Para que veamos en qué consisten vamos a ver cómo, hasta ahora, podíamos crear un componente Contador que tenía un estado interno que, al hacer click en un botón, se actualizaba y mostraba el número de veces que habíamos pulsado el botón. Todo esto creando un componente con `class`.
 
-```jsx
+```javascriptx
 import React, { Component } from 'react'
 
 class Contador extends Component {
@@ -97,7 +99,7 @@ Más tarde, **llegaron los HoC (High Order Componentes)** (puedes descubrir el p
 
 Después, [llegaron las Render Props](https://reactjs.org/docs/render-props.html). Lo que las render props buscaban era acabar con la magia oculta de los HoC y llevar esa funcionalidad al terreno declarativo. **La idea es muy buena, y se han visto muy buenas ideas al respecto como [la API de React Apollo](https://www.apollographql.com/docs/react/essentials/queries.html#manual-query).** Funciona muy bien especialmente cuando sólo necesitas un componente que proporcione Render Props pero, al concatenar uno tras otro, [se puede convertir en el Render Props Hell.](http://callbackhell.com/)
 
-```jsx
+```javascriptx
 class Mouse extends React.Component {
   state = { x: 0, y: 0 }
 

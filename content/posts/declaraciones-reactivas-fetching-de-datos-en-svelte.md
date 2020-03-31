@@ -96,7 +96,7 @@ Además, **podemos añadir tantas declaraciones reactivas como queramos.** Por e
 
 Las declaraciones reactivas pueden tener **cláusulas de entrada** por lo que podemos escribirlo de una manera todavía más limpia para conseguir el mismo resultado.
 
-```js
+```javascript
  $: if (counter > 9) {
   counter = 9
  }
@@ -127,7 +127,7 @@ Dos cosas a decir sobre este componente. Primero, que **en Svelte existe una mej
 
 Ahora, utilizando una declaración reactiva, podríamos hacer el fetching de datos con el texto a buscar. Lo vamos a hacer utilizando la **API de OMDB**, para buscar películas. [**Podéis conseguir una API KEY muy fácilmente desde su página web.**](https://www.omdbapi.com/apikey.aspx) El endpoint es este:
 
-```js
+```javascript
 `https://www.omdbapi.com/?s=${textoABuscar}&apikey=${apiKey}`
 ```
 
@@ -153,7 +153,7 @@ Así que vamos a añadir la declaración reactiva que se ejecutará cada vez que
 
 Ahora... esto no sólo se ejecuta cada vez que cambiamos el texto en la caja... Como habíamos visto anteriromente, también se ejecuta la primera vez que se monta el componente. **Para solucionar esto deberíamos ponerle alguna cláusula de entrada a la declaración reactiva.** La primera que se nos ocurre es la de **evitar que haga una llamada a la API con un string vacío.**
 
-```js
+```javascript
 $: if (value !== '') {
   fetch(`https://www.omdbapi.com/?s=${value}&apikey=422350ff`)
     .then(response => response.json())

@@ -1,7 +1,6 @@
 code,
 pre {
-  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New,
-    monospace;
+  font-family: Consolas, Menlo, Monaco, source-code-pro, monospace;
   hyphens: none;
   line-height: 1.5;
   overflow: auto;
@@ -23,11 +22,11 @@ pre {
 }
 
 code {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 :not(pre) > code {
-  background: #fff8c3;
+  background: rgba(0,0,0,.06);
   border-radius: 2px;
   color: #1a1a1a;
   padding: 2px 4px 1px;
@@ -37,7 +36,7 @@ code {
 .highlight,
 pre.highlight {
   border-radius: 4px;
-  max-width: 600px;
+  max-width: 800px;
   margin: 48px auto;
 }
 
@@ -193,7 +192,6 @@ pre.highlight {
   border-radius: 4px;
   color: rgba(0, 0, 0, .7);
   content: attr(data-lang);
-  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
   font-size: 12px;
   padding: 2px 8px;
   position: absolute;
