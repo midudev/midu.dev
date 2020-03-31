@@ -151,8 +151,8 @@ iframe {
 
 
 #nav a:hover {
-  background: #fafafa;
-  color: #09f;
+  background: #eee;
+  color: #000;
   border-radius: 6px;
 }
 
@@ -183,7 +183,7 @@ hr.section-separation {
 
 /** FOOTER **/
 footer {
-  padding: 64px 0 16px;
+  padding: 64px 0 64px;
 }
 
 footer a {
@@ -192,7 +192,7 @@ footer a {
 }
 
 footer a:hover {
-  text-decoration: underline;
+  color: #333;
 }
 
 /** MAIN **/
@@ -205,13 +205,16 @@ twitter-widget {
   padding-bottom: 16px;
 }
 
+#article {
+  padding-right: var(--p-separation);
+}
+
 #article-content-wrapper {
   display: flex;
 }
 
 #article-content {
   flex: 1 1;
-  padding-right: var(--p-separation);
   padding-bottom: 32px;
 }
 
@@ -442,11 +445,13 @@ twitter-widget {
   color: #000;
   font-weight: 600;
   opacity: .7;
+  border: 0;
 }
 
 #article-meta a:hover {
-  color: #09f;
+  background: transparent;
   opacity: 1;
+  text-decoration: underline;
 }
 
 #article-meta > * {
@@ -474,14 +479,16 @@ twitter-widget {
 }
 
 #article-pagination a {
+  align-items: center;
+  border-radius: 6px;
+  border: 0;
   color: #09f;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 8px 16px;
   margin: 16px;
   max-width: 300px;
+  padding: 8px 16px;
 }
 
 #article-pagination a:hover, #article-pagination a:focus {
