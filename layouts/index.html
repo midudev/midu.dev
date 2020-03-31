@@ -49,12 +49,13 @@
     #pagination {
       display: flex;
       list-style: none;
-      justify-content: space-between;
+      justify-content: center;
       padding-top: 16px;
       padding-right: var(--p-separation);
     }
 
     #pagination a {
+      align-items: center;
       margin: 0;
       padding: 8px;
       color: #09f;
@@ -84,7 +85,8 @@
       border: solid currentColor;
       border-width: 0 2px 2px 0;
       display: inline-block;
-      padding: 3px;
+      margin: 0 4px;
+      padding: 4px;
       transform: rotate(135deg);
     }
 
@@ -140,33 +142,23 @@
 {{ if gt $paginator.TotalPages 1 }}
 
   <ul id="pagination">
-    <!-- First page.
-    {{ if ne $paginator.PageNumber 1 }}
-    <li>
-      <a href="{{ $paginator.First.URL }}">
-        <i></i><i></i>
-      </a>
-    </li>
-    {{ end }} -->
 
     <!-- Previous page. -->
+    {{ if $paginator.HasPrev }}
     <li>
-      {{ if $paginator.HasPrev }}
       <a href="{{ $paginator.Prev.URL }}">
         <i></i> artículos más recientes
       </a>
-      {{ end }}
     </li>
-  
+    {{ end }}
+
     <!-- Page numbers. -->
     {{ range $paginator.Pagers }}
     
       {{ $.Scratch.Set "page_number_flag" false }}
 
-      
       <!-- Advanced page numbers. -->
       {{ if gt $paginator.TotalPages $max_links }}
-
 
         <!-- Lower limit pages. -->
         <!-- If the user is on a page which is in the lower limit.  -->
@@ -177,7 +169,6 @@
             {{ $.Scratch.Set "page_number_flag" true }}
           {{ end }}
 
-
         <!-- Upper limit pages. -->
         <!-- If the user is on a page which is in the upper limit. -->
         {{ else if ge $paginator.PageNumber $upper_limit }}
@@ -186,7 +177,6 @@
           {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
             {{ $.Scratch.Set "page_number_flag" true }}
           {{ end }}
-
 
         <!-- Middle pages. -->
         {{ else }}
@@ -197,22 +187,12 @@
 
         {{ end }}
 
-      
       <!-- Simple page numbers. -->
       {{ else }}
 
         {{ $.Scratch.Set "page_number_flag" true }}
 
       {{ end }}
-
-      <!-- Output page numbers. -->
-      <!-- {{ if eq ($.Scratch.Get "page_number_flag") true }}
-        <li class="{{ if eq . $paginator }}is-current{{ end }}">
-          <a href="{{ .URL }}">
-            <span></span>
-          </a>
-        </li>
-      {{ end }} -->
 
     {{ end }}
 
@@ -224,15 +204,6 @@
       </a>
     </li>
     {{ end }}
-
-    <!-- Last page. -->
-    <!-- {{ if ne $paginator.PageNumber $paginator.TotalPages }}
-    <li>
-      <a href="{{ $paginator.Last.URL }}">
-        <i class='is-right'></i><i class='is-right'></i>
-      </a>
-    </li>
-    {{ end }} -->
 
   </ul><!-- .pagination -->
 {{ end }}
