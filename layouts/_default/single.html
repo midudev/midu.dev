@@ -15,14 +15,13 @@
       {{ if isset .Params "audio" }}
       {{ else }}
         <header id='article-header'>
-          <picture>
-            {{ with .Param "tags" }}
-              {{ range first 1 . }}
+          {{ with .Param "tags" }}
+            {{ range first 1 . }}
+            <picture>
               <img alt='Imagen del artículo: {{ . }}' class='lazyload u-lazyload' src='/images/tags/{{.}}.png' />
-              {{ end }}
+            </picture>
             {{ end }}
-          </picture>
-          
+          {{ end }}
           <div class='article-header-meta'>
             <h1 itemprop="name">
               {{ .Title }}

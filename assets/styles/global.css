@@ -9,7 +9,6 @@
   --p-separation: 96px;
 
   --p-u-center: 0 32px;
-  --gtc-home-feed: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 html {
@@ -290,10 +289,14 @@ twitter-widget {
   opacity: 1;
 }
 
-.youtube-container,
 #article iframe {
   margin-bottom: 16px;
 }
+
+.youtube-iframe, .highlight {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3)
+}
+
 
 /** HEADER **/
 #logo {
@@ -727,7 +730,6 @@ figure.left img {
   :root {
     --p-separation: 0;
     --w-aside: 100%;
-    --gtc-home-feed: repeat(auto-fill, minmax(310px, 1fr));
   }
 
   main, #article-content-wrapper {
