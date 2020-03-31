@@ -121,3 +121,18 @@ class LiteYTEmbed extends HTMLElement {
 }
 // Register custome element
 customElements.define('lite-youtube', LiteYTEmbed);
+
+// Show share only when needed
+var intersectionObserverOptions = {
+    rootMargin: '0px',
+    threshold: 1.0
+}
+
+var onIntersect = function (entries, observer) {
+    const [entry] = entries
+    const hide = entry.boundingClientRect.top <= 0 || entry.isIntersecting
+    document.getElementById('share').classList.toggle('u-none', hide)
+}
+  
+var observer = new IntersectionObserver(onIntersect, intersectionObserverOptions)
+observer.observe(document.getElementById('article-pagination'))
