@@ -168,7 +168,7 @@ const { count = 0 } = realEstates
 
 ### It works for React components as well!
 
-```javascriptx
+```javascript
 // ❌ it's like the callback hell! 🔥
 render() {
   const {showCardSubscription} = this.state

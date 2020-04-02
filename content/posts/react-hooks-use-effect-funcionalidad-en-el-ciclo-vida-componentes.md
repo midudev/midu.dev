@@ -19,7 +19,7 @@ Con los hooks también podremos acceder a esa ciclo de vida en nuestros componen
 
 Para usar este hook, primero debemos importarlo desde la librería de React.
 
-```javascriptx
+```jsx
 import React, { useEffect } from 'react'
 ```
 
@@ -39,7 +39,7 @@ function Example() {
 
 Esto hará que se muestre en consola el mensaje `render!` después que el componente se renderice por primera vez. Por si te lo estás preguntando, en este ejemplo, el método `useEffect` ha funcionado de forma similar a como lo hubiera hecho el ciclo de vida `componentDidMount`:
 
-```javascriptx
+```jsx
 import React, { Component } from 'react'
 
 class Example extends Component {
@@ -57,7 +57,7 @@ class Example extends Component {
 
 Ahora que ya hemos usado `useEffect` vamos a utilizarlo junto con [el hook `useState` que ya conocemos.](https://midu.dev/react-hooks-use-state-anadiendo-estado-a-nuestro-componente-funcional/#article-content). Para ello, vamos a recuperar el ejemplo del Contador pero vamos a hacer que, cada vez que se vaya a renderizar de nuevo el componente, actualice el título de la página con un mensaje indicando el número de veces que hemos hecho click en el botón. **Para ello tendremos que leer el valor actual del estado interno de nuestro componente de la siguiente forma**:
 
-```javascriptx
+```jsx
 import React, { useEffect, useState } from 'react'
 
 function Contador() {
@@ -89,7 +89,7 @@ Para seguir con las comparaciones con las clases, en este ejemplo nuestro `useEf
 
 Otro caso de uso muy típico de `useEffect` será para suscribirnos a eventos del DOM. Por ejemplo, puede ser útil para suscribirte al evento de scroll, o el de Intersection Observer para crear fácilmente un componente que sirva de Lazy Load... o simplemente para escuchar el evento `resize` del window como en el siguiente ejemplo:
 
-```javascriptx
+```jsx
 import React, { useEffect, useState } from "react";
 
 function ShowWindowWidth() {
@@ -170,7 +170,7 @@ Vamos a verlo con un ejemplo. Imaginemos que queremos escribir un componente que
 
 En un primer momento, estaríamos tentados a hacer algo así:
 
-```javascriptx
+```jsx
 // 🚫 ESTE COMPONENTE NO FUNCIONA CORRECTAMENTE!
 function PokemonInfo({ name = "pikachu" }) {
   const [pokemonInfo, setPokemonInfo] = useState(null)

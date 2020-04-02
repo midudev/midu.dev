@@ -14,7 +14,7 @@ Como ya hemos visto en [la entrada anterior](http://midu.dev/react-hooks-introdu
 
 Para usar este hook, primero debemos importarlo desde la librería de React.
 
-```javascriptx
+```jsx
 import React, { useState } from 'react'
 ```
 
@@ -66,7 +66,7 @@ function Contador() {
 
 Como véis, hasta este punto, **ya se ve la ventaja y la claridad respecto a usar clases para tener un state en nuestro componente.** No necesitamos referirnos al contexto `this` para acceder al state, ni tenemos que inicializarlo como propiedad de nuestra clase porque, oh, tampoco necesitamos ninguna clase. **Aquí os lo dejo para que veáis vosotros mismo la diferencia.**
 
-```javascriptx
+```jsx
 import React, { Component } from 'react'
 
 class Contador extends Component {
