@@ -1,0 +1,168 @@
+{{ define "main" }}
+  <style>
+    #home-feed {
+      flex: 1 1;
+      padding-right: var(--p-separation);
+    }
+
+    .home-article h2 {
+      color: #444;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .home-article picture, .home-article img {
+      width: 48px;
+      height: 48px;
+      margin-right: 24px;
+      object-fit: contain;
+      margin-left: 4px;
+      transition: transform .3s ease;
+    }
+
+    .home-article {
+      align-items: center;
+      border-radius: 4px;
+      display: flex;
+      margin-left: -8px;
+      margin-bottom: 8px;
+      padding: 8px;
+    }
+
+    .home-article:hover {
+      background: #eee;
+    }
+
+    .home-article:hover img {
+      transform: scale(1.15)
+    }
+
+    .home-article:hover h2 {
+      color: #0000EE;
+    }
+
+    .home-article .meta {
+      color: #777;
+      font-size: 12px;
+      padding-top: 4px;
+    }
+
+    #pagination {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      padding-top: 16px;
+      padding-right: var(--p-separation);
+      padding-bottom: 48px;
+    }
+
+    #pagination a {
+      align-items: center;
+      margin: 0;
+      padding: 8px;
+      color: #09f;
+      font-weight: bold;
+    }
+
+    #pagination span {
+      display: inline-block;
+      position: relative;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #333;
+      margin-right: 3px;
+    }
+
+    #pagination .is-current {
+      pointer-events: none;
+    }
+
+    #pagination .is-current span {
+      width: 25px;
+      border-radius: 5px;
+    }
+
+    #pagination i {
+      border: solid currentColor;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      margin: 0 4px;
+      padding: 4px;
+      transform: rotate(135deg);
+    }
+
+    #pagination i.is-right {
+      transform: rotate(-45deg);
+    }
+
+    #topics {
+      display: grid;
+      grid-gap: 32px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      overflow: auto;
+      padding: 16px 32px 48px 16px;
+      margin: 0 -16px;
+    }
+
+    .topic {
+      background: var(--bgc-topic);
+      border-radius: 6px;
+      box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(100,110,140,.4);
+      color: var(--c-topic);
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      place-items: center;
+    }
+
+    .topic:hover {
+      filter: contrast(1.15);
+    }
+
+    .topic:hover img {
+      transform: scale(1.1);
+    }
+
+    .topic picture {
+      background: #fff;
+      border-radius: 50%;
+      padding: 16px;
+      margin-bottom: 8px;
+    }
+
+    .topic img {
+      object-fit: contain;
+      height: 48px;
+      width: 48px;
+    }
+  </style>
+  <section id='home-feed'>
+    <h2 class='section-title'>Artículos sobre <em>{{ .Params.heading }}</em></h2>
+    <p class='section-description'>{{ .Params.description }}</p>
+    <br />
+    {{ range .Pages }}
+      <a class='home-article' href="{{.Permalink}}">
+        {{ with .Param "tags" }}
+          {{ range first 1 . }}
+            <picture>
+              <img alt='Imagen del artículo: {{ . }}' class='lazyload u-lazyload' src='/images/tags/{{.}}.png' />
+            </picture>
+          {{ end }}
+        {{ end }}
+        <div>
+        <h2>{{ .Title }}</h2>
+        <div class='meta'>
+          <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
+            {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
+          </time>
+          · 
+          <span>{{.ReadingTime}} minutos de lectura</span>
+        </div>
+        </div>
+      </a>
+      {{ end }}
+
+  </section>
+  {{ partial "aside.html" . }}
+{{ end }}
