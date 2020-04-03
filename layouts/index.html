@@ -5,42 +5,43 @@
       padding-right: var(--p-separation);
     }
 
-    #home-feed h2 {
+    .home-article h2 {
       color: #444;
       font-size: 18px;
       font-weight: 600;
     }
 
-    #home-feed picture, #home-feed img {
+    .home-article picture, .home-article img {
       width: 48px;
       height: 48px;
-      margin-right: 16px;
+      margin-right: 24px;
       object-fit: contain;
+      margin-left: 4px;
+      transition: transform .3s ease;
     }
 
-    #home-feed a {
-      align-content: center;
+    .home-article {
+      align-items: center;
       border-radius: 4px;
       display: flex;
       margin-left: -8px;
       margin-bottom: 8px;
       padding: 8px;
-      width: 100%;
     }
 
-    #home-feed a:hover {
+    .home-article:hover {
       background: #eee;
     }
 
-    #home-feed a:hover h2 {
+    .home-article:hover img {
+      transform: scale(1.15)
+    }
+
+    .home-article:hover h2 {
       color: #0000EE;
     }
 
-    #home-feed a:hover p {
-      opacity: 1;
-    }
-
-    #home-feed .meta {
+    .home-article .meta {
       color: #777;
       font-size: 12px;
       padding-top: 4px;
@@ -95,12 +96,52 @@
       transform: rotate(-45deg);
     }
 
+    #topics {
+      display: grid;
+      grid-gap: 32px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      overflow: auto;
+      padding: 16px 32px 48px 16px;
+      margin: 0 -16px;
+    }
+
+    .topic {
+      background: var(--bgc-topic);
+      border-radius: 6px;
+      box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(100,110,140,.4);
+      color: var(--c-topic);
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      place-items: center;
+    }
+
+    .topic:hover {
+      filter: contrast(1.15);
+    }
+
+    .topic:hover img {
+      transform: scale(1.1);
+    }
+
+    .topic picture {
+      background: #fff;
+      border-radius: 50%;
+      padding: 16px;
+      margin-bottom: 8px;
+    }
+
+    .topic img {
+      object-fit: contain;
+      height: 48px;
+      width: 48px;
+    }
   </style>
   <section id='home-feed'>
     <h3 class='section-title'>Últimos artículos 📝</h3>
     {{ $paginator := .Paginate (where site.RegularPages "Type" "==" "posts") }}
       {{ range $paginator.Pages }}
-      <a href="{{.Permalink}}">
+      <a class='home-article' href="{{.Permalink}}">
         {{ with .Param "tags" }}
           {{ range first 1 . }}
             <picture>
@@ -207,7 +248,55 @@
     {{ end }}
 
   </ul><!-- .pagination -->
-{{ end }}
+  {{ end }}
+
+  <h3 class="section-title">Todos los temas 👨‍💻</h3>
+  <div id='topics'>
+    <a href='/tags/react' class='topic' style='--bgc-topic:#5edaf9'>
+      <picture>
+        <img alt='react' class='lazyload u-lazyload' src='/images/tags/react.png' />
+      </picture>
+      <h4>React</h4>
+    </a>
+    <a href='/tags/javascript' class='topic' style='--bgc-topic:#efda4c'>
+      <picture>
+        <img alt='javascript' class='lazyload u-lazyload' src='/images/tags/javascript.png' />
+      </picture>
+      <h4>Javascript</h4>
+    </a>
+    <a href='/tags/svelte' class='topic' style='--bgc-topic:#fd3900; --c-topic: #fff'>
+      <picture>
+        <img alt='svelte' class='lazyload u-lazyload' src='/images/tags/svelte.png' />
+      </picture>
+      <h4>Svelte</h4>
+    </a>
+    <a href='/tags/performance' class='topic' style='--bgc-topic:#fcc116; --c-topic: #fff'>
+      <picture>
+        <img alt='performance' class='lazyload u-lazyload' src='/images/tags/performance.png' />
+      </picture>
+      <h4>Web Perf</h4>
+    </a>
+    <a href='/tags/css' class='topic' style='--bgc-topic: #0f72b7; --c-topic: #fff'>
+      <picture>
+        <img alt='css' class='lazyload u-lazyload' src='/images/tags/css.png' />
+      </picture>
+      <h4>CSS</h4>
+    </a>
+    <a href='/tags/terminal' class='topic' style='--bgc-topic: #000; --c-topic: #fff'>
+      <picture>
+        <img alt='terminal' class='lazyload u-lazyload' src='/images/tags/terminal.png' />
+      </picture>
+      <h4>Terminal</h4>
+    </a>
+    <!--
+    <a href='/tags/graphql' class='topic' style='--bgc-topic: #e434a9; --c-topic: #fff'>
+      <picture>
+        <img alt='graphql' class='lazyload u-lazyload' src='/images/tags/graphql.png' />
+      </picture>
+      <h4>GraphQL</h4>
+    </a>
+    -->
+  </div>
   </section>
   {{ partial "aside.html" . }}
 {{ end }}
