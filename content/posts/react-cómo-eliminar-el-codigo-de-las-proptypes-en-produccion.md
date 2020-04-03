@@ -71,7 +71,7 @@ Como ves, el `import` de las `prop-types` no ha desaparecido y es que, por defec
 
 Normalmente esto es suficiente pero, si quieres, puedes seguir leyendo para conocer más opciones que tiene el plugin para afinar su  funcionamiento.
 
-### Más opciones de `transform-react-remove-prop-types`
+### Más opciones de `transform-react-remove-prop-types`
 
 A veces queremos mantener las PropTypes porque, por ejemplo, en realidad es un componente que vamos a publicar y, por lo tanto, no vamos a consumirlo nada más compilarlo. Piensa en, por ejemplo, un componente que tengas en GitHub y quieras que otra persone use. Si lo publicas sin PropTypes, de alguna forma, estás quitándole funcionalidad muy útil.
 
