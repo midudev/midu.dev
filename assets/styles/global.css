@@ -7,8 +7,8 @@
   --h-card-image: 200px;
   --p-header-bottom: 16px;
   --p-separation: 96px;
-
   --p-u-center: 0 32px;
+  --c-topic: #000;
 }
 
 html {
@@ -94,7 +94,7 @@ iframe {
 }
 
 .u-lazyload {
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-name: lazyload;
 }
 
@@ -122,6 +122,12 @@ iframe {
   font-weight: 500;
   font-size: var(--fz-section-title);
   padding-bottom: 8px;
+}
+
+.section-description {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 /** .header **/
@@ -694,8 +700,10 @@ figure.left img {
 /** END ASIDE **/
 #share {
   bottom: 16px;
+  left: 0;
   display: flex;
   position: fixed;
+  right: 0;
   width: 100%;
 }
 

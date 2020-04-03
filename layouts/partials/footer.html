@@ -21,11 +21,3 @@
     </a>
   </section>
 </footer>
-
-{{ if (.Params.description) }}
-<div id='share'>
-  <a target='_blank' rel='nofollow noopener' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>Comparte el artículo
-    {{ partial "icons/twitter.html" }}
-  </a>
-</div>
-{{ end }}
