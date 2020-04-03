@@ -60,14 +60,30 @@ Ahora, sólo nos quedaría configurar nuestro `.babelrc` de forma que nos asegur
 }
 ```
 
+Y, para ver la diferencia, os dejo con el código antes y después de utilizar este plugin:
+
+```javascript
+import PropTypes from 'prop-types';
+const Component = props => { //... }
+```
+
+Como ves, el `import` de las `prop-types` no ha desaparecido y es que, por defecto, este es el comportamiento del plugin que deja el import de la librería. Lo hace porque, es posible, que algunos componentes usen directamente la librería para otro tipo de cosas y que el plugin no lo haya detectado.
+
+Normalmente esto es suficiente pero, si quieres, puedes seguir leyendo para conocer más opciones que tiene el plugin para afinar su  funcionamiento.
+
+### Más opciones de `transform-react-remove-prop-types`
+
+A veces queremos mantener las PropTypes porque, por ejemplo, en realidad es un componente que vamos a publicar y, por lo tanto, no vamos a consumirlo nada más compilarlo. Piensa en, por ejemplo, un componente que tengas en GitHub y quieras que otra persone use. Si lo publicas sin PropTypes, de alguna forma, estás quitándole funcionalidad muy útil.
+
+Para arreglar esto, existe una opción llamada `mode` donde puedes usar el valor `wrap`. Por defecto el valor es `remove`, que las elimina, pero usando `wrap` conseguiremos mantenerlas y que se envuelvan en un condicional que si el `NODE_ENV` es `production` no se evaluen.
+
 ```json
 {
   "env": {
     "production": {
       "plugins": [
         ["transform-react-remove-prop-types", {
-          "mode": "wrap",
-          "ignoreFilenames": ["node_modules"]
+          "mode": "wrap"
         }]
       ]
     }
@@ -75,5 +91,57 @@ Ahora, sólo nos quedaría configurar nuestro `.babelrc` de forma que nos asegur
 }
 ```
 
+Y, al compilar, quedarían así:
 
+```javascript
+import PropTypes from 'prop-types';
 
+const Component = props => { //... }
+
+if (process.env.NODE_ENV !== "production") {
+  Component.propTypes = {
+    results: PropTypes.array.isRequired,
+    isReady: PropTypes.bool,
+    onChange: PropTypes.func,
+    numOfResults: PropTypes.number,
+  }
+}
+```
+
+Seguramente te estés preguntando... **¿No estamos en realidad añadiendo más código?** Sí y no. Te explico. Por un lado, esto hará que el código funcione correctamente en entornos que no sean de producción y, por lo tanto, si no usamos las *PropTypes* que el componente espera, al menos en desarrollo, veremos una advertencia en la consola.
+
+**¿Y en producción?** Si llevamos este código tal cúal el código no se evalua pero sí seguirá allí. Sin embargo si usas ciertas herramientas como *Webpack*, *Rollup* o *Uglify*, este código será eliminado ya que mirará estáticamente el valor de `NODE_ENV`  y cambiará la condición a su valor. Si la condición nunca se cumple, entonces elimina el código. 👇
+
+```javascript
+// primera pasada con NODE_ENV = 'production'
+import PropTypes from 'prop-types';
+
+const Component = props => { //... }
+
+if (false) { // evalua la condición interna y lo cambia por su valor
+  Component.propTypes = {
+    results: PropTypes.array.isRequired,
+    isReady: PropTypes.bool,
+    onChange: PropTypes.func,
+    numOfResults: PropTypes.number,
+  }
+}
+```
+
+```javascript
+// segunda pasada
+import PropTypes from 'prop-types';
+const Component = props => { //... }
+
+// se elimina el código porque es una "rama muerta"
+```
+
+Esta no es la única opción interesante que tiene. Por ejemplo, puedes forzar a eliminar el import de la librería `prop-types` usando la opción `removeImport: true`.
+
+### Conclusiones
+
+Con este artículo espero haberte ayudado a conocer una forma de eliminar las PropTypes de tu código de producción. Esta en concreto nos funciona en producción en mi empresa sin ningún problema pero puede existir algún problema si estás usando la librería `prop-types` para algo que no es su uso esperado. Sólo tenlo en cuenta y **pruébalo en tus aplicaciones antes de llevarlo a producción.** Pero eh, ¡Eso no creo que hiciera falta que te lo dijese! 😜
+
+### Referencias
+
+[babel-plugin-transform-react-remove-prop-types](https://www.npmjs.com/package/babel-plugin-transform-react-remove-prop-types)
