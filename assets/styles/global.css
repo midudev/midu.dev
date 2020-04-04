@@ -210,7 +210,9 @@ svg {
   background: #fdffb7;
   border-radius: 6px;
   padding: 16px;
+  margin-top: 48px;
   margin-bottom: 32px;
+  box-shadow: 0 20px 20px rgba(100, 100, 100, .1);
 }
 
 #article-content blockquote p {
