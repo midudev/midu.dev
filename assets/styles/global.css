@@ -207,14 +207,17 @@ svg {
 }
 
 #article-content blockquote {
-  border-left: 5px solid #dfe2e5;
-  padding: 0 16px;
+  background: #fdffb7;
+  border-radius: 6px;
+  padding: 16px;
   margin-bottom: 32px;
 }
 
 #article-content blockquote p {
-  color: #555;
-  padding-bottom: 0;
+  color: #000;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 #article-content p,

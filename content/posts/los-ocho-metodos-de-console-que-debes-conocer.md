@@ -91,7 +91,7 @@ El último método que quiero compartir contigo es bastante peculiar. ¿Te imagi
 
 Como ves, como **primer parámetro recibe la aserción** que quieres comprobar y como **segundo parámetro puedes pasar toda la información que quieres mostrar si no se cumple** la condición. **¡Ten en cuenta que si la condición se cumple no aparecerá nada en la consola!**
 
-> ⚠️ Mucho cuidado con `console.assert`. Para empezar, no es parte del estándard... y, por ello, su implementación es diferente dependiendo del navegador o la plataforma. Por ejemplo, en los navegadores si le pasamos una afirmación que no cumple, mostrará el `message` en consola mientras que en `node.js` si le pasamos una aserción que no se cumple... ¡dará un pete con `AssertionError`.
+> ⚠️ Mucho cuidado con `console.assert`. Para empezar, no es parte del estándar... y, por ello, su implementación es diferente dependiendo del navegador o la plataforma. Por ejemplo, en los navegadores si le pasamos una afirmación que no cumple, mostrará el `message` en consola mientras que en `node.js` si le pasamos una aserción que no se cumple... ¡dará un pete con `AssertionError`.
 
 ## Conclusiones
 
