@@ -61,6 +61,37 @@
 </article>
 
 {{ if (.Params.description) }}
+<style>
+  #share {
+  bottom: 16px;
+  left: 0;
+  display: flex;
+  position: fixed;
+  right: 0;
+  width: 100%;
+}
+
+#share a {
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: rgba(100,110,140,.4) 0px 6px 21px 2px;
+  bottom: 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 auto;
+  padding: 8px 16px;
+  text-align: center;
+}
+
+#share a:hover {
+  background: rgb(220, 241, 255);
+}
+
+#share svg {
+  margin-left: 4px;
+}
+</style>
 <div id='share'>
   <a target='_blank' rel='nofollow noopener' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>Comparte el artículo
     {{ partial "icons/twitter.html" }}
