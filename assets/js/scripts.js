@@ -45,11 +45,11 @@
                 "x" +
                 (a.visualViewport || {}).height
               : void 0,
-          ec: s || void 0,
-          ea: t || void 0,
-          el: u || void 0,
-          ev: v || void 0,
-          exd: w || void 0,
+          ec: s,
+          ea: t,
+          el: u,
+          ev: v,
+          exd: w,
           exf: "undefined" != typeof x && !1 == !!x ? 0 : void 0
         });
       if (f.sendBeacon) f.sendBeacon(z, A);
