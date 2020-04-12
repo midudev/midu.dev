@@ -18,8 +18,8 @@
         r.hasOwnProperty(t) && void 0 !== r[t] && s.push(h(t) + "=" + h(r[t]));
       return s.join("&");
     },
-    n = function(r, s, t, u, v, w, x) {
-      var z = "https://www.google-analytics.com/collect",
+    n = function(r, s, t, u, v, w, x, dev) {
+      var z = dev ? "https://midu.dev/api/t" : "https://www.google-analytics.com/collect",
         A = m({
           v: "1",
           ds: "web",
@@ -68,6 +68,7 @@
     n(),
     (a.ma = {
       trackEvent: function o(r, s, t, u) {
+        n("event", r, s, t, u, undefined, undefined, true)
         return n("event", r, s, t, u);
       },
       trackException: function q(r, s) {

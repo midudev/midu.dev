@@ -20,11 +20,9 @@ const createOptionsObject = ({data}) => ({
 
 module.exports = (req, res) => {
   const {hostname} = req.headers
-  // activate this when ready
-  // if (hostname !== 'midu.dev') res.end()
+  if (hostname !== 'midu.dev') res.end()
 
   const data = JSON.stringify(req.body)
-
   const collectRequest = https.request(createOptionsObject({data}))
   
   collectRequest.on('error', (error) => {
