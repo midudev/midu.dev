@@ -19,7 +19,7 @@
       return s.join("&");
     },
     n = function(r, s, t, u, v, w, x, dev) {
-      var z = dev ? "https://midu.dev/api/t" : "https://www.google-analytics.com/collect",
+      var z = "https://www.google-analytics.com/collect",
         A = m({
           v: "1",
           ds: "web",
@@ -65,13 +65,7 @@
       i.apply(d, arguments)
     );
   }),
-    n(),
-    n(undefined, undefined, undefined, undefined, undefined, undefined, undefined, true),
-    (a.ma = {
-      trackEvent: function o(r, s, t, u) {
-        return n("event", r, s, t, u);
-      }
-    });
+    n()
 })(window, "UA-30525085-8", {
   anonymizeIp: true,
   colorDepth: true,
