@@ -18,7 +18,7 @@
         r.hasOwnProperty(t) && void 0 !== r[t] && s.push(h(t) + "=" + h(r[t]));
       return s.join("&");
     },
-    n = function(r, s, t, u, v, w, x, dev) {
+    n = function(r, s, t, u, v, w, x) {
       var z = "https://www.google-analytics.com/collect",
         A = m({
           v: "1",
@@ -67,7 +67,7 @@
   }),
     n()
 })(window, "UA-30525085-8", {
-  anonymizeIp: true,
+  anonymizeIp: false,
   colorDepth: true,
   characterSet: true,
   screenSize: true,
