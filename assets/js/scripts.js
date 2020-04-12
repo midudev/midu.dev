@@ -66,13 +66,10 @@
     );
   }),
     n(),
+    n(undefined, undefined, undefined, undefined, undefined, undefined, undefined, true),
     (a.ma = {
       trackEvent: function o(r, s, t, u) {
-        n("event", r, s, t, u, undefined, undefined, true)
         return n("event", r, s, t, u);
-      },
-      trackException: function q(r, s) {
-        return n("exception", null, null, null, null, r, s);
       }
     });
 })(window, "UA-30525085-8", {
