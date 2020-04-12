@@ -5,3 +5,4 @@ resources
 .next
 .DS_Store
 package-lock.json
+.now
