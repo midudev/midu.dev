@@ -7,6 +7,8 @@ category: 'podcast'
 audio: https://www.ivoox.com/react-hooks-que-son-vale-pena-el_mf_31253097_feed_1.mp3
 season: 01
 episode: 02
+tags:
+- podcast
 ---
 
 En este capítulo hablamos sobre los **[React Hooks](https://midu.dev/react-hooks-introduccion-saca-todo-el-potencial-sin-class/)**, la próxima nueva feature de React que, teniendo en cuenta la repercusión que ha habido en redes, cuando salga **va a revolucionar cómo creamos nuestros componentes en la librería de Facebook.**

@@ -7,6 +7,8 @@ category: 'podcast'
 audio: https://www.ivoox.com/edge-usara-chromium-como-motor-su-navegador_mf_31609125_feed_1.mp3
 season: 01
 episode: 03
+tags:
+- podcast
 ---
 
 **Microsoft va a dejar de mantener el motor actual de Edge para empezar a utilizar Chromium**, el motor de código abierto de Chrome. Todo el mundo está dando su opinión y, oye, nosotros no íbamos a ser menos. Y es que hay de todos. Algunos están contentos porque dicen que habrá menos navegadores de los que preocuparse, otros están preocupados por la falta de competencia en la web (especialmente Mozilla) y otros... otros ni bien ni mal.

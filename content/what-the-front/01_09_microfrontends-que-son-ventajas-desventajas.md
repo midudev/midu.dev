@@ -7,6 +7,8 @@ category: 'podcast'
 audio: https://www.ivoox.com/microfrontends-que-son-que-ventajas-desventajas-tienen_mf_35271421_feed_1.mp3
 season: 01
 episode: 09
+tags:
+- podcast
 ---
 
 ¡Hola a todos y a todas a un nuevo episodio de <WhatTheFront! />, tu podcast de frontend en castellano. Y de frontend va la cosa. Pero de frontends pequeñitos. Más que pequeñitos, microfrontends. **¿Qué son los Microfrontends?** ¿Es la arquitectura frontend del futuro? ¿Qué ofrece? Cuáles son las ventajas y desventajas de esta solución. Y para ello contamos con **Jorge del Casar**, desarrollador de Citibox, para que nos explique su experiencia siguiendo esta tendencia.

@@ -7,6 +7,8 @@ category: 'podcast'
 audio: https://www.ivoox.com/trabajo-remoto-equipos-distribuidos_mf_48877629_feed_1.mp3
 season: 02
 episode: 02
+tags:
+- podcast
 ---
 
 Ahora que el Coronavirus ha obligado a muchas empresas a aprovecharse del trabajo en remoto, hablamos con [Elena Torró](https://twitter.com/BytesAndHumans) de Carto, [Kiko Beats](https://twitter.com/Kikobeats) de IBM y [Carlos Blé](https://twitter.com/carlosble) de Lean Mind para que nos den consejos, ideas y compartan experiencias **para seguir trabajando desde casa y con equipos distribuidos.**

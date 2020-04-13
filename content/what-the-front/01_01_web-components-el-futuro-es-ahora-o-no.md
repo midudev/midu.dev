@@ -7,6 +7,8 @@ category: 'podcast'
 audio: https://www.ivoox.com/web-components-futuro-es-ahora-o-no_mf_31088765_feed_1.mp3
 season: 01
 episode: 01
+tags:
+- podcast
 ---
 
 Primer capítulo del podcast de frontend WhatTheFront. En este capítulo hablamos de los Web Components. **¿Sabéis qué son? ¿Os acordáis de ellos?**
