@@ -12,7 +12,7 @@ Nueva entrega en la serie de artículos sobre [Svelte](https://midu.dev/introduc
 
 Como siempre, si no te gusta leer, puedes ver [el vídeo de mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1). Te lo dejo aquí mismo. 👇
 
-{{< youtube id93CL7O4hNWU >}}
+{{< youtube id="93CL7O4hNWU" >}}
 
 ### ¿Qué es el renderizado de listas?
 
