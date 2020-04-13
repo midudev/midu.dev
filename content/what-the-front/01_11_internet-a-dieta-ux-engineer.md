@@ -7,6 +7,8 @@ category: 'podcast'
 audio: https://www.ivoox.com/hay-poner-internet-a-dieta-que-es_mf_36586428_feed_1.mp3
 season: 01
 episode: 11
+tags:
+- podcast
 ---
 
 En este programa contamos con **Adrià Fontcuberta y Marina Aísa** para hablar sobre el contenido de sus charlas en la T3chfest de este año:

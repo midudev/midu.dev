@@ -7,6 +7,8 @@ category: 'podcast'
 audio: https://www.ivoox.com/tc39-presente-futuro-del-javascript_mf_46704284_feed_1.mp3
 season: 02
 episode: 01
+tags:
+- podcast
 ---
 
 ¡Año nuevo y nueva temporada de WhatTheFront! Y arrancamos con dos expertos del TC39. Con [Romulo](https://twitter.com/romulocintra), invited expert del **TC39** y [Daniel Ehrenberg](https://twitter.com/littledan), un delegado del [TC39](https://github.com/tc39) para [Igalia](https://www.igalia.com/).

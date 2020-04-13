@@ -7,6 +7,8 @@ category: 'podcast'
 audio: https://www.ivoox.com/que-son-ingenieros-10x-csscamp-jscamp_mf_38763548_feed_1.mp3
 season: 01
 episode: 12
+tags:
+- podcast
 ---
 
 Hablamos sobre uno de los grandes temas que han azotado esta semana Twitter. **Los ingenieros 10x**. ¿De qué trata? ¿Qué son? ¿Por qué tanto revuelo? ¿Existen...? ¿Tienen sentido? Pues esto y mucho más, te lo contamos. Este es el tweet que comentamos en el programa:

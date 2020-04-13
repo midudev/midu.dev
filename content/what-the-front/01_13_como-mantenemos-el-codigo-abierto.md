@@ -7,6 +7,8 @@ category: 'podcast'
 audio: https://www.ivoox.com/como-hacemos-sostenible-codigo-abierto-tendriamos-que_mf_42262915_feed_1.mp3
 season: 01
 episode: 13
+tags:
+- podcast
 ---
 
 ¡Volvemos de las vacaciones! Y lo hacemos para traer a WhatTheFront! un tema que siempre vuelve. **¿Qué hacemos con el open source?** ¿Cómo conseguimos que sea sostenible y que los creadores tengan motivos suficientes para seguir manteniéndolo?

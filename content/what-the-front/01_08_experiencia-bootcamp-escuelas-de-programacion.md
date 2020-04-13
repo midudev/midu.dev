@@ -7,6 +7,8 @@ category: 'podcast'
 audio: "https://www.ivoox.com/experiencia-bootcamp-que-se-siente-al-cambiar-tu_mf_33878884_feed_1.mp3"
 season: 01
 episode: 08
+tags:
+- podcast
 ---
 
 **En el episodio 8 de <WhatTheFront! />** hablamos con los protagonistas de la última promoción del bootcamp de Barcelona Skylab. ¿De dónde vienen? ¿Por qué se decidieron a aprender la programación web? Nos cuentan también cómo lo han pasado y cómo de intensos han sido las últimas 12 semanas para ellos. Además de las vivencias, dan algunos consejos para todos aquellos que se estén preparando para vivir una aventura como esta.
