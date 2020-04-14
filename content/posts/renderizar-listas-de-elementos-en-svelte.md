@@ -76,7 +76,7 @@ Por lo que nuestro ejemplo, podría quedar así:
 </ul>
 ```
 
-### Desestructurando objetos al iterarlos
+### Desestructurando objetos al iterarlos
 
 Ahora bien, es un poco molesto tener que utilizar las propiedades `Title` y `Year` desde el objeto `movie`. ¿Se podría mejorar de alguna forma para poder usar directamente las propiedades en nuestro código? Sí, usando **la desestructuración del objeto directamente en la sintaxis del `{#each}`**:
 
