@@ -24,7 +24,7 @@ Como ya vimos en el artículo sobre [renderizado condicional](https://midu.dev/s
 
 Imaginemos que tenemos una lsita de películas en la constante `movies`. Cada película es un objeto y tiene las propiedades `Title` y `Year`:
 
-```js
+```javascript
 const movies = [
   {Title: "The Avengers", Year: 2012},
   {Title: "Avengers: Infinity War", Year: 2018},
@@ -193,7 +193,7 @@ Exactamente, **la sintaxis de `#each` también acepta una cláusula `:else`** qu
 
 Recapitulando, hemos visto **cómo podemos renderizar listas de elementos con Svelte siguiendo la siguiente sintaxis**:
 
-```js
+```javascript
 // para iterar una lista para cada elemento 
 {#each lista as elemento}...{/each}
 // para añadir el indice de cada elemento de la lista
