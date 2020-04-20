@@ -9,7 +9,7 @@
     Vídeos 📹
     {{ partial "buttons/youtube-subscribe-button.html"  }}
   </h3>
-  {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=3&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
+  {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=4&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
   {{ range first 4 $videos.items }}
   <a href='#lightbox' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}'>
     <img alt="{{.snippet.title}}" class='u-lazyload' loading='lazy' src='https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg' />
