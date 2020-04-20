@@ -10,7 +10,7 @@
     {{ partial "buttons/youtube-subscribe-button.html"  }}
   </h3>
   {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=3&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
-  {{ range first 3 $videos.items }}
+  {{ range first 4 $videos.items }}
   <a href='#lightbox' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}'>
     <img alt="{{.snippet.title}}" class='u-lazyload' loading='lazy' src='https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg' />
     <h4>{{ .snippet.title }}</h4>
@@ -18,7 +18,7 @@
   {{ end }}
   <hr class='section-separation' />
   <h3 class='section-title'>Podcast 🎙</h3>
-  {{ range first 5 (where .Site.Pages ".Params.category" "podcast") }}
+  {{ range first 4 (where .Site.Pages ".Params.category" "podcast") }}
   <a href='{{.Permalink}}'>
     <img alt="{{ .Title }}" class='u-lazyload lazyload' loading='lazy' src='{{ .Params.image }}' />
     <h4>{{ .Title }}</h4>
