@@ -762,3 +762,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
   opacity: 0;
   pointer-events: none;
 }
+
+twitter-widget {
+  margin: 0 auto;
+}

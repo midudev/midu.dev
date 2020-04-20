@@ -1,5 +1,5 @@
 ---
-title: React Hooks, saca todo el potencial de React sin escribir clases - I
+title: React Hooks, saca todo el potencial de React sin escribir clases
 date: '2019-02-06'
 image: '/images/react-hooks.jpeg'
 description: Con la nueva característica de React, llamada Hooks, podremos utilizar los componentes funcionales para sacar todo el potencial a la librería. Algo que, hasta hace poco, sólo era posible con las clases.
