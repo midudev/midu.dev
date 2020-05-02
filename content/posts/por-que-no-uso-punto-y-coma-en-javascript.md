@@ -162,7 +162,7 @@ Si te gusta añadir puntos y coma porque te parece más agradable de leer, porqu
 
 **Espero que ahora me entiendas mejor.** Si eres de los míos y no escribes puntos y coma, genial. Si sigues escribiendo punto y coma en todas tus declaraciones (bueno, todas no, que ya hemos visto que sólo son algunas 😜) pues... **¡genial también! 👏**
 
-Sinceramente creo que hoy en día cualquiera de las dos decisiones son correctas y más teniendo la posibilidad que herramientas como [`eslint`](https://eslint.org/), [`standard`](https://standardjs.com/) o [`prettier`](https://prettier.io/) existen. Y, básicamente, deja que tengas que preocuparte de todo esto. 
+Sinceramente **creo cualquiera de las dos decisiones son correctas**. No hay una mejor o peor que la otra. Entra en juego la subjetividad de cada uno y la preferencia personal y, por eso, creo que debes escribir el código como tu y tu equipo os sintáis más cómodos (si es que conseguís llegar a un acuerdo :D). Y más teniendo la posibilidad que herramientas como [`eslint`](https://eslint.org/), [`standard`](https://standardjs.com/) o [`prettier`](https://prettier.io/) existen para que básicamente puedas dejar de preocuparte de todo esto. 
 
 Creo, eso sí, que **es importante saber cómo funciona la inserción automática de puntos y coma en Javascript**, de forma que conozcas bien el lenguaje. Con las herramientas mencionadas anteriormente vas a evitarte problemas, pero nunca está de más conocer estos pequeños detalles.
 
