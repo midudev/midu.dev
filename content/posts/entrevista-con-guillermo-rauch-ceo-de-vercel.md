@@ -1,6 +1,6 @@
 ---
 title: Entrevista con Guillermo Rauch, CEO de Vercel ▲ (ZEIT)
-date: "2020-05-01"
+date: "2020-05-03"
 description: Charla completa con Guillermo Rauch sobre el presente y futuro de la plataforma Vercel, las novedades de NextJS, curiosidades de React y lo que esperamos del frontend.
 tags:
   - vercel
