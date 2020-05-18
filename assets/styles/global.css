@@ -296,6 +296,7 @@ svg {
   color: #111;
   display: flex;
   font-size: 32px;
+  height: 44px;
 }
 
 #logo svg {
@@ -680,7 +681,10 @@ figure.left img {
   :root {
     --p-u-center: 0 16px;
     --p-header-bottom: 16px;
-    --fz-page-links: 0;
+  }
+
+  #nav .page-links {
+    display: none;
   }
 
   #article-header {
