@@ -7,7 +7,7 @@
 
   <h3 class='section-title youtube-title'>
     Vídeos 📹
-    {{ partial "buttons/youtube-subscribe-button.html"  }}
+    {{ partial "buttons/youtube-subscribe-button-with-styles.html"  }}
   </h3>
   {{ $videos := getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=4&key=AIzaSyCT2gbiAtROcgbEBmFDmsyUNb19cZppKH4" }}
   {{ range first 4 $videos.items }}

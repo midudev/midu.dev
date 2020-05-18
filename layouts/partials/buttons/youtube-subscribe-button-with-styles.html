@@ -1,0 +1,38 @@
+<style>
+  .yt-subscribe-button {
+      align-items: center;
+      border: 0 !important;
+      display: flex;
+      font-size: 11px;
+      height: 20px;
+      justify-content: center;
+      line-height: 20px;
+  }
+  
+  .yt-subscribe-button:hover {
+      background: none !important;
+      opacity: .7 !important;
+  }
+  
+  .yt-subscribe-button span:first-child {
+      background: #e62117;
+      border-radius: 2px 0 0 2px;
+      border: solid 1px #e62117;
+      color: #fefefe;
+      font-weight: 500;
+      padding: 0 8px 0 5.5px;
+  }
+  
+  .yt-subscribe-button span:last-child {
+      background: #fafafa;
+      border-radius: 0 2px 2px 0;
+      border: 1px solid #ccc;
+      border-left: 0;
+      color: #737373;
+      font-weight: 400;
+      padding: 0 4px;
+      font-size: 11px;
+  }
+</style>
+
+{{ partial "buttons/youtube-subscribe-button.html" . }}
