@@ -55,5 +55,5 @@ Además, conseguimos **reusar el hook `useNearScreen` para añadirle Infinite Sc
 
 Finalmente, empezaremos a ver algo de testing con `Jest` y `@testing-library/react`. Además de algún test muy básico, también veremos cómo podemos probar **componentes que se cargan de forma asíncrona.**
 
-### [¿Quieres más videos sobre frontend? ¡Suscríbete a mi canal!](https://www.youtube.com/c/midudev?sub_confirmation=1)
+### Suscríbete: [¿Quieres más videos sobre frontend? ¡Suscríbete a mi canal!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 {{< subscribe-to-youtube >}}
