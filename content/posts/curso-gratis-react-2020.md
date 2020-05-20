@@ -11,7 +11,7 @@ tags:
 
 Las últimas semanas he estado emitiendo todos los viernes un live coding **[en mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1)** donde hemos ido construyendo paso a paso y desde cero **una aplicación de React para buscar Gifs utilizando la API de Giphy.**
 
-### [1. Aprendiendo React desde cero](https://youtu.be/T_j60n1zgu0)
+### Primera clase: [Aprendiendo React desde cero](https://youtu.be/T_j60n1zgu0)
 {{< youtube id="T_j60n1zgu0" >}}
 {{< subscribe-to-youtube >}}
 
@@ -19,7 +19,7 @@ En esta clase aprendemos React desde cero y respondamos a las preguntas: **¿Qu�
 
 También vemos **qué son las props y state**. Definimos el concepto de componente y vemos cómo usar eventos. Cómo funciona el renderizado condicional y usamos un hook, `useState` para añadir estado a nuestros componentes.
 
-### [2. Crea un app con create-react-app](https://youtu.be/QBLbXgeXMU8)
+### Segunda clase: [Crea un app con create-react-app](https://youtu.be/QBLbXgeXMU8)
 {{< youtube id="QBLbXgeXMU8" >}}
 {{< subscribe-to-youtube >}}
 
@@ -27,7 +27,7 @@ Ahora que **ya conocemos los conceptos básicos de React**, es el momento de **c
 
 También vemos más hooks, como `useEffect` para ejecutar código cada vez que nuestro componentes se renderiza o sus dependencias cambian. Además también hacemos las primeras llamadas a una API y vemos cómo lo podemos gestionar.
 
-### [3. Custom Hooks y React Context](https://youtu.be/2qgs7buSnHQ)
+### Tercera clase: [Custom Hooks y React Context](https://youtu.be/2qgs7buSnHQ)
 {{< youtube id="2qgs7buSnHQ" >}}
 {{< subscribe-to-youtube >}}
 
@@ -35,7 +35,7 @@ También vemos más hooks, como `useEffect` para ejecutar código cada vez que n
 
 Además conocemos **React Context, una funcionalidad de la biblioteca que nos permite compartir información entre componentes sin que le lleguen por las props.** Esto, además, nos permitirá crear una especie de estado global. Hablamos de las buenas prácticas sobre esto y cómo podemos conseguirlo.
 
-### [4. Lazy Load, Suspense y Paginación](https://youtu.be/VcxXipZg1-0)
+### Cuarta clase: [Lazy Load, Suspense y Paginación](https://youtu.be/VcxXipZg1-0)
 {{< youtube id="VcxXipZg1-0" >}}
 {{< subscribe-to-youtube >}}
 
@@ -45,7 +45,7 @@ Para hacerlo descubrimos `React.lazy`, que nos permite cargar dinámicamente nue
 
 Además, **añadimos paginación** a nuestra aplicación, para poder ver más gifs.
 
-### [5. CSS Grid, Infinite Scroll y Testing](https://youtu.be/oCHdFiCgOSE)
+### Quinta clase: [CSS Grid, Infinite Scroll y Testing](https://youtu.be/oCHdFiCgOSE)
 {{< youtube id="oCHdFiCgOSE" >}}
 {{< subscribe-to-youtube >}}
 
