@@ -8,7 +8,7 @@ tags:
 language: 🇪🇸
 ---
 
-No sé vosotros pero a mi **me encanta ponerme música para programar.** He pasado por todos los géneros para encontrar mi espacio zen 👨‍💻. Desde música clásica a pop-rock incluso [bandas sonoras de vídeojuegos](https://open.spotify.com/playlist/1K9Lxa1YSDaNgjxb3vkIGT). Desde hace más de un año estoy disfrutando de un nuevo género. Un nicho musical, diría que yo, donde **he encontrado todos los matices que necesitaba**: instrumental, con ritmo pero suave, que no sea aburrido ni monótono y que sepa acompañarme.
+No sé vosotros pero a mi **me encanta ponerme música para programar.** He pasado por todos los géneros para encontrar mi espacio zen 👨‍💻. Desde música clásica a pop-rock incluso [bandas sonoras de vídeojuegos](https://open.spotify.com/playlist/1K9Lxa1YSDaNgjxb3vkIGT). Desde hace más de un año estoy disfrutando de un nuevo género. Un nicho musical, diría yo, donde **he encontrado todos los matices que necesitaba**: instrumental, con ritmo pero suave, que no sea aburrido ni monótono y que sepa acompañarme.
 
 Este género es el **lofi con hip hop alternativo.** Sí, es algo MUY específico pero lo cierto es que este tipo de música está teniendo un éxito particular para ser usada en el estudio, el trabajo y, por supuesto, la *programación*.
 
