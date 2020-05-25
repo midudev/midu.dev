@@ -1,5 +1,5 @@
 ---
-title: Code-Fi | Música para programar 👨‍💻 🎧
+title: La mejor música para programar - {code-fi} 👨‍💻 🎧
 date: '2020-05-21'
 image: '/images/codefi01.jpg'
 description: Música relajante para programar y concentrarse. Beats relajantes, chill con hip hop alternativo y lofi 🎵.
