@@ -55,7 +55,7 @@ Además, conseguimos **reusar el hook `useNearScreen` para añadirle Infinite Sc
 
 Finalmente, empezaremos a ver algo de testing con `Jest` y `@testing-library/react`. Además de algún test muy básico, también veremos cómo podemos probar **componentes que se cargan de forma asíncrona.**
 
-### Sexta clase: [React.memo, mejora el rendimiento de la app y Deploy con Vercel] (https://www.youtube.com/watch?v=Wo7_OVtu1ls)
+### Sexta clase: [React.memo, mejora el rendimiento de la app y Deploy con Vercel](https://www.youtube.com/watch?v=Wo7_OVtu1ls)
 {{< youtube id="Wo7_OVtu1ls" >}}
 {{< subscribe-to-youtube >}}
 
@@ -71,5 +71,6 @@ Ahora que ya tenemos nuestra aplicación de **React ⚛️** desplegada en produ
 
 Para acabar la clase, vamos a ver cómo crear un **continuous deployment en GitHub** y que nos deje una URL deployada por cada Pull Request usando **Vercel** y su integración con este servicio.
 
-### Suscríbete: [¿Quieres más videos sobre frontend? ¡Suscríbete a mi canal!](https://www.youtube.com/c/midudev?sub_confirmation=1)
+### Suscríbete
+[¿Quieres más videos sobre frontend? ¡Suscríbete a mi canal!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 {{< subscribe-to-youtube >}}
