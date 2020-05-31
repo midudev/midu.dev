@@ -55,5 +55,21 @@ Además, conseguimos **reusar el hook `useNearScreen` para añadirle Infinite Sc
 
 Finalmente, empezaremos a ver algo de testing con `Jest` y `@testing-library/react`. Además de algún test muy básico, también veremos cómo podemos probar **componentes que se cargan de forma asíncrona.**
 
+### Sexta clase: [React.memo, mejora el rendimiento de la app y Deploy con Vercel] (https://www.youtube.com/watch?v=Wo7_OVtu1ls)
+{{< youtube id="Wo7_OVtu1ls" >}}
+{{< subscribe-to-youtube >}}
+
+Ahora es el momento de **optimizar nuestra aplicación**. Para ello, aprenderemos qué son las **React Developer Tools** y cómo podemos sacarle partido para detectar renderizados innecesarios en nuestra aplicación. También aprendemos qué es `React.memo` y cómo podemos usarlo para arreglar esos problemas de optimización.
+
+Finalmente, haremos un **deploy desde la terminal gracias a los servicios gratuitos de Vercel**, que nos ofrecerá SSL y una URL para compartir con nuestros colegas.
+
+### Séptima clase: [SEO con React y Deploy Integrado con GitHub](https://www.youtube.com/watch?v=b-pwpHaYOTI)
+{{< youtube id="b-pwpHaYOTI" >}}
+{{< subscribe-to-youtube >}}
+
+Ahora que ya tenemos nuestra aplicación de **React ⚛️** desplegada en producción, es el momento de asegurarnos que Google va a ver los títulos y descripciones correctos. Para ello vamos a hacer algo de SEO con nuestra app de React. Primero lo creamos desde cero, con un custom hook, llamado **useTitle** y otro **useSEO**. Pero veremos que esto es difícil de hacer que mantener, así que pasaremos a usar **react-helmet.** Conoceremos otra alternativa, llamada `react-head` que es algo más liviano y también muy interesante.
+
+Para acabar la clase, vamos a ver cómo crear un **continuous deployment en GitHub** y que nos deje una URL deployada por cada Pull Request usando **Vercel** y su integración con este servicio.
+
 ### Suscríbete: [¿Quieres más videos sobre frontend? ¡Suscríbete a mi canal!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 {{< subscribe-to-youtube >}}
