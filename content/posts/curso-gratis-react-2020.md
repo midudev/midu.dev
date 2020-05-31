@@ -55,7 +55,7 @@ Además, conseguimos **reusar el hook `useNearScreen` para añadirle Infinite Sc
 
 Finalmente, empezaremos a ver algo de testing con `Jest` y `@testing-library/react`. Además de algún test muy básico, también veremos cómo podemos probar **componentes que se cargan de forma asíncrona.**
 
-### Sexta clase: [React.memo, mejora el rendimiento de la app y Deploy con Vercel] (https://www.youtube.com/watch?v=Wo7_OVtu1ls)
+### Sexta clase: [React.memo, mejora el rendimiento de la app y Deploy con Vercel] (https://www.youtube.com/watch?v=Wo7_OVtu1ls)
 {{< youtube id="Wo7_OVtu1ls" >}}
 {{< subscribe-to-youtube >}}
 
