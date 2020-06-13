@@ -67,6 +67,10 @@ Finalmente, haremos un **deploy desde la terminal gracias a los servicios gratui
 {{< youtube id="b-pwpHaYOTI" >}}
 {{< subscribe-to-youtube >}}
 
+### Octava clase: [useReducer y testing de React Hooks](https://www.youtube.com/watch?v=Wjy_nlYXTik)
+{{< youtube id="Wjy_nlYXTik" >}}
+{{< subscribe-to-youtube >}}
+
 Ahora que ya tenemos nuestra aplicación de **React ⚛️** desplegada en producción, es el momento de asegurarnos que Google va a ver los títulos y descripciones correctos. Para ello vamos a hacer algo de SEO con nuestra app de React. Primero lo creamos desde cero, con un custom hook, llamado **useTitle** y otro **useSEO**. Pero veremos que esto es difícil de hacer que mantener, así que pasaremos a usar **react-helmet.** Conoceremos otra alternativa, llamada `react-head` que es algo más liviano y también muy interesante.
 
 Para acabar la clase, vamos a ver cómo crear un **continuous deployment en GitHub** y que nos deje una URL deployada por cada Pull Request usando **Vercel** y su integración con este servicio.
