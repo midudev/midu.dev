@@ -8,8 +8,8 @@
   },
   "scripts": {
     "build": "hugo --minify",
-    "dev": "hugo server",
-    "now-build": "npm run build",
+    "dev": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY hugo server",
+    "now-build": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY npm run build",
     "do:thanks": "node scripts/thanks-contributors.js"
   },
   "repository": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/midudev/midu.dev#readme",
   "devDependencies": {
-    "hugo-bin": "0.59.0",
+    "hugo-bin": "0.60.0",
     "rimraf": "3.0.2"
   }
 }

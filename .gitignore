@@ -6,3 +6,4 @@ resources
 .DS_Store
 package-lock.json
 .now
+.env
