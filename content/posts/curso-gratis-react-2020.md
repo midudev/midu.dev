@@ -75,6 +75,14 @@ Ahora que ya tenemos nuestra aplicación de **React ⚛️** desplegada en produ
 
 Para acabar la clase, vamos a ver cómo crear un **continuous deployment en GitHub** y que nos deje una URL deployada por cada Pull Request usando **Vercel** y su integración con este servicio.
 
+### Novena clase: [Inicio de sesión y gestión de favoritos del usuario](https://www.youtube.com/watch?v=VT5S9Y49SYs)
+{{< youtube id="VT5S9Y49SYs" >}}
+{{< subscribe-to-youtube >}}
+
+Ahora es el momento de utilizar una **API para poder loguear a nuestros usuarios.** Para ello he creado una **API en Deno 🦕** que nos permitirá iniciar sesión, registrar al usuario y que estos puedan gestionar sus favoritos.
+
+En esta clase vemos como podemos iniciar sesión, creamos un estado global con el contexto, un hook para poder consumirlo y guardar la sesión del usuario (gracias a un Javascript Web Token) usando **SessionStorage**.
+
 ### Suscríbete
 [¿Quieres más videos sobre frontend? ¡Suscríbete a mi canal!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 {{< subscribe-to-youtube >}}
