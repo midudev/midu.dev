@@ -79,7 +79,7 @@ Ahora que ya tenemos nuestra aplicación de **React ⚛️** desplegada en produ
 
 Para acabar la clase, vamos a ver cómo crear un **continuous deployment en GitHub** y que nos deje una URL deployada por cada Pull Request usando **Vercel** y su integración con este servicio.
 
-### [Inicio de sesión y gestión de favoritos del usuario](https://www.youtube.com/watch?v=VT5S9Y49SYs)
+### Inicio de sesión y gestión de favoritos del usuario
 {{< youtube id="VT5S9Y49SYs" >}}
 {{< subscribe-to-youtube >}}
 
