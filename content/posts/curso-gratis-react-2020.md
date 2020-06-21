@@ -11,7 +11,7 @@ tags:
 
 Las últimas semanas he estado emitiendo todos los viernes un live coding **[en mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1)** donde hemos ido construyendo paso a paso y desde cero **una aplicación de React para buscar Gifs utilizando la API de Giphy.**
 
-### Primera clase: [Aprendiendo React desde cero](https://youtu.be/T_j60n1zgu0)
+### Aprendiendo React desde cero
 {{< youtube id="T_j60n1zgu0" >}}
 {{< subscribe-to-youtube >}}
 
@@ -19,7 +19,7 @@ En esta clase aprendemos React desde cero y respondamos a las preguntas: **¿Qu�
 
 También vemos **qué son las props y state**. Definimos el concepto de componente y vemos cómo usar eventos. Cómo funciona el renderizado condicional y usamos un hook, `useState` para añadir estado a nuestros componentes.
 
-### Segunda clase: [Crea un app con create-react-app](https://youtu.be/QBLbXgeXMU8)
+### Crea un app con create-react-app
 {{< youtube id="QBLbXgeXMU8" >}}
 {{< subscribe-to-youtube >}}
 
@@ -27,7 +27,7 @@ Ahora que **ya conocemos los conceptos básicos de React**, es el momento de **c
 
 También vemos más hooks, como `useEffect` para ejecutar código cada vez que nuestro componentes se renderiza o sus dependencias cambian. Además también hacemos las primeras llamadas a una API y vemos cómo lo podemos gestionar.
 
-### Tercera clase: [Custom Hooks y React Context](https://youtu.be/2qgs7buSnHQ)
+### Custom Hooks y React Context
 {{< youtube id="2qgs7buSnHQ" >}}
 {{< subscribe-to-youtube >}}
 
@@ -35,7 +35,7 @@ También vemos más hooks, como `useEffect` para ejecutar código cada vez que n
 
 Además conocemos **React Context, una funcionalidad de la biblioteca que nos permite compartir información entre componentes sin que le lleguen por las props.** Esto, además, nos permitirá crear una especie de estado global. Hablamos de las buenas prácticas sobre esto y cómo podemos conseguirlo.
 
-### Cuarta clase: [Lazy Load, Suspense y Paginación](https://youtu.be/VcxXipZg1-0)
+### Lazy Load, Suspense y Paginación
 {{< youtube id="VcxXipZg1-0" >}}
 {{< subscribe-to-youtube >}}
 
@@ -45,7 +45,7 @@ Para hacerlo descubrimos `React.lazy`, que nos permite cargar dinámicamente nue
 
 Además, **añadimos paginación** a nuestra aplicación, para poder ver más gifs.
 
-### Quinta clase: [CSS Grid, Infinite Scroll y Testing](https://youtu.be/oCHdFiCgOSE)
+### CSS Grid, Infinite Scroll y Testing
 {{< youtube id="oCHdFiCgOSE" >}}
 {{< subscribe-to-youtube >}}
 
@@ -55,7 +55,7 @@ Además, conseguimos **reusar el hook `useNearScreen` para añadirle Infinite Sc
 
 Finalmente, empezaremos a ver algo de testing con `Jest` y `@testing-library/react`. Además de algún test muy básico, también veremos cómo podemos probar **componentes que se cargan de forma asíncrona.**
 
-### Sexta clase: [React.memo, mejora el rendimiento de la app y Deploy con Vercel](https://www.youtube.com/watch?v=Wo7_OVtu1ls)
+### React.memo, mejora el rendimiento de la app y Deploy con Vercel
 {{< youtube id="Wo7_OVtu1ls" >}}
 {{< subscribe-to-youtube >}}
 
@@ -63,11 +63,15 @@ Ahora es el momento de **optimizar nuestra aplicación**. Para ello, aprenderemo
 
 Finalmente, haremos un **deploy desde la terminal gracias a los servicios gratuitos de Vercel**, que nos ofrecerá SSL y una URL para compartir con nuestros colegas.
 
-### Séptima clase: [SEO con React y Deploy Integrado con GitHub](https://www.youtube.com/watch?v=b-pwpHaYOTI)
+### SEO con React y Deploy Integrado con GitHub
 {{< youtube id="b-pwpHaYOTI" >}}
 {{< subscribe-to-youtube >}}
 
-### Octava clase: [useReducer y testing de React Hooks](https://www.youtube.com/watch?v=Wjy_nlYXTik)
+En esta clase vamos a preparar la app para que los crawlers, como el de Google, puedan encontrar nuestra aplicación es super importante. Por ello, **añadiremos títulos y descripciones** gracias, primero, a **crear nuestro propio Hook de SEO** que lo haga y, luego, viendo `react-helmet`.
+
+Además, también **vamos a preparar nuestro repositorio para tener Continuous Deployment.** De forma que cada vez que hagamos un merge a master con cambios de código, tengamos una nueva versión desplegada en Internet.
+
+### useReducer y testing de React Hooks
 {{< youtube id="Wjy_nlYXTik" >}}
 {{< subscribe-to-youtube >}}
 
@@ -75,7 +79,7 @@ Ahora que ya tenemos nuestra aplicación de **React ⚛️** desplegada en produ
 
 Para acabar la clase, vamos a ver cómo crear un **continuous deployment en GitHub** y que nos deje una URL deployada por cada Pull Request usando **Vercel** y su integración con este servicio.
 
-### Novena clase: [Inicio de sesión y gestión de favoritos del usuario](https://www.youtube.com/watch?v=VT5S9Y49SYs)
+### [Inicio de sesión y gestión de favoritos del usuario](https://www.youtube.com/watch?v=VT5S9Y49SYs)
 {{< youtube id="VT5S9Y49SYs" >}}
 {{< subscribe-to-youtube >}}
 
