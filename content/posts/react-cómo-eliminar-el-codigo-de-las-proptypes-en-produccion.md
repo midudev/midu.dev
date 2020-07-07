@@ -36,7 +36,7 @@ Component.propTypes = {
 
 Esto es sólo un ejemplo de las diferentes *PropTypes* que hay. Podéis encontrar una **[lista completa de posibles PropTypes en la documentación de React](https://es.reactjs.org/docs/typechecking-with-proptypes.html#proptypes).**
 
-Una vez tengamos nuestras *PropTypes* definidas recibiremos **en consola** una advertencia si no cumplimos con ese contrato. **Esta advertencia, sin embargo, sólo funciona en producción.**
+Una vez tengamos nuestras *PropTypes* definidas recibiremos **en consola** una advertencia si no cumplimos con ese contrato. **Esta advertencia, sin embargo, sólo funciona en desarrollo.**
 
 Entonces, ¿qué sentido tiene que este código llegue a producción? Y, lo más importante, **¿cómo evitamos que llegue a producción y así ahorremos un poco en ancho de banda?**
 
