@@ -491,6 +491,14 @@ figure {
   padding-bottom: 16px;
 }
 
+ul + figure {
+  margin-top: 16px;
+}
+
+figure + ul {
+  margin-top: 16px;
+}
+
 figure img + figcaption {
   padding-top: 4px;
 }
@@ -768,5 +776,9 @@ lite-youtube.lyt-activated > .lty-playbtn {
 }
 
 twitter-widget {
+  margin: 0 auto;
+}
+
+.twitter-tweet {
   margin: 0 auto;
 }
