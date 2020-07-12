@@ -19,3 +19,6 @@ paginate = 10
     guessSyntax = true
     noClasses = false
     tabWidth = 2
+
+[markup.goldmark.renderer]
+unsafe= true
