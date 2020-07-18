@@ -10,6 +10,10 @@ tags:
 
 *GitHub* acaba de lanzar una nueva funcionalidad que **te permite mostrar un README completamente personalizado en la página de tu perfil**. Como estoy seguro que tu también quieres disfrutar de esta nueva característica, te voy a explicar **paso a paso** lo que debes hacer para conseguir el tuyo.
 
+Puedes seguir el vídeo que hice en directo donde **he creado mi README desde cero**, dando ideas y añadiendo **GitHub Actions** para que se actualice automáticamente (o puedes seguir leyendo el artículo si lo prefieres):
+
+{{< youtube id="1eEnboVooiY" >}}
+
 ## Crear el repositorio en GitHub con tu nombre de usuario
 
 1. Accede a [https://github.com/new](https://github.com/new)
