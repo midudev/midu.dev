@@ -28,3 +28,10 @@ Pronto iré añadiendo más fondo de pantalla. :)
 <a href='/images/wallpapers/una-taza-de-javascript.png' download>
   {{< img src="/images/wallpapers/una-taza-de-javascript.png" alt="Fondo de pantalla de una taza de Javascript" align="center" >}}
 </a>
+
+## Fondos de pantalla de midudev
+
+<a href="/images/wallpapers/fondo-de-pantalla-midudev-logo.png" download>
+  {{< img src="/images/wallpapers/fondo-de-pantalla-midudev-logo.png" alt="Fondo de pantalla de logo de midudev en negativo" align="center" >}}
+</a>
+
