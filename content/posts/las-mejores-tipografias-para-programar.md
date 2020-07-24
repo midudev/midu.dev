@@ -77,7 +77,7 @@ La tipografía ha sido muy cuidada para ser equilibrada y ofrecer mayor altura a
 
 </div>
 
-### Conclusiones
+### Conclusiones
 
 Lo cierto es que **elegir la mejor fuente para programar es algo muy subjetivo.** Hay gente que ni siquiera les importa y serían capaces de desarrollar usando la *Time News Roman* si hiciese falta.
 
