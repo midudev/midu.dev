@@ -292,17 +292,9 @@ svg {
 
 
 /** HEADER **/
-#logo {
-  color: #111;
-  display: flex;
-  font-size: 32px;
+#logo, #logo img {
   height: 44px;
-}
-
-#logo svg {
-  fill: #09f;
-  margin-right: 8px;
-  width: 36px;
+  width: auto;
 }
 
 /** BUTTON **/
