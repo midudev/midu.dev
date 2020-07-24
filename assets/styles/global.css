@@ -294,7 +294,12 @@ svg {
 /** HEADER **/
 #logo, #logo img {
   height: 44px;
+  transition: transform ease .3s;
   width: auto;
+}
+
+#logo:hover {
+  transform: scale(1.1);
 }
 
 /** BUTTON **/
