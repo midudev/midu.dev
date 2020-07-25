@@ -2,6 +2,7 @@
 title: Las 5 mejores tipografías para programar
 date: '2020-07-24'
 description: Elegir la mejor tipografía para tu código tiene una gran importancia para ser más productivo y trabajar de una forma más cómoda.
+image: '/images/og/5-tipografias-programar.png'
 language: 🇪🇸
 toc: true
 tags:
