@@ -87,11 +87,17 @@ Ahora es el momento de utilizar una **API para poder loguear a nuestros usuarios
 
 En esta clase vemos como podemos iniciar sesión, creamos un estado global con el contexto, un hook para poder consumirlo y guardar la sesión del usuario (gracias a un Javascript Web Token) usando **SessionStorage**.
 
-### Registro de usuario con Formik, React.createPortal y gestión de favoritos en nuestra app de ReactJS
+### Registro de usuario con Formik y React.createPortal
+
+En esta clase vamos a ver cómo podemos usar **Formik** para gestionar nuestros usuarios y **createPortal** para poder renderizar fuera del árbol de elementos un componente hio en React.
+
 {{< youtube id="dtbI6gDnTFU" >}}
 {{< subscribe-to-youtube >}}
 
 ### CSS en JS y Styled Components con Emotion
+
+Y la última clase, donde veremos cómo podemos añadir **CSS en JS** en nuestra aplicación gracias a **Emotion**. Veremos los dos sabores: *CSS-en-JS clásico* y uno basado en *styled components*:
+
 {{< youtube id="DjVGdUM1dHQ" >}}
 {{< subscribe-to-youtube >}}
 
