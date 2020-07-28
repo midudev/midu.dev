@@ -36,6 +36,12 @@ En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla so
   {{< img src="/images/wallpapers/una-taza-de-javascript.png" alt="Fondo de pantalla de una taza de Javascript" align="center" >}}
 </a>
 
+## Fondos de pantalla y wallpapers de Typescript
+
+<a href="/images/wallpapers/typescript-small-4k-wallpaper.png" download>
+  {{< img src="/images/wallpapers/typescript-small-4k-wallpaper.png" alt="Fondo de pantalla minimalista de Typescript" align="center" >}}
+</a>
+
 ## Fondos de pantalla y wallpapers de React
 
 <a href="/images/wallpapers/fondo-react-horizontal-4k.png" download>
