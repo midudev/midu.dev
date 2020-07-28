@@ -12,6 +12,16 @@ tags:
 
 En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla sobre programación y desarrollo web** para vuestros setups.
 
+## Fondos de pantalla de Chrome Dino
+
+<a href="/images/wallpapers/dino-not-found-4k-wallpaper.png" download>
+  {{< img src="/images/wallpapers/dino-not-found-4k-wallpaper.png" alt="Fondo de pantalla con dino 404 de Google Chrome" align="center" >}}
+</a>
+
+<a href="/images/wallpapers/dino-not-found-rainbow-4k-wallpaper.png" download>
+  {{< img src="/images/wallpapers/dino-not-found-rainbow-4k-wallpaper.png" alt="Fondo de pantalla con dino 404 de Google Chrome con arco iris dejando rastro" align="center" >}}
+</a>
+
 ## Fondos de pantalla y wallpapers de HTML5 y CSS
 
 <a href="/images/wallpapers/web-technologies-4k-wallpaper.png" download>
@@ -20,6 +30,10 @@ En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla so
 
 ## Fondos de pantalla y wallpapers de Javascript
 
+<a href='/images/wallpapers/una-taza-de-javascript.png' download>
+  {{< img src="/images/wallpapers/una-taza-de-javascript.png" alt="Fondo de pantalla de una taza de Javascript" align="center" >}}
+</a>
+<br>
 <a href="/images/wallpapers/javascript-small-horizontal-4k.png" download>
   {{< img src="/images/wallpapers/javascript-small-horizontal-4k.png" alt="Fondo de pantalla minimalista de logo pequeño Javascript 4k y horizontal" align="center" >}}
 </a>
@@ -30,10 +44,6 @@ En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla so
 <br>
 <a href='/images/wallpapers/javascript-small-vertical-4k.png' download>
   {{< img src="/images/wallpapers/javascript-small-vertical-4k.png" alt="Fondo de pantalla minimalista de logo pequeño Javascript 4k y vertical" align="center" >}}
-</a>
-<br>
-<a href='/images/wallpapers/una-taza-de-javascript.png' download>
-  {{< img src="/images/wallpapers/una-taza-de-javascript.png" alt="Fondo de pantalla de una taza de Javascript" align="center" >}}
 </a>
 
 ## Fondos de pantalla y wallpapers de Typescript
@@ -52,14 +62,4 @@ En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla so
 
 <a href="/images/wallpapers/fondo-de-pantalla-midudev-logo.png" download>
   {{< img src="/images/wallpapers/fondo-de-pantalla-midudev-logo.png" alt="Fondo de pantalla de logo de midudev en negativo" align="center" >}}
-</a>
-
-## Otros fondos de pantalla
-
-<a href="/images/wallpapers/dino-not-found-4k-wallpaper.png" download>
-  {{< img src="/images/wallpapers/dino-not-found-4k-wallpaper.png" alt="Fondo de pantalla con dino 404 de Google Chrome" align="center" >}}
-</a>
-
-<a href="/images/wallpapers/dino-not-found-rainbow-4k-wallpaper.png" download>
-  {{< img src="/images/wallpapers/dino-not-found-rainbow-4k-wallpaper.png" alt="Fondo de pantalla con dino 404 de Google Chrome con arco iris dejando rastro" align="center" >}}
 </a>
