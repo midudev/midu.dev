@@ -57,5 +57,9 @@ En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla so
 ## Otros fondos de pantalla
 
 <a href="/images/wallpapers/dino-not-found-4k-wallpaper.png" download>
-  {{< img src="/images/wallpapers/dino-not-found-4k-wallpaper.png" alt="Fondo de pantalla de logo de midudev en negativo" align="center" >}}
+  {{< img src="/images/wallpapers/dino-not-found-4k-wallpaper.png" alt="Fondo de pantalla con dino 404 de Google Chrome" align="center" >}}
+</a>
+
+<a href="/images/wallpapers/dino-not-found-rainbow-4k-wallpaper.png" download>
+  {{< img src="/images/wallpapers/dino-not-found-rainbow-4k-wallpaper.png" alt="Fondo de pantalla con dino 404 de Google Chrome con arco iris dejando rastro" align="center" >}}
 </a>
