@@ -11,6 +11,12 @@ tags:
 
 En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla sobre programación y desarrollo web** para vuestros setups.
 
+## Fondos de pantalla y wallpapers de HTML5 y CSS
+
+<a href="/images/wallpapers/web-technologies-4k-wallpaper.png" download>
+  {{< img src="/images/wallpapers/web-technologies-4k-wallpaper.png" alt="Fondo de pantalla minimalista de los logos de HTML5, CSS y Javascript" align="center" >}}
+</a>
+
 ## Fondos de pantalla y wallpapers de Javascript
 
 <a href="/images/wallpapers/javascript-small-horizontal-4k.png" download>
