@@ -54,3 +54,8 @@ En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla so
   {{< img src="/images/wallpapers/fondo-de-pantalla-midudev-logo.png" alt="Fondo de pantalla de logo de midudev en negativo" align="center" >}}
 </a>
 
+## Otros fondos de pantalla
+
+<a href="/images/wallpapers/dino-not-found-4k-wallpaper.png" download>
+  {{< img src="/images/wallpapers/dino-not-found-4k-wallpaper.png" alt="Fondo de pantalla de logo de midudev en negativo" align="center" >}}
+</a>
