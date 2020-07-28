@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/midudev/midu.dev#readme",
   "devDependencies": {
-    "hugo-bin": "0.60.0",
-    "rimraf": "3.0.2"
+    "hugo-bin": "0.62.3"
   }
 }
