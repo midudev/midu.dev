@@ -64,6 +64,17 @@ En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla so
   {{< img src="/images/wallpapers/wallpaper-vuejs-horizontal-4k.png" alt="Wallpaper del logo de Vue" align="center" >}}
 </a>
 
+## Fondos de pantalla y wallpapers de Angular
+
+<a href="/images/wallpapers/wallpaper-angular-two-colors-4k.png" download>
+  {{< img src="/images/wallpapers/wallpaper-angular-two-colors-4k.png" alt="Wallpaper del logo de Angular con dos colores" align="center" >}}
+</a>
+
+<br />
+
+<a href="/images/wallpapers/wallpaper-angular-three-colors-4k.png" download>
+  {{< img src="/images/wallpapers/wallpaper-angular-three-colors-4k.png" alt="Wallpaper del logo de Angular con tres colores" align="center" >}}
+</a>
 
 ## Fondos de pantalla y wallpapers de midudev
 
