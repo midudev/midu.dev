@@ -1,9 +1,20 @@
 {
   "name": "midu.dev",
-  "short_name": "midudev",
+  "short_name": "midu.dev",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png?v=lk2rJzn2nl",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-256x256.png?v=lk2rJzn2nl",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
   "theme_color": "#0099ff",
   "background_color": "#ffffff",
-  "display": "minimal-ui",
-  "scope": "/",
+  "display": "standalone",
   "start_url": "/?utm_source=web_app_manifest"
 }
