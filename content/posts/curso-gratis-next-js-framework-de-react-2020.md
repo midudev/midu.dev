@@ -1,7 +1,7 @@
 ---
 title: Curso gratis de NextJS, el framework de React
 date: '2020-07-28'
-image: '/images/curso-gratis-react-2020.jpg'
+image: '/images/og_curso_nextjs_2020.jpg'
 description: Aprende qué es NextJS, el framework de React por excelencia, creando un clon de Twitter desde cero
 language: 🇪🇸
 toc: true
