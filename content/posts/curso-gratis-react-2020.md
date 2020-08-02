@@ -75,9 +75,9 @@ Además, también **vamos a preparar nuestro repositorio para tener Continuous D
 {{< youtube id="Wjy_nlYXTik" >}}
 {{< subscribe-to-youtube >}}
 
-Ahora que ya tenemos nuestra aplicación de **React ⚛️** desplegada en producción, es el momento de asegurarnos que Google va a ver los títulos y descripciones correctos. Para ello vamos a hacer algo de SEO con nuestra app de React. Primero lo creamos desde cero, con un custom hook, llamado **useTitle** y otro **useSEO**. Pero veremos que esto es difícil de hacer que mantener, así que pasaremos a usar **react-helmet.** Conoceremos otra alternativa, llamada `react-head` que es algo más liviano y también muy interesante.
+Ahora que ya tenemos nuestra aplicación de **React ⚛️** desplegada en producción, es el momento de subir nuestra aplicación de nivel. Para ello vamos a entender cómo usar el hook `useReducer` que nos permite tener un estado en nuestra aplicación y actualizarlo de una forma mucho más limpia y sencilla, especialmente para estados grandes.
 
-Para acabar la clase, vamos a ver cómo crear un **continuous deployment en GitHub** y que nos deje una URL deployada por cada Pull Request usando **Vercel** y su integración con este servicio.
+Además, viendo que esto de los hooks se va complicando, veremos cómo podemos hacer testing de los **Custom Hooks** que vamos creando gracias a la librería **React Hooks Testing Library**.
 
 ### Inicio de sesión y gestión de favoritos del usuario
 {{< youtube id="VT5S9Y49SYs" >}}
