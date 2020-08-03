@@ -19,6 +19,10 @@
     {
       "source": "/what-the-front/(.*)",
       "destination": "/podcast/$1"
+    },
+    {
+      "source": "/what-the-front",
+      "destination": "/podcast"
     }
   ]
 }
