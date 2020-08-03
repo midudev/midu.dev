@@ -90,7 +90,7 @@
   </style>
 
   <div id='wtf-page'>
-    <h1>Podcast<br />WhatTheFront!</h1>
+    <h1>Podcast de frontend y desarrollo web</h1>
       {{ range first 1 (where .Site.Pages ".Params.category" "podcast") }}
         <div id='wtf-page-sticky'>
           <iframe src='{{.Permalink}}'></iframe>
