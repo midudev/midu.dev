@@ -15,6 +15,10 @@
     {
       "source": "/wallpapers",
       "destination": "https://midu.dev/fondos-de-pantalla-de-programacion-javascript-html-css-react/"
+    },
+    {
+      "source": "/what-the-front/(.*)",
+      "destination": "/podcast/$1"
     }
   ]
 }
