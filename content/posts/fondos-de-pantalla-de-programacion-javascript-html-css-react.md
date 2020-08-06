@@ -55,7 +55,11 @@ En esta página podréis ir encontrando **wallpapers** y **fondos de pantalla so
 ## Fondos de pantalla y wallpapers de React
 
 <a href="/images/wallpapers/fondo-react-horizontal-4k.png" download>
-  {{< img src="/images/wallpapers/fondo-react-horizontal-4k.png" alt="Wallpaper de React" align="center" >}}
+  {{< img src="/images/wallpapers/fondo-react-horizontal-random-4k.png" alt="Wallpaper de React" align="center" >}}
+</a>
+
+<a href="/images/wallpapers/fondo-react-horizontal-random-4k.png" download>
+  {{< img src="/images/wallpapers/fondo-react-horizontal-random-4k.png" alt="Wallpaper de React" align="center" >}}
 </a>
 
 ## Fondos de pantalla y wallpapers de Vue
