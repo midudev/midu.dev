@@ -7,6 +7,7 @@ language: 🇪🇸
 toc: true
 tags:
 - nextjs
+- react
 ---
 
 Estoy emitiendo todos los viernes un live coding **[en mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1)** donde vamos ido construyendo paso a paso y desde cero **un clon de Twitter usando NextJS, el framework de React de Vercel.**
@@ -24,6 +25,15 @@ En esta primera clase aprendemos qué es **NextJS**, por qué creo que deberíam
 Para avanzar en nuestro clon de Twitter vamos a empezar a crear los **primeros componentes con Styled JSX** y afinar el diseño de nuestra aplicación con un diseño **mobile-only.**
 
 Y avanzaremos también en el login, para que el usuario tenga que **iniciar sesión con GitHub** usando **Firebase**. Veremos cómo lo manejamosen nuestra app de **NextJS**.
+
+### Configurando Eslint y Prettier. Avanzando en la página Home.
+{{< youtube id="EEDRcolSHms" >}}
+{{< subscribe-to-youtube >}}
+
+Vamos a configurar **Eslint y Prettier** en nuestro proyecto basándonos en las reglas de **Standard**. Explicaremos cómo hacerlo paso a paso e integrarlo en nuestro editor gracias a las extensiones de **Visual Studio Code.**
+
+Seguiremos avanzando el proyecto creando nuestra página home creando algunos componentes. ¡También cambiamos el logo gracias a vuestras colaboraciones! Y nuestra aplicación va tomando forma.
+
 
 ### Próximamente más...
 
