@@ -34,6 +34,13 @@ Vamos a configurar **Eslint y Prettier** en nuestro proyecto basándonos en las 
 
 Seguiremos avanzando el proyecto creando nuestra página home creando algunos componentes. ¡También cambiamos el logo gracias a vuestras colaboraciones! Y nuestra aplicación va tomando forma.
 
+### Usando Firestore de Firebase para crear y leer tweets
+{{< youtube id="W5y79Je-Rfs" >}}
+{{< subscribe-to-youtube >}}
+
+Para hacer un clon de **Twitter** debemos ser capaces de crear y leer tweets. En esta clase vamos a conseguirlo usando **Firestore** de **Firebase**.
+
+Además, **mejoraremos el layout de nuestra aplicación** para evitar problemas con el scroll y que el header y el navbar se vean correctamente.
 
 ### Próximamente más...
 
