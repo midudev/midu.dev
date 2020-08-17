@@ -251,20 +251,20 @@ svg {
 #article-content h3,
 #article-content h4,
 #article-content h5 {
-  color: #333;
+  color: #1a9afc;
   font-size: 24px;
   font-weight: 600;
   margin: 48px 0 24px;
 }
 
 #article-content h3 {
-  color: #004572;
-  font-size: 24px;
+  color: #0e578f;
+  font-size: 22px;
   margin-top: 16px;
 }
 
 #article-content h4 {
-  color: #067df7;
+  color: #09395e;
   font-size: 20px;
   margin-top: 16px;
 }
