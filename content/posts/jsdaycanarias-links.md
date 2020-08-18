@@ -6,7 +6,7 @@ description: "Todos los enlaces y recursos de la charla el Frontend del futuro d
 tags:
   - charla
   - frontend
-language: 🇪🇸
+
 type: page
 ---
 

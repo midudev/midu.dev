@@ -3,7 +3,7 @@ title: Introducción a Svelte, un nuevo framework para tu frontend
 date: '2019-08-31'
 image: '/images/svelte-logo.png'
 description: Svelte es un nuevo framework que tiene como objetivo simplificar al máximo la creación de aplicaciones web reactivas escribiendo el mínimo número de líneas posible.
-language: 🇪🇸
+
 toc: true
 tags:
 - svelte
