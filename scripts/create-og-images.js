@@ -10,7 +10,8 @@ const CANVAS = { width: 1200, height: 630 }
 const PATHS = {
   POSTS: './content/posts',
   TAGS_IMAGES: './static/images/tags',
-  OG_IMAGES: './static/images/og'
+  OG_IMAGES: './static/images/og',
+  OG_IMAGE_FOR_POST: '/images/og'
 }
 
 
@@ -77,12 +78,13 @@ fs.readdir(PATHS.POSTS).then(async files => {
         loadImage(`${PATHS.TAGS_IMAGES}/${tag}.png`)
       ]).then(([logoImg, tagImg]) => {
         const buffer = drawOgImage({title, logoImg, tagImg})
+        
         const imageName = fileName.replace('.md', '.png')
-        const pathToNewImage = `${PATHS.OG_IMAGES}/${imageName}`
-        data.image = pathToNewImage
+        data.image = `${PATHS.OG_IMAGE_FOR_POST}/${imageName}`
+
         const newFile = frontmatter.stringify({content}, data)
         return Promise.all([
-          fs.writeFile(pathToNewImage, buffer),
+          fs.writeFile(`${PATHS.OG_IMAGES}/${imageName}`, buffer),
           fs.writeFile(pathToPost, newFile)
         ])
       })
