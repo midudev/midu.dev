@@ -1,11 +1,14 @@
 ---
 title: Cómo renderizar una lista de elementos con Svelte
 date: '2020-04-12'
-description: Aprender a iterar una lista, como un array, y renderizar cada elemento en la interfaz del usuario utilizando el framework Svelte.
-language: 🇪🇸
+description: >-
+  Aprender a iterar una lista, como un array, y renderizar cada elemento en la
+  interfaz del usuario utilizando el framework Svelte.
+
 toc: true
 tags:
-- svelte
+  - svelte
+image: ./static/images/og/renderizar-listas-de-elementos-en-svelte.png
 ---
 
 Nueva entrega en la serie de artículos sobre [Svelte](https://midu.dev/introducci%C3%B3n-a-svelte/). Hoy hablamos de cómo podemos iterar una lista de elementos y renderizarlos utilizando este novedoso framework.

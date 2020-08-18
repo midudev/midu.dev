@@ -2,7 +2,7 @@
 date: 2019-01-08T23:33:51+01:00
 description: 'Muy pronto vamos a poder usar una nueva media query llamada prefers-color-scheme que nos permitirá cambiar los colores de nuestro sitio dependiendo si el usuario ha elegido un aspecto claro u oscuro para su OS'
 image: '/images/DwbAZwlWkAAnZQx.jpg'
-language: 🇪🇸
+
 title: "prefers-color-scheme: La nueva media feature de CSS para detectar el tema del usuario"
 tags:
 - css

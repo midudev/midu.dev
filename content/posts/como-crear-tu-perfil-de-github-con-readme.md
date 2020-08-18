@@ -1,11 +1,14 @@
 ---
 title: Cómo crear tu perfil de Github con README
 date: '2020-07-11'
-description: Te explico paso a paso cómo puedes utilizar la nueva feature de GitHub para personalizar tu perfil utilizando un README.md
-language: 🇪🇸
+description: >-
+  Te explico paso a paso cómo puedes utilizar la nueva feature de GitHub para
+  personalizar tu perfil utilizando un README.md
+
 toc: true
 tags:
-- github
+  - github
+image: ./static/images/og/como-crear-tu-perfil-de-github-con-readme.png
 ---
 
 *GitHub* acaba de lanzar una nueva funcionalidad que **te permite mostrar un README completamente personalizado en la página de tu perfil**. Como estoy seguro que tu también quieres disfrutar de esta nueva característica, te voy a explicar **paso a paso** lo que debes hacer para conseguir el tuyo.

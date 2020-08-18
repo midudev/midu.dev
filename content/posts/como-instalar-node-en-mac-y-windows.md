@@ -1,11 +1,14 @@
 ---
-title: Cómo instalar Node en Mac, Linux y Windows
+title: 'Cómo instalar Node en Mac, Linux y Windows'
 date: '2020-08-17'
-description: Instala paso a paso Node en Linux y Mac usando nvm y en Windows usando nvm-windows
-language: 🇪🇸
+description: >-
+  Instala paso a paso Node en Linux y Mac usando nvm y en Windows usando
+  nvm-windows
+
 toc: true
 tags:
-- node
+  - node
+image: ./static/images/og/como-instalar-node-en-mac-y-windows.png
 ---
 
 Hoy en día **Node y NPM son básicos a la hora de preparar tu entorno de desarrollo web**. Y, aunque no es difícil conseguirlo, existen diferentes formas de lograrlo dependiendo del sistema operativo.

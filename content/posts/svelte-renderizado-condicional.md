@@ -3,7 +3,7 @@ title: Renderizado condicional con Svelte
 date: '2020-03-26'
 image: '/images/svelte-conditional-rendering.jpg'
 description: Aprende a realizar un renderizado condicional, esto es, mostrar diferentes elementos o componentes de Svelte dependiendo de una condición
-language: 🇪🇸
+
 toc: true
 tags:
 - svelte

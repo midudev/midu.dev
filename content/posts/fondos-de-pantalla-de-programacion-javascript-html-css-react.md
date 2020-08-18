@@ -4,7 +4,7 @@ date: '2020-07-23'
 description: 'Fondos de pantalla de programación web: Javascript, React, CSS, HTML y más.'
 image: '/images/og-wallpapers.jpg'
 topic: javascript
-language: 🇪🇸
+
 toc: true
 tags:
 - javascript

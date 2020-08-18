@@ -5,7 +5,7 @@ image: '/images/entrevista-guillermo-rauch.jpg'
 description: Charla completa con Guillermo Rauch sobre el presente y futuro de la plataforma Vercel, las novedades de NextJS, curiosidades de React y lo que esperamos del frontend.
 tags:
   - vercel
-language: 🇪🇸
+
 ---
 
 **Guillermo Rauch** es una de las personas más influyentes en el mundo del desarrollo web. Actualmente es **CEO y co-fundador de Vercel ▲** (hasta hace muy poco ZEIT), una plataforma que te permite desplegar tus aplicaciones de forma rápida y sencilla. Además, mantiene y escribe sus pensamientos e ideas en [rauchg.com](http://rauchg.com/).

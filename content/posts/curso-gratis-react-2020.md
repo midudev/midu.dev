@@ -3,7 +3,7 @@ title: Curso gratis de ReactJS 2020 con clases en vivo
 date: '2020-05-17'
 image: '/images/curso-gratis-react-2020.jpg'
 description: Aprende qué es React, crea una aplicación desde cero, crea tus propios hooks y añade infinite scroll y testing con estas clases en vivo gratis.
-language: 🇪🇸
+
 toc: true
 tags:
 - react

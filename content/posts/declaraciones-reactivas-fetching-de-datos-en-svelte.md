@@ -3,7 +3,7 @@ title: Declaraciones reactivas y fetching de datos con Svelte
 date: '2020-03-02'
 image: '/images/declaraciones-reactivas-fetching-con-svelte.jpg'
 description: Domina completamente la reactividad en Svelte para ir más allá de las asignaciones y crear declaraciones y sentencias totalmente reactivas para poder hacer fetching de datos.
-language: 🇪🇸
+
 toc: true
 tags:
 - svelte

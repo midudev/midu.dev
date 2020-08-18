@@ -7,7 +7,7 @@ tags:
   - graphql
   - react
   - apollo client
-language: 🇪🇸
+
 toc: true
 ---
 

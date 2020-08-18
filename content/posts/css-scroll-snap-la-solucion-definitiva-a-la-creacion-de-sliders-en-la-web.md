@@ -5,7 +5,7 @@ image: '/images/scroll-snap.png'
 description: 'Introducción a CSS Scroll Snap. La solución definitiva a la batalla infinita entre los desarrolladores web y la creación de sliders. Por fin.'
 tags:
 - css
-language: 🇪🇸
+
 ---
 
 {{< img align="left" alt="Una simple búsqueda en Google nos arroja aproximadamente más de un millón de resultados" src="/images/searching-slider-results.png">}}

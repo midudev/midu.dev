@@ -3,7 +3,7 @@ title: Cómo crear componentes y gestionar el estado en Svelte
 date: '2020-02-02'
 image: '/images/componentes-y-estado-con-svelte.jpg'
 description: Aprende a crear componentes en Svelte para reutilizar trozos de tu interfaz y a gestionar el estado de los mismos para tener reactividad.
-language: 🇪🇸
+
 toc: true
 tags:
 - svelte

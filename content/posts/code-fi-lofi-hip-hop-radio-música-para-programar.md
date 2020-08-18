@@ -5,7 +5,6 @@ image: '/images/codefi01.jpg'
 description: Música relajante para programar y concentrarse. Beats relajantes, chill con hip hop alternativo y lofi 🎵.
 tags:
 - me
-language: 🇪🇸
 ---
 
 No sé vosotros pero a mi **me encanta ponerme música para programar.** He pasado por todos los géneros para encontrar mi espacio zen 👨‍💻. Desde música clásica a pop-rock incluso [bandas sonoras de vídeojuegos](https://open.spotify.com/playlist/1K9Lxa1YSDaNgjxb3vkIGT). Desde hace más de un año estoy disfrutando de un nuevo género. Un nicho musical, diría yo, donde **he encontrado todos los matices que necesitaba**: instrumental, con ritmo pero suave, que no sea aburrido ni monótono y que sepa acompañarme.

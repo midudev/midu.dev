@@ -3,7 +3,7 @@ title: Crea un nuevo proyecto con Svelte 3
 date: '2019-09-08'
 image: '/images/crear-proyecto-con-svelte.png'
 description: Aprende a crear desde cero y paso a paso tu proyecto con el framework Svelte.js con este pequeño tutorial en español. Para tener todas las dependencias y un entorno de desarrollo listo para empezar a trabajar.
-language: 🇪🇸
+
 toc: true
 tags:
 - svelte

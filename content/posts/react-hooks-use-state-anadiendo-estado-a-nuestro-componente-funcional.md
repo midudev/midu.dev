@@ -3,7 +3,7 @@ title: React hooks, cómo utilizar el hook useState
 date: '2019-02-07'
 image: '/images/react-hooks-use-state.png'
 description: Los componentes en React pueden tener un estado interno que determina cómo se debe renderizar. Con los hooks podremos crear componentes dinámicos e interactivos muy fácilmente.
-language: 🇪🇸
+
 tags:
 - react
 ---

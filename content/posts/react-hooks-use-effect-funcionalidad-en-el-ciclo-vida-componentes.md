@@ -3,7 +3,7 @@ title: React Hooks, useEffect. Añadiendo funcionalidad en el ciclo de vida de n
 date: '2019-02-19'
 image: '/images/react-hooks-use-effect.jpg'
 description: Usando useEffect podremos añadir funcionalidad a nuestro componente cuando se renderiza por primera vez, se actualiza cuando nueva información llega y cuando se desmonta del árbol de elementos
-language: 🇪🇸
+
 tags:
 - react
 - react hooks

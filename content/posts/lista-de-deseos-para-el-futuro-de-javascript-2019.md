@@ -5,7 +5,7 @@ image: '/images/js-future.jpg'
 description: En los últimos años hemos visto una evolución brutal de Javascript como lenguaje de programación, añadiendo nuevas caracterísitcas, métodos y funcionalidades. Pero los desarrolladores de este lenguaje queremos más. Aquí una lista de mis deseos.
 tags:
 - javascript
-language: 🇪🇸
+
 ---
 
 No es casualidad que una de mis sagas favoritas sea [Back to the Future](https://es.wikipedia.org/wiki/Back_to_the_Future). Contiene dos elementos que, desde muy pequeño, siempre me han emocionado. La primera, **los viajes en el tiempo**. La segunda, **la ciencia ficción como medio para imaginar el futuro y dar pinceladas de lo que nos espera.**

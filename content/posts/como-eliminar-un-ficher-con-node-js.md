@@ -1,12 +1,14 @@
 ---
 title: Cómo eliminar un fichero con Node.js
 date: '2020-04-16'
-description: Aprende a utilizar Node para eliminar un fichero o lista de ficheros gracias a fs.unlink y fs.unlinkSync.
+description: >-
+  Aprende a utilizar Node para eliminar un fichero o lista de ficheros gracias a
+  fs.unlink y fs.unlinkSync.
 topic: node
-language: 🇪🇸
 toc: true
 tags:
-- node
+  - node
+image: ./static/images/og/como-eliminar-un-ficher-con-node-js.png
 ---
 
 En ocasiones necesitamos **eliminar un fichero de nuestro sistema de forma programática** utilizando [`Node.js`](http://midu.dev/tags/node/). Muchas veces vamos directos a buscar un paquete en `npm` (que los hay y muy buenos como [del](https://github.com/sindresorhus/del)) que nos solucione la papeleta pero `Node.js` incorpora una forma nativa de eliminar ficheros y enlaces simbólicos a ficheros con muy poco esfuerzo. Y creo que puede ser interesante aprenderlo.

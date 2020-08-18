@@ -4,7 +4,6 @@ date: '2018-12-10'
 image: '/images/analytics.png'
 description: 'Muchas veces vamos a querer cargar Google Analytics en nuestra página web pero nos gustaría evitar el coste en performance que tiene. Te voy a explicar la mejor estrategia para cargar esta librería afectando lo mínimo posible la performance.'
 topic: performance
-language: 🇪🇸
 toc: true
 tags:
 - performance

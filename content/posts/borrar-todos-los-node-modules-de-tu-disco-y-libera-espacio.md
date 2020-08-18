@@ -3,7 +3,6 @@ title: Borra todos los directorios node_modules de tu disco y libera espacio
 date: '2019-08-07'
 image: '/images/disco-duro.jpg'
 description: Cómo borrar el contenido de las carpetas node_modules con las dependencias de tus proyectos para liberar espacio en tu disco
-language: 🇪🇸
 toc: true
 tags:
 - terminal

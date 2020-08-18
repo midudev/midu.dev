@@ -2,7 +2,7 @@
 date: '2019-01-12'
 description: 'Crea tu propio slider paso a paso, sencillo pero totalmente funcional, utilizando CSS gracias a la propiedad Scroll Snap.'
 image: '/images/snap.jpg'
-language: 🇪🇸
+
 title: 'CSS Scroll Snap, la solución definitiva a la creación de sliders en la web - Parte II'
 tags:
 - css

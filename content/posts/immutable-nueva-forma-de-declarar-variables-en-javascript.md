@@ -5,7 +5,7 @@ image: '/images/immutable-const-variable.png'
 description: 'Usando immutable podremos crear estructuras de datos en Javascript que no son reasignables y tampoco modificables.'
 tags:
 - javascript
-language: 🇪🇸
+
 ---
 
 El [comité Ecma TC39](https://github.com/tc39) ha anunciado la creación de un nuevo tipo de variables en Javascript. Se llama `immutable` y viene a satisfacer las necesidades de crear estructuras de datos inmutables en el lenguaje. De esta forma, librerías como [immutable.js](https://facebook.github.io/immutable-js/) dejan de tener sentido y **sólo falta que empecemos a ver los primeros navegadores dando soporte a esta nueva funcionalidad.**
