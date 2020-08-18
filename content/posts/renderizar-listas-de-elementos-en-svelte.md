@@ -8,7 +8,7 @@ description: >-
 toc: true
 tags:
   - svelte
-image: ./static/images/og/renderizar-listas-de-elementos-en-svelte.png
+image: /images/og/renderizar-listas-de-elementos-en-svelte.png
 ---
 
 Nueva entrega en la serie de artículos sobre [Svelte](https://midu.dev/introducci%C3%B3n-a-svelte/). Hoy hablamos de cómo podemos iterar una lista de elementos y renderizarlos utilizando este novedoso framework.

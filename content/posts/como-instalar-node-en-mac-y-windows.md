@@ -8,7 +8,7 @@ description: >-
 toc: true
 tags:
   - node
-image: ./static/images/og/como-instalar-node-en-mac-y-windows.png
+image: /images/og/como-instalar-node-en-mac-y-windows.png
 ---
 
 Hoy en día **Node y NPM son básicos a la hora de preparar tu entorno de desarrollo web**. Y, aunque no es difícil conseguirlo, existen diferentes formas de lograrlo dependiendo del sistema operativo.

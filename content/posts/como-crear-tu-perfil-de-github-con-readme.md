@@ -8,7 +8,7 @@ description: >-
 toc: true
 tags:
   - github
-image: ./static/images/og/como-crear-tu-perfil-de-github-con-readme.png
+image: /images/og/como-crear-tu-perfil-de-github-con-readme.png
 ---
 
 *GitHub* acaba de lanzar una nueva funcionalidad que **te permite mostrar un README completamente personalizado en la página de tu perfil**. Como estoy seguro que tu también quieres disfrutar de esta nueva característica, te voy a explicar **paso a paso** lo que debes hacer para conseguir el tuyo.

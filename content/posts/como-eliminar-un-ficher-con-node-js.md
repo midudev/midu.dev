@@ -8,7 +8,7 @@ topic: node
 toc: true
 tags:
   - node
-image: ./static/images/og/como-eliminar-un-ficher-con-node-js.png
+image: /images/og/como-eliminar-un-ficher-con-node-js.png
 ---
 
 En ocasiones necesitamos **eliminar un fichero de nuestro sistema de forma programática** utilizando [`Node.js`](http://midu.dev/tags/node/). Muchas veces vamos directos a buscar un paquete en `npm` (que los hay y muy buenos como [del](https://github.com/sindresorhus/del)) que nos solucione la papeleta pero `Node.js` incorpora una forma nativa de eliminar ficheros y enlaces simbólicos a ficheros con muy poco esfuerzo. Y creo que puede ser interesante aprenderlo.
