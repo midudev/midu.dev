@@ -8,7 +8,7 @@ https://midu.dev website
 * YouTube 📹 : https://www.youtube.com/c/midudev?sub_confirmation=1
 * Instagram 📸 : https://www.instagram.com/midu.dev/
 * Facebook 💬 : https://www.facebook.com/midudev.frontend
-
+* Github 🐙: https://github.com/midudev
 
 # Contributors ✨
 
