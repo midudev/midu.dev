@@ -42,6 +42,14 @@ Para hacer un clon de **Twitter** debemos ser capaces de crear y leer tweets. En
 
 Además, **mejoraremos el layout de nuestra aplicación** para evitar problemas con el scroll y que el header y el navbar se vean correctamente.
 
+### Subiendo imágenes a Firebase Cloud Storage y un timeAgo desde cero
+{{< youtube id="AiyiiXXChwo" >}}
+{{< subscribe-to-youtube >}}
+
+En la anterior clase ya listábamos los tweets pero no se mostraba bien la fecha. En esta clase empezamos haciendo un Timeago desde cero, sin dependencias.
+
+Y una vez tengamos eso, mejoramos un poco el layout de nuestra app y permitimos que los usuarios puedan subir una imagen con cada tweet. Veremos cómo podemos guardarlos en la **Firebase Cloud Storage.**
+
 ### Próximamente más...
 
 **Suscríbete a mi canal de Youtube para no perderte el siguiente 👇**
