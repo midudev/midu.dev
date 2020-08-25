@@ -68,7 +68,7 @@ rtf.format(-40, 'seconds')
 
 Perfecto, ahora ya sabemos que podríamos usar Intl.RelativeTimeFormat para conseguir esto... pero... ¿cómo sabemos qué unidad debemos usar y el valor que tendría esa diferencia? Pues vamos a ello.
 
-### Cómo conseguir la unidad y el valor para usar con Intl.RelativeTimeFormat
+### Cómo conseguir la unidad y el valor para usar con Intl.RelativeTimeFormat
 
 Para conseguir la unidad y valor que tenemos que usar con Intl.RelativeTimeFormat, primero necesitamos **calcular la diferencia de tiempo que hay entre la fecha actual y la fecha de nuestro recurso.** Para hacer esto vamos a trabajar con *timestamps de Javascript*, que son los milisegundos que han pasado desde las *00:00:00 UTC del 1 de enero de 1970* y la fecha en cuestión.
 
@@ -199,7 +199,7 @@ En este punto hay **dos estrategias**. Una puede ser que, si no soporta esta API
 
 Si te preocupa Safari, **en iOS 14 y la nueva versión de macOS Big Sur, va a añadir soporte a esta API** por lo que la necesidad de polyfill será menor.
 
-## Conclusiones
+## Conclusiones
 
 Con esto ya **hemos aprendido cómo crear nuestro propio TimeAgo** sin necesidad de recurrir a ningún tipo de dependencia. Lo mejor es que lo conseguimos en unas pocas líneas de código y, de gratis, viene con todas las traducciones necesarias. 
 
