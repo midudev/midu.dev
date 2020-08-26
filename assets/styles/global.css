@@ -232,6 +232,10 @@ svg {
   word-break: break-word;
 }
 
+#article-content ul + .highlight {
+  margin-bottom: -25px;
+}
+
 #article-content p + ul {
   margin-top: -16px;
 }
