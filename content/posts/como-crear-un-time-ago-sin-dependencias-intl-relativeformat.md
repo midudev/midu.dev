@@ -33,7 +33,7 @@ En sitios como **Instragram, Twitter, Facebook** o incluso blogs, se ofrece este
 
 *Intl.RelativeTimeFormat* es un objeto que nos permite crear un formateador para conseguir los tiempos relativos traducido a diferentes idiomas. Para crear una instancia debes usar el constructor `Intl.RelativeTimeFormat` y pasarle el idioma y, después diferentes opciones para formatear el tiempo.
 
-```js
+```javascript
 // Crea un formateador de tiempo relativo en tu idioma
 // y le pasamos un objeto con las opciones por defecto
 const rtf = new Intl.RelativeTimeFormat(, {
@@ -47,7 +47,7 @@ const rtf = new Intl.RelativeTimeFormat(, {
 
 Ahora que tenemos en `rtf` una instancia del formatear de tiempo relativo, ya podemos usarlo. Para ello tenemos que pasarle dos parámetros. Primero la cantidad de tiempo y como segundo parámetro la unidad de tiempo a la que nos referimos. Veamos algunos ejemplos:
 
-```js
+```javascript
 // Para hablar que algo ocurrió hace un día
 // Tenemos que usar unidades negativas
 rtf.format(-1, 'day')
@@ -74,7 +74,7 @@ Para conseguir la unidad y valor que tenemos que usar con Intl.RelativeTimeForma
 
 Para recuperar la fecha actual con ese timestamp podemos usar `Date.now()`. Vamos a crear una función llamada `getSecondsDiff` que al pasarle un `timestamp` con ese formato lo compare con el `Date.now()` y la diferencia de segundos que hay entre ambas fechas.
 
-```js
+```javascript
 const getSecondsDiff = (timestamp) => {
   // restamos el tiempo actual al que le pasamos por parámetro
   // lo dividimos entre 1000 para quitar los milisegundos
@@ -86,7 +86,7 @@ Ahora ya sabemos la diferencia en segundos entre las dos fechas. Ahora, **necesi
 
 Para saber qué unidad tenemos que usar, empezaremos por tener un **diccionario** que nos indique el número de segundos que hay en las diferentes unidades que queremos controlar con el TimeAgo. Por ejemplo, **un día tiene 86400 segundos.**
 
-```js
+```javascript
 const DATE_UNITS = {
   day: 86400,
   hour: 3600,
@@ -97,7 +97,7 @@ const DATE_UNITS = {
 
 Ahora vamos a crear un método llamado `getUnitAndValueDate` donde recibiremos la diferencia que hemos calculado en el método `getSecondsDiff` y nos calculará en qué unidad de tiempo tenemos que expresar esa diferencia.
 
-```js
+```javascript
 const getUnitAndValueDate = (secondsElapsed) => {
   // creamos un for of para extraer cada unidad y los segundos en esa unidad del diccionario
   for (const [unit, secondsInUnit] of Object.entries(DATE_UNITS)) {
@@ -121,7 +121,7 @@ const getUnitAndValueDate = (secondsElapsed) => {
 
 Bueno, pues ya tenemos tanto el `value` como el `unit` (la unidad de tiempo) que debemos pasarle al formateador de fechas relativas. Con esto ya podemos crear un método llamado `getTimeAgo` que al pasarle un timestamp nos devuelva el tiempo relativo formateado.
 
-```js
+```javascript
 const getTimeAgo = timestamp => {
   // creamos una instancia de RelativeTimeFormat para traducir en castellano
   const rtf = new Intl.RelativeTimeFormat()
@@ -138,7 +138,7 @@ const getTimeAgo = timestamp => {
 
 Y con eso ya tendríamos nuestro código funcionando.
 
-```js
+```javascript
 const DATE_UNITS = {
   day: 86400,
   hour: 3600,
@@ -167,7 +167,7 @@ const getTimeAgo = timestamp => {
 
 Para terminar, os dejo aquí algunas pruebas rápidas calculando las fechas que podríamos pasarle por parámetro:
 
-```js
+```javascript
 const thirtySecondsAgoDate = Date.now() - (30 * 1000)
 console.log(getTimeAgo(thirtySecondsAgoDate))
 // -> hace 5 minutos
