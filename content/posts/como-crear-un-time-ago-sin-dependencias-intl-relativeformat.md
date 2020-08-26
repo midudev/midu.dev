@@ -170,7 +170,7 @@ Para terminar, os dejo aquí algunas pruebas rápidas calculando las fechas que 
 ```javascript
 const thirtySecondsAgoDate = Date.now() - (30 * 1000)
 console.log(getTimeAgo(thirtySecondsAgoDate))
-// -> hace 5 minutos
+// -> hace 30 segundos
 
 const fourMinutesAgoDate = Date.now() - (5 * 60 * 1000)
 console.log(getTimeAgo(fourMinutesAgoDate))
@@ -199,7 +199,7 @@ En este punto hay **dos estrategias**. Una puede ser que, si no soporta esta API
 
 Si te preocupa Safari, **en iOS 14 y la nueva versión de macOS Big Sur, va a añadir soporte a esta API** por lo que la necesidad de polyfill será menor.
 
-Si estás pensando en la compatibilidad con **Node.js**, hace tiempo que el objeto `Intl` está disponible en **Node.js**. El único problema que puedes encontrar es que no soporte todos los idiomas y sólo te lo traduzca al inglés. Para asegurarte que no tienes ese problema, tienes que instalar la versión `full-icu` de **Node.js**. **Más información aquí: https://nodejs.org/api/intl.html **
+Si estás pensando en la compatibilidad con **Node.js**, hace tiempo que el objeto `Intl` está disponible en **Node.js**. El único problema que puedes encontrar es que no soporte todos los idiomas y sólo te lo traduzca al inglés. Para asegurarte que no tienes ese problema, tienes que instalar la versión `full-icu` de **Node.js**. **Más información aquí: https://nodejs.org/api/intl.html**
 
 ## Conclusiones
 
