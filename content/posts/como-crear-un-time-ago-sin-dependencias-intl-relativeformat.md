@@ -199,6 +199,8 @@ En este punto hay **dos estrategias**. Una puede ser que, si no soporta esta API
 
 Si te preocupa Safari, **en iOS 14 y la nueva versión de macOS Big Sur, va a añadir soporte a esta API** por lo que la necesidad de polyfill será menor.
 
+Si estás pensando en la compatibilidad con **Node.js**, hace tiempo que el objeto `Intl` está disponible en **Node.js**. El único problema que puedes encontrar es que no soporte todos los idiomas y sólo te lo traduzca al inglés. Para asegurarte que no tienes ese problema, tienes que instalar la versión `full-icu` de **Node.js**. **Más información aquí: https://nodejs.org/api/intl.html **
+
 ## Conclusiones
 
 Con esto ya **hemos aprendido cómo crear nuestro propio TimeAgo** sin necesidad de recurrir a ningún tipo de dependencia. Lo mejor es que lo conseguimos en unas pocas líneas de código y, de gratis, viene con todas las traducciones necesarias. 
