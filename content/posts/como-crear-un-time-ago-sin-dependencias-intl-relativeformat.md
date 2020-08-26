@@ -36,7 +36,7 @@ En sitios como **Instragram, Twitter, Facebook** o incluso blogs, se ofrece este
 ```javascript
 // Crea un formateador de tiempo relativo en tu idioma
 // y le pasamos un objeto con las opciones por defecto
-const rtf = new Intl.RelativeTimeFormat(, {
+const rtf = new Intl.RelativeTimeFormat({
   localeMatcher: 'best fit', // otros valores: 'lookup'
   numeric: 'always', // otros valores: 'auto' para poner "ayer" o "anteayer"
   style: 'long', // otros valores: 'short' o 'narrow'
