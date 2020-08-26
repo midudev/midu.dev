@@ -12,7 +12,7 @@ image: /images/og/como-deshacer-el-ultimo-commit-git.png
 
 Lo mejor que tiene *Git* es que *casi* siempre que te equivocas puedes deshacer tu cambio y seguir siendo feliz. Digamos que te proporciona un montón de redes de seguridad para evitar que hagas cosas que... no deberías 🤣.
 
-Una de ellas es al hacer un commit. Al hacerlo
+Una de esas veces es cuando hacemos un commit. **¿Qué pasa si nos hemos equivocado?** **¿Cómo deshacemos el último commit? ¿Y si ya lo he publicado?** Todas las respuestas, aquí. 👇
 
 ## Deshacer el último commit (no pusheado)
 
