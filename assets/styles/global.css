@@ -233,7 +233,7 @@ svg {
 }
 
 #article-content ul + .highlight {
-  margin-bottom: -25px;
+  margin-top: -25px;
 }
 
 #article-content p + ul {
