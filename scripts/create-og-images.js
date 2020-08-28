@@ -8,6 +8,7 @@ const drawDotsPattern = require('./_lib/draw-dots-pattern')
 
 const CANVAS = { width: 1200, height: 630 }
 const PATHS = {
+  BACKGROUNDS: './static/images/og/bkgs',
   POSTS: './content/posts',
   TAGS_IMAGES: './static/images/tags',
   OG_IMAGES: './static/images/og',
@@ -24,7 +25,7 @@ const resizeImgByWidth = (img, desiredWidth) => {
   return {height: desiredHeight, width: desiredWidth}
 }
 
-const drawOgImage = ({logoImg, tagImg, title}) => {
+const drawOgImage = ({bkgImg, logoImg, tagImg, title}) => {
   const {height, width} = CANVAS
   const canvas = createCanvas(width, height)
   const context = canvas.getContext('2d')
@@ -32,10 +33,12 @@ const drawOgImage = ({logoImg, tagImg, title}) => {
   context.fillStyle = '#fff'
   context.fillRect(0, 0, width, height)
 
-  drawDotsPattern(context, width, height)
+  context.drawImage(bkgImg, 0 , 0, width, height)
 
   context.fillStyle = '#222'
   context.textAlign = 'center'
+  context.textBaseline = 'middle'
+
   drawMultiLine(context, title, {
     rect: {
 			x: width / 2,
@@ -75,9 +78,10 @@ fs.readdir(PATHS.POSTS).then(async files => {
 
       await Promise.all([
         loadImage('./static/logo.png'),
-        loadImage(`${PATHS.TAGS_IMAGES}/${tag}.png`)
-      ]).then(([logoImg, tagImg]) => {
-        const buffer = drawOgImage({title, logoImg, tagImg})
+        loadImage(`${PATHS.TAGS_IMAGES}/${tag}.png`),
+        loadImage(`${PATHS.BACKGROUNDS}/01.png`)
+      ]).then(([logoImg, tagImg,  bkgImg]) => {
+        const buffer = drawOgImage({title, logoImg, tagImg, bkgImg})
         
         const imageName = fileName.replace('.md', '.png')
         data.image = `${PATHS.OG_IMAGE_FOR_POST}/${imageName}`
