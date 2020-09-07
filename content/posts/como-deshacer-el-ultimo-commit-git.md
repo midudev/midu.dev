@@ -14,7 +14,7 @@ Lo mejor que tiene *Git* es que *casi* siempre que te equivocas puedes deshacer 
 
 Una de esas veces es cuando hacemos un commit. **¿Qué pasa si nos hemos equivocado?** **¿Cómo deshacemos el último commit? ¿Y si ya lo he publicado?** Todas las respuestas, aquí. 👇
 
-## Deshacer el último commit (no pusheado)
+## Deshacer el último commit (no publicado)
 
 A veces **queremos tirar para atrás el último commit** que hemos hecho porque hemos añadido más archivos de la cuenta, queremos hacer commit de otra cosa o, simplemente, porque ahora no tocaba.
 
@@ -61,7 +61,7 @@ Ya sea que sólo quieres cambiar el mensaje de commit o que además quieres aña
 
 > Importante: El parámetro de `--amend` es muy útil pero sólo funciona con el último commit y siempre y cuando NO esté publicado. Si ya has hecho `push` de ese commit, esto no va a funcionar. Deberías hacer un `git revert` en su lugar.
 
-## Deshacer un commit ya publicado
+## Deshacer un commit (ya publicado)
 
 A veces es demasiado tarde y no sólo has hecho commit, si no que además has publicado los cambios. Peeero, todavía hay esperanza. Puedes hacer un `revert` de tus cambios indicando el commit que quieres deshacer.
 
