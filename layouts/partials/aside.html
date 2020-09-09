@@ -17,7 +17,7 @@
     {{ $videos := getJSON $url $apiKeyParam $apiKeyValue }}
 
     {{ range first 4 $videos.items }}
-    <a href='#lightbox' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}'>
+    <a href='https://www.youtube.com/watch?v={{ .snippet.resourceId.videoId }}' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}' rel='nofollow noopener noreferrer'>
       <img alt="{{.snippet.title}}" class='u-lazyload' loading='lazy' src='https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg' />
       <h4>{{ .snippet.title }}</h4>
     </a>
