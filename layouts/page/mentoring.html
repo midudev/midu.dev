@@ -16,8 +16,12 @@
   #mentoring-page > section {
     padding-bottom: 48px;
     position: relative;
-    padding-top: 48px;
     margin-top: 24px;
+  }
+  @media (min-width: 768px) {
+    #mentoring-page > section {
+      padding-top: 48px;
+    }
   }
 
   #mentoring-page svg {
@@ -31,17 +35,27 @@
   }
 
   #mentoring-page h1 {
-    font-size: 64px;
+    font-size: 44px;
     line-height: 1;
     color: #111;
     max-width: 100%;
     padding-bottom: 16px;
   }
+  @media (min-width: 768px) {
+    #mentoring-page h1 {
+      font-size: 64px;
+    }
+  }
 
   #mentoring-page h2 {
     color: #222;
-    font-size: 36px;
+    font-size: 26px;
     line-height: 1.3;
+  }
+  @media (min-width: 768px) {
+    #mentoring-page h2 {
+      font-size: 36px;
+    }
   }
 
   #mentoring-page h3 {
@@ -57,7 +71,12 @@
   }
 
   .calendly-inline-widget {
-    margin-top: -45px;
+    margin-top: 15px;
+  }
+  @media (min-width: 768px) {
+    .calendly-inline-widget {
+      margin-top: -45px;
+    }
   }
 
   .button {
