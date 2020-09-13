@@ -50,6 +50,14 @@ En la anterior clase ya listábamos los tweets pero no se mostraba bien la fecha
 
 Y una vez tengamos eso, mejoramos un poco el layout de nuestra app y permitimos que los usuarios puedan subir una imagen con cada tweet. Veremos cómo podemos guardarlos en la **Firebase Cloud Storage.**
 
+### Rutas dinámicas y data fetching con NextJS
+{{< youtube id="i16PlS9aTJU" >}}
+{{< subscribe-to-youtube >}}
+
+En esta clase vamos a querer tener una página para nuestro tweet. Para ello la ruta tendrá que indicarnos qué id debemos mostrar. A esto se le llama **"ruta dinámica"** ya que hay un segmento que cambiará para darnos información.
+
+Una vez tengamos claro ese concepto, será el momento de pasar a recuperar la información de ese tweet en específico. Para ello conoceremos las diferentes opciones de **Data Fetching que tenemos en NextJS como getServerSideProps, getStaticProps y getInitialProps.**
+
 ### Próximamente más...
 
 **Suscríbete a mi canal de Youtube para no perderte el siguiente 👇**
