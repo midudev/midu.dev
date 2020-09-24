@@ -3,16 +3,18 @@
 
 <head>
   <meta charset="utf-8">
+  
   <title>{{- .Title | default .Site.Title -}}</title>
   <meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
   <link rel="canonical" href="{{ .Permalink }}">
 
   {{ partial "head/preconnects.html" . }}
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   {{ $css := resources.Get "styles/global.css" }}
   {{ $style := $css | resources.Minify }}
+
   <style>{{$style.Content | safeCSS}}</style>
 
   {{ partial "head/favicons.html" . }}
@@ -50,6 +52,19 @@
   <meta property="og:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
   <meta property="og:description" content="{{- .Description | default .Site.Params.Description -}}" />
   <meta property="og:site_name" content="midu.dev" />
+
+  {{ if isset .Params "tags" }}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "headline": "{{ .Title }}",
+      "image": ["https://midu.dev{{ .Params.image | default .Site.Params.Image }}"],
+      "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+    }
+  </script>
+  {{ end }}
+
 </head>
 
 <body class='{{ cond (isset .Params "audio") "body-player" ""}}'>
