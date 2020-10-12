@@ -162,7 +162,7 @@ La función que devolvemos se podría entender como el ciclo de vida `componentW
 
 ## useEffect: Cómo evitar que se vuelva a ejecutar 🔃
 
-Es posible que si nuestro componente se renderice mucho, por cambios constantes en su estado interno o pro nuevas props, el ejecutar demasiado el efecto que le hemos pasado al método `useEffect` haga que exista un problema de performance. O, también, **que estemos ejecutando un efecto que vuelva a actualizar el estado de nuestro componente y podamos crear un loop infinito si no lo evitamos.**
+Es posible que si nuestro componente se renderice mucho, por cambios constantes en su estado interno o por nuevas props, el ejecutar demasiado el efecto que le hemos pasado al método `useEffect` haga que exista un problema de performance. O, también, **que estemos ejecutando un efecto que vuelva a actualizar el estado de nuestro componente y podamos crear un loop infinito si no lo evitamos.**
 
 **Por defecto los efectos se disparan cada vez que se realiza un nuevo renderizado** pero podemos evitar que el efecto se vuelva a ejecutar pasándole un segundo parámetro al hook. El parámetro es un array con todos los valores de los que depende nuestro efecto, de forma que sólo se ejecutará cuando ese valor cambie.
 
