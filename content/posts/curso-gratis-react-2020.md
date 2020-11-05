@@ -89,7 +89,7 @@ En esta clase vemos como podemos iniciar sesión, creamos un estado global con e
 
 ### Registro de usuario con Formik y React.createPortal
 
-En esta clase vamos a ver cómo podemos usar **Formik** para gestionar nuestros usuarios y **createPortal** para poder renderizar fuera del árbol de elementos un componente hio en React.
+En esta clase vamos a ver cómo podemos usar **Formik** para gestionar nuestros usuarios y **createPortal** para poder renderizar fuera del árbol de elementos un componente hijo en React.
 
 {{< youtube id="dtbI6gDnTFU" >}}
 {{< subscribe-to-youtube >}}
