@@ -145,7 +145,7 @@
         {{ with .Param "tags" }}
           {{ range first 1 . }}
             <picture>
-              <img alt='Imagen del artículo: {{ . }}' class='lazyload u-lazyload' src='/images/tags/{{.}}.png' />
+              <img alt='Imagen de la etiqueta {{ . }}' class='lazyload u-lazyload' loading='lazy' src='/images/tags/{{.}}.png' width="48" height="48" />
             </picture>
           {{ end }}
         {{ end }}
@@ -254,37 +254,37 @@
   <div id='topics'>
     <a href='/tags/react' class='topic' style='--bgc-topic:#5edaf9'>
       <picture>
-        <img alt='react' class='lazyload u-lazyload' src='/images/tags/react.png' />
+        <img alt='react' class='lazyload u-lazyload' loading='lazy' src='/images/tags/react.png' width="48" height="48" />
       </picture>
       <h4>React</h4>
     </a>
     <a href='/tags/javascript' class='topic' style='--bgc-topic:#efda4c'>
       <picture>
-        <img alt='javascript' class='lazyload u-lazyload' src='/images/tags/javascript.png' />
+        <img alt='javascript' class='lazyload u-lazyload' loading='lazy' src='/images/tags/javascript.png' width="48" height="48" />
       </picture>
       <h4>Javascript</h4>
     </a>
     <a href='/tags/svelte' class='topic' style='--bgc-topic:#fd3900; --c-topic: #fff'>
       <picture>
-        <img alt='svelte' class='lazyload u-lazyload' src='/images/tags/svelte.png' />
+        <img alt='svelte' class='lazyload u-lazyload' loading='lazy' src='/images/tags/svelte.png' width="48" height="48" />
       </picture>
       <h4>Svelte</h4>
     </a>
     <a href='/tags/performance' class='topic' style='--bgc-topic:#fcc116; --c-topic: #fff'>
       <picture>
-        <img alt='performance' class='lazyload u-lazyload' src='/images/tags/performance.png' />
+        <img alt='performance' class='lazyload u-lazyload' loading='lazy' src='/images/tags/performance.png' width="48" height="48" />
       </picture>
       <h4>Web Perf</h4>
     </a>
     <a href='/tags/css' class='topic' style='--bgc-topic: #0f72b7; --c-topic: #fff'>
       <picture>
-        <img alt='css' class='lazyload u-lazyload' src='/images/tags/css.png' />
+        <img alt='css' class='lazyload u-lazyload' loading='lazy' src='/images/tags/css.png' width="48" height="48" />
       </picture>
       <h4>CSS</h4>
     </a>
     <a href='/tags/terminal' class='topic' style='--bgc-topic: #000; --c-topic: #fff'>
       <picture>
-        <img alt='terminal' class='lazyload u-lazyload' src='/images/tags/terminal.png' />
+        <img alt='terminal' class='lazyload u-lazyload' loading='lazy' src='/images/tags/terminal.png' width="48" height="48" />
       </picture>
       <h4>Terminal</h4>
     </a>

@@ -129,9 +129,15 @@ iframe {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   padding-top: 16px;
   padding-bottom: var(--p-header-bottom);
+}
+
+@media (min-width: 600px) {
+  .header {
+    margin-bottom: 32px;
+  }
 }
 
 #nav {
@@ -398,7 +404,8 @@ svg {
 #article-header {
   align-items: center;
   display: flex;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
+  position: relative;
 }
 
 #article-header h1 {
@@ -408,11 +415,29 @@ svg {
   font-weight: 600;
 }
 
-#article-header picture, #article-header img {
-  width: 100px;
-  height: 100px;
-  margin-right: 16px;
+#article-header picture {
+  height: 200px;
+  opacity: .1;
+  position: absolute;
+  right: 0;
+  width: 200px;
+}
+
+#article-header img {
   object-fit: contain;
+  height: 100;
+  width: 100%;
+}
+
+@media (min-width: 700px) {
+  #article-header picture, #article-header img {
+    width: 100px;
+    height: 100px;
+    margin-right: 16px;
+    object-fit: contain;
+    position: static;
+    opacity: 1;
+  }
 }
 
 /** END #article-header **/
@@ -425,10 +450,19 @@ svg {
 }
 
 #article-meta a {
-  color: #000;
-  font-weight: 600;
-  opacity: .7;
   border: 0;
+  color: #000;
+  display: block;
+  font-weight: 600;
+  margin-top: 8px;
+  opacity: .7;
+}
+
+@media (min-width: 600px) {
+  #article-meta a {
+    display: inline-block;
+    margin: 0;
+  }
 }
 
 #article-meta a:hover {
@@ -698,11 +732,6 @@ figure.left img {
 
   #article-header {
     display: block !important;
-  }
-
-  #article-header picture, #article-header img {
-    height: 48px;
-    width: 48px;
   }
 }
 

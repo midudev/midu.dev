@@ -18,7 +18,7 @@
           {{ with .Param "tags" }}
             {{ range first 1 . }}
             <picture>
-              <img alt='Imagen del artículo: {{ . }}' class='lazyload u-lazyload' src='/images/tags/{{.}}.png' />
+              <img alt='Imagen de la etiqueta {{ . }}' class='lazyload u-lazyload' src='/images/tags/{{.}}.png' width="48" height="48" />
             </picture>
             {{ end }}
           {{ end }}
@@ -41,7 +41,7 @@
             <a class='prev' href="{{.Permalink}}">
               {{ with .Params.tags }}
                 {{$tag := index . 0 }}
-                <img alt="{{$tag}}" src='/images/tags/{{$tag}}.png' />
+                <img alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
               {{ end }}
               <svg width="20" height="20">
                 <path
@@ -53,7 +53,7 @@
             <a class='next' href="{{.Permalink}}">
               {{ with .Params.tags }}
                 {{$tag := index . 0 }}
-                <img alt="{{$tag}}" src='/images/tags/{{$tag}}.png' />
+                <img alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
               {{ end }}
               <svg width="20" height="20">
                 <path
