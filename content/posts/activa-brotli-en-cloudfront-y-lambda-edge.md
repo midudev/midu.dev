@@ -13,6 +13,8 @@ tags:
 - cloudfront
 ---
 
+> **¡Importante!** Este artículo ya no tiene mucho sentido ya que Cloudfront ha añadido soporte nativo a Brotli. Sin embargo, creo que el aprendizaje de usar Lambda@Edge para este tipo retos es muy valioso. Por ejemplo, esto mismo se podría hacer para cargar diferentes formatos de imagenes según el navegador, cargar polyfills de forma dinámica y muchas cosas más.
+
 ## ¿Qué es Brotli?
 **Brotli es una alternativa moderna a Gzip**, una técnica de compresión de datos que **ofrece hasta una reducción del 30%** en la transferencia de los archivos estáticos comparado con otras soluciones.
 
