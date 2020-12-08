@@ -106,7 +106,7 @@ Por ejemplo, se añadían clases pero algo más avanzadas que las que tenemos ho
 
 Algunos ejemplos:
 
-```js
+```javascript
 // clase con tipos genéricos
 class C<T> {
   // propiedades de clase como variables
@@ -135,7 +135,7 @@ Al final como traía TANTOS cambios y no se llegaba a ningún acuerdo **se deses
 
 Pero lo que hemos visto no era la única sorpresa que traía **ECMAScript 4.** También se trabajaba en una extensión de la especificación conocida como **E4X** que buscaba unir Javascript con XML. Era tal que así:
 
-```js
+```javascript
 const myClass = 'welcome';
 const name = 'Evert';
 const foo = <div class={myClass}>{"Hello " + name }</div>;
