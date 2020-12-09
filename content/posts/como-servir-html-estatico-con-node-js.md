@@ -2,10 +2,12 @@
 title: Cómo servir un index.html y estáticos Javascript y CSS con Node.js
 date: '2020-12-08'
 description: >-
-  Aprender a servir un archivo index.html, cualquier página HTML o estáticos usando Node.js y sin ninguna dependencia
+  Aprender a servir un archivo index.html, cualquier página HTML o estáticos
+  usando Node.js y sin ninguna dependencia
 toc: true
 tags:
   - node
+image: /images/og/como-servir-html-estatico-con-node-js.png
 ---
 
 **Node.js** ofrece una forma muy sencilla de crear un pequeño servidor para servir **archivos estáticos** sin necesidad de recurrir a la instalación de dependencias como `express`.
