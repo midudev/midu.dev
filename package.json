@@ -8,9 +8,9 @@
   },
   "scripts": {
     "build": "hugo --minify",
+    "create-images": "node scripts/create-og-images.js",
     "dev": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY hugo server",
-    "now-build": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY npm run build",
-    "do:thanks": "node scripts/thanks-contributors.js"
+    "now-build": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY npm run build"
   },
   "repository": {
     "type": "git",
