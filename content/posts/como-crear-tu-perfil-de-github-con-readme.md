@@ -1,5 +1,5 @@
 ---
-title: Cómo crear tu perfil de Github con README
+title: Cómo crear tu perfil de GitHub con README
 date: '2020-07-11'
 description: >-
   Te explico paso a paso cómo puedes utilizar la nueva feature de GitHub para
