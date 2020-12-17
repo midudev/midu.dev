@@ -5,8 +5,6 @@ image: '/images/02_02_remote_work.jpg'
 description: Consejos, experiencias e ideas para el trabajo en remoto para programadores y desarrolladores
 category: 'podcast'
 audio: https://www.ivoox.com/trabajo-remoto-equipos-distribuidos_mf_48877629_feed_1.mp3
-season: 02
-episode: 02
 tags:
 - podcast
 ---

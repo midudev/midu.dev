@@ -5,8 +5,6 @@ image: '/images/02_01_tc39.jpg'
 description: En este episodio hablamos sobre cómo funciona el TC39, repasamos las mejores proposals y conoceremos más cómo funciona este comité gracias a la participación de Romulo y Daniel Ehrenberg.
 category: 'podcast'
 audio: https://www.ivoox.com/tc39-presente-futuro-del-javascript_mf_46704284_feed_1.mp3
-season: 02
-episode: 01
 tags:
 - podcast
 ---
