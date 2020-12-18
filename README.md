@@ -12,13 +12,4 @@ https://midu.dev website
 
 # Contributors ✨
 
-**If you find errors on the articles, you want to improve the website or even you would like to post an article,** you definitely are welcome to create a Pull Request to make the blog better. 👍 Some already did it! Thanks 🙇‍!!!
-
-# TODO ✍️
-- [x] Lazy load and blur images using lazysizes
-- [x] Create or use a plugin to convert code to prismjs
-- [x] Remove Twitter buttons and use my own
-- [ ] Add dark mode
-- [x] Add a Newsletter
-- [ ] Lazy load highlight CSS (check if it's worth it)
-- [ ] Translations to other languages? 🇬🇧
+**If you find errors on the articles, you want to improve the website or even you would like to post an article,** you definitely are welcome to create a Pull Request to make the blog better. 👍 [Some already did it!](https://github.com/midudev/midu.dev/graphs/contributors) Thanks 🙇‍!!!

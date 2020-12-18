@@ -112,8 +112,8 @@ iframe {
 }
 
 .section-title {
-  color: #222;
-  font-weight: 500;
+  color: #111;
+  font-weight: 700;
   font-size: var(--fz-section-title);
   padding-bottom: 8px;
 }
