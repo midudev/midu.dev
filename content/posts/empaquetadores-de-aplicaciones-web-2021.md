@@ -1,5 +1,5 @@
 ---
-title: "Los empaquetadores de aplicaciones web para 2021 \U0001F4E6"
+title: "Las alternavias de Webpack, empaquetadores de aplicaciones web para 2021 \U0001F4E6"
 date: '2020-12-18'
 description: >-
   ¿Existen alternativas a Webpack y Rollup? ¡Sí! Y algunas MUY interesantes.
@@ -12,7 +12,7 @@ image: /images/og/empaquetadores-de-aplicaciones-web-2021.png
 
 Actualmente **Webpack**, y en menor medida **Rollup** y **Parcel**, son los favoritos a la hora de empaquetar nuestras aplicaciones web. Pero esta tendencia puede que este año 2021 empiece a cambiar gracias a la irrupción de nuevas alternativas que ofrecen más velocidad, sencillez y menos dependencias. ¡Conócelas!
 
-## esbuild, la anternativa rápida a Webpack 📦
+## esbuild, la alternativa rápida a Webpack 📦
 
 Nacido en 2020, **esbuild** es un empaquetador de aplicaciones web que está **escrito en Go**. Esto hace que sea hasta **100 veces más rápido que Webpack o Rollup.**
 
