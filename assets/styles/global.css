@@ -79,23 +79,6 @@ iframe {
 }
 
 /** UTILS */
-@keyframes lazyload {
-  from {
-    filter: blur(5px);
-    opacity: 0;
-  }
-
-  to {
-    filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-.u-lazyload {
-  animation-duration: .3s;
-  animation-name: lazyload;
-}
-
 .u-none {
   display: none !important;
 }
@@ -104,11 +87,6 @@ iframe {
   max-width: var(--mw-document);
   margin: 0 auto;
   padding: var(--p-u-center);
-}
-
-.lazyloaded {
-  filter: blur(0);
-  opacity: 1;
 }
 
 .section-title {

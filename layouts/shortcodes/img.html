@@ -1,7 +1,6 @@
 <figure {{ with .Get "align" }}class='{{ . }}'{{ end }}>
   <img
     {{ with .Get "alt" }}alt='{{.}}'{{ end }}
-    class='img u-lazyload'
     loading='lazy'
     src='{{ .Get "src" }}'
   />
