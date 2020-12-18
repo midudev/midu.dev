@@ -7,6 +7,7 @@
   <title>{{- .Title | default .Site.Title -}}</title>
   <meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
   <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="preload" as="image" href="https://midu.dev/logo.png">
 
   {{ partial "head/preconnects.html" . }}
 
