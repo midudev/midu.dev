@@ -1,5 +1,5 @@
 ---
-title: "Las alternavias de Webpack, empaquetadores de aplicaciones web para 2021 \U0001F4E6"
+title: "Las alternativas de Webpack, empaquetadores de aplicaciones web para 2021 \U0001F4E6"
 date: '2020-12-18'
 description: >-
   ¿Existen alternativas a Webpack y Rollup? ¡Sí! Y algunas MUY interesantes.
