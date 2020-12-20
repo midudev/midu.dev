@@ -34,7 +34,7 @@ ${content}
 
     const normalizedSeason = season.padStart(2, '0')
     const normalizedEpisode = episode.padStart(2, '0')
-    const filename = `${normalizedSeason}_${normalizedEpisode}-${slugify(title)}.md`
+    const filename = `${normalizedSeason}_${normalizedEpisode}_${slugify(title)}.md`
 
     const normalizedContent = content
       .replace('Send in a voice message', 'Envía un mensaje al podcast en')
