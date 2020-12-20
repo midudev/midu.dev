@@ -32,8 +32,8 @@ ${content}
     const { image, season = '0', episode = '0' } = itunes
     const { url: audio } = enclosure
 
-    const normalizedSeason = season.padStart(2).replace(' ', '0')
-    const normalizedEpisode = episode.padStart(2).replace(' ', '0')
+    const normalizedSeason = season.padStart(2, '0')
+    const normalizedEpisode = episode.padStart(2, '0')
     const filename = `${normalizedSeason}-${normalizedEpisode}-${slugify(title)}.md`
 
     const normalizedContent = content
@@ -41,14 +41,13 @@ ${content}
       .replace('---', '')
 
     const firstLineBreak = content.indexOf('\n')
-    console.log({firstLineBreak})
 
     let description = ''
 
     if (firstLineBreak < 155) {
       description = stripHtml(content).result.substring(0, firstLineBreak - 1)
     } else {
-      description = stripHtml(content.replace('\n', '')).result.substring(0, 180)
+      description = stripHtml(content.replaceAll(/(\r\n|\n|\r)/gm,"")).result.substring(0, 180)
     }
 
     const markdown = createMarkdown({
