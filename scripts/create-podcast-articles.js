@@ -34,7 +34,7 @@ ${content}
 
     const normalizedSeason = season.padStart(2, '0')
     const normalizedEpisode = episode.padStart(2, '0')
-    const filename = `${normalizedSeason}-${normalizedEpisode}-${slugify(title)}.md`
+    const filename = `${normalizedSeason}_${normalizedEpisode}-${slugify(title)}.md`
 
     const normalizedContent = content
       .replace('Send in a voice message', 'Envía un mensaje al podcast en')
@@ -47,7 +47,7 @@ ${content}
     if (firstLineBreak < 155) {
       description = stripHtml(content).result.substring(0, firstLineBreak - 1)
     } else {
-      description = stripHtml(content.replaceAll(/(\r\n|\n|\r)/gm,"")).result.substring(0, 180)
+      description = stripHtml(content.replace(/(\r\n|\n|\r)/gm,"")).result.substring(0, 180)
     }
 
     const markdown = createMarkdown({
