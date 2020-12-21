@@ -15,6 +15,3 @@ En este capítulo hablamos sobre la gran división, la gran brecha del mundo del
 
 Pues hablamos una hora sobre ello, con nuestras experiencias al respecto, para compartir con vosotros si vemos esta división o no. ¡No te lo pierdas!
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

@@ -15,6 +15,3 @@ Segunda parte del repaso de 2018 y lo que esperamos en el mundo del frontend y e
 
 Este audio es la segunda parte, puedes encontrar la primera parte aquí: https://www.ivoox.com/lo-mejor-2018-frontend-y-audios-mp3_rf_32196466_1.html
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

@@ -22,6 +22,3 @@ Puedes seguir la retransmisión que hicimos en vivo aquí: https://www.youtube.c
 Y encontrar el resto de programas aquí:
 https://midu.dev/what-the-front-podcast
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

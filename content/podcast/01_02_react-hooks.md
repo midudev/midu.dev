@@ -11,20 +11,5 @@ tags:
 - podcast
 ---
 
-En este capítulo hablamos sobre los React Hooks, la próxima nueva feature de React que, teniendo en cuenta la repercusión que ha habido en redes, cuando salga va a revolucionar cómo creamos nuestros componentes en la librería de Facebook.
+<p>En este capítulo hablamos sobre los React Hooks, la próxima nueva feature de React que, teniendo en cuenta la repercusión que ha habido en redes, cuando salga va a revolucionar cómo creamos nuestros componentes en la librería de Facebook. Para hablar sobre ellos contaremos con Carlos Villuendas, un referente de la programación web, que nos dará su visión sobre esta nueva característica de la librería. (spoiler: no está muy emocionado). También haremos un repaso rápido de la Chrome Dev Summit que se enfocó bastante en performance y en nuevas características para la web. ¡No te lo pierdas!</p>
 
-Para hablar sobre ellos contaremos con Carlos Villuendas, un referente de la programación web, que nos dará su visión sobre esta nueva característica de la librería. (spoiler: no está muy emocionado).
-
-También haremos un repaso rápido de la Chrome Dev Summit que se enfocó bastante en performance y en nuevas características para la web. ¡No te lo pierdas!
-
-Síguenos en:
-Blog: http://midudev.com
-Twitter de Miguel Ángel: https://twitter.com/midudev
-Twitter de David: https://twitter.com/d4vecarter
-Twitter de Carlos: https://twitter.com/carlosvillu
-Youtube: https://www.youtube.com/c/midudev?sub_confirmation=1
-https://wtf.fm/
-
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

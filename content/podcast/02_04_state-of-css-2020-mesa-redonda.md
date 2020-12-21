@@ -20,6 +20,3 @@ Twitter </strong><a href="https://twitter.com/midudev"><strong>@midudev</strong>
 </strong><a href="https://twitter.com/carmenansio"><strong>Twitter de Carmen Ansio</strong></a><strong><br>
 </strong><a href="https://twitter.com/adridoz"><strong>Twitter de Adrià Velardos</strong></a></p>
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

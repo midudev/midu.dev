@@ -18,6 +18,3 @@ Lo que no se puede negar es que la noticia es importante para la comunidad web y
 Noticia relacionada: https://midudev.com/por-que-creo-que-microsoft-use-chromium-es-una-buena-noticia/
 Web: https://wtf.fm/
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

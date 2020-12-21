@@ -18,6 +18,3 @@ Contamos con Ana Gamito y Bézale Perez, desarrolladores de Axa Go, que nos van 
 ¡Síguenos en YouTube! https://www.youtube.com/c/midudev?sub_confirmation=1
 Puedes ver el vídeo aquí: https://www.youtube.com/watch?v=iceqEn5oarw
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

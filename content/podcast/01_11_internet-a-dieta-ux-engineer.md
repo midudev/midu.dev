@@ -22,6 +22,3 @@ También repasamos el estado actual de VueJS y ambos nos darán buenos consejos 
 Más artículos de frontend: https://midu.dev
 Canal de Frontend: https://www.youtube.com/c/midudev?sub_confirmation=1
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

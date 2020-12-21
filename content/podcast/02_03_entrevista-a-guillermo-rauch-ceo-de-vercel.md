@@ -15,6 +15,3 @@ tags:
 <p>Pero su historia no empieza aquí: creador de <a href="https://socket.io/">Socket.io</a> y <a href="https://mongoosejs.com/">Mongoose</a>. Contribuidor de <strong>Mootools</strong> por más de siete años. Fundador de <em>LearnBoost</em> y <em>Clodup</em>, que adquirió <em>Automattic</em> (la empresa detrás de Wordpress)…</p>
 <p><strong>He podido hablar con él sobre Vercel, Next.js, React, el futuro del frontend y muchas cosas más.</strong></p>
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

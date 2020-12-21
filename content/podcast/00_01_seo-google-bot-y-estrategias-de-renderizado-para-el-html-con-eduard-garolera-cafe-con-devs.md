@@ -13,6 +13,3 @@ tags:
 
 <p>Vídeo disponible en: https://www.youtube.com/watch?v=GhblPnIk5Nk En este Café con Devs hablo con Eduardo Garolera, CEO de la empresa Digital Growth, sobre el nuevo GoogleBot y las novedades que trae. También por qué debemos seguir haciendo Server Side Rendering pese a las nuevas características del bot de Google y cosas a tener en cuenta en nuestras aplicaciones para conseguir el mejor SEO posible.</p>
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

@@ -17,6 +17,3 @@ También hablamos un poco sobre la CSSCamp y la JSCamp que ha ocurrido en Barcel
 
 Puedes seguir la retransmisión que hicimos en vivo de la grabación aquí: https://www.youtube.com/watch?v=L6pbE2M36us
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

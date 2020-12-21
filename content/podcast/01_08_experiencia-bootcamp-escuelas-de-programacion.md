@@ -15,6 +15,3 @@ Hablamos con los protagonistas de la última promoción del bootcamp de Barcelon
 
 Por otro lado, siento mucho la calidad del sonido, las circunstancias eran las que eran. :D Eramos un montón de gente en una sala con muchísimo eco! Estoy seguro que el siguiente se escuchará mucho mejor! :)
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

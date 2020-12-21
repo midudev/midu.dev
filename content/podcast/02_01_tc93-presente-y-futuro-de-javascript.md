@@ -15,6 +15,3 @@ tags:
 
 Repasamos cómo funciona el comité TC39, cómo son las sesiones, las propuestas más interesantes y muchas curiosidades más que no te puedes perder.
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

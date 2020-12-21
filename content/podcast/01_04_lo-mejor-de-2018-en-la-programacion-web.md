@@ -18,6 +18,3 @@ En esta ocasión contamos con la opinión de Carlos Azaustre y Cristina Grim, qu
 
 Este audio es la primera parte, el próximo esperamos subirlo muy pronto. :)
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

@@ -40,9 +40,7 @@ ${content}
     const [, oldPath] = oldPodcastPathsMap[oldPathIndex] || []
     filename = oldPath || filename
 
-    const normalizedContent = content
-      .replace('Send in a voice message', 'Envía un mensaje al podcast en')
-      .replace('---', '')
+    const normalizedContent = content.replace('---', '')
 
     const firstLineBreak = content.indexOf('\n')
 

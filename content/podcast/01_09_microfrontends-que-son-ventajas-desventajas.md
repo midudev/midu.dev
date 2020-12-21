@@ -13,6 +13,3 @@ tags:
 
 Volvemos en tu podcast de frontend y es que de frontend va la cosa. Pero de frontends pequeñitos. Más que pequeñitos, microfrontends. ¿Qué son? ¿Es la arquitectura frontend del futuro? ¿Qué ofrece? Cuáles son las ventajas y desventajas de esta solución. Y para ello contamos con Jorge del Casar, desarrollador de Citibox, para que nos explique su experiencia siguiendo esta tendencia.
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message

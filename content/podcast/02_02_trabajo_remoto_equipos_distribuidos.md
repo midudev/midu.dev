@@ -13,6 +13,3 @@ tags:
 
 Ahora que el Coronavirus ha obligado a muchas empresas a aprovecharse del trabajo en remoto, hablamos con Elena Torró de Carto, Kiko Beats de IBM y Carlos Blé de Lean Mind para que nos den consejos, ideas y compartan experiencias para seguir trabajando con equipos distribuidos.
 
- 
-
-Envía un mensaje al podcast en: https://anchor.fm/midudev/message
