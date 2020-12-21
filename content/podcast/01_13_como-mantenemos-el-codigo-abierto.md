@@ -1,26 +1,24 @@
 ---
-title: 01x13 - ¿Cómo hacemos sostenible el código abierto? ¿Tendríamos que pagar por él?
-date: '2019-09-28'
-image: '/images/01_013_wtf.jpg'
-description: Podcast para hablar sobre código abierto. ¿Qué hacemos con el open source? ¿Cómo conseguimos que sea sostenible y que los creadores tengan motivos suficientes para seguir manteniéndolo?
+title: '¿Cómo hacemos sostenible el código abierto? ¿Tendríamos que pagar por él? - 01x13'
+date: 'Tue, 01 Oct 2019 20:47:00 GMT'
+image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/7e7d9a33a7207589.jpeg'
+description: '¡Volvemos de las vacaciones! Y lo hacemos para traer a WhatTheFront! un tema que siempre vuelve. ¿Qué hacemos con el open source? ¿Cómo conseguimos que sea sostenible y que los cre'
 category: 'podcast'
-audio: https://www.ivoox.com/como-hacemos-sostenible-codigo-abierto-tendriamos-que_mf_42262915_feed_1.mp3
 season: 01
 episode: 13
+audio: https://anchor.fm/s/2c58e75c/podcast/play/16702227/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-6-17%2F90903129-44100-2-c1b7e7074376afd4.mp3
 tags:
 - podcast
 ---
 
-¡Volvemos de las vacaciones! Y lo hacemos para traer a WhatTheFront! un tema que siempre vuelve. **¿Qué hacemos con el open source?** ¿Cómo conseguimos que sea sostenible y que los creadores tengan motivos suficientes para seguir manteniéndolo?
+¡Volvemos de las vacaciones! Y lo hacemos para traer a WhatTheFront! un tema que siempre vuelve. ¿Qué hacemos con el open source? ¿Cómo conseguimos que sea sostenible y que los creadores tengan motivos suficientes para seguir manteniéndolo?
 
-También hablamos de por qué es importante que esto ocurra, [el caso de la librería "standard" que ha probado a poner banners de publicidad en la terminal](https://feross.org/funding-experiment-recap/) y la [decisión de npm de banear este tipo de comportamientos.](https://developers.slashdot.org/story/19/08/30/1529201/npm-bans-terminal-ads)
+También hablamos de por qué es importante que esto ocurra, el caso de la librería "standard" que ha probado a poner banners de publicidad en la terminal y la decisión de npm de banear este tipo de comportamientos.
 
-Con [**Adrià Fontcuberta**](https://twitter.com/afontcu_) y [**Marina Aísa**](https://twitter.com/MarinaAisa).
+Con Adrià Fontcuberta y Marina Aísa.
+
+Puedes seguir la retransmisión que hicimos en vivo aquí: https://www.youtube.com/watch?v=Cy9yHw7fTiA
 
 Y encontrar el resto de programas aquí:
 https://midu.dev/what-the-front-podcast
 
-Puedes seguir la retransmisión que hicimos en vivo de la grabación aquí:
-{{< youtube id="Cy9yHw7fTiA" >}}
-
-[¡Síguenos en YouTube!](https://www.youtube.com/c/midudev?sub_confirmation=1)

@@ -1,22 +1,17 @@
 ---
-title: 02x01 - TC39, presente y futuro de Javascript
-date: '2020-01-19'
-image: '/images/02_01_tc39.jpg'
-description: En este episodio hablamos sobre cómo funciona el TC39, repasamos las mejores proposals y conoceremos más cómo funciona este comité gracias a la participación de Romulo y Daniel Ehrenberg.
+title: 'TC39, presente y futuro del Javascript - 02x01'
+date: 'Sun, 19 Jan 2020 19:07:46 GMT'
+image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/6b36e3b0f10362db.jpeg'
+description: '¡Año nuevo y nueva temporada de WhatTheFront! Y arrancamos con dos expertos del TC39. Con Romulo, invited expert del TC39 y con Daniel Ehrenberg, delegado del TC39 y partner para I'
 category: 'podcast'
-audio: https://www.ivoox.com/tc39-presente-futuro-del-javascript_mf_46704284_feed_1.mp3
 season: 02
 episode: 01
+audio: https://anchor.fm/s/2c58e75c/podcast/play/16702211/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-6-17%2F90903088-44100-2-3578466b7daa5a90.mp3
 tags:
 - podcast
 ---
 
-¡Año nuevo y nueva temporada de WhatTheFront! Y arrancamos con dos expertos del TC39. Con [Romulo](https://twitter.com/romulocintra), invited expert del **TC39** y [Daniel Ehrenberg](https://twitter.com/littledan), un delegado del [TC39](https://github.com/tc39) para [Igalia](https://www.igalia.com/).
+¡Año nuevo y nueva temporada de WhatTheFront! Y arrancamos con dos expertos del TC39. Con Romulo, invited expert del TC39 y con Daniel Ehrenberg, delegado del TC39 y partner para Igalia.
 
-Repasamos cómo funciona el comité TC39, cómo son las sesiones, [las propuestas más interesantes](https://github.com/tc39/proposals) y muchas curiosidades más que no te puedes perder.
+Repasamos cómo funciona el comité TC39, cómo son las sesiones, las propuestas más interesantes y muchas curiosidades más que no te puedes perder.
 
-Puedes seguir la retransmisión que hicimos en vivo de la grabación aquí:
-{{< youtube id="pqUpX1jxiNQ" >}}
-
-[¡Síguenos en YouTube!](https://www.youtube.com/c/midudev?sub_confirmation=1)
-[Sigue escuchando el resto de episodios de What The Front.](https://midu.dev/what-the-front-podcast)
