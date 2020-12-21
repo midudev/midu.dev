@@ -95,47 +95,6 @@
     #pagination i.is-right {
       transform: rotate(-45deg);
     }
-
-    #topics {
-      display: grid;
-      grid-gap: 32px;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      overflow: auto;
-      padding: 16px 32px 48px 16px;
-      margin: 0 -16px;
-    }
-
-    .topic {
-      background: var(--bgc-topic);
-      border-radius: 6px;
-      box-shadow: 0.5rem 1.25rem 1.75rem 0 rgba(100,110,140,.4);
-      color: var(--c-topic);
-      display: flex;
-      flex-direction: column;
-      padding: 16px;
-      place-items: center;
-    }
-
-    .topic:hover {
-      filter: contrast(1.15);
-    }
-
-    .topic:hover img {
-      transform: scale(1.1);
-    }
-
-    .topic picture {
-      background: #fff;
-      border-radius: 50%;
-      padding: 16px;
-      margin-bottom: 8px;
-    }
-
-    .topic img {
-      object-fit: contain;
-      height: 48px;
-      width: 48px;
-    }
   </style>
   <section id='home-feed'>
     <h2 class='section-title'>Artículos sobre <em>{{ .Params.heading }}</em></h2>
