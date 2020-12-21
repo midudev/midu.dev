@@ -1,10 +1,11 @@
 const Parser = require('rss-parser')
-const parser = new Parser()
 const slugify = require('@sindresorhus/slugify')
 const path = require('path')
 const fs = require('fs/promises')
 const stripHtml = require("string-strip-html")
+const {oldPodcastPathsMap} = require('./_db/oldPodcastPathsMap.js')
 
+const parser = new Parser()
 const contentFolder = path.join(process.cwd(), '/content/podcast')
 
 const createMarkdown = ({audio, content, description, image, pubDate, season, episode, title}) => `---
@@ -34,7 +35,10 @@ ${content}
 
     const normalizedSeason = season.padStart(2, '0')
     const normalizedEpisode = episode.padStart(2, '0')
-    const filename = `${normalizedSeason}_${normalizedEpisode}_${slugify(title)}.md`
+    let filename = `${normalizedSeason}_${normalizedEpisode}_${slugify(title)}`
+    const oldPathIndex = oldPodcastPathsMap.findIndex(([newPath]) => filename === newPath)
+    const [, oldPath] = oldPodcastPathsMap[oldPathIndex] || []
+    filename = oldPath || filename
 
     const normalizedContent = content
       .replace('Send in a voice message', 'Envía un mensaje al podcast en')
@@ -61,7 +65,7 @@ ${content}
       title
     })
 
-    fs.writeFile(`${contentFolder}/${filename}`, markdown, 'utf-8')
+    fs.writeFile(`${contentFolder}/${filename}.md`, markdown, 'utf-8')
       .then(() => {
         console.log(`✅ Created ${filename}`)
       })
