@@ -1,9 +1,15 @@
 ---
-title: "Cómo arreglar el mensaje 'xcrun: error: invalid active developer path, missing xcrun' de macOS"
+title: >-
+  Cómo arreglar el mensaje 'xcrun: error: invalid active developer path, missing
+  xcrun' de macOS
 date: '2020-12-16'
-description: ¿Has actualizado a la última versión de macOS y te ha aparecido este error? Se puede solucionar instalando de nuevo las Command Line Developer Tools. 
+description: >-
+  ¿Has actualizado a la última versión de macOS y te ha aparecido este error? Se
+  puede solucionar instalando de nuevo las Command Line Developer Tools.
 tags:
-- macos
+  - macos
+image: >-
+  /images/og/como-arreglar-macos-xcrun-error-invalid-active-developer-path-missing-xcrun.png
 ---
 
 A veces, tras actualizar `macOS` a una nueva versión de su sistema operativo, o por actualizar otras dependencias, es posible que al intentar utilizar algún comando de `git`, la terminal te devuelva un error un poco críptico que dice así:
