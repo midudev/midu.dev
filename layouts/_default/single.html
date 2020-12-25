@@ -18,7 +18,7 @@
           {{ with .Param "tags" }}
             {{ range first 1 . }}
             <picture>
-              <img alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
+              <img itemprop="image" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
             </picture>
             {{ end }}
           {{ end }}
@@ -34,7 +34,9 @@
         </header>
       {{ end }}
 
-      {{ .Content }}
+      <div itemprop="articleBody">
+        {{ .Content }}
+      </div>
 
         <div id='article-pagination'>
           {{ with .PrevPage }}

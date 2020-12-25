@@ -1,6 +1,6 @@
 {{ if (isset .Params "audio") }}
 {{ else }}
-  <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
+  <time itemprop="datePublished" datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
     {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
   </time>
    · 
