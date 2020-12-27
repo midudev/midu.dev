@@ -138,7 +138,7 @@
       width: 48px;
     }
   </style>
-  <section id='home-feed'>
+  <main id='home-feed'>
     <h3 class='section-title'>Últimos artículos 📝</h3>
     {{ $paginator := .Paginate (where site.RegularPages "Type" "==" "posts") }}
       {{ range $paginator.Pages }}
@@ -287,6 +287,6 @@
     </a>
 
   </div>
-  </section>
+</main>
   {{ partial "aside.html" . }}
 {{ end }}

@@ -1,0 +1,101 @@
+{{ define "main"}}
+  <style>
+    #main {
+      display: flex;
+      min-height: 50vh;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    #gif {
+      margin: 0 auto;
+      max-width: 320px;
+      object-fit: contain;
+    }
+
+    h1 {
+      font-size: 3rem;
+      padding-bottom: 32px;
+      text-align: center;
+    }
+
+    #h2 {
+      color: #444;
+      font-size:1.5rem;
+      padding-top: 16px;
+      padding-bottom: 32px;
+      text-align: center;
+    }
+
+    .home-article h2 {
+      color: #444;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .home-article picture, .home-article img {
+      width: 48px;
+      height: 48px;
+      margin-right: 24px;
+      object-fit: contain;
+      margin-left: 4px;
+      transition: transform .3s ease;
+    }
+
+    .home-article {
+      align-items: center;
+      border-radius: 4px;
+      display: flex;
+      margin-left: -8px;
+      margin-bottom: 8px;
+      padding: 8px;
+    }
+
+    .home-article:hover {
+      background: #eee;
+    }
+
+    .home-article:hover img {
+      transform: scale(1.15)
+    }
+
+    .home-article:hover h2 {
+      color: #0000EE;
+    }
+
+    .home-article .meta {
+      color: #777;
+      font-size: 12px;
+      padding-top: 4px;
+    }
+  </style>
+  <main id="main">
+    <h1>404 pero...</h1>
+    <img id="gif" src='/images/this-is-fine-404.gif' />
+    <h2 id="h2">aquí tienes los últimos artículos, ¡para que encuentres algo!</h2>
+    <div id="home-feed">
+    {{ $paginator := .Paginate (where site.RegularPages "Type" "==" "posts") }}
+      {{ range $paginator.Pages }}
+      <a class='home-article' href="{{.Permalink}}">
+        {{ with .Param "tags" }}
+          {{ range first 1 . }}
+            <picture>
+              <img alt='Imagen de la etiqueta {{ . }}' loading='lazy' src='/images/tags/{{.}}.png' width="48" height="48" />
+            </picture>
+          {{ end }}
+        {{ end }}
+        <div>
+        <h2>{{ .Title }}</h2>
+        <div class='meta'>
+          <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
+            {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
+          </time>
+          · 
+          <span>{{.ReadingTime}} minutos de lectura</span>
+        </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </main>
+{{ end }}

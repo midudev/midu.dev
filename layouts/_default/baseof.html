@@ -70,10 +70,10 @@
 
 <body class='{{ cond (isset .Params "audio") "body-player" ""}}'>
   <header class='header u-center'>{{ partial "logo.html" }}</header>
-  <main class='u-center'>
+  <div class='body u-center'>
     {{ block "main" . }}
     {{ end }}
-  </main>
+  </div>
   {{ partial "footer.html" . }}
 
 

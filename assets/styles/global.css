@@ -1,12 +1,12 @@
 :root {
-  --mw-document: 1200px;
-  --w-aside: 320px;
+  --c-topic: #000;
   --fz-aside: 14px;
   --fz-section-title: 18px;
+  --mw-document: 1200px;
   --p-header-bottom: 16px;
   --p-separation: 96px;
   --p-u-center: 0 32px;
-  --c-topic: #000;
+  --w-aside: 320px;
 }
 
 html {
@@ -141,7 +141,7 @@ iframe {
 
 /** END .header **/
 
-main {
+.body {
   display: flex;
 }
 
@@ -693,7 +693,7 @@ figure.left img {
     --w-aside: 100%;
   }
 
-  main, #article-content-wrapper {
+  .body, #article-content-wrapper {
     flex-direction: column;
   }
 }
