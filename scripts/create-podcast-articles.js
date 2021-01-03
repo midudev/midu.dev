@@ -2,6 +2,7 @@ const Parser = require('rss-parser')
 const slugify = require('@sindresorhus/slugify')
 const path = require('path')
 const fs = require('fs/promises')
+const {existsSync} = require('fs')
 const stripHtml = require("string-strip-html")
 const {oldPodcastPathsMap} = require('./_db/oldPodcastPathsMap.js')
 
@@ -40,33 +41,37 @@ ${content}
     const [, oldPath] = oldPodcastPathsMap[oldPathIndex] || []
     filename = oldPath || filename
 
-    const normalizedContent = content.replace('---', '')
+    // check if file already exists
+    const fullFileName = `${contentFolder}/${filename}.md`
+    if (!existsSync(fullFileName)) {
+      const normalizedContent = content.replace('---', '')
 
-    const firstLineBreak = content.indexOf('\n')
-
-    let description = ''
-
-    if (firstLineBreak < 155) {
-      description = stripHtml(content).result.substring(0, firstLineBreak - 1)
-    } else {
-      description = stripHtml(content.replace(/(\r\n|\n|\r)/gm,"")).result.substring(0, 180)
-    }
-
-    const markdown = createMarkdown({
-      audio,
-      content: normalizedContent,
-      description,
-      image,
-      pubDate,
-      season: normalizedSeason,
-      episode: normalizedEpisode,
-      title
-    })
-
-    fs.writeFile(`${contentFolder}/${filename}.md`, markdown, 'utf-8')
-      .then(() => {
-        console.log(`✅ Created ${filename}`)
+      const firstLineBreak = content.indexOf('\n')
+  
+      let description = ''
+  
+      if (firstLineBreak < 155) {
+        description = stripHtml(content).result.substring(0, firstLineBreak - 1)
+      } else {
+        description = stripHtml(content.replace(/(\r\n|\n|\r)/gm,"")).result.substring(0, 180)
+      }
+  
+      const markdown = createMarkdown({
+        audio,
+        content: normalizedContent,
+        description,
+        image,
+        pubDate,
+        season: normalizedSeason,
+        episode: normalizedEpisode,
+        title
       })
+  
+      fs.writeFile(fullFileName, markdown, 'utf-8')
+        .then(() => {
+          console.log(`✅ Created ${filename}`)
+        })
+    }
   })
 
 })()
