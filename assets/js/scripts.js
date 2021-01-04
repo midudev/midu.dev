@@ -129,9 +129,12 @@ class LiteYTEmbed extends HTMLElement {
        *
        * TODO: Do the sddefault->hqdefault fallback
        *       - When doing this, apply referrerpolicy (https://github.com/ampproject/amphtml/pull/3940)
-       * TODO: Consider using webp if supported, falling back to jpg
        */
-      this.posterUrl = `https://i.ytimg.com/vi/${this.videoId}/hqdefault.jpg`;
+      const canUseWebP = LiteYTEmbed.checkCanUseWebP()
+      const extension = canUseWebP ? 'webp' : 'jpg'
+      const imgPath = canUseWebP ? 'vi_webp' : 'vi'
+
+      this.posterUrl = `https://i.ytimg.com/${imgPath}/${this.videoId}/maxresdefault.${extension}`;
       // Warm the connection for the poster image
       LiteYTEmbed.addPrefetch('preload', this.posterUrl, 'image');
 
@@ -163,6 +166,22 @@ class LiteYTEmbed extends HTMLElement {
   // // TODO: Support the the user changing the [videoid] attribute
   // attributeChangedCallback() {
   // }
+
+  static checkCanUseWebP() {
+    if (typeof LiteYTEmbed.canUseWebP !== 'undefined') return LiteYTEmbed.canUseWebP;
+
+    const canvas = document.createElement('canvas');
+    // if we don't have support to canvas, then definitely support is false
+    LiteYTEmbed.canUseWebP = false;
+  
+    // try to get canvas context
+    if (!!(canvas.getContext && canvas.getContext('2d'))) {
+      // store if we were able or not to get webp representation
+      LiteYTEmbed.canUseWebP = canvas.toDataURL('image/webp').startsWith('data:image/webp');
+    }
+
+    return LiteYTEmbed.canUseWebP;
+  }
 
   /**
    * Add a <link rel={preload | preconnect} ...> to the head
