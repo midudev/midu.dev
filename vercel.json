@@ -3,27 +3,27 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/facebook/",
+      "source": "/facebook",
       "destination": "https://facebook.com/midudev.frontend"
     },
-    { "source": "/twitter/", "destination": "https://twitter.com/midudev" },
-    { "source": "/linkedin/", "destination": "https://linkedin.com/midudev" },
-    { "source": "/instagram/", "destination": "https://instagram.com/midu.dev" },
+    { "source": "/twitter", "destination": "https://twitter.com/midudev" },
+    { "source": "/linkedin", "destination": "https://linkedin.com/midudev" },
+    { "source": "/instagram", "destination": "https://instagram.com/midu.dev" },
     {
-      "source": "/youtube/",
+      "source": "/youtube",
       "destination": "https://www.youtube.com/c/midudev?sub_confirmation=1"
     },
     {
-      "source": "/wallpapers/",
+      "source": "/wallpapers",
       "destination": "https://midu.dev/fondos-de-pantalla-de-programacion-javascript-html-css-react/"
     },
     {
-      "source": "/what-the-front/(.*)/",
-      "destination": "/podcast/$1/"
+      "source": "/what-the-front/(.*)",
+      "destination": "/podcast/$1"
     },
     {
-      "source": "/what-the-front/",
-      "destination": "/podcast/"
+      "source": "/what-the-front",
+      "destination": "/podcast"
     }
   ]
 }
