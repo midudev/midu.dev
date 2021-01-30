@@ -164,12 +164,12 @@ footer {
 }
 
 footer a {
-  color: #777;
+  color: #555;
   margin-right: 16px;
 }
 
 footer a:hover {
-  color: #333;
+  color: #222;
 }
 
 /** MAIN **/
