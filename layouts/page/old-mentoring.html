@@ -4,12 +4,12 @@
   #mentoring-page {
     margin: 0 auto;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
   }
 
   #mentoring-page p {
     color: #444;
-    line-height: 1.5;
+    line-height: 1.75;
     padding-bottom: 32px;
   }
 
@@ -41,7 +41,6 @@
     max-width: 100%;
     padding-bottom: 16px;
   }
-
   @media (min-width: 768px) {
     #mentoring-page h1 {
       font-size: 64px;
@@ -52,9 +51,8 @@
     color: #222;
     font-size: 26px;
     line-height: 1.3;
-    padding-bottom: 16px;
+    padding-bottom: 8px;
   }
-
   @media (min-width: 768px) {
     #mentoring-page h2 {
       font-size: 36px;
@@ -68,14 +66,7 @@
     max-width: 700px;
   }
 
-  #mentoring-page h4 {
-    color: #555;
-    font-size: 24px;
-    margin-top: 4px;
-    margin-bottom: 8px;
-  }
-
-  #mentoring-page p {
+  #mentoring-page p, #mentoring-page li {
     font-size: 18px;
     margin: 0;
     padding-bottom: 16px;
@@ -92,41 +83,48 @@
     margin: 0 auto;
   }
 
-  .book-button-container {
-    margin: 32px 0;
+  .calendly-inline-widget {
+    margin-top: 15px;
+  }
+  @media (min-width: 768px) {
+    .calendly-inline-widget {
+      margin-top: -45px;
+    }
   }
 
-  .book-button {
-    background: #09f;
-    border-radius: 5000px;
-    display: block;
-    max-width: 320px;
-    margin: 8px auto;
-    width: 100%;
-    text-align: center;
-    padding: 16px 16px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 24px;
-    text-shadow: 0 0 2px #444;
-    box-shadow: 0 0 20px rgba(0, 153, 255, 0.3);
+  .button {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 21px;
   }
 
-  .book-button:hover {
-    background: rgb(0, 96, 160);
-    box-shadow: 0 0 20px rgba(0, 96, 160, 0.3);
-    transition: all .3s ease;
+  .button svg {
+    margin-right: 8px;
+  }
+
+  #mentoring-page-name {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 2s ease;
+    padding-bottom: 4px;
+  }
+
+  #mentoring-page-name.is-ready {
+    max-height: 500px;
+    opacity: 1;
   }
 </style>
 
 <div id='mentoring-page'>
   <section>
     <h1 id="mentoring-page-title">
-      Soporte Full Stack<br />
-      Bootcamp 👨‍💻
+      Mentoring o <br />
+      asesoría 1 a 1
     </h1>
     <h3>
-      Te ayudo a ti y tus compañeros a asimilar los conocimientos del curso
+      Te acompaño en tus siguientes pasos<br />como desarrollador web y programador front-end. 
     </h3>
 
     <svg viewBox="0 0 4000 3500" xml:space="preserve">
@@ -613,33 +611,22 @@
     </svg>
   </section>
 
-  <h2>¿De qué se trata 👨‍🏫?</h2>
-  <p><strong>Videollamada de 1 hora</strong> donde te ayudaré con todas las <strong>dudas que puedas tener sobre el FullStack Bootcamp</strong> que estoy emitiendo todos los domingos.</p>
+  <h2>¿De qué se trata 👨‍💻?</h2>
+  <p>Tendremos una <strong>videollamada de 50 minutos</strong> donde te ayudaré con todas las <strong>dudas que puedas tener en tu carrera profesional como frontend</strong>, problemas que te estés encontrando con un proyecto de desarrollo web o consultoría para tu próximo proyecto.
 
-  <p>A la clase <strong>puede venir tanta gente como quieras.</strong> De esta forma puedes compartir los gastos con más gente que tenga las mismas dudas o similares.</p>
+  <h2 id='reserva-mentoria'>Reserva tu sesión 📆</h2>
+  <div class="calendly-inline-widget" data-url="https://calendly.com/midudev/mentoring-40?primary_color=0099ff"
+    style="min-width:320px;height:700px;"></div>
 
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
-  <div class='book-button-container'>
-    <a class='book-button' href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/midudev/fullstack-bootcamp-clase'});return false;">Reservar una clase</a>
-  </div>
+  <h2>¿De qué podemos hablar 💬?</h2>
+  <ul>
+    <li>Tu carrera profesional como desarrollador web</li>
+    <li>Cómo pasar tu próxima entrevista técnica</li>
+    <li>Consultoría en proyectos personales o profesionales</li>
+    <li>Javascript, React.js ⚛️, Node.js...</li>
+  </ul>
 
+  <script defer src="https://assets.calendly.com/assets/external/widget.js"></script>
 
-  <h2>Preguntas frecuentes 🤔</h2>
-
-  <h4>¿Por qué cuesta tanto?</h4>
-  <p>Mi tiempo es bastante limitado por desgracia pero te puedo asegurar que <strong>haré todo lo posible para compensártelo</strong>. Además, también puedes verlo como una forma también de <strong>apoyarme por todo el contenido gratuito que voy compartiendo</strong>.</p>
-
-  <h4>¿Cuál es el límite de gente que puede venir?</h4>
-  <p>No hay limite pero ten en cuenta que cuanta más gente venga, menos personalizado podrá ser. Pero como si quieres que asistan 20 personas. :)</p>
-
-  <h4>¿De qué podemos hablar?</h4>
-  <p>En principio está pensado para los contenidos del Full Stack Bootcamp que estamos dando gratis cada domingo en Twitch pero al final podríamos hablar de cualquier cosa que creas que puedo ayudarte.</p>
-
-  <h4>¿De qué Bootcamp hablas?</h4>
-  <p>Todos los domingos a las 8PM (hora peninsular española) <a href='https://twitter.com/midudev/status/1353349975938387968'>estoy realizando en Twitch un FullStack Bootcamp totalmente gratis.</a></p>
-
-  <h4>¿Se pueden ver las clases anteriores?</h4>
-  <p>Claro. <a href='https://www.youtube.com/watch?v=wTpuKOhGfJE&list=PLV8x_i1fqBw0Kn_fBIZTa3wS_VZAqddX7'>Puedes ver las clases totalmente gratis en mi canal de Youtube</a></p>
 </div>
 {{ end }}
