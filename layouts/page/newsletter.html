@@ -80,14 +80,6 @@
 .input:focus {
     color: #333;
 }
-label.is-ready {
-    top: -22px;
-    font-size: 12px;
-    color: #3399FF;
-    transition: 0.3s;
-    left: 0;
-    z-index: 0;
-}
 
 fieldset {
     margin-bottom: 16px;
@@ -150,9 +142,8 @@ section {
     <form action="https://www.getrevue.co/profile/midudev/add_subscriber" method="post" name="revue-form" target="_blank">
         <div>
             <fieldset>
-                <input autofocus required="" id='member[email]' class="input is-big" type="email" name="member[email]">
+                <input autofocus required="" id='member[email]' class="input is-big" type="email" name="member[email]" autocomplete="email" placeholder='Introduce aquí tu correo electrónico'>
                 <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="mail" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z"></path></svg>
-                <label for='member[email]'>Tu correo electrónico</label>
             </fieldset>
             <fieldset id='newsletter-page-name'>
                 <small>Si quieres, puedes dejar tu nombre. <strong>No es obligatorio</strong> pero el correo será más personal:</small>
@@ -171,10 +162,6 @@ section {
     var page = document.getElementById('newsletter-page')
     var input = page.querySelector('.input.is-big')
 
-    input.addEventListener('focus', function callback (e) {
-        page.querySelector('label').classList.add('is-ready')
-        input.removeEventListener('focus', callback)
-    })
     input.addEventListener('input', function callback (e) {
         var isValid = this.checkValidity()
         if (isValid) {
