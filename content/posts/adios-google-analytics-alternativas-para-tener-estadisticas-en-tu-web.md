@@ -1,6 +1,6 @@
 ---
 title: Adiós Google Analytics. Alternativas para tener estadísticas en tu web
-date: '2021-02-01'
+date: '2021-02-04'
 image: '/images/og/adios-google-analytics-alternativas-para-tener-estadisticas-en-tu-web.png'
 description: ¿Por qué he dejado de usar Google Analytics y tú también deberías? Además, te doy algunas alternativas que puedes utilizar en su lugar
 topic: me
