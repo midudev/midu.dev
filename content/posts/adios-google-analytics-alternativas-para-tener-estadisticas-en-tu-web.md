@@ -69,7 +69,8 @@ Alternativas hay unas cuantas. Por mi parte, he empezado a utilizar [Fathom Anal
 ¿Lo malo? Que **sólo está en inglés** y **su plan empieza a partir de 14$** (por 100.000 páginas vistas). ¿Es caro? Pues sí. Si lo comparas con gratis, es caro. Pero creo que la privacidad de mis usuarios los vale.
 
 Si quieres probarlo, **te dejo un enlace con mi referal.** Yo me llevaría un **25%** si al final te haces cliente y por tu parte **tienes 10$ gratis** para empezar (además del periódo de prueba):
-https://usefathom.com/ref/8C8RPY
+
+**👉 [Registrarse con 10$ de crédito en Fathom](https://usefathom.com/ref/8C8RPY)**
 
 #### Más alternativas para Google Analytics
 
@@ -87,4 +88,6 @@ En un mundo, el de Internet, que estamos siempre acostumbrados a tener las cosas
 
 Por mi parte, este blog a partir de ahora **me va a costar 14$ al mes** por [usar Fathom](https://usefathom.com/ref/8C8RPY) pero creo que los vale si a cambio de eso la privacidad de mis lectores está controlada. **Te invito a que hagas esa reflexión también con tus páginas y aplicaciones**.
 
-Si quieres continuar la conversación, te invito que [me menciones en Twitter](https://twitter.com/midudev) o [compartas el artículo](https://twitter.com/share?url=https://midu.dev/adios-google-analytics-alternativas-para-tener-estadisticas-en-tu-web&text="Adiós Google Analytics") allí para seguir debatiendo. 👋
+Si quieres continuar la conversación, te invito que [me menciones en Twitter](https://twitter.com/midudev) o [compartas el artículo](https://twitter.com/share?url=https%3a%2f%2fmidu.dev%2fadios-google-analytics-alternativas-para-tener-estadisticas-en-tu-web%2f&text=%22Adi%c3%b3s%20Google%20Analytics.%20Alternativas%20para%20tener%20estad%c3%adsticas%20en%20tu%20web%22%20por%20@midudev) allí para seguir debatiendo. 👋
+
+**👉 [Registrarse con 10$ de crédito en Fathom](https://usefathom.com/ref/8C8RPY)**
