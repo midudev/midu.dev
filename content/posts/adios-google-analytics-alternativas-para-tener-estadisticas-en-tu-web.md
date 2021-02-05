@@ -38,7 +38,7 @@ El tema es que no basta con enseñar el aviso. Tendrías que hacer **dos cosas**
 
 Ahí tenemos la cuantiosa multa a [Google y Amazon por instalar cookies sin el permiso del usuario](https://twitter.com/CNIL/status/1336931161621327872). Pero no hay que irse muy lejos. Hace unos meses Twitter fue [multada por la denuncia de un particular por 30.000€](https://confilegal.com/20200611-proteccion-de-datos-multa-a-twitter-con-30-000-euros-por-una-infraccion-leve-en-su-politica-de-cookies/).
 
-## La gestión de cookies es un coñazo pero un coñazo necesario 🛑
+## La gestión de cookies es un incordio pero un incordio necesario 🛑
 
 Sé que **es una verdadera molestia tener que mostrar el banner** y a veces es un reto técnico gestionar los consentimientos del usuario con los scripts que cargamos. Lo ideal, en mi opinión, es que toda esta gestión se pudiese hacer a nivel de navegador (y así evitar tanto código innecesario en la red para lo mismo) pero, por ahora, **es un mal necesario.**
 
