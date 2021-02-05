@@ -42,19 +42,19 @@ Ahí tenemos la cuantiosa multa a [Google y Amazon por instalar cookies sin el p
 
 Sé que **es una verdadera molestia tener que mostrar el banner** y a veces es un reto técnico gestionar los consentimientos del usuario con los scripts que cargamos. Lo idea, en mi opinión, es que toda esta gestión se pudiese hacer a nivel de navegador (y así evitar tanto código innecesario en la red para lo mismo) pero, por ahora, **es un mal necesario.**
 
-Es necesario porque **se nos ha ido de las manos.** Hemos estado usando las cookies por encima de nuestras posibilidades. Retorciendolas de forma que hemos vilipendiado a nuestros usuarios explotando sus datos hasta cotas insospechadas para poder sacar el rendimiento económico máximo. Poder sacarlo nosotros... o las empresas de siempre como Google.
+Es necesario porque **se nos ha ido de las manos.** Hemos estado usando las cookies por encima de nuestras posibilidades. Retorciéndolas de forma que hemos vilipendiado a nuestros usuarios explotando sus datos hasta cotas insospechadas para poder sacar el rendimiento económico máximo. Poder sacarlo nosotros... o las empresas de siempre como **Google, Facebook o Amazon.**
 
-{{< img align="center" alt="He entrado en un blog cualquiera y sin enseñarme ningún aviso de cookies ya me ha mentido unas cuantas cookies de Google y Facebook sin consentimiento" src="/images/cookies-sin-consentimientos.png" >}}
+{{< img align="center" alt="He entrado en un blog cualquiera y sin enseñarme ningún aviso de cookies ya me ha metido unas cuantas de Google y Facebook. Sin consentimiento." src="/images/cookies-sin-consentimientos.png" >}}
 
 Cuando **usas Google Analytics, al final, estás nutriendo a Google de un montón de información que le va a ayudar a tomar decisiones.** Ver lo que hace el usuario. Saber lo que mejor funciona. Compartir esa información con anunciantes. Y aprovecharse de tus usuarios.
 
-Al final es cierto que tienes tus queridas estadísticas pero **lo pagas compartiendo datos** a una multinacional que le va a sacar provecho y también con la privacidad de tus usuarios. De hecho los usuarios, no sólo pierden su privacidad, si no que **se ven molestados por una barra de cookies** que tienen que aceptar si quieren utilizar tu web en condiciones.
+Al final es cierto que tienes tus queridas estadísticas pero **lo pagas compartiendo datos** a una multinacional que le va a sacar provecho y, claro, pagando con la privacidad de tus usuarios. De hecho tus visitantes, no sólo pierden su privacidad, si no que **se ven molestados por una barra de cookies**, si te da por cumplir la legalidad, que tienen que aceptar si quieren utilizar tu web en condiciones. (si estás pensando en evitar que puedan usar la web si no aceptan que sepas que **es ilegal**).
 
 Por suerte, poco a poco, vemos movimientos como el de [GitHub que ha eliminado totalmente las cookies de su sitio](https://github.blog/2020-12-17-no-cookie-for-you/) justamente para evitar tener que molestar a sus usuarios con el manido aviso.
 
 ## Adiós Google Analytics 👋, adiós aviso de cookies y hola mejoras de rendimiento ⚡
 
-Hace tiempo escribí un artículo donde explico **cuál es la mejor forma de cargar Google Analytics para mejorar el rendimiento de tu página web.** Pero... ¿sabes qué? La mejor forma es no cargarlo. 🤣
+Hace tiempo escribí un artículo donde explico **cuál es [la mejor forma de cargar Google Analytics](https://midu.dev/cargar-google-analytics-de-forma-optima/) para mejorar el rendimiento de tu página web.** Pero... ¿sabes qué? La mejor forma es no cargarlo. 🤣
 
 Y es que **Google Analytics no es el cliente de analíticas más liviano**, precisamente, pese a utilizar el snippet que comento en el artículo.
 
@@ -66,7 +66,7 @@ Alternativas hay unas cuantas. Por mi parte, he empezado a utilizar [Fathom Anal
 
 **También me gusta que tiene un diseño limpio**, una integración sencilla (una sola línea de código), una forma muy fácil de compartir las estadísticas a partir de una URL, un muy buen rendimiento.
 
-¿Lo malo? Que **sólo está en inglés** y **su plan empieza a partir de 14$** (por 100.000 páginas vistas). ¿Es caro? Pues sí. Si lo comparas con gratis, es caro. Pero creo que la privacidad de mis usuarios los vale.
+¿Lo malo? Que **sólo está en inglés** y **su plan empieza a partir de 14$** (por 100.000 páginas vistas). ¿Es caro? Pues sí. Si lo comparas con gratis, es caro. Pero creo que la privacidad de mis usuarios los vale. 🕵️‍♂️
 
 Si quieres probarlo, **te dejo un enlace con mi referal.** Yo me llevaría un **25%** si al final te haces cliente y por tu parte **tienes 10$ gratis** para empezar (además del periódo de prueba):
 
@@ -84,9 +84,9 @@ Si quieres probarlo, **te dejo un enlace con mi referal.** Yo me llevaría un **
 
 **No quiero con este artículo que te sientas mal o culpable** por usar Google Analytics. Sólo quiero que tengas más información a la hora de tomar la decisión de utilizarlo en tu sitio y que seas consciente que es posible que estés incurriendo en una falta
 
-En un mundo, el de Internet, que estamos siempre acostumbrados a tener las cosas gratis... tenemos la responsabilidad de parar un momento y revisar las razones por las que estos servicios o contenidos son gratis. Especialmente aquellos que vienen de multinacionales poderosas donde su poder, seguramente, **vienen precisamente de los datos que manejan.**
+En un mundo, el de Internet, que **estamos siempre acostumbrados a tener las cosas gratis**... tenemos la responsabilidad de parar un momento y revisar las razones por las que estos servicios o contenidos son gratis. Especialmente aquellos que vienen de multinacionales poderosas donde su poder, seguramente, **vienen precisamente de los datos que manejan.**
 
-Que a ver, **a veces también puedes revisar si tu blog realmente necesita analíticas.** Entiendo la necesidad en páginas que se monetizan. Si tienes unas pocas visitas al mes, seguramente es mejor no tener analíticas y dejar que los usuarios disfruten de tu contenido libremente. En mi caso lo hago para saber de **dónde provienen mis usuarios, qué dispositivos usan y qué artículos interesan más**... pero no sería la primera vez que me he planteado quitar totalmente las analíticas...
+Que a ver, **a veces también puedes revisar si tu blog realmente necesita analíticas.** Entiendo la necesidad en páginas que se monetizan. Si tienes unas pocas visitas al mes, seguramente es mejor no tener analíticas y dejar que los usuarios disfruten de tu contenido libremente. En mi caso lo hago para saber de **dónde provienen mis usuarios, qué dispositivos usan y qué artículos interesan más**... pero no sería la primera vez que me he planteado quitar totalmente las analíticas... 🙃
 
 En cualquier caso, este blog a partir de ahora **me va a costar 14$ al mes** por [usar Fathom](https://usefathom.com/ref/8C8RPY) pero creo que los vale si a cambio de eso la privacidad de mis lectores está controlada. **Te invito a que hagas esa reflexión también con tus páginas y aplicaciones**.
 
