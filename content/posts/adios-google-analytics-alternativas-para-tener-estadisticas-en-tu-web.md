@@ -83,8 +83,10 @@ https://usefathom.com/ref/8C8RPY
 
 **No quiero con este artículo que te sientas mal o culpable** por usar Google Analytics. Sólo quiero que tengas más información a la hora de tomar la decisión de utilizarlo en tu sitio y que seas consciente que es posible que estés incurriendo en una falta
 
-En un mundo, el de Internet, que estamos siempre acostumbrados a tener las cosas gratis... tenemos la responsabilidad de parar un momento y revisar las razones por las que estos servicios o contenidos son gratis. Especialmente aquellos que vienen de multinacionales poderosas donde su poder, seguramente, vienen precisamente de los datos que manejan.
+En un mundo, el de Internet, que estamos siempre acostumbrados a tener las cosas gratis... tenemos la responsabilidad de parar un momento y revisar las razones por las que estos servicios o contenidos son gratis. Especialmente aquellos que vienen de multinacionales poderosas donde su poder, seguramente, **vienen precisamente de los datos que manejan.**
 
-Por mi parte, este blog a partir de ahora **me va a costar 14$ al mes** por [usar Fathom](https://usefathom.com/ref/8C8RPY) pero creo que los vale si a cambio de eso la privacidad de mis lectores está controlada. **Te invito a que hagas esa reflexión también con tus páginas y aplicaciones**.
+Que a ver, **a veces también puedes revisar si tu blog realmente necesita analíticas.** Entiendo la necesidad en páginas que se monetizan. Si tienes unas pocas visitas al mes, seguramente es mejor no tener analíticas y dejar que los usuarios disfruten de tu contenido libremente. En mi caso lo hago para saber de **dónde provienen mis usuarios, qué dispositivos usan y qué artículos interesan más**... pero no sería la primera vez que me he planteado quitar totalmente las analíticas....
+
+En cualquier caso, este blog a partir de ahora **me va a costar 14$ al mes** por [usar Fathom](https://usefathom.com/ref/8C8RPY) pero creo que los vale si a cambio de eso la privacidad de mis lectores está controlada. **Te invito a que hagas esa reflexión también con tus páginas y aplicaciones**.
 
 Si quieres continuar la conversación, te invito que [me menciones en Twitter](https://twitter.com/midudev) o [compartas el artículo](https://twitter.com/share?url=https://midu.dev/adios-google-analytics-alternativas-para-tener-estadisticas-en-tu-web&text="Adiós Google Analytics") allí para seguir debatiendo. 👋
