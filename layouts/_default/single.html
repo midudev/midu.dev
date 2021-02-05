@@ -34,9 +34,9 @@
         </header>
       {{ end }}
 
-      <main itemprop="articleBody">
+      <div itemprop="articleBody">
         {{ .Content }}
-      </main>
+      </div>
 
         <div id='article-pagination'>
           {{ with .PrevPage }}
@@ -103,6 +103,10 @@
 </style>
 <div id='share'>
   <a target='_blank' rel='nofollow noopener' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>Comparte el artículo
+    {{ partial "icons/twitter.html" }}
+  </a>
+
+  <a target='_blank' rel='nofollow noopener' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>¡Apóyame en Patreon!
     {{ partial "icons/twitter.html" }}
   </a>
 </div>
