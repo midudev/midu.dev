@@ -40,7 +40,7 @@ Ahí tenemos la cuantiosa multa a [Google y Amazon por instalar cookies sin el p
 
 ## La gestión de cookies es un coñazo pero un coñazo necesario 🛑
 
-Sé que **es una verdadera molestia tener que mostrar el banner** y a veces es un reto técnico gestionar los consentimientos del usuario con los scripts que cargamos. Lo idea, en mi opinión, es que toda esta gestión se pudiese hacer a nivel de navegador (y así evitar tanto código innecesario en la red para lo mismo) pero, por ahora, **es un mal necesario.**
+Sé que **es una verdadera molestia tener que mostrar el banner** y a veces es un reto técnico gestionar los consentimientos del usuario con los scripts que cargamos. Lo ideal, en mi opinión, es que toda esta gestión se pudiese hacer a nivel de navegador (y así evitar tanto código innecesario en la red para lo mismo) pero, por ahora, **es un mal necesario.**
 
 Es necesario porque **se nos ha ido de las manos.** Hemos estado usando las cookies por encima de nuestras posibilidades. Retorciéndolas de forma que hemos vilipendiado a nuestros usuarios explotando sus datos hasta cotas insospechadas para poder sacar el rendimiento económico máximo. Poder sacarlo nosotros... o las empresas de siempre como **Google, Facebook o Amazon.**
 
