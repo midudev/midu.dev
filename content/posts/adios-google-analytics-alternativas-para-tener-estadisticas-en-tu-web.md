@@ -50,7 +50,7 @@ Cuando **usas Google Analytics, al final, estás nutriendo a Google de un montó
 
 Al final es cierto que tienes tus queridas estadísticas pero **lo pagas compartiendo datos** a una multinacional que le va a sacar provecho y, claro, pagando con la privacidad de tus usuarios. De hecho tus visitantes, no sólo pierden su privacidad, si no que **se ven molestados por una barra de cookies**, si te da por cumplir la legalidad, que tienen que aceptar si quieren utilizar tu web en condiciones. (si estás pensando en evitar que puedan usar la web si no aceptan que sepas que **es ilegal**).
 
-Por suerte, poco a poco, vemos movimientos como el de [GitHub que ha eliminado totalmente las cookies de su sitio](https://github.blog/2020-12-17-no-cookie-for-you/) justamente para evitar tener que molestar a sus usuarios con el manido aviso.
+Por suerte, poco a poco, vemos movimientos como el de [GitHub, que ha eliminado totalmente las cookies de su sitio](https://github.blog/2020-12-17-no-cookie-for-you/) justamente para evitar tener que molestar a sus usuarios con el manido aviso.
 
 ## Adiós Google Analytics 👋, adiós aviso de cookies y hola mejoras de rendimiento ⚡
 
@@ -64,27 +64,31 @@ Alternativas hay unas cuantas. Por mi parte, he empezado a utilizar [Fathom Anal
 
 {{< img align="center" alt="Así se ven las estadísticas en Fathom Analytics" src="https://usefathom.com/assets/fathom-analytics.png" >}}
 
-**También me gusta que tiene un diseño limpio**, una integración sencilla (una sola línea de código), una forma muy fácil de compartir las estadísticas a partir de una URL, un muy buen rendimiento.
+**También me gusta que tiene un diseño limpio**, una integración sencilla (una sola línea de código), una forma muy fácil de compartir las estadísticas a partir de una URL y un muy buen rendimiento ⚡. Vamos, un **win-win**.
 
-¿Lo malo? Que **sólo está en inglés** y **su plan empieza a partir de 14$** (por 100.000 páginas vistas). ¿Es caro? Pues sí. Si lo comparas con gratis, es caro. Pero creo que la privacidad de mis usuarios los vale. 🕵️‍♂️
+¿Lo malo? Que **sólo está en inglés** y **su plan empieza a partir de 14$ 💸** (por 100.000 páginas vistas). ¿Es caro? Pues sí. Si lo comparas con gratis, es caro. Pero creo que la privacidad de mis usuarios vale cada euro que pago. 🕵️‍♂️
 
 Si quieres probarlo, **te dejo un enlace con mi referal.** Yo me llevaría un **25%** si al final te haces cliente y por tu parte **tienes 10$ gratis** para empezar (además del periódo de prueba):
 
 **👉 [Registrarse con 10$ de crédito en Fathom](https://usefathom.com/ref/8C8RPY)**
 
-#### Más alternativas para Google Analytics
+Si no quieres usar mi código de referal: [Fathom Analytics](https://usefathom.com/)
+
+#### Más alternativas para Google Analytics y Fathom
 
 * [Plausible](https://plausible.io/): **La mejor alternativa a Fathom.** De hecho tiene todas las ventajas de Fathom a un precio más pequeño y un diseño muy cuidado. ¿Por qué elegí entonces Fathom? Porque tiene más años en el mercado y pensaba en utilizar algo más asentado... pero veremos si no doy el salto. 😝
 
-* [Simple Analytics](https://simpleanalytics.com/): Otro que lleva un tiempo. Su precio empieza por **19$ por 100k páginas vistas**. Una razón que me echó para atrás es que en varios artículos vi que tenía [grandes discrepancias con las visitas registradas](https://dev.to/hmhrex/a-comparison-of-the-top-3-privacy-focused-analytics-platforms-209m) con **Plausible** y **Fathom**. Supongo que lo habrán arreglado pero no me apetecía probarlo por mi mismo (y además es más caro respecto a **Fathom** y **Plausible**)
+* [Simple Analytics](https://simpleanalytics.com/): Otro que lleva un tiempo. Su precio empieza por **19$ por 100k páginas vistas**. Una razón que me echó para atrás es que en varios artículos leí que tenía [grandes discrepancias con las visitas registradas](https://dev.to/hmhrex/a-comparison-of-the-top-3-privacy-focused-analytics-platforms-209m) con **Plausible** y **Fathom**. Supongo que lo habrán arreglado pero no me apetecía probarlo por mi mismo (y además es más caro respecto a **Fathom** y **Plausible**)
 
-* [Matomo](https://matomo.org/): Una alternativa que puedes hospedar por tu parte de forma totalmente gratuita. Si no, puedes pagar a partir de 29€ al mes por la versión Cloud.
+* [Privacy First Adinton](https://privacy-first.adinton.com/): Una empresa de Barcelona que **ofrece por 19€ un plan ilimitado para blogs y empresas pequeñas**. Tampoco requiere el consentimiento del usuario y ofrece un montón de estadísticas y maneras de crear KPIs de tus métricas.
+ 
+* [Matomo](https://matomo.org/): Una alternativa que **puedes hospedar por tu parte de forma totalmente gratuita**. Si no, puedes pagar a partir de 29€ al mes por la versión Cloud.
 
 ## Conclusiones del artículo: responsabilizate de tus elecciones
 
-**No quiero con este artículo que te sientas mal o culpable** por usar Google Analytics. Sólo quiero que tengas más información a la hora de tomar la decisión de utilizarlo en tu sitio y que seas consciente que es posible que estés incurriendo en una falta
+**No quiero con este artículo que te sientas mal o culpable** por usar Google Analytics. Sólo quiero que tengas más información a la hora de tomar la decisión de utilizarlo en tu sitio y que seas consciente que es posible que estés incurriendo en una falta que pueda suponerte una multa.
 
-En un mundo, el de Internet, que **estamos siempre acostumbrados a tener las cosas gratis**... tenemos la responsabilidad de parar un momento y revisar las razones por las que estos servicios o contenidos son gratis. Especialmente aquellos que vienen de multinacionales poderosas donde su poder, seguramente, **vienen precisamente de los datos que manejan.**
+En un mundo, el de Internet, que **estamos siempre acostumbrados a tener las cosas gratis**... tenemos la responsabilidad de parar un momento y revisar las razones por las que estos servicios o contenidos son gratis. Especialmente aquellos que vienen de multinacionales poderosas donde su poder, seguramente, **vienen precisamente de los datos que manejan.** 
 
 Que a ver, **a veces también puedes revisar si tu blog realmente necesita analíticas.** Entiendo la necesidad en páginas que se monetizan. Si tienes unas pocas visitas al mes, seguramente es mejor no tener analíticas y dejar que los usuarios disfruten de tu contenido libremente. En mi caso lo hago para saber de **dónde provienen mis usuarios, qué dispositivos usan y qué artículos interesan más**... pero no sería la primera vez que me he planteado quitar totalmente las analíticas... 🙃
 
