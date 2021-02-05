@@ -78,19 +78,23 @@
   position: fixed;
   right: 0;
   width: 100%;
+  justify-content: center;
 }
 
 #share a {
   background: #fff;
   border-radius: 32px;
-  box-shadow: rgba(100,110,140,.4) 0px 6px 21px 2px;
   bottom: 0;
+  box-shadow: rgba(100,110,140,.4) 0px 6px 21px 2px;
   color: #333;
+  display: flex;
   font-size: 14px;
   font-weight: 500;
-  margin: 0 auto;
+  margin: 0 16px;
   padding: 8px 16px;
   text-align: center;
+  align-self: center;
+  align-items: center;
 }
 
 #share a:hover {
@@ -98,16 +102,30 @@
 }
 
 #share svg {
+  align-self: center;
+  display: inline-flex;
   margin-left: 4px;
 }
+
+#share a:last-child {
+  background-color: rgb(255, 66, 77);
+  color: #fff;
+}
+
+#share a:last-child:hover {
+  background-color: rgb(198, 23, 31);
+}
+
 </style>
 <div id='share'>
-  <a target='_blank' rel='nofollow noopener' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>Comparte el artículo
+  <a target='_blank' rel='nofollow noopener' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>
+    <span>Comparte el artículo</span>
     {{ partial "icons/twitter.html" }}
   </a>
 
-  <a target='_blank' rel='nofollow noopener' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>¡Apóyame en Patreon!
-    {{ partial "icons/twitter.html" }}
+  <a target='_blank' rel='nofollow noopener' href='https://www.patreon.com/bePatron?u=27145194'>
+    <span>¡Apóyame en Patreon!</span>
+    {{ partial "icons/patreon.html" }}
   </a>
 </div>
 {{ end }}
