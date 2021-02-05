@@ -9,7 +9,7 @@ tags:
 - me
 ---
 
-Desde el nacimiento del blog **siempre he usado Google Analytics**. Es la elección obvia. **Es gratis** (más o menos...) y los datos que ofrece son muchos y variados. Te permite conocer mejor tu audiencia y, lo que es importante, hacer acciones para mejorar tus métricas.
+Desde el nacimiento del blog **siempre he usado Google Analytics**. Es la elección obvia. **Es gratis** (más o menos) y los datos que ofrece son muchos y variados. Te permite conocer mejor tu audiencia y, lo que es importante, hacer acciones para mejorar tus métricas.
 
 {{< img align="center" alt="Google Analytics es la solución de Google para tener estadísticas en tu página web. Seguramente, la opción más usada en el mundo occidental." src="/images/analytics.png" >}}
 
@@ -36,7 +36,7 @@ El tema es que no basta con enseñar el aviso. Tendrías que hacer **dos cosas**
 
 **Y esto no pasa nunca.** De hecho **tooooodo el mundo tiene un blog donde carga Google Analytics** y ni pide consentimiento ni nada de nada. No te estoy señalando... yo mismo hasta hace unas semanas estaba haciendo lo mismo.
 
-Ahí tenemos la cuantiosa multa a [Google y Amazon por instalar cookies sin el permiso del usuario.](https://twitter.com/CNIL/status/1336931161621327872). Pero no hay que irse muy lejos. Hace unos meses Twitter fue [multada por la denuncia de un particular por 30.000€.](https://confilegal.com/20200611-proteccion-de-datos-multa-a-twitter-con-30-000-euros-por-una-infraccion-leve-en-su-politica-de-cookies/).
+Ahí tenemos la cuantiosa multa a [Google y Amazon por instalar cookies sin el permiso del usuario](https://twitter.com/CNIL/status/1336931161621327872). Pero no hay que irse muy lejos. Hace unos meses Twitter fue [multada por la denuncia de un particular por 30.000€](https://confilegal.com/20200611-proteccion-de-datos-multa-a-twitter-con-30-000-euros-por-una-infraccion-leve-en-su-politica-de-cookies/).
 
 ## La gestión de cookies es un coñazo pero un coñazo necesario 🛑
 
@@ -86,7 +86,7 @@ Si quieres probarlo, **te dejo un enlace con mi referal.** Yo me llevaría un **
 
 En un mundo, el de Internet, que estamos siempre acostumbrados a tener las cosas gratis... tenemos la responsabilidad de parar un momento y revisar las razones por las que estos servicios o contenidos son gratis. Especialmente aquellos que vienen de multinacionales poderosas donde su poder, seguramente, **vienen precisamente de los datos que manejan.**
 
-Que a ver, **a veces también puedes revisar si tu blog realmente necesita analíticas.** Entiendo la necesidad en páginas que se monetizan. Si tienes unas pocas visitas al mes, seguramente es mejor no tener analíticas y dejar que los usuarios disfruten de tu contenido libremente. En mi caso lo hago para saber de **dónde provienen mis usuarios, qué dispositivos usan y qué artículos interesan más**... pero no sería la primera vez que me he planteado quitar totalmente las analíticas....
+Que a ver, **a veces también puedes revisar si tu blog realmente necesita analíticas.** Entiendo la necesidad en páginas que se monetizan. Si tienes unas pocas visitas al mes, seguramente es mejor no tener analíticas y dejar que los usuarios disfruten de tu contenido libremente. En mi caso lo hago para saber de **dónde provienen mis usuarios, qué dispositivos usan y qué artículos interesan más**... pero no sería la primera vez que me he planteado quitar totalmente las analíticas...
 
 En cualquier caso, este blog a partir de ahora **me va a costar 14$ al mes** por [usar Fathom](https://usefathom.com/ref/8C8RPY) pero creo que los vale si a cambio de eso la privacidad de mis lectores está controlada. **Te invito a que hagas esa reflexión también con tus páginas y aplicaciones**.
 
