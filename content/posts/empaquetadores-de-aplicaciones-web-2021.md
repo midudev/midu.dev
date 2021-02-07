@@ -30,7 +30,7 @@ esbuild app.js --bundle --outfile=bundle.js
 
 También se puede usar la API de Javascript que ofrece una forma de usar `esbuild` de forma programática:
 
-```js
+```javascript
 require('esbuild').build({
   entryPoints: ['app.js'],
   bundle: true,
