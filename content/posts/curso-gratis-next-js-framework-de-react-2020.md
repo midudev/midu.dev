@@ -12,6 +12,10 @@ tags:
 
 Estoy emitiendo todos los viernes un live coding **[en mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1)** donde vamos ido construyendo paso a paso y desde cero **un clon de Twitter usando NextJS, el framework de React de Vercel.**
 
+<a href='https://midu.tube' target='_blank'>
+{{< img align="center" src="/images/youtube-suscribirme.png" >}}
+</a>
+
 ### Introducción a NextJS
 {{< youtube id="2jxc8DMzt0I" >}}
 {{< subscribe-to-youtube >}}
@@ -58,8 +62,11 @@ En esta clase vamos a querer tener una página para nuestro tweet. Para ello la 
 
 Una vez tengamos claro ese concepto, será el momento de pasar a recuperar la información de ese tweet en específico. Para ello conoceremos las diferentes opciones de **Data Fetching que tenemos en NextJS como getServerSideProps, getStaticProps y getInitialProps.**
 
-### Próximamente más...
+### Variables de entorno con archivos ENV y actualizaciones en tiempo real con Firestore
+{{< youtube id="8ZA2p1SBssk" >}}
+{{< subscribe-to-youtube >}}
+
+Añadir la posibilidad de **usar variables de entorno con archivos .env**, gracias al soporte nativo que tiene Next.JS y también añadiremos **actualizaciones de nuestros resultados en tiempo real con Firestore de Firebase**.
 
 **Suscríbete a mi canal de Youtube para no perderte el siguiente 👇**
-
 {{< subscribe-to-youtube >}}
