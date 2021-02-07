@@ -3,13 +3,16 @@ title: Curso gratis de ReactJS 2020 con clases en vivo
 date: '2020-05-17'
 image: '/images/curso-gratis-react-2020.jpg'
 description: Aprende qué es React, crea una aplicación desde cero, crea tus propios hooks y añade infinite scroll y testing con estas clases en vivo gratis.
-
 toc: true
 tags:
 - react
 ---
 
-Las últimas semanas he estado emitiendo todos los viernes un live coding **[en mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1)** donde hemos ido construyendo paso a paso y desde cero **una aplicación de React para buscar Gifs utilizando la API de Giphy.**
+Aprende qué es React, crea una aplicación desde cero, crea tus propios hooks y añade infinite scroll y testing con estas clases. Lo enseñamos desde cero y te explicamos por qué lo necesitas y deberías aprenderlo. 👇
+
+<a href='https://midu.tube' target='_blank'>
+{{< img align="center" src="/images/youtube-suscribirme.png" >}}
+</a>
 
 ### Aprendiendo React desde cero
 {{< youtube id="T_j60n1zgu0" >}}
@@ -101,6 +104,6 @@ Y la última clase, donde veremos cómo podemos añadir **CSS en JS** en nuestra
 {{< youtube id="DjVGdUM1dHQ" >}}
 {{< subscribe-to-youtube >}}
 
-### Suscríbete
-[¿Quieres más videos sobre frontend? ¡Suscríbete a mi canal!](https://www.youtube.com/c/midudev?sub_confirmation=1)
-{{< subscribe-to-youtube >}}
+<a href='https://midu.tube' target='_blank'>
+{{< img alt="Suscríbete para no perderte los próximos vídeos sobre desarrollo web y full stack"  align="center" src="/images/youtube-suscribirme.png" >}}
+</a>
