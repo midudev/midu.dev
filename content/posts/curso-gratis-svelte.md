@@ -35,7 +35,7 @@ En esta clase vamos a descubrir cómo **crear un proyecto en Svelte 3 desde cero
 
 Aprendemos a **crear componentes y gestionar su estado interno** utilizando la última versión de Svelte. Además, veremos como **Svelte** ofrece realmente un estado reactivo de forma que, de una forma muy declarativa, podremos cambiar el valor del estado y estos cambios es reflejaran fácilmente en la UI.
 
-## Declaraciones reactivas y FETCHING de datos ⚡
+## Declaraciones reactivas y FETCHING de datos ⚡
 
 En esta clase vamos a entender qué son las **declaraciones y sentencias reactivas en Svelte** para poder sacarle el máximo potencial al state de Svelte. Además, veremos cómo podemos **recuperar datos de una API**, actualizar el estado con ellos y pintarlos en la UI en Svelte.
 
@@ -49,14 +49,14 @@ En esta clase vamos a entender qué son las **declaraciones y sentencias reactiv
 
 Vamos a aprender a utilizar **el renderizado condicional en Svelte**. De esta forma, podremos mostrar al usuario diferente contenido dependiendo del estado y las props de nuestros componentes.
 
-## APRENDE a Renderizar LISTAS y ARRAYS 
+## APRENDE a Renderizar LISTAS y ARRAYS 
 
 {{< youtube id="93CL7O4hNWU" >}}
 {{< subscribe-to-youtube >}}
 
 Con la sintaxis **@each podemos renderizar objetos iterables, como arrays o strings, en SvelteJS.** En este vídeo comprobamos la sintaxis y lo usamos en nuestro proyecto.
 
-## APRENDE a usar PROMESAS con AWAIT en Svelte
+## APRENDE a usar PROMESAS con AWAIT en Svelte
 
 {{< youtube id="c1kvN5jqQ18" >}}
 {{< subscribe-to-youtube >}}
