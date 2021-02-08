@@ -1,7 +1,7 @@
 ---
 title: Curso de Svelte Gratis y Desde Cero 📚
 date: '2021-02-08'
-image: '/images/curso-gratis-svelte.jpg'
+image: '/images/og/curso-gratis-svelte.jpg'
 description: Aprende Svelte desde cero, el framework más nuevo del mundo del frontend que ofrece una nueva formación de crear interfaces de usuario
 toc: true
 tags:
