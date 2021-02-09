@@ -137,38 +137,6 @@
       top: 0;
       width: 48px;
     }
-
-    #cursos {
-      display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(275px,1fr));
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-
-    #cursos a {
-      background: var(--bgc, #000);
-      border-radius: 12px;
-      color: #fff;
-      font-size: 1.3rem;
-      font-weight: 500;
-      padding: 16px;
-      align-items: center;
-      display: flex;
-      transition: all .1s ease;
-      flex-direction: column;
-      text-align: center;
-    }
-
-    #cursos a img {
-      object-fit: contain;
-      height: 120px;
-      width: 120px;
-      margin-bottom: 16px;
-    }
-
-    #cursos a:hover {
-      transform: scale(1.05) rotate(0.5deg);
-    }
   </style>
   <main id='home-feed'>
     <h3 class='section-title'>Últimos artículos 📝</h3>
@@ -284,20 +252,7 @@
   {{ end }}
 
   <h3 class="section-title">CURSOS de Programación Full Stack gratuitos 🚀</h3>
-  <div id="cursos">
-    <a href='https://midu.dev/curso-gratis-next-js-framework-de-react-2020/' style='--bgc: #000;'>
-      <img alt='Next.js' loading='lazy' src='/images/tags/nextjs.png' width="48" height="48" style="filter: invert(1);" />
-      <strong>Aprende Next.js</strong>El mejor framework de React, desde cero
-    </a>
-    <a href='https://midu.dev/curso-gratis-react-2020/' style='--bgc: #00cbff;'>
-      <img alt='react' loading='lazy' src='/images/tags/react.png' width="48" height="48" style="filter: brightness(3)" />
-      <strong>Aprende React</strong> La biblioteca más demandada del mercado
-    </a>
-    <a href='https://midu.dev/curso-gratis-svelte/' style='--bgc: #ff8860;'>
-      <img alt='Svelte' loading='lazy' src='/images/tags/svelte.png' width="48" height="48" />
-      <strong>Aprende Svelte</strong>El framework tendencia de 2021
-    </a>
-  </div>
+  {{ partial "cursos.html" }}
 
   <h3 class="section-title">Artículos por temas 👨‍💻</h3>
   <div id='topics'>

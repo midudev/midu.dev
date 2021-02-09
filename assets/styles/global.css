@@ -344,15 +344,20 @@ svg {
 }
 
 /** NEWSLETTER-FORM **/
+#aside-sticky {
+  top: 48px;
+  position: sticky;
+}
+
 #newsletter-form {
   border: 3px solid #09f;
   padding: 16px;
   border-radius: 4px;
-  position: sticky;
-  top: 48px;
   text-align: center;
+  margin-bottom: 32px;
   margin-top: 48px;
   padding-top: 48px;
+  position: relative;
 }
 
 #newsletter-form svg {
