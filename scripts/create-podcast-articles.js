@@ -60,7 +60,7 @@ ${content}
         audio,
         content: normalizedContent,
         description,
-        image,
+        image: `https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/${image}`,
         pubDate,
         season: normalizedSeason,
         episode: normalizedEpisode,
