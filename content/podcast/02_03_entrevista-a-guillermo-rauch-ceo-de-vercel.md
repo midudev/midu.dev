@@ -1,7 +1,7 @@
 ---
 title: 'Entrevista a Guillermo Rauch, CEO de Vercel - 02x03'
 date: 'Fri, 04 Sep 2020 08:00:15 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1599206423346-a471042a790ad.jpg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1599206423346-a471042a790ad.jpg'
 description: 'Guillermo Rauch es una de las personas más influyentes en el mundo del desarrollo web. Actualmente es CEO y co-fundador de Vercel ▲ (hasta hace muy poco ZEIT), una plataforma que t'
 category: 'podcast'
 season: 02

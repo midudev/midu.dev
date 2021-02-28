@@ -1,7 +1,7 @@
 ---
 title: '¿Qué son los ingenieros 10x? CSSCamp y JSCamp 2019. - 01x12'
 date: 'Sun, 21 Jul 2019 22:06:55 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/d98a1cc457226016.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/d98a1cc457226016.jpeg'
 description: 'Hablamos sobre uno de los grandes temas que han azotado esta semana Twitter. Los los ingenieros 10x. ¿De qué trata? ¿Qué son? ¿Por qué tanto revuelo? ¿Existen...? ¿Tiene sentido? P'
 category: 'podcast'
 season: 01

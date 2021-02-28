@@ -1,7 +1,7 @@
 ---
 title: 'Consejos, ideas y prácticas para ser mejor desarrollador - 01x07'
 date: 'Sun, 03 Mar 2019 17:53:41 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/6e493347a8c4a219.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/6e493347a8c4a219.jpeg'
 description: '¡Bienvenidos al episodio 7 de What The Front, tu podcast de frontend en castellano! Hoy hablamos sobre qué nos hace buenos desarrolladores. ¿Cómo podemos seguir mejorando? ¿Qué deb'
 category: 'podcast'
 season: 01

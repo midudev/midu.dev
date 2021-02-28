@@ -1,7 +1,7 @@
 ---
 title: 'Web Components: el futuro es ahora… ¿o no? - 01x01'
 date: 'Sat, 29 Dec 2018 18:12:00 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/09f77d9ed1d2623a.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/09f77d9ed1d2623a.jpeg'
 description: 'Primer capítulo del podcast de frontend, WTFront . En este capítulo hablamos de los Web Components. ¿Sabéis qué son? ¿Os acordáis de ellos? Era el año 2011 y Alex Russell maravilla'
 category: 'podcast'
 season: 01

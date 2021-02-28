@@ -1,7 +1,7 @@
 ---
 title: 'Lo mejor de 2018 en el frontend y lo que nos espera en 2019 - Parte II - 01x05'
 date: 'Sun, 10 Feb 2019 17:38:52 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/94d85951cf73a9c5.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/94d85951cf73a9c5.jpeg'
 description: 'Segunda parte del repaso de 2018 y lo que esperamos en el mundo del frontend y el diseño web en 2019. Esta vez con opiniones de Belén, Alba Roza y Félix Ortega para compartirnos lo'
 category: 'podcast'
 season: 01

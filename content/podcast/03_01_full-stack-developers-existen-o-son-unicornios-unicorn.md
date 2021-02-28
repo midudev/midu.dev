@@ -1,7 +1,7 @@
 ---
 title: 'FullStack Developers, ¿existen o son unicornios 🦄? - 03x01'
 date: 'Sun, 03 Jan 2021 14:38:55 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1609684744349-67039142a4e7a.jpg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1609684744349-67039142a4e7a.jpg'
 description: 'La leyenda de los Fullstack Developers 👨‍💻. ¿Existen ¿Unicornios 🦄? ¿Postureo? ¿Tienen sentido hoy en día?'
 category: 'podcast'
 season: 03

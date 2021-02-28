@@ -1,7 +1,7 @@
 ---
 title: 'TC39, presente y futuro del Javascript - 02x01'
 date: 'Sun, 19 Jan 2020 19:07:46 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/6b36e3b0f10362db.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/6b36e3b0f10362db.jpeg'
 description: '¡Año nuevo y nueva temporada de WhatTheFront! Y arrancamos con dos expertos del TC39. Con Romulo, invited expert del TC39 y con Daniel Ehrenberg, delegado del TC39 y partner para I'
 category: 'podcast'
 season: 02

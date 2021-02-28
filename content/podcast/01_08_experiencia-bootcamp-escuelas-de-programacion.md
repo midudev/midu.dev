@@ -1,7 +1,7 @@
 ---
 title: 'Experiencia bootcamp. ¿Qué se siente al cambiar tu vida para aprender programación? - 01x08'
 date: 'Sat, 30 Mar 2019 22:36:47 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/46a160ba952a7b02.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/46a160ba952a7b02.jpeg'
 description: 'Hablamos con los protagonistas de la última promoción del bootcamp de Barcelona Skylab. ¿De dónde vienen? ¿Por qué se decidieron a aprender la programación web? Nos cuentan también'
 category: 'podcast'
 season: 01

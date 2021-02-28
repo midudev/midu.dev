@@ -1,7 +1,7 @@
 ---
 title: 'TestJS Summit: Descuento + Sorpresa. ¡Y Twitch! - 03x02'
 date: 'Sat, 09 Jan 2021 14:35:02 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1610202910941-0cc7520ea8102.jpg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1610202910941-0cc7520ea8102.jpg'
 description: '¡Ayer hice un sorteo en mi canal de Youtube de 5 entradas para ir a la TestJS Summit! Si te lo perdiste, no pasa nada, porque todavía traigo más sorpresas. La primera te la dejo aq'
 category: 'podcast'
 season: 03

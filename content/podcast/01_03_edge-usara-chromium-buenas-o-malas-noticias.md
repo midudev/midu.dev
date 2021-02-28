@@ -1,7 +1,7 @@
 ---
 title: 'Edge usará Chromium como motor en su navegador. ¿Buenas o malas noticias? - 01x03'
 date: 'Sat, 19 Jan 2019 18:42:25 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/591269e2eef9bc0f.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/591269e2eef9bc0f.jpeg'
 description: 'Microsoft va a dejar de mantener el motor actual de Edge para empezar a utilizar Chromium, el motor de código abierto de Chrome. Todo el mundo está dando su opinión y, oye, nosotro'
 category: 'podcast'
 season: 01

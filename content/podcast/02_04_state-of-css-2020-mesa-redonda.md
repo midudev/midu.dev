@@ -1,7 +1,7 @@
 ---
 title: 'State of CSS 2020 - Mesa redonda - 02x04'
 date: 'Thu, 10 Dec 2020 20:16:25 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1607631394105-61a0eec2ded8.jpg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1607631394105-61a0eec2ded8.jpg'
 description: '¿Qué es lo que lo está PETANDO en CSS? ¿Qué tendrías que estar APRENDIENDO? ¿Qué te estás PERDIENDO en el mundo de la maquetación? CSS es, cada vez más, un lenguaje SUPER necesario'
 category: 'podcast'
 season: 02

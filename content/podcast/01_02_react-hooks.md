@@ -1,7 +1,7 @@
 ---
 title: 'React Hooks, ¿qué son? ¿vale la pena el hype? - 01x02'
 date: 'Sun, 06 Jan 2019 18:57:52 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/d6d2fb7663c2b9ed.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/d6d2fb7663c2b9ed.jpeg'
 description: 'En este capítulo hablamos sobre los React Hooks, la próxima nueva feature de React que, teniendo en cuenta la repercusión que ha habido en redes, cuando salga va a revolucionar cóm'
 category: 'podcast'
 season: 01

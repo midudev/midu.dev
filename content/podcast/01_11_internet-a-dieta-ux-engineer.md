@@ -1,7 +1,7 @@
 ---
 title: '¡Hay que poner Internet a dieta! ¿Qué es un UX Engineer? - 01x11'
 date: 'Sun, 02 Jun 2019 14:52:06 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/a9dfe995c88857d4.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/a9dfe995c88857d4.jpeg'
 description: 'En este programa contamos con Adrià Fontcuberta y Marina Aísa para hablar sobre el contenido de sus charlas en la T3chfest de este año:'
 category: 'podcast'
 season: 01

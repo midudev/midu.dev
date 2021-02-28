@@ -1,7 +1,7 @@
 ---
 title: 'Trabajo en remoto y equipos distribuidos - 02x02'
 date: 'Fri, 13 Mar 2020 16:24:46 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/823345ab4859f6de.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/823345ab4859f6de.jpeg'
 description: 'Ahora que el Coronavirus ha obligado a muchas empresas a aprovecharse del trabajo en remoto, hablamos con Elena Torró de Carto, Kiko Beats de IBM y Carlos Blé de Lean Mind para que'
 category: 'podcast'
 season: 02

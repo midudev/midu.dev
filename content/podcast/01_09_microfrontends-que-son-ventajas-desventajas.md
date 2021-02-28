@@ -1,7 +1,7 @@
 ---
 title: 'Microfrontends. ¿Qué son? ¿Qué ventajas y desventajas tienen? - 01x09'
 date: 'Thu, 02 May 2019 10:27:03 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/0f9fa07b77271ffe.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/0f9fa07b77271ffe.jpeg'
 description: 'Volvemos en tu podcast de frontend y es que de frontend va la cosa. Pero de frontends pequeñitos. Más que pequeñitos, microfrontends. ¿Qué son? ¿Es la arquitectura frontend del fut'
 category: 'podcast'
 season: 01

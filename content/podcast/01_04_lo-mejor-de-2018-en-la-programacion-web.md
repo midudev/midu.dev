@@ -1,7 +1,7 @@
 ---
 title: 'Lo mejor de 2018 en el frontend y lo que nos espera en 2019 - 01x04'
 date: 'Sun, 03 Feb 2019 19:25:01 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/32e7295391b2351e.jpeg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/7340239/32e7295391b2351e.jpeg'
 description: 'En este nuevo episodio de WhatTheFront hacemos un repaso de lo mejor de lo que nos ha dejado el año 2018, lo que más nos ha sorprendido, lo que hemos aprendido, cosas que destacamo'
 category: 'podcast'
 season: 01

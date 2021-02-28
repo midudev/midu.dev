@@ -1,7 +1,7 @@
 ---
 title: 'State of JS 2020 - Mesa redonda - ¿¡La muerte de Angular y Redux!? - 03x03'
 date: 'Tue, 19 Jan 2021 16:55:49 GMT'
-image: 'https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1611075357745-6d35034b4075e.jpg'
+image: 'https://res.cloudinary.com/midudev/image/fetch/w_256,h_144,c_fill,f_auto/https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/7340239/7340239-1611075357745-6d35034b4075e.jpg'
 description: '¡Los resultados de la encuesta anual sobre el estado de Javascript trae SORPRESAS 😱!
 ¿Qué '
 category: 'podcast'
