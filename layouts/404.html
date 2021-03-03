@@ -74,7 +74,7 @@
     <img id="gif" src='/images/this-is-fine-404.gif' />
     <h2 id="h2">aquí tienes los últimos artículos, ¡para que encuentres algo!</h2>
     <div id="home-feed">
-    {{ $paginator := .Paginate (where site.RegularPages "Type" "==" "posts") }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
       {{ range $paginator.Pages }}
       <a class='home-article' href="{{.Permalink}}">
         {{ with .Param "tags" }}

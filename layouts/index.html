@@ -137,7 +137,7 @@
   </style>
   <main id='home-feed'>
     <h3 class='section-title'>Últimos artículos 📝</h3>
-    {{ $paginator := .Paginate (where site.RegularPages "Type" "==" "posts") }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
       {{ range $paginator.Pages }}
       <a class='home-article' href="{{.Permalink}}">
         {{ with .Param "tags" }}
