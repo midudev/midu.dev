@@ -8,7 +8,6 @@
   },
   "scripts": {
     "build": "hugo --minify",
-    "create-images": "node scripts/create-og-images.js",
     "create-podcast-articles": "node scripts/create-podcast-articles.js",
     "dev": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY hugo server",
     "now-build": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY npm run build"
@@ -26,11 +25,10 @@
   "homepage": "https://github.com/midudev/midu.dev#readme",
   "devDependencies": {
     "@github-docs/frontmatter": "1.3.1",
-    "canvas": "2.7.0",
-    "hugo-bin": "0.70.2"
+    "hugo-bin": "0.71.1"
   },
   "dependencies": {
-    "@sindresorhus/slugify": "1.1.0",
+    "@sindresorhus/slugify": "2.0.0",
     "rss-parser": "3.12.0",
     "string-strip-html": "8.2.13"
   }

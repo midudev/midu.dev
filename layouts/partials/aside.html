@@ -28,8 +28,8 @@
     {{ end }}
   {{ end }}
   <hr class='section-separation' />
-  <h3 class='section-title'>Podcast 🎙</h3>
-  {{ range first 4 (where .Site.Pages ".Params.category" "podcast") }}
+  <h3 class='section-title'>Último Podcast 🎙</h3>
+  {{ range first 1 (where .Site.Pages ".Params.category" "podcast") }}
   <a href='{{.Permalink}}'>
     <img alt="{{ .Title }}" loading='lazy' src='{{ .Params.image }}' />
     <h4>{{ .Title }}</h4>
