@@ -6,12 +6,13 @@
   {{ end }}
 
   <h3 class='section-title youtube-title'>
-    Vídeos 📹
+    <a href='https://midu.tube/' target='_blank'>Vídeos <span aria-label="Cámara" role="img">📹</span></a>
     {{ partial "buttons/youtube-subscribe-button-with-styles.html"  }}
   </h3>
-  {{ $apiKeyValue := getenv "YOUTUBE_API_KEY" }}
-  {{ if ($apiKeyValue)}}
 
+  {{ $apiKeyValue := getenv "YOUTUBE_API_KEY" }}
+
+  {{ if ($apiKeyValue)}}
     {{ $url := "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=4"}}
     {{ $apiKeyParam := "&key=" }}
     {{ $videos := getJSON $url $apiKeyParam $apiKeyValue }}
@@ -27,6 +28,7 @@
     </a>
     {{ end }}
   {{ end }}
+
   <hr class='section-separation' />
   <h3 class='section-title'>Último Podcast 🎙</h3>
   {{ range first 1 (where .Site.Pages ".Params.category" "podcast") }}
