@@ -22,3 +22,13 @@ paginate = 10
 
 [markup.goldmark.renderer]
 unsafe= true
+
+[outputs]
+home = ["HTML", "RSS", "Algolia"]
+
+[outputFormats]
+  [outputFormats.Algolia]
+    baseName = "algolia"
+    mediaType = "application/json"
+    isPlainText = true
+    notAlternative = true
