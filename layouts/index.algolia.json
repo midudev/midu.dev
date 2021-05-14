@@ -1,4 +1,5 @@
 {{- $index := slice -}}
+
 {{- range site.RegularPages -}}
   {{- $page := . -}}
   
@@ -9,7 +10,8 @@
   {{- end -}}
 
   {{- range $i, $c := $chunked -}}
-    {{- $index = $index | append (dict "objectID" (print $page.File.UniqueID "_" $i) "content" $c "order" $i "title" $page.Title "date" $page.Date "href" $page.Permalink "tags" $page.Params.tags ) -}}
+    {{- $index = $index | append (dict "objectID" (print $page.File.UniqueID "_" $i) "description" $page.Description "content" $c "order" $i "title" $page.Title "date" $page.Date "href" $page.Permalink "tags" $page.Params.tags ) -}}
   {{- end -}}
 {{- end -}}
+
 {{- $index | jsonify -}}

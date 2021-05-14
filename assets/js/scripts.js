@@ -200,3 +200,45 @@ if ($share) {
 
   observer.observe(elementToObserve);
 }
+
+var firstLoad = true
+var algoliaClient = algoliasearch('N06USNNE94', '8fda6182324461e914064bf7574fe362');
+
+const searchClient = {
+  ...algoliaClient,
+  search(requests) {
+    if (firstLoad === true) {
+      firstLoad = false
+      return
+    }
+    return algoliaClient.search(requests)
+  }
+}
+
+var search = instantsearch({
+  indexName: 'midudev_blog',
+  numberLocale: 'es',
+  searchClient
+});
+
+search.addWidgets([
+  // instantsearch.widgets.configure({
+  //   hitsPerPage: 2
+  // }),
+
+  instantsearch.widgets.searchBox({
+    container: '#searchbox',
+    placeholder: 'Busca aquí lo que quieras'
+  }),
+
+  instantsearch.widgets.hits({
+    container: '#hits',
+    templates: {
+      item: `<a href='{{ href }}'>
+        {{#helpers.highlight}}{ "attribute": "title" }{{/helpers.highlight}}
+      </a>`,
+    },
+  })
+]);
+
+search.start()

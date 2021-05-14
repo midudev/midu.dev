@@ -811,3 +811,15 @@ twitter-widget {
 .twitter-tweet {
   margin: 0 auto;
 }
+
+
+/* search */
+.ais-InstantSearch {
+  position: relative;
+}
+
+#hits {
+  position: absolute;
+  z-index: 2;
+}
+
