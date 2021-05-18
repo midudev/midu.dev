@@ -60,7 +60,7 @@ npm install
 
 Con esto ya te creará una carpeta con todo listo para funcionar y unos archivos para que empieces con Vue.js.
 
-[🔗 Documentación de vite](https://esbuild.github.io/getting-started/)
+[🔗 Documentación de vite](https://vitejs.dev/)
 
 ## WMR, todo lo que necesitas en un archivo de sólo 2MB 🗜
 
