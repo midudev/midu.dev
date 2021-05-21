@@ -55,6 +55,11 @@
   <meta property="og:description" content="{{- .Description | default .Site.Params.Description -}}" />
   <meta property="og:site_name" content="midu.dev" />
 
+
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css">
+
   {{ if isset .Params "tags" }}
   <script type="application/ld+json">
     {

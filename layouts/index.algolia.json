@@ -1,0 +1,17 @@
+{{- $index := slice -}}
+
+{{- range site.RegularPages -}}
+  {{- $page := . -}}
+  
+  {{- $chunked := slice -}}
+  {{- $post_len := len .PlainWords -}}
+  {{- range $i := (seq 0 1000 $post_len) -}}
+    {{- $chunked = $chunked | append (delimit (first 1000 (after $i $page.PlainWords) ) " " ) -}}
+  {{- end -}}
+
+  {{- range $i, $c := $chunked -}}
+    {{- $index = $index | append (dict "objectID" (print $page.File.UniqueID "_" $i) "description" $page.Description "content" $c "order" $i "title" $page.Title "date" $page.Date "href" $page.Permalink "tags" $page.Params.tags ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $index | jsonify -}}

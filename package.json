@@ -29,7 +29,9 @@
   },
   "dependencies": {
     "@sindresorhus/slugify": "2.0.0",
+    "algoliasearch": "4.9.1",
     "rss-parser": "3.12.0",
-    "string-strip-html": "8.2.13"
+    "string-strip-html": "8.2.13",
+    "xml2json": "0.12.0"
   }
 }
