@@ -6,7 +6,7 @@ toc: true
 tags:
   - algolia
 image: >-
-  /images/og/como-arreglar-error-react-has-detected-change-order-hooks.jpg
+  /images/og/como-anadir-buscador-blog-jamstack-algolia.jpg
 ---
 
 Muchos lectores del blog me han pedido que añada un buscador. Al ser mi blog un JAMStack, había algunos retos. **¿Cómo podía indexar todo el contenido que tengo en archivos estáticos?** **¿Cómo hago que ese índice esté actualizado a lo largo del tiempo?** **¿Cómo hago un ranking de esas búsquedas...?**
