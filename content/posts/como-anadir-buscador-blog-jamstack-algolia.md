@@ -313,7 +313,7 @@ Con esto hemos conseguido nuestro objetivo y ahora el buscador no funcionará de
 Este sería el resultado final:
 
 <div style='text-align: center;'>
-  <video style='width: 60%; height: auto;' autoplay src='https://cleanshot-cloud-fra.accelerator.net/media/6116/EUL02znNnMwBdnQlIxiO2gxxEMqI3fg6WYKb484K.mp4'>
+  <video loop style='width: 60%; height: auto;' autoplay src='https://cleanshot-cloud-fra.accelerator.net/media/6116/EUL02znNnMwBdnQlIxiO2gxxEMqI3fg6WYKb484K.mp4'>
 </div>
 
 ## Precio de Algolia
