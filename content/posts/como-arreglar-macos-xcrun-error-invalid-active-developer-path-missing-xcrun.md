@@ -17,7 +17,7 @@ image: >-
 **¿Quieres aprender sobre programación y desarrollo web?**<br />
 ¡Suscríbete a mi canal de YouTube! 👇<br />
 <a class="yt-subscribe-button" rel="noopener nofollow" href="https://www.youtube.com/c/midudev?sub_confirmation=1" target="_blank" style='margin-top: 8px'><span><svg viewBox="0 0 24 24" width="16" style="margin:-2px 4px 0 0"><path d="M23.495 6.205a3.007 3.007.0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007.0 00.527 6.205 31.247 31.247.0 00.005 12.01a31.247 31.247.0 00.522 5.783 3.007 3.007.0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506.0 9.396-.502a3.007 3.007.0 002.088-2.088 31.247 31.247.0 00.5-5.783 31.247 31.247.0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" fill="#fff"></path></svg>¡Suscríbete!</span>
-<span>60K</span></a>
+<span>67K</span></a>
 </div>
 
 A veces, tras actualizar `macOS` a una nueva versión de su sistema operativo, o por actualizar otras dependencias, es posible que al intentar utilizar algún comando de `git`, la terminal te devuelva un error un poco críptico que dice así:
