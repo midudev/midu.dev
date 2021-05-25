@@ -44,6 +44,7 @@ body {
     'Segoe UI Symbol';
   display: block;
   margin: 0 auto;
+  overflow-x: hidden;
   width: 100%;
   -webkit-font-smoothing: antialiased;
 }
@@ -113,9 +114,17 @@ iframe {
   padding-bottom: var(--p-header-bottom);
 }
 
+#searchbox {
+  display: none;
+}
+
 @media (min-width: 600px) {
   .header {
     margin-bottom: 32px;
+  }
+
+  #searchbox {
+    display: block;
   }
 }
 
@@ -126,7 +135,13 @@ iframe {
 
 #nav a {
   color: #222;
-  padding: 10px 12px;
+  padding: 10px 6px;
+}
+
+@media (min-width: 600px) {
+  #nav a {
+    padding: 10px 12px;
+  }
 }
 
 #nav .page-links {
