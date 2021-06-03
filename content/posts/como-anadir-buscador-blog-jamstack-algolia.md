@@ -9,6 +9,8 @@ image: >-
   /images/og/como-anadir-buscador-blog-jamstack-algolia.jpg
 ---
 
+{{< youtube id="zBTYBIUw1iw" >}}
+
 Muchos lectores del blog me han pedido que añada un buscador. Al ser mi blog un JAMStack, había algunos retos. **¿Cómo podía indexar todo el contenido que tengo en archivos estáticos?** **¿Cómo hago que ese índice esté actualizado a lo largo del tiempo?** **¿Cómo hago un ranking de esas búsquedas...?**
 
 Una forma bastante sencilla, que da una solución general, sería tirar de *Google Custom Search*, que ya tiene todo mi contenido indexado. Sin embargo, tiene algunas **desventajas**: es rápido pero no lo suficiente, pierdo el control de la búsqueda y, además, no puedo evolucionarlo como me gustaría.

@@ -1,13 +1,10 @@
 const parser = require('xml2json')
 const fs = require('fs')
 const path = require('path')
-
+const algoliasearch = require('algoliasearch')
 
 const rss = fs.readFileSync(path.resolve(__dirname, '../public/index.xml'), 'utf-8')
 const json = parser.toJson(rss, {object: true})
-console.log(json.rss.channel.item)
-
-const algoliasearch = require('algoliasearch')
 
 const ALGOLIA_APPLICATION_ID = "QK9VV9YO5F"
 const ALGOLIA_ADMIN_API_KEY = "ffb74847ebfbabfbfbf66cb59c4673bf" // es inventado :P
