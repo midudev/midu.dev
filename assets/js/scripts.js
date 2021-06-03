@@ -204,16 +204,21 @@ if ($share) {
 var firstLoad = true
 var ALGOLIA_APPLICATION_ID = 'QK9VV9YO5F'
 var ALGOLIA_SEARCH_ONLY_API_KEY = '247bb355c786b6e9f528bc382cab3039'
-var algoliaClient = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY);
+var algoliaClient = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY, {
+  _useRequestCache: true
+});
 
 var searchClient = {
   ...algoliaClient,
   search(requests) {
-    if (firstLoad === true) {
-      firstLoad = false
-      return
+    const shouldSearch = requests.some(({ params: { query }}) => query !== '')
+
+    if (shouldSearch) {
+      return algoliaClient.search(requests);
     }
-    return algoliaClient.search(requests)
+    return Promise.resolve({
+      results: [{ hits: [] }]
+    })
   }
 }
 
@@ -232,7 +237,7 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
     templates: {
-      empty: 'Sin resultados',
+      empty: '',
       item: `<a href='{{ link }}'>
         {{#helpers.highlight}}{ "attribute": "title" }{{/helpers.highlight}}
         <div>
