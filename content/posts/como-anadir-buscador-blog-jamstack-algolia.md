@@ -284,7 +284,7 @@ Sorprendentemente no existeu una opción que fácilmente nos permita esto y me i
 
 Igualmente sabemos de programación, así que vamos a conseguir emular el mismo comportamiento que deseamos. Para ello vamos a hacer lo siguiente:
 
-```js
+```javascript
 // creamos una variable y la iniciamos a true
 var algoliaClient = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY);
 
