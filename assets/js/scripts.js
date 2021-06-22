@@ -207,91 +207,58 @@ var ALGOLIA_SEARCH_ONLY_API_KEY = '247bb355c786b6e9f528bc382cab3039'
 var algoliaClient = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY, {
   _useRequestCache: true
 });
+var index = algoliaClient.initIndex('prod_blog_content')
 
-var searchClient = {
-  ...algoliaClient,
-  search(requests) {
-    const shouldSearch = requests.some(({ params: { query }}) => query !== '')
+var $form = document.querySelector('.ais-SearchBox-form')
+var $input = document.querySelector('.ais-SearchBox-input')
+var $reset = document.querySelector('.ais-SearchBox-reset')
+var $hits = document.querySelector('#hits')
 
-    if (shouldSearch) {
-      return algoliaClient.search(requests);
-    }
-    return Promise.resolve({
-      results: [{ hits: [] }]
-    })
+$form.addEventListener('submit', function (e) {
+  e.preventDefault()
+})
+
+$reset.addEventListener('click', function (e) {
+  $input.value = ''
+  $hits.innerHTML = ''
+})
+
+$input.addEventListener('input', function (e) {
+  var {value} = e.target
+  if (value === '') {
+    $hits.innerHTML = ''
+    $reset.setAttribute('hidden')
   }
-}
 
-var search = instantsearch({
-  indexName: 'prod_blog_content',
-  numberLocale: 'es',
-  searchClient
-});
+  $reset.removeAttribute('hidden')
+  $hits.removeAttribute('hidden')
 
-search.addWidgets([
-  instantsearch.widgets.searchBox({
-    container: '#searchbox',
-    placeholder: 'Buscar...'
-  }),
-
-  instantsearch.widgets.hits({
-    container: '#hits',
-    templates: {
-      empty: '',
-      item: `<a href='{{ link }}'>
-        {{#helpers.highlight}}{ "attribute": "title" }{{/helpers.highlight}}
-        <div>
-          <small>{{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}</small>
-        </div>
-      </a>`,
-    },
-  }),
-
-  instantsearch.widgets.configure({
+  index.search(value, {
     hitsPerPage: 3
-  }),
-]);
+  }).then(({hits}) => {
+    var hitsHtml = ''
+    hits.forEach(hit => {
+      var {
+        link,
+        _highlightResult: {
+          title: {value: title},
+          description: {value: description}
+        }
+      } = hit
 
-search.start()
+      console.log(title, description)
+    
+      hitsHtml += `
+      <li class='ais-Hits-item'>
+        <a href='${ link }'>
+          ${title}
+          <div>
+            <small>${description}</small>
+          </div>
+        </a>
+      </li>`
+    })
 
-// var firstLoad = true
-// var algoliaClient = algoliasearch('N06USNNE94', '8fda6182324461e914064bf7574fe362');
-
-// var searchClient = {
-//   ...algoliaClient,
-//   search(requests) {
-//     if (firstLoad === true) {
-//       firstLoad = false
-//       return
-//     }
-//     return algoliaClient.search(requests)
-//   }
-// }
-
-// var search = instantsearch({
-//   indexName: 'midudev_blog',
-//   numberLocale: 'es',
-//   searchClient
-// });
-
-// search.addWidgets([
-//   instantsearch.widgets.configure({
-//     hitsPerPage: 3
-//   }),
-
-//   instantsearch.widgets.searchBox({
-//     container: '#searchbox',
-//     placeholder: 'Buscar...'
-//   }),
-
-//   instantsearch.widgets.hits({
-//     container: '#hits',
-//     templates: {
-//       item: `<a href='{{ href }}'>
-//         {{#helpers.highlight}}{ "attribute": "title" }{{/helpers.highlight}}
-//       </a>`,
-//     },
-//   })
-// ]);
-
-// search.start()
+    $hits.innerHTML = hitsHtml
+  })
+})
