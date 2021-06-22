@@ -833,8 +833,104 @@ twitter-widget {
   position: relative;
 }
 
+.ais-SearchBox-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #d6d6e7;
+  border-radius: 5000px;
+  box-shadow: inset 0 1px 4px 0 rgb(119 122 175 / 30%);
+  caret-color: #5a5e9a;
+  color: #23263b;
+  flex: 1 1 0%;
+  font: inherit;
+  max-width: 100%;
+  padding-left: 2.5rem;
+}
+
+.ais-SearchBox-input:focus {
+  outline: 0;
+  box-shadow: 0 0 10px 0px rgb(0 153 255 / 30%);
+  border: 1px solid transparent;
+}
+
 #hits {
   position: absolute;
   z-index: 2;
 }
 
+.ais-SearchBox-input::-ms-clear,
+.ais-SearchBox-input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.ais-SearchBox-input::-webkit-search-cancel-button,
+.ais-SearchBox-input::-webkit-search-decoration,
+.ais-SearchBox-input::-webkit-search-results-button,
+.ais-SearchBox-input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.ais-SearchBox-form {
+  background-color: #fff;
+  display: flex;
+  font-size: .875rem;
+  height: 2rem;
+  line-height: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.ais-SearchBox-form::before {
+  background: transparent url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230099ff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2211%22%20r%3D%228%22%3E%3C%2Fcircle%3E%3Cline%20x1%3D%2221%22%20y1%3D%2221%22%20x2%3D%2216.65%22%20y2%3D%2216.65%22%3E%3C%2Fline%3E%3C%2Fsvg%3E) repeat scroll 0 0;
+  content: "";
+  height: 1rem;
+  left: 1rem;
+  margin-top: -.5rem;
+  position: absolute;
+  top: 50%;
+  width: 1rem;
+}
+
+.ais-SearchBox-loadingIndicator[hidden], .ais-SearchBox-reset[hidden], .ais-SearchBox-submit {
+  display: none;
+}
+
+.ais-SearchBox-loadingIndicator, .ais-SearchBox-reset {
+  align-items: center;
+  background: transparent;
+  border-radius: 50%;
+  border: 0;
+  display: flex;
+  fill: #484c7a;
+  height: 20px;
+  justify-content: center;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+}
+
+.ais-Hits-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ais-Hits-item {
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgb(35 38 59 / 5%), 0 1px 3px 0 rgb(35 38 59 / 15%);
+  display: flex;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  padding: .5rem;
+}
+
+.ais-Hits-item mark {
+  background: #d0ecff;
+}
