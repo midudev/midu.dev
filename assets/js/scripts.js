@@ -1,3 +1,34 @@
+
+// show rrss in mobile view
+const $rrssButton = document.getElementById('rrss-button')
+const $rrssWrapper = document.getElementById('wrapper-rrss')
+const $logoImg = document.getElementById('logo').querySelector('img')
+const desktopBreakPoint = matchMedia("(min-width: 600px)");
+
+function checkMedia() {
+  if (desktopBreakPoint.matches) {
+    $logoImg.src = '/logo.png';
+    $rrssWrapper.classList.remove('floating')
+    $rrssButton.classList.remove('open')
+  } else {
+    $logoImg.src = '/logo-mobile.png';
+  }
+}
+
+$rrssButton.addEventListener('click', () => {
+  $rrssButton.classList.toggle('open')
+  $rrssWrapper.classList.toggle('floating')
+})
+
+desktopBreakPoint.addEventListener('change', checkMedia)
+
+// when start page
+checkMedia();
+
+
+
+
+
 // youtube functionality
 function createYoutubeFrame(id) {
   var html =
