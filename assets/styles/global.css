@@ -894,7 +894,7 @@ twitter-widget {
   width: 1rem;
 }
 
-.ais-SearchBox-loadingIndicator[hidden], .ais-SearchBox-reset[hidden], .ais-SearchBox-submit {
+.ais-SearchBox-loadingIndicator[hidden], #hits[hidden], .ais-SearchBox-reset[hidden], .ais-SearchBox-submit {
   display: none;
 }
 
@@ -903,6 +903,7 @@ twitter-widget {
   background: transparent;
   border-radius: 50%;
   border: 0;
+  cursor: pointer;
   display: flex;
   fill: #484c7a;
   height: 20px;
@@ -931,6 +932,6 @@ twitter-widget {
   padding: .5rem;
 }
 
-.ais-Hits-item mark {
+.ais-Hits-item em {
   background: #d0ecff;
 }
