@@ -1,3 +1,30 @@
+var loadedScripts = []
+
+function loadScript(src) {
+  if (loadedScripts.includes(src)) return Promise.resolve()
+
+  return new Promise(function(resolve, reject) {
+    const s = document.createElement('script');
+    let r = false;
+    s.type = 'text/javascript';
+    s.src = src;
+    s.async = true;
+    s.onerror = function(err) {
+      reject(err, s);
+    };
+    s.onload = s.onreadystatechange = function() {
+      // console.log(this.readyState); // uncomment this line to see which ready states are called.
+      if (!r && (!this.readyState || this.readyState == 'complete')) {
+        r = true;
+        loadedScripts.push(src)
+        resolve();
+      }
+    };
+    const t = document.getElementsByTagName('script')[0];
+    t.parentElement.insertBefore(s, t);
+  });
+}
+
 // youtube functionality
 function createYoutubeFrame(id) {
   var html =
@@ -204,15 +231,22 @@ if ($share) {
 var firstLoad = true
 var ALGOLIA_APPLICATION_ID = 'QK9VV9YO5F'
 var ALGOLIA_SEARCH_ONLY_API_KEY = '247bb355c786b6e9f528bc382cab3039'
-var algoliaClient = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY, {
-  _useRequestCache: true
-});
-var index = algoliaClient.initIndex('prod_blog_content')
+var algoliaIndex
 
 var $form = document.querySelector('.ais-SearchBox-form')
 var $input = document.querySelector('.ais-SearchBox-input')
 var $reset = document.querySelector('.ais-SearchBox-reset')
 var $hits = document.querySelector('#hits')
+
+function getAlgoliaIndex () {
+  if (algoliaIndex) return algoliaIndex
+
+  var algoliaClient = algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY, {
+    _useRequestCache: true
+  });
+  algoliaIndex = algoliaClient.initIndex('prod_blog_content')
+  return algoliaIndex
+}
 
 $form.addEventListener('submit', function (e) {
   e.preventDefault()
@@ -223,7 +257,9 @@ $reset.addEventListener('click', function (e) {
   $hits.innerHTML = ''
 })
 
-$input.addEventListener('input', function (e) {
+$input.addEventListener('input', async function (e) {
+  await loadScript('https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js')
+
   var {value} = e.target
   if (value === '') {
     $hits.innerHTML = ''
@@ -233,7 +269,8 @@ $input.addEventListener('input', function (e) {
   $reset.removeAttribute('hidden')
   $hits.removeAttribute('hidden')
 
-  index.search(value, {
+  var algoliaIndex = getAlgoliaIndex()
+  algoliaIndex.search(value, {
     hitsPerPage: 3
   }).then(({hits}) => {
     var hitsHtml = ''
@@ -245,8 +282,6 @@ $input.addEventListener('input', function (e) {
           description: {value: description}
         }
       } = hit
-
-      console.log(title, description)
     
       hitsHtml += `
       <li class='ais-Hits-item'>
