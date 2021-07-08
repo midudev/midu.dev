@@ -8,6 +8,8 @@ tags:
 - firebase
 ---
 
+{{< youtube id="eD1CUWs_3_k" >}}
+
 **Firestore** es la famosisíma **base de datos NoSQL de Firebase**. Tiene multitud de ventajas: lista para escalar muy fácilmente, una estructura basada en objetos similar a JSON, sincronización entre servidor y cliente...
 
 Sin embargo, esta base de datos tiene un PERO muy grande y es que **no tiene una forma fácil de realizar búsquedas de texto libre** en sus documentos. Para ello tenías que recurrir a [crear tu propia integración con servicios de terceros](https://effbada.hashnode.dev/full-text-search-with-firebase-on-android-using-algolia-part-1-c86fc6e1c632). **Hasta ahora.**

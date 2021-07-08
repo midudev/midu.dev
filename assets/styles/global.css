@@ -176,6 +176,7 @@ hr.section-separation {
 
 /** FOOTER **/
 footer {
+  text-align: center;
   padding: 64px 0 64px;
 }
 

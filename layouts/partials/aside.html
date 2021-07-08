@@ -6,18 +6,18 @@
   {{ end }}
 
   <h3 class='section-title youtube-title'>
-    <a href='https://midu.tube/' target='_blank'>Vídeos <span aria-label="Cámara" role="img">📹</span></a>
+    <a href='https://midu.tube/' target='_blank'>Último vídeo</a>
     {{ partial "buttons/youtube-subscribe-button-with-styles.html"  }}
   </h3>
 
   {{ $apiKeyValue := getenv "YOUTUBE_API_KEY" }}
 
   {{ if ($apiKeyValue)}}
-    {{ $url := "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=4"}}
+    {{ $url := "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=1"}}
     {{ $apiKeyParam := "&key=" }}
     {{ $videos := getJSON $url $apiKeyParam $apiKeyValue }}
 
-    {{ range first 4 $videos.items }}
+    {{ range first 1 $videos.items }}
     <a href='https://www.youtube.com/watch?v={{ .snippet.resourceId.videoId }}' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}' rel='nofollow noopener noreferrer'>
       <picture>
         <source alt="{{.snippet.title}}" srcset="https://i3.ytimg.com/vi_webp/{{ .snippet.resourceId.videoId }}/mqdefault.webp" type="image/webp">
@@ -30,7 +30,7 @@
   {{ end }}
 
   <hr class='section-separation' />
-  <h3 class='section-title'>Último Podcast 🎙</h3>
+  <h3 class='section-title'>Último Podcast</h3>
   {{ range first 1 (where .Site.Pages ".Params.category" "podcast") }}
   <a href='{{.Permalink}}'>
     <img alt="{{ .Title }}" loading='lazy' src='{{ .Params.image }}' />

@@ -136,7 +136,7 @@
     }
   </style>
   <main id='home-feed'>
-    <h3 class='section-title'>Últimos artículos 📝</h3>
+    <h3 class='section-title'>Últimos artículos</h3>
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
       {{ range $paginator.Pages }}
       <a class='home-article' href="{{.Permalink}}">
@@ -246,10 +246,10 @@
   </ul><!-- .pagination -->
   {{ end }}
 
-  <h3 class="section-title">CURSOS de Programación Full Stack gratuitos 🚀</h3>
+  <h3 class="section-title">CURSOS de Programación Full Stack gratuitos</h3>
   {{ partial "cursos.html" }}
 
-  <h3 class="section-title">Artículos por temas 👨‍💻</h3>
+  <h3 class="section-title">Artículos por temas</h3>
   <div id='topics'>
     <a href='/tags/react/' class='topic' title='Artículos sobre React.js'>
       <img alt='react' loading='lazy' src='/images/tags/react.png' width="48" height="48" />
