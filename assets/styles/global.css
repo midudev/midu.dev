@@ -172,8 +172,7 @@ hr {
 
 hr.section-separation {
   background: transparent;
-  border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 16px;
+  padding-bottom: 32px;
 }
 
 /** FOOTER **/
@@ -368,13 +367,13 @@ svg {
 }
 
 #newsletter-form {
-  border: 3px solid #09f;
+  border: 2px solid #09f;
   padding: 16px;
   border-radius: 4px;
   text-align: center;
   margin-bottom: 32px;
   margin-top: 48px;
-  padding-top: 48px;
+  padding-top: 24px;
   position: relative;
 }
 
