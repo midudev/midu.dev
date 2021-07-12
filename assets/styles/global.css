@@ -172,7 +172,6 @@ hr {
 
 hr.section-separation {
   background: transparent;
-  padding-bottom: 32px;
 }
 
 /** FOOTER **/
@@ -372,7 +371,7 @@ svg {
   border-radius: 4px;
   text-align: center;
   margin-bottom: 32px;
-  margin-top: 48px;
+  margin-top: 32px;
   padding-top: 24px;
   position: relative;
 }
