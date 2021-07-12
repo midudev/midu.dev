@@ -47,6 +47,8 @@ body {
   overflow-x: hidden;
   width: 100%;
   -webkit-font-smoothing: antialiased;
+  background-image:#fff;
+  background-image: radial-gradient(at 88% 88%, hsla(204,100%,90%,1) 0, transparent 70%);
 }
 
 /* RESET */
@@ -374,18 +376,6 @@ svg {
   margin-top: 48px;
   padding-top: 48px;
   position: relative;
-}
-
-#newsletter-form svg {
-  background: #fff;
-  fill: #09f;
-  position: absolute;
-  top: -36px;
-  left: 50%;
-  margin-left: -40px;
-  width: 64px;
-  padding: 0 8px;
-  box-sizing: content-box;
 }
 
 #newsletter-form small {
