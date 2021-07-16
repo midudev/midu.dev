@@ -470,9 +470,8 @@ svg {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: 48px;
   text-align: center;
-  border-top: 3px solid #eee;
 }
 
 #article-pagination a {

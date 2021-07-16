@@ -163,24 +163,63 @@ pre.highlight {
 }
 
 .highlight .language-css::before {
-  background: #2caddd;
+  background: url(/images/tags/css.png);
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  content: '';
+  border-radius: 0;
+  top: -12px;
 }
 
 .highlight .language-html::before {
-  background: #ff4800; 
+  background: url(/images/tags/html.png);
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  content: '';
+  border-radius: 0;
+  top: -12px;
 }
 
 .highlight .language-javascript::before {
-  background: #f7df1e;
+  background: url(/images/tags/javascript.png);
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  content: '';
+  border-radius: 0;
+  top: -12px;
+}
+
+.highlight .language-sh::before {
+  background: url(/images/tags/terminal.png);
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  content: '';
+  border-radius: 0;
+  top: -12px;
 }
 
 .highlight .language-svelte::before {
-  background: #ff3e00;
-  color: #fff;
+  background: url(/images/tags/svelte.png);
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  content: '';
+  border-radius: 0;
+  top: -12px;
 }
 
 .highlight .language-jsx::before {
-  background: #61dbfb;
+  background: url(/images/tags/react.png);
+  width: 36px;
+  height: 32px;
+  background-size: cover;
+  content: '';
+  border-radius: 0;
+  top: 6px;
 }
 
 .highlight .language-fallback::before {
