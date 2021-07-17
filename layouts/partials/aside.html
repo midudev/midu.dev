@@ -5,10 +5,7 @@
     <hr class='section-separation' />
   {{ end }}
 
-  <h3 class='section-title youtube-title'>
-    <a href='https://midu.tube/' target='_blank'>Último vídeo</a>
-    {{ partial "buttons/youtube-subscribe-button-with-styles.html"  }}
-  </h3>
+  <h3 class='section-title youtube-title'>Último vídeo en YouTube</h3>
 
   {{ $apiKeyValue := getenv "YOUTUBE_API_KEY" }}
 
@@ -40,16 +37,22 @@
   <hr class='section-separation' />
   <div id="aside-sticky">
   <div id="newsletter-form">
-    <h3>¡Suscríbete a la Newsletter!</h3>
-    <small>Recibirás artículos de calidad sobre frontend y todas las novedades en las que vaya trabajando. <strong>¡Nada
-        de spam 🙅‍♂️!</strong></small>
+    <h3>¡Suscríbete a la newsletter!</h3>
+    <small>
+      Recibirás artículos de calidad sobre frontend y todas las novedades en las que vaya trabajando.<strong>¡Nada de spam 🙅‍♂️!</strong>
+    </small>
     <form action="https://www.getrevue.co/profile/midudev/add_subscriber" method="post" name="revue-form">
       <div>
         <label for='aside-newsletter-email' class='u-none'>Correo electrónico</label>
         <input type="hidden" name="ml-submit" value="1">
+        <div style='position: relative'>
         <input autocomplete="email" id='aside-newsletter-email' required class="input" placeholder="Tu correo electrónico *" type="email" name="member[email]">
+          <button type="submit" name="member[subscribe]" id="member_submit">
+            Suscribirse
+          </button>
+        </div>
       </div>
-      <input class='button' type="submit" value="✍️ ¡Me suscribo!" name="member[subscribe]" id="member_submit">
+
     </form>
   </div>
   {{ if isset .Params "tags" }}
