@@ -1,4 +1,5 @@
-const playwright = require('playwright-aws-lambda')
+const chromium = require('chrome-aws-lambda')
+const playwright = require('playwright-core')
 
 const { NOW_REGION } = process.env
 const isDevelopment = NOW_REGION === 'dev1'
@@ -10,9 +11,15 @@ module.exports = async (req, res) => {
   console.log('New request with:')
   console.log({ tag, subtitle, title })
 
+  console.log(await chromium.executablePath)
+
   try {
     if (!browser) {
-      browser = await playwright.launchChromium({ headless: true })
+      browser = await playwright.chromium.launch({
+        args: chromium.args,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless
+      })
     }
 
     const context = await browser.newContext()
