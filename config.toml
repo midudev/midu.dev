@@ -5,7 +5,7 @@ title = "midudev 👨‍💻 | Frontend, Javascript, React, CSS, Performance"
 disableHugoGeneratorInject = true
 defaultContentLanguage = "es"
 preserveTaxonomyNames = true
-paginate = 10
+paginate = 7
 
 [permalinks]
   posts = "/:filename/"
