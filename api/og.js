@@ -4,10 +4,11 @@ const { NOW_REGION } = process.env
 const isDevelopment = NOW_REGION === 'dev1'
 const host = isDevelopment ? 'http://localhost:3000' : 'https://midu.dev'
 
-let browser = null
-
 module.exports = async (req, res) => {
+  let browser = null
   const { tag, subtitle, title } = req.query
+  console.log('New request with:')
+  console.log({ tag, subtitle, title })
 
   try {
     if (!browser) {
@@ -23,6 +24,7 @@ module.exports = async (req, res) => {
     res.setHeader('Content-Type', 'image/png')
     res.status(200).send(screenshot)
   } catch (error) {
+    console.error(error)
     res.status(500).send({
       status: 'Failed',
       error
