@@ -12,7 +12,7 @@ image: >-
 
 Si estás usando `macOS` es posible que al intentar hacer un `npm install` te aparezca un error en la terminal algo difícil de entender que se debe parecer a este y donde habla de que la herramienta `xcodebuild` requiere tener instalado Xcode:
 
-```
+```sh
 $ npm install
 > ckmeans@1.0.1 install /Users/project/node_modules/ckmeans
 > node-gyp rebuild
