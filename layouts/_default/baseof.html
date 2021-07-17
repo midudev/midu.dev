@@ -44,14 +44,30 @@
 
   <meta name="twitter:creator" content="@midudev" />
   <meta name="twitter:domain" content="midu.dev" />
-  <meta name="twitter:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
+
+  {{ $image := .Site.Params.Image }}
+
+  {{ if isset .Params "image" }}
+    {{ if in .Params.image "https://" }}
+      {{ $image = .Params.image }}
+    {{ else }}
+      {{ $image = (print .Site.BaseURL .Params.image) }}
+    {{ end }}
+  {{ else if isset .Params "tags" }}
+    {{ $tag := index (.Params.tags) 0}}
+    {{ $title := .Title }}
+    {{ $subtitle := (print .ReadingTime " minutos de lectura" ) }}
+    {{ $image = (print .Site.BaseURL "/api/og/?tag=" $tag "&title=" $title "&subtitle=" $subtitle) | safeHTML }}
+  {{ end }}
+
+  <meta name="twitter:image" content="{{ $image }}" />
   <meta name="twitter:site" content="@midudev" />
 
   <link rel="manifest" href="/manifest.json" />
 
   <meta property="og:locale" content="es_ES" />
   <meta property="og:title" content="{{ .Title | default .Site.Title }}" />
-  <meta property="og:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
+  <meta property="og:image" content="{{ $image | safeHTMLAttr }}" />
   <meta property="og:description" content="{{- .Description | default .Site.Params.Description -}}" />
   <meta property="og:site_name" content="midu.dev" />
 
@@ -61,7 +77,7 @@
       "@context": "http://schema.org",
       "@type": "NewsArticle",
       "headline": "{{ .Title }}",
-      "image": ["https://midu.dev{{ .Params.image | default .Site.Params.Image }}"],
+      "image": ["{{ $image }}"],
       "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
     }
   </script>
@@ -71,14 +87,17 @@
 
 </head>
 
-<body class='{{ cond (isset .Params "audio") "body-player" ""}}'>
-  <header class='header u-center'>{{ partial "logo.html" }}</header>
+<body class='{{ cond (isset .Params "audio") "body-player" "body-content"}}'>
+  <header class='header'>
+    <div class='header-inner u-center'>
+      {{ partial "logo.html" }}
+    </div>
+  </header>
   <div class='body u-center'>
     {{ block "main" . }}
     {{ end }}
   </div>
   {{ partial "footer.html" . }}
-
 
   {{ $js := resources.Get "js/scripts.js" }}
   {{ $script := $js | resources.Minify }}
