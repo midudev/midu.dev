@@ -97,42 +97,40 @@
     }
 
     #topics {
-      display: grid;
-      grid-gap: 32px;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      padding: 16px 32px 48px 16px;
+      display: flex;
+      grid-gap: 8px;
+      padding: 16px 0px 48px 16px;
       margin: 0 -16px;
+      max-width: 100%;
+      flex-wrap: wrap;
     }
 
     .topic {
       align-items: center;
       background: #fff;
-      border-radius: 6px;
-      border: 2px solid transparent;
-      box-shadow: 10px 20px 40px rgb(0 0 0 / 20%);
+      border-radius: 26px;
+      border: 2px solid #eee;
       color: #111;
       display: flex;
-      height: 64px;
+      height: 55px;
       font-size: 1.3rem;
-      padding: 16px;
+      padding: 0 24px;
       position: relative;
       transition: all .3s ease;
     }
 
+    .topic h4 {
+      padding-left: 12px;
+    }
+
     .topic:hover {
       border: 2px solid #09f;
-      color: #09f;
     }
 
     .topic img {
-      bottom: 0;
-      height: 48px;
-      margin: auto;
+      width: 28px;
+      height: 28px;
       object-fit: contain;
-      position: absolute;
-      right: 16px;
-      top: 0;
-      width: 48px;
     }
   </style>
   <main id='home-feed'>
