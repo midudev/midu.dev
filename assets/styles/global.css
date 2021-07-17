@@ -904,11 +904,11 @@ twitter-widget {
   border: 0;
   cursor: pointer;
   display: flex;
-  fill: #484c7a;
+  fill: #09f;
   height: 20px;
   justify-content: center;
   position: absolute;
-  right: 1rem;
+  right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
