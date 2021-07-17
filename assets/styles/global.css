@@ -50,11 +50,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.body-content {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
 /* RESET */
 
 blockquote {
@@ -113,6 +108,7 @@ iframe {
 /** .header **/
 .header {
   background: #f1f5f9;
+  margin-bottom: 32px;
 }
 
 .header-inner {
@@ -128,10 +124,6 @@ iframe {
 }
 
 @media (min-width: 600px) {
-  .header {
-    margin-bottom: 32px;
-  }
-
   #searchbox {
     display: block;
   }
@@ -159,7 +151,7 @@ iframe {
 
 
 #nav a:hover {
-  background: #eee;
+  background: #e8f6ff;
   color: #000;
   border-radius: 6px;
 }

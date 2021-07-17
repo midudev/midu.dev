@@ -88,7 +88,7 @@
 
 </head>
 
-<body class='{{ cond (isset .Params "audio") "body-player" "body-content"}}'>
+<body class='{{ cond (isset .Params "audio") "body-player" ""}}'>
   <header class='header'>
     <div class='header-inner u-center'>
       {{ partial "logo.html" }}
