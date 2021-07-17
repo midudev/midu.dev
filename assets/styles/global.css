@@ -518,34 +518,28 @@ svg {
 #article-pagination a {
   align-items: center;
   border-radius: 6px;
-  border: 0;
-  color: #09f;
+  border: 2px solid #eee;
+  color: #000;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 16px;
   max-width: 300px;
-  padding: 8px 16px;
+  padding: 24px 16px;
   transition: all .2s ease;
 }
 
 #article-pagination a:hover, #article-pagination a:focus {
   background: #e8f6ff;
+  border: 2px solid #09f;
+  color: #000;
   text-decoration: none;
 }
 
 #article-pagination img {
   width: 64px;
   margin-bottom: 16px;
-}
-
-#article-pagination svg {
-  fill: #09f;
-  margin-bottom: 8px;
-}
-
-#article-pagination a:hover svg {
-  fill: #00f;
 }
 
 /** ARTICLE-IMAGES **/
