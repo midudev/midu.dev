@@ -100,16 +100,16 @@
       display: grid;
       grid-gap: 32px;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      overflow: auto;
       padding: 16px 32px 48px 16px;
       margin: 0 -16px;
     }
 
     .topic {
       align-items: center;
+      background: #fff;
       border-radius: 6px;
-      border: 1px solid transparent;
-      box-shadow: 0px 0px 3px -1px #ccc;
+      border: 2px solid transparent;
+      box-shadow: 10px 20px 40px rgb(0 0 0 / 20%);
       color: #111;
       display: flex;
       height: 64px;
@@ -120,8 +120,8 @@
     }
 
     .topic:hover {
+      border: 2px solid #09f;
       color: #09f;
-      box-shadow: 0px 0px 6px -1px #aaa;
     }
 
     .topic img {
