@@ -104,7 +104,7 @@ const getUnitAndValueDate = (secondsElapsed) => {
     // si los segundos que han pasado entre las fechas es mayor a los segundos
     // que hay en la unidad o si la unidad es "second"...
     if (secondsElapsed >= secondsInUnit || unit === "second") {
-      // extraemos el valor diviendo el tiempo que ha pasado en segundos
+      // extraemos el valor dividiendo el tiempo que ha pasado en segundos
       // con los segundos que tiene la unidad y redondeamos la unidad
       // ej: 3800 segundos pasados / 3600 segundos (1 hora) = 1.05 horas
       // Math.floor(1.05) -> 1 hora
