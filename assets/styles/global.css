@@ -151,9 +151,10 @@ iframe {
 
 
 #nav a:hover {
-  background: #e8f6ff;
+  background: #fff;
   color: #000;
   border-radius: 6px;
+  border: 1px solid #09f;
 }
 
 /** END .header **/
