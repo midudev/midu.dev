@@ -135,6 +135,7 @@ iframe {
 }
 
 #nav a {
+  border: 1px solid transparent;
   color: #222;
   padding: 10px 6px;
 }
