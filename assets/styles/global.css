@@ -817,7 +817,7 @@ twitter-widget {
   -moz-appearance: none;
   appearance: none;
   background-color: #fff;
-  border: 0;
+  border: 1px solid #eee;
   border-radius: 5000px;
   box-shadow: none;
   caret-color: #5a5e9a;
@@ -827,6 +827,7 @@ twitter-widget {
   max-width: 100%;
   padding-left: 2.5rem;
   margin-right: 1rem;
+  transition: box-shadow .2s ease;
 }
 
 .ais-SearchBox-input:focus {
