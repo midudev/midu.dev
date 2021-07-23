@@ -583,28 +583,6 @@ figure.left img {
 
 /** END ARTICLE-IMAGES **/
 
-/** #TableOfContents **/
-#TableOfContents ul {
-  list-style: none;
-  padding-left: 0;
-  padding-bottom: 0;
-}
-
-#TableOfContents ul li {
-  margin-bottom: 0;
-}
-
-#TableOfContents ul a:hover {
-  background-color: rgb(208, 237, 255);
-}
-
-#TableOfContents > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-/** END #TableOfContents **/
-
 /** #Lightbox **/
 #lightbox {
   position: fixed;

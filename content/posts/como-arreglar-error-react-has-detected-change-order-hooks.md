@@ -2,7 +2,6 @@
 title: 'Cómo arreglar el error "Warning: React has detected a change in the order of Hooks"'
 date: '2021-03-31'
 description: Entiende qué significa y cómo arreglar este típico error de React
-toc: true
 tags:
   - react
 image: >-

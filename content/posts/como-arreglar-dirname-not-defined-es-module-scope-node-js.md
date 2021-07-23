@@ -2,7 +2,6 @@
 title: 'Cómo arreglar el error que dice que __dirname no está definido en archivo ES Module de Node.js'
 date: '2021-07-12'
 description: Al migrar tus archivos de Node.js de Common.js a ESModules puedes encontrar que la variable __dirname no está definida. ¡Aprende a arreglarlo!
-toc: true
 tags:
   - node
 ---

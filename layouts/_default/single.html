@@ -63,6 +63,74 @@
 
 </article>
 
+{{ if (.Params.toc) }}
+<style>
+  #TableOfContents-container {
+    display: none;
+  }
+
+  @media (min-width: 1300px) {
+    #TableOfContents-container {
+      display: block;
+      position: fixed;
+      right: 32px;
+    }
+  
+    #TableOfContents-container h3 {
+      font-size: 14px;
+      padding-bottom: 8px;
+    }
+  
+    #TableOfContents ul {
+      list-style: none;
+      padding-left: 0;
+      padding-bottom: 0;
+      max-width: 200px;
+    }
+  
+    #TableOfContents ul li {
+      margin-bottom: 8px;
+    }
+  
+    #TableOfContents ul ul {
+      list-style: none;
+      color: #444;
+      padding-left: 8px;
+      margin-top: 8px;
+    }
+  
+    #TableOfContents ul ul li:before {
+      content: '-';
+      padding-right: 4px;
+    }
+  
+    #TableOfContents a {
+      color: #555;
+      display: inline;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1;
+    }
+  
+    #TableOfContents a code {
+      font-size: 12px;
+    }
+  
+    #TableOfContents a:hover {
+      background-color: rgb(208, 237, 255);
+    }
+  
+    #TableOfContents ul ul a {
+      color: #777;
+    }
+  }
+</style>
+  <div id="TableOfContents-container">
+    <h3>Contenido del artículo</h3>
+    {{.TableOfContents}}
+  </div>
+{{ end }}
+
 {{ if (.Params.description) }}
 <style>
   #share {

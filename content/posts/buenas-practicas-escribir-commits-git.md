@@ -1,6 +1,6 @@
 ---
 title: Buenas prácticas para escribir commits en Git
-date: '2021-07-23'
+date: '2021-07-22'
 description: Aprende a escribir buenos mensajes de commit en Git con esta lista de buenas prácticas
 toc: true
 tags:
