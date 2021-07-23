@@ -157,3 +157,7 @@ Ten en cuenta que este experimento está en sus primeras etapas de desarrollo. H
 {{< img src="https://developer-chrome-com.imgix.net/image/dPDCek3EhZgLQPGtEG3y0fTn4v82/kh1Z4jcWxbO6rYCSoIPn.png?w=1600" >}}
 
 *Chromium issues: [1199787](https://crbug.com/1199787)
+
+**Este artículo es una traducción del artículo [What's New In DevTools (Chrome 92)](https://developer.chrome.com/blog/new-in-devtools-92/).** Puedes ver todas las novedades en vídeo aquí:
+
+{{< youtube id="2baY3JpCxpo" >}}
