@@ -21,7 +21,7 @@ Sé que muchas veces estamos tentados a escribirlo en pasado *"Added..."*, *"Fix
 
 Sólo hay que ver también los mensajes de commit que el propio Git nos añade (al hacer merge de una rama usa `Merge branch`).
 
-Lo mejor es que el mensaje del commit complete esta frase: *"Si aplico este commit, entonces este commit va a..."*
+Lo mejor es que el mensaje del commit complete esta frase: *"Si aplico este commit, entonces este commit..."*
 
 - ...add a new search feature
 - ...fix a problem with the topbar
