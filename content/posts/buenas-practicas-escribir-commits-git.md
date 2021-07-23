@@ -9,7 +9,7 @@ tags:
 
 Escribir buenos mensajes de commit es importante para que el histórico de tu proyecto sea legible, fácilmente escaneable y, claro, entendible por cualquier persona que participe en el proyecto.
 
-Por ello voy a darte 5 reglas para escribir un buen mensaje de commit:
+Por ello voy a darte 6 reglas para escribir un buen mensaje de commit:
 
 ### 1. Usa el verbo imperativo (`Add`, `Change`, `Fix`, `Remove`, ...)
 
