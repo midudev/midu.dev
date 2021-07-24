@@ -9,7 +9,7 @@
   "scripts": {
     "build": "hugo --minify",
     "create-podcast-articles": "node scripts/create-podcast-articles.js",
-    "dev": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY hugo server",
+    "dev": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY hugo server -F",
     "now-build": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY npm run build"
   },
   "repository": {
