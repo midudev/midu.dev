@@ -1,0 +1,19 @@
+name: Publish new version
+
+on:
+  schedule:
+    - cron: "5/5 * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        date +%s > lastUpdate
+        git config user.name midudev
+        git config user.email miduga@gmail.com
+        git add lastUpdate
+        git diff --quiet && git diff --staged --quiet || git commit -m "[bot] Update blog with latest"
+        git push origin master
