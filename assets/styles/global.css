@@ -640,14 +640,10 @@ figure.left img {
 }
 
 #aside a {
-  align-items: center;
-  background: transparent;
-  border: 0;
   border-radius: 4px;
-  color: #444;
-  cursor: pointer;
-  display: flex;
+  display: block;
   outline: 0;
+  position: relative;
   margin-left: -8px;
   padding: 8px;
   text-align: left;
@@ -661,16 +657,13 @@ figure.left img {
 #aside img {
   border-radius: 4px;
   object-fit: cover;
-  flex: 0 0 128px;
-  height: 72px;
-  width: 128px;
 }
 
 #aside h4 {
-  font-size: var(--fz-aside);
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 140%;
-  font-weight: 500;
-  padding-left: 16px;
 }
 
 .youtube-title {
