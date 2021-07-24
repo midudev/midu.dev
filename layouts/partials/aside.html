@@ -17,7 +17,7 @@
     {{ range first 1 $videos.items }}
     <a href='https://www.youtube.com/watch?v={{ .snippet.resourceId.videoId }}' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}' rel='nofollow noopener noreferrer'>
       <picture>
-        <source alt="{{.snippet.title}}" srcset="https://i3.ytimg.com/vi_webp/{{ .snippet.resourceId.videoId }}/mqdefault.webp" type="image/webp">
+        <source srcset="https://i3.ytimg.com/vi_webp/{{ .snippet.resourceId.videoId }}/mqdefault.webp" type="image/webp">
         <img alt="{{.snippet.title}}" src="https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg">
       </picture>
 
