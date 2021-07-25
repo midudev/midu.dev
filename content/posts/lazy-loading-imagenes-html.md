@@ -189,7 +189,7 @@ Ahora la pregunta... **¿por qué cuanto peor conexión la carga ocurre con más
 
 ## Conclusiones
 
-**No hay razón para no empezar ya el atributo `loading="lazy"` en las imágenes y iframes** que estén fuera del área visible para el usuario. Si el navegador lo soporta, tendremos de forma muy sencilla mejoras de rendimiento en nuestro sitio... y si no lo soporta, pues seguirá como hasta ahora.
+**No hay razón para no empezar a usar ya el atributo `loading="lazy"` en las imágenes y iframes** que estén fuera del área visible para el usuario. Si el navegador lo soporta, tendremos de forma muy sencilla mejoras de rendimiento en nuestro sitio... y si no lo soporta, pues seguirá como hasta ahora.
 
 **Fuentes:**
 [Native image lazy-loading for the web!](https://addyosmani.com/blog/lazy-loading/)
