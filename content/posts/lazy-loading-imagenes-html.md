@@ -26,7 +26,7 @@ El atributo `loading` de las imágenes y lo de los iframes acepta tres valores d
 - `eager`: cuando queremos que el recurso se cargue lo antes posible.
 - `auto`: dejamos que el navegador decida si se debe cargar antes o después.
 
-Si el valor por defecto, si no usas el campo `loading` en la etiqueta, será `auto`. De forma que el navegador decidirá qué prioridad debe tener el recurso.
+El valor por defecto, si no usas el campo `loading` en la etiqueta, será `auto`. De forma que el navegador decidirá qué prioridad debe tener el recurso.
 
 
 ## ¿Cómo puedo hacer el lazy load nativo en imágenes y iframes?
@@ -101,9 +101,9 @@ if (!hasNativeLazyLoadSupport) {
 
 ### ¿Qué pasa si uso loading=lazy pero mi navegador no lo soporta?
 
-Si tu navegador no soporta este atributo simplemente lo ignorará. Esto es ideal, ya que hace que puedas usar este atributo `loading` en las imágenes y funcionará en aquellos navegadores que lo soporten. Los que no lo soporten... obviamente no obtendrá el beneficio de la carga en diferido pero tampoco tendrá un impacto negativo ni le afectará de ninguna manera.
+Si tu navegador no soporta este atributo simplemente lo ignorará. Esto es ideal, ya que hace que puedas usar este atributo `loading` en las imágenes y funcionará en aquellos navegadores que lo soporten. Los que no lo soporten... obviamente no obtendrán el beneficio de la carga diferida pero tampoco tendrán un impacto negativo ni les afectarán de ninguna manera.
 
-A este tipo de estrategia se le llama *mejora* *progresiva*, ya que no rompe la retrocompatibilidad pero hace que los navegadores que sí lo soporten tengan una más rápida y eficiente carga.
+A este tipo de estrategia se le llama *mejora* *progresiva*, ya que no rompe la retrocompatibilidad pero hace que los navegadores que sí lo soporten tengan una carga más rápida y eficiente.
 
 ### ¿Y si quiero hacer lazy loading en un navegador que no lo soporta?
 
@@ -181,11 +181,11 @@ La primera es que el navegador, para hacer la carga diferida del recurso, **hace
 
 {{< img src="https://addyosmani.com/assets/images/lazy-load-devtools.png" align="center" alt="Chrome se descarga 2KB de la imagen para poder obtener algunos metadatos, como sus dimensiones.">}}
 
-**Lo segundo es que dependiendo de tu conexión**, la distancia que necesita la imagen para empezar a cargarse varia notablemente. Por ejemplo, si tienes una muy buena conexión a Internet, es posible que tu imagen o iframe se cargue pasa a estar a una distancia considerable.
+**Lo segundo es que dependiendo de tu conexión**, la distancia que necesita la imagen para empezar a cargarse varía notablemente. Por ejemplo, si tienes una muy buena conexión a Internet, es posible que tu imagen o iframe se cargue a pesar de estar a una distancia considerable.
 
 Por ejemplo, para conexiones rápidas, Chrome usa una distancia de `1250px` para empezar a cargar el recurso. Para conexiones como 3G, la distancia es de `2500px`.
 
-Ahora la pregunta... **¿por qué cuanto peor conexión la carga ocurre con más tiempo?** Al tener una peor conexión, esto te permite garantizar con mayor seguridad que el usuario podrá ver la imagen cuando llegue al punto dónde se encuentra.
+Ahora la pregunta... **¿por qué cuanto peor conexión la carga del recurso ocurre con mayor antelación?** Al tener una peor conexión se necesitará más tiempo para obtener el recurso, de esta manera, se solicita antes para garantizar con mayor seguridad que el usuario podrá ver el recurso cuando llegue al punto dónde éste se encuentra.
 
 ## Conclusiones
 
