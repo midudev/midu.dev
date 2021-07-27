@@ -22,9 +22,11 @@ undefined == null // true
 "false" == false // false
 ```
 
-Sabemos que hay transformación de tipos de datos, de String a Number o viceversa, porque estamos haciendo comparaciones entre tipos distintos y, sin embargo, JavaScript nos está diciendo que algunas condiciones son verdaderas.
+Sabemos que hay transformación de tipos de datos, de *String* a *Number* o viceversa, porque estamos haciendo comparaciones entre tipos distintos y, sin embargo, *JavaScript* nos está diciendo que algunas condiciones son verdaderas.
 
 Así que entendemos que se ejecuta un proceso para hacer la transformación de estos datos pero seguramente desconoces exactamente el algoritmo hay detrás para determinar este resultado.
+
+Y es que... ¿por qué `null == 0` es entonces `false`? ¿No hace ahí una coerción de tipos?
 
 ### Explicación del algoritmo de comparación en ==
 El algoritmo tiene nombre y se llama ***Abstract Equality Comparison Algorithm*** (Algoritmo de comparación de Igualdad Abstracta) y está [bien documentado][Ref].
@@ -55,7 +57,7 @@ La regla dice que en una comparación `x == y`, donde `x` y `y` son valores, dev
 
 Como ves, **el algoritmo no hace sólo una conversión de tipos y ya está**. Es bastante más complejo que eso y, en ocasiones, ni siquiera es necesario transformar los tipos.
 
-Si siempre hiciese coerción de datos `null == 0` sería `true` pero en cambio es `false` pero si hicieramos `Number(null) == 0` o `Boolean(null) == 0` sí que serían ambos `true`.  Así que ya ves que no es correcto decir que `==` hace una coerción de datos.
+Si siempre hiciese coerción de datos `null == 0` sería `true` pero en cambio es `false` pero si hicieramos `Number(null) == 0` o `Boolean(null) == 0` sí que serían ambos `true`. Así que ya ves que no es correcto decir que `==` hace una coerción de los tipos a secas... si no que entra en juego un algoritmo de comparación de igualdad más complejo (y documentado).
 
 De esta forma ya puedes probar a seguir este algoritmo para determinar igualdades con `==` para determinar qué resultado te va a esperar. De hecho, te dejo aquí una lista para que practiques... ¡a ver qué tal!
 
