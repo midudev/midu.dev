@@ -12,7 +12,7 @@ tags:
 
 Existen muchísimos recursos para **aprender Javascript** pero algunos están desactualizados o el contenido no es tan bueno como uno espera. Aquí tienes 7 libros recomendados, verificados y actualizados para aprender y dominar Javascript. **¡Vamos con la lista 👇!**
 
-## Building Frontend Web Apps with Plain Javascript
+### 1. Building Frontend Web Apps with Plain Javascript
 
 Este libro ha sido escrito por Gerd Wagner y te lo recomiendo porque viene con **6 aplicaciones de ejemplo** escritas en Javascript con más de **8 mil líneas de código.**
 
@@ -25,7 +25,7 @@ Son 222 páginas y tiene una [versión de pago por 19'95$](https://gumroad.com/l
 🔗 [Leer Building Frontend Web Apps with Plain Javascript](https://web-engineering.info/JsFrontendApp-Book)<br/>
 🛒 [Comprar Building Frontend Web Apps with Plain Javascript](https://gumroad.com/l/YyWka)
 
-## Javascript for impatient programmers
+### 2. Javascript for impatient programmers
 
 El siguiente libro es del crack **Axel Rauschmayer.** Puedes comprarlo por 46$ pero también cuenta con una versión totalmente gratis en HTML. 
 
@@ -34,7 +34,7 @@ Este libro está actualizado con las **últimas novedades de la última especifi
 [🔗 Leer Javascript for Impatient Programmers](https://exploringjs.com/impatient-js/toc.html)<br>
 [🛒  Comprar Javascript for Impatient Programmers](https://amzn.to/35iOMz8)
 
-## Eloquent JavaScript
+### 3. Eloquent JavaScript
 
 El tercero es Eloquent Javascript de **Marijn Haverbeke**. Además de ser un libro muy ameno, también abarca cómo trabajar con el **DOM del navegador, Canvas y Node.js.**
 
@@ -45,7 +45,7 @@ Su última actualización es de 2018 pero sigue siendo un referente y si te gust
 [🔗 Leer Eloquent Javascript](https://eloquentjavascript.net/)<br>
 [🛒 Comprar Eloquent Javascript](https://amzn.to/3pNEr62)
 
-## Human JavaScript
+### 4. Human JavaScript
 
 Como el nombre indica este es un libro que, aunque técnico, **está más pensado para recomendar buenas prácticas** y dar una visión global sobre diferentes patrones que puedes usar al construir aplicaciones de Javascript que te faciliten la vida para mantenerlas y entenderlas.
 
@@ -56,7 +56,7 @@ Está escrito por Henrik Joreteg y aunque tiene una versión de pago, se puede l
 [🔗 Leer Human Javascript](https://read.humanjavascript.com/)<br>
 [🛒 Comprar Human Javascript](https://gumroad.com/l/humanjs)
 
-## Learning JavaScript Design Patterns
+### 5. Learning JavaScript Design Patterns
 
 Este libro es un referente pero **aviso, no es para aprender Javascript desde cero porque da algunos conceptos por sabidos**, por lo que te lo recomiendo para dar el siguiente paso.
 
@@ -71,7 +71,7 @@ Una cosa más. El libro está actualizado a día de hoy **pero como se escribió
 [🔗 Leer Learning Javascript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)<br>
 [🛒 Comprar Learning Javascript Design Patterns](https://amzn.to/3q0nlSO)
 
-## Javascript Info
+### 6. Javascript Info
 
 Seguramente **la guía de Javascript más completa que existe actualmente en la red con explicaciones concisas.**
 
@@ -84,7 +84,7 @@ Tiene una **[versión de pago en PDF y EPUB por 18$](https://javascript.info/ebo
 [🔗 Leer Javascript Info](https://javascript.info/)<br>
 [🛒 Comprar Javascript Info](https://javascript.info/ebook)
 
-## You Don't Know JS
+### 7. You Don't Know JS
 
 Finalmente, seguramente, **el mejor recurso en cuanto a calidad que puedes encontrar online** y de forma gratuita sobre Javascript. La serie de libros **You Don't Know JS de Kyle Simpson.**
 
