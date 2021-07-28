@@ -141,7 +141,7 @@
         {{ with .Param "tags" }}
           {{ range first 1 . }}
             <picture>
-              <img alt='Imagen de la etiqueta {{ . }}' loading='lazy' src='/images/tags/{{.}}.png' width="48" height="48" />
+              <img decoding="async" alt='Imagen de la etiqueta {{ . }}' loading='lazy' src='/images/tags/{{.}}.png' width="48" height="48" />
             </picture>
           {{ end }}
         {{ end }}
@@ -250,35 +250,35 @@
   <h3 class="section-title">Artículos por temas</h3>
   <div id='topics'>
     <a href='/tags/react/' class='topic' title='Artículos sobre React.js'>
-      <img alt='react' loading='lazy' src='/images/tags/react.png' width="48" height="48" />
+      <img decoding="async" alt='react' loading='lazy' src='/images/tags/react.png' width="48" height="48" />
       <h4>React</h4>
     </a>
     <a href='/tags/javascript/' class='topic' title='Artículos sobre Javascript'>
-        <img alt='javascript' loading='lazy' src='/images/tags/javascript.png' width="48" height="48" />
+        <img decoding="async" alt='javascript' loading='lazy' src='/images/tags/javascript.png' width="48" height="48" />
       <h4>Javascript</h4>
     </a>
     <a href='/tags/svelte/' class='topic' title="Artículos sobre Svelte">
-        <img alt='svelte' loading='lazy' src='/images/tags/svelte.png' width="48" height="48" />
+        <img decoding="async" alt='svelte' loading='lazy' src='/images/tags/svelte.png' width="48" height="48" />
       <h4>Svelte</h4>
     </a>
     <a href='/tags/performance/' class='topic'  title='Artículos sobre Web Performance'>
-        <img alt='performance' loading='lazy' src='/images/tags/performance.png' width="48" height="48" />
+        <img decoding="async" alt='performance' loading='lazy' src='/images/tags/performance.png' width="48" height="48" />
       <h4>Web Perf</h4>
     </a>
     <a href='/tags/css/' class='topic'  title='Artículos sobre CSS'>
-        <img alt='css' loading='lazy' src='/images/tags/css.png' width="48" height="48" />
+        <img decoding="async" alt='css' loading='lazy' src='/images/tags/css.png' width="48" height="48" />
       <h4>CSS</h4>
     </a>
     <a href='/tags/terminal/' class='topic'title='Artículos sobre Terminal'>
-        <img alt='terminal' loading='lazy' src='/images/tags/terminal.png' width="48" height="48" />
+        <img decoding="async" alt='terminal' loading='lazy' src='/images/tags/terminal.png' width="48" height="48" />
       <h4>Terminal</h4>
     </a>
     <a href='/tags/node/' class='topic'  title='Artículos sobre Node.js'>
-        <img alt='node' loading='lazy' src='/images/tags/node.png' />
+        <img decoding="async" alt='node' loading='lazy' src='/images/tags/node.png' />
       <h4>Node.js</h4>
     </a>
     <a href='/tags/graphql/' class='topic' title='Artículos sobre GraphQL'>
-        <img alt='graphql' loading='lazy' src='/images/tags/graphql.png' />
+        <img decoding="async" alt='graphql' loading='lazy' src='/images/tags/graphql.png' />
       <h4>GraphQL</h4>
     </a>
 

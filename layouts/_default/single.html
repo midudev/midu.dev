@@ -18,7 +18,7 @@
           {{ with .Param "tags" }}
             {{ range first 1 . }}
             <picture>
-              <img itemprop="image" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
+              <img decoding="async" itemprop="image" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
             </picture>
             {{ end }}
           {{ end }}
@@ -43,7 +43,7 @@
             <a class='prev' href="{{.Permalink}}">
               {{ with .Params.tags }}
                 {{$tag := index . 0 }}
-                <img alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
+                <img decoding="async" alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
               {{ end }}
               {{.Title}}
             </a>
@@ -52,7 +52,7 @@
             <a class='next' href="{{.Permalink}}">
               {{ with .Params.tags }}
                 {{$tag := index . 0 }}
-                <img alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
+                <img decoding="async" alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
               {{ end }}
               {{.Title}}
             </a>
