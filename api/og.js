@@ -5,7 +5,14 @@ const { NOW_REGION } = process.env
 const isDevelopment = NOW_REGION === 'dev1'
 const host = isDevelopment ? 'http://localhost:3000' : 'https://midu.dev'
 
+let emojiFontLoaded = false
+
 module.exports = async (req, res) => {
+  if (!emojiFontLoaded) {
+    await chromium.font('https://raw.githack.com/googlei18n/noto-emoji/master/fonts/NotoColorEmoji.ttf')
+    emojiFontLoaded = true
+  }
+
   let browser = null
   const { tag, subtitle, title } = req.query
   console.log('New request with:')
