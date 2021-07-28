@@ -18,7 +18,7 @@
     <a href='https://www.youtube.com/watch?v={{ .snippet.resourceId.videoId }}' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}' rel='nofollow noopener noreferrer'>
       <picture>
         <source srcset="https://i3.ytimg.com/vi_webp/{{ .snippet.resourceId.videoId }}/mqdefault.webp" type="image/webp">
-        <img alt="{{.snippet.title}}" src="https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg">
+        <img class='cover' alt="{{.snippet.title}}" src="https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg">
       </picture>
 
       <h4>{{ .snippet.title }}</h4>
@@ -30,7 +30,7 @@
   <h3 class='section-title'>Último Podcast</h3>
   {{ range first 1 (where .Site.Pages ".Params.category" "podcast") }}
   <a href='{{.Permalink}}'>
-    <img alt="{{ .Title }}" loading='lazy' src='{{ .Params.image }}' />
+    <img class='cover' alt="{{ .Title }}" loading='lazy' src='{{ .Params.image }}' />
     <h4>{{ .Title }}</h4>
   </a>
   {{ end }}

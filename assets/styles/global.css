@@ -643,6 +643,10 @@ figure.left img {
   flex: 0 0 var(--w-aside);
 }
 
+#aside .cover {
+  aspect-ratio: 16/9;
+}
+
 #aside a {
   border-radius: 4px;
   display: block;
@@ -659,7 +663,6 @@ figure.left img {
 }
 
 #aside img {
-  aspect-ratio: 16/9;
   border-radius: 4px;
   object-fit: cover;
 }
