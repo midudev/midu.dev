@@ -179,10 +179,14 @@ hr.section-separation {
 footer {
   background: #f1f5f9;
   padding-top: 32px;
-  margin-top: 32px;
   text-align: center;
   padding: 64px 0 86px;
   position: relative;
+}
+
+footer .u-center {
+  border-top: 1px solid #ddd;
+  padding-top: 32px;
 }
 
 footer a {
@@ -655,6 +659,7 @@ figure.left img {
 }
 
 #aside img {
+  aspect-ratio: 16/9;
   border-radius: 4px;
   object-fit: cover;
 }

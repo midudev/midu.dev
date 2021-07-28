@@ -50,7 +50,6 @@
     #pagination {
       display: flex;
       list-style: none;
-      justify-content: center;
       padding-top: 16px;
       padding-right: var(--p-separation);
       padding-bottom: 48px;
@@ -137,6 +136,7 @@
     <h3 class='section-title'>Últimos artículos</h3>
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
       {{ range $paginator.Pages }}
+
       <a class='home-article' href="{{.Permalink}}">
         {{ with .Param "tags" }}
           {{ range first 1 . }}
