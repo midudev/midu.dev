@@ -141,7 +141,7 @@
         {{ with .Param "tags" }}
           {{ range first 1 . }}
             <picture>
-              <img decoding="async" alt='Imagen de la etiqueta {{ . }}' loading='lazy' src='/images/tags/{{.}}.png' width="48" height="48" />
+              <img decoding="async" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
             </picture>
           {{ end }}
         {{ end }}
