@@ -7,8 +7,11 @@
   <title>{{- .Title | default .Site.Title -}}</title>
   <meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
   <link rel="canonical" href="{{ .Permalink }}">
-  <link rel="preload" as="image" href="https://midu.dev/logo.png">
-  <link rel="preload" as="script" href="https://waterboa.midu.dev/script.js">
+  <link rel="preconnect" href="https://waterboa.midu.dev">
+  <link rel="preload" as="image" href="/logo.png">
+
+  {{ $tracking := resources.Get "js/t.js" }}
+  <link rel="preload" as="script" href='{{ $tracking.Permalink }}'>
 
   {{ partial "head/preconnects.html" . }}
 
@@ -84,7 +87,7 @@
   </script>
   {{ end }}
   
-  <script src="https://waterboa.midu.dev/script.js" data-site="YZRWTFHZ" defer></script>
+  <script src="{{ $tracking.Permalink }}" data-site="YZRWTFHZ" defer></script>
 
 </head>
 
