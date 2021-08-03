@@ -88,6 +88,6 @@ Ahora... ¿cuál es mejor? No hay ninguna mejor que otra *per se*. Depende de ca
 
 ## Un reto de JavaScript para ver si lo has entendido
 
-Aquí te dejo un ejemplo dónde se ve claramene qué ocurre cuando mezclas funciones asíncronas con el método `.map`.
+Aquí te dejo un ejemplo dónde se ve claramente qué ocurre cuando mezclas funciones asíncronas con el método `.map`.
 
 {{< youtube id="3s1OiNRd4ZQ" >}}
