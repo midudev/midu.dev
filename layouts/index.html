@@ -18,6 +18,20 @@
       object-fit: contain;
       margin-left: 4px;
       transition: transform .3s ease;
+      position: relative;
+    }
+
+    .home-article .secondary {
+      width: 24px;
+      border: 1px solid #ccc;
+      height: 24px;
+      padding: 2px;
+      background: #fff;
+      object-fit: contain;
+      border-radius: 100%;
+      bottom: -7px;
+      left: 32px;
+      position: absolute;
     }
 
     .home-article {
@@ -139,11 +153,16 @@
 
       <a class='home-article' href="{{.Permalink}}">
         {{ with .Param "tags" }}
+        <picture>
           {{ range first 1 . }}
-            <picture>
-              <img decoding="async" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
-            </picture>
+            <img decoding="async" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
           {{ end }}
+          {{ range after 1 . }}
+            {{ if . }}
+            <img class='secondary' decoding="async" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
+            {{ end }}
+          {{ end }}
+          </picture>
         {{ end }}
         <div>
         <h2>{{ .Title }}</h2>
