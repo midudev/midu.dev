@@ -11,7 +11,7 @@ Si hay una broma recurrente en *CSS* siempre ha sido **la dificultad de centrar 
 
 Te voy a enseñar diferentes formas de **cómo puedes centrar elementos en los dos ejes con CSS.**
 
-## 1. Usando grid y place-content
+## 1. Usando grid y place-content
 
 Con `grid`, centrar elementos en los dos ejes es sencillo. Es **fácil de recordar** y funciona muy bien para layouts grandes.
 
@@ -26,7 +26,7 @@ Digo *casi* porque **los elementos que contiene tomarán la anchura del elemento
 
 [Demo](https://codi.link/PGRpdiBjbGFzcz0nY29udGFpbmVyJz4KICA8aDE+VGV4dG8gY2VudHJhZG88L2gxPgo8L2Rpdj4=%7CLmNvbnRhaW5lciB7CiAgZGlzcGxheTogZ3JpZDsKICBwbGFjZS1jb250ZW50OiBjZW50ZXI7Cn0KCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCmJvZHkgewogIGJhY2tncm91bmQ6ICMwOWY7CiAgZm9udC1mYW1pbHk6IHN5c3RlbS11aTsKfQoKaDEgewogIGJhY2tncm91bmQ6ICNmZmY7CiAgcGFkZGluZzogMTZweDsKfQoKLmNvbnRhaW5lciB7CiAgaGVpZ2h0OiA5NnZoOwp9%7C)
 
-## 2. Flex y margin auto
+## 2. Flex y margin auto
 
 Para elementos pequeños, como iconos, existe una sencilla forma de utilizar `flex` junto con `margin: auto` para centrar los elementos. Hace su trabajo en algunas situaciones complicadas, **es fácil de recordar** pero... bueno, todo lo que se basa en selectores que sean con **asterisco** hay que tomarlo con pinzas y, además, **no se lleva bien con los overflows.**
 
@@ -61,13 +61,13 @@ Lo malo es que necesita tener un contenedor relativo y que funciona bien cuando 
 
 [Demo](https://codi.link/PGRpdiBjbGFzcz0nY29udGFpbmVyJz4KICA8aDE+VGV4dG8gY2VudHJhZG88L2gxPgo8L2Rpdj4=%7CaDEgewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICB0b3A6IDUwJTsKICBsZWZ0OiA1MCU7CiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7Cn0KCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCmJvZHkgewogIGJhY2tncm91bmQ6ICMwOWY7CiAgZm9udC1mYW1pbHk6IHN5c3RlbS11aTsKfQoKaDEgewogIGJhY2tncm91bmQ6ICNmZmY7CiAgcGFkZGluZzogMTZweDsKfQoKLmNvbnRhaW5lciB7CiAgaGVpZ2h0OiA5NnZoOwp9%7C)
 
-## 4.  La mejor solución 🏆: Flexcelente
+## 4.  La mejor solución 🏆: Flexcelente
 
 Sin ninguna duda, la solución más correcto y que, justamente, está pensada para ello es usar `flex` junto con `align-items` y `justify-content` a center.
 
-`align-items` define el comportamiento de los elementos a través del eje contrario al principal (si el `flex-direction` es `column`, entonces serían las filas).
+* **`align-items`**: define el comportamiento de los elementos a través del eje contrario al principal (si el `flex-direction` es `column`, entonces serían las filas).
 
-`justify-content` define el alíneamiento y distribución de los elementos en el eje principal (si el `flex-direction` es `column`, entonces serían las columnas).
+* **`justify-content`**: define el alíneamiento y distribución de los elementos en el eje principal (si el `flex-direction` es `column`, entonces serían las columnas).
 
 De esta forma, podemos hacer lo siguiente:
 
@@ -81,7 +81,7 @@ De esta forma, podemos hacer lo siguiente:
 
 [Demo](https://codi.link/PGRpdiBjbGFzcz0nY29udGFpbmVyJz4KICA8aDE+VGV4dG8gY2VudHJhZG88L2gxPgo8L2Rpdj4=%7CLmNvbnRhaW5lciB7CiAgZGlzcGxheTogZmxleDsKICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsKICBhbGlnbi1pdGVtczogY2VudGVyOwp9CgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCmJvZHkgewogIGJhY2tncm91bmQ6ICMwOWY7CiAgZm9udC1mYW1pbHk6IHN5c3RlbS11aTsKfQoKaDEgewogIGJhY2tncm91bmQ6ICNmZmY7CiAgcGFkZGluZzogMTZweDsKfQoKLmNvbnRhaW5lciB7CiAgaGVpZ2h0OiA5NnZoOwp9%7C)
 
-## Conclusiones
+## Conclusiones
 
 Desde luego mi favorita es la última. No tiene desventajas, excepto el lío que te puedas hacer con las propiedades `justify-content` y `align-items`, y hace justamente lo que se espera.
 

@@ -5,6 +5,7 @@ description: Aprende a utilizar el Lazy Load de imágenes nativo de HTML, para m
 toc: true
 tags:
 - performance
+- html
 ---
 
 Desde hace un tiempo puedes hacer un lazy load nativo de tus imágenes e iframes gracias al nuevo atributo `loading` de HTML. Esto es un paso enorme a la hora de mejorar el rendimiento de tus sitios sin necesidad de cargar bibliotecas externas.

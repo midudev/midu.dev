@@ -6,7 +6,6 @@ description: Cómo borrar el contenido de las carpetas node_modules con las depe
 toc: true
 tags:
 - terminal
-- trucos
 ---
 
 Aunque no te des cuenta, **las dependencias de tus proyectos ocupan una barbaridad**. De hecho, no es raro que cada carpeta `node_modules` ocupe, **100MB o más**... Y digo "o más" porque yo **he detectado algún proyecto que la carpeta ocupa la friolera de 1GB.**
