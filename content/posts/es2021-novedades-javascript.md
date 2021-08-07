@@ -1,6 +1,6 @@
 ---
 title: "ES2021 / ES12: novedades de la última versión de JavaScript"
-date: "2021-08-09"
+date: "2021-08-07"
 description: Descubre todas las novedades del lenguaje JavaScript para ser más productivo y sacarle todo el partido.
 toc: true
 tags:
