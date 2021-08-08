@@ -29,10 +29,9 @@ El atributo `loading` de las imágenes y lo de los iframes acepta tres valores d
 
 El valor por defecto, si no usas el campo `loading` en la etiqueta, será `auto`. De forma que el navegador decidirá qué prioridad debe tener el recurso.
 
-
 ## ¿Cómo puedo hacer el lazy load nativo en imágenes y iframes?
 
-El atributo `loading` se puede usar 
+El atributo `loading` se puede usar en las etiquetas `img` y `iframe` como hemos comentado anteriormente. Pero aquí te dejo algunos ejemplos para que veas cómo se comportaría también usando la etiqueta `picture`:
 
 ```html
 <!-- Carga diferida de la imagen cuando el usuario se acerca a la imagen -->
