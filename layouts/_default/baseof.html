@@ -61,7 +61,7 @@
     {{ $tag := index (.Params.tags) 0}}
     {{ $title := .Title }}
     {{ $subtitle := (print .ReadingTime " minutos de lectura" ) }}
-    {{ $image = (print .Site.BaseURL "/api/og/?tag=" $tag "&title=" $title "&subtitle=" $subtitle) | safeHTML }}
+    {{ $image = (print .Site.BaseURL "api/og/?tag=" $tag "&title=" $title "&subtitle=" $subtitle) | safeHTML }}
   {{ end }}
 
   <meta name="twitter:image" content="{{ $image }}" />
