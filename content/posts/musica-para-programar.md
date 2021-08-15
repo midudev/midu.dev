@@ -49,7 +49,7 @@ Si eres un amante de Star Wars, lo mejor es que la fuerza te acompañe mientras 
 
 ## Si lo tuyo son los videojuegos 🎮
 
-Entonces no te puedes perder **la banda sonora de Zelda** pero optimizada para que el código que salga de tus manos sea tan maravilloso como la música de una ocarina 🎼. Millones de reproducciones en YouTube abalan a esta selección que te da **la trifuerza**: *productividad, focus y entretenimiento.*
+Entonces no te puedes perder **la banda sonora de Zelda** pero optimizada para que el código que salga de tus manos sea tan maravilloso como la música de una ocarina 🎼. Millones de reproducciones en YouTube avalan a esta selección que te da **la trifuerza**: *productividad, focus y entretenimiento.*
 
 {{< youtube id="6zvIxD4FUTA" >}}
 
