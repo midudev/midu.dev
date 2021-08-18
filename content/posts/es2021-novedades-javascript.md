@@ -128,7 +128,7 @@ Hasta ahora, reemplazar todas las *instancias* de una cadena de texto en una cad
 '🍏🍏🍋🍋🍊🍊'.replaceAll('🍏', '🍌')
 ```
 
-`replaceAll` queda mucho legible en nuestro código y hace justo lo que esperaba: cambiar todas las *instancias* de una cadena de texto en una cadena de texto.
+`replaceAll` queda mucho más legible en nuestro código y hace justo lo que esperaba: cambiar todas las *instancias* de una cadena de texto en una cadena de texto.
 
 ## 5. WeakRef
 
@@ -143,7 +143,7 @@ let coords = { x: 13, y: 72 }
 // el objeto no será liberado de memoria
 // por el Garbage Collector
 
-// Ahora podemos creamos una referencia debil al objeto
+// Ahora podemos crear una referencia débil al objeto
 const weakCoords = new WeakRef(coords)
 
 // Recuperamos las propiedades del elemento
