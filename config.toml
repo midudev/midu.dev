@@ -1,6 +1,6 @@
 baseURL = "https://midu.dev/"
 languageCode = "es-ES"
-title = "midudev 👨‍💻 | Frontend, Javascript, React, CSS, Performance"
+title = "midudev 👨‍💻 | Frontend, JavaScript, React, CSS, Performance"
 
 disableHugoGeneratorInject = true
 defaultContentLanguage = "es"
@@ -11,7 +11,7 @@ paginate = 7
   posts = "/:filename/"
 
 [params]
-  description = "Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, Javascript ☕️, React ⚛️, CSS 🎨 y Performance Web ⚡️"
+  description = "Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, JavaScript ☕️, React ⚛️, CSS 🎨 y Performance Web ⚡️"
   image = "/favicon/apple-touch-icon.png"
 
 [markup]
