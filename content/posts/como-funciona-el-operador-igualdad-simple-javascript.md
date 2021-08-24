@@ -41,7 +41,7 @@ La regla dice que en una comparación `x == y`, donde `x` y `y` son valores, dev
     * Si `x` es 0 y `y` es 0, independientemente de su signo, devolverá `true`.
     * En cualquier otro caso, será `false`
   * Si `x` es `String` entonces será `true` si `x` y `y` tienen la misma secuencia de carácteres (misma longitud y posición). Si no, será `false`.
-  * Si `x` es `Boolean` entonces devolverá `true`si `x` e
+  * Si `x` es `Boolean` entonces devolverá `true` si ambos son `true` o ambos son `false. Si no, será `false`. 
   * Si `x` y`y` están referenciando al mismo objeto será `true`, si no `false`. 
 * Si `x` es `null` y `y` es `undefined` será `true`. 
 * Si `y` es `undefined` y `y` es `null` será `true`. 
