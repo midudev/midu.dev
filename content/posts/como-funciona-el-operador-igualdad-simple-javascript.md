@@ -31,26 +31,26 @@ Y es que... ¿por qué `null == 0` es entonces `false`? ¿No hace ahí una coerc
 ### Explicación del algoritmo de comparación en ==
 El algoritmo tiene nombre y se llama ***Abstract Equality Comparison Algorithm*** (Algoritmo de comparación de Igualdad Abstracta) y está [bien documentado][Ref].
 
-La regla dice que en una comparación `x == y`, donde `x` y `y` son valores, devolverá `true` o `false`...
+La regla dice que en una comparación `x == y`, donde `x` e `y` son valores, devolverá `true` o `false`...
 
-* Si `x` y `y` son del mismo tipo:
+* Si `x` e `y` son del mismo tipo:
   * Si `x` es `undefined` o `null` devolverá `true`
   * Si `x` es un `Number` entonces:
     * Si `x` o `y` es `NaN` entonces devolverá `false`.
     * Si `x` es el mismo valor numérico que `y` devolverá `true`
-    * Si `x` es 0 y `y` es 0, independientemente de su signo, devolverá `true`.
+    * Si `x` es 0 e `y` es 0, independientemente de su signo, devolverá `true`.
     * En cualquier otro caso, será `false`
-  * Si `x` es `String` entonces será `true` si `x` y `y` tienen la misma secuencia de carácteres (misma longitud y posición). Si no, será `false`.
-  * Si `x` es `Boolean` entonces devolverá `true` si ambos son `true` o ambos son `false. Si no, será `false`. 
-  * Si `x` y`y` están referenciando al mismo objeto será `true`, si no `false`. 
-* Si `x` es `null` y `y` es `undefined` será `true`. 
-* Si `y` es `undefined` y `y` es `null` será `true`. 
-* Si `x` es `Number` y `y` es `String` devuelve el resultado de comparar `x == Number(y)`
-* Si `x` es `String` y `y` es `Number` devuelve el resultado de comparar `Number(x) == y`
+  * Si `x` es `String` entonces será `true` si `x` e `y` tienen la misma secuencia de carácteres (misma longitud y posición). Si no, será `false`.
+  * * Si `x` es `Boolean` entonces devolverá `true` si ambos son `true` o ambos son `false. Si no, será `false`.
+  * Si `x` e `y` están referenciando al mismo objeto será `true`, si no `false`. 
+* Si `x` es `null` e `y` es `undefined` será `true`. 
+* Si `y` es `undefined` e `y` es `null` será `true`. 
+* Si `x` es `Number` e `y` es `String` devuelve el resultado de comparar `x == Number(y)`
+* Si `x` es `String` e `y` es `Number` devuelve el resultado de comparar `Number(x) == y`
 * Si `x` es `Boolean`, devuelve el resultado de comparar `Number(x) == y`
 * Si `y` es `Boolean`, devuelve el resultado de comparar `x == Number(y)`
-* Si `x` es `String` o `Number` y `y` es `Object` devuelve el resultado de comparar `x == toPrimitive(y)`
-* Si `x` es `Object` y `y` es `String` o `Number` devuelve el resultado de comparar `toPrimitive(x) == x`
+* Si `x` es `String` o `Number` e `y` es `Object` devuelve el resultado de comparar `x == toPrimitive(y)`
+* Si `x` es `Object` e `y` es `String` o `Number` devuelve el resultado de comparar `toPrimitive(x) == x`
 * El resto de casos devuelve `false`
 
 > Cuando un Object (un objeto, array, function...) se convierte al primitivo... es muy tricky. Por ejemplo, al comparar un string con un array, el array pasaría a ser un String y al convertir un array vacio a string es un string vacio. En cambio el objeto {} a string pasa a ser "[object Object]".
