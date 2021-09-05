@@ -1,4 +1,4 @@
-exports.oldPodcastPathsMap = [
+export const oldPodcastPathsMap = [
   [
     '01_02_react-hooks-que-son-vale-la-pena-el-hype',
     '01_02_react-hooks'
