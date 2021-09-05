@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "https://midu.dev website",
   "main": "index.js",
+  "type": "module",
   "engines": {
     "node": "14.x"
   },
