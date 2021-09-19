@@ -63,7 +63,7 @@ Lo malo es que necesita tener un contenedor relativo y que funciona bien cuando 
 
 ## 4.  La mejor solución 🏆: Flexcelente
 
-Sin ninguna duda, la solución más correcto y que, justamente, está pensada para ello es usar `flex` junto con `align-items` y `justify-content` a center.
+Sin ninguna duda, la solución más correcta y que, justamente, está pensada para ello es usar `flex` junto con `align-items` y `justify-content` a center.
 
 * **`align-items`**: define el comportamiento de los elementos a través del eje contrario al principal (si el `flex-direction` es `column`, entonces serían las filas).
 
