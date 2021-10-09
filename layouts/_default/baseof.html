@@ -22,7 +22,12 @@
   <script src="{{ $tracking.Permalink }}" data-site="YZRWTFHZ" defer></script>
   
   <meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
+
+  {{ if .Params.canonicalUrl }}
+  <link rel="canonical" href="{{ .Params.canonicalUrl }}">
+  {{ else }}
   <link rel="canonical" href="{{ .Permalink }}">
+  {{ end }}
 
   {{ partial "head/favicons.html" . }}
 
