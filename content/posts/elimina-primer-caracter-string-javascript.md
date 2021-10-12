@@ -15,7 +15,7 @@ Para eliminar el primer carácter de un string en JavaScript, hay dos formas:
 
 El mejor método para **conseguir una cadena de texto derivada de otra en JavaScript** es `slice`. Este método **recibe dos parámetros** que indica la posición de inicio y la posición de fin de la cadena de texto a extraer.
 
-Lo interesante es que **puedes usar índices con valores negativos** para indicar, por ejemplo, valores relativas al final de la cadena de texto.
+Lo interesante es que **puedes usar índices con valores negativos** para indicar valores relativos al final de la cadena de texto.
 
 ```javascript
 const str = '*platano_'
