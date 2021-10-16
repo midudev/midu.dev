@@ -51,7 +51,7 @@ No es la única influencia, por supuesto. Por ejemplo, **la mítica herencia de 
 
 ## ¿Por qué se creó JavaScript?
 
-Lo cierto es que en aquel entonces Java, a secas, tenía cierta popularidad y se usaba en las páginas web para darle cierta funcionalidad. Así que **la idea inicial de JavaScript era la de ser un lenguaje pegamento, que permitiera a los diseñadores Web, que tampoco es que supieran mucho de programación, poder añadir cierta funcionalidad básica**.
+Lo cierto es que en aquel entonces Java, a secas, tenía cierta popularidad y se usaba en las páginas web para darles cierta funcionalidad. Así que **la idea inicial de JavaScript era la de ser un lenguaje pegamento, que permitiera a los diseñadores Web, que tampoco es que supieran mucho de programación, poder añadir cierta funcionalidad básica**.
 
 La idea, además, era **poder manipular y recoger datos en la web para que pudieran interactuar**, justamente, con el código Java. De forma que las interacciones más sencillas se podían hacer en la parte de la web y, las más complejas, en Java.
 
