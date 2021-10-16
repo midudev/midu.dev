@@ -37,7 +37,7 @@ Obviamente, la primera versión de JavaScript que conocemos como Mocha no es, pa
 
 ## ¿Realmente no tiene nada que ver con Java?
 
-A ver **JavaScript CLARAMENTE no es la una versión de Java para programar en páginas web.** Y seguramente hayas escuchado el manido chiste que **Java es a JavaScript lo que Palo es a Paloma.**
+A ver **JavaScript CLARAMENTE no es una versión de Java para programar en páginas web.** Y seguramente hayas escuchado el manido chiste que **Java es a JavaScript lo que Palo es a Paloma.**
 
 **PERO...** en realidad sí que tiene cosas que ver. Aunque no es el mismo lenguaje sí que hay muchas referencias. La sintaxis de **Java influenció mucho a JavaScript**. La idea de tipos de datos primitivos y objetos... ¡hasta el objeto **Date** es port directo de `java.util.Date`!.
 
@@ -51,7 +51,7 @@ No es la única influencia, por supuesto. Por ejemplo, **la mítica herencia de 
 
 ## ¿Por qué se creó JavaScript?
 
-Lo cierto es que en aquel entonces Java, a secas, tenía cierta popularidad y se usaba en las páginas web para darle de cierta funcionalidad. Así que **la idea inicial de JavaScript era la de ser un lenguaje pegamento, que permitiera a los diseñadores Web, que tampoco es que supieran mucho de programación, poder añadir cierta funcionalidad básica**.
+Lo cierto es que en aquel entonces Java, a secas, tenía cierta popularidad y se usaba en las páginas web para darle cierta funcionalidad. Así que **la idea inicial de JavaScript era la de ser un lenguaje pegamento, que permitiera a los diseñadores Web, que tampoco es que supieran mucho de programación, poder añadir cierta funcionalidad básica**.
 
 La idea, además, era **poder manipular y recoger datos en la web para que pudieran interactuar**, justamente, con el código Java. De forma que las interacciones más sencillas se podían hacer en la parte de la web y, las más complejas, en Java.
 
@@ -79,7 +79,7 @@ El caso es que allá por 1996, **Microsoft vió en JavaScript un potente competi
 
 Lo que hizo fue crear su propio lenguaje llamado... **wait for it!**... `JScript`. Quitando tres letras al nombre conseguían olvidarse de los problemas legales, eso sí, tras hacer ingeniería inversa de `JavaScript`.
 
-Se añadió en **Internet Explorer 3.0** y su **última versión estalbe es de 2011.**
+Se añadió en **Internet Explorer 3.0** y su **última versión estable es de 2011.**
 
 [Fuente: Wikipedia](https://en.wikipedia.org/wiki/JScript)
 
