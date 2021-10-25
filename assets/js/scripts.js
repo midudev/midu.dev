@@ -285,38 +285,42 @@ $input.addEventListener('input', async function (e) {
 })
 
 // Table Of Contents script
-window.addEventListener('load', () => {
-  document.querySelector('#TableOfContents-container li').classList.add('active')
-})
+function initTableOfContents () {
+  const firstTableOfContentsElement = document.querySelector('#TableOfContents-container li')
+  if (!firstTableOfContentsElement) return null
 
-const links = document.querySelectorAll('#TableOfContents-container li a')
+  // activate first element of table of contents
+  firstTableOfContentsElement.classList.add('active')
+  // get all links from table of contents
+  const links = document.querySelectorAll('#TableOfContents-container li a')
 
-const changeBgLinks = (entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-      const id = entry.target.getAttribute('id')
-      document.querySelector('#TableOfContents-container li.active').classList.remove('active')
-      document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active')
+  const changeBgLinks = entries => {
+    entries.forEach(entry => {
+      const { target, isIntersecting, intersectionRatio } = entry
+      if (isIntersecting && intersectionRatio >= 0.5) {
+        const id = target.getAttribute('id')
+        document.querySelector('#TableOfContents-container li.active').classList.remove('active')
+        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active')
 
-      links.forEach(link => {
-        link.addEventListener('click', (e) => {
-          document.querySelectorAll('#TableOfContents-container li.active')[0].classList.remove('active')
-          link.parentElement.classList.add('active')
+        links.forEach(link => {
+          link.addEventListener('click', (e) => {
+            document.querySelector('#TableOfContents-container li.active').classList.remove('active')
+            link.parentElement.classList.add('active')
+          })
         })
-      })
-    }
-  })
+      }
+    })
+  }
+
+  const options = {
+    threshold: 0.5,
+    rootMargin: '50px 0px -55% 0px'
+  }
+
+  const observer = new window.IntersectionObserver(changeBgLinks, options)
+
+  const articleTitles = document.querySelectorAll('#article-content h2')
+  articleTitles.forEach(section => observer.observe(section))
 }
 
-const options = {
-  threshold: 0.5,
-  rootMargin: '50px 0px -55% 0px'
-}
-
-const observer = new window.IntersectionObserver(changeBgLinks, options)
-
-const titles = document.querySelectorAll('h2')
-
-titles.forEach((section) => {
-  observer.observe(section)
-})
+initTableOfContents()
