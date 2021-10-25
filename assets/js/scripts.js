@@ -283,3 +283,40 @@ $input.addEventListener('input', async function (e) {
     $hits.innerHTML = hitsHtml
   })
 })
+
+// Table Of Contents script
+window.addEventListener('load', () => {
+  document.querySelector('#TableOfContents-container li').classList.add('active')
+})
+
+const links = document.querySelectorAll('#TableOfContents-container li a')
+
+const changeBgLinks = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+      const id = entry.target.getAttribute('id')
+      document.querySelector('#TableOfContents-container li.active').classList.remove('active')
+      document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active')
+
+      links.forEach(link => {
+        link.addEventListener('click', (e) => {
+          document.querySelectorAll('#TableOfContents-container li.active')[0].classList.remove('active')
+          link.parentElement.classList.add('active')
+        })
+      })
+    }
+  })
+}
+
+const options = {
+  threshold: 0.5,
+  rootMargin: '50px 0px -55% 0px'
+}
+
+const observer = new window.IntersectionObserver(changeBgLinks, options)
+
+const titles = document.querySelectorAll('h2')
+
+titles.forEach((section) => {
+  observer.observe(section)
+})
