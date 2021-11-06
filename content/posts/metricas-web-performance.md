@@ -116,7 +116,7 @@ Es la tercera métrica que es parte de las Web Vitals. Te ayuda a saber que la p
 **✅ Una puntuación de 0,1 o menos**
 **Se extrae de datos de laboratorio 🧪 y datos de campo. 🌎**
 
-## Conclusiones
+## Conclusiones
 
 Con esto ya conoces las métricas más importantes a considerar sobre el rendimiento de tu sitio. Como habrás visto no hay rastro del *Transfer Size* (el tamaño de los recursos que descargas) y es que es una métrica bastante inútil. Aunque, es posible, que cuanto más CSS y JavaScript descargues... algunas métricas se vean afectadas, lo cierto es que no tiene por qué haber una relación directa.
 
