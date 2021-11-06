@@ -1,0 +1,8 @@
+{{ if .Title }}
+<figure class="center">
+  <img alt="{{ .Text }}" loading="lazy" decoding="async" src="{{ .Destination | safeURL }}">
+  <figcaption>{{ .Title }}</figcaption>
+</figure>
+{{ else }}
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+{{ end }}
