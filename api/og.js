@@ -1,5 +1,5 @@
-const chromium = require('chrome-aws-lambda')
-const playwright = require('playwright-core')
+import chromium from 'chrome-aws-lambda'
+import playwright from 'playwright-core'
 
 const { NOW_REGION } = process.env
 const isDevelopment = NOW_REGION === 'dev1'
@@ -7,7 +7,7 @@ const host = isDevelopment ? 'http://localhost:3000' : 'https://midu.dev'
 
 let emojiFontLoaded = false
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
   if (!emojiFontLoaded) {
     await chromium.font('https://raw.githack.com/googlei18n/noto-emoji/master/fonts/NotoColorEmoji.ttf')
     emojiFontLoaded = true
