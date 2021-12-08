@@ -19,7 +19,7 @@ Permíteme que empiece con un proyecto que me hace particular ilusión. [Adventj
 
 Lo mejor de **AdventJS** es su inmediatez, ya que **ofrece su propio editor**, basado en el motor de Visual Studio Code, y te indica si tu código funciona o no. Una vez desbloqueas los tests, puedes enviar la solución.
 
-<blockquote class="twitter-tweet"><p lang="es" dir="ltr">¿Quieres mejorar tu lógica de programación?<br>🎁 ¡Te presento AdventJS 2021!<br><br>25 días, 25 retos de programación con JavaScript.<br><br>¡Te lo cuento todo en el hilo! 🧵 <a href="https://t.co/Md2UzwBzvf">pic.twitter.com/Md2UzwBzvf</a></p>&mdash; Miguel Ángel Durán (@midudev) <a href="https://twitter.com/midudev/status/1466086678507008003?ref_src=twsrc%5Etfw">December 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< tweet user="midudev" id="1466086678507008003" >}}
 
 ## Advent of Code
 
