@@ -13,7 +13,7 @@ A día de hoy para poder importar con ESModules un archivo `.json` tienes que ut
 
 ```javascript
 // index.mjs
-import packageConfig from './package.json';
+import packageConfig from './package.json' assert { type: 'json' };
 ```
 
 Necesitarías usar:
@@ -23,7 +23,7 @@ node index.mjs # esto falla
 node --experimental-json-modules index.mjs # funciona!
 ```
 
-Si no quieres usar esta medida experimental... ¿cómo puedes importar un archivo JSON actualmente usando ESModules?
+Si no quieres usar esta medida experimental... **¿cómo puedes importar un archivo JSON actualmente usando ESModules?**
 
 ## Opción 1: Leer y transformar el archivo JSON manualmente
 
