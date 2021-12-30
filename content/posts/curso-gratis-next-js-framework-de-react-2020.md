@@ -10,7 +10,7 @@ tags:
 - react
 ---
 
-Estoy emitiendo todos los viernes un live coding **[en mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1)** donde vamos ido construyendo paso a paso y desde cero **un clon de Twitter usando NextJS, el framework de React de Vercel.**
+Estoy emitiendo todos los viernes un live coding **[en mi canal de Youtube](https://www.youtube.com/c/midudev?sub_confirmation=1)** donde vamos a ir construyendo paso a paso y desde cero **un clon de Twitter usando NextJS, el framework de React de Vercel.**
 
 <a href='https://midu.tube' target='_blank'>
 {{< img align="center" src="/images/youtube-suscribirme.png" >}}
@@ -28,7 +28,7 @@ En esta primera clase aprendemos qué es **NextJS**, por qué creo que deberíam
 
 Para avanzar en nuestro clon de Twitter vamos a empezar a crear los **primeros componentes con Styled JSX** y afinar el diseño de nuestra aplicación con un diseño **mobile-only.**
 
-Y avanzaremos también en el login, para que el usuario tenga que **iniciar sesión con GitHub** usando **Firebase**. Veremos cómo lo manejamosen nuestra app de **NextJS**.
+Y avanzaremos también en el login, para que el usuario tenga que **iniciar sesión con GitHub** usando **Firebase**. Veremos cómo lo manejamos en nuestra app de **NextJS**.
 
 ### Configurando Eslint y Prettier. Avanzando en la página Home.
 {{< youtube id="EEDRcolSHms" >}}
