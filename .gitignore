@@ -9,3 +9,4 @@ package-lock.json
 .lighthouseci
 
 .vercel
+.hugo_build.lock
