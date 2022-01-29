@@ -32,3 +32,7 @@ home = ["HTML", "RSS", "Algolia"]
     mediaType = "application/json"
     isPlainText = true
     notAlternative = true
+
+[security]  
+  [security.funcs]
+    getenv = ['^HUGO_', 'YOUTUBE_API_KEY']
