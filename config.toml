@@ -35,4 +35,4 @@ home = ["HTML", "RSS", "Algolia"]
 
 [security]  
   [security.funcs]
-    getenv = ['^HUGO_', 'YOUTUBE_API_KEY']
+    getenv = ['^HUGO_', 'YOUTUBE_API_KEY', 'TWITCH_LIVE']
