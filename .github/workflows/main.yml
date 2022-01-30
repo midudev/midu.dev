@@ -6,6 +6,10 @@ on:
   schedule:
     - cron: "0 7 * * *"
 
+  repository_dispatch:
+    types:
+      - webhook
+
 jobs:
   build:
     runs-on: ubuntu-latest
