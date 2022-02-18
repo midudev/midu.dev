@@ -21,7 +21,7 @@ Si estás cargando tus archivos JavaScript como siempre, significa que estás us
 
 Si es así entonces vas a tener que implementar una pequeña función para poder lograrlo. Vamos a llamar a la función `loadScript` y devolverá una *Promesa* cuando se haya cargado el script:
 
-```js
+```javascript
 // la función devuelve una promesa que se resolverá o rechazará
 // dependiendo de la carga del script
 const loadScript = (src) => new Promise((resolve, reject) => {
@@ -40,7 +40,7 @@ const loadScript = (src) => new Promise((resolve, reject) => {
 
 Ahora ya sólo nos queda utilizar la función. Vamos a ver un ejemplo con **Google Analytics**, que es una biblioteca de terceros y que justamente es un uso bastante común.
 
-```js
+```javascript
 loadScript('https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y')
   .then(() => {
     window.dataLayer = window.dataLayer || []
