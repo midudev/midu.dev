@@ -52,7 +52,7 @@ loadScript('https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y')
 
 De esta forma podrías cargar Google Analytics de forma asíncrona y con código JavaScript.
 
-## Si estás trabajando con ESModules...
+## Si estás trabajando con ESModules...
 
 Los `ESModules` son la nueva forma de trabajar con módulos en JavaScript. ¿Cómo puedes saber si estás usando ESModules en tu proyecto o código? Si en tu código HTML estás cargando el archivo principal de esta forma es que estás usando *ESModules*:
 
