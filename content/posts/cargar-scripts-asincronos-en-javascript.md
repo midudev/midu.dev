@@ -62,7 +62,7 @@ Los `ESModules` son la nueva forma de trabajar con módulos en JavaScript. ¿Có
 
 Si es así, puedes usar el método `import` dinámico de *ESModules* para importar scripts externos. Este método te devolverá una promesa que se resolverá cuando el script se haya cargado.
 
-```js
+```javascript
 try {
   const {default: axios} = await import('https://cdn.skypack.dev/axios')
   // El script se ha cargado y tienes disponible axios aquí
