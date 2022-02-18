@@ -85,7 +85,7 @@ De hecho, cuando he enseñado React a compañeros y colegas, siempre he empezado
 
 **De igual forma, tampoco a las máquina les gustan las clases.** Y lo digo por diferentes motivos. Uno de los más importantes es que **las clases no minifican tan bien como las funciones, esto significa que nuestro código ocupará más.** La diferencia con un solo componente puede no ser relevante, pero si pasamos toda nuestra aplicación a funciones, puede marcar la diferencia.
 
-{{< tweet 1065516163856310272>}}
+{{< tweet user="midudev" id="1065516163856310272" >}}
 
 Pero el equipo de React va más al largo plazo y **también se refieren a las posibilidades de sacarle el mayor partido a [Prepack](https://prepack.io/).** Con clases las ventajas que se pueden extraer al ejecutar el código en tiempo de compilación son mucho menores que las que se pueden conseguir con las funciones.
 
