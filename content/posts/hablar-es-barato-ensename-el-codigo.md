@@ -16,7 +16,7 @@ Lo cierto es que esta frase sirve para muchas cosas en la vida. Por ejemplo, **h
 
 Obviamente, estamos hablando de programación. Y, a mi, personalmente, me gusta mucho usar esta frase en las Pull Requests. Y, de hecho, es un consejo que te doy para que pongas en práctica.
 
-## Empatiza al dar feedback en las Pull Requests
+## Empatiza al dar feedback en las Pull Requests
 
 Además de todas las buenas prácticas que deberías tener en cuenta a la hora de revisar el código de otra persona, empezando por supuesto con empatizar con ella, es importante que claves en tu mente la frase de Linus.
 
@@ -30,7 +30,7 @@ Ahora bien, no sólo quiero comentarte esta buena práctica que considero que de
 
 La frase de Linus también encuentra su sitio en muchas discusiones que, al menos yo, he vivido en primera persona.
 
-## No infravalores el posible trabajo de tareas que parecen simples
+## No infravalores el posible trabajo de tareas que parecen simples
 
 Cuando se hacen estimaciones de tiempo, que no se debería, o de esfuerzo, que es una forma también enmascarada de hablar de tiempo... muchas veces solemos infravalorar el trabajo que hay detrás. Especialmente, estoy seguro, que te ha pasado cuando un compañero o compañera que no sabe programar se pone a opinar sobre cómo de difícil es hacer algo.
 
