@@ -8,7 +8,7 @@ tags:
 - me
 ---
 
-{{< youtube id="-yw7_3ysx1Q " >}}
+{{< youtube id="-yw7_3ysx1Q" >}}
 
 # 1️⃣ NO PUEDES SABERLO TODO
 
