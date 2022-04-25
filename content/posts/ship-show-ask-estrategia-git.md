@@ -9,7 +9,7 @@ tags:
 
 ## Ship / Show / Ask
 
-*Ship / Show / Ask* es una estrategia de ramas que combina la idea de crear Pull Request con la habilidad de seguir publicando cambios rápidamente. Fue [presentada por Rousan Wilsenach en el blog del mítico Martin Fowlers](https://martinfowler.com/articles/ship-show-ask.html).
+*Ship / Show / Ask* es una estrategia de ramas que combina la idea de crear Pull Request con la habilidad de seguir publicando cambios rápidamente. Fue [presentada por Rousan Wilsenach en el blog del mítico Martin Fowler](https://martinfowler.com/articles/ship-show-ask.html).
 
 Los cambios que creamos en el repositorio se categorizan en tres:
 
