@@ -1,13 +1,12 @@
 ---
 title: >-
   Cómo clonar un Array en JavaScript de forma correcta y sin problemas
-date: '2021-02-17'
+date: '2022-06-25'
 description: >-
   Hacer una copia de un Array en JavaScript puede parecer algo sencillo pero lo cierto es que este tipo de datos esconde algunas trampas que hay que controlar. 
 tags:
   - javascript
-image: >-
-  /images/og/como-arreglar-macos-xcrun-error-invalid-active-developer-path-missing-xcrun.png
+toc: true
 ---
 
 Cuando tienes que **hacer una copia de un Array en JavaScript** tienes que tener bastantes cosas en cuenta para evitar tener problemas. Si quieres descubrir **por qué no puedes usar la asignación, cómo hacer copias superficiales y copias profundas de Array**, entonces sigue leyendo. 👇
@@ -56,7 +55,7 @@ Para evitar el problema que hemos visto antes tenemos que hacer una copia del ar
 
 Por ahora, la forma más sencilla sería utilizar el método `.concat` de JavaScript:
 
-```js
+```javascript
 const dynos = ['🦖', '🦕', '🐉']
 const copyOfDynos = [].concat(dynos)
 // cambiamos el valor del primer elemento en fakeCopyDynos
@@ -73,7 +72,7 @@ console.log(dynos) // -> [ '🦖', '🦕', '🐉' ]
 
 Otra forma sería usar `.slice`. Normalmente este método se usa para recuperar una copia de una parte del array pero si se usa sin paramétros, nos devolverá una copia de todos los elementos del array.
 
-```js
+```javascript
 const dynos = ['🦖', '🦕', '🐉']
 const copyOfDynos = dynos.slice()
 ```
@@ -118,7 +117,7 @@ console.log(dynosAndFriends) // -> [ '🦖', '🦕', [ '🐓', '🐊' ] ]
 
 ## ¿Cómo hacer una copia profunda de un Array en JavaScript? 🕵️‍♂️
 
-Existe un truco sencillo para hacer una copia profunda de un Array siempre y cuando no intentes copiar datos no serializables (una instancia de una clase, una función...). Para ello puedes usar los métodos `parse` y `stringify` de `JSON`:
+Existe un truco sencillo para hacer una copia profunda de un Array siempre y cuando no intentes copiar datos no serializables (una instancia de una clase, una función, una fecha...). Para ello puedes usar los métodos `parse` y `stringify` de `JSON`:
 
 ```javascript
 const dynosAndFriends = ['🦖', '🦕', ['🦎', '🐊']]
@@ -142,7 +141,7 @@ Si buscas algo con mejor rendimiento (clonar con JSON.parse no es gratis...) y e
 
 Gracias a ella, podemos escribir un método para recorrer un Array y copiar los elementos que tiene. Si uno de esos elementos es un Array, se llamará así mismo para volver a proceder a la misma operación. Así será hasta que encuentre un elemento que no es un array y extraerá ese valor.
 
-Ten en cuenta que esta versión sólo está pensado para tratar con Arrays por lo que no tiene en cuenta para hacer una copia profunda si el array tiene a su vez objetos pero con unos pocos cambios lo podrías conseguir.
+Ten en cuenta que esta versión **sólo está pensado para tratar con Arrays por lo que no tiene en cuenta para hacer una copia profunda si el array tiene a su vez objetos** pero con unos pocos cambios lo podrías conseguir.
 
 ```javascript
 const dynosAndFriends = ['🦖', '🦕', ['🦎', '🐊']]
@@ -160,7 +159,7 @@ const copyOfDynosAndFriends = cloneArray(dynosAndFriends)
 
 ### Tirar de dependencias como just o lodash 🔽
 
-En el caso que estas soluciones sean insuficientes, **te recomiendo dos dependencias** que te ayudarían a solucionar esto. Una sería [`just-clone` que apenas ocupa unos cientos de bytes.](https://www.npmjs.com/package/just-clone)
+En el caso que estas soluciones sean insuficientes, **te recomiendo una pequeña dependencia** que te ayudaría a solucionar esto. Se llama [`just-clone` que apenas ocupa unos cientos de bytes.](https://www.npmjs.com/package/just-clone)
 
 ```javascript
 import clone from 'just-clone'
@@ -177,6 +176,31 @@ objClone // {a: 3, b: 5, c: [1, 2, 3], d: {aa: 1, bb: 2}}
 ```
 
 **Si necesitas clonar arrays recursivos o tienes arrays MUY grandes** (cientos de miles de elementos), entonces lo mejor es que uses [lodash.cloneDeep](https://lodash.com/docs/#cloneDeep). No es la dependencia más liviana pero sí la más optimizada y que maneja mejor los *corner cases.*
+
+### `structuredClone`, el método nativo para hacer una copia profunda de un Array
+
+En las últimas versiones de los navegadores y de *runtimes* de JavaScript como *Deno* o *Node*, existe la posibilidad de utilizar el método `structuredClone`.
+
+Este método crea una copia profunda usando un [algoritmo que está especificado](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) por lo que soluciona los problemas que hemos visto antes. Lo usaríamos así:
+
+```javascript
+const dynosAndFriends = ['🦖', '🦕', ['🦎', '🐊']]
+const clone = structuredClone(dynosAndFriends)
+
+// En el primer elemento del Array anidado ponemos una 🐓
+clone[2][0] = '🐓'
+
+// En el clon está todo bien...
+console.log(clone) // -> [ '🦖', '🦕', [ '🐓', '🐊' ] ]
+
+// ¡Y el original sigue estando inalterado!
+console.log(dynosAndFriends) // -> [ '🦖', '🦕', [ '🦎', '🐊' ] ]
+```
+
+> Este método también se puede utilizar para clonar de forma profunda objetos y, además, también respeta los valores de `Date` o las `Regexp`. Ten en cuenta que este método NO es parte de JavaScript, si no de la Web API.
+
+Entonces... teniendo en cuenta hace copias profundas, que no ocupa espacio, que además es la forma más rápida y nativa... **¿Por qué no usar siempre esta? [El soporte en navegadores de `structuredClone`](https://caniuse.com/mdn-api_structuredclone), a la hora de escribir el artículo, es del 83%.** Lo cuál no está mal, pero navegadores recientes como Chrome 97 o Safari 15.3 todavía no lo soportaban. Así que te recomiendo que, si lo usas, te asegures de cargar un *polyfill*.
+
 
 ## Conclusiones 🗒️
 
@@ -195,3 +219,5 @@ const copyOfDynosAndFriends = JSON.parse(JSON.stringify(dynosAndFriends))
 ```
 
 Si quieres curarte en salud seguramente lo mejor es que decidas tirar por una dependencia. Para usas más típicos tendrías `just-clone` y para casos más complejos, mejor tira de `lodash`.
+
+Además, tienes que saber que ya tienes disponible un método nativo en la Web API para conseguirlo sin usar dependencias. Es el método `structuredClone`. Lo único que tienes que tener cuidado es con el soporte de los navegadores (aunque siempre puedes usar un *polyfill* mientras). Si eso no es un problema y lo tienes controlado entonces, **es la mejor opción de lejos.**

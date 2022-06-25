@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "scripts": {
     "build": "hugo --minify",
@@ -26,14 +26,14 @@
   "homepage": "https://github.com/midudev/midu.dev#readme",
   "devDependencies": {
     "@github-docs/frontmatter": "1.3.1",
-    "hugo-bin": "0.85.3",
+    "hugo-bin": "0.89.0",
     "standard": "17.0.0"
   },
   "dependencies": {
     "@sindresorhus/slugify": "2.1.0",
-    "algoliasearch": "4.13.0",
+    "algoliasearch": "4.13.1",
     "chrome-aws-lambda": "10.1.0",
-    "playwright-core": "1.21.1",
+    "playwright-core": "1.22.2",
     "rss-parser": "3.12.0",
     "string-strip-html": "8.3.0",
     "xml2json": "0.12.0"
