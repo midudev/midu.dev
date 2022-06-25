@@ -22,7 +22,7 @@ Además de todas las buenas prácticas que deberías tener en cuenta a la hora d
 
 Muchas veces, cuando damos nuestra opinión, en lugar de ofrecer una solución, en realidad, estamos causando un bloqueo. Por ejemplo, cuantas veces has recibido o has puesto un comentario, pidiendo que se cambie el nombre de una variable. Suena una tontería pero... a veces pasa.
 
-En esos casos, muchas veces, la gente ni siquiera se preocupa a ofrecer una alternativa. Lo cuál, si me preguntas, está muy feo. Si es algo que haces, por favor, deja de hacerlo. **Si no ofreces soluciones entonces, mejor, no comentes.**
+En esos casos, muchas veces, la gente ni siquiera se preocupa a ofrecer una alternativa. Lo cual, si me preguntas, está muy feo. Si es algo que haces, por favor, deja de hacerlo. **Si no ofreces soluciones entonces, mejor, no comentes.**
 
 De hecho, si estás usando GitHub, que en algún caso seguro que es así, debes saber que cuando haces un comentario también puedes sugerir un cambio en el código. Sería algo así como una pequeña Pull Request dentro de una Pull Request. Esto ayuda bastante a desbloquear a la persona que la ha creado y ha recibido los comentarios.
 
@@ -46,4 +46,4 @@ No quiero ahora invocar al karma ni a un poder superior que le castigó por sus 
 
 Al final, con lo que quiero que te quedes y que yo, al menos, intento hacerlo, es siempre intentar no ser, lo que se diría, un *bocachancla*. Vamos, hablar de más y luego hacer más bien poco. Es útil considerar todos los problemas que tendría una implementación real porque, por fácil que suenan las cosas, luego hay que tener en cuenta otros trabajos que quizás no hemos previsto.
 
-Por eso, si alguien tiene reparos, igual está bien escuchar y atender a las posibilidades que expone. Y , si tan claro lo tenemos, pues intentar desbloquear a la gente con implementaciones concretas porque... ya sabes, que **hablar es barato y lo que hay que hacer es enseñar el código.**
+Por eso, si alguien tiene reparos, igual está bien escuchar y atender a las posibilidades que expone. Y, si tan claro lo tenemos, pues intentar desbloquear a la gente con implementaciones concretas porque... ya sabes, que **hablar es barato y lo que hay que hacer es enseñar el código.**
