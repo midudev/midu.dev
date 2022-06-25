@@ -29,7 +29,7 @@ Por ello, aunque para empezar puede estar bien, te recomiendo los siguientes mé
 
 ### ¿Qué es nvm?
 
-**nvm es un manejardor de versiones de Node.js** diseñado para tener su instalación encapsulada por usuario, sin necesidad de permisos de administrador, e invocado de forma independiente por cada shell.
+**nvm es un gestor de versiones de Node.js** diseñado para tener su instalación encapsulada por usuario, sin necesidad de permisos de administrador, e invocado de forma independiente por cada shell.
 
 ### Cómo instalar nvm paso a paso
 

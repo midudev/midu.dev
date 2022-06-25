@@ -3,10 +3,8 @@ title: ¿Cómo eliminar el código de las PropTypes antes de subir a producción
 date: '2020-04-03'
 image: '/images/og/react-como-eliminar-el-codigo-de-las-proptypes-en-produccion.png'
 description: Las PropTypes nos ayudan a detectar problemas de tipos al usar props en nuestros componentes de React pero... son inútiles en producción. Aprende a eliminar su código.
-
 tags:
 - react
-- react hooks
 ---
 
 ### ¿Qué son las PropTypes?

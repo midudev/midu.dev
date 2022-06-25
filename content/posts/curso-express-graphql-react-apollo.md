@@ -6,7 +6,6 @@ description: "Aprender gratis sobre GraphQL. Una introducción en español sobre
 tags:
   - graphql
   - react
-  - apollo client
 
 toc: true
 ---

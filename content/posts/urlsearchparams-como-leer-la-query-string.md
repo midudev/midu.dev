@@ -3,10 +3,8 @@ title: URLSearchParams, cómo leer los valores de la querystring sin usar Regex
 date: '2019-04-30'
 image: '/images/urlsearchparams_cover.jpg'
 description: Para leer los parámetros de una URL, hasta hace muy poco, teníamos que usar siempre expresiones regulares. Usando URLSearchParams esto deja de ser necesario y nos proporciona una forma sencilla de manipular esos datos.
-
 tags:
 - javascript
-- web-platform
 ---
 
 Para recuperar los parámetros de búsqueda (query values) de una URL siempre hemos tenido que **acudir a una librería externa o a expresiones regulares.** Esto hacía que, o bien, tuvieramos que añadir más tamaño a nuestra aplicación o tener que lidiar con indeseables errores por crear nuestra propia implementación.

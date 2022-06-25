@@ -3,20 +3,26 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   
   <title>{{- .Title | default .Site.Title -}}</title>
-  <meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
-  <link rel="canonical" href="{{ .Permalink }}">
-  <link rel="preload" as="image" href="https://midu.dev/logo.png">
 
+  <link rel="preconnect" href="https://waterboa.midu.dev">
   {{ partial "head/preconnects.html" . }}
-
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   {{ $css := resources.Get "styles/global.css" }}
   {{ $style := $css | resources.Minify }}
-
   <style>{{$style.Content | safeCSS}}</style>
+  
+  {{ $tracking := resources.Get "js/t.js" }}
+
+  <link rel="preload" as="image" href="/logo.png">
+  <link rel="preload" as="script" href='{{ $tracking.Permalink }}'>
+
+  <script src="{{ $tracking.Permalink }}" data-site="YZRWTFHZ" defer></script>
+  
+  <meta name="description" content="{{- .Description | default .Site.Params.Description -}}">
+  <link rel="canonical" href="{{ .Permalink }}">
 
   {{ partial "head/favicons.html" . }}
 
@@ -44,14 +50,30 @@
 
   <meta name="twitter:creator" content="@midudev" />
   <meta name="twitter:domain" content="midu.dev" />
-  <meta name="twitter:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
+
+  {{ $image := .Site.Params.Image }}
+
+  {{ if isset .Params "image" }}
+    {{ if in .Params.image "https://" }}
+      {{ $image = .Params.image }}
+    {{ else }}
+      {{ $image = (print .Site.BaseURL .Params.image) }}
+    {{ end }}
+  {{ else if isset .Params "tags" }}
+    {{ $tag := index (.Params.tags) 0}}
+    {{ $title := .Title }}
+    {{ $subtitle := (print .ReadingTime " minutos de lectura" ) }}
+    {{ $image = (print .Site.BaseURL "api/og/?tag=" $tag "&title=" $title "&subtitle=" $subtitle) | safeHTML }}
+  {{ end }}
+
+  <meta name="twitter:image" content="{{ $image }}" />
   <meta name="twitter:site" content="@midudev" />
 
   <link rel="manifest" href="/manifest.json" />
 
   <meta property="og:locale" content="es_ES" />
   <meta property="og:title" content="{{ .Title | default .Site.Title }}" />
-  <meta property="og:image" content="https://midu.dev{{ .Params.image | default .Site.Params.Image }}" />
+  <meta property="og:image" content="{{ $image | safeHTMLAttr }}" />
   <meta property="og:description" content="{{- .Description | default .Site.Params.Description -}}" />
   <meta property="og:site_name" content="midu.dev" />
 
@@ -61,40 +83,77 @@
       "@context": "http://schema.org",
       "@type": "NewsArticle",
       "headline": "{{ .Title }}",
-      "image": ["https://midu.dev{{ .Params.image | default .Site.Params.Image }}"],
+      "image": ["{{ $image }}"],
       "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
     }
   </script>
   {{ end }}
-  
-  <script src="https://waterboa.midu.dev/script.js" data-site="YZRWTFHZ" defer></script>
-
 </head>
 
 <body class='{{ cond (isset .Params "audio") "body-player" ""}}'>
-  <header class='header u-center'>{{ partial "logo.html" }}</header>
+  {{ $isLive := getenv "TWITCH_LIVE" }}
+  {{ if eq $isLive "true" }}
+    <style>
+      .live {
+        background: #9046ffc2;
+        display: block;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        padding: 8px;
+        animation: background 3s ease infinite;
+      }
+
+      .live u {
+        text-decoration: none;
+        border-bottom: 2px solid #eee;
+      }
+
+      @keyframes background {
+        0% {
+          background: #9046ffc2;
+        }
+        50% {
+          background: #d146ff;
+        }
+        100% {
+          background: #9046ffc2;
+        }
+      }
+    </style>
+    <a href='https://twitch.tv/midudev' target='_blank' class='live'>
+      <svg x="0" y="0" viewBox="0 0 2400 2800" height="24" width="28" xml:space="preserve">
+        <style>
+            .twitch-st1 {
+                fill: #9146ff
+            }
+        </style>
+        <path fill="#fff" d="M2200 1300l-400 400h-400l-350 350v-350H600V200h1600z" />
+        <g>
+            <path class="twitch-st1"
+                d="M500 0L0 500v1800h600v500l500-500h400l900-900V0H500zm1700 1300l-400 400h-400l-350 350v-350H600V200h1600v1100z" />
+            <path class="twitch-st1" d="M1700 550h200v600h-200zM1150 550h200v600h-200z" />
+        </g>
+    </svg>
+      ¡Estamos en directo en Twitch! <u>¡Entra y participa!</u>
+  </a>
+  {{ end }}
+
+  </div>
+  <header class='header'>
+    <div class='header-inner u-center'>
+      {{ partial "logo.html" }}
+    </div>
+  </header>
   <div class='body u-center'>
     {{ block "main" . }}
     {{ end }}
   </div>
   {{ partial "footer.html" . }}
 
-
   {{ $js := resources.Get "js/scripts.js" }}
   {{ $script := $js | resources.Minify }}
   <script>{{$script.Content | safeJS}}</script>
-
-  <script>
-  if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function (registrations) {
-        for (const registration of registrations) {
-          // unregister service worker
-          console.log('serviceWorker unregistered');
-          registration.unregister();
-        }
-      });
-    }
-  </script>
 </body>
 
 </html>

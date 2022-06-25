@@ -1,15 +1,15 @@
-const Parser = require('rss-parser')
-const slugify = require('@sindresorhus/slugify')
-const path = require('path')
-const fs = require('fs/promises')
-const {existsSync} = require('fs')
-const stripHtml = require("string-strip-html")
-const {oldPodcastPathsMap} = require('./_db/oldPodcastPathsMap.js')
+import Parser from 'rss-parser'
+import slugify from '@sindresorhus/slugify'
+import { join } from 'path'
+import { writeFile } from 'fs/promises'
+import { existsSync } from 'fs'
+import { stripHtml } from 'string-strip-html'
+import { oldPodcastPathsMap } from './_db/oldPodcastPathsMap.js'
 
 const parser = new Parser()
-const contentFolder = path.join(process.cwd(), '/content/podcast')
+const contentFolder = join(process.cwd(), '/content/podcast')
 
-const createMarkdown = ({audio, content, description, image, pubDate, season, episode, title}) => `---
+const createMarkdown = ({ audio, content, description, image, pubDate, season, episode, title }) => `---
 title: '${title} - ${season}x${episode}'
 date: '${pubDate}'
 image: '${image}'
@@ -26,8 +26,7 @@ ${content}
 `
 
 ;(async () => {
-
-  let feed = await parser.parseURL('https://anchor.fm/s/2c58e75c/podcast/rss')
+  const feed = await parser.parseURL('https://anchor.fm/s/2c58e75c/podcast/rss')
 
   feed.items.forEach(item => {
     const { content, title, enclosure, pubDate, itunes } = item
@@ -47,15 +46,15 @@ ${content}
       const normalizedContent = content.replace('---', '')
 
       const firstLineBreak = content.indexOf('\n')
-  
+
       let description = ''
-  
+
       if (firstLineBreak < 155) {
         description = stripHtml(content).result.substring(0, firstLineBreak - 1)
       } else {
-        description = stripHtml(content.replace(/(\r\n|\n|\r)/gm,"")).result.substring(0, 180)
+        description = stripHtml(content.replace(/(\r\n|\n|\r)/gm, '')).result.substring(0, 180)
       }
-  
+
       const markdown = createMarkdown({
         audio,
         content: normalizedContent,
@@ -66,12 +65,11 @@ ${content}
         episode: normalizedEpisode,
         title
       })
-  
-      fs.writeFile(fullFileName, markdown, 'utf-8')
+
+      writeFile(fullFileName, markdown, 'utf-8')
         .then(() => {
           console.log(`✅ Created ${filename}`)
         })
     }
   })
-
 })()

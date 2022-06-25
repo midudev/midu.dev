@@ -3,6 +3,10 @@
 {{ $style := $css | resources.Minify }}
 <style>{{ $style.Content | safeCSS }}</style>
 <style>
+#member_submit {
+    margin-bottom: 50px;
+}
+
 #newsletter-page {
     margin: 0 auto;
     width: 100%;

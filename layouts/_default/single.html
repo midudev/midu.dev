@@ -18,7 +18,7 @@
           {{ with .Param "tags" }}
             {{ range first 1 . }}
             <picture>
-              <img itemprop="image" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
+              <img decoding="async" itemprop="image" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
             </picture>
             {{ end }}
           {{ end }}
@@ -43,24 +43,18 @@
             <a class='prev' href="{{.Permalink}}">
               {{ with .Params.tags }}
                 {{$tag := index . 0 }}
-                <img alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
+                <img decoding="async" alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
               {{ end }}
-              <svg width="20" height="20">
-                <path
-                  d="M.646 10.146l6-6a.5.5 0 0 1 .707.707L2.207 9.999H18.5a.5.5 0 0 1 0 1H2.207l5.146 5.146a.5.5 0 0 1-.708.707l-6-6a.5.5 0 0 1 0-.707z" />
-                </svg> {{.Title}}
+              {{.Title}}
             </a>
           {{ end }}
           {{ with .NextPage }}
             <a class='next' href="{{.Permalink}}">
               {{ with .Params.tags }}
                 {{$tag := index . 0 }}
-                <img alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
+                <img decoding="async" alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
               {{ end }}
-              <svg width="20" height="20">
-                <path
-                  d="M19.354 10.146l-6-6a.5.5 0 0 0-.707.707l5.146 5.146H1.5a.5.5 0 0 0 0 1h16.293l-5.146 5.146a.5.5 0 0 0 .708.707l6-6a.5.5 0 0 0 0-.707z" />
-                </svg> {{.Title}}
+              {{.Title}}
             </a>
           {{ end }}
         </div>
@@ -68,6 +62,78 @@
   </div>
 
 </article>
+
+{{ if (.Params.toc) }}
+<style>
+  #TableOfContents-container {
+    display: none;
+  }
+
+  @media (min-width: 1300px) {
+    #TableOfContents-container {
+      display: block;
+      position: fixed;
+      right: 32px;
+    }
+  
+    #TableOfContents-container h3 {
+      font-size: 14px;
+      padding-bottom: 8px;
+    }
+  
+    #TableOfContents ul {
+      list-style: none;
+      padding-left: 0;
+      padding-bottom: 0;
+      max-width: 200px;
+    }
+  
+    #TableOfContents ul li {
+      margin-bottom: 8px;
+    }
+
+    #TableOfContents ul li.active a {
+      background-color: rgb(208, 237, 255);
+    }
+  
+    #TableOfContents ul ul {
+      list-style: none;
+      color: #444;
+      padding-left: 8px;
+      margin-top: 8px;
+    }
+  
+    #TableOfContents ul ul li:before {
+      content: '-';
+      padding-right: 4px;
+    }
+  
+    #TableOfContents a {
+      color: #555;
+      display: inline;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1;
+    }
+  
+    #TableOfContents a code {
+      font-size: 12px;
+    }
+  
+    #TableOfContents a:hover {
+      background-color: rgb(208, 237, 255);
+    }
+  
+    #TableOfContents ul ul a {
+      color: #777;
+    }
+  }
+</style>
+  <div id="TableOfContents-container">
+    <h3>Contenido del artículo</h3>
+    {{.TableOfContents}}
+  </div>
+{{ end }}
 
 {{ if (.Params.description) }}
 <style>
@@ -108,29 +174,13 @@
   margin-left: 4px;
 }
 
-#share a:last-child {
-  background-color: rgb(255, 66, 77);
-  color: #fff;
-}
-
-#share a:last-child:hover {
-  background-color: rgb(198, 23, 31);
-}
-
 </style>
 <div id='share'>
   <a target='_blank' rel='nofollow noopener' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>
     <span>Comparte el artículo</span>
     {{ partial "icons/twitter.html" }}
   </a>
-
-  <a target='_blank' rel='nofollow noopener' href='https://www.patreon.com/bePatron?u=27145194'>
-    <span>¡Apóyame en Patreon!</span>
-    {{ partial "icons/patreon.html" }}
-  </a>
 </div>
 {{ end }}
-
-{{ partial "aside.html" . }}
 
 {{ end }}

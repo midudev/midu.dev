@@ -18,6 +18,20 @@
       object-fit: contain;
       margin-left: 4px;
       transition: transform .3s ease;
+      position: relative;
+    }
+
+    .home-article .secondary {
+      width: 24px;
+      border: 1px solid #ccc;
+      height: 24px;
+      padding: 2px;
+      background: #fff;
+      object-fit: contain;
+      border-radius: 100%;
+      bottom: -7px;
+      left: 32px;
+      position: absolute;
     }
 
     .home-article {
@@ -50,7 +64,6 @@
     #pagination {
       display: flex;
       list-style: none;
-      justify-content: center;
       padding-top: 16px;
       padding-right: var(--p-separation);
       padding-bottom: 48px;
@@ -97,55 +110,59 @@
     }
 
     #topics {
-      display: grid;
-      grid-gap: 32px;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      overflow: auto;
-      padding: 16px 32px 48px 16px;
+      display: flex;
+      grid-gap: 8px;
+      padding: 16px 0px 48px 16px;
       margin: 0 -16px;
+      max-width: 100%;
+      flex-wrap: wrap;
     }
 
     .topic {
       align-items: center;
-      border-radius: 6px;
-      border: 1px solid transparent;
-      box-shadow: 0px 0px 3px -1px #ccc;
+      background: #fff;
+      border-radius: 26px;
+      border: 2px solid #eee;
       color: #111;
       display: flex;
-      height: 64px;
+      height: 55px;
       font-size: 1.3rem;
-      padding: 16px;
+      padding: 0 24px;
       position: relative;
       transition: all .3s ease;
     }
 
+    .topic h4 {
+      padding-left: 12px;
+    }
+
     .topic:hover {
-      color: #09f;
-      box-shadow: 0px 0px 6px -1px #aaa;
+      border: 2px solid #09f;
     }
 
     .topic img {
-      bottom: 0;
-      height: 48px;
-      margin: auto;
+      width: 28px;
+      height: 28px;
       object-fit: contain;
-      position: absolute;
-      right: 16px;
-      top: 0;
-      width: 48px;
     }
   </style>
   <main id='home-feed'>
-    <h3 class='section-title'>Últimos artículos 📝</h3>
+    <h3 class='section-title'>Últimos artículos</h3>
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
       {{ range $paginator.Pages }}
+
       <a class='home-article' href="{{.Permalink}}">
         {{ with .Param "tags" }}
+        <picture>
           {{ range first 1 . }}
-            <picture>
-              <img alt='Imagen de la etiqueta {{ . }}' loading='lazy' src='/images/tags/{{.}}.png' width="48" height="48" />
-            </picture>
+            <img decoding="async" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
           {{ end }}
+          {{ range after 1 . }}
+            {{ if . }}
+            <img class='secondary' decoding="async" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
+            {{ end }}
+          {{ end }}
+          </picture>
         {{ end }}
         <div>
         <h2>{{ .Title }}</h2>
@@ -153,8 +170,6 @@
           <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
             {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
           </time>
-          · 
-          <span>{{.ReadingTime}} minutos de lectura</span>
         </div>
         </div>
       </a>
@@ -248,45 +263,54 @@
   </ul><!-- .pagination -->
   {{ end }}
 
-  <h3 class="section-title">CURSOS de Programación Full Stack gratuitos 🚀</h3>
+  <h3 class="section-title">CURSOS de Programación Full Stack gratuitos</h3>
   {{ partial "cursos.html" }}
 
-  <h3 class="section-title">Artículos por temas 👨‍💻</h3>
+  <h3 class="section-title">Artículos por temas</h3>
   <div id='topics'>
     <a href='/tags/react/' class='topic' title='Artículos sobre React.js'>
-      <img alt='react' loading='lazy' src='/images/tags/react.png' width="48" height="48" />
+      <img decoding="async" alt='react' loading='lazy' src='/images/tags/react.png' width="48" height="48" />
       <h4>React</h4>
     </a>
     <a href='/tags/javascript/' class='topic' title='Artículos sobre Javascript'>
-        <img alt='javascript' loading='lazy' src='/images/tags/javascript.png' width="48" height="48" />
+        <img decoding="async" alt='javascript' loading='lazy' src='/images/tags/javascript.png' width="48" height="48" />
       <h4>Javascript</h4>
     </a>
     <a href='/tags/svelte/' class='topic' title="Artículos sobre Svelte">
-        <img alt='svelte' loading='lazy' src='/images/tags/svelte.png' width="48" height="48" />
+        <img decoding="async" alt='svelte' loading='lazy' src='/images/tags/svelte.png' width="48" height="48" />
       <h4>Svelte</h4>
     </a>
     <a href='/tags/performance/' class='topic'  title='Artículos sobre Web Performance'>
-        <img alt='performance' loading='lazy' src='/images/tags/performance.png' width="48" height="48" />
+        <img decoding="async" alt='performance' loading='lazy' src='/images/tags/performance.png' width="48" height="48" />
       <h4>Web Perf</h4>
     </a>
     <a href='/tags/css/' class='topic'  title='Artículos sobre CSS'>
-        <img alt='css' loading='lazy' src='/images/tags/css.png' width="48" height="48" />
+        <img decoding="async" alt='css' loading='lazy' src='/images/tags/css.png' width="48" height="48" />
       <h4>CSS</h4>
     </a>
     <a href='/tags/terminal/' class='topic'title='Artículos sobre Terminal'>
-        <img alt='terminal' loading='lazy' src='/images/tags/terminal.png' width="48" height="48" />
+        <img decoding="async" alt='terminal' loading='lazy' src='/images/tags/terminal.png' width="48" height="48" />
       <h4>Terminal</h4>
     </a>
     <a href='/tags/node/' class='topic'  title='Artículos sobre Node.js'>
-        <img alt='node' loading='lazy' src='/images/tags/node.png' />
+        <img decoding="async" alt='node' loading='lazy' src='/images/tags/node.png' />
       <h4>Node.js</h4>
     </a>
     <a href='/tags/graphql/' class='topic' title='Artículos sobre GraphQL'>
-        <img alt='graphql' loading='lazy' src='/images/tags/graphql.png' />
+        <img decoding="async" alt='graphql' loading='lazy' src='/images/tags/graphql.png' />
       <h4>GraphQL</h4>
     </a>
 
   </div>
+
+  <h3 class="section-title">Libros</h3>
+  <div id='topics'>
+    <a href='https://leanpub.com/aprendiendo-git' target="_blank" class='topic' title='Libro sobre Git'>
+      <img decoding="async" alt='react' loading='lazy' src='/images/tags/git.png' width="48" height="48" />
+      <h4>Aprendiendo Git</h4>
+    </a>
+  </div>
+  
 </main>
   {{ partial "aside.html" . }}
 {{ end }}

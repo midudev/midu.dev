@@ -1,17 +1,17 @@
 baseURL = "https://midu.dev/"
 languageCode = "es-ES"
-title = "midudev 👨‍💻 | Frontend, Javascript, React, CSS, Performance"
+title = "midudev 👨‍💻 | Frontend, JavaScript, React, CSS, Performance"
 
 disableHugoGeneratorInject = true
 defaultContentLanguage = "es"
 preserveTaxonomyNames = true
-paginate = 10
+paginate = 7
 
 [permalinks]
   posts = "/:filename/"
 
 [params]
-  description = "Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, Javascript ☕️, React ⚛️, CSS 🎨 y Performance Web ⚡️"
+  description = "Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, JavaScript ☕️, React ⚛️, CSS 🎨 y Performance Web ⚡️"
   image = "/favicon/apple-touch-icon.png"
 
 [markup]
@@ -22,3 +22,17 @@ paginate = 10
 
 [markup.goldmark.renderer]
 unsafe= true
+
+[outputs]
+home = ["HTML", "RSS", "Algolia"]
+
+[outputFormats]
+  [outputFormats.Algolia]
+    baseName = "algolia"
+    mediaType = "application/json"
+    isPlainText = true
+    notAlternative = true
+
+[security]  
+  [security.funcs]
+    getenv = ['^HUGO_', 'YOUTUBE_API_KEY', 'TWITCH_LIVE']

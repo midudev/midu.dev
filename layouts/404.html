@@ -71,7 +71,7 @@
   </style>
   <main id="main">
     <h1>404 pero...</h1>
-    <img id="gif" src='/images/this-is-fine-404.gif' />
+    <img decoding='async' lazy='loading' id="gif" src='/images/this-is-fine-404.gif' />
     <h2 id="h2">aquí tienes los últimos artículos, ¡para que encuentres algo!</h2>
     <div id="home-feed">
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
@@ -80,7 +80,7 @@
         {{ with .Param "tags" }}
           {{ range first 1 . }}
             <picture>
-              <img alt='Imagen de la etiqueta {{ . }}' loading='lazy' src='/images/tags/{{.}}.png' width="48" height="48" />
+              <img decoding='async' alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
             </picture>
           {{ end }}
         {{ end }}

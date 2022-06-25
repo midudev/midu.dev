@@ -30,6 +30,22 @@
     z-index: 2;
   }
 
+  .audio-player aside {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .audio-player header small {
+    font-weight: bold;
+    color: #fff;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, .75);
+    display: flex;
+    margin: 0 auto;
+    padding: 4px 8px;
+    text-transform: uppercase;
+  }
+
   .audio-player img {
     width: 180px;
     border-radius: 6px;
@@ -43,7 +59,8 @@
     font-size: 32px;
     padding: 16px;
     color: #fff;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35), 1px 1px 10px rgba(68, 68, 68, 0.1);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35),
+    0px 0px 10px rgba(68, 68, 68, 0.1)
   }
 
   .audio-player section div {
@@ -222,7 +239,10 @@
     <div style="background-image: url({{ .Params.image }})"></div>
     <header>
       <img alt='{{ .Params.title }}' src='{{ .Params.image }}' />
-      <h1>{{ .Params.title }}</h1>
+      <aside>
+        <h1>{{ .Params.title }}</h1>
+        <small>{{ dateFormat "2 January 2006" .Params.date }}</small>
+      </aside>
     </header>
   </section>
 

@@ -58,7 +58,7 @@ Y así dediqué un verano entero a instruirme en la programación. Devoraba libr
 
 Después la programación no fue mi pasión. Era simplemente algo que superé. El caso es que poco a poco fui enseñando a más gente de mi clase, compartiendo lo que sabía, y de esta manera me empezó a agradar más ir mentorizando y ayudando a los demás.
 
-Con los años eso es lo que me ha llenado más. Enseñar la programación como a mí me hubiera gustado que me la enseñasen. No sé si lo estoy consiguiendo, pero lo estoy intentando en mí [canal de YouTube](http://midu.tube/) y en [Twitch](http://midu.live/).
+Con los años eso es lo que me ha llenado más. Enseñar la programación como a mí me hubiera gustado que me la enseñasen. No sé si lo estoy consiguiendo, pero lo estoy intentando en mí [canal de YouTube](https://midu.tube/) y en [Twitch](https://midu.live/).
 
 <div style='text-align: center'>
 

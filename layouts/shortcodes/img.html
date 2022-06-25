@@ -2,6 +2,7 @@
   <img
     {{ with .Get "alt" }}alt='{{.}}'{{ end }}
     loading='lazy'
+    decoding="async"
     src='{{ .Get "src" }}'
   />
   {{ with .Get "alt"}}

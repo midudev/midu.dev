@@ -7,10 +7,6 @@ topic: performance
 toc: true
 tags:
 - performance
-- rendimiento web
-- brotli
-- aws
-- cloudfront
 ---
 
 > **¡Importante!** Este artículo ya no tiene mucho sentido ya que [Cloudfront ha añadido soporte nativo a Brotli](https://aws.amazon.com/es/about-aws/whats-new/2020/09/cloudfront-brotli-compression/). Sin embargo, creo que el aprendizaje de usar Lambda@Edge para este tipo retos es muy valioso. Por ejemplo, esto mismo se podría hacer para cargar diferentes formatos de imagenes según el navegador, cargar polyfills de forma dinámica y muchas cosas más.

@@ -1,12 +1,9 @@
 ---
 title: Mi configuración de editor, terminal, apps que uso y gadgets
 date: '2020-01-08'
-image: '/images/uses.jpg'
 description: Comparto contigo el editor que uso para programar, mi tema, mi fuente favorita, la terminal que me sirve además de todas las apps de mi sistema operativo y todos los cachivaches que me ayudan en mi día a día.
-
 tags:
 - me
-- mi setup
 ---
 
 Muchas veces la gente me pregunta en [Youtube](http://youtube.com/midudev) o [Twitter](https://twitter.com/midudev) sobre qué editor estoy usando, el tema, la fuente, las extensiones, la terminal, la cámara, el micrófono... y mucho más. ¡Y yo encantado! Pero he pensado que puede ser buena idea si recopilo todas esa información en un sólo artículo por si hay gente que, sin preguntar, también lo quiere saber. **¡Vamos allá! 👇**

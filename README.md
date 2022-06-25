@@ -1,4 +1,4 @@
-[Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, Javascript ☕️, React ⚛️, CSS y Performance Web.](http://midu.dev/)
+[Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, Javascript ☕️, React ⚛️, CSS y Performance Web.](https://midu.dev/)
 
 **También puedes seguirme en... 👇**
 

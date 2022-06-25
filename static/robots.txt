@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://midu.dev
+
+# Sitemaps
+Sitemap: https://midu.dev/sitemap.xml
