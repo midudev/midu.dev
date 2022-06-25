@@ -46,11 +46,11 @@ find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;
 
 Es muy importante acordarte de entrar en la carpeta donde tengas tus proyectos, en mi caso `~/Dev`, para eliminar las carpetas `node_modules` sólo de los proyectos que realmente quieres y controlas.
 
-Si tienes **Windows**, puedes utilizar el siguiente comando.
+Si tienes **Windows** y usas el **CMD**, puedes utilizar el siguiente comando.
 
 ```bash
 cd Dev
-FOR /d /r . %d in (node_modules) DO @IF EXIST "%d" rm -rf "%d"
+FOR /d /r . %d in (node_modules) DO @IF EXIST "%d" rd /s /q "%d"
 ```
 
 Y con esto, **ya puedes limpiar algo tu disco duro.** En mi caso he conseguido rebajar... **¡20GB de espacio!** Aunque también es verdad que tengo un poco de síndrome de diógenes en ese sentido y tenía cientos de repositorios y proyectos en mi carpeta después de años usando el ordenador. **Quizás mi limpieza debería ir un poco más allá y empezar a eliminar proyectos que no toco desde hace meses. 😅**
