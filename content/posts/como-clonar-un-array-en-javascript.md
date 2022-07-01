@@ -128,7 +128,7 @@ const copyOfDynosAndFriends = JSON.parse(dynosAndFriendsString)
 const copyOfDynosAndFriends = JSON.parse(JSON.stringify(dynosAndFriends))
 ```
 
-El truco es que convertirmos el array primero en un string y, luego, parseamos estre String a JSON y como el Array es una estructura de datos compatible con JSON. **¡Copia realizada!**
+El truco es que convertirmos el array primero en un string y, luego, parseamos este String a JSON y como el Array es una estructura de datos compatible con JSON. **¡Copia realizada!**
 
 Cosas a tener en cuenta:
 - Los valores `undefined` se transforman en `null`.
