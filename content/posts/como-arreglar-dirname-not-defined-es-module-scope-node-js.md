@@ -24,7 +24,7 @@ const root = path.join(__dirname, '..', 'src')
 
 Encontrarás que te devuelve el siguiente error:
 
-```
+```shell
 ReferenceError: __dirname is not defined in ES module scope
 ```
 
