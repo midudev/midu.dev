@@ -40,7 +40,7 @@ Siempre ten la curiosidad suficiente para expandir tu conocimiento.
 
 El *Pair Programming* es **una técnica donde dos personas programan a la vez**. Una es la que codifica, la que tiene el teclado, y la otra persona es la que va guiando sobre qué hay que hacer.
 
-A> Existe otra técnica interesante que se llama **Mob Programming** donde en lugar de ser dos personas, son más personas donde el rol de codificación y navegación va rotando.
+> Existe otra técnica interesante que se llama **Mob Programming** donde en lugar de ser dos personas, son más personas donde el rol de codificación y navegación va rotando.
 
 Aunque hay mucha gente que discute su utilidad y cree que tiene desventajas, como que se pierde tiempo, lo cierto es que a nivel personal he aprendido mucho cuando la he utilizado. Se proponen soluciones diferentes, te retan las ideas, te proponen alternativas...
 
