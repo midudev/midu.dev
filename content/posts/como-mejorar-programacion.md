@@ -6,6 +6,7 @@ topic: me
 toc: true
 tags:
   - me
+image: https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
 ---
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/5fd78Wp41IhaoKWVKBoS3C?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
