@@ -11,7 +11,7 @@ En algún momento te vas a encontrar el error `ReferenceError: window is not def
 
 Por ejemplo, si estás trabajando con Node.js, no tienes acceso al objeto `window` y, por lo tanto, es posible que si intentas acceder a `window` te devuelva este error:
 
-```js
+```javascript
 const value = window.localStorage.getItem('key')
 ```
 
@@ -23,7 +23,7 @@ Igual ni siquiera estás usando conscientemente Node.js pero hay frameworks como
 
 Si el problema está en tu código es bastante sencillo. **Encuentra dónde estés accediendo a una propiedad del objeto `window` y elimina el código**. Si eso no es posible (por ejemplo, un código que se ejecuta tanto en servidor como en cliente) entonces puedes envolver el código en un condicional que compruebe si tiene acceso a `window`.
 
-```js
+```javascript
 let value
 if (typeof window !== 'undefined') {
   value = window.localStorage.getItem('key')
@@ -38,7 +38,7 @@ if (typeof window !== 'undefined') {
 
 También es posible que encuentres este problema con algunas **librerías de terceros** que, al importarlas, están pensadas para ser ejecutadas sólo en el cliente. **No es un problema común** (ya que normalmente revisan si tienen acceso al objeto antes de intentar referirse a él) pero puede pasar.
 
-```js
+```javascript
 // Código ejecutado en el servidor
 import useSomething from 'dependencia-externa'
 
@@ -54,7 +54,7 @@ Una vez detectes la dependencia *culpable*, tendrás diferentes opciones:
 - Revisar si realmente necesitas cargar la dependencia en ese punto y si puedes mover la importación y uso de la dependencia en un archivo que sólo se ejecute en el cliente.
 - Cargar de forma dinámica la dependencia sólo cuando sepas que estás en el cliente.
 
-```js
+```javascript
 if (typeof window !== 'undefined') {
   import('dependencia-externa')
     .then(({default: useSomething}) => useSomething())
@@ -65,7 +65,7 @@ if (typeof window !== 'undefined') {
 
 Existe una mala práctica en React que puede traer graves problemas de rendimiento en tus aplicaciones. En ocasiones, en el cuerpo de la función de tu componente, te puedes encontrar el error de referencia al intentar acceder a `window`:
 
-```jsx
+```javascriptx
 export default User () {
   const user = window.localStorage.getItem('user')
   return <h1>{user}</h1>
@@ -74,7 +74,7 @@ export default User () {
 
 Al ver algo así puedes caer en la tentación de hacer la solución que hemos comentado anteriormente...
 
-```jsx
+```javascriptx
 // ❌ este código sería INCORRECTO en el servidor
 // y sólo está como ejemplo para ilustrar
 export default User () {
@@ -90,7 +90,7 @@ export default User () {
 
 Para evitar esto, lo ideal es que pases esta comprobación a un `useEffect` ya que sólo se ejecutan en el cliente y cada vez que se renderiza el componente. En este caso, con las dependencias vacías, hacemos que sólo se ejecute en el primer renderizado:
 
-```jsx
+```javascriptx
 // ✅ Esta sería la forma correcta de lidiar
 // con estos problemas en servidor/cliente
 import { useEffect } from 'react'
