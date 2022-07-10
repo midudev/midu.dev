@@ -1,3 +1,6 @@
+const $ = selector => document.querySelector(selector)
+const $$ = selector => document.querySelectorAll(selector)
+
 const loadedScripts = []
 
 function loadScript (src) {
@@ -34,7 +37,7 @@ function createYoutubeFrame (id) {
   const fragment = document.createRange().createContextualFragment(html)
   document.body.appendChild(fragment)
 
-  document.querySelector('#lightbox a').addEventListener(
+  $('#lightbox a').addEventListener(
     'click',
     function (e) {
       e.preventDefault()
@@ -45,7 +48,7 @@ function createYoutubeFrame (id) {
   )
 }
 
-document.querySelectorAll('.youtube-link').forEach(function (link) {
+$$('.youtube-link').forEach(function (link) {
   link.addEventListener('click', function (e) {
     e.preventDefault()
     const id = this.getAttribute('data-id')
@@ -61,14 +64,6 @@ class LiteYTEmbed extends window.HTMLElement {
     // A label for the button takes priority over a [playlabel] attribute on the custom-element
     this.playLabel = (playBtnEl && playBtnEl.textContent.trim()) || this.getAttribute('playlabel') || 'Play'
 
-    /**
-       * Lo, the youtube placeholder image!  (aka the thumbnail, poster image, etc)
-       *
-       * See https://github.com/paulirish/lite-youtube-embed/blob/master/youtube-thumbnail-urls.md
-       *
-       * TODO: Do the sddefault->hqdefault fallback
-       *       - When doing this, apply referrerpolicy (https://github.com/ampproject/amphtml/pull/3940)
-       */
     const isWebpSupported = await LiteYTEmbed.checkWebPSupport()
 
     this.posterUrl = isWebpSupported
@@ -103,13 +98,6 @@ class LiteYTEmbed extends window.HTMLElement {
     this.addEventListener('click', e => this.addIframe())
   }
 
-  // // TODO: Support the the user changing the [videoid] attribute
-  // attributeChangedCallback() {
-  // }
-
-  /**
-   * Add a <link rel={preload | preconnect} ...> to the head
-   */
   static addPrefetch (kind, url, as) {
     const linkEl = document.createElement('link')
     linkEl.rel = kind
@@ -198,7 +186,7 @@ const $share = document.getElementById('share')
 
 if ($share) {
   const $articlePagination = document.getElementById('article-pagination')
-  const $footer = document.querySelector('footer')
+  const $footer = $('footer')
   const elementToObserve = $articlePagination || $footer
 
   const onIntersect = function (entries) {
@@ -219,10 +207,10 @@ const ALGOLIA_APPLICATION_ID = 'QK9VV9YO5F'
 const ALGOLIA_SEARCH_ONLY_API_KEY = '247bb355c786b6e9f528bc382cab3039'
 let algoliaIndex
 
-const $form = document.querySelector('.ais-SearchBox-form')
-const $input = document.querySelector('.ais-SearchBox-input')
-const $reset = document.querySelector('.ais-SearchBox-reset')
-const $hits = document.querySelector('#hits')
+const $form = $('.ais-SearchBox-form')
+const $input = $('.ais-SearchBox-input')
+const $reset = $('.ais-SearchBox-reset')
+const $hits = $('#hits')
 
 function getAlgoliaIndex () {
   if (algoliaIndex) return algoliaIndex
@@ -286,25 +274,25 @@ $input.addEventListener('input', async function (e) {
 
 // Table Of Contents script
 function initTableOfContents () {
-  const firstTableOfContentsElement = document.querySelector('#TableOfContents-container li')
+  const firstTableOfContentsElement = $('#TableOfContents-container li')
   if (!firstTableOfContentsElement) return null
 
   // activate first element of table of contents
   firstTableOfContentsElement.classList.add('active')
   // get all links from table of contents
-  const links = document.querySelectorAll('#TableOfContents-container li a')
+  const links = $$('#TableOfContents-container li a')
 
   const changeBgLinks = entries => {
     entries.forEach(entry => {
       const { target, isIntersecting, intersectionRatio } = entry
       if (isIntersecting && intersectionRatio >= 0.5) {
         const id = target.getAttribute('id')
-        document.querySelector('#TableOfContents-container li.active').classList.remove('active')
-        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active')
+        $('#TableOfContents-container li.active').classList.remove('active')
+        $(`nav li a[href="#${id}"]`).parentElement.classList.add('active')
 
         links.forEach(link => {
           link.addEventListener('click', (e) => {
-            document.querySelector('#TableOfContents-container li.active').classList.remove('active')
+            $('#TableOfContents-container li.active').classList.remove('active')
             link.parentElement.classList.add('active')
           })
         })
@@ -319,8 +307,19 @@ function initTableOfContents () {
 
   const observer = new window.IntersectionObserver(changeBgLinks, options)
 
-  const articleTitles = document.querySelectorAll('#article-content h2')
+  const articleTitles = $$('#article-content h2')
   articleTitles.forEach(section => observer.observe(section))
 }
 
 initTableOfContents()
+
+fetch('https://midudev-apis.midudev.workers.dev/uptime/midudev')
+  .then(res => res.json())
+  .then(({ online }) => {
+    if (online) {
+      $('#live').style.display = 'block'
+    }
+  })
+  .catch(err => {
+    console.error(err)
+  })
