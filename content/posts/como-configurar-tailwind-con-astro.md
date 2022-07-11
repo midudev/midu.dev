@@ -6,4 +6,5 @@ description: >-
 tags:
   - tailwind
 toc: true
+draft: true
 ---
