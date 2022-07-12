@@ -65,7 +65,7 @@ if (typeof window !== 'undefined') {
 
 Existe una mala práctica en React que puede traer graves problemas de rendimiento en tus aplicaciones. En ocasiones, en el cuerpo de la función de tu componente, te puedes encontrar el error de referencia al intentar acceder a `window`:
 
-```javascriptx
+```jsx
 export default User () {
   const user = window.localStorage.getItem('user')
   return <h1>{user}</h1>
@@ -74,7 +74,7 @@ export default User () {
 
 Al ver algo así puedes caer en la tentación de hacer la solución que hemos comentado anteriormente...
 
-```javascriptx
+```jsx
 // ❌ este código sería INCORRECTO en el servidor
 // y sólo está como ejemplo para ilustrar
 export default User () {
@@ -90,7 +90,7 @@ export default User () {
 
 Para evitar esto, lo ideal es que pases esta comprobación a un `useEffect` ya que sólo se ejecutan en el cliente y cada vez que se renderiza el componente. En este caso, con las dependencias vacías, hacemos que sólo se ejecute en el primer renderizado:
 
-```javascriptx
+```jsx
 // ✅ Esta sería la forma correcta de lidiar
 // con estos problemas en servidor/cliente
 import { useEffect } from 'react'
