@@ -1,3 +1,6 @@
+const $ = selector => document.querySelector(selector)
+const $$ = selector => document.querySelectorAll(selector)
+
 const loadedScripts = []
 const $ = s => document.querySelector(s)
 
@@ -46,7 +49,7 @@ function createYoutubeFrame (id) {
   )
 }
 
-document.querySelectorAll('.youtube-link').forEach(function (link) {
+$$('.youtube-link').forEach(function (link) {
   link.addEventListener('click', function (e) {
     e.preventDefault()
     const id = this.getAttribute('data-id')
@@ -96,13 +99,6 @@ class LiteYTEmbed extends window.HTMLElement {
     this.addEventListener('click', e => this.addIframe())
   }
 
-  // // TODO: Support the the user changing the [videoid] attribute
-  // attributeChangedCallback() {
-  // }
-
-  /**
-   * Add a <link rel={preload | preconnect} ...> to the head
-   */
   static addPrefetch (kind, url, as) {
     const linkEl = document.createElement('link')
     linkEl.rel = kind
@@ -286,7 +282,7 @@ function initTableOfContents () {
   // activate first element of table of contents
   firstTableOfContentsElement.classList.add('active')
   // get all links from table of contents
-  const links = document.querySelectorAll('#TableOfContents-container li a')
+  const links = $$('#TableOfContents-container li a')
 
   const changeBgLinks = entries => {
     entries.forEach(entry => {
@@ -313,8 +309,19 @@ function initTableOfContents () {
 
   const observer = new window.IntersectionObserver(changeBgLinks, options)
 
-  const articleTitles = document.querySelectorAll('#article-content h2')
+  const articleTitles = $$('#article-content h2')
   articleTitles.forEach(section => observer.observe(section))
 }
 
 initTableOfContents()
+
+fetch('https://midudev-apis.midudev.workers.dev/uptime/midudev')
+  .then(res => res.json())
+  .then(({ online }) => {
+    if (online) {
+      $('#live').style.display = 'block'
+    }
+  })
+  .catch(err => {
+    console.error(err)
+  })
