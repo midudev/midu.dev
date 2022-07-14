@@ -1,33 +1,69 @@
 <aside id='aside'>
   {{ if (.Params.toc) }}
-    <h3 class='section-title'>Contenido del artículo</h3>
-    {{.TableOfContents}}
-    <hr class='section-separation' />
+  <h3 class='section-title'>Contenido del artículo</h3>
+  {{.TableOfContents}}
+  <hr class='section-separation' />
   {{ end }}
 
-  <a href="https://miduconf.com" target="_blank" rel="noopener noreferrer" style='margin-bottom: 32px'>
+  <a href="https://miduconf.com" target="_blank" rel="noopener noreferrer"
+    style='margin-bottom: 32px; text-align: center; font-weight: bold; text-transform: uppercase; font-size: 14px;'>
     <img src="/images/miduconf.png" alt="Logo de MiduConf" class="logo">
+    <span id="countdown" style="display: block; padding-top: 8px; background: linear-gradient(45deg, #393a00, #5b5b5b 50%, #e86100);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;"></span>
   </a>
+
+  <script>
+    // Set the date we're counting down to
+    const countDownDate = new Date("Sep 13, 2022 17:00:00 UTC+2").getTime();
+
+    // Update the count down every 1 second
+    const x = setInterval(function () {
+
+      // Get today's date and time
+      const now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      const distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = "Faltan " + days + " días " + hours + " horas " + minutes + " minutos ";
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "¡Estamos en directo!";
+      }
+    }, 1000);
+  </script>
 
   <h3 class='section-title youtube-title'>Último vídeo en YouTube</h3>
 
   {{ $apiKeyValue := getenv "YOUTUBE_API_KEY" }}
 
   {{ if ($apiKeyValue)}}
-    {{ $url := "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=1"}}
-    {{ $apiKeyParam := "&key=" }}
-    {{ $videos := getJSON $url $apiKeyParam $apiKeyValue }}
+  {{ $url :=
+  "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU8LeXCWOalN8SxlrPcG-PaQ&maxResults=1"}}
+  {{ $apiKeyParam := "&key=" }}
+  {{ $videos := getJSON $url $apiKeyParam $apiKeyValue }}
 
-    {{ range first 1 $videos.items }}
-    <a href='https://www.youtube.com/watch?v={{ .snippet.resourceId.videoId }}' class='youtube-link' data-id='{{ .snippet.resourceId.videoId }}' rel='nofollow noopener noreferrer'>
-      <picture>
-        <source srcset="https://i3.ytimg.com/vi_webp/{{ .snippet.resourceId.videoId }}/mqdefault.webp" type="image/webp">
-        <img class='cover' alt="{{.snippet.title}}" src="https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg">
-      </picture>
+  {{ range first 1 $videos.items }}
+  <a href='https://www.youtube.com/watch?v={{ .snippet.resourceId.videoId }}' class='youtube-link'
+    data-id='{{ .snippet.resourceId.videoId }}' rel='nofollow noopener noreferrer'>
+    <picture>
+      <source srcset="https://i3.ytimg.com/vi_webp/{{ .snippet.resourceId.videoId }}/mqdefault.webp" type="image/webp">
+      <img class='cover' alt="{{.snippet.title}}"
+        src="https://i3.ytimg.com/vi/{{ .snippet.resourceId.videoId }}/mqdefault.jpg">
+    </picture>
 
-      <h4>{{ .snippet.title }}</h4>
-    </a>
-    {{ end }}
+    <h4>{{ .snippet.title }}</h4>
+  </a>
+  {{ end }}
   {{ end }}
 
   <hr class='section-separation' />
@@ -40,70 +76,78 @@
   {{ end }}
   <hr class='section-separation' />
   <div id="aside-sticky">
-  <div id="newsletter-form">
-    <h3>¡Suscríbete a la newsletter!</h3>
-    <small>
-      Recibirás artículos de calidad sobre frontend y todas las novedades en las que vaya trabajando.<strong>¡Nada de spam 🙅‍♂️!</strong>
-    </small>
-    <form action="https://www.getrevue.co/profile/midudev/add_subscriber" method="post" name="revue-form">
-      <div>
-        <label for='aside-newsletter-email' class='u-none'>Correo electrónico</label>
-        <input type="hidden" name="ml-submit" value="1">
-        <div style='position: relative'>
-        <input autocomplete="email" id='aside-newsletter-email' required class="input" placeholder="Tu correo electrónico *" type="email" name="member[email]">
-          <button type="submit" name="member[subscribe]" id="member_submit">
-            Suscribirse
-          </button>
+    <div id="newsletter-form">
+      <h3>¡Suscríbete a la newsletter!</h3>
+      <small>
+        Recibirás artículos de calidad sobre frontend y todas las novedades en las que vaya trabajando.<strong>¡Nada de
+          spam 🙅‍♂️!</strong>
+      </small>
+      <form action="https://www.getrevue.co/profile/midudev/add_subscriber" method="post" name="revue-form">
+        <div>
+          <label for='aside-newsletter-email' class='u-none'>Correo electrónico</label>
+          <input type="hidden" name="ml-submit" value="1">
+          <div style='position: relative'>
+            <input autocomplete="email" id='aside-newsletter-email' required class="input"
+              placeholder="Tu correo electrónico *" type="email" name="member[email]">
+            <button type="submit" name="member[subscribe]" id="member_submit">
+              Suscribirse
+            </button>
+          </div>
         </div>
-      </div>
 
-    </form>
-  </div>
-  {{ if isset .Params "tags" }}
-  <hr class='section-separation' />
+      </form>
+    </div>
+    {{ if isset .Params "tags" }}
+    <hr class='section-separation' />
     <style>
       #aside #cursos {
         --cursos-img-size: 60px;
         --cursos-font-size: 1rem;
         margin-top: 32px;
       }
+
       #aside #cursos a:hover {
         background: var(--bgc, #000);
         color: #fff;
       }
+
       #aside #cursos a img {
         flex: 0 0 32px;
       }
     </style>
     <h3>Cursos gratis de programación JavaScript 📚</h3>
     {{ partial "cursos.html" }}
-  {{ end }}
-  <h3>Patrocinadores</h3>
-  <br />
+    {{ end }}
+    <h3>Patrocinadores</h3>
+    <br />
 
-  <style>
-    #sponsors a {
-      height: 75px;
-      display: flex;
-      align-items: center;
-    }
-  </style>
-  <div id="sponsors">
-    <a href='https://www.twilio.com/referral/xdppiQ' target="_blank" rel="noopener noreferrer">
-      <img src='/images/logos/twilio-red.png' width='180' height='45' alt="Twilio logo" style='display: block; width: 180px; height: auto; margin: 0 auto'/>
-    </a>
+    <style>
+      #sponsors a {
+        height: 75px;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+    <div id="sponsors">
+      <a href='https://www.twilio.com/referral/xdppiQ' target="_blank" rel="noopener noreferrer">
+        <img src='/images/logos/twilio-red.png' width='180' height='45' alt="Twilio logo"
+          style='display: block; width: 180px; height: auto; margin: 0 auto' />
+      </a>
 
-    <a href='https://midu.link/api' target="_blank" rel="noopener noreferrer">
-      <img src='/images/logos/rapid-api.png' width='180' height='45' alt="RapidAPI Logo" style='display: block; width: 180px; height: auto; margin: 0 auto'/>
-    </a>
+      <a href='https://midu.link/api' target="_blank" rel="noopener noreferrer">
+        <img src='/images/logos/rapid-api.png' width='180' height='45' alt="RapidAPI Logo"
+          style='display: block; width: 180px; height: auto; margin: 0 auto' />
+      </a>
 
-    <a href='https://utm.io/udih1' target="_blank" rel="noopener noreferrer">
-      <img src='/images/algolia-horizontal-logo.png' width='180' height='45' alt="algolia logo" style='display: block; width: 180px; height: auto; margin: 0 auto'/>
-    </a>
-    
-    <a href='https://m.arc.dev/3pHMaUA' target="_blank" rel="noopener noreferrer">
-      <img src='/images/arc-dev-logo.png' width='180' height='45' alt="Arc Dev logo" style='display: block; width: 180px; height: auto; margin: 0 auto'/>
-    </a>
+      <a href='https://utm.io/udih1' target="_blank" rel="noopener noreferrer">
+        <img src='/images/algolia-horizontal-logo.png' width='180' height='45' alt="algolia logo"
+          style='display: block; width: 180px; height: auto; margin: 0 auto' />
+      </a>
+
+      <a href='https://m.arc.dev/3pHMaUA' target="_blank" rel="noopener noreferrer">
+        <img src='/images/arc-dev-logo.png' width='180' height='45' alt="Arc Dev logo"
+          style='display: block; width: 180px; height: auto; margin: 0 auto' />
+      </a>
+    </div>
   </div>
-</div>
 </aside>
