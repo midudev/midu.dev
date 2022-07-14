@@ -162,6 +162,16 @@ pre.highlight {
   position: relative;
 }
 
+.highlight .language-typescript::before {
+  background: url(/images/tags/typescript.png);
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  content: '';
+  border-radius: 0;
+  top: -12px;
+}
+
 .highlight .language-css::before {
   background: url(/images/tags/css.png);
   width: 32px;

@@ -2,7 +2,6 @@ const $ = selector => document.querySelector(selector)
 const $$ = selector => document.querySelectorAll(selector)
 
 const loadedScripts = []
-const $ = s => document.querySelector(s)
 
 function loadScript (src) {
   if (loadedScripts.includes(src)) return Promise.resolve()
@@ -42,7 +41,7 @@ function createYoutubeFrame (id) {
     'click',
     function (e) {
       e.preventDefault()
-      const lightbox = document.getElementById('lightbox')
+      const lightbox = $('#lightbox')
       lightbox.parentNode.removeChild(lightbox)
     },
     { once: true }
