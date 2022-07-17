@@ -7,7 +7,7 @@ tags:
   - javascript
 ---
 
-En algún momento te vas a encontrar el error `ReferenceError: window is not defined` is desarrollas con **JavaScript**. Esto es porque estás dando por hecho que todos los entornos donde se ejecuta este lenguaje tiene acceso a este objeto global... **¡y no es así!**
+En algún momento te vas a encontrar el error `ReferenceError: window is not defined` si desarrollas con **JavaScript**. Esto es porque estás dando por hecho que todos los entornos donde se ejecuta este lenguaje tiene acceso a este objeto global... **¡y no es así!**
 
 Por ejemplo, si estás trabajando con Node.js, no tienes acceso al objeto `window` y, por lo tanto, es posible que si intentas acceder a `window` te devuelva este error:
 
@@ -30,7 +30,7 @@ if (typeof window !== 'undefined') {
 }
 ```
 
-¿Por qué usar `typeof window !== 'undefined` en lugar de `window === undefined`? Es bien sencillo. El primero no fallará al hacer la comprobación pero el segundo fallaría ya que `window` no es accesible y no puede mirar que tenga el valor `undefined`.
+¿Por qué usar `typeof window !== 'undefined'` en lugar de `window === undefined`? Es bien sencillo. El primero no fallará al hacer la comprobación pero el segundo fallaría ya que `window` no es accesible y no puede mirar que tenga el valor `undefined`.
 
 > En JavaScript hay que diferenciar entre el valor `undefined` y que una variable no está definida, por lo tanto no es accesible, y su tipo sea `undefined`.
 
