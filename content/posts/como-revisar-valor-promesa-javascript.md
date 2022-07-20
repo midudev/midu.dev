@@ -3,6 +3,7 @@ title: "Cómo revisar que un valor es una Promesa en JavaScript"
 date: '2022-07-12'
 description: No hay un método que directamente nos diga que un valor es una Promesa pero podemos conseguirlo con unas pocas líneas de código
 toc: true
+draft: true
 tags:
   - javascript
 ---
