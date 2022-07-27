@@ -3,13 +3,14 @@ title: No todo es un objeto en JavaScript
 date: '2022-07-22'
 description: Existe la errónea creencia que en JavaScript todo es un objeto o hereda de Object. Te explico por qué.
 topic: javascript
+toc: true
 tags:
 - javascript
 ---
 
 Decir que en JavaScript *"todo es un objeto"* es incorrecto... No *"todo hereda de Object"* en el lenguaje, aunque lo parezca. No sé de dónde salió esa idea pero... es un error pensar esto.
 
-## Tipos de datos en JavaScript
+## Tipos de datos en JavaScript
 
 [Según la especificación de ECMAScript](https://tc39.es/ecma262/#sec-type), **los tipos de datos disponibles en JavaScript se separan en dos grupos: primitivos y objetos.**
 
@@ -22,7 +23,7 @@ Todo lo que no es un primitivo, es un objeto. No sólo el propio `Object`. Tambi
 
 Las `Function` también son objetos. Con la particularidad que pueden ser invocados (ejecutados).
 
-## `typeof` para salir *casi* de dudas
+## `typeof` para salir *casi* de dudas
 
 Para saber el tipo de dato en JavaScript podemos usar el operador `typeof`. De hecho, **este operador es el que justamente viene a desmentir que todo sea un objeto** aunque tiene algunas particularidades que luego comentaremos.
 
@@ -53,7 +54,7 @@ typeof function () {} // function
 
 > null por un error histórico tiene como typeof object. Pero no es que sea un object ni que herede de él. Nos e arregla el bug para evitar problemas de retrocompatibilidad. Es lo que tiene la web.
 
-## Boxing de tipos primitivos
+## Boxing de tipos primitivos
 
 ¿Dónde viene entonces la confusión de que todo es un objeto en JavaScript? La confusión viene porque los primitivos parecen tener propiedades y métodos.
 
