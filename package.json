@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "@sindresorhus/slugify": "2.1.0",
-    "algoliasearch": "4.13.1",
+    "algoliasearch": "4.14.2",
     "chrome-aws-lambda": "10.1.0",
-    "playwright-core": "1.23.2",
+    "playwright-core": "1.24.2",
     "rss-parser": "3.12.0",
     "string-strip-html": "8.3.0",
     "xml2json": "0.12.0"
