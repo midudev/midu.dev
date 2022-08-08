@@ -319,8 +319,14 @@ fetch('https://midudev-apis.midudev.workers.dev/uptime/midudev')
   .then(({ online }) => {
     if (online) {
       $('#live').style.display = 'block'
+      $('#live-frame').innerHTML = `<iframe src="https://player.twitch.tv/?channel=midudev&parent=${document.location.hostname}" frameborder="0" width="320" height="200" allowfullscreen="true" scrolling="no"></iframe>`
     }
   })
   .catch(err => {
     console.error(err)
   })
+
+$('#live-close').addEventListener('click', () => {
+  $('#live').style.display = 'none'
+  $('#live').innerHTML = ''
+})

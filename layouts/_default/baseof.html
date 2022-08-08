@@ -99,11 +99,42 @@
       text-align: center;
       padding: 8px;
       animation: background 3s ease infinite;
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      border-radius: 8px;
+      z-index: 99;
+      box-shadow: 0px 0px 100px 5px rgba(140, 0, 255, 0.52);
     }
 
-    #live u {
-      text-decoration: none;
+    #live-frame {
+      aspect-ratio: 16/9;
+    }
+
+    #live-description {
+      padding-top: 4px;
+      font-size: 14px;
+    }
+
+    #live a {
+      color: #ffffff;
       border-bottom: 2px solid #eee;
+    }
+
+    #live button {
+      position: absolute;
+      right: 8px;
+      top: -8px;
+      border-radius: 9999px;
+      border: 0;
+      font-weight: bold;
+      padding: 4px 8px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    #live button:hover {
+      background: rgb(255, 255, 191);
     }
 
     @keyframes background {
@@ -118,22 +149,25 @@
       }
     }
   </style>
-  <a href='https://twitch.tv/midudev' target='_blank' id='live'>
-    <svg x="0" y="0" viewBox="0 0 2400 2800" height="24" width="28" xml:space="preserve">
-      <style>
-          .twitch-st1 {
-              fill: #9146ff
-          }
-      </style>
-      <path fill="#fff" d="M2200 1300l-400 400h-400l-350 350v-350H600V200h1600z" />
-      <g>
-          <path class="twitch-st1"
-              d="M500 0L0 500v1800h600v500l500-500h400l900-900V0H500zm1700 1300l-400 400h-400l-350 350v-350H600V200h1600v1100z" />
-          <path class="twitch-st1" d="M1700 550h200v600h-200zM1150 550h200v600h-200z" />
-      </g>
-    </svg>
-  ¡Estamos en directo en Twitch! <u>¡Entra y participa!</u>
-  </a>
+  <div id='live'>
+    <button id="live-close">Cerrar 𝖷</button>
+    <div id="live-frame"></div>
+    <div id="live-description">
+      <p><svg x="0" y="0" viewBox="0 0 2400 2800" height="24" width="28" xml:space="preserve">
+        <path fill="#fff" d="M2200 1300l-400 400h-400l-350 350v-350H600V200h1600z" />
+        <g>
+            <path fill="#9146ff"
+                d="M500 0L0 500v1800h600v500l500-500h400l900-900V0H500zm1700 1300l-400 400h-400l-350 350v-350H600V200h1600v1100z" />
+            <path fill="#9146ff" d="M1700 550h200v600h-200zM1150 550h200v600h-200z" />
+        </g>
+      </svg>¡Estamos en directo en Twitch!</p>
+      <p>
+        <a href='https://twitch.tv/midudev' target='_blank'>
+          ¡Entra y participa!
+        </a>
+      </p>
+    </div>
+  </div>
 
   </div>
   <header class='header'>
