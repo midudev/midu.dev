@@ -94,7 +94,7 @@ Y no lo es. No son iguales, ni son del mismo tipo. Y, claro, el primero no hered
 ```javascript
 "hola" === new String("hola") // false
 2 === new Number(2) // false
-true === new Boolean(true) // true
+true === new Boolean(true) // false
 ```
 
 Ojo. No confundas usar el `new Boolean(true)` con simplemente usar `Boolean(true)`. El primero crea una instancia del objeto Boolean y el segundo sólo hace una conversión del parámetro al tipo primitivo `boolean`.
@@ -102,7 +102,7 @@ Ojo. No confundas usar el `new Boolean(true)` con simplemente usar `Boolean(true
 ```javascript
 true === Boolean(true) // true
 true === Boolean(1) // true
-true === new Boolean(true) // false
+true === Boolean(true) // true
 ```
 
 **Los objetos son una parte MUY importante en JavaScript pero eso no significa que TODO sea un objeto.**
