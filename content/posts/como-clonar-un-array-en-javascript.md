@@ -149,10 +149,9 @@ const dynosAndFriends = ['🦖', '🦕', ['🦎', '🐊']]
 const cloneArray = items =>
   items.map(item =>
     Array.isArray(item)
-      ? clone(item)
+      ? cloneArray(item)
       : item
     )
-  )
 
 const copyOfDynosAndFriends = cloneArray(dynosAndFriends)
 ```
