@@ -7,6 +7,11 @@
   --p-separation: 96px;
   --p-u-center: 0 32px;
   --w-aside: 320px;
+
+  --dark-background: #20252C;
+  --dark-color-hover: #3c4654;
+  --dark-text: #fafafa;
+  --dark-text-secondary: #bcbcbc;
 }
 
 html {
@@ -927,4 +932,137 @@ twitter-widget {
 
 .ais-Hits-item em {
   background: #d0ecff;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--dark-background);
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--dark-text);
+  }
+
+  .ais-SearchBox-input {
+    background-color: var(--dark-background);
+    border-color: var(--dark-color-hover);
+    color: var(--dark-text);
+  }
+
+  .home-article:hover,
+  #aside a:hover
+  {
+    background: var(--dark-color-hover) !important;
+  }
+
+  #TableOfContents a {
+    color: var(--dark-text-secondary) !important;
+  }
+
+  #TableOfContents ul li.active a,
+  #TableOfContents a:hover
+  {
+    color: var(--dark-text);
+    background: var(--dark-color-hover) !important;
+  }
+
+  :not(pre)>code {
+    background: var(--dark-text) !important;
+  }
+
+  .section-title {
+    color: var(--dark-text);
+  }
+
+  .home-article h2, 
+  .home-article .meta,
+  #article-content p, 
+  #article-content li,
+  #aside h4,
+  .section-description
+  {
+    color: var(--dark-text-secondary) !important;
+  }
+
+  .home-article:hover h2 {
+    color: var(--dark-text) !important;
+  }
+
+  .ais-Hits-item {
+    background: var(--dark-color-hover);
+  }
+
+  #nav a {
+    color: var(--dark-text);
+  }
+
+  #nav a:hover {
+    color: var(--dark-text);
+    background: var(--dark-color-hover);
+  }
+
+  #article-content a:hover {
+    color: #09f;
+    border-color: #09f;
+    background-color: transparent;
+  }
+
+  #article-header h1,
+  #article-meta a,
+  #article-content a,
+  #article-content h2, 
+  #article-content h3, 
+  #article-content h4, 
+  #article-content h5,
+  #article-meta
+  {
+    color: var(--dark-text);
+  }
+
+  #article-content blockquote p,
+  #article-content blockquote a
+  {
+    color: var(--dark-color-hover) !important;
+  }
+
+  #article-pagination a {
+    color: var(--dark-text-secondary) !important;
+    background: transparent;
+  }
+  
+  .podcast-subscribe-title {
+    color: var(--dark-text) !important;
+  }
+
+  .topic {
+    background: transparent !important;
+    color: var(--dark-text-secondary) !important;
+  }
+
+  .topic:hover {
+    color: #09f !important;
+  }
+
+  footer {
+    background: transparent;
+  }
+
+  footer a {
+    color: var(--dark-text-secondary);
+  }
+
+  footer a:hover {
+    color: var(--dark-text);
+  }
+
+  #newsletter-form {
+    border-color: var(--dark-text-secondary);
+    background: var(--dark-text-secondary);
+  }
+
+  #newsletter-form h3 {
+    color: var(--dark-background);
+  }
 }
