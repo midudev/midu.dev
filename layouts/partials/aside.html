@@ -5,12 +5,28 @@
   <hr class='section-separation' />
   {{ end }}
 
+  <style>
+    #countdown {
+      display: block;
+      padding-top: 8px;
+      background-image: linear-gradient(45deg, #393a00, #5b5b5b 50%, #e86100);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #countdown {
+        background-image: linear-gradient(45deg, #feffd8, #ffdada 50%, #ffaa6d);
+      }
+    }
+  </style>
+
   <a href="https://miduconf.com" target="_blank" rel="noopener noreferrer"
     style='margin-bottom: 32px; text-align: center; font-weight: bold; text-transform: uppercase; font-size: 14px;'>
     <img src="/images/miduconf.png" alt="Logo de MiduConf" class="logo">
-    <span id="countdown" style="display: block; padding-top: 8px; background: linear-gradient(45deg, #393a00, #5b5b5b 50%, #e86100);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent; color: transparent;"></span>
+    <span id="countdown"></span>
   </a>
 
   <script>
