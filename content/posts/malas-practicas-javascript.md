@@ -27,7 +27,7 @@ const object = {}
 const array = [] 
 ```
 
-## Usar `var` en vez de `let` y `const`
+## Usar `var` en vez de `let` y `const`
 
 NO uses var en pleno 2022...
 
@@ -54,7 +54,7 @@ if (name === 'Miguel') {
 console.log(name) // 'Miguel'
 ```
 
-## Usar y abusar de las funciones impuras
+## Usar y abusar de las funciones impuras
 
 Las funciones impuras son aquellas que no siempre devuelven lo mismo o que leen (o escriben) información que puede cambiar fuera del ámbito de su código.
 
