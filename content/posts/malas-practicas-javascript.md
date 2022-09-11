@@ -11,7 +11,7 @@ Todo el mundo habla de las buenas prácticas en programación. Pero ¿qué pasa 
 
 Vamos a hablar algunas malas prácticas en JavaScript que debes evitar a toda costa. ¡Te las explico para que no te pase!
 
-## Crear objetos y arrays con el constructor
+## Crear objetos y arrays con el constructor
 
 A la hora de crear objetos y arrays NO uses el constructor.
 
@@ -109,7 +109,7 @@ if (a > 18) {
 if (age > 18) { ... }
 ```
 
-## Conversión de tipos con operadores
+## Conversión de tipos con operadores
 
 Deja de convertir tipos en JavaScript usando operadores.
 
@@ -133,7 +133,7 @@ Number(string); // 7
 String(number); // '0'
 ```
 
-## No utilices un if para devolver true/false de una condición
+## No utilices un if para devolver true/false de una condición
 
 NO utilices un `if` para devolver true o false.
 
@@ -153,7 +153,7 @@ if (num > 0 && num % 2 === 0) {
 return num > 0 && num % 2 === 0
 ```
 
-## No utilices `==` para comparar valores
+## No utilices `==` para comparar valores
 
 El operador `==` de JavaScript hace una comparación entre dos valores.
 
@@ -204,7 +204,7 @@ const isMiduConf = confId === MIDU_CONF_ID
 return productType === SOFTWARE_KEYS_TYPE_ID
 ```
 
-## async/await que no maneja errores
+## async/await que no maneja errores
 
 RECUERDA poner un try/catch en tu async/await.
 
@@ -236,3 +236,4 @@ try {
 const img = await downloadImage().catch(() => DEFAULT_IMG)
 ```
 
+Si quieres **Aprender JavaScript completamente gratis**, te recomiendo que te apuntes a [https://aprendejavascript.dev/](https://aprendejavascript.dev/).
