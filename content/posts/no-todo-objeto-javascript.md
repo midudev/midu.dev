@@ -52,7 +52,7 @@ Existe otro caso especial. Las funciones. Tienen su propio `typeof`, ya que son 
 typeof function () {} // function
 ```
 
-> null por un error histórico tiene como typeof object. Pero no es que sea un object ni que herede de él. Nos e arregla el bug para evitar problemas de retrocompatibilidad. Es lo que tiene la web.
+> null por un error histórico tiene como typeof object. Pero no es que sea un object ni que herede de él. No se arregla el bug para evitar problemas de retrocompatibilidad. Es lo que tiene la web.
 
 ## Boxing de tipos primitivos
 
