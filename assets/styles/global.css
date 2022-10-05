@@ -280,9 +280,8 @@ svg {
 }
 
 #article-content ul {
-  padding-left: 16px;
+  padding-left: 24px;
   padding-bottom: 16px;
-  list-style-position: inside;
 }
 
 #article-content li {
