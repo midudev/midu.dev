@@ -48,6 +48,21 @@ function createYoutubeFrame (id) {
   )
 }
 
+function initScheme () {
+  const scheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark-mode'
+    : 'light-mode'
+  console.log(scheme)
+  document.documentElement.setAttribute('scheme', scheme)
+}
+initScheme()
+
+$('#emoticon-mode').addEventListener('click', function (e) {
+  document.documentElement.getAttribute('scheme') === 'dark-mode'
+    ? document.documentElement.setAttribute('scheme', 'light-mode')
+    : document.documentElement.setAttribute('scheme', 'dark-mode')
+})
+
 $$('.youtube-link').forEach(function (link) {
   link.addEventListener('click', function (e) {
     e.preventDefault()
