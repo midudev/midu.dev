@@ -3,7 +3,6 @@ title: ¿Es React una biblioteca o un framework?
 date: '2022-10-12'
 description: Aprende la diferencia entre una biblioteca y un framework y cómo afecta a React
 topic: react
-toc: true
 tags:
 - react
 ---
