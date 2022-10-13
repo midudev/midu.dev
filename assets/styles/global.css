@@ -932,136 +932,113 @@ twitter-widget {
 .ais-Hits-item em {
   background: #d0ecff;
 }
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--dark-background);
-  }
-
-  h1,
-  h2,
-  h3 {
-    color: var(--dark-text);
-  }
-
-  .ais-SearchBox-input {
-    background-color: var(--dark-background);
-    border-color: var(--dark-color-hover);
-    color: var(--dark-text);
-  }
-
-  .home-article:hover,
-  #aside a:hover
-  {
-    background: var(--dark-color-hover) !important;
-  }
-
-  #TableOfContents a {
-    color: var(--dark-text-secondary) !important;
-  }
-
-  #TableOfContents ul li.active a,
-  #TableOfContents a:hover
-  {
-    color: var(--dark-text);
-    background: var(--dark-color-hover) !important;
-  }
-
-  :not(pre)>code {
-    background: var(--dark-text) !important;
-  }
-
-  .section-title {
-    color: var(--dark-text);
-  }
-
-  .home-article h2, 
-  .home-article .meta,
-  #article-content p, 
-  #article-content li,
-  #aside h4,
-  .section-description
-  {
-    color: var(--dark-text-secondary) !important;
-  }
-
-  .home-article:hover h2 {
-    color: var(--dark-text) !important;
-  }
-
-  .ais-Hits-item {
-    background: var(--dark-color-hover);
-  }
-
-  #nav a {
-    color: var(--dark-text);
-  }
-
-  #nav a:hover {
-    color: var(--dark-text);
-    background: var(--dark-color-hover);
-  }
-
-  #article-content a:hover {
-    color: #09f;
-    border-color: #09f;
-    background-color: transparent;
-  }
-
-  #article-header h1,
-  #article-meta a,
-  #article-content a,
-  #article-content h2, 
-  #article-content h3, 
-  #article-content h4, 
-  #article-content h5,
-  #article-meta
-  {
-    color: var(--dark-text);
-  }
-
-  #article-content blockquote p,
-  #article-content blockquote a
-  {
-    color: var(--dark-color-hover) !important;
-  }
-
-  #article-pagination a {
-    color: var(--dark-text-secondary) !important;
-    background: transparent;
-  }
-  
-  .podcast-subscribe-title {
-    color: var(--dark-text) !important;
-  }
-
-  .topic {
-    background: transparent !important;
-    color: var(--dark-text-secondary) !important;
-  }
-
-  .topic:hover {
-    color: #09f !important;
-  }
-
-  footer {
-    background: transparent;
-  }
-
-  footer a {
-    color: var(--dark-text-secondary);
-  }
-
-  footer a:hover {
-    color: var(--dark-text);
-  }
-
-  #newsletter-form {
-    border-color: var(--dark-text-secondary);
-    background: var(--dark-text-secondary);
-  }
-
-  #newsletter-form h3 {
-    color: var(--dark-background);
-  }
+html[scheme='dark-mode'] body {
+  background: var(--dark-background);
+}
+html[scheme='dark-mode'] h1,
+html[scheme='dark-mode'] h2,
+html[scheme='dark-mode'] h3 {
+  color: var(--dark-text);
+}
+html[scheme='dark-mode'] img#midudev-logo {
+  content: url('/logo-dark.png') !important;
+}
+html[scheme='dark-mode'] a#emoticon-mode::after {
+  content: '🌚' !important;
+}
+a#emoticon-mode {
+  font-size: x-large;
+}
+html[scheme='light-mode'] a#emoticon-mode::after {
+  content: '🌞' !important;
+}
+html[scheme='dark-mode'] .ais-SearchBox-input {
+  background-color: var(--dark-background);
+  border-color: var(--dark-color-hover);
+  color: var(--dark-text);
+}
+html[scheme='dark-mode'] .home-article:hover,
+#aside a:hover {
+  background: var(--dark-color-hover) !important;
+}
+html[scheme='dark-mode'] #TableOfContents ul li.active a,
+html[scheme='dark-mode'] #TableOfContents a:hover {
+  color: var(--dark-text);
+  background: var(--dark-color-hover) !important;
+}
+html[scheme='dark-mode'] :not(pre) > code {
+  background: var(--dark-text) !important;
+}
+html[scheme='dark-mode'] .section-title {
+  color: var(--dark-text);
+}
+html[scheme='dark-mode'] .home-article h2,
+html[scheme='dark-mode'] .home-article .meta,
+html[scheme='dark-mode'] #article-content p,
+html[scheme='dark-mode'] #article-content li,
+html[scheme='dark-mode'] #aside h4,
+html[scheme='dark-mode'] .section-description {
+  color: var(--dark-text-secondary) !important;
+}
+html[scheme='dark-mode'] .home-article:hover h2 {
+  color: var(--dark-text) !important;
+}
+html[scheme='dark-mode'] .ais-Hits-item {
+  background: var(--dark-color-hover);
+}
+html[scheme='dark-mode'] #nav a {
+  color: var(--dark-text);
+}
+html[scheme='dark-mode'] #nav a:hover {
+  color: var(--dark-text);
+  background: var(--dark-color-hover);
+}
+html[scheme='dark-mode'] #article-content a:hover {
+  color: #09f;
+  border-color: #09f;
+  background-color: transparent;
+}
+html[scheme='dark-mode'] #article-header h1,
+html[scheme='dark-mode'] #article-meta a,
+html[scheme='dark-mode'] #article-content a,
+html[scheme='dark-mode'] #article-content h2,
+html[scheme='dark-mode'] #article-content h3,
+html[scheme='dark-mode'] #article-content h4,
+html[scheme='dark-mode'] #article-content h5,
+html[scheme='dark-mode'] #article-meta {
+  color: var(--dark-text);
+}
+html[scheme='dark-mode'] #article-content blockquote p,
+html[scheme='dark-mode'] #article-content blockquote a {
+  color: var(--dark-color-hover) !important;
+}
+html[scheme='dark-mode'] #article-pagination a {
+  color: var(--dark-text-secondary) !important;
+  background: transparent;
+}
+html[scheme='dark-mode'] .podcast-subscribe-title {
+  color: var(--dark-text) !important;
+}
+html[scheme='dark-mode'] .topic {
+  background: transparent !important;
+  color: var(--dark-text-secondary) !important;
+}
+html[scheme='dark-mode'] .topic:hover {
+  color: #09f !important;
+}
+html[scheme='dark-mode'] footer {
+  background: transparent;
+}
+html[scheme='dark-mode'] footer a {
+  color: var(--dark-text-secondary);
+}
+html[scheme='dark-mode'] footer a:hover {
+  color: var(--dark-text);
+}
+html[scheme='dark-mode'] #newsletter-form {
+  border-color: var(--dark-text-secondary);
+  background: var(--dark-text-secondary);
+}
+html[scheme='dark-mode'] #newsletter-form h3 {
+  color: var(--dark-background);
 }
