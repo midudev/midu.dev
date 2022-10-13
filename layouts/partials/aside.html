@@ -5,58 +5,10 @@
   <hr class='section-separation' />
   {{ end }}
 
-  <style>
-    #countdown {
-      display: block;
-      padding-top: 8px;
-      background-image: linear-gradient(45deg, #393a00, #5b5b5b 50%, #e86100);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      #countdown {
-        background-image: linear-gradient(45deg, #feffd8, #ffdada 50%, #ffaa6d);
-      }
-    }
-  </style>
-
   <a href="https://miduconf.com" target="_blank" rel="noopener noreferrer"
     style='margin-bottom: 32px; text-align: center; font-weight: bold; text-transform: uppercase; font-size: 14px;'>
     <img src="/images/miduconf.png" alt="Logo de MiduConf" class="logo">
-    <span id="countdown"></span>
   </a>
-
-  <script>
-    // Set the date we're counting down to
-    const countDownDate = new Date("Sep 13, 2022 17:00:00 UTC+2").getTime();
-
-    // Update the count down every 1 second
-    const x = setInterval(function () {
-
-      // Get today's date and time
-      const now = new Date().getTime();
-
-      // Find the distance between now and the count down date
-      const distance = countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML = "Faltan " + days + " días " + hours + " horas " + minutes + " minutos ";
-
-      // If the count down is finished, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown").innerHTML = "¡Estamos en directo!";
-      }
-    }, 1000);
-  </script>
 
   <h3 class='section-title youtube-title'>Último vídeo en YouTube</h3>
 
