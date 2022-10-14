@@ -1,6 +1,7 @@
 import { Resvg } from '@resvg/resvg-js'
 import satori from 'satori'
 import { html } from 'satori-html'
+import fetch from 'isomorphic-fetch'
 
 export default async (req, res) => {
   // get query string from req
