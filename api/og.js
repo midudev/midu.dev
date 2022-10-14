@@ -21,7 +21,7 @@ export default async (req, res) => {
     res.arrayBuffer()
   )
 
-  const titleFontSize = title.length > 50 ? '96px' : '128px'
+  const titleFontSize = title.length > 50 ? '85px' : '96px'
 
   const markup = html`<div
     style="display: flex; position: relative; flex-direction: column; width: 100vw; height: 100vh;"
@@ -48,7 +48,7 @@ export default async (req, res) => {
         style="width: 400px; position: absolute; bottom: -70px; right: -70px; opacity: .4;"
       />
       <h1
-        style="font-size: ${titleFontSize}; color: #111; text-align: left; line-height: 105%; letter-spacing: -2px;"
+        style="font-size: ${titleFontSize}; color: #111; text-align: left; line-height: 105%; letter-spacing: -2px; padding-right: 32px;"
       >
         ${title}
       </h1>
