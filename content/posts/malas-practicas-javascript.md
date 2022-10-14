@@ -49,7 +49,7 @@ console.log(name) // 'Midu'
 // ✅ Usando let y const
 const name = 'Miguel'
 if (name === 'Miguel') {
-  let name = 'Miguel'
+  let name = 'Midu'
 }
 console.log(name) // 'Miguel'
 ```
