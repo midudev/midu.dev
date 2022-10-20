@@ -855,7 +855,7 @@ twitter-widget {
 
 #hits {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 }
 
 .ais-SearchBox-input::-ms-clear,
