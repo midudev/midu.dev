@@ -7,7 +7,7 @@ tags:
 - react
 ---
 
-Existe una fina línea hoy en día entre qué es una biblioteca o un framework. Oficialmente, **React se autodenomina como biblioteca en su página web**. Esto es porque para poder crear una aplicación completa, necesitas usar otras bibliotecas, y se considera que React se enfoca específicamente
+Existe una fina línea hoy en día entre qué es una biblioteca o un framework. Oficialmente, **React se autodenomina como biblioteca en su página web**. Esto es porque para poder crear una aplicación completa, necesitas usar otras bibliotecas, y se considera que React se enfoca específicamente en la construcción de interfaces de usuario.
 
 Por ejemplo, *React* no ofrece un sistema de enrutado de aplicaciones oficial. Por ello, hay que usar una biblioteca como [React Router](https://reactrouter.com/) o usar un *framework* como [Next.js](https://nextjs.org/) que ya incluye un sistema de enrutado.
 
