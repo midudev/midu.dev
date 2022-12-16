@@ -42,7 +42,7 @@ Crear un entorno seguro donde cada opinión importa, saber empatizar y acelerar 
 ## Empodera y trabaja para ser prescindible
 
 Alguien que sea Senior **trabaja para ser prescindible.**
-Ayuda a los demás a crecer, confía en sus decisiones, permite que otra gente se equivoque para que aprende.
+Ayuda a los demás a crecer, confía en sus decisiones, permite que otra gente se equivoque para que aprenda.
 No hace micro-reviews de código. Aconseja pero empodera.
 
 ## Domina las buenas prácticas pero concede
