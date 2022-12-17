@@ -14,7 +14,7 @@ Mucha gente cree, **de forma equivocada**, que `for` es la forma más rápida de
 A favor de esa opinión hay que decir dos cosas:
 
 - En algunos casos sigue siendo cierto, como veremos en el artículo.
-- En algún momento del pasado sí fue verdad, porque los compiladores no contaban con las optimizacione que hoy sí tienen.
+- En algún momento del pasado sí fue verdad, porque los compiladores no contaban con las optimizaciones que hoy sí tienen.
 
 ## ¿Qué es el método `forEach` de Array?
 
