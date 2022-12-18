@@ -87,9 +87,9 @@ Y los resultados del benchmark en operaciones por segundo (más es mejor):
 
 Puedes revisar y ejecutar tu mismo el código en [este enlace](https://slug.vercel.app/s/for-bench).
 
-A> ¿Te dan otros números? ¡Es normal! Depende de la máquina y el runtime/navegador en el que ejecutes el código. Por ejemplo, Safari puede dar resultados muy diferentes a Chrome o Firefox. Incluso en alguno incluso puede `for` ser más rápido que `forEach` (aunque una diferencia poco significativa).
+> ¿Te dan otros números? ¡Es normal! Depende de la máquina y el runtime/navegador en el que ejecutes el código. Por ejemplo, Safari puede dar resultados muy diferentes a Chrome o Firefox. Incluso en alguno incluso puede `for` ser más rápido que `forEach` (aunque una diferencia poco significativa).
 
-A> ¿Cómo podrías mejorar la velocidad del for? Podrías guardar en una variable el valor de `array.length` para que no se tenga que acceder a él en cada iteración. También está demostrado que recorrer los arrays de atrás hacia delante es más rápido que de delante hacia atrás. Por lo tanto, podrías hacer algo como esto. Pero... ¿vale la pena?
+> ¿Cómo podrías mejorar la velocidad del for? Podrías guardar en una variable el valor de `array.length` para que no se tenga que acceder a él en cada iteración. También está demostrado que recorrer los arrays de atrás hacia delante es más rápido que de delante hacia atrás. Por lo tanto, podrías hacer algo como esto. Pero... ¿vale la pena?
 
 ## No siempre `forEach` es más rápido que `for`
 
