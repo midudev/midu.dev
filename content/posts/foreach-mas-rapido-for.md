@@ -9,12 +9,14 @@ tags:
 - javascript
 ---
 
-Mucha gente cree, **de forma equivocada**, que `for` es la forma más rápida de hacer bucles en JavaScript.
+Mucha gente cree, **de forma equivocada**, que `for` es la forma más rápida de hacer bucles en JavaScript. Y que `forEach` es más lento.
 
 A favor de esa opinión hay que decir dos cosas:
 
 - En algunos casos sigue siendo cierto, como veremos en el artículo.
 - En algún momento del pasado sí fue verdad, porque los compiladores no contaban con las optimizaciones que hoy sí tienen.
+
+Pero te voy a explicar en este artículo como esto ha cambiado y, en muchos casos, `forEach` es más rápido que `for` (especialmente en navegadores modernos y *runtimes* como Node).
 
 ## ¿Qué es el método `forEach` de Array?
 
@@ -136,10 +138,18 @@ Array.from({ length: 1000 }).forEach((_, i) => {
 })
 ```
 
+### El tamaño también importa
+
+El tamaño del array también importa. Si el array es muy pequeño, el tiempo de ejecución de `forEach` puede ser más rápido que el de `for`. Pero si el array es muy grande, el tiempo de ejecución de `for` puede ser más rápido que el de `forEach`.
+
+En todos los ejemplos anteriores hemos trabajado con un array de 1000 elementos. Pero si el array es más grande, como por ejemplo 50000 elementos, el tiempo de ejecución de `for` puede ser bastante más rápido que el de `forEach`.
+
 ## Conclusión: no sacrifiques la legibilidad por velocidad
 
 Como hemos visto, `forEach` puede ser más rápido que `for` en algunos casos, pero no siempre. Y a veces hay otros métodos de Array que nos permite evitar el bucle `for` y hacer el código más legible... ¡y rápido!
 
 Sea como sea, **hay que tener en cuenta que la legibilidad del código puede ser más importante que la velocidad**. Si el código es más legible, será más fácil de mantener y de depurar. Y si es más fácil de mantener y de depurar, será más fácil de mejorar y de optimizar. Y la diferencia de velocidad, en este caso, será insignificante.
+
+También el tamaño del Array es importante. Si el array es muy pequeño, el tiempo de ejecución de `forEach` puede ser más rápido que el de `for`. Pero si el array es muy grande, el tiempo de ejecución de `for` puede ser bastante más rápido que el de `forEach`.
 
 En los casos que tengas que iterar un número n de veces, que no sea un array ya creado, entonces puede ser buena idea usar directamente un `for` que no te obliga a crear un array para iterar.
