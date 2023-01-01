@@ -39,12 +39,12 @@ sharedSymbol === sameSharedSymbol // true
 Una vez que se ha creado un símbolo, **se puede utilizar como clave en un objeto**. Pero ten cuidado porque **los símbolos no se enumeran cuando se itera sobre las propiedades de un objeto**. Se podría decir que son como propiedades privadas, en cierto modo.
 
 ```javascript
-const symbol = Symbol('property of object')
+const mySymbol = Symbol('property of object')
 const myObject = {
   [mySymbol]: 'This is the value'
 }
 
-console.log(myObject[symbol]); // 'This is the value'
+console.log(myObject[mySymbol]); // 'This is the value'
 ```
 
 Los símbolos también se pueden utilizar como eventos únicos. Por ejemplo, si queremos crear una función que se ejecute cuando se hace clic en un elemento del DOM, podemos utilizar un símbolo para nombrar de forma única el evento y evitar conflictos con otros eventos que puedan estar en el mismo elemento.
