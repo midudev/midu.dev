@@ -364,6 +364,121 @@ El número de la suerte de midu es 7
 
 ## Tipos de datos
 
-Próximamente...
+*Rust* es un lenguaje con tipado estático por lo que debe, en tiempo de compilación, el tipo de cualquier valor que uses en el código.
+
+Como hemos visto en ejemplos anteriores, a veces no es necesario indicar el tipo ya que Rust lo puede *inferir* gracias al valor que le estamos asignando. Pero en otros casos sí es necesario.
+
+### Tipos de datos primitivos
+
+Igual que en *JavaScript*, en Rust también tenemos **datos primitivos**. Se le llaman así porque estos datos son la construcción básica de los lenguajes de programación. Son **los tipos de datos más simples que existen y que no se pueden descomponer en otros más pequeños.**
+
+Sin embargo, en Rust estos primitivos se dividen en dos grupos: los *escalares* y los *compuestos*.
+
+#### Tipos escalares
+
+En este grupo tienes todos los tipos que representan un único valor y Rust tiene cuatro:
+
+- *bool*: Para guardar un valor cierto o falso con *true* o *false* respectivamente.
+- *char*: Un carácter Unicode de 4 bytes envuelto en comillas simples.
+- *integers*: Un número entero (que puede ser de diferentes tamaños).
+- *float*: Un número decimal (que puede ser de diferentes tamaños).
+
+Antes de entrar a detallar cada uno, ya podemos ver algunas diferencias con JavaScript.
+
+Primero, **en Rust la cadena de texto no es un tipo escalar** (aunque sí es un primitivo). Esto es porque, como ves, existe el escalar a nivel de caracter (`char`) por lo que una cadena de texto es una construcción a base de caracteres. Por eso está en el grupo de los compuestos.
+
+También, **en Rust no tenemos un sólo tipo de número**. En JavaScript tenemos un único tipo de número que es el `number` y que puede ser entero o decimal. En Rust tenemos dos tipos de números: `integers` y `floats` y cada uno tiene diferentes tamaños en bytes como veremos a continuación.
+
+Tampoco hay rastro de los tipos `null` y `undefined` que existen en JavaScript. **En Rust no hay valores nulos**. Si quieres representar un valor nulo, puedes usar el tipo `Option` que veremos más adelante.
+
+##### Booleanos
+
+Los booleanos son los valores `true` y `false` que representan la verdad y la falsedad. Ocupan un solo *byte* y en Rust se representan con el tipo `bool`:
+
+```rust
+fn main() {
+  // indicar el tipo es opcional
+  // ya que Rust lo puede inferir
+  let is_active = true;
+  // pero también podemos indicarlo
+  // si lo preferimos
+  let is_greater: bool = 10 > 5;
+}
+```
+
+Este tipo escalar funciona de forma idéntica a JavaScript. Por ejemplo, podemos usarlo en una condición:
+
+```rust
+fn main() {
+  let is_active = true;
+  if is_active {
+    println!("Está activo");
+  }
+}
+```
+
+##### Caracteres
+
+Los caracteres son los valores que representan un carácter Unicode y ocupan 4 bytes. Se debe envolver con comillas simples.  En Rust se representan con el tipo `char`:
+
+```rust
+fn main() {
+  // indicar el tipo es opcional
+  // ya que Rust lo puede inferir
+  let letter = 'a';
+  // pero también podemos indicarlo
+  // si lo preferimos
+  let letter: char = 'a';
+}
+```
+
+Este es un tipo de dato que no existe en JavaScript, donde solo tenemos cadenas de texto. Así que en Rust ya ves que las comillas simples se usan para caracteres y las dobles para cadenas de texto.
+
+##### Números enteros
+
+Representa un número entero (un número que no tiene decimales). Como Rust es un lenguaje pensado para tener el mejor rendimiento, **los números enteros pueden ser de diferentes tamaños en bytes**.
+
+Así que a la hora de tipar un número deberemos tomar dos decisiones:
+
+- El **número de bytes que queremos que ocupe el número entero**.
+- Si queremos que el número sea **positivo o negativo**.
+
+Los tipos disponibles para representar números enteros en Rust se representan con los tipos `i8`, `i16`, `i32`, `i64`, `i128` y `isize` (para números enteros positivos y negativos) o `u8`, `u16`, `u32`, `u64`, `u128` y `usize` (para números enteros positivos).
+
+Por ejemplo, con `i8` podremos representar números que van del -128 al 127. Con `u8` podremos representar números que van del 0 al 255. Con `i32` podremos representar números que van del -2.147.483.648 al 2.147.483.647. Con `u32` podremos representar números que van del 0 al 4.294.967.295.
+
+`isize` y `usize` son tipos que dependen de la arquitectura de la máquina donde se ejecute el programa. En una máquina de 64 bits, `isize` y `usize` serán de 64 bits.
+
+```rust
+fn main() {
+  // si dejamos que Rust infiera el tipo
+  // lo hará como i32
+  let number = 10;
+  // pero podemos indicar el tipo nosotros
+  // si sabemos qué números representaremos
+  let number: u8 = 10;
+}
+```
+
+Como ves, **en Rust no existe un único tipo de número entero**. En JavaScript tenemos `number` que puede ser entero o decimal. En Rust tenemos `integers` y `floats` y cada uno tiene diferentes tamaños en bytes.
+
+##### Punto flotante
+
+Los números con punto flotante nos permite representar números con mayor precisión y, por lo tanto, pueden contener fracciones (decimales).
+
+En este caso sólo podemos tener de 32 y 64 bits con los tipos `f32` y `f64`.
+
+```rust
+fn main() {
+  // si dejamos que Rust infiera el tipo
+  // lo hará como f64 por defecto
+  let number = 10.5;
+  // pero podemos indicar el tipo nosotros
+  // si sabemos qué números representaremos
+  let number: f32 = 10.5;
+}
+```
+
+Con `f32` puedes represntar números que van del -3.4028235e+38 al 3.4028235e+38. Con `f64` puedes representar números que van del -1.7976931348623157e+308 al 1.7976931348623157e+308.
 
 [Sígueme en Twitch para saber cuanto llega la próxima entrega.](https://www.twitch.tv/midudev)
