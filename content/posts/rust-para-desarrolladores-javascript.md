@@ -4,6 +4,7 @@ date: '2023-01-10'
 description: "Aprende Rust usando todos tus conocimientos que ya tienes de JavaScript"
 tags:
   - rust
+toc: true
 ---
 
 Este es un **curso de Rust pensado especialmente para personas con conocimientos en JavaScript**, de forma que encontrarás muchas analogías útiles entre ambos lenguajes de programación, su sintaxis e incluso su ecosistema.
