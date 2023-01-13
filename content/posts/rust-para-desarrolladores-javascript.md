@@ -482,4 +482,215 @@ fn main() {
 
 Con `f32` puedes represntar números que van del -3.4028235e+38 al 3.4028235e+38. Con `f64` puedes representar números que van del -1.7976931348623157e+308 al 1.7976931348623157e+308.
 
+### Tipos compuestos
+
+Dentro de los tipos primitivos, también tenemos los tipos compuestos. Estos tipos nos permiten agrupar valores de otros tipos y tenemos dos tipos de datos compuestos: los arrays y las tuplas.
+
+#### Arrays
+
+Los Arrays en JavaScript y Rust son similares. En ambos casos, son estructuras de datos que nos permiten crear una lista de elementos.
+
+El siguiente código es válido en ambos lenguajes de programación:
+
+```javascript
+let avengers = ["Iron Man", "Thor", "Hulk", "Captain America"];
+```
+
+Sin embargo hay dos diferencias clave entre los arrays de *JavaScript* y los arrays de *Rust*:
+
+- En *JavaScript*, los Arrays son dinámicos, es decir, podemos cambiar su longitud en cualquier momento. En Rust los Arrays tienen un tamaño fijo y una vez creados no se pueden modificar.
+- En *JavaScript* los Arrays pueden contener elementos de diferentes tipos. En *Rust* los Arrays solo pueden contener elementos de un mismo tipo.
+
+```rust
+// ❌ este código es incorrecto
+// ya que un Array en Rust necesita
+// que todos sus elementos sean del mismo tipo
+fn main() {
+  let avengers = ["Iron Man", 2, "Black Widow"];
+}
+```
+
+Si intentas compilar el código anterior, verás que Rust te mostrará un error de compilación `error[E0308]: mismatched types`.
+
+##### Mutabilidad de Array
+
+Como hemos visto antes, las variables que creamos con `let` en Rust son inmutables por defecto. Esto también se aplica a los Arrays. Si intentamos modificar un elemento de un Array, Rust nos mostrará un error de compilación.
+
+```rust
+// ❌ Este código es incorrecto porque
+// intentamos modificar un elemento de un Array
+// que es inmutable
+fn main() {
+  let midu = ["Miguel", "Duran"];
+  midu[0] = "Miguel Ángel";
+}
+```
+
+Pero podemos crear Arrays mutables usando la palabra clave `mut`:
+
+```rust
+// ✅ Este código es correcto porque
+// creamos un Array mutable
+fn main() {
+  let mut midu = ["Miguel", "Duran"];
+  midu[0] = "Miguel Ángel";
+}
+```
+
+Como ves, para acceder a una posición de un Array usamos la misma notación que en JavaScript: `array[index]`.
+
+##### Tamaño de Array
+
+En JavaScript, la longitud de un Array se puede obtener usando la propiedad `length`. En Rust, para obtener el tamaño de un Array usamos la función `len()`:
+
+```rust
+fn main() {
+  let fav_movies = ["Avengers", "Iron Man", "Thor"];
+  println!("Tengo {} películas favoritas", fav_movies.len()); 
+}
+```
+
+#### Tuplas
+
+Las tuplas son un tipo de dato que nos permite agrupar valores de distintos tipos. Al igual que los *Array*, las tuplas tienen un tamaño fijo y una vez creadas no se pueden modificar.
+
+Es un tipo de dato que no existe en JavaScript (lo más parecido sería un *Array* de tamaño fijo y de distintos tipos de elementos).
+
+```rust
+fn main() {
+  // indicar el tipo es opcional
+  // ya que Rust lo puede inferir
+  let videoconsole = ("PS5", 550, true);
+
+  // pero también podemos indicarlo
+  // si lo preferimos:
+  let videoconsole: (&str, i32, bool) = ("PS5", 550, true);
+}
+```
+
+Para acceder a los valores de una tupla podemos usar la notación de punto y el índice del valor que queremos obtener:
+
+```rust
+fn main() {
+  let videoconsole = ("PS5", 550, true);
+  let name = videoconsole.0;
+  let price = videoconsole.1;
+  let is_latest = videoconsole.2;
+}
+```
+
+Igual que en los Arrays, si creamos la variable con `mut` podremos modificar los valores de la tupla. Pero, recuerda, no podemos modificar su tamaño ni guardar un elemento de un tipo distinto al que ya tenía esa posición.
+
+```rust
+fn main() {
+  let mut videoconsole = ("PS5", 550, true);
+  videoconsole.0 = "Xbox Series X";
+  videoconsole.1 = 499;
+  videoconsole.2 = true;
+  // ❌ la siguiente línea sería incorrecta
+  // ya que estamos intentando guardar un valor
+  // de tipo &str en una posición que ya tiene
+  // un valor de tipo i32
+  videoconsole.1 = "Mucho dinero";
+}
+```
+
+#### Desestructuración de tuplas y Arrays
+
+Al igual que en JavaScript, podemos desestructurar tuplas y Arrays para obtener sus valores de forma más sencilla.
+
+```rust
+fn main() {
+  // desestructuración de una tupla
+  let game = ("God of War", 70);
+  let (game_name, game_price) = game;
+
+  println!("El juego {game_name} cuesta {game_price}€");
+
+  // desestructuración de un Array
+  let languagues = ["JavaScript", "Rust", "Python"];
+  let [js, rust, python] = languagues;
+
+  println!("Los lenguajes son {js}, {rust} y {python}");
+}
+```
+
+A veces, no nos interesa obtener todos los valores de una tupla o un Array, sino solo algunos. En estos casos podemos usar la desestructuración y usar `_` para indicar que no nos interesa ese valor:
+
+```rust
+fn main() {
+  // desestructuración de una tupla
+  let game = ("God of War", 70);
+  let (_, game_price) = game;
+
+  println!("El juego cuesta {game_price}");
+
+  // desestructuración de un Array
+  let languagues = ["JavaScript", "Rust", "Python"];
+  let [js, _, python] = languagues;
+
+  println!("Aprende {js} y {python}");
+}
+```
+
+> Cuando usamos `_` en una desestructuración, Rust no crea una variable para ese valor. Es como si no estuviera ahí.
+
+¿Qué pasa si sólo quieres obtener el primer valor de una tupla o un Array? Aquí hay una diferencia importante con JavaScript: en Rust siempre debemos indicar qué hacemos con el resto de valores. Si no lo hacemos, Rust nos mostrará un error de compilación.
+
+```rust
+fn main() {
+  // ❌ Esto es incorrecto porque no indicamos
+  // qué hacemos con el resto de valores
+  let game = ("God of War", 70);
+  let (game_name) = game;
+
+  // ✅ Esto es correcto porque indicamos
+  // qué hacemos con el resto de valores
+  let game = ("God of War", 70);
+  let (game_name, _) = game;
+}
+```
+
+Seguramente te estarás preguntando... ¿Qué pasa si la Tupla o Array tiene más valores? ¿Tengo que usar `_` para todos ellos? ¿Y qué pasa si no conozco exactamente el tamaño de la Tupla o Array?
+
+En estos casos, podemos usar `..` para indicar que no nos interesa el resto de valores
+
+```rust
+fn main() {
+  // desestructuración de una tupla
+  let game = ("God of War", 70, "PS4");
+  let (game_name, ..) = game;
+
+  println!("El juego es {game_name}");
+
+  // desestructuración de un Array
+  let languagues = ["JavaScript", "Rust", "Python", "Java"];
+  let [js, ..] = languagues;
+
+  println!("Aprende {js}");
+}
+```
+
+Con `..` estamos indicando que el resto de valores no nos interesan. Pero, ¿qué pasa si queremos obtener el último valor de una tupla o un Array? En este caso, podemos usar `..` al final de la desestructuración:
+
+```rust
+fn main() {
+  // desestructuración de una tupla
+  let game = ("God of War", 70, "PS4");
+  let (.., game_platform) = game;
+
+  println!("El juego es para {game_platform}");
+
+  // desestructuración de un Array
+  let languagues = ["JavaScript", "Rust", "Python", "PHP"];
+  let [.., php] = languagues;
+
+  println!("Aprende {php}");
+}
+```
+
+## Funciones
+
+Pronto.
+
 [Sígueme en Twitch para saber cuanto llega la próxima entrega.](https://www.twitch.tv/midudev)
