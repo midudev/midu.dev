@@ -691,6 +691,298 @@ fn main() {
 
 ## Funciones
 
-Pronto.
+En Rust, las funciones se definen con la palabra reservada `fn` y ya hemos visto algunos ejemplos:
+
+```rust
+fn main() {
+  // aqui va el código de la función
+}
+```
+
+Mientras que en JavaScript usamos la palabra `function`, aquí usamos `fn`. Por lo demás, es muy similar.
+
+Vamos a crear nuestra primera función fuera de `main` que al recibir un número, nos devuelva el doble de ese número:
+
+```rust
+fn multiply_by2(number: i32) -> i32 {
+  return number * 2
+}
+```
+
+Ya empezamos a ver más diferencias importantes respecto a JavaScript.
+
+En Rust, como en JavaScript, las funciones pueden recibir parámetros. Pero aquí necesitamos indicar el tipo de dato que reciben. En este caso, la función `multiply_by2` recibe un número entero (`i32`).
+
+También **es obligatorio que indiquemos el tipo de dato que devuelve la función**. En este caso, la función `multiply_by2` devuelve un número entero (`i32`).
+
+Así que sí, para que nuestras funciones de Rust funcionen necesitamos indicar los tipos de los parámetros y del resultado.
+
+> En Rust, las funciones siempre deuvuelven algo. Por defecto, si no indicamos nada, devuelven `()`, una tupla vacía que se le conoce como `unit`.
+
+Vamos a usar nuestra función `multiply_by2` en `main`:
+
+```rust
+fn multiply_by2(number: i32) -> i32 {
+  return number * 2
+}
+
+fn main() {
+  let result = multiply_by2(5);
+  println!("El resultado es {result}");
+}
+```
+
+> ¿Por qué no hemos usado camelCase para el nombre de la función? En Rust, el estilo de nombrado de funciones recomendado es con snake_case.
+
+### Múltiples parámetros
+
+En Rust, las funciones pueden recibir múltiples parámetros. En este caso, la función `multiply` recibe dos números enteros (`i32`) y devuelve un número entero (`i32`):
+
+```rust
+fn multiply(number1: i32, number2: i32) -> i32 {
+  return number1 * number2
+}
+
+fn main() {
+  let result = multiply(5, 2);
+  println!("El resultado es {result}");
+}
+```
+
+La separación de parámetros se hace con `,`, igual que en JavaScript. Pero en Rust debemos indicar el tipo de dato de cada parámetro.
+
+### Retorno implícito
+
+En Rust, las funciones pueden devolver el resultado sin usar la palabra reservada `return`. En este caso, el resultado de la función es el último valor que se evalúa en la función:
+
+```rust
+fn multiply(number1: i32, number2: i32) -> i32 {
+  number1 * number2
+}
+```
+
+Fíjate que en este caso, no hemos usado `return` **ni tampoco hemos terminado la función con `;`**. No debes usar `;` al final de la sentencia, de lo contrario Rust no sabrá que el resultado de la función es el último valor que se evalúa.
+
+```rust
+fn multiply(number1: i32, number2: i32) -> i32 {
+  number1 * number2; // ❌ Esto es incorrecto 
+}
+```
+
+> ¿Existen las funciones anónimas y arrow function en Rust? Existe algo parecido llamado closures, pero no es exactamente lo mismo. Lo veremos más adelante cuando hablemos de la programación funcional en Rust.
+
+## Flujo de ejecución
+
+En ocasiones necesitamos controlar el flujo de ejecución de nuestro código.
+
+A veces, queremos que se ejecute una parte de código si se cumple una condición y otra parte de código si no se cumple.
+
+Otras veces, queremos que se ejecute una parte de código tantas veces como se cumpla una condición.
+
+Esto lo logarmos con condicionales y bucles.
+
+## Condicionales con `if`
+
+Igual que en JavaScript, en Rust podemos controlar el flujo de ejecución con `if`:
+
+```rust
+fn main() {
+  let number = 5;
+
+  if number > 5 {
+    println!("El número es mayor que 5");
+  } else if number < 5 {
+    println!("El número es menor que 5");
+  } else {
+    println!("El número es 5");
+  }
+}
+```
+
+Una de las diferencias más importantes es que en Rust no necesitamos usar paréntesis para indicar la condición del `if`. En este caso, la condición es `number > 5`.
+
+Puedes usar paréntesis si lo prefieres, pero no es obligatorio y no es recomendable (el compilador te dará una advertencia ya que por defecto está configurado para que no los uses).
+
+```sh
+warning: unnecessary parentheses around `if` condition
+ --> src/main.rs:4:6
+  |
+4 |   if (number > 5) {
+  |      ^          ^
+  |
+  = note: `#[warn(unused_parens)]` on by default
+```
+
+La otra gran diferencia respecto a JavaScript es que `if` en Rust es una expresión (en JavaScript es una declaración que no devuelve un resultado).
+
+Esto significa que podemos usar `if` para, por ejemplo, asignar un valor a una variable:
+
+```rust
+fn check_is_odd_or_even(number: i32) {
+  let result = if number % 2 == 0 { "par" } else { "impar" };
+  println!("El número es {result}");
+}
+
+fn main() {
+  check_is_odd_or_even(10)
+}
+```
+
+Como ves, hemos asignado a la variable `result` el resultado de la expresión `if`. En este caso, el resultado es un `string`.
+
+En *JavaScript*, para lograr algo similar, necesitamos usar una ternaria:
+
+```js
+// JavaScript
+const checkIsOddOrEven = (number) => {
+  const result = number % 2 === 0 ? 'par' : 'impar'
+  console.log(`El número es ${result}`)
+}
+```
+
+## Bucles en Rust
+
+En Rust tenemos tres formas de crear bucles: `loop`, `while` y `for`.
+
+### `loop`
+
+El bucle `loop` es similar a `while (true)` en JavaScript. Se ejecuta hasta que se rompe con `break`. En el siguiente ejemplo, vamos a imprimir por consola los números del 1 al 5 y, al llegar a 5, paramos el bucle:
+
+```rust
+fn main() {
+  let mut number = 0;
+
+  loop {
+    println!("El número es {number}");
+    number += 1;
+
+    if number == 5 {
+      break;
+    }
+  }
+}
+```
+
+Igual que con el `if`, podemos devolver un valor en el `loop` y asignarlo a una variable:
+
+```rust
+fn main() {
+  let mut number = 1;
+
+  let result = loop {
+    number += 1;
+
+    if number == 5 {
+      break "El número es 5";
+    }
+  };
+
+  println!("{result}");
+}
+```
+
+En este ejemplo hemos usado `break` con un valor. Esto hace que el bucle se rompa y se devuelva el valor que hemos indicado. Este valor, que es una cadena de texto, lo hemos asignado a la variable `result`.
+
+Así que al usar `println!` con la variable `result`, se imprimirá por consola `El número es 5`.
+
+### `while`
+
+El bucle `while` es similar a `while` en JavaScript. Se ejecuta mientras la condición sea verdadera. En el siguiente ejemplo, vamos a imprimir por consola los números del 1 al 5:
+
+```rust
+fn main() {
+  let mut number = 0;
+
+  while number < 5 {
+    println!("El número es {number}");
+    number += 1;
+  }
+}
+```
+
+La diferencia con JavaScript, al igual que el `if`, es que no necesita paréntesis para indicar la condición.
+
+### `for`
+
+A la hora de iterar sobre una colección de elementos, podemos usar un índice con `while`:
+
+```rust
+fn main() {
+  let numbers = [1, 2, 3, 4, 5];
+
+  let mut index = 0;
+
+  while index < numbers.len() {
+    println!("El número es {numbers[index]}");
+    index += 1;
+  }
+}
+```
+
+Esto es similar a lo que hacemos en JavaScript con `while` de esta manera:
+
+```js
+// JavaScript
+const numbers = [1, 2, 3, 4, 5]
+
+let index = 0
+while (index < numbers.length) {
+  console.log(`El número es ${numbers[index]}`)
+  index += 1
+}
+```
+
+Sin embargo, el código queda demasiado verboso y, además, nos obliga a crear una variable `index` que no vamos a usar más que para iterar.
+
+En Rust, podemos usar `for` para iterar sobre una colección de elementos. Este `for` es similar al `for...of` de JavaScript:
+
+```rust
+fn main() {
+  let numbers = [1, 2, 3, 4, 5];
+
+  for number in numbers {
+    println!("El número es {number}");
+  }
+}
+```
+
+Esto genera una variable `number` que toma el valor de cada elemento de la colección `numbers` en cada iteración. En este caso, la variable `number` toma los valores `1`, `2`, `3`, `4` y `5` en cada una de las itearciones. En JavaScript, esto sería similar a:
+
+```js
+// JavaScript
+const numbers = [1, 2, 3, 4, 5]
+
+for (const number of numbers) {
+  console.log(`El número es ${number}`)
+}
+```
+
+Otra forma de usar `for` es indicando un rango de números. Lo podemos indicar con `..`. Por ejemplo si queremos los números del 1 al 6, podemos usar `1..6`. Los números del 1 al 6 son: 1, 2, 3, 4, 5.
+
+Sé que puede parecer un poco raro que le digamos hasta el 6 y no lo incluya (así también funciona el método `.slice` de JavaScript) así que si lo prefieres, puedes usar `..=` para indicar que el último elemento también debe incluirlo.
+
+Así que si queremos los números `1`, `2`, `3`, `4` y `5`, podemos usar `1..=5`:
+
+```rust
+fn main() {
+  // for number in 1..6 {
+  for number in 1..=5 {
+    println!("El número es {number}");
+  }
+}
+```
+
+Así que `1..6` y `1..=5` son equivalentes.
+
+Con esto ya puedes hacer una cuenta atrás gracias al método `rev()` de las tuplas (parecido al `.reverse` de los Array en JavaScript):
+
+```rust
+fn main() {
+  for second in (1..=10).rev() {
+    println!("Despegue en {second}...");
+  }
+  println!("Despegue!!!");
+}
+```
 
 [Sígueme en Twitch para saber cuanto llega la próxima entrega.](https://www.twitch.tv/midudev)
