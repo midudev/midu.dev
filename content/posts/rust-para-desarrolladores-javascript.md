@@ -840,6 +840,49 @@ const checkIsOddOrEven = (number) => {
 }
 ```
 
+### En Rust no existe `switch`, existe `match`
+
+En Rust existe el operador `match` que viene a sustituir al `switch` de JavaScript. En este caso, vamos a comprobar si un número es par o impar:
+
+```rust
+fn check_is_odd_or_even(number: i32) {
+  match number % 2 {
+    0 => println!("El número es par"),
+    1 => println!("El número es impar"),
+    _ => println!("El número no es ni par ni impar"),
+  }
+}
+
+fn main() {
+  check_is_odd_or_even(10)
+}
+```
+
+La sintaxis de `match` es similar a la de `if` y mucho más agradable que la de `switch` de JavaScript. Además, es mucho más declarativa.
+
+El `match` es una expresión que evalúa el valor que le pasamos como parámetro y compara con los valores que le pasamos en cada uno de los casos.
+
+En este caso, el valor que le pasamos es `number % 2` y comparamos con los valores `0` y `1`.
+
+Si el valor que le pasamos es `0`, se ejecuta el código que está dentro del primer caso (`0 => println!("El número es par")`).
+
+Si el valor que le pasamos es `1`, se ejecuta el código que está dentro del segundo caso (`1 => println!("El número es impar")`).
+
+Si el valor que le pasamos no es ni `0` ni `1`, se ejecuta el código que está dentro del tercer caso (`_ => println!("El número no es ni par ni impar")`).
+
+> ¿Qué es el `_`? Es un placeholder que se usa para indicar que el valor puede ser cualquier cosa. En este caso, si el valor que le pasamos no es ni `0` ni `1`, se ejecuta el código que está dentro del tercer caso.
+
+También `match` devuelve el valor que le indiquemos y es muy útil para asignarlo a una variable:
+
+```rust
+fn check_is_odd_or_even(number: i32) -> String {
+  match number % 2 {
+    0 => "par".to_string(),
+    1 => "impar".to_string(),
+    _ => "no es ni par ni impar".to_string(),
+  }
+}
+
 ## Bucles en Rust
 
 En Rust tenemos tres formas de crear bucles: `loop`, `while` y `for`.
@@ -902,7 +945,7 @@ fn main() {
 
 La diferencia con JavaScript, al igual que el `if`, es que no necesita paréntesis para indicar la condición.
 
-### `for`
+### `for in`
 
 A la hora de iterar sobre una colección de elementos, podemos usar un índice con `while`:
 
@@ -984,5 +1027,74 @@ fn main() {
   println!("Despegue!!!");
 }
 ```
+
+## Enums
+
+Los Enums nos permite definir constantes nombradas y son útiles cuando queremos definir un conjunto de valores que son posibles para una variable. Por ejemplo, para el día de la semana:
+
+```rust
+enum Day {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday,
+}
+```
+
+Tiene sentido que `Day` sea un *enum* ya que sus valores son finitos, constantes y pueden ser nombrados. Si queremos usarlo, podemos crear una variable de tipo `Day` y asignarle un valor:
+
+```rust
+fn main() {
+  let day = Day::Monday;
+}
+```
+
+> Si compilas el código verás que te muestra advertencias. Esto es porque no estamos usando todas las variantes del *enum*. Para evitar esto, podríamos usar el atributo `#[allow(dead_code)]` antes de la definición del *enum*.
+
+Para acceder a los valores de un *enum*, usamos el operador `::` y el nombre del valor. En este caso, `Day::Monday`.
+
+En JavaScript no existen los *enums* pero podemos simularlos con objetos:
+
+```js
+// JavaScript
+const Day = {
+  Monday: 'Monday',
+  Tuesday: 'Tuesday',
+  Wednesday: 'Wednesday',
+  Thursday: 'Thursday',
+  Friday: 'Friday',
+  Saturday: 'Saturday',
+  Sunday: 'Sunday',
+}
+```
+
+Donde sí existen los *enums* son en *TypeScript* que funcionan de forma muy similar a los de Rust e incluso su sintaxis es idéntica.
+
+### Variantes
+
+Cada valor de un *enum* se llama *variante*. Lo interesante de las variantes es que también pueden ser dinámicas. Con los días ya sabemos de antemano sus nombres y sabemos que son finitos. Pero también podríamos tener variantes dinámicas.
+
+Imagina que queremos representar los colores. En un sistema `RGB` tenemos los colores `Red`, `Green` y `Blue`. Pero también podríamos tener un color `Rgb` que es un color compuesto por los valores `Red`, `Green` y `Blue` en una escala de 0 a 255.
+
+```rust
+enum Color {
+  Red,
+  Green,
+  Blue,
+  Rgb(u8, u8, u8)
+}
+
+fn main() {
+  let red = Color::Red;
+  let dark_blue = Color::Rgb(0, 0, 100);
+}
+```
+
+En este caso, `Color::Red` es una variante estática y `Color::Rgb(0, 0, 100)` es una variante dinámica que hemos creado con los valores `0`, `0` y `100`.
+
+El tipo de dato es `u8` ya que los valores RGB van del 0 al 255 y `u8` es un tipo de dato que representa un número entero sin signo de 8 bits (0 a 255).
 
 [Sígueme en Twitch para saber cuanto llega la próxima entrega.](https://www.twitch.tv/midudev)
