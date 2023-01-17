@@ -882,6 +882,7 @@ fn check_is_odd_or_even(number: i32) -> String {
     _ => "no es ni par ni impar".to_string(),
   }
 }
+```
 
 ## Bucles en Rust
 
