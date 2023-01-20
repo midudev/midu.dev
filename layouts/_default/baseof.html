@@ -12,6 +12,10 @@
   {{ $css := resources.Get "styles/global.css" }}
   {{ $style := $css | resources.Minify }}
   <style>{{$style.Content | safeCSS}}</style>
+
+  {{ $css := resources.Get "styles/style.css" }}
+  {{ $style := $css | resources.Minify }}
+  <style>{{$style.Content | safeCSS}}</style>
   
   {{ $tracking := resources.Get "js/t.js" }}
 
@@ -170,7 +174,7 @@
   </div>
 
   </div>
-  <header class='header'>
+  <header class='header mb-4'>
     <div class='header-inner u-center'>
       {{ partial "logo.html" }}
     </div>

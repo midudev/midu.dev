@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "hugo --minify",
+    "build-tw": "npx tailwindcss -i ./assets/styles/main.css -o ./assets/styles/style.css",
     "create-podcast-articles": "node scripts/create-podcast-articles.js",
     "dev": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY hugo server -F",
     "now-build": "YOUTUBE_API_KEY=$YOUTUBE_API_KEY npm run build"
@@ -25,7 +26,8 @@
   },
   "homepage": "https://github.com/midudev/midu.dev#readme",
   "devDependencies": {
-    "standard": "17.0.0"
+    "standard": "17.0.0",
+    "tailwind": "^4.0.0"
   },
   "dependencies": {
     "@github-docs/frontmatter": "1.3.1",
