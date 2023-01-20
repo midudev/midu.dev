@@ -717,7 +717,7 @@ También **es obligatorio que indiquemos el tipo de dato que devuelve la funció
 
 Así que sí, para que nuestras funciones de Rust funcionen necesitamos indicar los tipos de los parámetros y del resultado.
 
-> En Rust, las funciones siempre deuvuelven algo. Por defecto, si no indicamos nada, devuelven `()`, una tupla vacía que se le conoce como `unit`.
+> En Rust, las funciones siempre devuelven algo. Por defecto, si no indicamos nada, devuelven `()`, una tupla vacía que se le conoce como `unit`.
 
 Vamos a usar nuestra función `multiply_by2` en `main`:
 
