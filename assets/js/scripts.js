@@ -48,30 +48,44 @@ function createYoutubeFrame (id) {
   )
 }
 
-function initScheme() {
-  const isBrowserSchemeDark = window.matchMedia(
-    '(prefers-color-scheme: dark)'
-  ).matches
+let schemeState = 'dark-mode'
 
-  let scheme = isBrowserSchemeDark ? 'dark-mode' : 'light-mode'
+const isDarkmodeScheme = window.matchMedia('(prefers-color-scheme: dark)')
 
-  if (localStorage.getItem('scheme')) {
-    scheme = localStorage.getItem('scheme')
-  }
-  document.documentElement.setAttribute('scheme', scheme)
+function toggleDarkMode(state) {
+  document.documentElement.setAttribute('scheme', state ? 'dark-mode' : 'light-mode')
+  schemeState = state ? 'dark-mode' : 'light-mode'
+
+  $('#emoticon-mode').setAttribute('title', state ? 'Activar modo claro (Alt+Shift D)' : 'Activar modo oscuro (Alt+Shift D)')
 }
-initScheme()
 
-$('#emoticon-mode').addEventListener('click', function (e) {
-  const scheme = document.documentElement.getAttribute('scheme')
-  const isLightMode = scheme === 'light-mode'
+function saveSchemeState(state) {
+  localStorage.setItem('scheme', state ? 'dark-mode' : 'light-mode')
+}
 
-  document.documentElement.setAttribute(
-    'scheme',
-    isLightMode ? 'dark-mode' : 'light-mode'
-  )
+toggleDarkMode(localStorage.getItem('scheme') === 'dark-mode' || isDarkmodeScheme.matches)
 
-  localStorage.setItem('scheme', isLightMode ? 'dark-mode' : 'light-mode')
+isDarkmodeScheme.addListener(e => {
+  toggleDarkMode(e.matches)
+  saveSchemeState(e.matches)
+})
+
+$('#emoticon-mode').addEventListener('click', () => {
+  schemeState = schemeState === 'light-mode' ? 'dark-mode' : 'light-mode'
+
+  toggleDarkMode(schemeState === 'dark-mode')
+  saveSchemeState(schemeState === 'dark-mode')
+})
+
+// Keyboard shortcut for toggle dark mode with (Alt+Shift D) or
+// (Option+Shift D) on MacOS
+window.addEventListener('keydown', e => {
+  if (e.altKey === true && e.shiftKey === true && e.key === 'D') {
+    schemeState = schemeState === 'light-mode' ? 'dark-mode' : 'light-mode'
+
+    toggleDarkMode(schemeState === 'dark-mode')
+    saveSchemeState(schemeState === 'dark-mode')
+  }
 })
 
 $$('.youtube-link').forEach(function (link) {
