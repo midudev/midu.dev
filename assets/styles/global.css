@@ -944,7 +944,7 @@ html[scheme='dark-mode'] img#midudev-logo {
   content: url('/logo-dark.png') !important;
 }
 html[scheme='dark-mode'] button#emoticon-mode::after {
-  content: '🌚' !important;
+  content: '🌞' !important;
 }
 button#emoticon-mode {
   font-size: x-large;
@@ -956,7 +956,7 @@ button#emoticon-mode:hover {
   border: 1px solid #09f;
 }
 html[scheme='light-mode'] button#emoticon-mode::after {
-  content: '🌞' !important;
+  content: '🌚' !important;
 }
 html[scheme='dark-mode'] button#emoticon-mode:hover {
   background: var(--dark-color-hover);
