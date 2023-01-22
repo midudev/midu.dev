@@ -943,14 +943,23 @@ html[scheme='dark-mode'] h3 {
 html[scheme='dark-mode'] img#midudev-logo {
   content: url('/logo-dark.png') !important;
 }
-html[scheme='dark-mode'] a#emoticon-mode::after {
+html[scheme='dark-mode'] button#emoticon-mode::after {
   content: '🌚' !important;
 }
-a#emoticon-mode {
+button#emoticon-mode {
   font-size: x-large;
+  padding: 4px 11px;
+  border: 1px solid transparent;
 }
-html[scheme='light-mode'] a#emoticon-mode::after {
+button#emoticon-mode:hover {
+  border-radius: 6px;
+  border: 1px solid #09f;
+}
+html[scheme='light-mode'] button#emoticon-mode::after {
   content: '🌞' !important;
+}
+html[scheme='dark-mode'] button#emoticon-mode:hover {
+  background: var(--dark-color-hover);
 }
 html[scheme='dark-mode'] .ais-SearchBox-input {
   background-color: var(--dark-background);
