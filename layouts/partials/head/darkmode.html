@@ -1,0 +1,9 @@
+<script>
+  if (localStorage.getItem('scheme') === 'dark-mode' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('scheme', 'dark-mode')
+    localStorage.setItem('scheme', 'dark-mode')
+  } else {
+    document.documentElement.setAttribute('scheme', 'light-mode')
+    localStorage.setItem('scheme', 'light-mode')
+  }
+</script>

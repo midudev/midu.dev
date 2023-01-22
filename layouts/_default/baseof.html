@@ -9,6 +9,8 @@
 
   {{ partial "head/preconnects.html" . }}
 
+  {{ partial "head/darkmode.html" . }}
+
   {{ $css := resources.Get "styles/global.css" }}
   {{ $style := $css | resources.Minify }}
   <style>{{$style.Content | safeCSS}}</style>
