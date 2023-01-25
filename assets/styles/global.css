@@ -943,15 +943,7 @@ html[scheme='dark-mode'] h3 {
 html[scheme='dark-mode'] img#midudev-logo {
   content: url('/logo-dark.png') !important;
 }
-html[scheme='dark-mode'] a#emoticon-mode::after {
-  content: '🌚' !important;
-}
-a#emoticon-mode {
-  font-size: x-large;
-}
-html[scheme='light-mode'] a#emoticon-mode::after {
-  content: '🌞' !important;
-}
+
 html[scheme='dark-mode'] .ais-SearchBox-input {
   background-color: var(--dark-background);
   border-color: var(--dark-color-hover);

@@ -147,7 +147,6 @@
     }
   </style>
   <main id='home-feed'>
-    <h3 class='section-title'>Últimos artículos</h3>
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
       {{ range $paginator.Pages }}
 
@@ -166,7 +165,7 @@
         {{ end }}
         <div>
         <h2>{{ .Title }}</h2>
-        <div class='meta'>
+        <div class='text-xl meta'>
           <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
             {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
           </time>

@@ -1,5 +1,5 @@
-const $ = selector => document.querySelector(selector)
-const $$ = selector => document.querySelectorAll(selector)
+const $ = (selector) => document.querySelector(selector)
+const $$ = (selector) => document.querySelectorAll(selector)
 
 const loadedScripts = []
 
@@ -48,21 +48,21 @@ function createYoutubeFrame (id) {
   )
 }
 
-function initScheme() {
+function initScheme () {
   const isBrowserSchemeDark = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches
 
   let scheme = isBrowserSchemeDark ? 'dark-mode' : 'light-mode'
 
-  if (localStorage.getItem('scheme')) {
-    scheme = localStorage.getItem('scheme')
+  if (window.localStorage.getItem('scheme')) {
+    scheme = window.localStorage.getItem('scheme')
   }
   document.documentElement.setAttribute('scheme', scheme)
 }
 initScheme()
 
-$('#emoticon-mode').addEventListener('click', function (e) {
+$('#toggle-dark-mode').addEventListener('click', function (e) {
   const scheme = document.documentElement.getAttribute('scheme')
   const isLightMode = scheme === 'light-mode'
 
@@ -71,7 +71,10 @@ $('#emoticon-mode').addEventListener('click', function (e) {
     isLightMode ? 'dark-mode' : 'light-mode'
   )
 
-  localStorage.setItem('scheme', isLightMode ? 'dark-mode' : 'light-mode')
+  window.localStorage.setItem(
+    'scheme',
+    isLightMode ? 'dark-mode' : 'light-mode'
+  )
 })
 
 $$('.youtube-link').forEach(function (link) {
@@ -88,7 +91,10 @@ class LiteYTEmbed extends window.HTMLElement {
 
     let playBtnEl = this.querySelector('.lty-playbtn')
     // A label for the button takes priority over a [playlabel] attribute on the custom-element
-    this.playLabel = (playBtnEl && playBtnEl.textContent.trim()) || this.getAttribute('playlabel') || 'Play'
+    this.playLabel =
+      (playBtnEl && playBtnEl.textContent.trim()) ||
+      this.getAttribute('playlabel') ||
+      'Play'
 
     const isWebpSupported = await LiteYTEmbed.checkWebPSupport()
 
@@ -116,12 +122,14 @@ class LiteYTEmbed extends window.HTMLElement {
     }
 
     // On hover (or tap), warm up the TCP connections we're (likely) about to use.
-    this.addEventListener('pointerover', LiteYTEmbed.warmConnections, { once: true })
+    this.addEventListener('pointerover', LiteYTEmbed.warmConnections, {
+      once: true
+    })
 
     // Once the user clicks, add the real iframe and drop our play button
     // TODO: In the future we could be like amp-youtube and silently swap in the iframe during idle time
     //   We'd want to only do this for in-viewport or near-viewport ones: https://github.com/ampproject/amphtml/pull/5003
-    this.addEventListener('click', e => this.addIframe())
+    this.addEventListener('click', (e) => this.addIframe())
   }
 
   static addPrefetch (kind, url, as) {
@@ -138,10 +146,12 @@ class LiteYTEmbed extends window.HTMLElement {
    * Check WebP support for the user
    */
   static checkWebPSupport () {
-    if (typeof LiteYTEmbed.hasWebPSupport !== 'undefined') { return Promise.resolve(LiteYTEmbed.hasWebPSupport) }
+    if (typeof LiteYTEmbed.hasWebPSupport !== 'undefined') {
+      return Promise.resolve(LiteYTEmbed.hasWebPSupport)
+    }
 
-    return new Promise(resolve => {
-      const resolveAndSaveValue = value => {
+    return new Promise((resolve) => {
+      const resolveAndSaveValue = (value) => {
         LiteYTEmbed.hasWebPSupport = value
         resolve(value)
       }
@@ -149,7 +159,8 @@ class LiteYTEmbed extends window.HTMLElement {
       const img = new window.Image()
       img.onload = () => resolveAndSaveValue(true)
       img.onerror = () => resolveAndSaveValue(false)
-      img.src = 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA='
+      img.src =
+        'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA='
     })
   }
 
@@ -186,11 +197,14 @@ class LiteYTEmbed extends window.HTMLElement {
     iframeEl.height = 315
     // No encoding necessary as [title] is safe. https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#:~:text=Safe%20HTML%20Attributes%20include
     iframeEl.title = this.playLabel
-    iframeEl.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+    iframeEl.allow =
+      'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
     iframeEl.allowFullscreen = true
     // AFAIK, the encoding here isn't necessary for XSS, but we'll do it only because this is a URL
     // https://stackoverflow.com/q/64959723/89484
-    iframeEl.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(this.videoId)}?${params.toString()}`
+    iframeEl.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(
+      this.videoId
+    )}?${params.toString()}`
     this.append(iframeEl)
 
     this.classList.add('lyt-activated')
@@ -240,11 +254,18 @@ const $hits = $('#hits')
 
 function getAlgoliaIndex () {
   if (algoliaIndex) return algoliaIndex
-  console.log('🚀 ~ file: scripts.js ~ line 222 ~ getAlgoliaIndex ~ algoliaIndex', algoliaIndex)
+  console.log(
+    '🚀 ~ file: scripts.js ~ line 222 ~ getAlgoliaIndex ~ algoliaIndex',
+    algoliaIndex
+  )
 
-  const algoliaClient = window.algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY, {
-    _useRequestCache: true
-  })
+  const algoliaClient = window.algoliasearch(
+    ALGOLIA_APPLICATION_ID,
+    ALGOLIA_SEARCH_ONLY_API_KEY,
+    {
+      _useRequestCache: true
+    }
+  )
   algoliaIndex = algoliaClient.initIndex('prod_blog_content')
   return algoliaIndex
 }
@@ -259,7 +280,9 @@ $reset.addEventListener('click', function (e) {
 })
 
 $input.addEventListener('input', async function (e) {
-  await loadScript('https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js')
+  await loadScript(
+    'https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js'
+  )
 
   const { value } = e.target
   if (value === '') {
@@ -271,20 +294,22 @@ $input.addEventListener('input', async function (e) {
   $hits.removeAttribute('hidden')
 
   const algoliaIndex = getAlgoliaIndex()
-  algoliaIndex.search(value, {
-    hitsPerPage: 3
-  }).then(({ hits }) => {
-    let hitsHtml = ''
-    hits.forEach(hit => {
-      const {
-        link,
-        _highlightResult: {
-          title: { value: title },
-          description: { value: description }
-        }
-      } = hit
+  algoliaIndex
+    .search(value, {
+      hitsPerPage: 3
+    })
+    .then(({ hits }) => {
+      let hitsHtml = ''
+      hits.forEach((hit) => {
+        const {
+          link,
+          _highlightResult: {
+            title: { value: title },
+            description: { value: description }
+          }
+        } = hit
 
-      hitsHtml += `
+        hitsHtml += `
       <li class='ais-Hits-item'>
         <a href='${link}'>
           ${title}
@@ -293,10 +318,10 @@ $input.addEventListener('input', async function (e) {
           </div>
         </a>
       </li>`
-    })
+      })
 
-    $hits.innerHTML = hitsHtml
-  })
+      $hits.innerHTML = hitsHtml
+    })
 })
 
 // Table Of Contents script
@@ -309,15 +334,15 @@ function initTableOfContents () {
   // get all links from table of contents
   const links = $$('#TableOfContents-container li a')
 
-  const changeBgLinks = entries => {
-    entries.forEach(entry => {
+  const changeBgLinks = (entries) => {
+    entries.forEach((entry) => {
       const { target, isIntersecting, intersectionRatio } = entry
       if (isIntersecting && intersectionRatio >= 0.5) {
         const id = target.getAttribute('id')
         $('#TableOfContents-container li.active').classList.remove('active')
         $(`nav li a[href="#${id}"]`).parentElement.classList.add('active')
 
-        links.forEach(link => {
+        links.forEach((link) => {
           link.addEventListener('click', (e) => {
             $('#TableOfContents-container li.active').classList.remove('active')
             link.parentElement.classList.add('active')
@@ -335,20 +360,22 @@ function initTableOfContents () {
   const observer = new window.IntersectionObserver(changeBgLinks, options)
 
   const articleTitles = $$('#article-content h2')
-  articleTitles.forEach(section => observer.observe(section))
+  articleTitles.forEach((section) => observer.observe(section))
 }
 
 initTableOfContents()
 
 fetch('https://midudev-apis.midudev.workers.dev/uptime/midudev')
-  .then(res => res.json())
+  .then((res) => res.json())
   .then(({ online }) => {
     if (online) {
       $('#live').style.display = 'block'
-      $('#live-frame').innerHTML = `<iframe src="https://player.twitch.tv/?channel=midudev&parent=${document.location.hostname}" frameborder="0" width="320" height="200" allowfullscreen="true" scrolling="no"></iframe>`
+      $(
+        '#live-frame'
+      ).innerHTML = `<iframe src="https://player.twitch.tv/?channel=midudev&parent=${document.location.hostname}" frameborder="0" width="320" height="200" allowfullscreen="true" scrolling="no"></iframe>`
     }
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err)
   })
 
