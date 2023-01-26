@@ -124,7 +124,7 @@ Para diferenciar un *macro* de una función, sólo tienes que fijarte en la excl
 
 ### Cadenas de texto
 
-En Rust, las cadenas de texto se declaran entre comillas dobles `"`. Las comillas simples `'` se usan sólo para declarar caracteres por lo que no pueden usarlas para declarar cadenas de texto (algo que en JavaScript sí está permitido).
+En *Rust*, las cadenas de texto se declaran entre comillas dobles `"`. Las comillas simples `'` se usan sólo para declarar caracteres por lo que no pueden usarlas para declarar cadenas de texto (algo que en JavaScript sí está permitido).
 
 En Rust puedes escapar las comillas dobles con `\`:
 
@@ -134,7 +134,7 @@ fn main() {
 }
 ```
 
-Algo muy interesante de las cadenas de texto en Rust es que, igual que los template string de JavaScript, respeta los saltos de línea dentro de la cadena de texto.
+Algo muy interesante de las cadenas de texto en *Rust* es que, igual que los template string de *JavaScript*, respeta los saltos de línea dentro de la cadena de texto.
 
 Prueba a compilar y ejecutar este código y fíjate en la salida:
 
@@ -145,6 +145,8 @@ fn main() {
     World");
 }
 ```
+
+Más adelante hablaremos más de las cadenas de texto en *Rust* porque vienen con un montón de diferencias con *JavaScript* que no se aprecian en la superficie...
 
 ### Puntos y coma
 
@@ -1099,3 +1101,401 @@ En este caso, `Color::Red` es una variante estática y `Color::Rgb(0, 0, 100)` e
 El tipo de dato es `u8` ya que los valores RGB van del 0 al 255 y `u8` es un tipo de dato que representa un número entero sin signo de 8 bits (0 a 255).
 
 [Sígueme en Twitch para saber cuanto llega la próxima entrega.](https://www.twitch.tv/midudev)
+
+## De vuelta con los Strings
+
+Ya hemos trabajado anteriormente con los *Strings* en Rust y hemos visto que, visualmente, son muy similares a los Strings de JavaScript. Sin embargo, existen diferencias más profundas que debes conocer...
+
+Para empezar, cuando hablamos de *Strings* en Rust hay que diferenciar entre dos tipos de Strings: `&str` y `String`.
+
+### `&str`
+
+En este caso hablamos de una cadena de texto inmutable, con la longitud fija y que no puede ser modificada. Y este es el tipo de dato que hemos visto hasta ahora.
+
+```rust
+fn main() {
+  // Aquí inferimos el tipo de la cadena de texto
+  let hello = "Hola";
+  // Y lo que estamos infiriendo es un &str
+  let world : &str = "Mundo";
+  let hello_world = hello + " " + world;
+  println!("{}", hello_world);
+}
+```
+
+A este tipo de dato se le conoce como *String Slice*, en español sería como *Trozo de String*.
+
+Como hemos visto, podemos concatenar dos *String Slices* con el operador `+` y el resultado es un nuevo *String Slice*, pero en ningún momento hemos modificado los *String Slices* originales.
+
+Su comportamiento es muy parecido a los *String* de *JavaScript* de tipo primitivo, ya que tampoco podemos mutarlo una vez creado y siempre tenemos que crear un nuevo String.
+
+```javascript
+const hello = "Hola";
+const world = "Mundo";
+const helloWorld = hello + " " + world;
+console.log(helloWorld);
+```
+
+> Por ahora no te preocupes por el símbolo `&` que aparece delante del tipo de dato. Lo veremos más adelante.
+
+### `String`
+
+El segundo tipo es `String` y es un tipo de dato que representa una cadena de texto mutable, con la longitud variable y que puede ser modificada.
+
+```rust
+fn main() {
+  // Creamos un String a partir del String Slice
+  let mut hello = String::from("Hola");
+  // Vamos a modificar la longitud de la cadena de texto
+  hello.push_str(", Mundo!");
+  // Mostramos en pantalla el String
+  println!("{hello}");
+}
+```
+
+Vamos a ver qué está pasando en este código paso a paso:
+
+```rust
+let mut hello = String::from("Hola");
+```
+
+Creamos una variable `let` llamada `hello` y le asignamos un valor de tipo `String`. Para crear un `String` usamos el método `from` del tipo `String` y le pasamos un `&str` como parámetro.
+
+¿Qué es el `::`? Es un operador que nos permite acceder a un `namespace` y acceder a sus métodos. En este caso, estamos accediendo al `namespace` `String` y al método `from`.
+
+Además, fíjate que estamos creando la variable como mutable, es decir, que podemos modificarla. Si no la creamos como mutable, obtendremos un error, ya que más adelante estamos intentando modificar el valor de la variable con el `push_str`.
+
+```rust
+hello.push_str(", Mundo!");
+```
+
+El método `push_str` nos permite añadir un `&str` al final del `String`. En este caso, estamos añadiendo la cadena de texto `", Mundo!"`. Gracias a que la variable es `mut`, no tenemos ningún problema en modificar el valor de la variable.
+
+```rust
+println!("{hello}")
+```
+
+Y finalmente, mostramos en pantalla el valor de la variable `hello`.
+
+Para que veas la diferencia entre un `&str` y un `String`, vamos a ver un ejemplo:
+
+```rust
+// ❌ Código incorrecto
+fn main() {
+  let mut hello: &str = "Hola";
+  hello.push_str(", Mundo!");
+  println!("{hello}");
+}
+```
+
+Este código no compilará, ya que no podemos modificar un `&str` y no tiene el método `push_str`. Si queremos modificar un `&str`, tenemos que convertirlo a `String`:
+
+```rust
+// ✅ Código correcto
+fn main() {
+  let str: &str = "Hola";
+  let mut hello = String::from(str);
+  hello.push_str(", Mundo!");
+  println!("{hello}");
+}
+```
+
+Resumen: cuando hablamos de cadenas de texto en Rust debemos diferenciar entre dos tipos. Tenemos el tipo `&str` que se llama *Slice String*, que es un tipo de dato inmutable y que no podemos modificar, similar al *String* de *JavaScript*. Por otro lado, tenemos el tipo `String` en Rust, que es un tipo de dato mutable y que podemos modificar para cambiar su contenido y su longitud.
+
+> No confundas que la variable sea mutable con que el tipo de dato es mutable. Si usas `let mut hello = "Hello"` estás creando una variable mutable y, por lo tanto, podrás reasignar la variable. Pero el tipo de dato es `&str` y no podrás modificar el valor. Reasignar la variable no es lo mismo que modificar el valor.
+
+## Structs
+
+En *JavaScript* cuando queremos agrupar un conjunto de datos que definen un objeto podemos usar `class`:
+
+```js
+// JavaScript
+class Animal {
+  constructor(name, specie, age) {
+    this.name = name;
+    this.specie = specie;
+    this.age = age;
+  }
+}
+```
+
+Ahora podemos crear un objeto de tipo `Animal` pasando los parámetros necesarios:
+
+```js
+// JavaScript
+const dog = new Animal("Zeus", "Perro", 3);
+```
+
+En *Rust* no existen las clases pero sí los *Structs*. Los *Structs* son una forma de agrupar datos complejos que definen algo. Por ejemplo, podemos crear un *Struct* para definir un `Animal`, tal y como hemos hecho antes:
+
+```rust
+// Rust
+struct Animal {
+  name: String,
+  specie: String,
+  age: u8,
+}
+```
+
+Al crear un `struct` es necesario que definamos los tipos de datos de cada uno de los campos. En este caso, hemos definido que el campo `name` es de tipo `String`, el campo `specie` es de tipo `String` y el campo `age` es de tipo `u8`.
+
+Ahora podemos crear un `Animal`:
+
+```rust
+// Rust
+let dog = Animal {
+  name: String::from("Zeus"),
+  specie: String::from("Perro"),
+  age: 3,
+};
+```
+
+También puedes usar la notación corta para crear un `struct`, similar a la que usamos en *JavaScript*, si ya tienes una variable con el mismo nombre que el campo:
+
+```rust
+// Rust
+let name = String::from("Zeus");
+let specie = String::from("Perro");
+let age = 3;
+let dog = Animal { name, specie, age };
+```
+
+Para acceder a los campos de un `struct` podemos usar la notación de punto:
+
+```rust
+// Rust
+println!("El nombre del perro es {}", dog.name);
+```
+
+### Mostrar Structs en consola
+
+Ahora, ¿Cómo podemos mostrar el valor de un `struct` en la consola? En *JavaScript* podemos usar `console.log`:
+
+```js
+// JavaScript
+console.log(dog);
+```
+
+En *Rust* ya hemos visto que hay que usar `println!` para mostrar el valor de una variable en la consola. Si intentamos usar `println!` con un `struct` nos dará un error:
+
+```rust
+println!("El perro es {dog}");
+
+// ❌: `Animal` cannot be formatted with the default formatter
+```
+
+Si no queremos ir propiedad por propiedad y queremos mostrar todo el objeto, vamos a necesitar hacer dos cosas.
+
+1. Indicarle al compilador que queremos usar la macro `println!` con el formato `Debug`.
+2. Usar un placeholder para indicarle al compilador que queremos mostrar el valor de un `struct`.
+
+Para lograr la primera, hay que añadir la anotación `#[derive(Debug)]` antes de la definición del `struct`:
+
+```rust
+// Rust
+#[derive(Debug)]
+struct Animal {
+  name: String,
+  specie: String,
+  age: u8,
+}
+```
+
+Para lograr la segunda, tenemos que usar el placeholder `:?`:
+
+```rust
+// Rust
+println!("El perro es {:?}", dog);
+```
+
+Si ejecutamos el programa, veremos el siguiente resultado:
+
+```bash
+El perro es Animal { name: "Zeus", specie: "Perro", age: 3 }
+```
+
+### Crea un nuevo Struct a partir de otro
+
+En *JavaScript* podemos usar el operador *spread* `...` para crear un nuevo objeto a partir de otro objeto:
+
+```js
+// JavaScript
+const dog = { name: "Zeus", specie: "Perro", age: 3 };
+const dog2 = { ...dog, age: 4 };
+```
+
+En *Rust* el operador `..` es parecido aunque tiene alguna diferencia que es importante apuntar. Lo usaremos así:
+
+```rust
+// Rust
+let dog = Animal {
+  name: String::from("Zeus"),
+  specie: String::from("Perro"),
+  age: 3,
+};
+
+let dog2 = Animal { age: 4, ..dog };
+```
+
+También fíjate que hemos usado el `..dog` al final, después de los campos que queremos sobreescribir.
+
+El operador `..` se usa para indicar el *struct* base que queremos usar y siempre se tiene que usar al final. Si intentamos usar el `..` en otra posición nos dará un error de sintaxis. Esto es muy diferente a *JavaScript*, ya que la posición del operador *spread* puede ser cualquiera y su posición cambiará el resultado. En *Rust*, siempre va al final.
+
+### Tuple Structs
+
+Los *tuple structs* son una variante de los `structs` que no tienen nombres de campo. En lugar de tener nombres de campo, los `structs` tienen tipos de datos. Los *tuple structs* son útiles cuando queremos dar un nombre a una tupla.
+
+```rust
+struct ColorRGB(i8, i8, i8);
+struct LatLng(f64, f64);
+```
+
+Para crear una instancia de un *tuple struct* tenemos que usar la misma sintaxis que para crear una tupla:
+
+```rust
+let red = ColorRGB(255, 0, 0);
+let barcelona_marker = LatLng(41.3851, 2.1734);
+```
+
+Lo bueno de los *tuple structs* es aunque no tienen nombres de campo, hace que nuestro código sea mucho más legible.
+
+Para acceder a los valores de un *tuple struct* tenemos que usar la misma sintaxis que para acceder a los valores de una tupla:
+
+```rust
+let red = ColorRGB(255, 0, 0);
+let red_r = red.0;
+let red_g = red.1;
+let red_b = red.2;
+```
+
+Pero también podemos usar destructuring para acceder a los valores de un *tuple struct*, tal y como haríamos en *JavaScript* pero usando la sintaxis de *Rust* con paréntesis:
+
+```rust
+let red = ColorRGB(255, 0, 0);
+let (red_r, red_g, red_b) = red;
+```
+
+### Métodos en Structs
+
+Una vez que tenemos definido un *Struct* en *Rust*, podemos añadir métodos a ese *Struct*. Los métodos son funciones que están definidas dentro de un *Struct* y que tienen acceso a los datos del *Struct*.
+
+Ahora, la sintaxis para definir métodos en *Rust* es un poco diferente a la que estamos acostumbrados en *JavaScript*. En *Rust* los métodos se definen dentro de un bloque `impl`.
+
+Vamos a crear un método al struct `Animal` que nos permita crear una nueva instancia de `Animal`. Para ello, vamos a crear un método llamado `new` que reciba los datos necesarios para crear una nueva instancia de `Animal` y que devuelva una nueva instancia de `Animal`.
+
+```rust
+impl Animal {
+  fn new(name: String, specie: String, age: u8) -> Animal {
+    Animal {
+      name,
+      specie,
+      age,
+    }
+  }
+}
+```
+
+No es el método más útil del mundo porque ya hemos visto lo fácil que es crear una nueva instancia de `Animal` usando el *struct literal* pero es un ejemplo para que veáis cómo se definen los métodos en *Rust* en los *structs* (además que podrías hacer aquí cosas más interesantes, como comprobar que el nombre no está vacío, por ejemplo o transformar los datos).
+
+Ahora, para usar este método, tenemos que llamarlo usando la sintaxis de *Rust* para llamar a métodos:
+
+```rust
+let animal = Animal::new("Paco".to_string(), "Perro".to_string(), 5);
+```
+
+Fíjate que para llamar al método `new` tenemos que usar la sintaxis `::` para indicar que el método `new` está definido en el *struct* `Animal`.
+
+Además, como los campos `name` y `specie` son *String*, usamos la cadena de texto con comillas dobles (que es un *&str* como hemos visto antes) y usamos el método `to_string()` para convertirlo a *String*.
+
+Vamos a ver otro ejemplo de método en un *struct*, esta vez para poder recuperar el nombre del animal:
+
+```rust
+impl Animal {
+  fn get_name(&self) -> &String {
+    &self.name
+  }
+}
+```
+
+¡Ah! Esto tiene una pinta muy rara, ¿verdad? ¿Qué es ese `&` que hemos puesto delante de `self`? ¿Y ese `&` que hemos puesto delante de `String`? ¿Y ese `&` que hemos puesto delante de `self.name`? ¡Muchos `&` que seguro no esperabas!
+
+Por ahora, no te preocupes por los `&` y simplemente piensa que es la forma de indicar una referencia. Así que no devolvemos un *String*, si no una referencia a uno.
+
+Lo más interesante es el *self*, que se refiere al propio `struct` de `Animal` y que nos permite acceder a sus datos. Es un parámetro que se pasa implícitamente a todos los métodos de un *struct*, no tienes que pasárselo explícitamente.
+
+Ahora vamos a ver cómo usar este método:
+
+```rust
+let animal = Animal::new("Paco".to_string(), "Perro".to_string(), 5);
+let name = animal.get_name();
+println!("{name}") // -> Paco
+```
+
+También podemos tener un método para modificar los datos de un *struct*. Por ejemplo, vamos a crear un método para modificar la edad del animal:
+
+```rust
+impl Animal {
+  fn set_age(&mut self, age: u8) {
+    self.age = age;
+  }
+}
+```
+
+Te dejo aquí todo el código del ejemplo para que puedas entenderlo con todo el contexto y puedas ejecutarlo y jugar con él:
+
+```rust
+#[derive(Debug)]
+struct Animal {
+  name: String,
+  specie: String,
+  age: u8,
+}
+
+impl Animal {
+  fn new(name: String, specie: String, age: u8) -> Animal {
+    Animal {
+      name,
+      specie,
+      age,
+    }
+  }
+  
+  fn get_name(&self) -> &String {
+    &self.name
+  }
+
+}
+
+fn main() {
+    let animal = Animal::new("Paco".to_string(), "Perro".to_string(), 5);
+    let name = animal.get_name();
+
+    println!("{name} tiene {} años", animal.age);
+}
+```
+
+<!--
+## Ownership
+
+Una de las características más especiales de *Rust* es el concepto de *Ownership*. Este concepto es muy importante y es uno de los puntos fuertes de *Rust*. El reto es que es un concepto que no existe en *JavaScript* por lo que no se puede crear una analogía directa.
+
+### ¿Qué es el Ownership?
+
+El *Ownership* es un concepto que nos permite controlar el acceso a los datos de una forma muy estricta. En *JavaScript*, por ejemplo, podemos crear una variable y asignarle un valor. Luego, podemos crear otra variable y asignarle el valor de la primera variable. Cuando hacemos esto con un tipo primitivo, por ejemplo un `Number`, estamos creando una copia del valor, así que podemos modificar el valor de la segunda variable sin que se modifique el valor de la primera.
+
+```js
+// JavaScript
+let a = 1;
+let b = a;
+```
+
+**En Rust, esto no es posible.** Cuando creamos una variable, esta variable se convierte en el *owner* de los datos. Esto significa que la variable es la única que puede acceder a los datos. Si creamos otra variable y le asignamos el valor de la primera, la segunda variable no es el *owner* de los datos, sino que es una *referencia* a los datos.
+
+```rust
+// Rust
+let a = 1;
+let b = a;
+```
+
+> En Rust, cuando asignamos un valor a una variable, estamos moviendo los datos a la variable. Esto es lo que se conoce como *move*.
+> -->
