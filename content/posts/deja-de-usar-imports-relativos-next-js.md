@@ -11,7 +11,7 @@ Normalmente cuando trabajamos con aplicaciones de React, tenemos multitud de com
 
 Por ejemplo con esta estructura de aplicación:
 
-```
+```raw
 next-js-react-app/
 ├─ pages/
 │  ├─ index.js
