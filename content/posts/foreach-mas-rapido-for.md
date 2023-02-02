@@ -1,7 +1,7 @@
 ---
 title: ¿Por qué forEach es más rápido que for en JavaScript?
 date: '2022-12-16'
-description: Explicamos qué razón hace que forEach de JavaScript sea más rápido que el clásico for
+description: Explicamos qué razón hace que forEach de JavaScript sea más rápido que el clásico for en algunas situaciones
 topic: javascript
 
 toc: true
@@ -9,14 +9,14 @@ tags:
 - javascript
 ---
 
-Mucha gente cree, **de forma equivocada**, que `for` es la forma más rápida de hacer bucles en JavaScript. Y que `forEach` es más lento.
+Mucha gente cree, **de forma equivocada**, que `for` es la forma más rápida de hacer bucles en JavaScript **SIEMPRE**. Y que `forEach` es más lento.
 
 A favor de esa opinión hay que decir dos cosas:
 
 - En algunos casos sigue siendo cierto, como veremos en el artículo.
-- En algún momento del pasado sí fue verdad, porque los compiladores no contaban con las optimizaciones que hoy sí tienen.
+- En algún momento del pasado sí fue verdad para todos los casos, porque los compiladores no contaban con las optimizaciones que hoy sí tienen.
 
-Pero te voy a explicar en este artículo como esto ha cambiado y, en muchos casos, `forEach` es más rápido que `for` (especialmente en navegadores modernos y *runtimes* como Node).
+Pero te voy a explicar en este artículo como esto ha cambiado y, en los casos más habituales, `forEach` es más rápido que `for` (especialmente en navegadores modernos y *runtimes* como Node) para ejecuciones simples.
 
 ## ¿Qué es el método `forEach` de Array?
 
@@ -144,6 +144,35 @@ El tamaño del array también importa. Si el array es muy pequeño, el tiempo de
 
 En todos los ejemplos anteriores hemos trabajado con un array de 1000 elementos. Pero si el array es más grande, como por ejemplo 50000 elementos, el tiempo de ejecución de `for` puede ser bastante más rápido que el de `forEach`.
 
+### Quiero un benchmark
+
+Si quieres verlo por ti mismo, puedes ejecutar el siguiente código en tu navegador y ver los resultados en la consola.
+
+```javascript
+const array = Array.from({ length: 1000 }).map((x, i) => i)
+
+// for
+const c = process.hrtime()
+let aux2 = []
+for (let i = 0; i < array.length; i++) {
+  if (array[i] % 2 === 0) aux2.push(array[i])
+}
+const d = process.hrtime(c)
+
+// forEach
+const a = process.hrtime()
+let aux = []
+array.forEach(n => {
+  if (n % 2 === 0) aux.push(n)
+})
+const b = process.hrtime(a)
+
+console.log('forEach', b[1], ' nanoseconds')
+console.log('for', d[1], ' nanoseconds')
+```
+
+Puedes cambiar los valores e ir jugando para ver las diferencias entre uno y otro. Igualmente verás que en muchos casos gana *forEach* y en otros gana *for*. Pero en todos los casos, la diferencia de velocidad suele ser insignificante.
+
 ## Conclusión: no sacrifiques la legibilidad por velocidad
 
 Como hemos visto, `forEach` puede ser más rápido que `for` en algunos casos, pero no siempre. Y a veces hay otros métodos de Array que nos permite evitar el bucle `for` y hacer el código más legible... ¡y rápido!
@@ -151,5 +180,7 @@ Como hemos visto, `forEach` puede ser más rápido que `for` en algunos casos, p
 Sea como sea, **hay que tener en cuenta que la legibilidad del código puede ser más importante que la velocidad**. Si el código es más legible, será más fácil de mantener y de depurar. Y si es más fácil de mantener y de depurar, será más fácil de mejorar y de optimizar. Y la diferencia de velocidad, en este caso, será insignificante.
 
 También el tamaño del Array es importante. Si el array es muy pequeño, el tiempo de ejecución de `forEach` puede ser más rápido que el de `for`. Pero si el array es muy grande, el tiempo de ejecución de `for` puede ser bastante más rápido que el de `forEach`.
+
+**Si la diferencia es crítica, tienes un dataset muy grande y quieres optimizar a nivel de milisegundo, entonces puede ser buena idea usar `for`**. Pero antes de hacer optimizaciones prematuras, asegúrate de que realmente es necesario.
 
 En los casos que tengas que iterar un número n de veces, que no sea un array ya creado, entonces puede ser buena idea usar directamente un `for` que no te obliga a crear un array para iterar.
