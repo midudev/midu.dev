@@ -1,6 +1,6 @@
 ---
 title: toReversed, toSpliced, toSorted y with. Nuevos métodos de Array en JavaScript explicados.
-date: '2023-12-07'
+date: '2023-02-07'
 description: Aprende a utilizar estos nuevos métodos de Array en JavaScript que te permiten obtener un nuevo array sin modificar el original.
 toc: true
 tags:
