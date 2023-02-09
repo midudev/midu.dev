@@ -1474,28 +1474,109 @@ fn main() {
 }
 ```
 
-<!--
 ## Ownership
 
-Una de las características más especiales de *Rust* es el concepto de *Ownership*. Este concepto es muy importante y es uno de los puntos fuertes de *Rust*. El reto es que es un concepto que no existe en *JavaScript* por lo que no se puede crear una analogía directa.
+Una de las características más especiales de *Rust* es el concepto de *Ownership*. Este concepto es muy importante... y no existe en *JavaScript* por lo que no se puede crear una analogía directa.
 
 ### ¿Qué es el Ownership?
 
-El *Ownership* es un concepto que nos permite controlar el acceso a los datos de una forma muy estricta. En *JavaScript*, por ejemplo, podemos crear una variable y asignarle un valor. Luego, podemos crear otra variable y asignarle el valor de la primera variable. Cuando hacemos esto con un tipo primitivo, por ejemplo un `Number`, estamos creando una copia del valor, así que podemos modificar el valor de la segunda variable sin que se modifique el valor de la primera.
+El *Ownership* son una serie de reglas que nos permite controlar el acceso a los datos de una forma muy estricta y, además, liberar la memoria de forma automática cuando ya no la necesitamos. Las 3 reglas del *Ownership* son:
 
-```js
-// JavaScript
-let a = 1;
-let b = a;
-```
+1. Cada valor en *Rust* tiene un *dueño* (owner).
+2. Sólo puede haber un *dueño* a la vez.
+3. Cuando el *dueño* sale del ámbito, el valor se descarta.
 
-**En Rust, esto no es posible.** Cuando creamos una variable, esta variable se convierte en el *owner* de los datos. Esto significa que la variable es la única que puede acceder a los datos. Si creamos otra variable y le asignamos el valor de la primera, la segunda variable no es el *owner* de los datos, sino que es una *referencia* a los datos.
+#### Inicio de *Ownership* y *move*
+
+En Rust, como en muchos otros lenguajes como JavaScript, usamos el símbolo de igual `=` para asignar un valor a una variable. Sin embargo, en *Rust* están pasando más cosas de las que parece.
 
 ```rust
-// Rust
-let a = 1;
-let b = a;
+let num = 5;
 ```
 
-> En Rust, cuando asignamos un valor a una variable, estamos moviendo los datos a la variable. Esto es lo que se conoce como *move*.
-> -->
+Al hacer esto, estamos iniciando el *Ownership* de la variable `num`. Esto significa que la variable `num` es el *dueño* del valor `5`.
+
+¿Esto significa que no se puede usar más el valor `5`? No. Los tipos primitivos como `i32` o `bool` se copian cuando se asignan a una variable. Esto significa que podemos seguir usando el valor `5` sin problemas:
+
+```rust
+let num = 5;
+let num2 = num; // Se copia el valor de num a num2
+println!("{num} {num2}"); // -> 5 5
+```
+
+Pero esto no es así con otros tipos compuestos como *String* o *Vec*. En estos casos, cuando reasignamos un valor a una variable, lo que realmente estamos haciendo es cambiar el *ownership* sobre ese valor.
+
+```rust
+// Creamos un String a partir del String Slice
+let name = String::from("Miguel");
+// Reasignamos el valor de name a name2
+let name2 = name;
+// Intentamos mostrar el valor de name
+println!("{name}"); // -> Error: value borrowed here after move
+```
+
+¿Qué ha pasado aquí? Pues que cuando hacemos una reasignación no estamos haciendo una copia del valor, si no que estamos cambiando el *dueño* del valor. Esto significa que el valor ya no pertenece a la variable `name` y, por lo tanto, no podemos usarla desde ahí. Ahora el *dueño* es la variable `name2`.
+
+A este proceso se le llama *move* y es una de las características más importantes de *Rust*.
+
+> Como has visto, Rust es muy agresivo a la hora de liberar los recursos. En JavaScript contamos con un Garbage Collector pero Rust incorpora este sistema de *Ownership* que libera el recurso automáticamente cuando el dueño sale del ámbito. Esto no evita que puedan existir *memory leaks* pero sí que se minimizan.
+
+#### *Ownership* y funciones
+
+Hay veces que puede ser un reto detectar cuando se produce un *move* en *Rust* ya que también ocurre cuando usamos la variable como argumento de una función. Por ejemplo, vamos a crear una función que recibe un *String* y lo pasa a todo minúsculas:
+
+```rust
+fn to_lowercase(name: String) -> String {
+  name.to_lowercase()
+}
+
+fn main() {
+  let name = String::from("Miguel");
+  let lower_case_name = to_lowercase(name);
+
+  // ¡name ya no existe!
+  println!("{name}"); // -> Error: value borrowed here after move
+}
+```
+
+Vamos a ver qué ha pasado aquí paso a paso.
+
+1. Creamos una variable `name` y le asignamos un valor de tipo *String*.
+2. Llamamos a la función `to_lowercase` pasándole la variable `name` como argumento.
+3. En este punto, estamos haciendo un *move* de la variable `name` a la función `to_lowercase`. Esto significa que la variable `name` ya no existe en el ámbito de la función `main` y que el *dueño* del valor es la función `to_lowercase`.
+4. La función `to_lowercase` devuelve un valor de tipo *String* que se asigna a la variable `lower_case_name`.
+5. Intentamos mostrar el valor de la variable `name` pero no podemos porque ya no existe. El *dueño* del valor era la función `to_lowercase`.
+
+Este suele ser un problema muy común en *Rust* ya que, por defecto, las funciones toman la propiedad de los valores que recibe como argumentos. Esto es muy útil para evitar que se modifiquen los valores que se pasan a la función. Sin embargo, hay veces que no queremos que esto ocurra y, en esos casos, tenemos que indicar explícitamente que no queremos que se produzca el *move*.
+
+Ten en cuenta que este problema no existe con los tipos primitivos ya que estos se copian cuando se pasan como argumento a una función. Por ejemplo, vamos a crear una función que recibe un `i32` y lo duplica:
+
+```rust
+fn double(num: i32) -> i32 {
+  num * 2
+}
+
+fn main() {
+  let num = 5;
+  let double_num = double(num);
+
+  // num sigue existiendo
+  println!("{num}"); // -> 5
+}
+```
+
+> ¿Por qué los tipos primitivos sí los copia? De los tipos como `i32`, Rust conoce su tamaño en tiempo de compilación y, por lo tanto, puede copiarlos sin problemas. Sin embargo, los tipos compuestos como *String* o *Vec* no pueden ser copiados de esta forma ya que no sabemos su tamaño en tiempo de compilación.
+
+#### Copia de valores
+
+Así que ya sabemos que tipos como `i32` o `bool` se copian automáticamente con reasignaciones o al pasarlos como argumento a una función. Pero, ¿qué pasa con los tipos compuestos? ¿Cómo podemos copiarlos? Existen diferentes estrategias para poder lograrlo. A la hora de trabajar con *String*, por ejemplo, podemos usar el método `clone`:
+
+```rust
+let name = String::from("Miguel");
+let name2 = name.clone();
+
+// name sigue existiendo
+println!("{name} {name2}"); // -> Miguel Miguel
+```
+
+...
