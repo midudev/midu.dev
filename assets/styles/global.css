@@ -1042,3 +1042,34 @@ html[scheme='dark-mode'] #newsletter-form {
 html[scheme='dark-mode'] #newsletter-form h3 {
   color: var(--dark-background);
 }
+
+.header {
+  view-transition-name: header;
+  contain: layout;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes slide-from-up {
+  from { transform: translateY(30px); }
+}
+
+@keyframes slide-to-bottom {
+  to { transform: translateY(-30px); }
+}
+
+::view-transition-old(root) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-bottom;
+}
+
+::view-transition-new(root) {
+  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-up;
+}
