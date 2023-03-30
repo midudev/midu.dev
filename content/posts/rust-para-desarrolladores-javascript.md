@@ -673,7 +673,7 @@ fn main() {
 }
 ```
 
-Con `..` estamos indicando que el resto de valores no nos interesan. Pero, ¿qué pasa si queremos obtener el último valor de una tupla o un Array? En este caso, podemos usar `..` al final de la desestructuración:
+Con `..` estamos indicando que el resto de valores no nos interesan. Pero, ¿qué pasa si queremos obtener el último valor de una tupla o un Array? En este caso, podemos usar `..` al inicio de la desestructuración:
 
 ```rust
 fn main() {
@@ -719,7 +719,7 @@ También **es obligatorio que indiquemos el tipo de dato que devuelve la funció
 
 Así que sí, para que nuestras funciones de Rust funcionen necesitamos indicar los tipos de los parámetros y del resultado.
 
-> En Rust, las funciones siempre deuvuelven algo. Por defecto, si no indicamos nada, devuelven `()`, una tupla vacía que se le conoce como `unit`.
+> En Rust, las funciones siempre devuelven algo. Por defecto, si no indicamos nada, devuelven `()`, una tupla vacía que se le conoce como `unit`.
 
 Vamos a usar nuestra función `multiply_by2` en `main`:
 
@@ -1337,7 +1337,7 @@ let dog = Animal {
 let dog2 = Animal { age: 4, ..dog };
 ```
 
-También fíjate que hemos usado el `..dog` al final, después de los campos que queremos sobreescribir.
+Fíjate que hemos usado el `..dog` al final, después de los campos que queremos sobreescribir.
 
 El operador `..` se usa para indicar el *struct* base que queremos usar y siempre se tiene que usar al final. Si intentamos usar el `..` en otra posición nos dará un error de sintaxis. Esto es muy diferente a *JavaScript*, ya que la posición del operador *spread* puede ser cualquiera y su posición cambiará el resultado. En *Rust*, siempre va al final.
 
@@ -1357,7 +1357,7 @@ let red = ColorRGB(255, 0, 0);
 let barcelona_marker = LatLng(41.3851, 2.1734);
 ```
 
-Lo bueno de los *tuple structs* es aunque no tienen nombres de campo, hace que nuestro código sea mucho más legible.
+Lo bueno de los *tuple structs* es que, aunque no tienen nombres de campo, hacen que nuestro código sea mucho más legible.
 
 Para acceder a los valores de un *tuple struct* tenemos que usar la misma sintaxis que para acceder a los valores de una tupla:
 
