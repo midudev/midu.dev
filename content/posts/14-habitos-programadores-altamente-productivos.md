@@ -25,7 +25,7 @@ Porque además trae al final de cada capítulo, una serie de entrevistas con ref
 - Mejorar en tu día a día
 - Progresar en tu carrera
 - Trabajar en equipo
-- Prosperar en tu vida
+- Prosperar en tu vida cumpliendo tus metas
 
 ## Resumen de los 14 hábitos
 
