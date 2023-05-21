@@ -128,6 +128,22 @@
     #TableOfContents ul ul a {
       color: #777;
     }
+
+    div.highlight button {
+      color: #adb5bd;
+      box-sizing: border-box;
+      transition: 0.2s ease-out;
+      cursor: pointer;
+      user-select: none;
+      background: rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(0, 0, 0, 0);
+      padding: 5px 10px;
+      font-size: 0.8em;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border-radius: 0 0.15rem;
+    }
   }
 </style>
   <div id="TableOfContents-container">
@@ -182,6 +198,86 @@
     {{ partial "icons/twitter.html" }}
   </a>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const copyToClipboard = (str) => {
+    const el = document.createElement('textarea') // Create a <textarea> element
+    el.value = str // Set its value to the string that you want copied
+    el.setAttribute('readonly', '') // Make it readonly to be tamper-proof
+    el.style.position = 'absolute'
+    el.style.left = '-9999px' // Move outside the screen to make it invisible
+    document.body.appendChild(el) // Append the <textarea> element to the HTML document
+    const selected =
+      document.getSelection().rangeCount > 0 // Check if there is any content selected previously
+        ? document.getSelection().getRangeAt(0) // Store selection if found
+        : false // Mark as false to know no selection existed before
+    el.select() // Select the <textarea> content
+    document.execCommand('copy') // Copy - only works as a result of a user action (e.g. click events)
+    document.body.removeChild(el) // Remove the <textarea> element
+    if (selected) {
+      // If a selection existed before copying
+      document.getSelection().removeAllRanges() // Unselect everything on the HTML document
+      document.getSelection().addRange(selected) // Restore the original selection
+    }
+  }
+
+  function handleCopyClick(evt, btn) {
+    // get the children of the parent element
+    const { children } = evt.target.parentElement
+    // grab the first element (we append the copy button on afterwards, so the first will be the code element)
+    // destructure the innerText from the code block
+    const { innerText } = Array.from(children)[0]
+    // copy all of the code to the clipboard
+    copyToClipboard(innerText)
+    // alert to show it worked, but you can put any kind of tooltip/popup to notify it worked
+    btn.innerHTML = '✅ Copied!'
+
+    setTimeout(() => {
+      btn.innerHTML = 'Copy'
+    }, [1000])
+  }
+
+  // OBSERVER NOTE: on Development mode, hugo made some dom changes when you update a template
+  // so to patch the script we have to observe this changes
+
+  // Function to observe changes in the DOM and add copy buttons to code blocks
+  const observeCodeBlocks = () => {
+    const highlights = document.querySelectorAll('div.highlight')
+
+    highlights.forEach((div) => {
+      const existingButton = div.querySelector('button.copy-button')
+      if (existingButton) return // Skip if copy button already exists
+
+      const copy = document.createElement('button')
+      copy.innerHTML = 'Copy'
+      copy.className = 'copy-button'
+      copy.addEventListener('click', function (ev) {
+        handleCopyClick(ev, copy)
+      })
+      div.append(copy)
+    })
+  }
+
+  // Initialize copy buttons on initial page load
+  observeCodeBlocks()
+
+  // Create a mutation observer to detect changes in the DOM
+  const observer = new MutationObserver(() => {
+    observeCodeBlocks()
+  })
+
+  // Specify the target node and options for the observer
+  const targetNode = document.querySelector('body')
+  const observerOptions = {
+    childList: true, // Observe direct child elements of targetNode
+    subtree: true // Observe descendants of targetNode within the entire DOM tree
+  }
+
+  // Start observing the target node for changes
+  observer.observe(targetNode, observerOptions)
+})
+</script>
 {{ end }}
 
 {{ end }}
