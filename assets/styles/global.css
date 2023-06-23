@@ -173,6 +173,7 @@ iframe {
   color: #000;
   border-radius: 6px;
   border: 1px solid #09f;
+	cursor: pointer;
 }
 
 /** END .header **/
