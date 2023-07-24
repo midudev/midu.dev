@@ -449,3 +449,11 @@ function startViewTransition(callback) {
 
   document.startViewTransition(callback)
 }
+
+document.body.addEventListener('click', (evt) => {
+  if (evt.target.className === 'next-posts' || evt.target.className === 'prev-posts') {
+    document.documentElement.classList.add('section-posts-animation')
+  } else {
+    document.documentElement.classList.remove('section-posts-animation')
+  }
+})

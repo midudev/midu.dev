@@ -148,32 +148,34 @@
   </style>
   <main id='home-feed'>
     <h3 class='section-title'>Últimos artículos</h3>
-    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
-      {{ range $paginator.Pages }}
-
-      <a class='home-article' href="{{.Permalink}}">
-        {{ with .Param "tags" }}
-        <picture>
-          {{ range first 1 . }}
-            <img decoding="async" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
-          {{ end }}
-          {{ range after 1 . }}
-            {{ if . }}
-            <img class='secondary' decoding="async" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
+    <section class="section-posts">
+      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
+        {{ range $paginator.Pages }}
+  
+        <a class='home-article' href="{{.Permalink}}">
+          {{ with .Param "tags" }}
+          <picture>
+            {{ range first 1 . }}
+              <img decoding="async" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
             {{ end }}
+            {{ range after 1 . }}
+              {{ if . }}
+              <img class='secondary' decoding="async" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
+              {{ end }}
+            {{ end }}
+            </picture>
           {{ end }}
-          </picture>
+          <div>
+          <h2>{{ .Title }}</h2>
+          <div class='meta'>
+            <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
+              {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
+            </time>
+          </div>
+          </div>
+        </a>
         {{ end }}
-        <div>
-        <h2>{{ .Title }}</h2>
-        <div class='meta'>
-          <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
-            {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
-          </time>
-        </div>
-        </div>
-      </a>
-      {{ end }}
+    </section>
 <!--
 //
 //  PAGE NUMBERS
@@ -201,7 +203,7 @@
     <!-- Previous page. -->
     {{ if $paginator.HasPrev }}
     <li>
-      <a href="{{ $paginator.Prev.URL }}">
+      <a class="prev-posts" href="{{ $paginator.Prev.URL }}">
         <i></i> artículos más recientes
       </a>
     </li>
@@ -254,7 +256,7 @@
     <!-- Next page. -->
     {{ if $paginator.HasNext }}
     <li>
-      <a href="{{ $paginator.Next.URL }}">
+      <a class="next-posts" href="{{ $paginator.Next.URL }}">
         artículos anteriores <i class='is-right'></i>
       </a>
     </li>
