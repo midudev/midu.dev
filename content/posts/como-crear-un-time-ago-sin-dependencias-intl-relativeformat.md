@@ -78,7 +78,8 @@ Para recuperar la fecha actual con ese timestamp podemos usar `Date.now()`. Vamo
 const getSecondsDiff = (timestamp) => {
   // restamos el tiempo actual al que le pasamos por parámetro
   // lo dividimos entre 1000 para quitar los milisegundos
-  return (Date.now() - timestamp) / 1000
+  // y retornamos el valor absoluto
+  return Math.abs((Date.now() - timestamp) / 1000)
 }
 ```
 
@@ -146,7 +147,7 @@ const DATE_UNITS = {
   second: 1
 }
 
-const getSecondsDiff = timestamp => (Date.now() - timestamp) / 1000
+const getSecondsDiff = timestamp => Math.abs((Date.now() - timestamp) / 1000)
 const getUnitAndValueDate = (secondsElapsed) => {
   for (const [unit, secondsInUnit] of Object.entries(DATE_UNITS)) {
     if (secondsElapsed >= secondsInUnit || unit === "second") {
