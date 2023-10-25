@@ -56,7 +56,7 @@ El equipo es notificado que se creó una Pull Request, la revisan posteriormente
 
 ### Ask
 
-Esta categoría es similar a *Show* pero aquí **sí esperamos al feedback de nuestro equipo** ante de fusionar la rama. Lo hacemos porque existe algo de incertidumbre: bien porque la solución es complicada, no sabemos implementarla, existen dudas...
+Esta categoría es similar a *Show* pero aquí **sí esperamos al feedback de nuestro equipo** antes de fusionar la rama. Lo hacemos porque existe algo de incertidumbre: bien porque la solución es complicada, no sabemos implementarla, existen dudas...
 
 La idea es que la rama dure el mínimo tiempo posible para no bloquear el trabajo de otros miembros del equipo
 
