@@ -46,7 +46,7 @@ La segunda opción es un poco más complicada y se trata de reusar la conocida f
 
 Para ello se usa `createRequire` un [método documentado en Node.js](https://nodejs.org/api/module.html#module_module_createrequire_filename) que te permite crear una función `require`. Para ello hay que pasarle como argumento un string con el path absoluto o un objeto URL.
 
-Lo mejor aquí es aprovechar la propiedad `import.meta.url` para que nos de exactamente la ruta del archivo y así simular complemtanete la funcionalidad de `require`.
+Lo mejor aquí es aprovechar la propiedad `import.meta.url` para que nos de exactamente la ruta del archivo y así simular completamente la funcionalidad de `require`.
 
 ```javascript
 import { createRequire } from "module"
