@@ -16,13 +16,6 @@
   {{ $css := resources.Get "styles/style.css" }}
   {{ $style := $css | resources.Minify }}
   <style>{{$style.Content | safeCSS}}</style>
-  
-  <script
-    defer
-    src="https://unpkg.com/@tinybirdco/flock.js"
-    data-host="https://api.tinybird.co"
-    data-token="p.eyJ1IjogImNlMDhlMTlhLWEwMzMtNDFlZC05OTM2LWVjN2MxY2UwZDhjOCIsICJpZCI6ICI4ZTIzZjhiOC02Y2YzLTRiMjAtODBhNi1hMWQxMGFiNWEzNDAiLCAiaG9zdCI6ICJldV9zaGFyZWQifQ.Ozpc8eMoEYmTAv0dPKJ-RoXJgHmHdXa4m13bnKD2-rs"
-  />
 
   <link rel="preload" as="image" href="/logo.png">
   <link rel="preload" as="script" href='https://midu.dev/js/t.js'>
