@@ -347,7 +347,7 @@ svg {
 
 /** BUTTON **/
 .button {
-  background-color: #1890ff;
+  background-color: #1890ff !important;
   border-color: #1890ff;
   border-radius: 4px;
   border: 0;
