@@ -31,6 +31,8 @@ Además, si ya sabes programar en JavaScript, seguramente estés buscando un len
 
 ### Cómo instalar Rust
 
+#### Linux / macOS
+
 Si te encuentras en Linux o macOS, puedes instalar Rust con el siguiente comando:
 
 ```sh
@@ -51,6 +53,18 @@ rustc 1.66.0 (69f9c33d7 2022-12-12)
 > Si te aparece que el comando no ha sido encontrado, seguramente la instalación no ha dejado correctamente el binario en el PATH. Prueba a cerrar la terminal y abrirla de nuevo, a veces eso lo soluciona. Si no, puedes añadir la ruta a mano con `export PATH="$PATH:$HOME/.cargo/bin"`.
 
 Como ves, en **Rust tenemos un compilador oficial** mientras que en *JavaScript* no tenemos (ya que son los entornos de ejecución de los navegadores, Node, Deno y similares que compilan y evalúan al vuelo nuestro código).
+
+#### Windows
+Si te encuentras en Windows, puedes instalar Rust mediante el instalador propuesto en la página principal ([rustup](https://www.rust-lang.org/tools/install)):
+
+- [Windows 32-bits](https://static.rust-lang.org/rustup/dist/i686-pc-windows-msvc/rustup-init.exe)
+- [Windows 64-bits](https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe)
+
+Tener en cuenta que Rust necesita que estén instaladas las [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/). Si no las detecta en el equipo, entonces el mismo instalador sugerirá que se descarguen e instalen como primer paso antes de continuar.
+
+#### Windows Subsystem for Linux
+Si estás ejecutando Windows Subsystem for Linux (WSL) podrás utilizar el mismo comando descripto en la sección **Linux / macOS**.
+
 
 ### Hola mundo en Rust
 
