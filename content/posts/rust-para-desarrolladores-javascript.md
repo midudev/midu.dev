@@ -25,7 +25,7 @@ En cuanto al **tipado de Rust es estático y fuerte**, todo lo contrario a *Java
 
 **Rust ha ganado popularidad en los últimos años** y se está convirtiendo en un lenguaje que, cada vez, se usa en más empresas y están surgiendo más oportunidades laborales. En el mundo de JavaScript, muchas herramientas están migrando de JavaScript a Rust (por paradógico que parezca) gracias a su velocidad.
 
-Algunos ejemplos son [SWC](https://swc.rs/) (alternative a Babel), [Rome](https://rome.tools/) (alternative a Eslint y Prettier) o [Turbopack](https://turbo.build/pack) (alternativa a Webpack).
+Algunos ejemplos son [SWC](https://swc.rs/) (alternativa a Babel), [Rome](https://rome.tools/) (alternativa a Eslint y Prettier) o [Turbopack](https://turbo.build/pack) (alternativa a Webpack).
 
 Además, si ya sabes programar en JavaScript, seguramente estés buscando un lenguaje de programación para seguir mejorando tus habilidades. **Rust es un lenguaje más avanzado que JavaScript en muchos aspectos** y, seguramente, será un reto dominarlo... pero al hacerlo vas a mejorar tus conocimientos de programación en general y tu perfil será mucho más atractivo de cara a encontrar trabajo o mejorar tu salario.
 
