@@ -126,6 +126,8 @@ iframe {
 /** .header **/
 .header {
   margin-bottom: 32px;
+  position: relative;
+  z-index: 3;
 }
 
 .header-inner {
