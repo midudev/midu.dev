@@ -17,7 +17,7 @@ Este es un **curso de Rust pensado especialmente para personas con conocimientos
 
 A diferencia de JavaScript, para poder ejecutar un programa en Rust, primero debes compilarlo. Esto es debido a que Rust es un lenguaje de programación **compilado**, mientras que JavaScript es un lenguaje de programación **interpretado** (aunque en realidad existe un paso de compilación interno a nivel de motor de JavaScript).
 
-En cuanto al **tipado de Rust es estático y fuerte**, todo lo contrario a *JavaScript* que **es dinámico y débil**. Esto significa que las variables se declaradan con un tipo de dato (o detecta automáticamente el tipo con inferencia) y que no se pueden cambiar de tipo de dato durante la ejecución del programa (esto es que su tipado es fuerte).
+En cuanto al **tipado de Rust es estático y fuerte**, todo lo contrario a *JavaScript* que **es dinámico y débil**. Esto significa que las variables se declaran con un tipo de dato (o detecta automáticamente el tipo con inferencia) y que no se pueden cambiar de tipo de dato durante la ejecución del programa (esto es que su tipado es fuerte).
 
 **Rust** ha sido diseñado para ser **seguro** y **rápido**, por lo que es un lenguaje de programación muy adecuado para el desarrollo de aplicaciones de alto rendimiento, como por ejemplo, servidores web, aplicaciones de escritorio, sistemas embebidos, etc. JavaScript, aunque también se puede usar para muchas de ellas, en realidad **fue diseñado para añadir interactividad a las webs.**
 
@@ -25,11 +25,13 @@ En cuanto al **tipado de Rust es estático y fuerte**, todo lo contrario a *Java
 
 **Rust ha ganado popularidad en los últimos años** y se está convirtiendo en un lenguaje que, cada vez, se usa en más empresas y están surgiendo más oportunidades laborales. En el mundo de JavaScript, muchas herramientas están migrando de JavaScript a Rust (por paradógico que parezca) gracias a su velocidad.
 
-Algunos ejemplos son [SWC](https://swc.rs/) (alternative a Babel), [Rome](https://rome.tools/) (alternative a Eslint y Prettier) o [Turbopack](https://turbo.build/pack) (alternativa a Webpack).
+Algunos ejemplos son [SWC](https://swc.rs/) (alternativa a Babel), [Rome](https://rome.tools/) (alternativa a Eslint y Prettier) o [Turbopack](https://turbo.build/pack) (alternativa a Webpack).
 
 Además, si ya sabes programar en JavaScript, seguramente estés buscando un lenguaje de programación para seguir mejorando tus habilidades. **Rust es un lenguaje más avanzado que JavaScript en muchos aspectos** y, seguramente, será un reto dominarlo... pero al hacerlo vas a mejorar tus conocimientos de programación en general y tu perfil será mucho más atractivo de cara a encontrar trabajo o mejorar tu salario.
 
 ### Cómo instalar Rust
+
+#### Linux / macOS
 
 Si te encuentras en Linux o macOS, puedes instalar Rust con el siguiente comando:
 
@@ -51,6 +53,18 @@ rustc 1.66.0 (69f9c33d7 2022-12-12)
 > Si te aparece que el comando no ha sido encontrado, seguramente la instalación no ha dejado correctamente el binario en el PATH. Prueba a cerrar la terminal y abrirla de nuevo, a veces eso lo soluciona. Si no, puedes añadir la ruta a mano con `export PATH="$PATH:$HOME/.cargo/bin"`.
 
 Como ves, en **Rust tenemos un compilador oficial** mientras que en *JavaScript* no tenemos (ya que son los entornos de ejecución de los navegadores, Node, Deno y similares que compilan y evalúan al vuelo nuestro código).
+
+#### Windows
+Si te encuentras en Windows, puedes instalar Rust mediante el instalador propuesto en la página principal ([rustup](https://www.rust-lang.org/tools/install)):
+
+- [Windows 32-bits](https://static.rust-lang.org/rustup/dist/i686-pc-windows-msvc/rustup-init.exe)
+- [Windows 64-bits](https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe)
+
+Tener en cuenta que Rust necesita que estén instaladas las [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/). Si no las detecta en el equipo, entonces el mismo instalador sugerirá que se descarguen e instalen como primer paso antes de continuar.
+
+#### Windows Subsystem for Linux
+Si estás ejecutando Windows Subsystem for Linux (WSL) podrás utilizar el mismo comando descripto en la sección **Linux / macOS**.
+
 
 ### Hola mundo en Rust
 
@@ -673,7 +687,7 @@ fn main() {
 }
 ```
 
-Con `..` estamos indicando que el resto de valores no nos interesan. Pero, ¿qué pasa si queremos obtener el último valor de una tupla o un Array? En este caso, podemos usar `..` al final de la desestructuración:
+Con `..` estamos indicando que el resto de valores no nos interesan. Pero, ¿qué pasa si queremos obtener el último valor de una tupla o un Array? En este caso, podemos usar `..` al inicio de la desestructuración:
 
 ```rust
 fn main() {
@@ -719,7 +733,7 @@ También **es obligatorio que indiquemos el tipo de dato que devuelve la funció
 
 Así que sí, para que nuestras funciones de Rust funcionen necesitamos indicar los tipos de los parámetros y del resultado.
 
-> En Rust, las funciones siempre deuvuelven algo. Por defecto, si no indicamos nada, devuelven `()`, una tupla vacía que se le conoce como `unit`.
+> En Rust, las funciones siempre devuelven algo. Por defecto, si no indicamos nada, devuelven `()`, una tupla vacía que se le conoce como `unit`.
 
 Vamos a usar nuestra función `multiply_by2` en `main`:
 
@@ -1337,7 +1351,7 @@ let dog = Animal {
 let dog2 = Animal { age: 4, ..dog };
 ```
 
-También fíjate que hemos usado el `..dog` al final, después de los campos que queremos sobreescribir.
+Fíjate que hemos usado el `..dog` al final, después de los campos que queremos sobreescribir.
 
 El operador `..` se usa para indicar el *struct* base que queremos usar y siempre se tiene que usar al final. Si intentamos usar el `..` en otra posición nos dará un error de sintaxis. Esto es muy diferente a *JavaScript*, ya que la posición del operador *spread* puede ser cualquiera y su posición cambiará el resultado. En *Rust*, siempre va al final.
 
@@ -1357,7 +1371,7 @@ let red = ColorRGB(255, 0, 0);
 let barcelona_marker = LatLng(41.3851, 2.1734);
 ```
 
-Lo bueno de los *tuple structs* es aunque no tienen nombres de campo, hace que nuestro código sea mucho más legible.
+Lo bueno de los *tuple structs* es que, aunque no tienen nombres de campo, hacen que nuestro código sea mucho más legible.
 
 Para acceder a los valores de un *tuple struct* tenemos que usar la misma sintaxis que para acceder a los valores de una tupla:
 

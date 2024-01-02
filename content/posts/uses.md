@@ -38,7 +38,7 @@ Uso [Spaceship](https://github.com/denysdovhan/spaceship-prompt) como prompt ya 
 
 Las extensiones que uso para la terminal son:
 
-* [hyper-electron-highlighter](https://github.com/mikemcbride/hyper-electron-highlighter#readme): Un fantástico tema de colores vivos, para diferenciarlo todo rápdidamente.
+* [hyper-electron-highlighter](https://github.com/mikemcbride/hyper-electron-highlighter#readme): Un fantástico tema de colores vivos, para diferenciarlo todo rápidamente.
 * [hypercwd](https://github.com/hharnisc/hypercwd): Te permite abrir una nueva pestaña en el mismo directorio que ya estás. En Iterm2 existe una opción en su configuración y me parece de obligatorio uso.
 * [hyper-search](https://www.npmjs.com/package/hyper-search): Te permite hacer búsquedas de texto en la ventana de la terminal.
 * [hyper-pane](https://www.npmjs.com/package/hyper-pane): Mejora la navegación entre paneles y añade útiles atajos de teclado para moverte entre ellos.

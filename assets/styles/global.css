@@ -126,6 +126,8 @@ iframe {
 /** .header **/
 .header {
   margin-bottom: 32px;
+  position: relative;
+  z-index: 3;
 }
 
 .header-inner {
@@ -348,7 +350,7 @@ svg {
 
 /** BUTTON **/
 .button {
-  background-color: #1890ff;
+  background-color: #1890ff !important;
   border-color: #1890ff;
   border-radius: 4px;
   border: 0;
@@ -1065,6 +1067,14 @@ html[scheme='dark-mode'] #newsletter-form h3 {
   to { transform: translateY(-30px); }
 }
 
+@keyframes slide-from-left {
+  from { transform: translateX(30px); }
+}
+
+@keyframes slide-to-right {
+  to { transform: translateX(-30px); }
+}
+
 ::view-transition-old(root) {
   animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
     300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-bottom;
@@ -1073,4 +1083,34 @@ html[scheme='dark-mode'] #newsletter-form h3 {
 ::view-transition-new(root) {
   animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
     300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-up;
+}
+
+/* Disable old view transition state */
+html.section-posts-animation::view-transition-old(root) {
+  /* Disable animation */
+  animation: none;
+  /* Prevent FOUC when navigating in each view */
+  mix-blend-mode: normal;
+}
+
+/* Disable new view transition state */
+html.section-posts-animation::view-transition-new(root) {
+  /* Disable animation */
+  animation: none;
+  /* Prevent FOUC when navigating in each view */
+  mix-blend-mode: normal;
+}
+
+html.section-posts-animation .section-posts {
+  view-transition-name: section-posts;
+}
+
+html.section-posts-animation::view-transition-old(section-posts) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-right;
+}
+
+html.section-posts-animation::view-transition-new(section-posts) {
+  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-left;
 }
