@@ -2,7 +2,7 @@
   --c-topic: #000;
   --fz-aside: 14px;
   --fz-section-title: 18px;
-  --mw-document: 1200px;
+  --mw-document: 800px;
   --p-header-bottom: 16px;
   --p-separation: 96px;
   --p-u-center: 0 32px;
@@ -966,8 +966,8 @@ html[scheme='dark-mode'] .home-article:hover,
 }
 html[scheme='dark-mode'] #TableOfContents ul li.active a,
 html[scheme='dark-mode'] #TableOfContents a:hover {
-  color: var(--dark-text);
-  background: var(--dark-color-hover) !important;
+  color: yellow;
+  background: transparent;
 }
 html[scheme='dark-mode'] :not(pre) > code {
   background: var(--dark-text) !important;
@@ -1044,6 +1044,12 @@ html[scheme='dark-mode'] #newsletter-form {
 }
 html[scheme='dark-mode'] #newsletter-form h3 {
   color: var(--dark-background);
+}
+html[scheme='dark-mode'] #newsletter-form small {
+  color: var(--dark-text);
+}
+html[scheme='dark-mode'] #TableOfContents a {
+  color: rgba(255, 255, 255, 0.896);
 }
 
 .header {

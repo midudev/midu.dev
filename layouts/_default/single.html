@@ -5,8 +5,8 @@
 
 <article id='article' itemscope itemtype="http://schema.org/Article">
   {{ if isset .Params "audio" }}
-    {{ partial "audio-player.html" . }}
-    {{ partial "podcast-subscribe.html" }}
+  {{ partial "audio-player.html" . }}
+  {{ partial "podcast-subscribe.html" }}
   {{ else }}
   {{ end }}
 
@@ -14,50 +14,51 @@
     <div id='article-content'>
       {{ if isset .Params "audio" }}
       {{ else }}
-        <header id='article-header'>
-          {{ with .Param "tags" }}
-            {{ range first 1 . }}
-            <picture>
-              <img decoding="async" itemprop="image" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png' width="48" height="48" />
-            </picture>
-            {{ end }}
-          {{ end }}
-          <div class='article-header-meta'>
-            <h1 itemprop="name">
-              {{ .Title }}
-            </h1>
-            <div id='article-meta'>
-              {{ partial "article-meta.html" . }}
-            </div>
+      <header id='article-header'>
+        {{ with .Param "tags" }}
+        {{ range first 1 . }}
+        <picture>
+          <img decoding="async" itemprop="image" alt='Imagen de la etiqueta {{ . }}' src='/images/tags/{{.}}.png'
+            width="48" height="48" />
+        </picture>
+        {{ end }}
+        {{ end }}
+        <div class='article-header-meta'>
+          <h1 itemprop="name">
+            {{ .Title }}
+          </h1>
+          <div id='article-meta'>
+            {{ partial "article-meta.html" . }}
           </div>
+        </div>
 
-        </header>
+      </header>
       {{ end }}
 
       <div itemprop="articleBody">
         {{ .Content }}
       </div>
 
-        <div id='article-pagination'>
-          {{ with .PrevPage }}
-            <a class='prev' href="{{.Permalink}}">
-              {{ with .Params.tags }}
-                {{$tag := index . 0 }}
-                <img decoding="async" alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
-              {{ end }}
-              {{.Title}}
-            </a>
+      <div id='article-pagination'>
+        {{ with .PrevPage }}
+        <a class='prev' href="{{.Permalink}}">
+          {{ with .Params.tags }}
+          {{$tag := index . 0 }}
+          <img decoding="async" alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
           {{ end }}
-          {{ with .NextPage }}
-            <a class='next' href="{{.Permalink}}">
-              {{ with .Params.tags }}
-                {{$tag := index . 0 }}
-                <img decoding="async" alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
-              {{ end }}
-              {{.Title}}
-            </a>
+          {{.Title}}
+        </a>
+        {{ end }}
+        {{ with .NextPage }}
+        <a class='next' href="{{.Permalink}}">
+          {{ with .Params.tags }}
+          {{$tag := index . 0 }}
+          <img decoding="async" alt="{{$tag}}" loading='lazy' src='/images/tags/{{$tag}}.png' width="64" height="64" />
           {{ end }}
-        </div>
+          {{.Title}}
+        </a>
+        {{ end }}
+      </div>
     </div>
   </div>
 
@@ -76,19 +77,20 @@
       position: fixed;
       right: 32px;
     }
-  
+
     #TableOfContents-container h3 {
       font-size: 14px;
       padding-bottom: 8px;
     }
-  
+
     #TableOfContents ul {
       list-style: none;
       padding-left: 0;
       padding-bottom: 0;
       max-width: 200px;
+      line-height: 1.2;
     }
-  
+
     #TableOfContents ul li {
       margin-bottom: 8px;
     }
@@ -96,19 +98,19 @@
     #TableOfContents ul li.active a {
       background-color: rgb(208, 237, 255);
     }
-  
+
     #TableOfContents ul ul {
       list-style: none;
       color: #444;
       padding-left: 8px;
       margin-top: 8px;
     }
-  
+
     #TableOfContents ul ul li:before {
       content: '-';
       padding-right: 4px;
     }
-  
+
     #TableOfContents a {
       color: #555;
       display: inline;
@@ -116,15 +118,15 @@
       font-size: 12px;
       line-height: 1;
     }
-  
+
     #TableOfContents a code {
       font-size: 12px;
     }
-  
+
     #TableOfContents a:hover {
       background-color: rgb(208, 237, 255);
     }
-  
+
     #TableOfContents ul ul a {
       color: #777;
     }
@@ -146,137 +148,137 @@
     }
   }
 </style>
-  <div id="TableOfContents-container">
-    <h3>Contenido del artículo</h3>
-    {{.TableOfContents}}
-  </div>
+<div id="TableOfContents-container">
+  <h3>Contenido del artículo</h3>
+  {{.TableOfContents}}
+</div>
 {{ end }}
 
 {{ if (.Params.description) }}
 <style>
   #share {
-  bottom: 16px;
-  left: 0;
-  display: flex;
-  position: fixed;
-  right: 0;
-  width: 100%;
-  justify-content: center;
-  z-index: 1;
-}
+    bottom: 16px;
+    left: 0;
+    display: flex;
+    position: fixed;
+    right: 0;
+    width: 100%;
+    justify-content: center;
+    z-index: 1;
+  }
 
-#share a {
-  background: #fff;
-  border-radius: 32px;
-  bottom: 0;
-  box-shadow: rgba(100,110,140,.4) 0px 6px 21px 2px;
-  color: #333;
-  display: flex;
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0 16px;
-  padding: 8px 16px;
-  text-align: center;
-  align-self: center;
-  align-items: center;
-}
+  #share a {
+    background: #fff;
+    border-radius: 32px;
+    bottom: 0;
+    box-shadow: rgba(100, 110, 140, .4) 0px 6px 21px 2px;
+    color: #333;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 16px;
+    padding: 8px 16px;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+  }
 
-#share a:hover {
-  background: rgb(220, 241, 255);
-}
+  #share a:hover {
+    background: rgb(220, 241, 255);
+  }
 
-#share svg {
-  align-self: center;
-  display: inline-flex;
-  margin-left: 4px;
-}
-
+  #share svg {
+    align-self: center;
+    display: inline-flex;
+    margin-left: 4px;
+  }
 </style>
 <div id='share'>
-  <a target='_blank' rel='nofollow noopener' href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>
+  <a target='_blank' rel='nofollow noopener'
+    href='https://twitter.com/share?url={{.Permalink}}&text="{{ .Title }}" por @midudev'>
     <span>Comparte el artículo</span>
     {{ partial "icons/twitter.html" }}
   </a>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const copyToClipboard = (str) => {
-    const el = document.createElement('textarea') // Create a <textarea> element
-    el.value = str // Set its value to the string that you want copied
-    el.setAttribute('readonly', '') // Make it readonly to be tamper-proof
-    el.style.position = 'absolute'
-    el.style.left = '-9999px' // Move outside the screen to make it invisible
-    document.body.appendChild(el) // Append the <textarea> element to the HTML document
-    const selected =
-      document.getSelection().rangeCount > 0 // Check if there is any content selected previously
-        ? document.getSelection().getRangeAt(0) // Store selection if found
-        : false // Mark as false to know no selection existed before
-    el.select() // Select the <textarea> content
-    document.execCommand('copy') // Copy - only works as a result of a user action (e.g. click events)
-    document.body.removeChild(el) // Remove the <textarea> element
-    if (selected) {
-      // If a selection existed before copying
-      document.getSelection().removeAllRanges() // Unselect everything on the HTML document
-      document.getSelection().addRange(selected) // Restore the original selection
+  document.addEventListener('DOMContentLoaded', function () {
+    const copyToClipboard = (str) => {
+      const el = document.createElement('textarea') // Create a <textarea> element
+      el.value = str // Set its value to the string that you want copied
+      el.setAttribute('readonly', '') // Make it readonly to be tamper-proof
+      el.style.position = 'absolute'
+      el.style.left = '-9999px' // Move outside the screen to make it invisible
+      document.body.appendChild(el) // Append the <textarea> element to the HTML document
+      const selected =
+        document.getSelection().rangeCount > 0 // Check if there is any content selected previously
+          ? document.getSelection().getRangeAt(0) // Store selection if found
+          : false // Mark as false to know no selection existed before
+      el.select() // Select the <textarea> content
+      document.execCommand('copy') // Copy - only works as a result of a user action (e.g. click events)
+      document.body.removeChild(el) // Remove the <textarea> element
+      if (selected) {
+        // If a selection existed before copying
+        document.getSelection().removeAllRanges() // Unselect everything on the HTML document
+        document.getSelection().addRange(selected) // Restore the original selection
+      }
     }
-  }
 
-  function handleCopyClick(evt, btn) {
-    // get the children of the parent element
-    const { children } = evt.target.parentElement
-    // grab the first element (we append the copy button on afterwards, so the first will be the code element)
-    // destructure the innerText from the code block
-    const { innerText } = Array.from(children)[0]
-    // copy all of the code to the clipboard
-    copyToClipboard(innerText)
-    // alert to show it worked, but you can put any kind of tooltip/popup to notify it worked
-    btn.innerHTML = '✅ Copied!'
+    function handleCopyClick(evt, btn) {
+      // get the children of the parent element
+      const { children } = evt.target.parentElement
+      // grab the first element (we append the copy button on afterwards, so the first will be the code element)
+      // destructure the innerText from the code block
+      const { innerText } = Array.from(children)[0]
+      // copy all of the code to the clipboard
+      copyToClipboard(innerText)
+      // alert to show it worked, but you can put any kind of tooltip/popup to notify it worked
+      btn.innerHTML = '✅ Copied!'
 
-    setTimeout(() => {
-      btn.innerHTML = 'Copy'
-    }, [1000])
-  }
+      setTimeout(() => {
+        btn.innerHTML = 'Copy'
+      }, [1000])
+    }
 
-  // OBSERVER NOTE: on Development mode, hugo made some dom changes when you update a template
-  // so to patch the script we have to observe this changes
+    // OBSERVER NOTE: on Development mode, hugo made some dom changes when you update a template
+    // so to patch the script we have to observe this changes
 
-  // Function to observe changes in the DOM and add copy buttons to code blocks
-  const observeCodeBlocks = () => {
-    const highlights = document.querySelectorAll('div.highlight')
+    // Function to observe changes in the DOM and add copy buttons to code blocks
+    const observeCodeBlocks = () => {
+      const highlights = document.querySelectorAll('div.highlight')
 
-    highlights.forEach((div) => {
-      const existingButton = div.querySelector('button.copy-button')
-      if (existingButton) return // Skip if copy button already exists
+      highlights.forEach((div) => {
+        const existingButton = div.querySelector('button.copy-button')
+        if (existingButton) return // Skip if copy button already exists
 
-      const copy = document.createElement('button')
-      copy.innerHTML = 'Copy'
-      copy.className = 'copy-button'
-      copy.addEventListener('click', function (ev) {
-        handleCopyClick(ev, copy)
+        const copy = document.createElement('button')
+        copy.innerHTML = 'Copy'
+        copy.className = 'copy-button'
+        copy.addEventListener('click', function (ev) {
+          handleCopyClick(ev, copy)
+        })
+        div.append(copy)
       })
-      div.append(copy)
-    })
-  }
+    }
 
-  // Initialize copy buttons on initial page load
-  observeCodeBlocks()
-
-  // Create a mutation observer to detect changes in the DOM
-  const observer = new MutationObserver(() => {
+    // Initialize copy buttons on initial page load
     observeCodeBlocks()
+
+    // Create a mutation observer to detect changes in the DOM
+    const observer = new MutationObserver(() => {
+      observeCodeBlocks()
+    })
+
+    // Specify the target node and options for the observer
+    const targetNode = document.querySelector('body')
+    const observerOptions = {
+      childList: true, // Observe direct child elements of targetNode
+      subtree: true // Observe descendants of targetNode within the entire DOM tree
+    }
+
+    // Start observing the target node for changes
+    observer.observe(targetNode, observerOptions)
   })
-
-  // Specify the target node and options for the observer
-  const targetNode = document.querySelector('body')
-  const observerOptions = {
-    childList: true, // Observe direct child elements of targetNode
-    subtree: true // Observe descendants of targetNode within the entire DOM tree
-  }
-
-  // Start observing the target node for changes
-  observer.observe(targetNode, observerOptions)
-})
 </script>
 {{ end }}
 
