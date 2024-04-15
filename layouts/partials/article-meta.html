@@ -1,12 +1,14 @@
 {{ if (isset .Params "audio") }}
 {{ else }}
+<div class="article-meta" style="display: flex; align-items: center; gap: 10px;">
   <time itemprop="datePublished" datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
     {{ .Date.Day }} {{ index $.Site.Data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
   </time>
    · 
   <span>{{.ReadingTime}} minutos de lectura</span>
   · 
-  <a target="_blank" rel="noopener nofollow" href='https://github.com/midudev/midu.dev/edit/master/content/posts/{{.File.LogicalName}}'>
+  <a target="_blank" rel="noopener nofollow" href='https://github.com/midudev/midu.dev/edit/master/content/posts/{{.File.LogicalName}}' style="display: inline-flex; align-items: center;">
     ¿Una errata? Edita el artículo {{ partial "icons/github.html" . }}
   </a>
+</div>
 {{ end }}
