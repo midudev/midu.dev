@@ -498,7 +498,8 @@ svg {
 #article-meta a {
   border: 0;
   color: #000;
-  display: block;
+  display: flex;
+  gap: 1px;
   font-weight: 600;
   margin-top: 8px;
   opacity: .7;
@@ -506,7 +507,7 @@ svg {
 
 @media (min-width: 600px) {
   #article-meta a {
-    display: inline-block;
+    display: inline-flex;
     margin: 0;
   }
 }
